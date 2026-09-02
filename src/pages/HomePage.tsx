@@ -20,7 +20,7 @@ function Hero() {
   return (
     <section className="container-page pt-2" aria-label="India's Freedom Timeline">
       {/* First-day pane */}
-      <div className="vault animate-fade-up px-5 py-7 sm:px-9 sm:py-10">
+      <div className="vault animate-fade-up px-5 py-5 sm:px-9 sm:py-10">
         {/* The cancellation falls across the dateline rule, as it would on a cover */}
         <Postmark lines={['India', 'Post', '15 · 08 · 47']} className="absolute right-4 top-5 hidden sm:grid" />
 
@@ -29,14 +29,14 @@ function Hero() {
           <span className="font-display text-base font-bold text-brass-bright">1757 — 1947</span>
         </div>
 
-        <h1 className="mt-8 max-w-3xl text-hero-sm font-medium text-paper-50 sm:mt-10 sm:text-hero">
+        <h1 className="mt-5 max-w-3xl text-hero-sm font-medium text-paper-50 sm:mt-10 sm:text-hero">
           Millions resisted.
           <span className="mt-1 block text-brass-bright">Thousands sacrificed.</span>
         </h1>
-        <p className="mt-6 max-w-xl font-reading text-reading text-paper-200 sm:text-h4">
+        <p className="mt-4 max-w-xl font-reading text-reading text-paper-200 sm:mt-6 sm:text-h4">
           Explore the people who fought for India’s freedom — from the first risings against the East India Company to the midnight of 15 August 1947.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
           <Link to="/timeline" className="btn-seal">
             Enter the timeline <Icon d={icons.arrowRight} className="h-4 w-4" />
           </Link>
@@ -44,7 +44,7 @@ function Hero() {
             <Icon d={icons.shuffle} className="h-4 w-4" /> Discover someone new
           </button>
         </div>
-        <p className="num mt-7 border-t border-paper-100/25 pt-3 font-body text-label text-paper-300">
+        <p className="num mt-5 border-t border-paper-100/25 pt-2.5 font-body text-label text-paper-300 sm:mt-7 sm:pt-3">
           {fighters.length} lives · {events.length} events · {eras.length} chapters
         </p>
       </div>
@@ -202,7 +202,9 @@ export default function HomePage() {
           />
           <div className="grid gap-3 sm:grid-cols-2">
             {forgotten.map((f, i) => (
-              <FighterCard key={f.id} fighter={f} compact vault delay={i * 70} />
+              <div key={f.id} className={i >= 2 ? 'hidden sm:block' : undefined}>
+                <FighterCard fighter={f} compact vault />
+              </div>
             ))}
           </div>
         </div>
@@ -222,7 +224,9 @@ export default function HomePage() {
           />
           <div className="grid gap-3 sm:grid-cols-2">
             {women.map((f, i) => (
-              <FighterCard key={f.id} fighter={f} compact delay={i * 70} />
+              <div key={f.id} className={i >= 2 ? 'hidden sm:block' : undefined}>
+                <FighterCard fighter={f} compact />
+              </div>
             ))}
           </div>
         </section>
@@ -281,7 +285,9 @@ export default function HomePage() {
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {featuredMovements.map((m, i) => (
-              <MovementCard key={m.id} movement={m} vault delay={i * 70} />
+              <div key={m.id} className={i >= 2 ? 'hidden sm:block' : undefined}>
+                <MovementCard movement={m} vault />
+              </div>
             ))}
           </div>
 

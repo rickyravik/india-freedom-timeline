@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useKeyboardShortcut } from '@/lib/hooks';
 import { SearchPalette } from '@/components/search-palette';
-import { Icon, icons } from '@/components/ui';
+import { BottomSheet, Icon, icons } from '@/components/ui';
 
 const NAV = [
   { to: '/', label: 'Home', end: true, icon: 'M4 11 12 4l8 7v9H4z' },
@@ -10,6 +10,16 @@ const NAV = [
   { to: '/fighters', label: 'People', icon: icons.person },
   { to: '/map', label: 'Map', icon: icons.map },
   { to: '/learn', label: 'Learn', icon: 'M4 5h16v11H4zM8 21h8M12 16v5' },
+];
+
+/* Routes with no tab of their own. On phones the footer is the only other way
+   to reach them, and on a long page that is ten screens away — so the thumb
+   bar carries a More sheet. */
+const MORE = [
+  { to: '/events', label: 'Events', icon: icons.clock, hint: 'Every dated moment, 1757–1947' },
+  { to: '/movements', label: 'Movements', icon: icons.flag, hint: 'The many roads to freedom' },
+  { to: '/search', label: 'Search', icon: icons.search, hint: 'Find a name, a place, a year' },
+  { to: '/about', label: 'About & sources', icon: icons.file, hint: 'Historical method and corrections' },
 ];
 
 /* The Ashoka Chakra has 24 spokes. */
@@ -87,29 +97,57 @@ function Header({ onSearch }: { onSearch: () => void }) {
 
 /* Thumb navigation on phones                                          */
 function MobileNav() {
+  const { pathname } = useLocation();
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreActive = MORE.some((m) => pathname.startsWith(m.to));
+
+  /* Close the sheet on navigation, so a tap does not leave it hanging open. */
+  useEffect(() => setMoreOpen(false), [pathname]);
+
+  const itemClass = (active: boolean) =>
+    `relative flex min-h-14 min-w-12 flex-1 flex-col items-center justify-center gap-1 font-body text-xs font-medium transition-colors duration-160 ${
+      active ? 'text-oxide-bright' : 'text-paper-300 active:text-paper-50'
+    }`;
+
   return (
-    <nav aria-label="Primary" className="fixed inset-x-0 bottom-0 z-40 border-t border-brass-bright/25 bg-vault pb-safe md:hidden">
-      <div className="mx-auto flex max-w-md items-stretch justify-around px-1">
-        {NAV.map((n) => (
-          <NavLink
-            key={n.to}
-            to={n.to}
-            end={n.end}
-            className={({ isActive }) =>
-              `relative flex min-h-14 min-w-14 flex-1 flex-col items-center justify-center gap-1 font-body text-xs font-medium transition-colors duration-160 ${isActive ? 'text-oxide-bright' : 'text-paper-300 active:text-paper-50'}`
-            }
-          >
-            {({ isActive }) => (
-              <>
-                <span aria-hidden="true" className={`absolute top-0 h-0.5 w-8 bg-oxide-bright transition-transform duration-400 ease-cinematic ${isActive ? 'scale-x-100' : 'scale-x-0'}`} />
-                <Icon d={n.icon} className="h-[22px] w-[22px]" />
-                {n.label}
-              </>
-            )}
-          </NavLink>
-        ))}
-      </div>
-    </nav>
+    <>
+      <nav aria-label="Primary" className="fixed inset-x-0 bottom-0 z-40 border-t border-brass-bright/25 bg-vault pb-safe md:hidden">
+        <div className="mx-auto flex max-w-md items-stretch justify-around px-0.5">
+          {NAV.map((n) => (
+            <NavLink key={n.to} to={n.to} end={n.end} className={({ isActive }) => itemClass(isActive)}>
+              {({ isActive }) => (
+                <>
+                  <span aria-hidden="true" className={`absolute top-0 h-0.5 w-8 bg-oxide-bright transition-transform duration-400 ease-cinematic ${isActive ? 'scale-x-100' : 'scale-x-0'}`} />
+                  <Icon d={n.icon} className="h-[22px] w-[22px]" />
+                  {n.label}
+                </>
+              )}
+            </NavLink>
+          ))}
+          <button type="button" onClick={() => setMoreOpen(true)} aria-expanded={moreOpen} className={itemClass(moreActive)}>
+            <span aria-hidden="true" className={`absolute top-0 h-0.5 w-8 bg-oxide-bright transition-transform duration-400 ease-cinematic ${moreActive ? 'scale-x-100' : 'scale-x-0'}`} />
+            <Icon d={icons.more} className="h-[22px] w-[22px]" />
+            More
+          </button>
+        </div>
+      </nav>
+
+      <BottomSheet open={moreOpen} onClose={() => setMoreOpen(false)} title="More of the archive">
+        <ul className="space-y-2">
+          {MORE.map((m) => (
+            <li key={m.to}>
+              <Link to={m.to} className="doc-interactive flex items-start gap-3 p-4">
+                <Icon d={m.icon} className="mt-0.5 h-5 w-5 shrink-0 text-brass-deep" />
+                <span className="min-w-0">
+                  <span className="block font-display text-h4 font-bold text-ink">{m.label}</span>
+                  <span className="mt-0.5 block font-body text-label text-ink-soft">{m.hint}</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </BottomSheet>
+    </>
   );
 }
 

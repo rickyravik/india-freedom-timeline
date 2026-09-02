@@ -130,7 +130,7 @@
   /* Mounted sheet — gummed paper laid on the album page. Every route is one
      sheet, so reading always happens on paper and the field stays album ink. */
   .sheet {
-    @apply bg-paper-100 px-3 py-6 text-ink sm:px-5 sm:py-8;
+    @apply bg-paper-100 px-3 py-4 text-ink sm:px-5 sm:py-8;
   }
 
   /* Document — a mounted record on gummed paper. One elevation: the frame. */
