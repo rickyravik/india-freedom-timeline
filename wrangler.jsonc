@@ -4,6 +4,12 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "india-freedom-timeline",
   "compatibility_date": "2026-09-02",
+  // Wrangler runs this before deploying, so `wrangler deploy` produces dist/
+  // on its own. Without it the deploy depends on the platform's build command
+  // being set, and an empty one fails with "assets.directory does not exist".
+  "build": {
+    "command": "npm run build"
+  },
   "assets": {
     "directory": "./dist",
     // Every unmatched path returns index.html so react-router can route it,
