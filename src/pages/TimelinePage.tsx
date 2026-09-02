@@ -50,7 +50,7 @@ export default function TimelinePage() {
   const [zoom, setZoom] = useState<'chapters' | 'full'>('full');
   const [sheetOpen, setSheetOpen] = useState(false);
   const [region, setRegion] = useState<RegionId | null>((params.get('region') as RegionId) || null);
-  const [category, setCategory] = useState<EventCategory | null>(null);
+  const [category, setCategory] = useState<EventCategory | null>((params.get('category') as EventCategory) || null);
   const [movementId, setMovementId] = useState<string | null>(params.get('movement'));
 
   const filtered = useMemo(
