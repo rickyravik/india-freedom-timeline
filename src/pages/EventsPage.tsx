@@ -42,14 +42,14 @@ export default function EventsPage() {
 
   return (
     <div className="pb-20">
-      <PageIntro eyebrow={`${events.length} recorded moments`} title="Key Historical Events" lede="From Plassey to the midnight of freedom — the uprisings, marches, trials and turning points that made a nation.">
+      <PageIntro title="Key Historical Events" lede="From Plassey to the midnight of freedom — the uprisings, marches, trials and turning points that made a nation.">
         <div className="flex flex-wrap items-center gap-2">
-          <button type="button" className={`chip min-h-12 !px-5 ${activeCount ? 'chip-active' : ''}`} onClick={() => setSheetOpen(true)} aria-haspopup="dialog">
+          <button type="button" className={`chip min-h-12 !px-5 text-meta ${activeCount ? 'chip-active' : ''}`} onClick={() => setSheetOpen(true)} aria-haspopup="dialog">
             Filters{activeCount > 0 && ` · ${activeCount}`}
           </button>
           <div className="-mx-4 flex gap-2 overflow-x-auto px-4 scrollbar-none sm:mx-0 sm:px-0" role="group" aria-label="Jump to decade">
             {decades.map((d) => (
-              <button key={d} type="button" aria-pressed={decade === d} onClick={() => setDecade(decade === d ? null : d)} className={`chip shrink-0 font-display ${decade === d ? 'chip-active' : ''}`}>
+              <button key={d} type="button" aria-pressed={decade === d} onClick={() => setDecade(decade === d ? null : d)} className={`chip num shrink-0 ${decade === d ? 'chip-active' : ''}`}>
                 {d}
               </button>
             ))}
@@ -65,18 +65,21 @@ export default function EventsPage() {
       </BottomSheet>
 
       <div className="container-page">
+        <p className="num mb-4 font-body text-label text-ink-faint" role="status">
+          Showing {filtered.length} of {events.length}
+        </p>
         {filtered.length === 0 ? (
           <EmptyState title="No events match" hint="Try another decade or type." />
         ) : (
-          <div className="space-y-12">
+          <div className="space-y-14 sm:space-y-20">
             {groups.map(([dec, list]) => {
               const era = eraById.get(list[0].era);
               return (
                 <section key={dec} aria-label={`${dec}s`}>
                   <Reveal className="mb-4 flex items-baseline gap-4">
-                    <h2 className={`font-display text-4xl font-black tracking-tight ${era ? eraAccent.text[era.accent] : 'text-oxide'}`}>{dec}s</h2>
-                    <span className="hairline" />
-                    <span className="shrink-0 text-xs font-semibold text-ink-faint">{list.length} moment{list.length === 1 ? '' : 's'}</span>
+                    <h2 className={`denom ${era ? eraAccent.text[era.accent] : 'text-oxide'}`}>{dec}s</h2>
+                    <span className="rule flex-1" aria-hidden="true" />
+                    <span className="num shrink-0 font-body text-label text-ink-faint">{list.length} moment{list.length === 1 ? '' : 's'}</span>
                   </Reveal>
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {list.map((e, i) => (

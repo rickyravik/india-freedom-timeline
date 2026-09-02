@@ -1,9 +1,8 @@
-@import '@fontsource-variable/fraunces/opsz.css';
-@import '@fontsource-variable/fraunces/opsz-italic.css';
-@import '@fontsource-variable/inter';
-@import '@fontsource/crimson-pro/400.css';
-@import '@fontsource/crimson-pro/400-italic.css';
-@import '@fontsource/crimson-pro/600.css';
+@import '@fontsource-variable/bodoni-moda/opsz.css';
+@import '@fontsource-variable/bodoni-moda/opsz-italic.css';
+@import '@fontsource-variable/archivo-narrow/wght.css';
+@import '@fontsource-variable/faustina/wght.css';
+@import '@fontsource-variable/faustina/wght-italic.css';
 
 @tailwind base;
 @tailwind components;
@@ -13,22 +12,31 @@
 /* Base                                                                */
 @layer base {
   html {
-    scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
     scroll-padding-top: 7rem;
   }
 
+  /* The album page is the field; gummed sheets are mounted on it.
+     The opsz pin is global, not per-heading: Bodoni's optical-size axis left
+     on `auto` thins its hairlines away at any large size, monograms and
+     denominations included, not only in an h1. Faces without the axis ignore it. */
   body {
-    @apply bg-paper-100 text-ink font-body antialiased;
-    background-image:
-      radial-gradient(ellipse at 15% 8%, rgba(192, 122, 44, 0.05), transparent 45%),
-      radial-gradient(ellipse at 85% 95%, rgba(34, 48, 79, 0.05), transparent 45%);
+    @apply bg-vault text-paper-100 font-body antialiased;
+    font-optical-sizing: none;
+    font-variation-settings: 'opsz' 16;
   }
 
+  /* An engraved Didone carries at 600; 700 reads chunky at display sizes. */
   h1, h2, h3, h4 {
     @apply font-display;
-    font-optical-sizing: auto;
+    font-weight: 600;
+    letter-spacing: 0;
     text-wrap: balance;
+  }
+
+  /* Denominations and dates are data: always a tabular column */
+  .num {
+    font-variant-numeric: tabular-nums lining-nums;
   }
 
   :focus-visible {
@@ -36,11 +44,11 @@
   }
   .vault :focus-visible,
   .on-vault :focus-visible {
-    @apply ring-brass-bright ring-offset-vault;
+    @apply ring-oxide-bright ring-offset-vault;
   }
 
   ::selection {
-    background: rgba(192, 122, 44, 0.3);
+    background: rgba(196, 97, 31, 0.3);
   }
 
   button, a {
@@ -48,9 +56,6 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
       animation-delay: 0ms !important;
@@ -74,86 +79,147 @@
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 
-  /* Archive surface: dark, vignetted, faintly grained */
+  /* A pane — one stamp, mounted on a sheet: era ink ground, perforated all
+     round, its teeth cut from the sheet's own paper. Every dark block in the
+     app is a pane, so `.vault` carries this treatment everywhere.          */
   .vault {
-    @apply relative overflow-hidden bg-vault text-paper-100;
-    background-image:
-      radial-gradient(ellipse at 20% 0%, rgba(51, 69, 110, 0.35), transparent 55%),
-      radial-gradient(ellipse at 100% 100%, rgba(153, 53, 39, 0.16), transparent 50%),
-      linear-gradient(180deg, #1a1611 0%, #15120e 100%);
-  }
-  .vault::after {
-    content: '';
-    pointer-events: none;
-    @apply absolute inset-0 opacity-[0.07] mix-blend-screen;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  .vault > * {
-    @apply relative z-[1];
+    @apply perf-all on-sheet relative bg-forest text-paper-100;
   }
 
-  /* Paper document card */
+  /* ---------------------------------------------------------------- */
+  /* Perforation — the world's signature edge.                        */
+  /* The tooth colour must match whatever the pane sits ON, so it is  */
+  /* a variable: --tooth, defaulting to the album page.               */
+  .perf-x,
+  .perf-all {
+    --tooth: #10312b;
+    background-image:
+      radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px),
+      radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px);
+    background-repeat: repeat-x, repeat-x;
+    background-size: 12px 12px;
+    background-position: 0 -6px, 0 calc(100% + 6px);
+  }
+  .perf-all {
+    background-image:
+      radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px),
+      radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px),
+      radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px),
+      radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 12px 12px;
+    background-position: 0 -6px, 0 calc(100% + 6px), -6px 0, calc(100% + 6px) 0;
+  }
+  /* On a mounted sheet, the teeth are the sheet's own paper */
+  .on-sheet {
+    --tooth: #f2ede2;
+  }
+  /* Finer gauge, for a stamp small enough that a 12px tooth would read crude */
+  .perf-fine {
+    --tooth: #f2ede2;
+    background-image:
+      radial-gradient(circle at 4px 4px, var(--tooth) 2.1px, transparent 2.3px),
+      radial-gradient(circle at 4px 4px, var(--tooth) 2.1px, transparent 2.3px),
+      radial-gradient(circle at 4px 4px, var(--tooth) 2.1px, transparent 2.3px),
+      radial-gradient(circle at 4px 4px, var(--tooth) 2.1px, transparent 2.3px);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 8px 8px;
+    background-position: 0 -4px, 0 calc(100% + 4px), -4px 0, calc(100% + 4px) 0;
+  }
+
+  /* Mounted sheet — gummed paper laid on the album page. Every route is one
+     sheet, so reading always happens on paper and the field stays album ink. */
+  .sheet {
+    @apply bg-paper-100 px-3 py-6 text-ink sm:px-5 sm:py-8;
+  }
+
+  /* Document — a mounted record on gummed paper. One elevation: the frame. */
   .doc {
-    @apply relative rounded-lg border border-paper-300 bg-paper-50 shadow-card transition-[transform,box-shadow] duration-400 ease-cinematic;
+    @apply relative rounded-sm border border-paper-300 bg-paper-50 text-ink transition-colors duration-160 ease-cinematic;
+  }
+  /* A record hinged onto the sheet: the same paper card, but with its top and
+     bottom edges perforated. The teeth are the sheet's own paper against the
+     card's lighter stock, so the edge reads without adding an ink. */
+  .doc-mount {
+    @apply doc perf-x on-sheet rounded-none border-x-0;
   }
   .doc-interactive {
-    @apply doc hover:-translate-y-0.5 hover:shadow-lifted active:translate-y-0 active:shadow-card;
+    @apply doc hover:border-ink;
   }
 
-  /* Hairline ornaments */
-  .hairline {
-    @apply h-px w-full bg-gradient-to-r from-transparent via-brass/50 to-transparent;
+  /* Rules — engraved frame lines, solid and full width */
+  .rule {
+    @apply h-px w-full bg-brass/60;
   }
-  .hairline-vault {
-    @apply h-px w-full bg-gradient-to-r from-transparent via-brass-bright/40 to-transparent;
+  .rule-vault {
+    @apply h-px w-full bg-brass-bright/40;
+  }
+  .rule-double {
+    @apply h-[5px] w-full border-y border-brass/60;
+  }
+  .rule-double-vault {
+    @apply h-[5px] w-full border-y border-brass-bright/45;
   }
 
-  .eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-sepia;
+  /* Label — 13px metadata and list headings; never a kicker above a heading */
+  .label {
+    @apply font-body text-label font-medium text-sepia;
   }
-  .eyebrow-vault {
-    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-brass-bright;
+  .label-vault {
+    @apply font-body text-label font-medium text-paper-300;
   }
 
-  /* Seal button — primary action */
+  /* Denomination — a year set as a stamp's value */
+  .denom {
+    @apply num font-display text-h3 font-bold leading-none;
+  }
+
+  /* Postmark — the cancellation ring. Ring and lettering are currentColor, so
+     it inherits the pane's own ink and stays legible on light and dark alike. */
+  .postmark {
+    @apply pointer-events-none grid place-items-center rounded-full border-2 border-current text-center font-body text-xs font-semibold uppercase leading-tight tracking-[0.08em] opacity-70;
+    transform: rotate(-13deg);
+  }
+
+  /* Franking action — the ochre value the record is paid with */
   .btn-seal {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-oxide px-6 text-sm font-semibold text-paper-50 shadow-card transition-[transform,background-color,box-shadow] duration-160 ease-cinematic hover:bg-oxide-bright hover:shadow-lifted active:scale-[0.98] active:shadow-card;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-oxide px-5 font-body text-meta font-semibold text-paper-50 transition-colors duration-160 ease-cinematic hover:bg-oxide-deep;
   }
   .btn-ghost {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-ink/25 bg-transparent px-6 text-sm font-semibold text-ink transition-[transform,background-color,border-color] duration-160 ease-cinematic hover:border-ink/60 hover:bg-paper-200/60 active:scale-[0.98];
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-ink/40 bg-transparent px-5 font-body text-meta font-semibold text-ink transition-colors duration-160 ease-cinematic hover:border-ink hover:bg-paper-200/70;
   }
   .btn-ghost-vault {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-paper-100/30 bg-transparent px-6 text-sm font-semibold text-paper-100 transition-[transform,background-color,border-color] duration-160 ease-cinematic hover:border-paper-100/70 hover:bg-paper-100/10 active:scale-[0.98];
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-paper-100/45 bg-transparent px-5 font-body text-meta font-semibold text-paper-100 transition-colors duration-160 ease-cinematic hover:border-paper-100 hover:bg-paper-100/10;
   }
 
   .chip {
-    @apply inline-flex min-h-9 items-center gap-1.5 rounded-full border border-paper-300 bg-paper-50 px-3.5 py-1 text-xs font-semibold text-ink-soft transition-[background-color,border-color,color,transform] duration-160 ease-cinematic active:scale-[0.97];
+    @apply inline-flex min-h-9 items-center gap-1.5 rounded-sm border border-paper-400 bg-paper-50 px-3 py-1 font-body text-label font-medium text-ink-soft transition-colors duration-160 ease-cinematic hover:border-ink hover:text-ink;
   }
   .chip-active {
-    @apply border-ink bg-ink text-paper-50;
+    @apply border-ink bg-ink text-paper-50 hover:text-paper-50;
   }
   .chip-vault {
-    @apply inline-flex min-h-9 items-center gap-1.5 rounded-full border border-paper-100/20 bg-paper-100/5 px-3.5 py-1 text-xs font-semibold text-paper-200 transition-[background-color,border-color,color,transform] duration-160 ease-cinematic hover:border-paper-100/50 hover:bg-paper-100/10 active:scale-[0.97];
+    @apply inline-flex min-h-9 items-center gap-1.5 rounded-sm border border-paper-100/30 bg-transparent px-3 py-1 font-body text-label font-medium text-paper-200 transition-colors duration-160 ease-cinematic hover:border-paper-100 hover:text-paper-50;
   }
 
   .prose-reading {
-    @apply font-reading text-[1.1rem] leading-[1.75] text-ink;
+    @apply font-reading text-reading text-ink;
   }
   .prose-reading-vault {
-    @apply font-reading text-[1.1rem] leading-[1.75] text-paper-200;
+    @apply font-reading text-reading text-paper-200;
   }
   .dropcap::first-letter {
-    @apply float-left mr-2 mt-1 font-display text-[3.4rem] font-bold leading-[0.8] text-oxide;
+    @apply float-left mr-2 mt-1 font-display text-h1 font-bold leading-[0.8] text-oxide;
   }
 
   /* Ledger-style label/value */
   .ledger-row {
-    @apply flex items-baseline justify-between gap-4 border-b border-dotted border-paper-400/70 py-2 text-sm;
+    @apply num flex items-baseline justify-between gap-4 border-b border-paper-400/70 py-2 font-body text-meta;
   }
 
-  /* Stamp — small uppercase label in a bordered box */
+  /* Stamp — 12px uppercase tag in an engraved box */
   .stamp {
-    @apply inline-block rounded-[3px] border border-current px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.14em] leading-none;
+    @apply inline-block border border-current px-1.5 py-px font-body text-xs font-semibold uppercase leading-tight tracking-[0.06em];
   }
 }
 
@@ -162,7 +228,7 @@
 @layer utilities {
   .scrollbar-thin-archival {
     scrollbar-width: thin;
-    scrollbar-color: rgba(138, 111, 82, 0.5) transparent;
+    scrollbar-color: rgba(143, 122, 69, 0.6) transparent;
   }
   .scrollbar-none {
     scrollbar-width: none;
@@ -209,8 +275,10 @@
     opacity: 1;
     transform: none;
   }
+  /* `none`, not inset(0): a retained clip shaves glyphs that overflow their
+     line box, such as a 5.5rem numeral at leading 0.9. */
   .reveal-mask.in-view > * {
-    clip-path: inset(0 0 0 0);
+    clip-path: none;
   }
   /* Without JS the observer never runs — make sure content still shows. */
   .no-js .reveal,
@@ -221,14 +289,7 @@
     clip-path: none;
   }
 
-  /* Scroll-driven effects (progressive; static where unsupported)     */
-  @supports (animation-timeline: view()) {
-    .drift-on-scroll {
-      animation: drift linear both;
-      animation-timeline: view();
-      animation-range: entry 0% exit 100%;
-    }
-  }
+  /* Scroll-driven spine (progressive; static where unsupported)      */
   @supports (animation-timeline: scroll()) {
     .spine-progress {
       transform-origin: top;
@@ -244,7 +305,6 @@
     }
   }
   @media (prefers-reduced-motion: reduce) {
-    .drift-on-scroll,
     .spine-progress {
       animation: none !important;
       transform: none !important;

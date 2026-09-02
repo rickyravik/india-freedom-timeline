@@ -19,9 +19,9 @@ const AboutPage = lazy(() => import('@/pages/AboutPage'));
 function NotFound() {
   return (
     <div className="container-page pb-20 pt-32 text-center">
-      <p className="eyebrow mb-2">Page not found</p>
-      <h1 className="mb-4 text-3xl font-bold">This trail goes cold…</h1>
-      <p className="mx-auto mb-6 max-w-md text-ink-soft">
+      <div className="rule-double mx-auto mb-6 max-w-xs" />
+      <h1 className="mb-4 text-h2">This trail goes cold</h1>
+      <p className="mx-auto mb-6 max-w-md font-body text-meta text-ink-soft">
         The page you are looking for doesn’t exist. But thousands of stories are waiting to be discovered.
       </p>
       <div className="flex flex-wrap justify-center gap-3">
@@ -44,9 +44,9 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boole
     if (this.state.hasError) {
       return (
         <div className="container-page pb-20 pt-32 text-center">
-          <p className="eyebrow mb-2">Something went wrong</p>
-          <h1 className="mb-4 text-3xl font-bold">A page failed to load</h1>
-          <p className="mx-auto mb-6 max-w-md text-ink-soft">Please reload, or return to the home page.</p>
+          <div className="rule-double mx-auto mb-6 max-w-xs" />
+          <h1 className="mb-4 text-h2">A page failed to load</h1>
+          <p className="mx-auto mb-6 max-w-md font-body text-meta text-ink-soft">Please reload, or return to the home page.</p>
           <a className="btn-seal" href="/">Back to home</a>
         </div>
       );

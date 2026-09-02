@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { search } from '@/lib/search';
 import { dailyPick, fighters } from '@/lib/content';
 import { usePageMeta } from '@/lib/hooks';
-import { EmptyState, PageIntro, PortraitMedallion, Reveal } from '@/components/ui';
+import { EmptyState, Icon, PageIntro, PortraitMedallion, Reveal, icons } from '@/components/ui';
 
 const kindBadge: Record<string, string> = { fighter: 'Person', event: 'Event', movement: 'Movement' };
 const suggestions = ['Bhagat Singh', 'Rani Lakshmibai', 'Kattabomman', '1942', 'Salt', 'Kerala', 'Assam', 'INA', 'Women', 'Santhal', 'Kakori'];
@@ -30,21 +30,17 @@ export default function SearchPage() {
 
   return (
     <div className="pb-20">
-      <PageIntro eyebrow="The whole archive, one box" title="Search">
+      <PageIntro title="Search">
         <label className="relative block max-w-2xl">
           <span className="sr-only">Search the archive</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-ink-faint" aria-hidden="true">
-            <circle cx="11" cy="11" r="7" />
-            <path d="m20 20-3.5-3.5" />
-          </svg>
+          <Icon d={icons.search} className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-ink-faint" />
           <input
             ref={inputRef}
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Name, birthplace, state, movement, year, event, role…"
-            className="min-h-14 w-full rounded-full border border-paper-300 bg-paper-50 pl-13 pr-5 text-base text-ink shadow-card placeholder:text-ink-faint focus:border-ink"
-            style={{ paddingLeft: '3.25rem' }}
+            className="min-h-14 w-full rounded-sm border border-paper-400 bg-paper-50 pl-12 pr-5 font-body text-reading text-ink placeholder:text-ink-faint focus:border-ink"
           />
         </label>
       </PageIntro>
@@ -53,7 +49,7 @@ export default function SearchPage() {
         {query.trim().length < 2 ? (
           <div className="space-y-8">
             <Reveal>
-              <p className="eyebrow mb-3">Try searching for</p>
+              <p className="label mb-3">Try searching for</p>
               <div className="flex flex-wrap gap-2">
                 {suggestions.map((s) => (
                   <button key={s} type="button" className="chip min-h-10" onClick={() => setQuery(s)}>
@@ -62,13 +58,14 @@ export default function SearchPage() {
                 ))}
               </div>
             </Reveal>
-            <Reveal className="vault rounded-lg p-6 shadow-vault">
-              <p className="eyebrow-vault mb-3">Or discover someone new today</p>
+            <Reveal className="vault px-5 py-7 sm:px-8 sm:py-9">
+              <p className="label-vault mb-3">Or discover someone new today</p>
+              <div className="rule-vault mb-4" />
               <Link to={`/fighters/${discover.slug}`} className="group flex items-center gap-4">
                 <PortraitMedallion name={discover.name} size="lg" />
                 <span>
-                  <span className="block font-display text-2xl font-semibold text-paper-50 group-hover:text-brass-bright">{discover.name} →</span>
-                  <span className="mt-1 block text-sm leading-relaxed text-paper-300">{discover.summary}</span>
+                  <span className="inline-flex items-center gap-2 font-display text-h3 font-bold text-paper-50 transition-colors duration-160 group-hover:text-brass-bright">{discover.name}<Icon d={icons.arrowRight} className="h-4 w-4" /></span>
+                  <span className="mt-1 block font-body text-meta text-paper-300">{discover.summary}</span>
                 </span>
               </Link>
             </Reveal>
@@ -77,23 +74,23 @@ export default function SearchPage() {
           <EmptyState title={`Nothing found for “${query}”`} hint="Try a name, a state, a year like 1930, or a movement like Swadeshi." />
         ) : (
           <>
-            <p className="mb-3 text-sm text-ink-faint" role="status">
+            <p className="num mb-3 font-body text-label text-ink-faint" role="status">
               {results.length} result{results.length === 1 ? '' : 's'}
             </p>
             <ol className="space-y-2" aria-label="Search results">
               {results.map((r, i) => (
                 <Reveal as="li" key={r.to} delay={Math.min(i, 8) * 40}>
-                  <Link to={r.to} className="doc-interactive flex items-center gap-3 p-3.5">
+                  <Link to={r.to} className="doc-interactive group flex items-center gap-3 p-3.5">
                     {r.kind === 'fighter' ? (
                       <PortraitMedallion name={r.title} size="sm" />
                     ) : (
-                      <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-paper-200 font-display text-base">
-                        {r.kind === 'event' ? '⧗' : '⚑'}
+                      <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm bg-paper-200 text-ink-soft">
+                        <Icon d={r.kind === 'event' ? icons.clock : icons.flag} className="h-4 w-4" />
                       </span>
                     )}
                     <span className="min-w-0">
-                      <span className="block truncate font-display text-base font-semibold text-ink">{r.title}</span>
-                      <span className="block truncate text-xs text-ink-faint">{r.subtitle}</span>
+                      <span className="block truncate font-display text-base font-bold text-ink transition-colors duration-160 group-hover:text-oxide">{r.title}</span>
+                      <span className="num block truncate font-body text-label text-ink-faint">{r.subtitle}</span>
                     </span>
                     <span className="stamp ml-auto shrink-0 text-sepia">{kindBadge[r.kind]}</span>
                   </Link>

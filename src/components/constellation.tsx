@@ -83,8 +83,8 @@ export function Constellation({ subject, related }: { subject: FreedomFighter; r
               style={{ left: `${(p.x / W) * 100}%`, top: `${(p.y / H) * 100}%`, animationDelay: `${200 + i * 90}ms` }}
             >
               <PortraitMedallion name={f.name} era={era} size="md" className="transition-transform duration-400 ease-cinematic group-hover:scale-110" />
-              <span className="mt-2 font-display text-[13px] font-semibold leading-tight text-paper-100 transition-colors group-hover:text-brass-bright">{f.name}</span>
-              <span className="text-[10px] font-semibold text-paper-400">{lifespan(f)}</span>
+              <span className="mt-2 font-body text-xs font-medium leading-tight text-paper-100 transition-colors group-hover:text-brass-bright">{f.name}</span>
+              <span className="num font-body text-xs text-paper-400">{lifespan(f)}</span>
             </Link>
           );
         })}

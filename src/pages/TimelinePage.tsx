@@ -1,14 +1,22 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import type { EventCategory, RegionId } from '@/types';
+import type { EventCategory, HistoricalEvent, RegionId } from '@/types';
 import { categoryLabels, eras, events, fightersForEvent, fighters, movements } from '@/lib/content';
 import { regionNames } from '@/data/regions';
 import { useActiveSection, usePageMeta } from '@/lib/hooks';
-import { BottomSheet, ChipGroup, EmptyState, PageIntro, Reveal, Segmented, eraAccent } from '@/components/ui';
+import { BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, Postmark, Reveal, Segmented, eraAccent, icons } from '@/components/ui';
 import { FighterChip } from '@/components/cards';
 
 /* ------------------------------------------------------------------ */
-/* Era rail — sticky, tracks the active chapter                        */
+/* Ledger sub-line under the year: day/month for a single date, the    */
+/* full label for a range (so the end date always carries its year).   */
+function dateSubLine(event: HistoricalEvent): string {
+  if (event.dateLabel.includes('–')) return event.dateLabel;
+  return event.dateLabel.replace(String(event.date.year), '').trim();
+}
+
+/* ------------------------------------------------------------------ */
+/* Era rail — sticky chapter nav, on the sheet's own paper             */
 function EraRail({ activeId }: { activeId: string | null }) {
   const railRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -18,7 +26,7 @@ function EraRail({ activeId }: { activeId: string | null }) {
   }, [activeId]);
 
   return (
-    <nav aria-label="Jump to era" className="sticky top-16 z-30 -mx-4 border-b border-paper-300/80 bg-paper-100/92 px-4 backdrop-blur-md sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+    <nav aria-label="Jump to era" className="sticky top-16 z-30 -mx-4 border-b border-paper-300/80 bg-paper-100 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
       <div ref={railRef} className="flex gap-1 overflow-x-auto py-2 scrollbar-none">
         {eras.map((era) => {
           const active = era.id === activeId;
@@ -28,11 +36,11 @@ function EraRail({ activeId }: { activeId: string | null }) {
               data-era={era.id}
               href={`#era-${era.id}`}
               aria-current={active ? 'true' : undefined}
-              className={`relative flex shrink-0 items-baseline gap-2 whitespace-nowrap rounded-full px-3.5 py-2 text-xs font-semibold transition-[background-color,color] duration-400 ease-cinematic ${
+              className={`relative flex shrink-0 items-baseline gap-2 whitespace-nowrap rounded-sm px-3.5 py-2 font-body text-meta font-medium transition-colors duration-160 ease-cinematic ${
                 active ? 'bg-ink text-paper-50' : 'text-ink-soft hover:bg-paper-200'
               }`}
             >
-              <span className={`font-display text-sm font-bold ${active ? 'text-brass-bright' : eraAccent.text[era.accent]}`}>{era.startYear}</span>
+              <span className={`num font-display font-bold ${active ? 'text-brass-bright' : eraAccent.text[era.accent]}`}>{era.startYear}</span>
               <span>{era.name}</span>
             </a>
           );
@@ -62,6 +70,21 @@ export default function TimelinePage() {
   const activeSection = useActiveSection(eraIds);
   const activeEraId = activeSection?.replace('era-', '') ?? null;
 
+  /* Chapters that survive the filters, in order. The first one rendered is
+     the pane that carries the page's single postmark.                    */
+  const chapters = useMemo(
+    () =>
+      eras
+        .map((era, index) => ({
+          era,
+          index,
+          eraEvents: filtered.filter((e) => e.era === era.id),
+          eraPeople: fighters.filter((f) => f.era === era.id && (!region || f.region === region)),
+        }))
+        .filter((c) => c.eraEvents.length > 0 || c.eraPeople.length > 0),
+    [filtered, region],
+  );
+
   const clearFilters = () => {
     setRegion(null);
     setCategory(null);
@@ -79,7 +102,8 @@ export default function TimelinePage() {
 
   return (
     <div className="pb-16">
-      <PageIntro eyebrow="1757 — 1947 · nine chapters" title="The Freedom Timeline" lede="Two centuries of resistance, chapter by chapter. Select any moment to meet the people behind it — every story leads to another.">
+      <PageIntro title="The Freedom Timeline" lede="Two centuries of resistance, chapter by chapter. Select any moment to meet the people behind it — every story leads to another.">
+        <p className="label num mb-4">1757 – 1947 · nine chapters</p>
         <div className="flex flex-wrap items-center gap-3">
           <Segmented
             label="View"
@@ -91,17 +115,15 @@ export default function TimelinePage() {
             ]}
           />
           <button type="button" className={`chip min-h-10 ${activeFilters ? 'chip-active' : ''}`} onClick={() => setSheetOpen(true)} aria-haspopup="dialog">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
-              <path d="M4 6h16M7 12h10M10 18h4" />
-            </svg>
+            <Icon d="M4 6h16M7 12h10M10 18h4" className="h-3.5 w-3.5" />
             Filters{activeFilters > 0 && ` · ${activeFilters}`}
           </button>
           {activeFilters > 0 && (
-            <button type="button" onClick={clearFilters} className="text-sm font-semibold text-oxide underline decoration-oxide/40 underline-offset-4">
+            <button type="button" onClick={clearFilters} className="font-body text-meta font-medium text-oxide underline decoration-oxide/40 underline-offset-4">
               Clear
             </button>
           )}
-          <p className="ml-auto text-sm text-ink-faint" role="status">
+          <p className="label num ml-auto" role="status">
             {filtered.length} of {events.length} events
           </p>
         </div>
@@ -116,6 +138,7 @@ export default function TimelinePage() {
 
       <div className="container-page">
         {zoom === 'chapters' ? (
+          /* A sheet of nine commemoratives — one ink per chapter */
           <section aria-label="Chapters of the freedom struggle" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {eras.map((era, i) => {
               const count = filtered.filter((e) => e.era === era.id).length;
@@ -128,18 +151,20 @@ export default function TimelinePage() {
                       setZoom('full');
                       requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById(`era-${era.id}`)?.scrollIntoView({ block: 'start' })));
                     }}
-                    className="vault group flex h-full w-full flex-col rounded-lg p-6 text-left shadow-vault transition-transform duration-400 ease-cinematic hover:-translate-y-0.5 active:translate-y-0"
+                    className={`perf-all on-sheet flex h-full w-full flex-col px-5 py-7 text-left transition-opacity duration-160 ease-cinematic hover:opacity-90 sm:px-6 ${eraAccent.bg[era.accent]} ${eraAccent.onInk[era.accent]}`}
                   >
-                    <span className={`font-display text-5xl font-black leading-none tracking-tight ${eraAccent.textVault[era.accent]}`}>{era.startYear}</span>
-                    <span className="mt-1 text-xs font-semibold text-paper-400">to {era.endYear}</span>
-                    <span className="mt-4 font-display text-2xl font-semibold leading-tight text-paper-50 group-hover:text-brass-bright">{era.name}</span>
-                    <span className="mt-1 text-sm italic text-paper-300">{era.tagline}</span>
-                    <span className="mt-4 line-clamp-3 text-sm leading-relaxed text-paper-300/90">{era.description}</span>
-                    <span className="mt-5 flex items-center gap-3 text-xs font-semibold text-paper-400">
+                    <span className="denom block text-h1">{era.startYear}</span>
+                    <span className="mt-3 font-display text-h3 font-bold">{era.name}</span>
+                    <span className={`num mt-2 block font-body text-label ${eraAccent.onInkMuted[era.accent]}`}>
+                      Chapter {i + 1} · {era.startYear}–{era.endYear}
+                    </span>
+                    <span className={`mt-3 font-reading text-reading italic ${eraAccent.onInkMuted[era.accent]}`}>{era.tagline}</span>
+                    <span className="mt-3 line-clamp-3 font-body text-meta">{era.description}</span>
+                    <span className={`num mt-auto flex items-center gap-3 pt-5 font-body text-label ${eraAccent.onInkMuted[era.accent]}`}>
                       <span>{count} events</span>
                       <span aria-hidden="true">·</span>
                       <span>{people} people</span>
-                      <span aria-hidden="true" className="ml-auto text-lg text-brass-bright transition-transform duration-400 ease-cinematic group-hover:translate-x-1">→</span>
+                      <Icon d={icons.arrowRight} className="ml-auto h-4 w-4" />
                     </span>
                   </button>
                 </Reveal>
@@ -160,88 +185,88 @@ export default function TimelinePage() {
               <div aria-hidden="true" className="absolute bottom-0 left-[11px] top-0 w-px bg-paper-400/60 sm:left-[15px]" />
               <div aria-hidden="true" className="spine-progress absolute bottom-0 left-[11px] top-0 w-px bg-oxide sm:left-[15px]" />
 
-              <div className="space-y-20">
-                {eras.map((era) => {
-                  const eraEvents = filtered.filter((e) => e.era === era.id);
-                  const eraPeople = fighters.filter((f) => f.era === era.id && (!region || f.region === region));
-                  if (eraEvents.length === 0 && eraPeople.length === 0) return null;
-                  return (
-                    <section key={era.id} id={`era-${era.id}`} aria-label={era.name} className="scroll-mt-36">
-                      {/* Chapter plate */}
-                      <Reveal mask className="relative ml-8 sm:ml-12">
-                        <span aria-hidden="true" className={`absolute -left-8 top-8 h-4 w-4 rounded-full ring-4 ring-paper-100 sm:-left-12 ${eraAccent.bg[era.accent]}`} style={{ transform: 'translateX(4px)' }} />
-                        <header className="vault rounded-lg px-6 py-8 shadow-vault sm:px-10 sm:py-12">
-                          <p aria-hidden="true" className={`drift-on-scroll pointer-events-none absolute -right-2 -top-6 select-none font-display text-numeral font-black italic leading-none opacity-[0.08] sm:right-4 ${eraAccent.textVault[era.accent]}`}>
-                            {era.startYear}
-                          </p>
-                          <p className={`eyebrow-vault mb-3`}>
-                            Chapter {eras.indexOf(era) + 1} · {era.startYear} – {era.endYear}
-                          </p>
-                          <h2 className="max-w-2xl font-display text-[2rem] font-bold leading-[1.02] tracking-tight text-paper-50 sm:text-[2.8rem]">{era.name}</h2>
-                          <p className="mt-2 font-display text-lg italic text-brass-bright" style={{ fontVariationSettings: '"SOFT" 60' }}>
-                            {era.tagline}
-                          </p>
-                          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-paper-300 sm:text-base">{era.description}</p>
-                        </header>
+              <div className="space-y-14 sm:space-y-20">
+                {chapters.map(({ era, index, eraEvents, eraPeople }, position) => (
+                  <section key={era.id} id={`era-${era.id}`} aria-label={era.name} className="scroll-mt-36">
+                    {/* Chapter pane — a commemorative in this chapter's own ink */}
+                    <Reveal mask className="relative ml-8 sm:ml-12">
+                      <span
+                        aria-hidden="true"
+                        className={`absolute -left-8 top-8 h-4 w-4 outline outline-4 outline-paper-100 sm:-left-12 ${eraAccent.bg[era.accent]}`}
+                        style={{ transform: 'translateX(4px)' }}
+                      />
+                      <header className={`perf-all on-sheet relative px-5 py-7 sm:px-8 sm:py-9 ${eraAccent.bg[era.accent]} ${eraAccent.onInk[era.accent]}`}>
+                        {position === 0 && <Postmark lines={['India', 'Post', '1757 — 1947']} className="absolute right-4 top-5 hidden sm:grid" />}
+                        {/* The denomination sets `leading-none`; at display sizes the
+                            digits then overflow their own line box and the reveal
+                            mask shaves their tops. Give the numeral its own room. */}
+                        <p className="denom block text-h1 leading-[1.12] sm:text-hero sm:leading-[1.08]">{era.startYear}</p>
+                        <h2 className={`mt-4 max-w-2xl text-h2 ${position === 0 ? 'sm:pr-28' : ''}`}>{era.name}</h2>
+                        <p className={`num mt-2 font-body text-label ${eraAccent.onInkMuted[era.accent]}`}>
+                          Chapter {index + 1} · {era.startYear}–{era.endYear}
+                        </p>
+                        <p className={`mt-4 max-w-xl font-reading text-reading italic ${eraAccent.onInkMuted[era.accent]}`}>{era.tagline}</p>
+                        <p className="mt-4 max-w-prose font-reading text-reading">{era.description}</p>
+                      </header>
+                    </Reveal>
+
+                    {eraPeople.length > 0 && (
+                      <Reveal className="ml-8 mt-5 sm:ml-12">
+                        <p className="label mb-2">People of this chapter</p>
+                        <div className="-mr-4 flex gap-2 overflow-x-auto pb-2 pr-4 scrollbar-none">
+                          {eraPeople.map((f) => (
+                            <span key={f.id} className="shrink-0">
+                              <FighterChip fighter={f} />
+                            </span>
+                          ))}
+                        </div>
                       </Reveal>
+                    )}
 
-                      {eraPeople.length > 0 && (
-                        <Reveal className="ml-8 mt-5 sm:ml-12">
-                          <p className="eyebrow mb-2">People of this chapter</p>
-                          <div className="-mr-4 flex gap-2 overflow-x-auto pb-2 pr-4 scrollbar-none">
-                            {eraPeople.map((f) => (
-                              <span key={f.id} className="shrink-0">
-                                <FighterChip fighter={f} />
-                              </span>
-                            ))}
-                          </div>
-                        </Reveal>
-                      )}
-
-                      <ol className="ml-8 mt-8 space-y-6 sm:ml-12">
-                        {eraEvents.map((event, i) => {
-                          const people = fightersForEvent(event);
-                          return (
-                            <Reveal as="li" key={event.id} delay={Math.min(i, 3) * 60} className="relative">
-                              <span aria-hidden="true" className="absolute -left-8 top-6 h-2.5 w-2.5 rounded-full bg-paper-100 ring-2 ring-oxide sm:-left-12" style={{ transform: 'translateX(7px)' }} />
-                              <article className="doc grid gap-4 p-5 sm:grid-cols-[120px_1fr] sm:gap-6 sm:p-6">
-                                <div className="sm:border-r sm:border-dotted sm:border-paper-400/80 sm:pr-5">
-                                  <time className={`block font-display text-[2rem] font-bold leading-none ${eraAccent.text[era.accent]}`}>{event.date.year}</time>
-                                  <p className="mt-1 text-xs font-semibold text-ink-soft">{event.dateLabel.replace(String(event.date.year), '').replace(/[–-]\s*$/, '').trim()}</p>
-                                  <p className="mt-2 stamp text-sepia">{categoryLabels[event.category]}</p>
-                                </div>
-                                <div className="min-w-0">
-                                  {event.location && <p className="text-xs font-semibold uppercase tracking-wider text-ink-faint">{event.location}</p>}
-                                  <h3 className="mt-1 font-display text-[1.35rem] font-semibold leading-snug">
-                                    <Link to={`/events/${event.slug}`} className="text-ink transition-colors duration-160 hover:text-oxide">
-                                      {event.title}
-                                    </Link>
-                                  </h3>
-                                  <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{event.summary}</p>
-                                  {people.length > 0 && (
-                                    <div className="mt-4 flex flex-wrap gap-2">
-                                      {people.slice(0, 4).map((f) => (
-                                        <FighterChip key={f.id} fighter={f} />
-                                      ))}
-                                      {people.length > 4 && (
-                                        <Link to={`/events/${event.slug}`} className="chip">
-                                          +{people.length - 4} more
-                                        </Link>
-                                      )}
-                                    </div>
-                                  )}
-                                  <Link to={`/events/${event.slug}`} className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-oxide">
-                                    Read the full story <span aria-hidden="true">→</span>
+                    <ol className="ml-8 mt-8 space-y-6 sm:ml-12">
+                      {eraEvents.map((event, i) => {
+                        const people = fightersForEvent(event);
+                        const subLine = dateSubLine(event);
+                        return (
+                          <Reveal as="li" key={event.id} delay={Math.min(i, 3) * 60} className="relative">
+                            <span aria-hidden="true" className="absolute -left-8 top-6 h-2.5 w-2.5 border-2 border-oxide bg-paper-100 sm:-left-12" style={{ transform: 'translateX(7px)' }} />
+                            <article className="doc grid grid-cols-[5.5rem_1fr] gap-4 p-5 sm:grid-cols-[120px_1fr] sm:gap-6 sm:p-6">
+                              <div className="border-r border-paper-400/80 pr-4 sm:pr-5">
+                                <time className={`denom block ${eraAccent.text[era.accent]}`}>{event.date.year}</time>
+                                {subLine && <p className="num mt-1.5 font-body text-xs font-medium text-ink-soft">{subLine}</p>}
+                                <p className="stamp mt-2 text-sepia">{categoryLabels[event.category]}</p>
+                              </div>
+                              <div className="min-w-0">
+                                {event.location && <p className="font-body text-label text-ink-faint">{event.location}</p>}
+                                <h3 className="mt-1 text-h3">
+                                  <Link to={`/events/${event.slug}`} className="text-ink transition-colors duration-160 hover:text-oxide">
+                                    {event.title}
                                   </Link>
-                                </div>
-                              </article>
-                            </Reveal>
-                          );
-                        })}
-                      </ol>
-                    </section>
-                  );
-                })}
+                                </h3>
+                                <p className="mt-2 font-body text-meta text-ink-soft">{event.summary}</p>
+                                {people.length > 0 && (
+                                  <div className="mt-4 flex flex-wrap gap-2">
+                                    {people.slice(0, 4).map((f) => (
+                                      <FighterChip key={f.id} fighter={f} />
+                                    ))}
+                                    {people.length > 4 && (
+                                      <Link to={`/events/${event.slug}`} className="chip">
+                                        +{people.length - 4} more
+                                      </Link>
+                                    )}
+                                  </div>
+                                )}
+                                <Link to={`/events/${event.slug}`} className="mt-4 inline-flex items-center gap-1.5 font-body text-meta font-medium text-oxide">
+                                  Read the full story <Icon d={icons.arrowRight} className="h-4 w-4" />
+                                </Link>
+                              </div>
+                            </article>
+                          </Reveal>
+                        );
+                      })}
+                    </ol>
+                  </section>
+                ))}
               </div>
             </div>
           </>

@@ -2,39 +2,53 @@ import { Link } from 'react-router-dom';
 import type { FreedomFighter, HistoricalEvent, Movement } from '@/types';
 import { categoryLabels, lifespan, roleLabels } from '@/lib/content';
 import { eraById } from '@/data/eras';
-import { PortraitMedallion, Reveal, eraAccent } from '@/components/ui';
+import { Icon, PortraitMedallion, Reveal, eraAccent, icons } from '@/components/ui';
+
+/* Trim to a word boundary so a clamped summary never breaks mid-word. */
+function clip(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const space = cut.lastIndexOf(' ');
+  return `${(space > max * 0.6 ? cut.slice(0, space) : cut).replace(/[,;:.\s]+$/, '')}…`;
+}
 
 /* ------------------------------------------------------------------ */
 /* Document card for a person                                          */
 export function FighterCard({
   fighter,
   compact = false,
-  delay = 0,
   vault = false,
 }: {
   fighter: FreedomFighter;
   compact?: boolean;
+  /* accepted for call-site compatibility; repeated cards no longer animate in */
   delay?: number;
   vault?: boolean;
 }) {
   const era = eraById.get(fighter.era);
   return (
-    <Reveal delay={delay}>
       <Link
         to={`/fighters/${fighter.slug}`}
-        className={`group flex gap-4 rounded-lg border p-4 transition-[transform,box-shadow,border-color,background-color] duration-400 ease-cinematic hover:-translate-y-0.5 active:translate-y-0 ${
-          vault
-            ? 'border-paper-100/10 bg-paper-100/[0.04] hover:border-paper-100/25 hover:bg-paper-100/[0.07]'
-            : 'doc-interactive'
+        /* A mounted issue: the head is a perforated stamp and the birth year
+           is its denomination, hinged onto the album's own card. */
+        className={`group flex gap-4 rounded-sm border p-4 transition-colors duration-160 ease-cinematic ${
+          vault ? 'border-paper-100/25 hover:border-paper-100/70' : 'doc-interactive'
         }`}
       >
-        <PortraitMedallion name={fighter.name} era={era} size={compact ? 'md' : 'lg'} />
+        <div className="flex shrink-0 flex-col items-center gap-1.5">
+          <PortraitMedallion name={fighter.name} era={era} size={compact ? 'md' : 'lg'} onPane={vault} />
+          {/* The denomination slot is always struck: an undated life reads as
+             an unknown value, not as a card that failed to render. */}
+          <span className={`num font-display text-sm font-bold leading-none ${vault ? 'text-paper-200' : era ? eraAccent.text[era.accent] : 'text-sepia'}`}>
+            {fighter.birthYear ?? '—'}
+          </span>
+        </div>
         <div className="min-w-0 flex-1">
-          <p className={`font-display text-[1.15rem] font-semibold leading-snug transition-colors duration-160 ${vault ? 'text-paper-50 group-hover:text-brass-bright' : 'text-ink group-hover:text-oxide'}`}>
+          <p className={`font-display text-h4 font-bold transition-colors duration-160 ${vault ? 'text-paper-50 group-hover:text-brass-bright' : 'text-ink group-hover:text-oxide-deep'}`}>
             {fighter.name}
           </p>
-          <p className={`mt-0.5 text-xs font-medium ${vault ? 'text-paper-400' : 'text-ink-faint'}`}>
-            <span className={`font-display text-xs font-bold ${vault ? 'text-paper-300' : 'text-sepia'}`}>{lifespan(fighter)}</span>
+          <p className={`mt-1 font-body text-label ${vault ? 'text-paper-300' : 'text-ink-faint'}`}>
+            <span className={`num font-medium ${vault ? 'text-paper-200' : 'text-sepia'}`}>{lifespan(fighter)}</span>
             {' · '}
             {fighter.states[0]}
             {era && (
@@ -44,7 +58,7 @@ export function FighterCard({
               </>
             )}
           </p>
-          {!compact && <p className={`mt-2 line-clamp-2 text-sm leading-relaxed ${vault ? 'text-paper-300' : 'text-ink-soft'}`}>{fighter.summary}</p>}
+          {!compact && <p className={`mt-2 line-clamp-3 font-body text-meta ${vault ? 'text-paper-200' : 'text-ink-soft'}`}>{clip(fighter.summary, 150)}</p>}
           <p className="mt-2.5 flex flex-wrap gap-1.5">
             {fighter.roles.slice(0, 2).map((r) => (
               <span key={r} className={`stamp ${vault ? 'text-paper-400' : 'text-sepia'}`}>
@@ -53,11 +67,8 @@ export function FighterCard({
             ))}
           </p>
         </div>
-        <span aria-hidden="true" className={`self-center text-lg transition-transform duration-400 ease-cinematic group-hover:translate-x-1 ${vault ? 'text-paper-400' : 'text-brass'}`}>
-          →
-        </span>
+        <Icon d={icons.arrowRight} className={`h-4 w-4 self-center shrink-0 ${vault ? 'text-paper-400' : 'text-brass-deep'}`} />
       </Link>
-    </Reveal>
   );
 }
 
@@ -67,24 +78,23 @@ export function FighterFeature({ fighter }: { fighter: FreedomFighter }) {
   const era = eraById.get(fighter.era);
   return (
     <Reveal mask className="h-full">
-      <Link to={`/fighters/${fighter.slug}`} className="doc-interactive group flex h-full flex-col justify-between overflow-hidden p-6 sm:p-8">
+      <Link to={`/fighters/${fighter.slug}`} className="doc-interactive group flex h-full flex-col justify-between p-6 sm:p-8">
         <div>
-          <p className="eyebrow mb-4">
-            {era?.name} · {fighter.states[0]}
-          </p>
           <div className="flex items-start gap-5">
             <PortraitMedallion name={fighter.name} era={era} size="xl" />
             <div className="min-w-0">
-              <p className="font-display text-[1.9rem] font-bold leading-[1.02] tracking-tight text-ink transition-colors duration-160 group-hover:text-oxide sm:text-[2.3rem]">
-                {fighter.name}
+              <p className="font-display text-h2 font-bold text-ink transition-colors duration-160 group-hover:text-oxide">{fighter.name}</p>
+              <p className="num mt-1 font-display text-base font-bold text-sepia">{lifespan(fighter)}</p>
+              <p className="label mt-1">
+                {era?.name} · {fighter.states[0]}
               </p>
-              <p className="mt-1 font-display text-base font-semibold text-sepia">{lifespan(fighter)}</p>
             </div>
           </div>
-          <p className="prose-reading mt-5 line-clamp-4 text-[1.05rem]">{fighter.summary}</p>
+          <div className="rule my-5" />
+          <p className="prose-reading line-clamp-5">{clip(fighter.summary, 260)}</p>
         </div>
-        <p className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-oxide">
-          Open the story <span aria-hidden="true" className="transition-transform duration-400 ease-cinematic group-hover:translate-x-1">→</span>
+        <p className="mt-6 inline-flex items-center gap-2 font-body text-meta font-medium text-oxide">
+          Open the story <Icon d={icons.arrowRight} className="h-4 w-4" />
         </p>
       </Link>
     </Reveal>
@@ -98,13 +108,11 @@ export function FighterChip({ fighter, vault = false }: { fighter: FreedomFighte
   return (
     <Link
       to={`/fighters/${fighter.slug}`}
-      className={`inline-flex min-h-9 items-center gap-2 rounded-full border py-1 pl-1 pr-3.5 text-sm font-medium transition-[border-color,color,transform,background-color] duration-160 ease-cinematic active:scale-[0.97] ${
-        vault
-          ? 'border-paper-100/20 bg-paper-100/5 text-paper-200 hover:border-paper-100/50 hover:text-paper-50'
-          : 'border-paper-300 bg-paper-50 text-ink-soft shadow-sm hover:border-oxide/50 hover:text-oxide'
+      className={`inline-flex min-h-9 items-center gap-2 rounded-sm border py-1 pl-1 pr-3 font-body text-label font-medium transition-colors duration-160 ease-cinematic ${
+        vault ? 'border-paper-100/30 text-paper-200 hover:border-paper-100 hover:text-paper-50' : 'border-paper-400 bg-paper-50 text-ink-soft hover:border-ink hover:text-ink'
       }`}
     >
-      <PortraitMedallion name={fighter.name} era={era} size="xs" />
+      <PortraitMedallion name={fighter.name} era={era} size="xs" onPane={vault} />
       {fighter.name}
     </Link>
   );
@@ -112,45 +120,42 @@ export function FighterChip({ fighter, vault = false }: { fighter: FreedomFighte
 
 /* ------------------------------------------------------------------ */
 /* Event card — ledger date column + story                             */
-export function EventCard({ event, delay = 0 }: { event: HistoricalEvent; delay?: number }) {
+export function EventCard({ event }: { event: HistoricalEvent; delay?: number }) {
   const era = eraById.get(event.era);
   return (
-    <Reveal delay={delay}>
       <Link to={`/events/${event.slug}`} className="doc-interactive group flex gap-4 p-4 sm:p-5">
-        <div className="shrink-0 border-r border-dotted border-paper-400/80 pr-4 text-right">
-          <p className={`font-display text-[1.6rem] font-bold leading-none ${era ? eraAccent.text[era.accent] : 'text-oxide'}`}>{event.date.year}</p>
-          <p className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-ink-faint">{categoryLabels[event.category]}</p>
+        <div className="w-[4.5rem] shrink-0 border-r border-paper-400/80 pr-4 text-right">
+          <p className={`denom ${era ? eraAccent.text[era.accent] : 'text-oxide-deep'}`}>{event.date.year}</p>
+          <p className="mt-1.5 font-body text-xs font-medium text-ink-faint">{categoryLabels[event.category]}</p>
         </div>
         <div className="min-w-0">
-          <p className="font-display text-[1.1rem] font-semibold leading-snug text-ink transition-colors duration-160 group-hover:text-oxide">{event.title}</p>
-          {event.location && <p className="mt-0.5 text-xs text-ink-faint">{event.location}</p>}
-          <p className="mt-1.5 line-clamp-3 text-sm leading-relaxed text-ink-soft">{event.summary}</p>
+          <p className="font-display text-h4 font-bold text-ink transition-colors duration-160 group-hover:text-oxide-deep">{event.title}</p>
+          {event.location && <p className="mt-0.5 font-body text-label text-ink-faint">{event.location}</p>}
+          <p className="mt-1.5 line-clamp-3 font-body text-meta text-ink-soft">{clip(event.summary, 165)}</p>
         </div>
       </Link>
-    </Reveal>
   );
 }
 
 /* ------------------------------------------------------------------ */
 /* Movement card                                                       */
-export function MovementCard({ movement, delay = 0, vault = false }: { movement: Movement; delay?: number; vault?: boolean }) {
+export function MovementCard({ movement, vault = false }: { movement: Movement; delay?: number; vault?: boolean }) {
   return (
-    <Reveal delay={delay} className="h-full">
       <Link
         to={`/movements/${movement.slug}`}
-        className={`group flex h-full flex-col rounded-lg border p-5 transition-[transform,box-shadow,border-color,background-color] duration-400 ease-cinematic hover:-translate-y-0.5 ${
-          vault ? 'border-paper-100/10 bg-paper-100/[0.04] hover:border-paper-100/25 hover:bg-paper-100/[0.07]' : 'doc-interactive'
+        className={`group flex h-full flex-col rounded-sm border p-5 transition-colors duration-160 ease-cinematic ${
+          vault ? 'border-paper-100/25 hover:border-paper-100/70' : 'doc-interactive'
         }`}
       >
-        <p className={vault ? 'eyebrow-vault' : 'eyebrow'}>{movement.period}</p>
-        <p className={`mt-2 font-display text-[1.3rem] font-semibold leading-tight transition-colors duration-160 ${vault ? 'text-paper-50 group-hover:text-brass-bright' : 'text-ink group-hover:text-oxide'}`}>
+        <p className={`font-display text-h3 font-bold leading-tight transition-colors duration-160 ${vault ? 'text-paper-50 group-hover:text-brass-bright' : 'text-ink group-hover:text-oxide-deep'}`}>
           {movement.name}
         </p>
-        <p className={`mt-2 line-clamp-3 text-sm leading-relaxed ${vault ? 'text-paper-300' : 'text-ink-soft'}`}>{movement.summary}</p>
-        <span aria-hidden="true" className={`mt-auto pt-4 text-lg transition-transform duration-400 ease-cinematic group-hover:translate-x-1 ${vault ? 'text-paper-400' : 'text-brass'}`}>
-          →
-        </span>
+        {/* The period is the movement's own dating, so it carries the value
+           on its own — a separate startYear denomination duplicated it, and
+           read as a false precision against ranges like "1780s–1940s". */}
+        <p className={`num mt-1.5 ${vault ? 'label-vault' : 'label'}`}>{movement.period}</p>
+        <p className={`mt-3 line-clamp-3 font-body text-meta ${vault ? 'text-paper-200' : 'text-ink-soft'}`}>{clip(movement.summary, 150)}</p>
+        <Icon d={icons.arrowRight} className={`mt-auto h-4 w-4 shrink-0 ${vault ? 'text-paper-300' : 'text-brass-deep'}`} />
       </Link>
-    </Reveal>
   );
 }

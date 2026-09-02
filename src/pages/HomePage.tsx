@@ -5,7 +5,7 @@ import { didYouKnowFacts } from '@/data/facts';
 import { regionNames } from '@/data/regions';
 import type { RegionId } from '@/types';
 import { usePageMeta, useTrail } from '@/lib/hooks';
-import { FactCard, Reveal, SectionHeading, eraAccent } from '@/components/ui';
+import { FactCard, Icon, Postmark, Reveal, SectionHeading, eraAccent, icons } from '@/components/ui';
 import { EventCard, FighterCard, FighterFeature, MovementCard } from '@/components/cards';
 
 /* ------------------------------------------------------------------ */
@@ -18,56 +18,54 @@ function Hero() {
   };
 
   return (
-    <section className="vault">
-      {/* Ghosted span numerals drift with scroll */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-10 select-none overflow-hidden">
-        <p className="drift-on-scroll whitespace-nowrap text-center font-display font-black italic leading-none text-paper-50/[0.045]" style={{ fontSize: "clamp(3.4rem, 15.5vw, 14rem)", letterSpacing: "-0.04em" }}>1757 — 1947</p>
-      </div>
+    <section className="container-page pt-2" aria-label="India's Freedom Timeline">
+      {/* First-day pane */}
+      <div className="vault animate-fade-up px-5 py-7 sm:px-9 sm:py-10">
+        {/* The cancellation falls across the dateline rule, as it would on a cover */}
+        <Postmark lines={['India', 'Post', '15 · 08 · 47']} className="absolute right-4 top-5 hidden sm:grid" />
 
-      <div className="container-page relative pb-16 pt-32 sm:pb-24 sm:pt-40">
-        <p className="eyebrow-vault mb-5 animate-fade-up">An interactive historical archive · 1757 — 1947</p>
-        <h1 className="max-w-4xl text-display font-black text-paper-50 animate-fade-up" style={{ animationDelay: '90ms' }}>
+        <div className="num border-b border-paper-100/35 pb-2.5 pr-0 font-body text-label text-paper-200 sm:pr-32">
+          First day of issue · an archive of India’s freedom struggle ·{' '}
+          <span className="font-display text-base font-bold text-brass-bright">1757 — 1947</span>
+        </div>
+
+        <h1 className="mt-8 max-w-3xl text-hero-sm font-medium text-paper-50 sm:mt-10 sm:text-hero">
           Millions resisted.
-          <br />
-          <span className="italic font-medium text-brass-bright" style={{ fontVariationSettings: '"SOFT" 60' }}>
-            Thousands sacrificed.
-          </span>
+          <span className="mt-1 block text-brass-bright">Thousands sacrificed.</span>
         </h1>
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper-300 animate-fade-up sm:text-xl" style={{ animationDelay: '180ms' }}>
+        <p className="mt-6 max-w-xl font-reading text-reading text-paper-200 sm:text-h4">
           Explore the people who fought for India’s freedom — from the first risings against the East India Company to the midnight of 15 August 1947.
         </p>
-        <div className="mt-9 flex flex-wrap gap-3 animate-fade-up" style={{ animationDelay: '270ms' }}>
+        <div className="mt-8 flex flex-wrap gap-3">
           <Link to="/timeline" className="btn-seal">
-            Enter the timeline <span aria-hidden="true">→</span>
+            Enter the timeline <Icon d={icons.arrowRight} className="h-4 w-4" />
           </Link>
           <button type="button" onClick={discoverRandom} disabled={busy} className="btn-ghost-vault">
-            <span aria-hidden="true">✦</span> Discover someone new
+            <Icon d={icons.shuffle} className="h-4 w-4" /> Discover someone new
           </button>
         </div>
+        <p className="num mt-7 border-t border-paper-100/25 pt-3 font-body text-label text-paper-300">
+          {fighters.length} lives · {events.length} events · {eras.length} chapters
+        </p>
+      </div>
 
-        {/* Era rail preview */}
-        <div className="mt-16 animate-fade-up sm:mt-20" style={{ animationDelay: '380ms' }}>
-          <p className="eyebrow-vault mb-4">Nine chapters</p>
-          <div className="-mx-4 overflow-x-auto px-4 pb-3 scrollbar-none sm:mx-0 sm:px-0">
-            <ol className="flex min-w-max items-stretch" aria-label="Eras of the freedom struggle">
-              {eras.map((era, i) => (
-                <li key={era.id} className="relative w-40 sm:w-48">
-                  <div className="flex items-center">
-                    <span aria-hidden="true" className={`h-3 w-3 shrink-0 rounded-full ring-4 ring-vault ${eraAccent.bg[era.accent]}`} />
-                    {i < eras.length - 1 && <span aria-hidden="true" className="h-px flex-1 bg-paper-100/15" />}
-                  </div>
-                  <Link to={`/timeline#era-${era.id}`} className="group mt-3 block pr-5">
-                    <span className={`block font-display text-2xl font-bold leading-none ${eraAccent.textVault[era.accent]}`}>{era.startYear}</span>
-                    <span className="mt-1.5 block font-display text-[15px] font-semibold leading-tight text-paper-100 transition-colors group-hover:text-brass-bright">
-                      {era.name}
-                    </span>
-                    <span className="mt-1 block text-xs italic text-paper-400">{era.tagline}</span>
-                  </Link>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
+      {/* Denomination strip — one ink per chapter, with paper selvedge between */}
+      <div className="mt-3 animate-fade-up sm:mt-4" style={{ animationDelay: '120ms' }}>
+        <h2 className="sr-only">The nine chapters</h2>
+        <ol className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-9" aria-label="Eras of the freedom struggle">
+          {eras.map((era) => (
+            <li key={era.id}>
+              <Link
+                to={`/timeline#era-${era.id}`}
+                className={`perf-x on-sheet block h-full px-3 py-3.5 transition-opacity duration-160 ease-cinematic hover:opacity-90 ${eraAccent.bg[era.accent]} ${eraAccent.onInk[era.accent]}`}
+              >
+                <span className="denom block">{era.startYear}</span>
+                <span className="mt-1.5 block font-body text-label font-semibold leading-tight">{era.name}</span>
+                <span className={`mt-1 block font-reading text-label italic leading-snug lg:hidden ${eraAccent.onInkMuted[era.accent]}`}>{era.tagline}</span>
+              </Link>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
@@ -82,33 +80,34 @@ function TodayLedger() {
   const anniversaries = anniversariesOnDay(month, day);
   const hasContent = todaysEvents.length > 0 || anniversaries.length > 0;
   const fallback = dailyPick(fighters, 7);
-  const dateLabel = today.toLocaleDateString('en-IN', { day: 'numeric', month: 'long' });
+  const dayLabel = today.toLocaleDateString('en-IN', { day: 'numeric' });
+  const monthLabel = today.toLocaleDateString('en-IN', { month: 'long' });
 
   return (
     <Reveal as="section" aria-label="Today in freedom history" className="doc overflow-hidden">
       <div className="grid sm:grid-cols-[180px_1fr]">
-        <div className="flex flex-col justify-between border-b border-dotted border-paper-400 bg-paper-200/60 p-5 sm:border-b-0 sm:border-r">
-          <p className="eyebrow">Today in freedom history</p>
-          <p className="mt-3 font-display text-[2.2rem] font-bold leading-none text-oxide">{dateLabel.split(' ')[0]}</p>
-          <p className="font-display text-lg font-semibold text-ink">{dateLabel.split(' ').slice(1).join(' ')}</p>
+        <div className="flex flex-col justify-between border-b border-paper-400 bg-paper-200/60 p-5 sm:border-b-0 sm:border-r">
+          <p className="label">Today in freedom history</p>
+          <p className="num mt-3 font-display text-h1 font-bold leading-none text-oxide">{dayLabel}</p>
+          <p className="font-display text-lg font-bold text-ink">{monthLabel}</p>
         </div>
         <div className="p-5 sm:p-6">
           {hasContent ? (
             <ul className="space-y-4">
               {todaysEvents.map((e) => (
-                <li key={e.id} className="ledger-row flex-col items-start gap-1 border-0 py-0">
+                <li key={e.id}>
                   <Link to={`/events/${e.slug}`} className="group">
-                    <span className="font-display text-base font-bold text-oxide">{e.date.year}</span>
-                    <span className="ml-2 font-display text-lg font-semibold text-ink group-hover:text-oxide">{e.title}</span>
+                    <span className="num font-display text-base font-bold text-oxide">{e.date.year}</span>
+                    <span className="ml-2 font-display text-lg font-bold text-ink group-hover:text-oxide">{e.title}</span>
                   </Link>
-                  <p className="text-sm leading-relaxed text-ink-soft">{e.summary}</p>
+                  <p className="mt-1 font-body text-meta text-ink-soft">{e.summary}</p>
                 </li>
               ))}
               {anniversaries.map(({ fighter, kind }) => (
                 <li key={`${fighter.id}-${kind}`}>
                   <Link to={`/fighters/${fighter.slug}`} className="group">
-                    <span className="font-display text-lg font-semibold text-ink group-hover:text-oxide">{fighter.name}</span>
-                    <span className="ml-2 text-sm text-ink-soft">
+                    <span className="font-display text-lg font-bold text-ink group-hover:text-oxide">{fighter.name}</span>
+                    <span className="num ml-2 font-body text-meta text-ink-soft">
                       {kind === 'born' ? 'was born' : 'died'} on this day{kind === 'born' ? (fighter.birthYear ? ` in ${fighter.birthYear}` : '') : fighter.deathYear ? ` in ${fighter.deathYear}` : ''}
                     </span>
                   </Link>
@@ -117,10 +116,13 @@ function TodayLedger() {
             </ul>
           ) : (
             <div>
-              <p className="text-sm text-ink-faint">No dated record for today. Meet today’s featured life instead:</p>
+              <p className="font-body text-meta text-ink-faint">No dated record for today. Meet today’s featured life instead:</p>
               <Link to={`/fighters/${fallback.slug}`} className="group mt-2 block">
-                <span className="font-display text-xl font-semibold text-ink group-hover:text-oxide">{fallback.name} →</span>
-                <span className="mt-1 block text-sm leading-relaxed text-ink-soft">{fallback.summary}</span>
+                <span className="inline-flex items-center gap-2 font-display text-h3 font-bold text-ink group-hover:text-oxide">
+                  {fallback.name}
+                  <Icon d={icons.arrowRight} className="h-4 w-4" />
+                </span>
+                <span className="mt-1 block font-body text-meta text-ink-soft">{fallback.summary}</span>
               </Link>
             </div>
           )}
@@ -148,12 +150,12 @@ export default function HomePage() {
       <Hero />
 
       {/* Ledger + featured */}
-      <div className="container-page space-y-16 pt-12 sm:space-y-24 sm:pt-16">
+      <div className="container-page space-y-14 pt-14 sm:space-y-20 sm:pt-16">
         <TodayLedger />
 
         {trailFighters.length > 0 && (
-          <Reveal as="section" aria-label="Continue your journey" className="rounded-lg border border-indigo-mid/25 bg-indigo-wash/60 p-5">
-            <p className="eyebrow mb-3">Continue your journey</p>
+          <Reveal as="section" aria-label="Continue your journey" className="rounded-sm border border-indigo-mid/30 bg-indigo-wash/60 p-5">
+            <p className="label mb-3">Continue your journey</p>
             <div className="flex flex-wrap gap-2">
               {trailFighters.map((f) => (
                 <Link key={f!.id} to={`/fighters/${f!.slug}`} className="chip min-h-10">
@@ -166,7 +168,6 @@ export default function HomePage() {
 
         <section aria-label="Featured freedom fighters">
           <SectionHeading
-            eyebrow="Begin with a life"
             title="Featured freedom fighters"
             lede="Each life opens on to others — comrades, rivals, inheritors. Start anywhere."
             action={
@@ -187,11 +188,10 @@ export default function HomePage() {
       </div>
 
       {/* Forgotten heroes — dark band */}
-      <section className="vault mt-16 py-16 sm:mt-24 sm:py-24" aria-label="Forgotten heroes">
+      <section className="vault mt-14 px-5 py-12 sm:mt-20 sm:px-8 sm:py-16" aria-label="Forgotten heroes">
         <div className="container-page">
           <SectionHeading
             vault
-            eyebrow="Names history nearly lost"
             title="Forgotten heroes"
             lede="Schoolteachers, weavers, hill chiefs and queens who held the line long before the famous names — and whose stories deserve to be told."
             action={
@@ -208,11 +208,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="container-page space-y-16 pt-16 sm:space-y-24 sm:pt-24">
+      <div className="container-page space-y-14 pt-14 sm:space-y-20 sm:pt-16">
         {/* Women */}
         <section aria-label="Women of the freedom movement">
           <SectionHeading
-            eyebrow="Half the sky, half the struggle"
             title="Women of the movement"
             lede="From Velu Nachiyar’s army in the 1780s to the Rani of Jhansi Regiment of 1943."
             action={
@@ -231,7 +230,6 @@ export default function HomePage() {
         {/* Key events — filmstrip */}
         <section aria-label="Key historical events">
           <SectionHeading
-            eyebrow="Moments that turned the tide"
             title="Key historical events"
             action={
               <Link to="/events" className="btn-ghost">
@@ -257,8 +255,9 @@ export default function HomePage() {
               text={fact.text}
               action={
                 fact.relatedLink && (
-                  <Link to={fact.relatedLink.to} className="text-sm font-semibold text-oxide underline decoration-oxide/40 underline-offset-4 hover:decoration-oxide">
-                    {fact.relatedLink.label} →
+                  <Link to={fact.relatedLink.to} className="inline-flex items-center gap-2 font-body text-meta font-medium text-oxide underline decoration-oxide/40 underline-offset-4 hover:decoration-oxide">
+                    {fact.relatedLink.label}
+                    <Icon d={icons.arrowRight} className="h-4 w-4" />
                   </Link>
                 )
               }
@@ -268,11 +267,10 @@ export default function HomePage() {
       </div>
 
       {/* Movements — dark band */}
-      <section className="vault mt-16 py-16 sm:mt-24 sm:py-24" aria-label="Movements and regional resistance">
+      <section className="vault mt-14 px-5 py-12 sm:mt-20 sm:px-8 sm:py-16" aria-label="Movements and regional resistance">
         <div className="container-page">
           <SectionHeading
             vault
-            eyebrow="Many roads to freedom"
             title="Movements & regional resistance"
             lede="Petition and boycott, satyagraha and armed revolt, Adivasi risings and soldiers’ armies — arguing with, and strengthening, one another."
             action={
@@ -287,21 +285,19 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="hairline-vault my-14" />
+          <div className="rule-double-vault my-14" />
 
           <Reveal className="flex flex-wrap items-end justify-between gap-6">
-            <div>
-              <p className="eyebrow-vault mb-2">Every region resisted</p>
-              <h2 className="font-display text-[1.9rem] font-semibold leading-tight text-paper-50 sm:text-[2.4rem]">Explore by state & region</h2>
-            </div>
+            <h2 className="text-h2 text-paper-50">Explore by state & region</h2>
             <div className="flex flex-wrap gap-2">
               {(Object.keys(regionNames) as RegionId[]).map((r) => (
                 <Link key={r} to={`/fighters?region=${r}`} className="chip-vault min-h-10">
                   {regionNames[r]}
                 </Link>
               ))}
-              <Link to="/map" className="btn-seal !min-h-10 !px-4 text-xs">
-                Open the map →
+              <Link to="/map" className="btn-seal !min-h-10 !px-4 text-label">
+                Open the map
+                <Icon d={icons.arrowRight} className="h-4 w-4" />
               </Link>
             </div>
           </Reveal>

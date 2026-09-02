@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-02T00:00:00.000Z",
+  "title": "Design System: India's Freedom Timeline",
+  "extensions": {
+    "colorMeta": {
+      "vault": {
+        "role": "neutral",
+        "displayName": "Album Ink",
+        "canonical": "#10312b",
+        "note": "The page field behind every sheet; header, footer, mobile nav, scrim, full-bleed bands. Never a reading surface. Token name inherited from the previous system.",
+        "tonalRamp": ["#061a16", "#0a241f", "#10312b", "#16403a", "#1d5148", "#3d7a6e", "#7aa9a0", "#c6ded9"]
+      },
+      "paper-100": {
+        "role": "neutral",
+        "displayName": "Gummed Sheet",
+        "canonical": "#f2ede2",
+        "note": "The mounted sheet — the only long-form reading ground, and the default --tooth colour on a sheet.",
+        "tonalRamp": ["#332d20", "#4d452f", "#6b6144", "#8d8161", "#b9ac91", "#d3c9b4", "#e6dfcf", "#f7f3ea"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#17201c",
+        "note": "Body and heading text on paper; also the active-chip and active-rail ground. ink-soft #3d4a44 secondary, ink-faint #5a6861 faintest metadata.",
+        "tonalRamp": ["#0b100e", "#17201c", "#26332e", "#3d4a44", "#5a6861", "#8a9791", "#b9c4bf", "#e2e8e5"]
+      },
+      "oxide": {
+        "role": "primary",
+        "displayName": "Franking Ochre",
+        "canonical": "#c4611f",
+        "note": "THE action ink. Primary buttons, links, spine progress, franked lifespan, focus ring, drop cap. deep #a34e12 = hover and pane ground; bright #eda15f = the same ink on album ink; wash #f7e6d6 = historians' note.",
+        "tonalRamp": ["#3d1c06", "#5c2b0a", "#7c3b0e", "#a34e12", "#c4611f", "#e08340", "#eda15f", "#f7e6d6"]
+      },
+      "indigo-mid": {
+        "role": "secondary",
+        "displayName": "Prussian",
+        "canonical": "#23406b",
+        "note": "Era ink for Non-Cooperation and Freedom at Midnight; also the source-link colour. Deep cut #1a3154 for small plates.",
+        "tonalRamp": ["#0d1a2c", "#13253e", "#1a3154", "#23406b", "#325a90", "#5b80b3", "#a8b8cd", "#e6eaf1"]
+      },
+      "forest": {
+        "role": "secondary",
+        "displayName": "Stamp Green",
+        "canonical": "#14453d",
+        "note": "Era ink for War & Home Rule, and the default pane ink carried by the .vault class. Deep cut #0e332d.",
+        "tonalRamp": ["#071f1a", "#0e332d", "#14453d", "#1d5c51", "#2a7d6e", "#4fa495", "#a8c7bd", "#e3ece9"]
+      },
+      "saffron": {
+        "role": "secondary",
+        "displayName": "Carmine",
+        "canonical": "#8e2f2a",
+        "note": "Era ink for Swadeshi & Revolution and Civil Disobedience. Deep cut #6f2420. Token name inherited; the colour is not saffron.",
+        "tonalRamp": ["#3a110f", "#541916", "#6f2420", "#8e2f2a", "#b04a43", "#c96a62", "#d98a80", "#f2e2e0"]
+      },
+      "sepia": {
+        "role": "secondary",
+        "displayName": "Plum",
+        "canonical": "#5b2e4a",
+        "note": "Era ink for Early Resistance; also the metadata ink for .label and most .stamp tags on paper. Deep cut #452038. Token name inherited; the colour is not sepia.",
+        "tonalRamp": ["#1f0c19", "#301526", "#452038", "#5b2e4a", "#7a4364", "#9c6484", "#c5a8b7", "#eee2e8"]
+      },
+      "brass": {
+        "role": "tertiary",
+        "displayName": "Perforation Gauge Gold",
+        "canonical": "#8f7a45",
+        "note": "Rules, frames and ornament — and the era ink for Rise of Nationalism. brass-bright #dcc17f is every rule seen against album ink; deep #7c6428 is the pane ground.",
+        "tonalRamp": ["#33290f", "#4d3f1b", "#63512a", "#7c6428", "#8f7a45", "#b39c60", "#dcc17f", "#f0e4c4"]
+      },
+      "violet": {
+        "role": "tertiary",
+        "displayName": "Stamp Violet",
+        "canonical": "#3b2e6e",
+        "note": "NOT an era ink. Used only as the region ink for 'abroad' on the map sheet and as one of six fallback monogram plates (deep cut #2b2151) for a life with no era on record.",
+        "tonalRamp": ["#150f2b", "#1f1740", "#2b2151", "#3b2e6e", "#54448f", "#6f5fae", "#8479b5", "#e8e5f2"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display / Hero", "purpose": "Bodoni Moda at 4rem — the hero headline of a first-day pane and a profile hero name; steps down to ~2.2rem on phones." },
+      "headline": { "displayName": "Headline", "purpose": "Page heads inside PageIntro, and a chapter denomination on a timeline pane." },
+      "title": { "displayName": "Title", "purpose": "Section heads under a double rule; chapter names." },
+      "subtitle": { "displayName": "Subtitle", "purpose": "Card, event, sidebar and dialog heads." },
+      "denomination": { "displayName": "Denomination", "purpose": "A year set as a stamp's value — display face, bold, leading-none, tabular figures. Scales to headline/hero size on a chapter pane." },
+      "reading": { "displayName": "Reading", "purpose": "Faustina for biographies, chapter text, era descriptions and ledes; italic for taglines. Capped at 66ch." },
+      "body": { "displayName": "Body / Meta", "purpose": "Archivo Narrow for summaries, card copy, buttons and all UI strings." },
+      "label": { "displayName": "Label", "purpose": "13px metadata, list heads, legends and counts — .label (plum on paper) and .label-vault (paper-300 on ink). 13px is the floor on a coloured pane." },
+      "stamp": { "displayName": "Stamp Tag", "purpose": "12px boxed classification tag in a currentColor border. The only uppercase in the system." }
+    },
+    "shadows": [
+      { "name": "sheet-lift", "value": "0 -12px 40px rgba(8,24,20,0.45)", "purpose": "The mobile bottom sheet only. It is the single box-shadow in the entire build; every other surface is flat." }
+    ],
+    "motion": [
+      { "name": "ease-cinematic", "value": "cubic-bezier(0.22, 0.61, 0.36, 1)", "purpose": "The only easing in the system, on every transition and keyframe." },
+      { "name": "duration-160", "value": "160ms", "purpose": "Colour and state changes — hover, active, focus." },
+      { "name": "duration-400", "value": "400ms", "purpose": "Page entry, segmented controls, nav ticks, stepper dots." },
+      { "name": "duration-700", "value": "700ms", "purpose": "Scroll reveal (.reveal, 18px fade-up)." },
+      { "name": "duration-900", "value": "900ms", "purpose": "Mask reveal (.reveal-mask, clip-path from bottom, applied to children so the observed box is never clipped)." },
+      { "name": "draw-line", "value": "1.1s ease-cinematic, 90ms stagger", "purpose": "Constellation connection lines, via stroke-dashoffset set inline per line." },
+      { "name": "spine-progress", "value": "animation-timeline: scroll(root)", "purpose": "Scroll-linked timeline spine; static at 35% opacity where unsupported, and off entirely under prefers-reduced-motion." },
+      { "name": "reduced-motion", "value": "all durations 0.01ms, reveals forced visible", "purpose": "prefers-reduced-motion collapses everything; a .no-js root does the same so content never depends on the observer." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "container", "value": "72rem (max-w-6xl)" }
+    ],
+    "perforation": [
+      { "name": "perf-all", "value": "12px gauge, four sides", "purpose": "A full pane — teeth from radial-gradients tinted by --tooth." },
+      { "name": "perf-x", "value": "12px gauge, top and bottom", "purpose": "The mounted route sheet and the denomination strip." },
+      { "name": "perf-fine", "value": "8px gauge, four sides", "purpose": "A stamp under ~40px, where 12px teeth read crude (xs/sm monograms)." },
+      { "name": "--tooth", "value": "#10312b default; #f2ede2 via .on-sheet", "purpose": "The tooth colour MUST match whatever the element sits on. Set it inline for any other ground." }
+    ],
+    "eraInkAssignment": [
+      { "chapter": "Early Resistance", "accent": "sepia", "displayName": "Plum" },
+      { "chapter": "The Revolt of 1857", "accent": "oxide", "displayName": "Franking Ochre" },
+      { "chapter": "Rise of Nationalism", "accent": "brass", "displayName": "Gauge Gold" },
+      { "chapter": "Swadeshi & Revolution", "accent": "saffron", "displayName": "Carmine" },
+      { "chapter": "War & Home Rule", "accent": "forest", "displayName": "Stamp Green" },
+      { "chapter": "Non-Cooperation Era", "accent": "indigo", "displayName": "Prussian" },
+      { "chapter": "Civil Disobedience", "accent": "saffron", "displayName": "Carmine" },
+      { "chapter": "Quit India & the INA", "accent": "oxide", "displayName": "Franking Ochre" },
+      { "chapter": "Freedom at Midnight", "accent": "indigo", "displayName": "Prussian" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Pane (one stamp)",
+      "kind": "custom",
+      "refersTo": "pane",
+      "description": "The signature surface: an era ink at full strength, perforated on all four sides, teeth cut from whatever it sits on. `.vault` is the stamp-green shorthand and is what every full-bleed dark band actually is.",
+      "html": "<div class=\"ds-pane\"><p class=\"ds-pane-denom\">1930</p><h2 class=\"ds-pane-title\">Civil Disobedience</h2><p class=\"ds-pane-meta\">Chapter 7 · 1930–1934</p><p class=\"ds-pane-tagline\">Salt, and the breaking of a law.</p></div>",
+      "css": ".ds-pane { --tooth: #f2ede2; position: relative; background-color: #8e2f2a; color: #f7f3ea; padding: 28px 20px; background-image: radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px), radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px), radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px), radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px); background-repeat: repeat-x, repeat-x, repeat-y, repeat-y; background-size: 12px 12px; background-position: 0 -6px, 0 calc(100% + 6px), -6px 0, calc(100% + 6px) 0; } .ds-pane-denom { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 700; font-size: 2.75rem; line-height: 1.12; font-variant-numeric: tabular-nums lining-nums; margin: 0; } .ds-pane-title { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 600; font-size: 1.875rem; line-height: 1.12; letter-spacing: 0; margin: 16px 0 0; } .ds-pane-meta { font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.8125rem; font-weight: 500; color: #f2ede2; font-variant-numeric: tabular-nums; margin: 8px 0 0; } .ds-pane-tagline { font-family: Faustina, Georgia, serif; font-size: 1.0625rem; line-height: 1.62; font-style: italic; color: #f2ede2; margin: 16px 0 0; }"
+    },
+    {
+      "name": "Franking Button",
+      "kind": "button",
+      "refersTo": "button-seal",
+      "description": "The one action ink — ochre. One primary action per view.",
+      "html": "<button class=\"ds-btn-seal\">Enter the timeline<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" width=\"16\" height=\"16\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-btn-seal { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px; border: none; border-radius: 2px; background: #c4611f; color: #f7f3ea; font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: background-color 160ms cubic-bezier(0.22,0.61,0.36,1); } .ds-btn-seal:hover { background: #a34e12; } .ds-btn-seal:focus-visible { outline: none; box-shadow: 0 0 0 2px #f2ede2, 0 0 0 4px #c4611f; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action on paper — a hairline that firms to ink on hover. No fill, no lift.",
+      "html": "<button class=\"ds-btn-ghost\">All 88 people</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 20px; border: 1px solid rgba(23,32,28,0.4); border-radius: 2px; background: transparent; color: #17201c; font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: border-color 160ms cubic-bezier(0.22,0.61,0.36,1), background-color 160ms cubic-bezier(0.22,0.61,0.36,1); } .ds-btn-ghost:hover { border-color: #17201c; background: rgba(230,223,207,0.7); } .ds-btn-ghost:focus-visible { outline: none; box-shadow: 0 0 0 2px #f2ede2, 0 0 0 4px #c4611f; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "36px filter and metadata chip. Selected state inverts to solid ink — the same inversion the era rail and search results use.",
+      "html": "<button class=\"ds-chip\">All</button> <button class=\"ds-chip ds-chip-active\" aria-pressed=\"true\">South India</button>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 4px 12px; border: 1px solid #b9ac91; border-radius: 2px; background: #f7f3ea; color: #3d4a44; font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.8125rem; font-weight: 500; cursor: pointer; transition: border-color 160ms cubic-bezier(0.22,0.61,0.36,1), color 160ms cubic-bezier(0.22,0.61,0.36,1); } .ds-chip:hover { border-color: #17201c; color: #17201c; } .ds-chip-active { border-color: #17201c; background: #17201c; color: #f7f3ea; } .ds-chip-active:hover { color: #f7f3ea; } .ds-chip:focus-visible { outline: none; box-shadow: 0 0 0 2px #f2ede2, 0 0 0 4px #c4611f; }"
+    },
+    {
+      "name": "Document Card",
+      "kind": "card",
+      "refersTo": "doc",
+      "description": "A mounted record on gummed paper. One elevation: the frame. Interactive variants firm the border to ink — colour only, never a lift.",
+      "html": "<a class=\"ds-doc\" href=\"#\"><div class=\"ds-doc-gutter\"><p class=\"ds-doc-denom\">1919</p><p class=\"ds-doc-cat\">Massacre</p></div><div><p class=\"ds-doc-title\">Jallianwala Bagh</p><p class=\"ds-doc-summary\">A peaceful gathering in Amritsar was fired on without warning, and the movement's moderates lost their argument for gradual reform.</p></div></a>",
+      "css": ".ds-doc { display: grid; grid-template-columns: 5.5rem 1fr; gap: 16px; padding: 20px; border: 1px solid #d3c9b4; border-radius: 2px; background: #f7f3ea; color: #17201c; text-decoration: none; transition: border-color 160ms cubic-bezier(0.22,0.61,0.36,1); } .ds-doc:hover { border-color: #17201c; } .ds-doc-gutter { border-right: 1px solid rgba(185,172,145,0.8); padding-right: 16px; text-align: right; } .ds-doc-denom { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 700; font-size: 1.375rem; line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: #6f2420; margin: 0; } .ds-doc-cat { font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; color: #5a6861; margin: 6px 0 0; } .ds-doc-title { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 700; font-size: 1.15rem; line-height: 1.3; margin: 0; transition: color 160ms cubic-bezier(0.22,0.61,0.36,1); } .ds-doc:hover .ds-doc-title { color: #a34e12; } .ds-doc-summary { font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.9375rem; line-height: 1.45; color: #3d4a44; margin: 6px 0 0; }"
+    },
+    {
+      "name": "Stamp Tag",
+      "kind": "chip",
+      "refersTo": "stamp-tag",
+      "description": "A 12px boxed classification tag whose border is currentColor. The ONLY sanctioned uppercase in the system — never a template for tracked-caps labels or eyebrows.",
+      "html": "<span class=\"ds-stamp\">Historians note</span> <span class=\"ds-stamp ds-stamp-plum\">Archive</span>",
+      "css": ".ds-stamp { display: inline-block; padding: 1px 6px; border: 1px solid currentColor; color: #c4611f; font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.75rem; font-weight: 600; line-height: 1.25; letter-spacing: 0.06em; text-transform: uppercase; } .ds-stamp-plum { color: #5b2e4a; }"
+    },
+    {
+      "name": "Postmark",
+      "kind": "custom",
+      "refersTo": "postmark",
+      "description": "The cancellation ring. Ring and lettering are currentColor at 70%, rotated -13deg, pointer-events-none and aria-hidden. Exactly one per view, on the principal pane, allowed to hang over its edge. Hidden below 640px.",
+      "html": "<span class=\"ds-postmark\" aria-hidden=\"true\"><span><span>India</span><span>Post</span><span>15 · 08 · 47</span></span></span>",
+      "css": ".ds-postmark { display: grid; place-items: center; width: 96px; height: 96px; border: 2px solid currentColor; border-radius: 9999px; color: #14453d; opacity: 0.7; text-align: center; font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.75rem; font-weight: 600; line-height: 1.25; letter-spacing: 0.08em; text-transform: uppercase; pointer-events: none; transform: rotate(-13deg); } .ds-postmark span span { display: block; }"
+    },
+    {
+      "name": "Monogram Medallion",
+      "kind": "custom",
+      "refersTo": "portrait-medallion",
+      "description": "A perforated square carrying two initials in the display face, struck in the era's deep cut. A DOCUMENTED STAND-IN for portraits the project deliberately does not ship — replaced by licensed archival photographs whenever they exist, never by a generated likeness. `onPane` inverts it to paper so it reads as a stamp rather than a hole.",
+      "html": "<span class=\"ds-medallion\" aria-hidden=\"true\">BS</span>",
+      "css": ".ds-medallion { --tooth: #f2ede2; display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; flex-shrink: 0; user-select: none; background-color: #6f2420; color: #f7f3ea; font-family: 'Bodoni Moda', Georgia, serif; font-weight: 700; font-size: 1.5rem; background-image: radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px), radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px), radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px), radial-gradient(circle at 6px 6px, var(--tooth) 3.3px, transparent 3.5px); background-repeat: repeat-x, repeat-x, repeat-y, repeat-y; background-size: 12px 12px; background-position: 0 -6px, 0 calc(100% + 6px), -6px 0, calc(100% + 6px) 0; }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "The command palette's field: a 56px transparent input framed only by the container hairline, focusing to a single ochre underline rather than a ring.",
+      "html": "<div class=\"ds-input-wrap\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" width=\"18\" height=\"18\" aria-hidden=\"true\"><path d=\"M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Zm9 16-3.5-3.5\"/></svg><input class=\"ds-input-search\" placeholder=\"Search a name, a state, a year, a movement\" /><kbd class=\"ds-kbd\">Esc</kbd></div>",
+      "css": ".ds-input-wrap { display: flex; align-items: center; gap: 12px; padding: 0 16px; border-bottom: 1px solid #d3c9b4; background: #f2ede2; color: #5a6861; } .ds-input-search { min-height: 56px; width: 100%; border: none; border-bottom: 2px solid transparent; background: transparent; color: #17201c; font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.9375rem; } .ds-input-search::placeholder { color: #5a6861; } .ds-input-search:focus-visible { outline: none; border-bottom-color: #c4611f; } .ds-kbd { padding: 0 6px; border: 1px solid rgba(23,32,28,0.3); border-radius: 2px; font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.75rem; color: #5a6861; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-header",
+      "description": "Sticky 64px bar on album ink with a gauge-gold hairline — the album's own margin, never mounted on a sheet. Active link carries a 2px ochre underline.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\"><svg viewBox=\"0 0 64 64\" width=\"32\" height=\"32\" aria-hidden=\"true\"><circle cx=\"32\" cy=\"32\" r=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\"/><g stroke=\"currentColor\" stroke-width=\"1.2\"><line x1=\"49\" y1=\"32\" x2=\"15\" y2=\"32\"/><line x1=\"46.6\" y1=\"40.8\" x2=\"17.4\" y2=\"23.2\"/><line x1=\"40.8\" y1=\"46.6\" x2=\"23.2\" y2=\"17.4\"/><line x1=\"32\" y1=\"49\" x2=\"32\" y2=\"15\"/><line x1=\"23.2\" y1=\"46.6\" x2=\"40.8\" y2=\"17.4\"/><line x1=\"17.4\" y1=\"40.8\" x2=\"46.6\" y2=\"23.2\"/></g><circle cx=\"32\" cy=\"32\" r=\"4.5\" fill=\"#c07a2c\"/></svg><span>India&rsquo;s Freedom Timeline</span></a><nav class=\"ds-nav-links\"><a class=\"ds-nav-link ds-nav-link-active\" href=\"#\">Timeline</a><a class=\"ds-nav-link\" href=\"#\">People</a><a class=\"ds-nav-link\" href=\"#\">Map</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 64px; padding: 0 16px; background: #10312b; color: #f2ede2; border-bottom: 1px solid rgba(220,193,127,0.25); } .ds-nav-brand { display: flex; align-items: center; gap: 10px; color: #dcc17f; text-decoration: none; } .ds-nav-brand span { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 700; font-size: 1.125rem; color: #f7f3ea; } .ds-nav-links { display: flex; align-items: center; gap: 20px; } .ds-nav-link { padding: 6px 0; border-bottom: 2px solid transparent; color: #d3c9b4; text-decoration: none; font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 500; transition: color 160ms cubic-bezier(0.22,0.61,0.36,1), border-color 160ms cubic-bezier(0.22,0.61,0.36,1); } .ds-nav-link:hover { color: #f7f3ea; border-bottom-color: rgba(242,237,226,0.4); } .ds-nav-link-active { color: #f7f3ea; border-bottom-color: #c4611f; }"
+    },
+    {
+      "name": "Section Head (double rule)",
+      "kind": "custom",
+      "refersTo": "section-heading",
+      "description": "The masthead device: a 5px band bordered top and bottom in gauge gold, then a display-face h2 and an Archivo Narrow lede.",
+      "html": "<div class=\"ds-section\"><div class=\"ds-rule-double\"></div><h2 class=\"ds-section-title\">Forgotten heroes</h2><p class=\"ds-section-lede\">Schoolteachers, weavers, hill chiefs and queens who held the line long before the famous names.</p></div>",
+      "css": ".ds-section { color: #17201c; } .ds-rule-double { height: 5px; width: 100%; border-top: 1px solid rgba(143,122,69,0.6); border-bottom: 1px solid rgba(143,122,69,0.6); margin-bottom: 20px; } .ds-section-title { font-family: 'Bodoni Moda', Georgia, serif; font-weight: 600; font-size: 1.875rem; line-height: 1.12; letter-spacing: 0; margin: 0; } .ds-section-lede { font-family: 'Archivo Narrow', system-ui, sans-serif; font-size: 0.9375rem; line-height: 1.45; color: #3d4a44; margin: 8px 0 0; max-width: 36rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Commemorative Sheet",
+    "overview": "The system is built from India Post's martyr commemoratives. A dark album page is the field the whole product sits on; a sheet of gummed paper is mounted on it and is the only place reading happens; and a pane — one stamp — is a block of a single era ink at full strength, perforated on all four sides, its teeth cut from whatever it happens to sit on. Years are not dates but denominations, struck in the display face with tabular figures. A postmark cancels the principal pane of a page. The result is quiet, dense and materially specific: philatelic rather than \"heritage\", archival rather than antiqued.\n\nTwo things make it hold together, and both are cheap to break. First, the surface discipline: album ink and gummed paper are the only two grounds, era inks are pigments printed onto that structure, and franking ochre is the one ink that ever means act. Second, the perforation: teeth are drawn from radial-gradients tinted by a --tooth custom property, so a pane's edge only reads as a perforation when --tooth matches the colour behind it. Get that wrong and the signature device turns into a row of coloured dots.\n\nThe direction contract named this world; the build is where it landed, and where the two disagree the build is authoritative. Two divergences are worth stating. The contract lists violet among the era inks; in the shipped eraAccent there are exactly six era inks (prussian, stamp green, carmine, plum, gauge gold, franking ochre) and violet survives only as the region ink for \"abroad\" and as one of six fallback monogram plates. And franking ochre does double duty: it is the single action ink and the era ink of two chapters — on a pane it is a ground and a label colour, never a call to act.\n\nOne further inheritance the build carries and future work must not misread: the Tailwind token names predate this world. vault is album ink, paper is the gummed sheet, oxide is franking ochre, saffron is carmine, brass is perforation-gauge gold and sepia is plum. The names are wrong about the colours; the values are right.",
+    "keyCharacteristics": [
+      "Two surfaces only: album ink as the field, gummed paper as the only reading ground.",
+      "Perforation as the signature edge — 12px gauge (.perf-all, .perf-x), 8px fine gauge (.perf-fine) for small stamps.",
+      "Six era inks colour-code nine chapters; one ochre accent carries every action.",
+      "Three faces, three jobs: Bodoni Moda engraved display, Archivo Narrow for denominations/labels/UI, Faustina for long-form reading.",
+      "Square corners (2px), hairline gauge-gold rules, one elevation.",
+      "One easing (cubic-bezier(0.22, 0.61, 0.36, 1)), three durations (160 / 400 / 700 ms), no bounce and no spin.",
+      "Every reveal, every scroll-linked effect and the whole layout survive with JavaScript, hover and images all absent.",
+      "No photographic imagery at all: the product deliberately ships no portraits."
+    ],
+    "rules": [
+      { "name": "The Two Surfaces Rule", "body": "There are exactly two grounds: album ink and gummed paper. Era inks are pigments printed onto that structure, never a third surface. Long-form reading only ever happens on paper.", "section": "colors" },
+      { "name": "The One Franking Ink Rule", "body": "Franking ochre is the only ink that means act — primary buttons, links, progress, focus. Era inks classify; they never invite a click. A screen whose call to action is any colour but ochre is wrong.", "section": "colors" },
+      { "name": "The onInk Rule", "body": "Anything mounted on an era-ink ground takes its lettering from eraAccent.onInk / eraAccent.onInkMuted — never a hardcoded text-paper-* class, never an era's own mid cut. eraAccent in src/components/ui.tsx is the single authority for era colour (bg, text, textVault, border, ring, onInk, onInkMuted, hex, hexPlate); read a colour from it rather than re-deriving one.", "section": "colors" },
+      { "name": "The Deep-Cut Rule", "body": "A pane ground must clear AA against paper lettering at 13px. Ochre and gauge gold reach only ~4.0:1 at their mid cuts, so eraAccent.bg uses their deep cuts (#a34e12, #7c6428) while the other four use their mid cuts. Any new pane ink must be verified the same way, not eyeballed.", "section": "colors" },
+      { "name": "The Inherited Name Rule", "body": "Token names are older than this palette: vault = album ink, paper = gummed sheet, oxide = franking ochre, saffron = carmine, brass = gauge gold, sepia = plum. Trust the value, not the name, and do not rename them — the whole build references them.", "section": "colors" },
+      { "name": "The Pinned Optical Size Rule", "body": "font-optical-sizing: none and font-variation-settings: 'opsz' 16 are set once, globally, on body — not per heading. Left on auto, Bodoni's optical axis raises stroke contrast with size until the hairlines — commas, the tails of y and g — vanish at any large size, monograms and denominations included, not only in an h1; faces without the axis ignore the pin. Headings then add only the display face, font-weight: 600 (700 reads chunky at display sizes), letter-spacing: 0 and text-wrap: balance. Do not re-enable optical sizing anywhere, and do not re-declare the pin locally.", "section": "typography" },
+      { "name": "The Denomination Rule", "body": "Every year, chapter number and figure is a denomination: display face, bold, leading-none, and .num for tabular-nums lining-nums so columns of years align. Years are never set in the body face. The slot is always struck — an undated life shows an em dash, so a missing value reads as an unknown denomination rather than a card that failed to render. A denomination at hero size needs explicit leading (~1.08) so its digits are not shaved by a reveal mask.", "section": "typography" },
+      { "name": "The One Uppercase Rule", "body": ".stamp (12px, 0.06em, boxed) is the only uppercase in the system, and .postmark the only other tracked type. Everything else — labels, buttons, section heads, nav — is sentence case with letter-spacing: 0. This is a single sanctioned exception for a philatelic classification tag, not a licence for tracked-caps eyebrows, kickers or label styling anywhere else.", "section": "typography" },
+      { "name": "The Sheet Rule", "body": "Every route is one mounted sheet. Do not nest a sheet inside a sheet, and do not set body copy directly on album ink — a full-bleed dark band is a pane, and what it contains follows The onInk Rule.", "section": "layout" },
+      { "name": "The Thumb Rule", "body": "On a 375px screen the primary action of any view sits in the bottom 40% or in the fixed bottom bar. Buttons are min-h-11 (44px), chips min-h-9 (36px), nav targets 56px.", "section": "layout" },
+      { "name": "The One Elevation Rule", "body": "Surfaces do not lift. Rank comes from ground colour, a hairline frame, and perforation. If a new component seems to need a shadow, it needs a pane or a rule instead.", "section": "elevation" },
+      { "name": "The Perforation Rule", "body": "A pane's teeth must be the colour of what the pane sits on. --tooth defaults to album ink (#10312b); add .on-sheet when the pane is mounted on paper (#f2ede2), or set --tooth inline to the exact colour behind it. .vault already bundles perf-all on-sheet. A tooth colour that does not match its background is a visible defect, not a variant.", "section": "shapes" },
+      { "name": "The Square Corner Rule", "body": "2px or nothing. The postmark's circle is the system's only round form, and it is a cancellation — not a decorative badge, avatar or pill.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do mount every new route inside the existing .sheet perf-x wrapper and let album ink be the margin; reading belongs on paper.",
+      "Do read every era colour from eraAccent in src/components/ui.tsx — bg for a pane, text/textVault for lettering beside one, hex/hexPlate where raw SVG or inline colour is unavoidable.",
+      "Do take text colour on any era-ink ground from eraAccent.onInk / onInkMuted, and verify a new pane ink at its deep cut against paper lettering at 13px.",
+      "Do set --tooth (or add .on-sheet) to whatever a perforated element sits on, and drop to .perf-fine for anything smaller than about 40px.",
+      "Do set every year as a .denom with .num, and give a hero-size denomination explicit leading so a reveal mask cannot shave its digits.",
+      "Do keep headings at font-weight: 600 and leave the global opsz pin on body alone — it protects monograms and denominations as well as headings.",
+      "Do spend franking ochre on exactly one primary action per view, and cancel exactly one pane per view with a postmark.",
+      "Do cap long-form reading at max-w-prose (66ch) in Faustina, and keep labels at 13px or larger on any coloured ground.",
+      "Do use the one easing and the three durations, and make every animated state legible with motion, JavaScript, hover and images all unavailable."
+    ],
+    "donts": [
+      "Don't rename or \"fix\" the inherited token names (vault, oxide, saffron, brass, sepia) — the whole build depends on them; read the mapping instead.",
+      "Don't introduce a third ground, a gradient, a texture, a vignette or a grain overlay. Album ink and gummed paper are flat.",
+      "Don't add a box-shadow; the bottom sheet's lift is the only one, and depth comes from ground, hairline and perforation.",
+      "Don't use uppercase or letter-spacing outside .stamp and .postmark — no tracked-caps eyebrows, kickers or label styles above headings.",
+      "Don't give an era ink an action role, or a call to action any colour but franking ochre.",
+      "Don't round a corner beyond 2px, or use the postmark's circle for an avatar, badge or pill.",
+      "Don't put a portrait-shaped placeholder, silhouette, stock photograph or generated likeness anywhere; the medallion is the shipped stand-in until a licensed archival photograph exists.",
+      "Don't add Devanagari or any Indic script without asking — the product is Latin-first by owner decision (see PRODUCT.md).",
+      "Don't let a --tooth colour drift from the background behind it; mismatched teeth are the fastest way to make the whole world look broken."
+    ]
+  }
+}

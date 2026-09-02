@@ -8,9 +8,9 @@ export default function AboutPage() {
 
   return (
     <div className="pb-20">
-      <PageIntro eyebrow="About this project" title="History, held carefully" />
+      <PageIntro title="History, held carefully" />
 
-      <div className="container-page max-w-3xl space-y-12">
+      <div className="container-page max-w-3xl space-y-14 sm:space-y-20">
         <Reveal as="section" className="max-w-prose space-y-5">
           <p className="prose-reading dropcap">
             India’s Freedom Timeline is an interactive archive of the people, movements and events of India’s struggle against British colonial rule, from the earliest organized
@@ -25,9 +25,11 @@ export default function AboutPage() {
           </p>
         </Reveal>
 
-        <Reveal as="section" aria-label="Historical method" className="vault rounded-lg p-6 shadow-vault sm:p-8">
-          <p className="eyebrow-vault mb-2">Method</p>
-          <h2 className="mb-4 font-display text-2xl font-semibold text-paper-50">Our approach to accuracy</h2>
+        <div className="rule" aria-hidden="true" />
+
+        <Reveal as="section" aria-label="Historical method" className="vault px-5 py-7 sm:px-8 sm:py-10">
+          <div className="rule-double-vault mb-5" />
+          <h2 className="mb-4 text-h2 text-paper-50">Our approach to accuracy</h2>
           <div className="max-w-prose space-y-4">
             <p className="prose-reading-vault">
               Every biography and event entry carries a visible Sources section citing published historical research, government and archival collections. Where historians dispute
@@ -41,9 +43,11 @@ export default function AboutPage() {
           </div>
         </Reveal>
 
+        <div className="rule" aria-hidden="true" />
+
         <Reveal as="section" aria-label="Principal sources">
-          <p className="eyebrow mb-2">Provenance</p>
-          <h2 className="mb-4 font-display text-2xl font-semibold text-ink">Principal source collections</h2>
+          <h2 className="mb-1 text-h2 text-ink">Principal source collections</h2>
+          <div className="rule mb-4" />
           <ol className="space-y-3">
             {[
               'National Archives of India — Abhilekh Patal digitised records (abhilekh-patal.in)',
@@ -54,24 +58,27 @@ export default function AboutPage() {
               'Netaji Research Bureau, Kolkata; INA trial records',
               'Published scholarship — Bipan Chandra et al., India’s Struggle for Independence; Sekhar Bandyopadhyay, From Plassey to Partition; Sumit Sarkar, The Swadeshi Movement in Bengal; Ramachandra Guha, Gandhi: The Years That Changed the World; Sugata Bose, His Majesty’s Opponent; K. Rajayyan, The South Indian Rebellion — and the works cited on each page',
             ].map((s, i) => (
-              <li key={s} className="flex gap-3 text-[15px] leading-relaxed text-ink-soft">
-                <span className="mt-0.5 shrink-0 font-display text-xs font-bold text-brass-deep">{String(i + 1).padStart(2, '0')}</span>
+              <li key={s} className="flex gap-3 font-body text-meta text-ink-soft">
+                <span className="num mt-px shrink-0 font-display text-sm font-bold text-brass-deep">{String(i + 1).padStart(2, '0')}</span>
                 {s}
               </li>
             ))}
           </ol>
         </Reveal>
 
+        <div className="rule" aria-hidden="true" />
+
         <Reveal as="section" aria-label="Corrections" className="doc p-6">
-          <p className="eyebrow mb-2">Corrections</p>
+          <h2 className="mb-1 text-h3 text-ink">Corrections</h2>
+          <div className="rule mb-4" />
           <p className="prose-reading max-w-prose">
             History deserves correction. If you find an error of fact, a missing attribution, or a person whose story should be here, please open an issue on the project
             repository — each record is a structured, citable file that is straightforward to improve.
           </p>
         </Reveal>
 
-        <Reveal className="flex flex-wrap items-center justify-between gap-4 rounded-lg border border-indigo-mid/25 bg-indigo-wash/60 p-6">
-          <p className="font-display text-xl font-semibold text-indigo-deep">The best way to honour this history is to explore it.</p>
+        <Reveal className="flex flex-wrap items-center justify-between gap-4 rounded-sm border border-indigo-mid/25 bg-indigo-wash/60 p-6">
+          <p className="font-display text-h3 text-indigo-deep">The best way to honour this history is to explore it.</p>
           <div className="flex flex-wrap gap-2">
             <Link to="/timeline" className="btn-seal">
               Explore the timeline

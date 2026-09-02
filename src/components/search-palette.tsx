@@ -2,9 +2,10 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { search, type SearchResult } from '@/lib/search';
 import { dailyPick, fighters } from '@/lib/content';
-import { PortraitMedallion } from '@/components/ui';
+import { Icon, icons, PortraitMedallion } from '@/components/ui';
 
 const kindLabel: Record<SearchResult['kind'], string> = { fighter: 'People', event: 'Events', movement: 'Movements' };
+const kindStamp: Record<SearchResult['kind'], string> = { fighter: 'Person', event: 'Event', movement: 'Movement' };
 const suggestions = ['Bhagat Singh', 'Kattabomman', '1942', 'Salt', 'Assam', 'Women', 'Adivasi', 'INA'];
 
 /**
@@ -59,13 +60,13 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
 
   return (
     <div className="fixed inset-0 z-[60] flex items-start justify-center px-3 pt-[8vh] sm:pt-[12vh]" role="presentation">
-      <button type="button" aria-label="Close search" tabIndex={-1} className="absolute inset-0 cursor-default bg-vault/70 animate-fade-in backdrop-blur-sm" onClick={onClose} />
+      <button type="button" aria-label="Close search" tabIndex={-1} className="absolute inset-0 cursor-default bg-vault/70 animate-fade-in" onClick={onClose} />
       <div
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-label="Search the archive"
-        className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-paper-300 bg-paper-100 shadow-lifted animate-fade-up"
+        className="relative w-full max-w-xl overflow-hidden rounded-sm border border-paper-300 bg-paper-100 animate-fade-up"
         onKeyDown={(e) => {
           if (e.key === 'Escape') onClose();
           if (e.key === 'ArrowDown') {
@@ -96,10 +97,7 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
         }}
       >
         <div className="flex items-center gap-3 border-b border-paper-300 px-4">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="shrink-0 text-ink-faint" aria-hidden="true">
-            <circle cx="11" cy="11" r="7" />
-            <path d="m20 20-3.5-3.5" />
-          </svg>
+          <Icon d={icons.search} className="h-[18px] w-[18px] shrink-0 text-ink-faint" />
           <input
             ref={inputRef}
             type="search"
@@ -111,15 +109,15 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search people, places, years, movements…"
-            className="min-h-14 w-full bg-transparent text-base text-ink placeholder:text-ink-faint focus:outline-none"
+            className="min-h-14 w-full border-b-2 border-transparent bg-transparent font-body text-meta text-ink placeholder:text-ink-faint focus-visible:border-oxide focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
           />
-          <kbd className="hidden rounded border border-paper-300 bg-paper-50 px-1.5 py-0.5 font-body text-[10px] font-semibold text-ink-faint sm:block">esc</kbd>
+          <kbd className="hidden rounded-sm border border-ink/30 px-1.5 font-body text-xs text-ink-faint sm:block">Esc</kbd>
         </div>
 
         <div className="max-h-[60vh] overflow-y-auto p-2 scrollbar-thin-archival" id={listId} role="listbox">
           {query.trim().length < 2 ? (
             <div className="p-3">
-              <p className="eyebrow mb-2">Try</p>
+              <p className="label mb-2">Try</p>
               <div className="flex flex-wrap gap-2">
                 {suggestions.map((s) => (
                   <button key={s} type="button" className="chip" onClick={() => setQuery(s)}>
@@ -127,21 +125,21 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
                   </button>
                 ))}
               </div>
-              <p className="eyebrow mb-2 mt-5">Discover someone today</p>
-              <button type="button" onClick={() => go(`/fighters/${discover.slug}`)} className="flex w-full items-center gap-3 rounded-lg p-2 text-left hover:bg-paper-200/70">
+              <p className="label mb-2 mt-5">Discover someone today</p>
+              <button type="button" onClick={() => go(`/fighters/${discover.slug}`)} className="flex w-full items-center gap-3 rounded-sm p-2 text-left hover:bg-paper-200/70">
                 <PortraitMedallion name={discover.name} size="sm" />
                 <span>
-                  <span className="block font-display text-base font-semibold text-ink">{discover.name}</span>
-                  <span className="block text-xs text-ink-faint line-clamp-1">{discover.summary}</span>
+                  <span className="block font-display text-base font-bold text-ink">{discover.name}</span>
+                  <span className="block font-body text-label text-ink-faint line-clamp-1">{discover.summary}</span>
                 </span>
               </button>
             </div>
           ) : flat.length === 0 ? (
-            <p className="p-6 text-center text-sm text-ink-faint">Nothing found for “{query}”. Try a name, a state, a year or a movement.</p>
+            <p className="p-6 text-center font-body text-meta text-ink-faint">Nothing found for “{query}”. Try a name, a state, a year or a movement.</p>
           ) : (
             grouped.map((g) => (
               <div key={g.kind} className="mb-1">
-                <p className="eyebrow px-3 pb-1 pt-3">{kindLabel[g.kind]}</p>
+                <p className="label px-3 pb-1 pt-3">{kindLabel[g.kind]}</p>
                 {g.items.map((r) => {
                   const idx = flat.indexOf(r);
                   const active = idx === cursor;
@@ -154,20 +152,23 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
                       type="button"
                       onMouseEnter={() => setCursor(idx)}
                       onClick={() => go(r.to)}
-                      className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors duration-160 ${active ? 'bg-ink text-paper-50' : 'hover:bg-paper-200/70'}`}
+                      className={`flex w-full items-center gap-3 rounded-sm px-3 py-2.5 text-left font-body text-meta transition-colors duration-160 ${active ? 'bg-ink text-paper-50' : 'hover:bg-paper-200/70'}`}
                     >
                       {r.kind === 'fighter' ? (
                         <PortraitMedallion name={r.title} size="xs" />
                       ) : (
-                        <span aria-hidden="true" className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs ${active ? 'bg-paper-100/15' : 'bg-paper-200'}`}>
-                          {r.kind === 'event' ? '⧗' : '⚑'}
+                        <span aria-hidden="true" className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-sm ${active ? 'bg-paper-100/15' : 'bg-paper-200'}`}>
+                          <Icon d={r.kind === 'event' ? icons.clock : icons.flag} className="h-4 w-4" />
                         </span>
                       )}
                       <span className="min-w-0">
-                        <span className="block truncate font-display text-[15px] font-semibold">{r.title}</span>
-                        <span className={`block truncate text-xs ${active ? 'text-paper-300' : 'text-ink-faint'}`}>{r.subtitle}</span>
+                        <span className="block truncate font-medium">{r.title}</span>
+                        <span className={`block truncate text-label ${active ? 'text-paper-300' : 'text-ink-faint'}`}>{r.subtitle}</span>
                       </span>
-                      {active && <span className="ml-auto hidden text-[10px] font-semibold text-paper-300 sm:block">↵</span>}
+                      <span className="ml-auto flex shrink-0 items-center gap-2">
+                        <span className={`stamp hidden sm:inline-block ${active ? 'text-paper-300' : 'text-sepia'}`}>{kindStamp[r.kind]}</span>
+                        {active && <kbd className="hidden rounded-sm border border-paper-50/30 px-1.5 font-body text-xs text-paper-300 sm:block">Enter</kbd>}
+                      </span>
                     </button>
                   );
                 })}

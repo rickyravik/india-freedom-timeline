@@ -17,9 +17,9 @@ Built like a premium historical product, not an encyclopedia: an interactive era
 
 ## Design
 
-The interface follows the **"Archive Room"** system documented in [`DESIGN.md`](./DESIGN.md): dark *vault* surfaces frame and punctuate; warm *paper* carries reading; giant display numerals anchor eras; a single cinematic easing and three durations govern all motion. Highlights:
+The interface follows the **"Commemorative Sheet"** system documented in [`DESIGN.md`](./DESIGN.md), drawn from India Post's martyr commemoratives. Album ink is the field; every route is a gummed-paper sheet mounted on it; a *pane* is one stamp — an era ink at full strength, perforated on all four sides, its teeth cut from whatever it sits on. Franking ochre is the single accent ink, years are set as denominations, and a postmark cancels the principal pane. One cinematic easing and three durations govern all motion. Highlights:
 
-- Chapter-based timeline with a scroll-linked spine, drifting era numerals and an active-era rail
+- Chapter-based timeline with a scroll-linked spine, each chapter a pane in its own era ink with the year set as its denomination
 - Profile heroes with a **lifespan bar** placing each life against 1757–1947, a Story Mode **stepper** on phones, and related people drawn as a **constellation**
 - Command-palette search (⌘K / Ctrl+K / `/`) available on every page, with keyboard navigation
 - A **trail** of recently viewed lives so discovery journeys are visible and reversible
@@ -29,10 +29,10 @@ The interface follows the **"Archive Room"** system documented in [`DESIGN.md`](
 
 - [React 18](https://react.dev) + [TypeScript](https://www.typescriptlang.org) (strict)
 - [Vite 7](https://vite.dev)
-- [Tailwind CSS 3](https://tailwindcss.com) with a custom archival design system (aged paper, ink, deep indigo, muted saffron, forest, oxide red, antique brass)
+- [Tailwind CSS 3](https://tailwindcss.com) with a custom philatelic design system (album ink, gummed paper, and six stamp inks — prussian, stamp green, carmine, plum, gauge gold and franking ochre)
 - [react-router-dom 6](https://reactrouter.com) with lazy-loaded routes
 - [GSAP 3](https://gsap.com) installed as an application dependency for animation work (rather than loaded from a deferred third-party script)
-- Self-hosted fonts via Fontsource: Fraunces Variable (display, optical sizing), Inter Variable (UI), Crimson Pro (long-form reading)
+- Self-hosted fonts via Fontsource: Bodoni Moda Variable (engraved display), Archivo Narrow Variable (denominations, labels, UI), Faustina Variable (long-form reading)
 - **No backend** — fully static, ideal for Cloudflare Pages
 
 ## Getting started

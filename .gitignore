@@ -4,3 +4,8 @@ dist
 .DS_Store
 shots.mjs
 .wrangler
+.playwright-mcp
+
+# Impeccable session artifacts — keep only the DESIGN.md sidecar
+.impeccable/*
+!.impeccable/design.json

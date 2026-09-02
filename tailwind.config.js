@@ -1,70 +1,98 @@
 /** @type {import('tailwindcss').Config} */
+/*
+  "The Commemorative Sheet" — India Post martyr commemoratives.
+  Token names are inherited from the previous system; their values are stamp
+  inks. The mapping, so the names read correctly:
+    vault  = album page (the dark field stamps are mounted on; the dominant surface)
+    paper  = gummed sheet (the mounted sheet — the only place long reading happens)
+    oxide  = franking ochre (THE accent ink: primary action, links, hover)
+    saffron= carmine        (one era ink)
+    brass  = perforation gauge gold (rules, frames, ornament)
+    sepia  = plum           (metadata ink, one era ink)
+*/
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        /* Reading surfaces */
-        paper: {
-          50: '#faf6ec',
-          100: '#f5efe0',
-          200: '#ece2cb',
-          300: '#ddceac',
-          400: '#c9b489',
-        },
-        /* Archive surfaces */
+        /* Album page — the dominant field */
         vault: {
-          DEFAULT: '#15120e',
-          soft: '#1e1913',
-          edge: '#2a231b',
+          DEFAULT: '#10312b',
+          soft: '#16403a',
+          edge: '#1d5148',
+        },
+        /* Gummed sheet — mounted, and the only reading surface */
+        paper: {
+          50: '#f7f3ea',
+          100: '#f2ede2',
+          200: '#e6dfcf',
+          300: '#d3c9b4',
+          400: '#b9ac91',
         },
         ink: {
-          DEFAULT: '#221c15',
-          soft: '#4a4036',
-          faint: '#6f6354',
+          DEFAULT: '#17201c',
+          soft: '#3d4a44',
+          faint: '#5a6861',
         },
+        /* Franking ochre — the one accent ink */
+        oxide: {
+          deep: '#a34e12',
+          DEFAULT: '#c4611f',
+          bright: '#eda15f',
+          wash: '#f7e6d6',
+        },
+        /* Era inks */
         indigo: {
-          deep: '#22304f',
-          mid: '#33456e',
-          soft: '#5b6c94',
-          wash: '#e8ebf2',
-        },
-        saffron: {
-          DEFAULT: '#c07a2c',
-          deep: '#9c5f1d',
-          bright: '#e0a054',
-          wash: '#f6e8d3',
+          deep: '#1a3154',
+          mid: '#23406b',
+          soft: '#a8b8cd',
+          wash: '#e6eaf1',
         },
         forest: {
-          DEFAULT: '#3d5a3c',
-          deep: '#2c452c',
-          bright: '#7fa07a',
-          wash: '#e5ece3',
+          deep: '#0e332d',
+          DEFAULT: '#14453d',
+          bright: '#a8c7bd',
+          wash: '#e3ece9',
         },
-        oxide: {
-          DEFAULT: '#993527',
-          deep: '#7a2a1f',
-          bright: '#c9553f',
-          wash: '#f3e2dd',
-        },
-        brass: {
-          DEFAULT: '#9c7f3a',
-          deep: '#7c6428',
-          bright: '#d1b56a',
+        saffron: {
+          deep: '#6f2420',
+          DEFAULT: '#8e2f2a',
+          bright: '#d98a80',
+          wash: '#f2e2e0',
         },
         sepia: {
-          DEFAULT: '#8a6f52',
-          deep: '#5f4b36',
+          DEFAULT: '#5b2e4a',
+          deep: '#452038',
+          bright: '#c5a8b7',
+        },
+        /* Perforation gauge gold — rules, frames, ornament */
+        brass: {
+          deep: '#7c6428',
+          DEFAULT: '#8f7a45',
+          bright: '#dcc17f',
         },
       },
       fontFamily: {
-        display: ['"Fraunces Variable"', 'Fraunces', 'Georgia', 'serif'],
-        body: ['"Inter Variable"', 'system-ui', '-apple-system', 'sans-serif'],
-        reading: ['"Crimson Pro"', 'Georgia', 'serif'],
+        /* Engraved head — a Didone, the way stamp legends were cut */
+        display: ['"Bodoni Moda Variable"', '"Bodoni Moda"', 'Georgia', 'serif'],
+        /* Denominations, labels, UI — the condensed gothic of a stamp's value */
+        body: ['"Archivo Narrow Variable"', '"Archivo Narrow"', 'system-ui', 'sans-serif'],
+        /* Long-form reading */
+        reading: ['"Faustina Variable"', 'Faustina', 'Georgia', 'serif'],
       },
+      /* Role scale — fixed steps, two breakpoints, no fluid clamp */
       fontSize: {
-        display: ['clamp(2.75rem, 7vw, 6rem)', { lineHeight: '0.98', letterSpacing: '-0.02em' }],
-        numeral: ['clamp(5rem, 22vw, 14rem)', { lineHeight: '0.85', letterSpacing: '-0.04em' }],
+        label: ['0.8125rem', { lineHeight: '1.25rem' }],
+        meta: ['0.9375rem', { lineHeight: '1.45' }],
+        reading: ['1.0625rem', { lineHeight: '1.62' }],
+        /* record title / pull-quote — the step between reading and h3 */
+        h4: ['1.1875rem', { lineHeight: '1.3' }],
+        h3: ['1.375rem', { lineHeight: '1.2' }],
+        h2: ['1.875rem', { lineHeight: '1.12' }],
+        h1: ['2.75rem', { lineHeight: '1.05' }],
+        /* the hero's phone cut: 4rem breaks the headline over four lines at 390px */
+        'hero-sm': ['2.25rem', { lineHeight: '1.06' }],
+        hero: ['4rem', { lineHeight: '1.02' }],
       },
       transitionTimingFunction: {
         cinematic: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
@@ -75,10 +103,7 @@ export default {
         700: '700ms',
       },
       boxShadow: {
-        card: '0 1px 2px rgba(34,28,21,0.06), 0 6px 20px -6px rgba(34,28,21,0.14)',
-        lifted: '0 2px 4px rgba(34,28,21,0.08), 0 18px 40px -12px rgba(34,28,21,0.28)',
-        sheet: '0 -12px 40px rgba(21,18,14,0.35)',
-        vault: 'inset 0 1px 0 rgba(255,255,255,0.04), 0 20px 60px -20px rgba(0,0,0,0.6)',
+        sheet: '0 -12px 40px rgba(8,24,20,0.45)',
       },
       maxWidth: {
         prose: '66ch',
@@ -107,10 +132,6 @@ export default {
         drawLine: {
           from: { strokeDashoffset: '1' },
           to: { strokeDashoffset: '0' },
-        },
-        drift: {
-          from: { transform: 'translateY(6%)' },
-          to: { transform: 'translateY(-6%)' },
         },
         grow: {
           from: { transform: 'scaleY(0)' },

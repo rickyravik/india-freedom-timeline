@@ -3,7 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { eventsForMovement, fightersForMovement, movementBySlug, movements } from '@/lib/content';
 import { regionNames } from '@/data/regions';
 import { usePageMeta } from '@/lib/hooks';
-import { PageIntro, Reveal, SourceList } from '@/components/ui';
+import { Icon, PageIntro, Postmark, Reveal, SectionHeading, SourceList, icons } from '@/components/ui';
 import { EventCard, FighterCard, MovementCard } from '@/components/cards';
 
 export default function MovementsPage() {
@@ -11,7 +11,6 @@ export default function MovementsPage() {
   return (
     <div className="pb-20">
       <PageIntro
-        eyebrow="Many roads to freedom"
         title="Movements of the Struggle"
         lede="Petition and boycott, satyagraha and armed revolt, Adivasi risings and soldiers’ armies — the freedom struggle was many struggles, arguing with and strengthening one another."
       />
@@ -45,31 +44,32 @@ export function MovementPage() {
 
   return (
     <article>
-      <header className="vault">
-        <p aria-hidden="true" className="drift-on-scroll pointer-events-none absolute right-0 top-6 select-none font-display text-numeral font-black italic leading-none text-forest-bright opacity-[0.08]">
-          {movement.startYear}
-        </p>
-        <div className="container-page pb-12 pt-28 sm:pb-16 sm:pt-36">
-          <p className="eyebrow-vault mb-4 animate-fade-up">
+      {/* The movement's own stamp, mounted on the sheet */}
+      <header className="container-page pt-2">
+        <div className="vault animate-fade-up px-5 py-7 sm:px-9 sm:py-10">
+          <Postmark lines={['India', 'Post', String(movement.startYear)]} className="absolute right-4 top-5 hidden sm:grid" />
+
+          <h1 className="max-w-3xl text-h1 text-paper-50 sm:pr-32">{movement.name}</h1>
+          <p className="label-vault num mt-3">
             {movement.period} · {movement.regions.map((r) => regionNames[r]).join(', ')}
           </p>
-          <h1 className="max-w-4xl text-display font-black text-paper-50 animate-fade-up" style={{ animationDelay: '80ms', fontSize: 'clamp(2.2rem, 5.5vw, 4.4rem)' }}>
-            {movement.name}
-          </h1>
-          <p className="prose-reading-vault mt-6 max-w-3xl text-[1.2rem] animate-fade-up" style={{ animationDelay: '200ms' }}>
-            {movement.summary}
-          </p>
-          <div className="mt-7 flex flex-wrap gap-2 animate-fade-up" style={{ animationDelay: '300ms' }}>
-            <span className="chip-vault !min-h-8">{people.length} people</span>
-            <span className="chip-vault !min-h-8">{relatedEvents.length} events</span>
+
+          <div className="rule-vault my-6" />
+
+          <p className="prose-reading-vault max-w-prose">{movement.summary}</p>
+
+          <div className="mt-7 flex flex-wrap gap-2">
+            <span className="chip-vault num">{people.length} people</span>
+            <span className="chip-vault num">{relatedEvents.length} events</span>
             <Link to={`/timeline?movement=${movement.id}`} className="chip-vault min-h-10">
-              ⧗ Filter the timeline by this movement
+              <Icon d={icons.clock} className="h-4 w-4" />
+              Filter the timeline by this movement
             </Link>
           </div>
         </div>
       </header>
 
-      <div className="container-page space-y-14 py-12">
+      <div className="container-page space-y-14 py-14 sm:space-y-20 sm:py-16">
         <section className="max-w-prose space-y-5" aria-label="About this movement">
           {movement.description.map((para, i) => (
             <Reveal as="p" key={i} className={`prose-reading ${i === 0 ? 'dropcap' : ''}`} delay={i * 60}>
@@ -80,10 +80,7 @@ export function MovementPage() {
 
         {relatedEvents.length > 0 && (
           <section aria-label="Events of this movement">
-            <Reveal className="mb-5">
-              <p className="eyebrow mb-1">Moments</p>
-              <h2 className="font-display text-2xl font-semibold text-ink">Events of the movement</h2>
-            </Reveal>
+            <SectionHeading title="Events of the movement" />
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {relatedEvents.map((e, i) => (
                 <EventCard key={e.id} event={e} delay={i * 60} />
@@ -96,19 +93,17 @@ export function MovementPage() {
       </div>
 
       {people.length > 0 && (
-        <section className="vault py-16" aria-label="People of this movement">
+        <section className="vault px-5 py-12 sm:px-8 sm:py-16" aria-label="People of this movement">
           <div className="container-page">
-            <Reveal className="mb-8">
-              <p className="eyebrow-vault mb-2">The people</p>
-              <h2 className="font-display text-[1.9rem] font-semibold leading-tight text-paper-50 sm:text-[2.4rem]">Who carried this movement</h2>
-            </Reveal>
+            <SectionHeading title="Who carried this movement" vault />
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {people.map((f, i) => (
                 <FighterCard key={f.id} fighter={f} compact vault delay={(i % 6) * 60} />
               ))}
             </div>
-            <Link to="/movements" className="mt-10 inline-block text-sm font-semibold text-brass-bright">
-              ← All movements
+            <Link to="/movements" className="mt-10 inline-flex items-center gap-2 font-body text-meta font-medium text-brass-bright hover:text-paper-50">
+              <Icon d={icons.arrowLeft} className="h-4 w-4" />
+              All movements
             </Link>
           </div>
         </section>

@@ -5,7 +5,7 @@ import { fighters, roleLabels } from '@/lib/content';
 import { eras } from '@/data/eras';
 import { regionNames } from '@/data/regions';
 import { useBookmarks, usePageMeta } from '@/lib/hooks';
-import { BottomSheet, ChipGroup, EmptyState, PageIntro } from '@/components/ui';
+import { BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, icons } from '@/components/ui';
 import { FighterCard } from '@/components/cards';
 
 type Collection = 'all' | 'featured' | 'forgotten' | 'women' | 'saved';
@@ -16,7 +16,7 @@ const collections: { value: Collection; label: string }[] = [
   { value: 'featured', label: 'Featured' },
   { value: 'forgotten', label: 'Forgotten heroes' },
   { value: 'women', label: 'Women of the movement' },
-  { value: 'saved', label: '★ Saved' },
+  { value: 'saved', label: 'Saved' },
 ];
 
 const collectionValues = new Set<Collection>(collections.map(({ value }) => value));
@@ -89,23 +89,20 @@ export default function FightersPage() {
 
   return (
     <div className="pb-20">
-      <PageIntro eyebrow={`${fighters.length} lives — and growing`} title="Freedom Fighters" lede="Queens and schoolteachers, poets and generals, satyagrahis and revolutionaries — from every region, community and creed.">
+      <PageIntro title="Freedom Fighters" lede="Queens and schoolteachers, poets and generals, satyagrahis and revolutionaries — from every region, community and creed.">
         <div className="flex flex-wrap items-center gap-2">
           <label className="relative min-w-0 flex-1 sm:max-w-sm">
             <span className="sr-only">Search by name, place or tag</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-faint" aria-hidden="true">
-              <circle cx="11" cy="11" r="7" />
-              <path d="m20 20-3.5-3.5" />
-            </svg>
+            <Icon d={icons.search} className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-faint" />
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Name, place, tag…"
-              className="min-h-12 w-full rounded-full border border-paper-300 bg-paper-50 pl-11 pr-4 text-sm text-ink shadow-card placeholder:text-ink-faint focus:border-ink"
+              className="min-h-12 w-full rounded-sm border border-paper-400 bg-paper-50 pl-11 pr-4 font-body text-meta text-ink placeholder:text-ink-faint focus:border-ink"
             />
           </label>
-          <button type="button" className={`chip min-h-12 !px-5 ${activeCount ? 'chip-active' : ''}`} onClick={() => setSheetOpen(true)} aria-haspopup="dialog">
+          <button type="button" className={`chip min-h-12 !px-5 text-meta ${activeCount ? 'chip-active' : ''}`} onClick={() => setSheetOpen(true)} aria-haspopup="dialog">
             Filters{activeCount > 0 && ` · ${activeCount}`}
           </button>
         </div>
@@ -126,7 +123,7 @@ export default function FightersPage() {
       </BottomSheet>
 
       <div className="container-page">
-        <p className="mb-4 text-sm text-ink-faint" role="status">
+        <p className="num mb-4 font-body text-label text-ink-faint" role="status">
           Showing {results.length} of {fighters.length}
         </p>
         {results.length === 0 ? (
