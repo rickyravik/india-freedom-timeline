@@ -45,23 +45,27 @@ npm run build      # typecheck + production build + sitemap → dist/
 npm run preview    # preview the production build
 ```
 
-## Deploying to Cloudflare Pages
+## Deploying to Cloudflare
 
-### Via the dashboard (recommended)
+The project deploys as a **static-assets Worker**, configured by [`wrangler.jsonc`](./wrangler.jsonc):
 
-1. Push this repository to GitHub.
-2. In the Cloudflare dashboard: **Workers & Pages → Create → Pages → Connect to Git** and select the repo.
-3. Use these settings:
-   - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
-4. Deploy. SPA routing (`public/_redirects`) and cache headers (`public/_headers`) ship with the build automatically.
+- `assets.directory` is `./dist`
+- `assets.not_found_handling` is `single-page-application`, so every unmatched path serves `index.html` and react-router takes over
+- `build.command` runs `npm run build`, so `wrangler deploy` is self-contained and does not depend on a platform build command being set
+- `.node-version` pins Node 22, which Vite 7 requires (`^20.19.0 || >=22.12.0`)
+
+### Via the dashboard
+
+**Workers & Pages -> Create application -> import a repository**, select the repo, and set the deploy command to `npx wrangler deploy`. The build command may be left empty, since wrangler runs the build itself.
 
 ### Via Wrangler CLI
 
 ```bash
-npm run build
-npx wrangler pages deploy dist --project-name india-freedom-timeline
+npx wrangler login
+npx wrangler deploy
 ```
+
+`public/_headers` ships with the build and supplies cache-control and security headers. There is deliberately **no `_redirects` file**: `/* /index.html 200` is the Cloudflare *Pages* SPA idiom, and Workers Assets rejects it as an infinite loop because it already strips `.html` and `/index`. SPA routing is handled by `not_found_handling` instead.
 
 Optionally set `SITE_URL=https://your-domain.example` at build time so the sitemap and robots.txt reference your custom domain (see `scripts/generate-sitemap.mjs`).
 
@@ -81,7 +85,7 @@ src/
 scripts/
   generate-sitemap.mjs  # Builds dist/sitemap.xml from the content slugs
 public/
-  _redirects, _headers  # Cloudflare Pages SPA routing + caching
+  _headers              # cache-control + security headers
 ```
 
 ## Adding historical records
