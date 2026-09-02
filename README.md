@@ -13,7 +13,7 @@ Built like a premium historical product, not an encyclopedia: an interactive era
 - **Learn & Play**: history quiz (shuffled), "Guess the freedom fighter", and side-by-side comparison of any two lives.
 - **Mobile-first**: thumb-friendly bottom navigation, touch-sized targets, bottom-sheet filters, smooth vertical timeline, works from ~320 px wide upward.
 - **Accessibility**: semantic HTML, keyboard operable, visible focus rings, ARIA labels, `prefers-reduced-motion` support, strong contrast on an archival palette.
-- **Performance**: route-based code splitting, self-hosted fonts, tiny dependency surface (React + Router only at runtime), long-cache immutable assets, generated sitemap.
+- **Performance**: route-based code splitting, self-hosted fonts, a small dependency surface, long-cache immutable assets, and a generated sitemap.
 
 ## Design
 
@@ -31,6 +31,7 @@ The interface follows the **"Archive Room"** system documented in [`DESIGN.md`](
 - [Vite 7](https://vite.dev)
 - [Tailwind CSS 3](https://tailwindcss.com) with a custom archival design system (aged paper, ink, deep indigo, muted saffron, forest, oxide red, antique brass)
 - [react-router-dom 6](https://reactrouter.com) with lazy-loaded routes
+- [GSAP 3](https://gsap.com) installed as an application dependency for animation work (rather than loaded from a deferred third-party script)
 - Self-hosted fonts via Fontsource: Fraunces Variable (display, optical sizing), Inter Variable (UI), Crimson Pro (long-form reading)
 - **No backend** — fully static, ideal for Cloudflare Pages
 

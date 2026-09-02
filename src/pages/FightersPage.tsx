@@ -19,14 +19,23 @@ const collections: { value: Collection; label: string }[] = [
   { value: 'saved', label: '★ Saved' },
 ];
 
+const collectionValues = new Set<Collection>(collections.map(({ value }) => value));
+const regionValues = new Set<RegionId>(Object.keys(regionNames) as RegionId[]);
+const roleValues = new Set<Role>(Object.keys(roleLabels) as Role[]);
+const eraValues = new Set(eras.map(({ id }) => id));
+
 export default function FightersPage() {
   usePageMeta('Freedom Fighters', 'Browse the people of India’s freedom struggle — revolutionaries, satyagrahis, queens, poets and tribal leaders from every region.');
   const [params] = useSearchParams();
+  const requestedCollection = params.get('collection') as Collection | null;
+  const requestedRegion = params.get('region') as RegionId | null;
+  const requestedRole = params.get('role') as Role | null;
+  const requestedEra = params.get('era');
   const [query, setQuery] = useState('');
-  const [collection, setCollection] = useState<Collection>((params.get('collection') as Collection) || 'all');
-  const [region, setRegion] = useState<RegionId | null>((params.get('region') as RegionId) || null);
-  const [eraId, setEraId] = useState<string | null>(params.get('era'));
-  const [role, setRole] = useState<Role | null>((params.get('role') as Role) || null);
+  const [collection, setCollection] = useState<Collection>(requestedCollection && collectionValues.has(requestedCollection) ? requestedCollection : 'all');
+  const [region, setRegion] = useState<RegionId | null>(requestedRegion && regionValues.has(requestedRegion) ? requestedRegion : null);
+  const [eraId, setEraId] = useState<string | null>(requestedEra && eraValues.has(requestedEra) ? requestedEra : null);
+  const [role, setRole] = useState<Role | null>(requestedRole && roleValues.has(requestedRole) ? requestedRole : null);
   const [gender, setGender] = useState<Gender | null>(null);
   const [sort, setSort] = useState<Sort>('chronological');
   const [sheetOpen, setSheetOpen] = useState(false);

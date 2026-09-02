@@ -14,6 +14,7 @@ const suggestions = ['Bhagat Singh', 'Kattabomman', '1942', 'Salt', 'Assam', 'Wo
 export function SearchPalette({ open, onClose }: { open: boolean; onClose: () => void }) {
   const navigate = useNavigate();
   const inputRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const listId = useId();
   const [query, setQuery] = useState('');
   const [cursor, setCursor] = useState(0);
@@ -35,10 +36,11 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
     setQuery('');
     setCursor(0);
     const previouslyFocused = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(() => inputRef.current?.focus());
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = previousOverflow;
       previouslyFocused?.focus?.();
     };
   }, [open]);
@@ -59,6 +61,7 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
     <div className="fixed inset-0 z-[60] flex items-start justify-center px-3 pt-[8vh] sm:pt-[12vh]" role="presentation">
       <button type="button" aria-label="Close search" tabIndex={-1} className="absolute inset-0 cursor-default bg-vault/70 animate-fade-in backdrop-blur-sm" onClick={onClose} />
       <div
+        ref={dialogRef}
         role="dialog"
         aria-modal="true"
         aria-label="Search the archive"
@@ -67,7 +70,7 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
           if (e.key === 'Escape') onClose();
           if (e.key === 'ArrowDown') {
             e.preventDefault();
-            setCursor((c) => Math.min(c + 1, flat.length - 1));
+            if (flat.length) setCursor((c) => Math.min(c + 1, flat.length - 1));
           }
           if (e.key === 'ArrowUp') {
             e.preventDefault();
@@ -78,9 +81,17 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
             go(flat[cursor].to);
           }
           if (e.key === 'Tab') {
-            // keep focus inside the dialog
-            e.preventDefault();
-            inputRef.current?.focus();
+            const focusable = Array.from(dialogRef.current?.querySelectorAll<HTMLElement>('input, button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])') ?? []);
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
           }
         }}
       >
