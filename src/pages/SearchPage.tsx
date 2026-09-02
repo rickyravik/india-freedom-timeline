@@ -18,6 +18,9 @@ export default function SearchPage() {
     inputRef.current?.focus();
   }, []);
   useEffect(() => {
+    setQuery(params.get('q') ?? '');
+  }, [params]);
+  useEffect(() => {
     const t = setTimeout(() => setParams(query ? { q: query } : {}, { replace: true }), 250);
     return () => clearTimeout(t);
   }, [query, setParams]);

@@ -347,6 +347,7 @@ export function BottomSheet({
   useEffect(() => {
     if (!open) return;
     const previouslyFocused = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
@@ -355,7 +356,7 @@ export function BottomSheet({
     sheetRef.current?.focus();
     return () => {
       document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
+      document.body.style.overflow = previousOverflow;
       previouslyFocused?.focus?.();
     };
   }, [open, onClose]);
