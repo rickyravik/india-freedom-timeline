@@ -1,0 +1,298 @@
+import type { FreedomFighter } from '@/types';
+
+/** Adivasi and tribal resistance leaders of the later colonial period. */
+export const tribalLeaders: FreedomFighter[] = [
+  {
+    id: 'birsa-munda',
+    slug: 'birsa-munda',
+    name: 'Birsa Munda',
+    alternateNames: ['Dharti Aba', 'Bhagwan Birsa'],
+    birthYear: 1875,
+    deathYear: 1900,
+    birthDateLabel: '15 November 1875',
+    deathDateLabel: '9 June 1900',
+    birthPlace: 'Ulihatu, Khunti district, Jharkhand',
+    region: 'east',
+    states: ['Jharkhand'],
+    gender: 'male',
+    era: 'rise-of-nationalism',
+    roles: ['tribal-leader', 'organizer'],
+    summary:
+      'Dharti Aba — "Father of the Earth" — the young Munda prophet who led the Ulgulan of 1899–1900 for land and self-rule, died in Ranchi jail at about twenty-five, and is honoured today across India.',
+    shortStory: [
+      {
+        title: 'The shepherd boy',
+        text: 'Birsa was born into a poor Munda family in the forests of Chotanagpur. He grew up herding sheep, playing the flute — and watching outsiders take his people’s ancestral lands under British law.',
+      },
+      {
+        title: 'Dharti Aba',
+        text: 'As a young man, Birsa became a healer and teacher. Thousands of Mundas came to hear him, calling him "Dharti Aba" — Father of the Earth. He told them the land was theirs and they need not fear.',
+      },
+      {
+        title: 'The Ulgulan',
+        text: 'In 1899 Birsa declared the Ulgulan — the Great Tumult. With bows, arrows and immense courage, the Mundas rose against landlords and the Raj. The British answered with guns at Dombari Hill.',
+      },
+      {
+        title: 'The legacy',
+        text: 'Captured, Birsa died in Ranchi jail on 9 June 1900 — only about twenty-five. But the law was changed to protect Munda lands, and today his birthday, 15 November, is celebrated as Janjatiya Gaurav Divas across India. His portrait hangs in Parliament.',
+      },
+    ],
+    fullBiography: [
+      'Birsa Munda was born at Ulihatu in 1875 into a sharecropping family displaced by the destruction of the khuntkatti system, under which Munda clans had held their cleared lands collectively. Schooled briefly at a German mission (and expelled), exposed to Vaishnav preachers, he forged from these materials a new faith — one God, purity, and the promise that the Mundas would recover their kingdom. Followers called him Bhagwan (God) and Dharti Aba.',
+      'The movement turned political as it grew: against the dikus (outsider landlords), the beth begari forced labour, and the colonial courts that sanctified dispossession. Arrested in 1895 and jailed two years, he returned to organize in secret. On Christmas Eve 1899 the Ulgulan opened with flaming arrows; through January 1900 the Mundas attacked police stations and estates until troops broke them at Sail Rakab and Dombari Hill, where many followers were killed.',
+      'Betrayed for reward and captured in February 1900, Birsa died in Ranchi jail on 9 June 1900, officially of cholera — a verdict many have questioned. The rising forced the Chotanagpur Tenancy Act (1908), which restricted the transfer of Adivasi land — protection that endures. Birsa’s afterlife has grown ever larger: his statue in the Parliament complex, the state of Jharkhand created on his birth anniversary in 2000, and since 2021 the national observance of 15 November as Janjatiya Gaurav Divas.',
+    ],
+    entryIntoStruggle: 'The Sardari agitation and mission-era ferment of the 1880s–90s.',
+    ideology: 'Religious revival fused with Adivasi self-rule — "Abua raj" (our kingdom).',
+    achievements: [
+      'Led the Munda Ulgulan of 1899–1900',
+      'His movement won the Chotanagpur Tenancy Act’s land protections',
+    ],
+    sacrifices: ['Died in prison at about twenty-five'],
+    legacy: 'The foremost national symbol of Adivasi resistance; Janjatiya Gaurav Divas marks his birth.',
+    facts: [
+      'Jharkhand state was inaugurated on his birth anniversary, 15 November 2000.',
+      'He is among the few leaders whose portrait hangs in the Central Hall of Parliament.',
+    ],
+    disputed: [
+      {
+        claim: 'Cause of death',
+        note: 'The jail recorded cholera as the cause of Birsa’s death in custody; the speed and circumstances have led many writers to question the official account.',
+      },
+    ],
+    timelineEvents: ['munda-ulgulan'],
+    movements: ['tribal-resistance'],
+    organizations: [],
+    relatedPeople: ['sidhu-kanhu-murmu', 'tilka-manjhi', 'alluri-sitarama-raju', 'komaram-bheem'],
+    sources: [
+      {
+        title: 'Birsa Munda and His Movement 1874–1901',
+        author: 'K. S. Singh',
+        publisher: 'Oxford University Press',
+        year: 1983,
+        type: 'book',
+      },
+      {
+        title: 'Janjatiya Gaurav Divas records',
+        publisher: 'Ministry of Culture, Government of India',
+        url: 'https://www.indiaculture.gov.in/',
+        type: 'government',
+      },
+    ],
+    tags: ['Adivasi', 'Munda', 'Ulgulan', 'Jharkhand'],
+    featured: true,
+  },
+  {
+    id: 'alluri-sitarama-raju',
+    slug: 'alluri-sitarama-raju',
+    name: 'Alluri Sitarama Raju',
+    alternateNames: ['Manyam Veerudu'],
+    birthYear: 1897,
+    deathYear: 1924,
+    birthDateLabel: '4 July 1897',
+    deathDateLabel: '7 May 1924',
+    birthPlace: 'Pandrangi, Visakhapatnam district, Andhra Pradesh',
+    region: 'south',
+    states: ['Andhra Pradesh'],
+    gender: 'male',
+    era: 'non-cooperation',
+    roles: ['tribal-leader', 'military-leader', 'revolutionary'],
+    summary:
+      'Manyam Veerudu — hero of the jungles — the ascetic who led the Koya and hill peoples of the Godavari agency in the Rampa rebellion of 1922–24, and was executed by firing squad without trial.',
+    shortStory: [
+      {
+        title: 'The young sanyasi',
+        text: 'Sitarama Raju gave up ordinary life as a teenager and wandered the hills of the Eastern Ghats as an ascetic. The hill people came to trust and revere him — and he took their sufferings as his own.',
+      },
+      {
+        title: 'Unjust laws',
+        text: 'Colonial forest laws had banned the hill people’s farming and forced them into unpaid road labour. When petitions failed, Raju organized the young men of the hills into a fighting force.',
+      },
+      {
+        title: 'The raids',
+        text: 'In August 1922 they raided police stations at Chintapalli, Krishnadevipeta and Rajavommangi, seizing rifles — and leaving a note listing exactly what was taken. For two years his guerrillas defeated every force sent against them.',
+      },
+      {
+        title: 'The hero of the jungles',
+        text: 'Captured in May 1924, Raju was tied to a tree and shot without trial. He was twenty-six. Andhra remembers him as Manyam Veerudu, and his statue stands across the state.',
+      },
+    ],
+    fullBiography: [
+      'Alluri Sitarama Raju, born on the plains near Visakhapatnam, renounced conventional life young and moved through the agency tracts of the Godavari hills as a sanyasi with a reputation for austerity and healing. The condition of the hill communities under the Madras Forest Act — podu cultivation banned, forest produce seized, gudem villagers pressed into unpaid road-gang labour by corrupt contractors — became his cause; the failure of Gandhian petitions in the tracts convinced him that this fight would be armed.',
+      'The Rampa rebellion opened on 22 August 1922 with the raid on Chintapalli police station, followed within days by Krishnadevipeta and Rajavommangi — arms taken, records signed for in Raju’s own hand. His force ambushed police columns at Damanapalli (killing two officers), and for two years, supplied and shielded by the villages, outfought the Malabar Special Police across the forests, with lieutenants like Gam Mallu Dora and Gantam Dora.',
+      'The Raj poured in forces under Rutherford’s special commission, with collective punishments on the villages. Betrayed and captured at Mampa in May 1924, Raju was taken to Koyyuru, tied to a tree, and executed by firing squad on 7 May 1924 without trial. "Manyam Veerudu" passed into ballad and film (the 2022 blockbuster RRR reimagined him for a new generation); his statue was unveiled in Parliament’s precincts, and his 125th birth year was marked nationally in 2022.',
+    ],
+    entryIntoStruggle: 'Championing agency-tract grievances against forest law from around 1920.',
+    ideology: 'Armed defence of Adivasi land and dignity; influenced by, then departing from, Non-Cooperation.',
+    achievements: [
+      'Led the most effective southern guerrilla campaign of the era',
+      'Made agency-area injustices a national question',
+    ],
+    sacrifices: ['Executed without trial at twenty-six'],
+    legacy: 'Manyam Veerudu — Andhra’s great martyr; commemorated in statues, cinema and stamps.',
+    facts: ['His raiding parties left signed inventories of the weapons they took.'],
+    timelineEvents: ['rampa-rebellion'],
+    movements: ['tribal-resistance', 'revolutionary-movement'],
+    organizations: [],
+    relatedPeople: ['komaram-bheem', 'birsa-munda', 'tanguturi-prakasam'],
+    sources: [
+      {
+        title: 'Alluri Sitarama Raju commemorative records',
+        publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
+        url: 'https://amritmahotsav.nic.in/',
+        type: 'government',
+      },
+      {
+        title: 'The Rampa Rebellion of 1922–24 (studies)',
+        author: 'David Arnold (in Subaltern Studies)',
+        publisher: 'Oxford University Press',
+        year: 1982,
+        type: 'journal',
+      },
+    ],
+    tags: ['Adivasi', 'Andhra', 'guerrilla', 'martyr'],
+    featured: true,
+  },
+  {
+    id: 'komaram-bheem',
+    slug: 'komaram-bheem',
+    name: 'Komaram Bheem',
+    birthYear: 1901,
+    deathYear: 1940,
+    deathDateLabel: 'October 1940 (Aswayuja Pournami)',
+    birthPlace: 'Sankepalli, Adilabad district, Telangana',
+    region: 'south',
+    states: ['Telangana'],
+    gender: 'male',
+    era: 'quit-india-and-ina',
+    roles: ['tribal-leader', 'military-leader'],
+    summary:
+      'The Gond leader of Adilabad who raised the cry "Jal, Jangal, Zameen" — water, forest, land — and fought the Nizam’s state until he fell at Jodeghat in 1940.',
+    shortStory: [
+      {
+        title: 'A Gond boyhood',
+        text: 'Komaram Bheem grew up in the Gond villages of Adilabad’s forests, in the Nizam’s state of Hyderabad. He never went to school — but he learned early how officials and landlords crushed his people.',
+      },
+      {
+        title: 'Flight and return',
+        text: 'After a clash with an oppressive official’s men, young Bheem fled — working in tea gardens in Assam, where he saw workers organize. He came home with a plan and a printing of new ideas in his head.',
+      },
+      {
+        title: 'Jal, Jangal, Zameen',
+        text: 'Bheem united twelve villages and demanded the Gonds’ rights to their water, forests and land — "Jal, Jangal, Zameen". When talks failed, they fought the Nizam’s police from the hills of Jodeghat.',
+      },
+      {
+        title: 'The last battle',
+        text: 'In October 1940, betrayed to the police, Bheem and his companions were surrounded at Jodeghat and killed. The Gonds honour him as a god; his cry still echoes in every movement for tribal rights.',
+      },
+    ],
+    fullBiography: [
+      'Komaram Bheem was born into a Gond family in the forests of Adilabad, in Hyderabad State — outside British India, under the Nizam, whose revenue farmers, forest officials and settler landlords pressed the Gonds from their shifting cultivation. After an altercation in which an oppressor was killed, Bheem fled the region, working years in the tea gardens of Assam, where strikes and labour organization left their mark on him.',
+      'Returning to Adilabad in the 1930s, he settled at Bhabejhari and organized the Gonds of twelve villages (the "twelve mauzas") around the demand summarised in the slogan attributed to him — Jal, Jangal, Zameen — petitioning the Nizam’s government for land rights and an end to exactions, and preparing to resist when petitions failed. From Jodeghat’s hills he led a guerrilla defence of Gond country through 1938–40.',
+      'On the full-moon night of Aswayuja in October 1940, police guided by an informer surrounded Bheem’s camp at Jodeghat; he died fighting with about a dozen companions. The Nizam’s government, shaken, commissioned the anthropologist Haimendorf’s inquiries that led to tribal protections in the state. The Gonds deified Bheem, commemorating him each Aswayuja Pournami; Telangana has raised a memorial complex at Jodeghat, a district bears his name, and the film RRR carried his legend worldwide.',
+    ],
+    entryIntoStruggle: 'Organizing Adilabad’s Gond villages against the Nizam’s forest and revenue exactions, 1930s.',
+    ideology: '"Jal, Jangal, Zameen" — Adivasi sovereignty over water, forest and land.',
+    achievements: [
+      'United the Gond villages in organized resistance',
+      'His revolt forced protective reforms in Hyderabad State',
+    ],
+    sacrifices: ['Killed in battle at Jodeghat, about thirty-nine'],
+    legacy: 'Deified by the Gonds; the watchword he raised guides Adivasi movements to this day.',
+    facts: ['His struggle was against the princely state of Hyderabad — a reminder that colonial-era oppression wore more than one crown.'],
+    disputed: [
+      {
+        claim: 'Details of early life and dates',
+        note: 'Bheem’s life comes to us largely through Gond oral tradition and later reconstruction; dates including his birth year and episodes of his youth vary across accounts.',
+      },
+    ],
+    timelineEvents: [],
+    movements: ['tribal-resistance'],
+    organizations: [],
+    relatedPeople: ['birsa-munda', 'alluri-sitarama-raju', 'rani-gaidinliu'],
+    sources: [
+      {
+        title: 'Komaram Bheem memorial, Jodeghat',
+        publisher: 'Government of Telangana',
+        type: 'government',
+      },
+      {
+        title: 'Tribes of the Deccan studies (C. von Fürer-Haimendorf’s Adilabad work)',
+        publisher: 'Academic ethnography of Hyderabad State',
+        type: 'journal',
+      },
+    ],
+    tags: ['Gond', 'Telangana', 'Jal Jangal Zameen'],
+    forgotten: true,
+    featured: true,
+  },
+  {
+    id: 'rani-gaidinliu',
+    slug: 'rani-gaidinliu',
+    name: 'Rani Gaidinliu',
+    birthYear: 1915,
+    deathYear: 1993,
+    birthDateLabel: '26 January 1915',
+    deathDateLabel: '17 February 1993',
+    birthPlace: 'Nungkao, Tamenglong district, Manipur',
+    region: 'northeast',
+    states: ['Manipur', 'Nagaland', 'Assam'],
+    gender: 'female',
+    era: 'civil-disobedience',
+    roles: ['tribal-leader', 'organizer'],
+    summary:
+      'The Naga spiritual and political leader who rose against British rule at sixteen, spent fourteen years in colonial prisons, and was given the title "Rani" by Jawaharlal Nehru.',
+    shortStory: [
+      {
+        title: 'The girl of the hills',
+        text: 'Gaidinliu was born among the Rongmei Nagas of Manipur. At thirteen she joined her cousin Haipou Jadonang’s Heraka movement, which sought to revive Naga religion — and to end British rule in the hills.',
+      },
+      {
+        title: 'Sixteen and leading a rebellion',
+        text: 'When the British hanged Jadonang in 1931, Gaidinliu — just sixteen — took his place. She told her people to pay no taxes, and her followers fought the Assam Rifles from village strongholds.',
+      },
+      {
+        title: 'Fourteen years in prison',
+        text: 'Captured in 1932, she was sentenced to life imprisonment. Nehru met her in Shillong jail in 1937, called her the "daughter of the hills", and gave her the title Rani — Queen. But only free India could release her, in 1947.',
+      },
+      {
+        title: 'Honoured at last',
+        text: 'She worked for her people’s culture and welfare all her life, and received the Padma Bhushan. Her portrait now looks over Parliament’s halls.',
+      },
+    ],
+    fullBiography: [
+      'Gaidinliu of Nungkao joined the Heraka religious reform movement of her cousin Haipou Jadonang, which grew among the Zeliangrong Nagas into a challenge to British authority — prophesying the end of white rule and organizing against house-tax and forced porterage. After the British executed Jadonang in August 1931 on contested charges, the sixteen-year-old Gaidinliu assumed the movement’s spiritual and political leadership.',
+      'She moved between villages of the Naga hills raising no-tax resistance and, as the Assam Rifles hunted her, guerrilla defence; the village of Pulomi, where her followers were building a wooden fortress, fell to a surprise assault in October 1932, and she was captured. Tried, she was sentenced to life imprisonment; her followers faced executions and collective fines. Jawaharlal Nehru, visiting Shillong jail in 1937, publicised her case — naming her Rani Gaidinliu — but British authorities refused release; she spent fourteen years in the jails of Assam and beyond.',
+      'Released at independence in 1947, she continued to lead the Heraka community, working from Kohima and Manipur for Zeliangrong welfare and cultural revival — a stance that later drew friction with sections of the Naga national movement and with missionary Christianity alike; she spent 1960s years underground again in defence of Heraka tradition before a settlement. Padma Bhushan (1982), Vivekananda Sevā awards and posthumous commemorations — including a coin and her portrait in Parliament — mark independent India’s regard. She died in 1993 at Longkao.',
+    ],
+    entryIntoStruggle: 'Heraka movement under Jadonang from age thirteen; leadership at sixteen.',
+    ideology: 'Naga religious revival (Heraka) and freedom from British rule.',
+    achievements: [
+      'Led armed and no-tax resistance in the Naga hills at sixteen',
+      'Endured fourteen years as a political prisoner',
+    ],
+    sacrifices: ['Youth spent entirely in prison; lifelong struggle for her community'],
+    legacy: 'The Northeast’s great woman freedom fighter; honoured nationally as Rani Gaidinliu.',
+    facts: ['Nehru wrote of meeting her: a "daughter of the hills" whom free India must not forget.'],
+    timelineEvents: [],
+    movements: ['tribal-resistance'],
+    organizations: [],
+    relatedPeople: ['tirot-sing', 'kanaklata-barua', 'birsa-munda'],
+    sources: [
+      {
+        title: 'Rani Gaidinliu commemorative records',
+        publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
+        url: 'https://amritmahotsav.nic.in/',
+        type: 'government',
+      },
+      {
+        title: 'Studies of the Heraka movement and Zeliangrong Nagas',
+        publisher: 'Academic research on Northeast India',
+        type: 'journal',
+      },
+    ],
+    tags: ['Naga', 'women', 'Northeast', 'Heraka'],
+    featured: true,
+    forgotten: true,
+  },
+];

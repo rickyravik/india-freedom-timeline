@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://india-freedom-timeline.pages.dev/sitemap.xml

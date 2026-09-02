@@ -1,0 +1,423 @@
+import type { Movement } from '@/types';
+
+export const movements: Movement[] = [
+  {
+    id: 'early-uprisings',
+    slug: 'early-uprisings',
+    name: 'Early Resistance to Company Rule',
+    period: '1757–1856',
+    startYear: 1757,
+    endYear: 1856,
+    summary:
+      'A century of armed resistance to East India Company expansion — by rulers such as Velu Nachiyar, Pazhassi Raja and Rani Chennamma, by sepoys at Vellore, and by peasant and religious rebels across the subcontinent.',
+    description: [
+      'The East India Company’s victories at Plassey (1757) and Buxar (1764) made a trading corporation the effective ruler of Bengal, and over the following century its armies, treaties and annexations spread Company control across India. Resistance followed everywhere the Company went: dispossessed rulers fought back in the south and west, sepoys mutinied at Vellore in 1806 over interference with religious practice, and rural movements — from the Sannyasi-Fakir uprisings of Bengal to Titumir’s bamboo fort — challenged the new order of revenue collectors and indigo planters.',
+      'These risings were local and were crushed one by one, but they built a long memory of defiance. Leaders like Puli Thevar and Velu Nachiyar in the Tamil country, Pazhassi Raja in Malabar and Kittur Chennamma in Karnataka were remembered in folk song long before nationalist historians recovered their stories.',
+    ],
+    regions: ['south', 'west', 'east', 'north'],
+    keyPeople: ['puli-thevar', 'velu-nachiyar', 'veerapandiya-kattabomman', 'marudhu-brothers', 'dheeran-chinnamalai', 'pazhassi-raja', 'rani-chennamma', 'titumir'],
+    keyEvents: ['battle-of-plassey', 'polygar-war-1799', 'south-indian-rebellion-1801', 'vellore-mutiny', 'kittur-rebellion'],
+    sources: [
+      {
+        title: 'From Plassey to Partition and After: A History of Modern India',
+        author: 'Sekhar Bandyopadhyay',
+        publisher: 'Orient BlackSwan',
+        year: 2015,
+        type: 'book',
+      },
+      {
+        title: 'The Cambridge Economic History of India, Vol. 2',
+        publisher: 'Cambridge University Press',
+        year: 1983,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'tribal-resistance',
+    slug: 'tribal-resistance',
+    name: 'Adivasi & Tribal Uprisings',
+    period: '1780s–1940s',
+    startYear: 1784,
+    endYear: 1945,
+    summary:
+      'From Tilka Manjhi and the Santhal Hul to Birsa Munda’s Ulgulan, the Rampa rebellion and Komaram Bheem — India’s Adivasi communities fought sustained wars against colonial land grabs, forest laws and exploitation.',
+    description: [
+      'Colonial rule hit India’s Adivasi (indigenous) communities with particular force: new land settlements handed their forests and fields to outsiders, moneylenders and contractors followed, and forest laws criminalised customary ways of living. The result was over a century of uprisings — Tilka Manjhi’s resistance in the 1780s, the Kol and Bhil risings, Tirot Sing’s war in the Khasi Hills, the great Santhal Hul of 1855, Birsa Munda’s Ulgulan of 1899–1900, the Rampa rebellion of Alluri Sitarama Raju in 1922–24, and Komaram Bheem’s struggle in the Gond country in the 1930s.',
+      'These movements were fought for land, forest and self-rule — "Jal, Jangal, Zameen" — and were met with overwhelming military force. Historians now treat them as central chapters of the freedom struggle rather than side stories, and leaders like Birsa Munda are commemorated nationally.',
+    ],
+    regions: ['east', 'central', 'south', 'northeast'],
+    keyPeople: ['tilka-manjhi', 'tirot-sing', 'sidhu-kanhu-murmu', 'birsa-munda', 'alluri-sitarama-raju', 'komaram-bheem', 'rani-gaidinliu'],
+    keyEvents: ['khasi-uprising', 'santhal-hul', 'munda-ulgulan', 'rampa-rebellion'],
+    sources: [
+      {
+        title: 'Elementary Aspects of Peasant Insurgency in Colonial India',
+        author: 'Ranajit Guha',
+        publisher: 'Duke University Press',
+        year: 1999,
+        type: 'book',
+      },
+      {
+        title: 'Birsa Munda and His Movement 1874–1901',
+        author: 'K. S. Singh',
+        publisher: 'Oxford University Press',
+        year: 1983,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'great-revolt',
+    slug: 'revolt-of-1857',
+    name: 'The Revolt of 1857',
+    period: '1857–1858',
+    startYear: 1857,
+    endYear: 1858,
+    summary:
+      'The sepoy mutiny that became a general uprising across northern and central India — led by Rani Lakshmibai, Tatya Tope, Begum Hazrat Mahal, Kunwar Singh and fought in the name of Bahadur Shah Zafar.',
+    description: [
+      'What began on 10 May 1857 as a mutiny of sepoys at Meerut became, within weeks, the greatest armed challenge the British Empire faced in the nineteenth century. Delhi fell to the rebels, who proclaimed the aged Mughal emperor Bahadur Shah Zafar their sovereign; Awadh, Rohilkhand, Bundelkhand and much of the Gangetic plain rose with them. Grievances ran far deeper than the greased cartridges that sparked the outbreak: annexations under the Doctrine of Lapse, ruined artisans and taluqdars, and fear that British rule threatened religion and custom.',
+      'The rebellion was suppressed with great violence by mid-1858. It ended the East India Company, brought India under the Crown, and left leaders — Lakshmibai of Jhansi above all — whose courage became legend for every later generation of nationalists, who called it the First War of Independence.',
+    ],
+    regions: ['north', 'central', 'east'],
+    keyPeople: ['mangal-pandey', 'rani-lakshmibai', 'tatya-tope', 'begum-hazrat-mahal', 'kunwar-singh', 'nana-saheb', 'bahadur-shah-zafar', 'jhalkari-bai'],
+    keyEvents: ['revolt-1857', 'siege-of-jhansi', 'queens-proclamation'],
+    sources: [
+      {
+        title: 'The Great Rebellion of 1857 in India: Exploring Transgressions, Contests and Diversities',
+        author: 'Biswamoy Pati (ed.)',
+        publisher: 'Routledge',
+        year: 2010,
+        type: 'book',
+      },
+      {
+        title: 'The Last Mughal: The Fall of a Dynasty, Delhi 1857',
+        author: 'William Dalrymple',
+        publisher: 'Bloomsbury',
+        year: 2006,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'moderate-nationalism',
+    slug: 'moderate-nationalism',
+    name: 'Early Nationalism & the Congress',
+    period: '1885–1905',
+    startYear: 1885,
+    endYear: 1905,
+    summary:
+      'The founding generation of the Indian National Congress — Naoroji, Gokhale, Banerjee — who built all-India politics through petitions, the press and the devastating economic critique of the "drain of wealth".',
+    description: [
+      'The Indian National Congress, founded in Bombay in December 1885, gathered lawyers, journalists, teachers and merchants into the first genuinely all-India political organization. Its early leaders — dubbed "Moderates" — believed in constitutional methods: petitions, resolutions, testimony before commissions, and patient work to build a public. Their greatest weapon was analysis; Dadabhai Naoroji’s "drain theory" showed how India’s wealth flowed to Britain, arming every later generation with an economic case against empire.',
+      'By 1905 a younger generation — Tilak, Lajpat Rai, Bipin Chandra Pal — had grown impatient with prayer and petition, and the Swadeshi upheaval split the Congress at Surat in 1907. But the institutions, newspapers and habits of political organization the Moderates built became the scaffolding of everything that followed.',
+    ],
+    regions: ['west', 'east', 'north', 'south'],
+    keyPeople: ['dadabhai-naoroji', 'gopal-krishna-gokhale', 'surendranath-banerjee'],
+    keyEvents: ['founding-of-inc'],
+    sources: [
+      {
+        title: "India's Struggle for Independence 1857–1947",
+        author: 'Bipan Chandra, Mridula Mukherjee, Aditya Mukherjee, Sucheta Mahajan & K. N. Panikkar',
+        publisher: 'Penguin',
+        year: 1989,
+        type: 'book',
+      },
+      {
+        title: 'Poverty and Un-British Rule in India',
+        author: 'Dadabhai Naoroji',
+        year: 1901,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'swadeshi',
+    slug: 'swadeshi-movement',
+    name: 'Swadeshi Movement',
+    period: '1905–1911',
+    startYear: 1905,
+    endYear: 1911,
+    summary:
+      'The boycott of British goods and embrace of Indian enterprise, education and culture that erupted after the Partition of Bengal in 1905 — India’s first mass political movement.',
+    description: [
+      'When Viceroy Curzon partitioned Bengal in 1905, protest leapt beyond meeting halls: British cloth was burned in bonfires, students left government schools for new "national" institutions, Indian mills, banks and match factories were founded, and Rabindranath Tagore’s songs carried the movement into every home. "Swadeshi" — of one’s own country — became both an economic weapon and a cultural awakening, and the movement spread from Bengal to Maharashtra, Punjab and the Madras Presidency, where V. O. Chidambaram Pillai launched an Indian-owned shipping line.',
+      'Repression, deportations and internal divisions wore the open movement down, and part of its youth turned to underground revolutionary societies. But its methods — boycott, national education, constructive enterprise — became the standard repertoire of every later campaign, and the partition itself was annulled in 1911.',
+    ],
+    regions: ['east', 'west', 'south', 'north'],
+    keyPeople: ['bal-gangadhar-tilak', 'bipin-chandra-pal', 'lala-lajpat-rai', 'aurobindo-ghose', 'vo-chidambaram-pillai', 'subramania-bharati', 'subramania-siva'],
+    keyEvents: ['partition-of-bengal', 'swadeshi-movement-launch', 'tirunelveli-uprising-1908'],
+    sources: [
+      {
+        title: 'The Swadeshi Movement in Bengal 1903–1908',
+        author: 'Sumit Sarkar',
+        publisher: "People's Publishing House",
+        year: 1973,
+        type: 'book',
+      },
+      {
+        title: "India's Struggle for Independence 1857–1947",
+        author: 'Bipan Chandra et al.',
+        publisher: 'Penguin',
+        year: 1989,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'revolutionary-movement',
+    slug: 'revolutionary-movement',
+    name: 'Revolutionary Movement',
+    period: '1905–1934',
+    startYear: 1905,
+    endYear: 1934,
+    summary:
+      'The secret societies — Anushilan, Jugantar, HRA, HSRA, the Chittagong group — whose members chose armed struggle, and whose trials, hunger strikes and executions stirred the whole country.',
+    description: [
+      'Alongside open mass politics ran a hidden stream: young men and women organized in secret societies who believed the British would never leave except by force. In Bengal the Anushilan Samiti and Jugantar carried out assassinations and armed robberies to fund revolt; in London, Madan Lal Dhingra struck at India House’s enemies; during the First World War Bagha Jatin died in a gun battle awaiting German arms and Rash Behari Bose plotted mutiny across northern India.',
+      'A second generation — Ram Prasad Bismil and Ashfaqulla Khan of the Kakori action, then Bhagat Singh, Chandrashekhar Azad, Sukhdev and Rajguru of the Hindustan Socialist Republican Association — fused revolutionary daring with socialist ideas and used their trials as national platforms. Surya Sen’s Chittagong armoury raid of 1930, in which Pritilata Waddedar and Kalpana Datta fought, showed the movement’s reach; the executions of its leaders made them immortal in popular memory.',
+    ],
+    regions: ['east', 'north', 'west', 'abroad'],
+    keyPeople: ['khudiram-bose', 'bagha-jatin', 'ram-prasad-bismil', 'ashfaqulla-khan', 'bhagat-singh', 'chandrashekhar-azad', 'surya-sen', 'pritilata-waddedar', 'durgawati-devi'],
+    keyEvents: ['muzaffarpur-action', 'kakori-train-action', 'assembly-bomb-case', 'chittagong-armoury-raid', 'execution-bhagat-singh'],
+    sources: [
+      {
+        title: 'The Bomb in Bengal: The Rise of Revolutionary Terrorism in India 1900–1910',
+        author: 'Peter Heehs',
+        publisher: 'Oxford University Press',
+        year: 1993,
+        type: 'book',
+      },
+      {
+        title: 'Waiting for Swaraj: Inner Lives of Indian Revolutionaries',
+        author: 'Aparna Vaidik',
+        publisher: 'Cambridge University Press',
+        year: 2021,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'ghadar',
+    slug: 'ghadar-movement',
+    name: 'Ghadar Movement',
+    period: '1913–1918',
+    startYear: 1913,
+    endYear: 1918,
+    summary:
+      'Indian emigrants in North America — farmers, labourers, students — who sailed home during the First World War to raise rebellion, and paid for it at the gallows.',
+    description: [
+      'On the Pacific coast of North America, Punjabi farm workers and students facing racial exclusion built the Ghadar ("Revolt") Party in 1913 under Sohan Singh Bhakna and Lala Har Dayal. Their newspaper declared open war on the British Empire, and when the World War began thousands of emigrants sailed for India to raise mutiny among the troops.',
+      'The plan was betrayed and broken: the February 1915 rising was pre-empted, and the Lahore conspiracy trials sent dozens to the gallows or the Cellular Jail — among them nineteen-year-old Kartar Singh Sarabha, whom Bhagat Singh would call his guru. The Komagata Maru’s turning away in 1914, and the shooting of its passengers at Budge Budge, remain emblems of the era.',
+    ],
+    regions: ['abroad', 'north'],
+    keyPeople: ['lala-har-dayal', 'kartar-singh-sarabha', 'rash-behari-bose'],
+    keyEvents: ['founding-of-ghadar', 'komagata-maru'],
+    sources: [
+      {
+        title: 'Ghadar Movement: Ideology, Organisation and Strategy',
+        author: 'Harish K. Puri',
+        publisher: 'Guru Nanak Dev University Press',
+        year: 1983,
+        type: 'book',
+      },
+      {
+        title: 'Echoes of Mutiny: Race, Surveillance and Indian Anticolonialism in North America',
+        author: 'Seema Sohi',
+        publisher: 'Oxford University Press',
+        year: 2014,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'home-rule',
+    slug: 'home-rule-movement',
+    name: 'Home Rule Movement',
+    period: '1916–1918',
+    startYear: 1916,
+    endYear: 1918,
+    summary:
+      'Tilak’s and Annie Besant’s leagues carried the demand for Indian self-government into small towns during the First World War, re-energising politics between Swadeshi and Gandhi.',
+    description: [
+      'With the Congress quiet and the war absorbing the Empire, Bal Gangadhar Tilak (released from six years in Mandalay jail) and Annie Besant launched twin Home Rule Leagues in 1916, demanding self-government on the Irish model. Lecture tours, pamphlets in Indian languages and local branches took the demand to towns the Congress had never reached.',
+      'Besant’s internment in 1917 made her a national heroine and forced the Montagu Declaration promising "responsible government" as British policy. The Leagues faded as Gandhi’s satyagraha arrived, but they trained the organisers and built the networks the mass movements of the 1920s would run on.',
+    ],
+    regions: ['west', 'south', 'north'],
+    keyPeople: ['bal-gangadhar-tilak', 'annie-besant'],
+    keyEvents: ['home-rule-movement', 'lucknow-pact'],
+    sources: [
+      {
+        title: 'Tilak and Gokhale: Revolution and Reform in the Making of Modern India',
+        author: 'Stanley Wolpert',
+        publisher: 'University of California Press',
+        year: 1962,
+        type: 'book',
+      },
+      {
+        title: "India's Struggle for Independence 1857–1947",
+        author: 'Bipan Chandra et al.',
+        publisher: 'Penguin',
+        year: 1989,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'khilafat',
+    slug: 'khilafat-movement',
+    name: 'Khilafat Movement',
+    period: '1919–1924',
+    startYear: 1919,
+    endYear: 1924,
+    summary:
+      'The campaign to defend the Ottoman Caliphate that allied with Gandhi’s Non-Cooperation and brought Hindus and Muslims together in an unprecedented joint struggle.',
+    description: [
+      'After the First World War, Indian Muslims mobilised to defend the defeated Ottoman Sultan-Caliph against dismemberment of his empire. Led by the Ali brothers — Mohammad Ali and Shaukat Ali — and supported wholeheartedly by Gandhi, the Khilafat committees fused with the Non-Cooperation movement in 1920, producing the greatest display of Hindu-Muslim unity of the colonial era.',
+      'The movement collapsed after Turkey itself abolished the Caliphate in 1924, and the unity it embodied proved fragile. But it had drawn millions of Muslims into mass politics and made leaders like Mohammad Ali Jouhar central figures of the national movement.',
+    ],
+    regions: ['north', 'west', 'south'],
+    keyPeople: ['mohammad-ali-jouhar', 'mahatma-gandhi', 'maulana-azad'],
+    keyEvents: ['non-cooperation-launch'],
+    sources: [
+      {
+        title: 'The Khilafat Movement: Religious Symbolism and Political Mobilization in India',
+        author: 'Gail Minault',
+        publisher: 'Columbia University Press',
+        year: 1982,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'non-cooperation',
+    slug: 'non-cooperation-movement',
+    name: 'Non-Cooperation Movement',
+    period: '1920–1922',
+    startYear: 1920,
+    endYear: 1922,
+    summary:
+      'Gandhi’s first all-India satyagraha: courts, schools, titles and foreign cloth boycotted by millions, until the violence at Chauri Chaura led him to halt the campaign.',
+    description: [
+      'In the shadow of the Jallianwala Bagh massacre, the Congress under Gandhi adopted a programme without precedent: Indians would withdraw cooperation from the Raj itself. Lawyers left the courts, students left government schools, titles were returned, foreign cloth burned, and charkha-spun khadi became the uniform of the movement. Alongside the Khilafat campaign, it drew millions — peasants, workers, women — into political life for the first time.',
+      'In February 1922, after a crowd burned twenty-two policemen to death at Chauri Chaura, Gandhi suspended the movement, insisting that means mattered as much as ends. The decision dismayed many colleagues — and pushed some of the young towards revolutionary alternatives — but the Raj’s prestige never recovered from the sight of a subcontinent saying no.',
+    ],
+    regions: ['north', 'east', 'west', 'south', 'central'],
+    keyPeople: ['mahatma-gandhi', 'mohammad-ali-jouhar', 'c-rajagopalachari', 'vallabhbhai-patel', 'jawaharlal-nehru', 'maulana-azad'],
+    keyEvents: ['non-cooperation-launch', 'chauri-chaura'],
+    sources: [
+      {
+        title: "India's Struggle for Independence 1857–1947",
+        author: 'Bipan Chandra et al.',
+        publisher: 'Penguin',
+        year: 1989,
+        type: 'book',
+      },
+      {
+        title: 'Gandhi: The Years That Changed the World, 1914–1948',
+        author: 'Ramachandra Guha',
+        publisher: 'Penguin Allen Lane',
+        year: 2018,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'civil-disobedience',
+    slug: 'civil-disobedience-movement',
+    name: 'Civil Disobedience Movement',
+    period: '1930–1934',
+    startYear: 1930,
+    endYear: 1934,
+    summary:
+      'Launched by the Dandi March, the deliberate mass breaking of colonial law — salt, forest and tax laws — that brought tens of thousands, notably women, into the struggle and into prison.',
+    description: [
+      'After the Purna Swaraj declaration of complete independence, Gandhi chose an improbable weapon: salt. The 240-mile march from Sabarmati to Dandi in March–April 1930 ended with a handful of illegal salt lifted from the shore — and the country understood. Salt was made and sold illegally everywhere; Sarojini Naidu led the raid on the Dharasana salt works, where volunteers stood unresisting under police lathis; Khan Abdul Ghaffar Khan’s Khudai Khidmatgars faced gunfire at Peshawar; forest laws were broken in the south and land revenue withheld in Gujarat.',
+      'Women joined in unprecedented numbers — picketing liquor and cloth shops, marching, going to jail by the thousand. Some ninety thousand were imprisoned before the movement was suspended in 1934. It did not win freedom by itself, but it transformed who "the nation" was.',
+    ],
+    regions: ['west', 'north', 'south', 'east'],
+    keyPeople: ['mahatma-gandhi', 'sarojini-naidu', 'khan-abdul-ghaffar-khan', 'kasturba-gandhi', 'kamaladevi-chattopadhyay', 'c-rajagopalachari', 'rukmini-lakshmipathi', 'k-kamaraj', 'tiruppur-kumaran', 'tanguturi-prakasam'],
+    keyEvents: ['purna-swaraj', 'dandi-march', 'vedaranyam-salt-march', 'gandhi-irwin-pact'],
+    sources: [
+      {
+        title: 'Gandhi: The Years That Changed the World, 1914–1948',
+        author: 'Ramachandra Guha',
+        publisher: 'Penguin Allen Lane',
+        year: 2018,
+        type: 'book',
+      },
+      {
+        title: 'The Salt March (collections)',
+        publisher: 'National Gandhi Museum, New Delhi',
+        url: 'https://gandhimuseum.in/',
+        type: 'museum',
+      },
+    ],
+  },
+  {
+    id: 'quit-india',
+    slug: 'quit-india-movement',
+    name: 'Quit India Movement',
+    period: '1942–1944',
+    startYear: 1942,
+    endYear: 1944,
+    summary:
+      '"Do or Die" — the August 1942 uprising that saw the entire Congress leadership jailed, an underground of radio broadcasts and sabotage, and fierce repression across India.',
+    description: [
+      'On 8 August 1942, with the war at India’s doorstep and the Cripps Mission failed, the Congress passed the Quit India resolution at Gowalia Tank in Bombay, and Gandhi gave the mantra "Do or Die". By dawn the entire leadership was in prison. Leaderless, the country rose anyway: crowds attacked symbols of the Raj, railway lines and telegraph wires were cut, parallel governments appeared in Satara, Talcher and Tamluk, and Usha Mehta’s secret Congress Radio broadcast until traced. Aruna Asaf Ali, who hoisted the flag at Gowalia Tank, and Jayaprakash Narayan, who escaped Hazaribagh jail, became legends of the underground.',
+      'Repression was severe: over a thousand killed by official count, tens of thousands jailed, whole villages punished. Elderly Matangini Hazra fell to bullets at Tamluk holding the flag; teenaged Kanaklata Barua at Gohpur in Assam. Quit India convinced Britain that India could not be held after the war.',
+    ],
+    regions: ['west', 'east', 'north', 'south', 'northeast', 'central'],
+    keyPeople: ['mahatma-gandhi', 'aruna-asaf-ali', 'usha-mehta', 'jayaprakash-narayan', 'matangini-hazra', 'kanaklata-barua', 'kushal-konwar', 'accamma-cherian'],
+    keyEvents: ['quit-india-launch'],
+    sources: [
+      {
+        title: 'Quit India Movement (records and papers)',
+        publisher: 'National Archives of India',
+        url: 'https://www.abhilekh-patal.in/',
+        type: 'archive',
+      },
+      {
+        title: "India's Struggle for Independence 1857–1947",
+        author: 'Bipan Chandra et al.',
+        publisher: 'Penguin',
+        year: 1989,
+        type: 'book',
+      },
+    ],
+  },
+  {
+    id: 'azad-hind',
+    slug: 'azad-hind-movement',
+    name: 'Azad Hind & the INA',
+    period: '1942–1946',
+    startYear: 1942,
+    endYear: 1946,
+    summary:
+      'Subhas Chandra Bose’s Indian National Army and Provisional Government of Free India, which fought at Imphal and Kohima — and whose post-war trials at the Red Fort set India alight.',
+    description: [
+      'Escaping house arrest in Calcutta in 1941, Subhas Chandra Bose reached Southeast Asia in 1943 to take command of the Indian National Army — raised from prisoners of war and the Indian communities of Malaya and Burma. His Provisional Government of Azad Hind declared war on Britain; the Rani of Jhansi Regiment under Lakshmi Sahgal made it one of the first armies of its era with a full women’s combat unit. The INA fought alongside Japanese forces at Imphal and Kohima in 1944, planting the tricolour at Moirang before the campaign collapsed in retreat.',
+      'Defeat became a strange victory: when Britain tried INA officers Shah Nawaz Khan, Prem Sahgal and Gurbaksh Singh Dhillon jointly at the Red Fort in 1945, the country — and parts of the British Indian armed forces — erupted in their support, feeding the naval mutiny of 1946 and hastening the end of the Raj.',
+    ],
+    regions: ['abroad', 'northeast', 'east'],
+    keyPeople: ['subhas-chandra-bose', 'lakshmi-sahgal', 'rash-behari-bose'],
+    keyEvents: ['azad-hind-government', 'imphal-campaign', 'ina-trials', 'rin-mutiny'],
+    sources: [
+      {
+        title: 'His Majesty’s Opponent: Subhas Chandra Bose and India’s Struggle against Empire',
+        author: 'Sugata Bose',
+        publisher: 'Harvard University Press',
+        year: 2011,
+        type: 'book',
+      },
+      {
+        title: 'INA papers and trial records',
+        publisher: 'National Archives of India',
+        url: 'https://www.abhilekh-patal.in/',
+        type: 'archive',
+      },
+    ],
+  },
+];
+
+export const movementById = new Map(movements.map((m) => [m.id, m]));
