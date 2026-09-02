@@ -158,7 +158,6 @@ export const finalEvents: HistoricalEvent[] = [
       {
         title: 'Dandi March records and photographs',
         publisher: 'National Gandhi Museum',
-        url: 'https://gandhimuseum.in/',
         type: 'museum',
       },
     ],

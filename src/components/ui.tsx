@@ -305,6 +305,26 @@ const typeLabel: Record<string, string> = {
   website: 'Website',
 };
 
+/* The URLs on record are institution portals, not per-record deep links, so
+   the link is labelled by where the source is held rather than dressed up as
+   the document itself. A bare hostname told the reader nothing. */
+const holdings: Record<string, string> = {
+  'www.abhilekh-patal.in': 'Abhilekh Patal, National Archives of India',
+  'pmml.gov.in': 'Prime Ministers’ Museum & Library',
+  'www.gandhiheritageportal.org': 'Gandhi Heritage Portal',
+  'www.saada.org': 'South Asian American Digital Archive',
+  'amritkaal.nic.in': 'Government of India',
+};
+
+function holdingName(url: string): string {
+  try {
+    const host = new URL(url).hostname;
+    return holdings[host] ?? host.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
+
 export function SourceList({ sources }: { sources: SourceRef[] }) {
   if (!sources.length) return null;
   return (
@@ -323,8 +343,14 @@ export function SourceList({ sources }: { sources: SourceRef[] }) {
               {s.url && (
                 <>
                   {' · '}
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-indigo-mid underline decoration-indigo-soft underline-offset-2 hover:text-oxide">
-                    {new URL(s.url).hostname}
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-ink underline decoration-brass decoration-1 underline-offset-2 transition-colors duration-160 hover:text-oxide-deep hover:decoration-oxide"
+                  >
+                    Search at {holdingName(s.url)}
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </>
               )}

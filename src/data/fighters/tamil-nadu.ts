@@ -682,7 +682,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       {
         title: 'Rukmini Lakshmipathi commemorations',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
       {

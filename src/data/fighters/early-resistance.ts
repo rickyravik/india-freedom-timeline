@@ -137,7 +137,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       {
         title: 'Rani Velu Nachiyar commemorations',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
       {
@@ -274,7 +274,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       {
         title: 'Commemorations of Tilka Manjhi',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
       {
@@ -478,7 +478,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       {
         title: 'Commemorations of Rani Chennamma',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
     ],

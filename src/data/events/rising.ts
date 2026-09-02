@@ -406,7 +406,7 @@ export const risingEvents: HistoricalEvent[] = [
       {
         title: 'Alluri Sitarama Raju commemorative records',
         publisher: 'Government of Andhra Pradesh / Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
     ],

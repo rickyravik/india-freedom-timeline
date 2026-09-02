@@ -75,7 +75,6 @@ export const tribalLeaders: FreedomFighter[] = [
       {
         title: 'Janjatiya Gaurav Divas records',
         publisher: 'Ministry of Culture, Government of India',
-        url: 'https://www.indiaculture.gov.in/',
         type: 'government',
       },
     ],
@@ -139,7 +138,7 @@ export const tribalLeaders: FreedomFighter[] = [
       {
         title: 'Alluri Sitarama Raju commemorative records',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
       {
@@ -282,7 +281,7 @@ export const tribalLeaders: FreedomFighter[] = [
       {
         title: 'Rani Gaidinliu commemorative records',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
       {

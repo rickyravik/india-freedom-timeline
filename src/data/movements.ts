@@ -349,7 +349,6 @@ export const movements: Movement[] = [
       {
         title: 'The Salt March (collections)',
         publisher: 'National Gandhi Museum, New Delhi',
-        url: 'https://gandhimuseum.in/',
         type: 'museum',
       },
     ],

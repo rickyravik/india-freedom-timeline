@@ -463,7 +463,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       {
         title: 'Madame Cama commemorations and records',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
       {

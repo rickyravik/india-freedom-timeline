@@ -331,7 +331,6 @@ export const earlyEvents: HistoricalEvent[] = [
       {
         title: 'Janjatiya Gaurav Divas',
         publisher: 'Ministry of Culture, Government of India',
-        url: 'https://www.indiaculture.gov.in/',
         type: 'government',
       },
     ],

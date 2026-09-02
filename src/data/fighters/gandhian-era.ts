@@ -228,7 +228,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
       {
         title: 'Selected Works of Jawaharlal Nehru',
         publisher: 'Nehru Memorial Museum & Library (PMML)',
-        url: 'https://www.pmml.nic.in/',
+        url: 'https://pmml.gov.in/',
         type: 'archive',
       },
       {

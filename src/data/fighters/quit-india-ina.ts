@@ -84,7 +84,6 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       {
         title: 'Netaji papers (declassified files)',
         publisher: 'National Archives of India',
-        url: 'https://www.netajipapers.gov.in/',
         type: 'archive',
       },
     ],
@@ -357,7 +356,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       {
         title: 'Matangini Hazra commemorations',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
       {

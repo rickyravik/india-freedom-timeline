@@ -288,7 +288,7 @@ export const revoltFighters: FreedomFighter[] = [
       {
         title: 'Begum Hazrat Mahal commemorations',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
       {
@@ -443,7 +443,7 @@ export const revoltFighters: FreedomFighter[] = [
       {
         title: 'Commemorations of Veer Kunwar Singh',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
     ],

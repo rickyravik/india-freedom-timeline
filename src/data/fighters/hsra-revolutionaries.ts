@@ -426,7 +426,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       {
         title: 'Ashfaqulla Khan commemorations',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
-        url: 'https://amritmahotsav.nic.in/',
+        url: 'https://amritkaal.nic.in/',
         type: 'government',
       },
     ],
