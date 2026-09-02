@@ -41,6 +41,10 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- GSAP is loaded as a progressive enhancement: the archive remains fully
+         readable if the CDN is unavailable or motion has been reduced. -->
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

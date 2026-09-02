@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import type { EventCategory, RegionId } from '@/types';
 import { categoryLabels, eras, events, fightersForEvent, fighters, movements } from '@/lib/content';
@@ -6,6 +6,22 @@ import { regionNames } from '@/data/regions';
 import { useActiveSection, usePageMeta } from '@/lib/hooks';
 import { BottomSheet, ChipGroup, EmptyState, PageIntro, Reveal, Segmented, eraAccent } from '@/components/ui';
 import { FighterChip } from '@/components/cards';
+
+type GsapContext = { revert: () => void };
+type ScrollTriggerInstance = { kill: () => void };
+type GsapWindow = Window & {
+  gsap?: {
+    registerPlugin: (plugin: unknown) => void;
+    context: (callback: () => void, scope?: Element) => GsapContext;
+    fromTo: (target: Element, from: object, to: object) => void;
+    to: (target: Element, vars: object) => void;
+    utils: { toArray: <T extends Element>(selector: string, scope?: Element) => T[] };
+  };
+  ScrollTrigger?: {
+    create: (vars: object) => ScrollTriggerInstance;
+    refresh: () => void;
+  };
+};
 
 /* ------------------------------------------------------------------ */
 /* Era rail — sticky, tracks the active chapter                        */
@@ -52,11 +68,44 @@ export default function TimelinePage() {
   const [region, setRegion] = useState<RegionId | null>((params.get('region') as RegionId) || null);
   const [category, setCategory] = useState<EventCategory | null>(null);
   const [movementId, setMovementId] = useState<string | null>(params.get('movement'));
-
+  const timelineRef = useRef<HTMLDivElement>(null);
   const filtered = useMemo(
     () => events.filter((e) => (!region || e.region === region) && (!category || e.category === category) && (!movementId || e.movement === movementId)),
     [region, category, movementId],
   );
+
+  /* GSAP adds narrative motion only at the full-timeline layer. Content is
+     deliberately visible before this runs, and reduced-motion users get the
+     same chronology without transforms or pins. */
+  useLayoutEffect(() => {
+    if (zoom !== 'full' || !timelineRef.current || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const { gsap, ScrollTrigger } = window as GsapWindow;
+    if (!gsap || !ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const pins: ScrollTriggerInstance[] = [];
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray<HTMLElement>('[data-timeline-event]', timelineRef.current!).forEach((item) => {
+        const rule = item.querySelector<HTMLElement>('[data-event-rule]');
+        gsap.fromTo(item, { autoAlpha: 0, y: 34 }, { autoAlpha: 1, y: 0, duration: 0.72, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 84%', once: true } });
+        if (rule) gsap.fromTo(rule, { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: 'power2.out', transformOrigin: 'left', scrollTrigger: { trigger: item, start: 'top 82%', once: true } });
+      });
+      gsap.utils.toArray<HTMLElement>('[data-era-year]', timelineRef.current!).forEach((year) => {
+        gsap.to(year, { yPercent: -18, ease: 'none', scrollTrigger: { trigger: year.closest('section'), start: 'top bottom', end: 'bottom top', scrub: 0.6 } });
+      });
+      if (window.matchMedia('(min-width: 1024px)').matches) {
+        gsap.utils.toArray<HTMLElement>('[data-era-context]', timelineRef.current!).forEach((panel) => {
+          const section = panel.closest('section');
+          if (section) pins.push(ScrollTrigger.create({ trigger: section, start: 'top 132px', end: 'bottom bottom-=80', pin: panel, pinSpacing: false, anticipatePin: 1 }));
+        });
+      }
+    }, timelineRef.current);
+    ScrollTrigger.refresh();
+    return () => {
+      pins.forEach((pin) => pin.kill());
+      ctx.revert();
+    };
+  }, [zoom, filtered.length]);
+
   const activeFilters = [region, category, movementId].filter(Boolean).length;
   const eraIds = useMemo(() => eras.map((e) => `era-${e.id}`), []);
   const activeSection = useActiveSection(eraIds);
@@ -79,7 +128,7 @@ export default function TimelinePage() {
 
   return (
     <div className="pb-16">
-      <PageIntro eyebrow="1757 — 1947 · nine chapters" title="The Freedom Timeline" lede="Two centuries of resistance, chapter by chapter. Select any moment to meet the people behind it — every story leads to another.">
+      <PageIntro eyebrow="The chronological archive · 1757—1947" title="A struggle told through time" lede="Move through nine chapters of resistance, reform and collective action. Dates give the route; people and places reveal the larger story.">
         <div className="flex flex-wrap items-center gap-3">
           <Segmented
             label="View"
@@ -155,23 +204,24 @@ export default function TimelinePage() {
               </div>
             )}
 
-            <div className="relative mt-8">
+            <div ref={timelineRef} className="timeline-archive relative mt-8">
               {/* Spine with scroll-linked progress */}
               <div aria-hidden="true" className="absolute bottom-0 left-[11px] top-0 w-px bg-paper-400/60 sm:left-[15px]" />
               <div aria-hidden="true" className="spine-progress absolute bottom-0 left-[11px] top-0 w-px bg-oxide sm:left-[15px]" />
 
-              <div className="space-y-20">
+              <div className="space-y-24 lg:space-y-32">
                 {eras.map((era) => {
                   const eraEvents = filtered.filter((e) => e.era === era.id);
                   const eraPeople = fighters.filter((f) => f.era === era.id && (!region || f.region === region));
                   if (eraEvents.length === 0 && eraPeople.length === 0) return null;
                   return (
-                    <section key={era.id} id={`era-${era.id}`} aria-label={era.name} className="scroll-mt-36">
+                    <section key={era.id} id={`era-${era.id}`} aria-label={era.name} className="relative scroll-mt-36 lg:grid lg:grid-cols-[minmax(260px,0.72fr)_minmax(0,1.45fr)] lg:gap-14">
+                      <div data-era-context className="self-start lg:ml-12">
                       {/* Chapter plate */}
-                      <Reveal mask className="relative ml-8 sm:ml-12">
+                      <Reveal mask className="relative ml-8 sm:ml-12 lg:ml-0">
                         <span aria-hidden="true" className={`absolute -left-8 top-8 h-4 w-4 rounded-full ring-4 ring-paper-100 sm:-left-12 ${eraAccent.bg[era.accent]}`} style={{ transform: 'translateX(4px)' }} />
                         <header className="vault rounded-lg px-6 py-8 shadow-vault sm:px-10 sm:py-12">
-                          <p aria-hidden="true" className={`drift-on-scroll pointer-events-none absolute -right-2 -top-6 select-none font-display text-numeral font-black italic leading-none opacity-[0.08] sm:right-4 ${eraAccent.textVault[era.accent]}`}>
+                          <p data-era-year aria-hidden="true" className={`pointer-events-none absolute -right-2 -top-6 select-none font-display text-numeral font-black italic leading-none opacity-[0.08] sm:right-4 ${eraAccent.textVault[era.accent]}`}>
                             {era.startYear}
                           </p>
                           <p className={`eyebrow-vault mb-3`}>
@@ -186,7 +236,7 @@ export default function TimelinePage() {
                       </Reveal>
 
                       {eraPeople.length > 0 && (
-                        <Reveal className="ml-8 mt-5 sm:ml-12">
+                        <Reveal className="ml-8 mt-5 sm:ml-12 lg:ml-0">
                           <p className="eyebrow mb-2">People of this chapter</p>
                           <div className="-mr-4 flex gap-2 overflow-x-auto pb-2 pr-4 scrollbar-none">
                             {eraPeople.map((f) => (
@@ -197,14 +247,16 @@ export default function TimelinePage() {
                           </div>
                         </Reveal>
                       )}
+                      </div>
 
-                      <ol className="ml-8 mt-8 space-y-6 sm:ml-12">
-                        {eraEvents.map((event, i) => {
+                      <ol className="ml-8 mt-8 space-y-7 sm:ml-12 lg:ml-0 lg:mt-0">
+                        {eraEvents.map((event) => {
                           const people = fightersForEvent(event);
                           return (
-                            <Reveal as="li" key={event.id} delay={Math.min(i, 3) * 60} className="relative">
+                            <li key={event.id} data-timeline-event className="relative">
                               <span aria-hidden="true" className="absolute -left-8 top-6 h-2.5 w-2.5 rounded-full bg-paper-100 ring-2 ring-oxide sm:-left-12" style={{ transform: 'translateX(7px)' }} />
-                              <article className="doc grid gap-4 p-5 sm:grid-cols-[120px_1fr] sm:gap-6 sm:p-6">
+                              <article className="timeline-record grid gap-4 border-t border-ink/20 py-6 sm:grid-cols-[120px_1fr] sm:gap-6 sm:py-7">
+                                <span data-event-rule aria-hidden="true" className={`absolute left-0 top-0 h-[3px] w-16 ${eraAccent.bg[era.accent]}`} />
                                 <div className="sm:border-r sm:border-dotted sm:border-paper-400/80 sm:pr-5">
                                   <time className={`block font-display text-[2rem] font-bold leading-none ${eraAccent.text[era.accent]}`}>{event.date.year}</time>
                                   <p className="mt-1 text-xs font-semibold text-ink-soft">{event.dateLabel.replace(String(event.date.year), '').replace(/[–-]\s*$/, '').trim()}</p>
@@ -235,7 +287,7 @@ export default function TimelinePage() {
                                   </Link>
                                 </div>
                               </article>
-                            </Reveal>
+                            </li>
                           );
                         })}
                       </ol>
