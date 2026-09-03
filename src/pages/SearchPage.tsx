@@ -62,7 +62,7 @@ export default function SearchPage() {
               <p className="label-vault mb-3">Or discover someone new today</p>
               <div className="rule-vault mb-4" />
               <Link to={`/fighters/${discover.slug}`} className="group flex items-center gap-4">
-                <PortraitMedallion name={discover.name} size="lg" />
+                <PortraitMedallion name={discover.name} portrait={discover.portrait} size="lg" />
                 <span>
                   <span className="inline-flex items-center gap-2 font-display text-h3 font-bold text-paper-50 transition-colors duration-160 group-hover:text-brass-bright">{discover.name}<Icon d={icons.arrowRight} className="h-4 w-4" /></span>
                   <span className="mt-1 block font-body text-meta text-paper-300">{discover.summary}</span>

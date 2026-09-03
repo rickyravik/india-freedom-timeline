@@ -193,18 +193,23 @@ export function initialsOf(name: string): string {
 export function PortraitMedallion({
   name,
   era,
+  portrait,
   size = 'md',
   className = '',
   onPane = false,
 }: {
   name: string;
   era?: Era;
+  /* Path to a portrait image. Falls back to the typographic monogram when
+     absent, or if the image fails to load. */
+  portrait?: string;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'hero';
   className?: string;
   /* true when the head is mounted on an era-ink pane rather than on paper:
      the plate inverts to paper so it reads as a stamp, not a hole. */
   onPane?: boolean;
 }) {
+  const [imgFailed, setImgFailed] = useState(false);
   /* The head is struck in its era's ink, so a life and its chapter match. */
   const plate = era ? eraAccent.hexPlate[era.accent] : MEDALLION_PALETTES[hashString(name) % MEDALLION_PALETTES.length];
   const sizes = {
@@ -215,12 +220,28 @@ export function PortraitMedallion({
     xl: 'h-28 w-28 text-4xl',
     hero: 'h-32 w-32 text-5xl sm:h-40 sm:w-40 sm:text-6xl',
   };
+  const perf = size === 'xs' || size === 'sm' ? 'perf-fine' : 'perf-all';
+  if (portrait && !imgFailed) {
+    return (
+      <span
+        className={`${perf} inline-flex shrink-0 select-none items-center justify-center overflow-hidden ${sizes[size]} ${className}`}
+        style={{ backgroundColor: onPane ? '#f7f3ea' : plate, '--tooth': onPane ? plate : '#f2ede2' } as CSSProperties}
+      >
+        <img
+          src={portrait}
+          alt={name}
+          className="h-full w-full object-cover sepia-[.35] contrast-[1.05]"
+          onError={() => setImgFailed(true)}
+        />
+      </span>
+    );
+  }
   return (
     <span
       aria-hidden="true"
       /* One stamp: the plate is the ink, the monogram is cut in the paper, and
          the edge is perforated at the gauge its size can carry. */
-      className={`${size === 'xs' || size === 'sm' ? 'perf-fine' : 'perf-all'} inline-flex shrink-0 select-none items-center justify-center font-display font-bold ${sizes[size]} ${className}`}
+      className={`${perf} inline-flex shrink-0 select-none items-center justify-center font-display font-bold ${sizes[size]} ${className}`}
       style={
         {
           backgroundColor: onPane ? '#f7f3ea' : plate,

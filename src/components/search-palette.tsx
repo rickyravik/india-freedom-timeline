@@ -127,7 +127,7 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
               </div>
               <p className="label mb-2 mt-5">Discover someone today</p>
               <button type="button" onClick={() => go(`/fighters/${discover.slug}`)} className="flex w-full items-center gap-3 rounded-sm p-2 text-left hover:bg-paper-200/70">
-                <PortraitMedallion name={discover.name} size="sm" />
+                <PortraitMedallion name={discover.name} portrait={discover.portrait} size="sm" />
                 <span>
                   <span className="block font-display text-base font-bold text-ink">{discover.name}</span>
                   <span className="block font-body text-label text-ink-faint line-clamp-1">{discover.summary}</span>

@@ -230,11 +230,11 @@ export default function TimelinePage() {
                         return (
                           <Reveal as="li" key={event.id} delay={Math.min(i, 3) * 60} className="relative">
                             <span aria-hidden="true" className="absolute -left-8 top-6 h-2.5 w-2.5 border-2 border-oxide bg-paper-100 sm:-left-12" style={{ transform: 'translateX(7px)' }} />
-                            <article className="doc grid grid-cols-[5.5rem_1fr] gap-4 p-5 sm:grid-cols-[120px_1fr] sm:gap-6 sm:p-6">
-                              <div className="border-r border-paper-400/80 pr-4 sm:pr-5">
+                            <article className="doc grid gap-3 p-5 sm:grid-cols-[120px_1fr] sm:gap-6 sm:p-6">
+                              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5 border-b border-paper-400/80 pb-3 sm:block sm:border-b-0 sm:border-r sm:pb-0 sm:pr-5">
                                 <time className={`denom block ${eraAccent.text[era.accent]}`}>{event.date.year}</time>
-                                {subLine && <p className="num mt-1.5 font-body text-xs font-medium text-ink-soft">{subLine}</p>}
-                                <p className="stamp mt-2 text-sepia">{categoryLabels[event.category]}</p>
+                                {subLine && <p className="num font-body text-xs font-medium text-ink-soft sm:mt-1.5">{subLine}</p>}
+                                <p className="stamp text-sepia sm:mt-2">{categoryLabels[event.category]}</p>
                               </div>
                               <div className="min-w-0">
                                 {event.location && <p className="font-body text-label text-ink-faint">{event.location}</p>}

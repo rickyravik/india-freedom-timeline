@@ -36,7 +36,7 @@ export function FighterCard({
         }`}
       >
         <div className="flex shrink-0 flex-col items-center gap-1.5">
-          <PortraitMedallion name={fighter.name} era={era} size={compact ? 'md' : 'lg'} onPane={vault} />
+          <PortraitMedallion name={fighter.name} era={era} portrait={fighter.portrait} size={compact ? 'md' : 'lg'} onPane={vault} />
           {/* The denomination slot is always struck: an undated life reads as
              an unknown value, not as a card that failed to render. */}
           <span className={`num font-display text-sm font-bold leading-none ${vault ? 'text-paper-200' : era ? eraAccent.text[era.accent] : 'text-sepia'}`}>
@@ -81,7 +81,7 @@ export function FighterFeature({ fighter }: { fighter: FreedomFighter }) {
       <Link to={`/fighters/${fighter.slug}`} className="doc-interactive group flex h-full flex-col justify-between p-6 sm:p-8">
         <div>
           <div className="flex items-start gap-5">
-            <PortraitMedallion name={fighter.name} era={era} size="xl" />
+            <PortraitMedallion name={fighter.name} era={era} portrait={fighter.portrait} size="xl" />
             <div className="min-w-0">
               <p className="font-display text-h2 font-bold text-ink transition-colors duration-160 group-hover:text-oxide">{fighter.name}</p>
               <p className="num mt-1 font-display text-base font-bold text-sepia">{lifespan(fighter)}</p>
@@ -112,7 +112,7 @@ export function FighterChip({ fighter, vault = false }: { fighter: FreedomFighte
         vault ? 'border-paper-100/30 text-paper-200 hover:border-paper-100 hover:text-paper-50' : 'border-paper-400 bg-paper-50 text-ink-soft hover:border-ink hover:text-ink'
       }`}
     >
-      <PortraitMedallion name={fighter.name} era={era} size="xs" onPane={vault} />
+      <PortraitMedallion name={fighter.name} era={era} portrait={fighter.portrait} size="xs" onPane={vault} />
       {fighter.name}
     </Link>
   );

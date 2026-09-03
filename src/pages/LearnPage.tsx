@@ -184,7 +184,7 @@ function GuessWho() {
       </div>
       {revealed && fighter && (
         <Link to={`/fighters/${fighter.slug}`} className="group mt-5 flex items-center gap-4 rounded-sm border border-brass-bright/40 bg-paper-100/[0.06] p-4 animate-mask-up">
-          <PortraitMedallion name={fighter.name} era={eraById.get(fighter.era)} size="lg" />
+          <PortraitMedallion name={fighter.name} era={eraById.get(fighter.era)} portrait={fighter.portrait} size="lg" />
           <span>
             <span className="inline-flex items-center gap-2 font-display text-h3 font-bold text-paper-50 group-hover:text-brass-bright">{round.answerName}<Icon d={icons.arrowRight} className="h-4 w-4" /></span>
             <span className="num font-body text-label text-paper-400">{lifespan(fighter)} · read the full story</span>
@@ -248,7 +248,7 @@ function Compare() {
       <div className="mt-5 grid grid-cols-2 gap-3">
         {[a, b].map((f) => (
           <Link key={f.id} to={`/fighters/${f.slug}`} className="doc-interactive group flex flex-col items-center gap-2 p-4 text-center">
-            <PortraitMedallion name={f.name} era={eraById.get(f.era)} size="lg" />
+            <PortraitMedallion name={f.name} era={eraById.get(f.era)} portrait={f.portrait} size="lg" />
             <span className="font-display text-base font-bold leading-tight text-ink group-hover:text-oxide">{f.name}</span>
             <span className="num font-body text-label font-medium text-sepia">{lifespan(f)}</span>
           </Link>

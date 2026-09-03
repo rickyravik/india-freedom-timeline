@@ -68,7 +68,7 @@ export function Constellation({ subject, related }: { subject: FreedomFighter; r
       <div className="relative" style={{ aspectRatio: `${W} / ${H}` }}>
         {/* Subject */}
         <div className="absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center text-center" style={{ left: '50%', top: '50%' }}>
-          <PortraitMedallion name={subject.name} era={subjectEra} size="xl" />
+          <PortraitMedallion name={subject.name} era={subjectEra} portrait={subject.portrait} size="xl" />
           <p className="mt-2 font-display text-base font-bold text-paper-50">{subject.name}</p>
         </div>
         {/* Related */}
@@ -82,7 +82,7 @@ export function Constellation({ subject, related }: { subject: FreedomFighter; r
               className="group absolute flex w-36 -translate-x-1/2 -translate-y-1/2 flex-col items-center text-center animate-fade-up"
               style={{ left: `${(p.x / W) * 100}%`, top: `${(p.y / H) * 100}%`, animationDelay: `${200 + i * 90}ms` }}
             >
-              <PortraitMedallion name={f.name} era={era} size="md" className="transition-transform duration-400 ease-cinematic group-hover:scale-110" />
+              <PortraitMedallion name={f.name} era={era} portrait={f.portrait} size="md" className="transition-transform duration-400 ease-cinematic group-hover:scale-110" />
               <span className="mt-2 font-body text-xs font-medium leading-tight text-paper-100 transition-colors group-hover:text-brass-bright">{f.name}</span>
               <span className="num font-body text-xs text-paper-400">{lifespan(f)}</span>
             </Link>

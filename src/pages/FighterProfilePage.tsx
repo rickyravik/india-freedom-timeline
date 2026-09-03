@@ -167,7 +167,7 @@ export default function FighterProfilePage() {
           <Postmark lines={postmarkLines} className="absolute right-4 top-5 hidden sm:grid" />
 
           <div className="grid gap-7 md:grid-cols-[auto_1fr] md:items-end">
-            <PortraitMedallion name={fighter.name} era={era} size="hero" onPane />
+            <PortraitMedallion name={fighter.name} era={era} portrait={fighter.portrait} size="hero" onPane />
             <div className="min-w-0">
               <h1 className="pr-0 text-h1 animate-fade-up sm:pr-28 sm:text-hero" style={{ animationDelay: '80ms' }}>
                 {fighter.name}
