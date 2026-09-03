@@ -311,6 +311,7 @@ export const revoltFighters: FreedomFighter[] = [
     slug: 'tatya-tope',
     name: 'Tatya Tope',
     alternateNames: ['Ramachandra Panduranga Tope', 'Tantia Tope'],
+    portrait: '/images/fighters/tatya-tope.jpg',
     birthYear: 1814,
     deathYear: 1859,
     deathDateLabel: '18 April 1859',
