@@ -296,7 +296,6 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     slug: 'titumir',
     name: 'Titumir',
     alternateNames: ['Syed Mir Nisar Ali'],
-    portrait: '/images/fighters/titumir.png',
     birthYear: 1782,
     deathYear: 1831,
     deathDateLabel: '19 November 1831',
