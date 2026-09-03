@@ -723,6 +723,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     sources: [
       {
         title: 'Dr. Babasaheb Ambedkar: Writings and Speeches',
+        url: 'https://archive.org/details/Dr.BabasahebAmbedkarWritingsAndSpeechespdfsAllVolumes',
         publisher: 'Government of Maharashtra',
         type: 'government',
       },

@@ -66,6 +66,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       {
         title: 'The Poligar Wars (district gazetteers)',
         publisher: 'Tirunelveli District Gazetteer',
+        url: 'https://archive.org/details/in.ernet.dli.2015.161915',
         type: 'archive',
       },
     ],

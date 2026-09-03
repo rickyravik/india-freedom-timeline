@@ -62,6 +62,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'Tirunelveli District Gazetteer',
+        url: 'https://archive.org/details/in.ernet.dli.2015.161915',
         publisher: 'Government of Tamil Nadu',
         type: 'archive',
       },
@@ -137,6 +138,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'The Poligar Wars (Tirunelveli District Gazetteer)',
+        url: 'https://archive.org/details/in.ernet.dli.2015.161915',
         publisher: 'Government of Tamil Nadu',
         type: 'archive',
       },

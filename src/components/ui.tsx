@@ -314,12 +314,17 @@ const holdings: Record<string, string> = {
   'www.gandhiheritageportal.org': 'Gandhi Heritage Portal',
   'www.saada.org': 'South Asian American Digital Archive',
   'amritkaal.nic.in': 'Government of India',
+  'archive.org': 'the Internet Archive',
 };
 
-function holdingName(url: string): string {
+/* A link to a portal's front page and a link to the scanned document are not
+   the same promise, so they are not worded the same. A URL with a path points
+   at the record itself; a bare host only points at where to go looking. */
+function linkLabel(url: string): string {
   try {
-    const host = new URL(url).hostname;
-    return holdings[host] ?? host.replace(/^www\./, '');
+    const { hostname, pathname } = new URL(url);
+    const where = holdings[hostname] ?? hostname.replace(/^www\./, '');
+    return `${pathname === '/' ? 'Search at' : 'Read at'} ${where}`;
   } catch {
     return url;
   }
@@ -349,7 +354,7 @@ export function SourceList({ sources }: { sources: SourceRef[] }) {
                     rel="noopener noreferrer"
                     className="font-medium text-ink underline decoration-brass decoration-1 underline-offset-2 transition-colors duration-160 hover:text-oxide-deep hover:decoration-oxide"
                   >
-                    Search at {holdingName(s.url)}
+                    {linkLabel(s.url)}
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </>
