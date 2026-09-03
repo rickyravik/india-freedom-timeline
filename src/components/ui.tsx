@@ -22,6 +22,17 @@ export const eraAccent = {
     sepia: 'text-sepia-bright',
     brass: 'text-brass-bright',
   },
+  /* Same light cuts as textVault, as a fill: for a small swatch (e.g. the
+     lifespan bar's era bands) that must stay legible even when it lands on
+     a vault pane inked with its own era — a deep-on-deep fill would vanish. */
+  bgVault: {
+    indigo: 'bg-indigo-soft',
+    oxide: 'bg-oxide-bright',
+    saffron: 'bg-saffron-bright',
+    forest: 'bg-forest-bright',
+    sepia: 'bg-sepia-bright',
+    brass: 'bg-brass-bright',
+  },
   /* Pane grounds. All six are dark enough to carry paper text at 13px, so
      ochre and gauge gold use their deep cuts — the mid cuts only reached
      4.0:1 against ink and failed the label and reading roles they carry. */
@@ -275,7 +286,7 @@ export function LifespanBar({ birth, death, vault = true }: { birth?: number; de
           {eras.map((e) => (
             <span
               key={e.id}
-              className={`absolute inset-y-0 ${eraAccent.bg[e.accent]}`}
+              className={`absolute inset-y-0 ${vault ? eraAccent.bgVault[e.accent] : eraAccent.bg[e.accent]}`}
               style={{ left: `${pct(e.startYear)}%`, width: `${pct(e.endYear + 1) - pct(e.startYear)}%` }}
             />
           ))}
