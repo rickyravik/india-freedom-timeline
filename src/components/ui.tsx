@@ -230,7 +230,7 @@ export function PortraitMedallion({
         <img
           src={portrait}
           alt={name}
-          className="h-full w-full object-cover sepia-[.35] contrast-[1.05]"
+          className="h-full w-full object-cover object-top sepia-[.35] contrast-[1.05]"
           onError={() => setImgFailed(true)}
         />
       </span>
