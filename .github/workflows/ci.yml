@@ -27,6 +27,9 @@ jobs:
       - name: Search check
         run: npm run search:check
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
       - name: Build
         run: npm run build
 
@@ -35,9 +38,6 @@ jobs:
           name: dist
           path: dist
           retention-days: 7
-
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
 
       - name: Run Playwright tests
         run: npm test
