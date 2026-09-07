@@ -35,7 +35,7 @@ export default function MovementsPage() {
 export function MovementPage() {
   const { slug } = useParams();
   const movement = slug ? movementBySlug.get(slug) : undefined;
-  usePageMeta(movement?.name ?? 'Movement', movement?.summary, { type: 'article' });
+  usePageMeta(movement?.name ?? 'Movement', movement?.summary, { type: 'article', image: movement && `/og/movements/${movement.slug}.jpg` });
 
   const people = useMemo(() => (movement ? fightersForMovement(movement) : []), [movement]);
   const relatedEvents = useMemo(() => (movement ? eventsForMovement(movement) : []), [movement]);

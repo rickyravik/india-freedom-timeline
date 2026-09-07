@@ -233,7 +233,9 @@ export function usePageMeta(
     upsertMeta('property', 'og:title', fullTitle);
     upsertMeta('property', 'og:url', url);
     upsertMeta('property', 'og:type', opts?.type ?? 'website');
-    upsertMeta('name', 'twitter:card', opts?.image ? 'summary_large_image' : 'summary');
+    // Always summary_large_image: every page carries an OG image, either its
+    // own (below) or the site default already baked into index.html's head.
+    upsertMeta('name', 'twitter:card', 'summary_large_image');
     upsertMeta('name', 'twitter:title', fullTitle);
     if (description) {
       upsertMeta('name', 'description', description);
@@ -243,6 +245,8 @@ export function usePageMeta(
     if (opts?.image) {
       const imageUrl = `${SITE_URL}${opts.image}`;
       upsertMeta('property', 'og:image', imageUrl);
+      upsertMeta('property', 'og:image:width', '1200');
+      upsertMeta('property', 'og:image:height', '630');
       upsertMeta('name', 'twitter:image', imageUrl);
     }
     if (!opts?.deferReady) document.documentElement.dataset.prerenderReady = 'true';

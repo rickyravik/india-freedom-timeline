@@ -133,7 +133,7 @@ export default function FighterProfilePage() {
   const { share, copied } = useShare();
   const trail = useTrail();
 
-  usePageMeta(fighter?.name ?? 'Freedom fighter', fighter?.summary, { type: 'article' });
+  usePageMeta(fighter?.name ?? 'Freedom fighter', fighter?.summary, { type: 'article', image: fighter && `/og/fighters/${fighter.slug}.jpg` });
   useEffect(() => {
     if (fighter) pushTrail(fighter.slug);
   }, [fighter]);
