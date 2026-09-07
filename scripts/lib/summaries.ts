@@ -32,6 +32,7 @@ export function pickFighterSummary(f: FreedomFighter): FighterSummary {
     era: f.era,
     featured: f.featured,
     forgotten: f.forgotten,
+    searchAliases: f.searchAliases,
   };
 }
 
@@ -51,5 +52,6 @@ export function pickEventSummary(e: HistoricalEvent): EventSummary {
     era: e.era,
     category: e.category,
     featured: e.featured,
+    searchAliases: e.searchAliases,
   };
 }

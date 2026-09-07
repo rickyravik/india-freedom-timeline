@@ -147,6 +147,12 @@ export interface FreedomFighter {
   sources: SourceRef[];
   images?: string[];
   tags?: string[];
+  /** Names a search might reasonably be typed as but that don't already
+      appear in `name`/`alternateNames` — a name in another script, or a
+      widely used historical alternate. Not for spelling variants: search's
+      transliteration-normalization tier already tolerates those (doubled
+      consonants, th/bh/dh/ph/sh, x/ksh, long/short vowels) without help. */
+  searchAliases?: string[];
   /** Primary era id used for timeline placement. */
   era: string;
   /** Surfaced on the home page. */
@@ -178,6 +184,8 @@ export interface HistoricalEvent {
   sources: SourceRef[];
   /** Surfaced on home page key events. */
   featured?: boolean;
+  /** See FreedomFighter.searchAliases. */
+  searchAliases?: string[];
 }
 
 /**
@@ -214,6 +222,9 @@ export interface FighterSummary {
   era: string;
   featured?: boolean;
   forgotten?: boolean;
+  /** See FreedomFighter.searchAliases — needed by src/lib/search.ts, which
+      indexes the summary projection, not the full record. */
+  searchAliases?: string[];
 }
 
 /** The lightweight projection of a HistoricalEvent — see FighterSummary. */
@@ -232,6 +243,8 @@ export interface EventSummary {
   era: string;
   category: EventCategory;
   featured?: boolean;
+  /** See FreedomFighter.searchAliases. */
+  searchAliases?: string[];
 }
 
 export interface Movement {

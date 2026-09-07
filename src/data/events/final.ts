@@ -347,6 +347,7 @@ export const finalEvents: HistoricalEvent[] = [
     id: 'quit-india-launch',
     slug: 'quit-india-launch',
     title: 'Quit India — "Do or Die"',
+    searchAliases: ['August Kranti', 'August Revolution'],
     date: { year: 1942, month: 8, day: 8 },
     dateLabel: '8 August 1942',
     location: 'Gowalia Tank Maidan, Bombay',

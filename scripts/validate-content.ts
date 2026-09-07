@@ -96,6 +96,7 @@ const fighterSchema = z.object({
   sources: z.array(sourceRefSchema),
   images: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
+  searchAliases: z.array(z.string()).optional(),
   era: z.string().min(1),
   featured: z.boolean().optional(),
   forgotten: z.boolean().optional(),
@@ -120,6 +121,7 @@ const eventSchema = z.object({
   disputed: z.array(disputedNoteSchema).optional(),
   sources: z.array(sourceRefSchema),
   featured: z.boolean().optional(),
+  searchAliases: z.array(z.string()).optional(),
 });
 
 const movementSchema = z.object({

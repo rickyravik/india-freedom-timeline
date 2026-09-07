@@ -7,12 +7,13 @@
   "scripts": {
     "predev": "npm run generate:summaries",
     "dev": "vite",
-    "build": "npm run generate:summaries && npm run validate && npm run typecheck && vite build && node scripts/prerender.mjs && tsx scripts/og-images.ts && node scripts/generate-sitemap.mjs",
+    "build": "npm run generate:summaries && npm run validate && npm run search:check && npm run typecheck && vite build && node scripts/prerender.mjs && tsx scripts/og-images.ts && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.sw.json",
     "generate:summaries": "tsx scripts/generate-summaries.ts",
     "generate:pwa-icons": "node scripts/generate-pwa-icons.mjs",
     "validate": "tsx scripts/validate-content.ts",
+    "search:check": "tsx scripts/search-check.ts",
     "test": "playwright test",
     "lighthouse": "lhci autorun"
   },

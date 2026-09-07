@@ -285,6 +285,7 @@ export const risingEvents: HistoricalEvent[] = [
     id: 'jallianwala-bagh',
     slug: 'jallianwala-bagh-massacre',
     title: 'Jallianwala Bagh massacre',
+    searchAliases: ['Amritsar Massacre'],
     date: { year: 1919, month: 4, day: 13 },
     dateLabel: '13 April 1919',
     location: 'Amritsar, Punjab',

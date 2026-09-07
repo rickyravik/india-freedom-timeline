@@ -579,7 +579,10 @@ export const eventSummaries: EventSummary[] = [
     ],
     "era": "non-cooperation",
     "category": "massacre",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "Amritsar Massacre"
+    ]
   },
   {
     "id": "non-cooperation-launch",
@@ -1010,7 +1013,11 @@ export const eventSummaries: EventSummary[] = [
     "movement": "quit-india",
     "era": "quit-india-and-ina",
     "category": "movement-launch",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "August Kranti",
+      "August Revolution"
+    ]
   },
   {
     "id": "azad-hind-government",

@@ -152,43 +152,50 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
           ) : flat.length === 0 ? (
             <p className="p-6 text-center font-body text-meta text-ink-faint">Nothing found for “{query}”. Try a name, a state, a year or a movement.</p>
           ) : (
-            grouped.map((g) => (
-              <div key={g.kind} className="mb-1">
-                <p className="label px-3 pb-1 pt-3">{kindLabel[g.kind]}</p>
-                {g.items.map((r) => {
-                  const idx = flat.indexOf(r);
-                  const active = idx === cursor;
-                  return (
-                    <button
-                      key={r.to}
-                      id={`${listId}-${idx}`}
-                      role="option"
-                      aria-selected={active}
-                      type="button"
-                      onMouseEnter={() => setCursor(idx)}
-                      onClick={() => go(r.to)}
-                      className={`flex w-full items-center gap-3 rounded-sm px-3 py-2.5 text-left font-body text-meta transition-colors duration-160 ${active ? 'bg-ink text-paper-50' : 'hover:bg-paper-200/70'}`}
-                    >
-                      {r.kind === 'fighter' ? (
-                        <PortraitMedallion name={r.title} size="xs" />
-                      ) : (
-                        <span aria-hidden="true" className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-sm ${active ? 'bg-paper-100/15' : 'bg-paper-200'}`}>
-                          <Icon d={r.kind === 'event' ? icons.clock : icons.flag} className="h-4 w-4" />
+            <>
+              {!flat[0].exact && (
+                <p className="label px-3 pb-1 pt-3">
+                  Did you mean <span className="font-semibold text-ink">{flat[0].title}</span>?
+                </p>
+              )}
+              {grouped.map((g) => (
+                <div key={g.kind} className="mb-1">
+                  <p className="label px-3 pb-1 pt-3">{kindLabel[g.kind]}</p>
+                  {g.items.map((r) => {
+                    const idx = flat.indexOf(r);
+                    const active = idx === cursor;
+                    return (
+                      <button
+                        key={r.to}
+                        id={`${listId}-${idx}`}
+                        role="option"
+                        aria-selected={active}
+                        type="button"
+                        onMouseEnter={() => setCursor(idx)}
+                        onClick={() => go(r.to)}
+                        className={`flex w-full items-center gap-3 rounded-sm px-3 py-2.5 text-left font-body text-meta transition-colors duration-160 ${active ? 'bg-ink text-paper-50' : 'hover:bg-paper-200/70'}`}
+                      >
+                        {r.kind === 'fighter' ? (
+                          <PortraitMedallion name={r.title} size="xs" />
+                        ) : (
+                          <span aria-hidden="true" className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-sm ${active ? 'bg-paper-100/15' : 'bg-paper-200'}`}>
+                            <Icon d={r.kind === 'event' ? icons.clock : icons.flag} className="h-4 w-4" />
+                          </span>
+                        )}
+                        <span className="min-w-0">
+                          <span className="block truncate font-medium">{r.title}</span>
+                          <span className={`block truncate text-label ${active ? 'text-paper-300' : 'text-ink-faint'}`}>{r.subtitle}</span>
                         </span>
-                      )}
-                      <span className="min-w-0">
-                        <span className="block truncate font-medium">{r.title}</span>
-                        <span className={`block truncate text-label ${active ? 'text-paper-300' : 'text-ink-faint'}`}>{r.subtitle}</span>
-                      </span>
-                      <span className="ml-auto flex shrink-0 items-center gap-2">
-                        <span className={`stamp hidden sm:inline-block ${active ? 'text-paper-300' : 'text-sepia'}`}>{kindStamp[r.kind]}</span>
-                        {active && <kbd className="hidden rounded-sm border border-paper-50/30 px-1.5 font-body text-xs text-paper-300 sm:block">Enter</kbd>}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            ))
+                        <span className="ml-auto flex shrink-0 items-center gap-2">
+                          <span className={`stamp hidden sm:inline-block ${active ? 'text-paper-300' : 'text-sepia'}`}>{kindStamp[r.kind]}</span>
+                          {active && <kbd className="hidden rounded-sm border border-paper-50/30 px-1.5 font-body text-xs text-paper-300 sm:block">Enter</kbd>}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              ))}
+            </>
           )}
         </div>
       </div>

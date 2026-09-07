@@ -77,6 +77,11 @@ export default function SearchPage() {
             <p className="num mb-3 font-body text-label text-ink-faint" role="status">
               {results.length} result{results.length === 1 ? '' : 's'}
             </p>
+            {!results[0].exact && (
+              <p className="label mb-3">
+                Did you mean <span className="font-semibold text-sepia">{results[0].title}</span>?
+              </p>
+            )}
             <ol className="space-y-2" aria-label="Search results">
               {results.map((r, i) => (
                 <Reveal as="li" key={r.to} delay={Math.min(i, 8) * 40}>
