@@ -83,7 +83,7 @@ export default function MapPage() {
 
       <div className="container-page grid gap-8 lg:grid-cols-[minmax(0,520px)_1fr] lg:gap-12">
         {/* A sheet of stamps — every state is one perforated pane */}
-        <Reveal className="lg:sticky lg:top-20 lg:self-start">
+        <Reveal className="min-w-0 lg:sticky lg:top-20 lg:self-start">
           <div className="vault px-4 py-5 sm:px-5 sm:py-6">
             {/* The mount: the panes' teeth are cut from this ground */}
             <div className="bg-vault p-1.5 sm:p-2">
