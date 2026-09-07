@@ -11,8 +11,12 @@
   // Wrangler runs this before deploying, so `wrangler deploy` produces dist/
   // on its own. Without it the deploy depends on the platform's build command
   // being set, and an empty one fails with "assets.directory does not exist".
+  // `npm run build` itself needs a Chromium binary (scripts/prerender.mjs,
+  // scripts/og-images.ts) that isn't preinstalled in Cloudflare's build
+  // container — install it first, same as the "Install Playwright browsers"
+  // CI step does.
   "build": {
-    "command": "npm run build"
+    "command": "npx playwright install --with-deps chromium && npm run build"
   },
   "assets": {
     "directory": "./dist",
