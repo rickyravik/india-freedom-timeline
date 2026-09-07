@@ -103,6 +103,9 @@ export async function handleCorrection(request: Request, env: CorrectionEnv): Pr
     body: JSON.stringify({ title, body: issueBody, labels: ['correction'] }),
   });
 
-  if (!ghResponse.ok) return json({ error: 'Failed to open an issue' }, 502);
+  if (!ghResponse.ok) {
+    console.error('GitHub issue creation failed', ghResponse.status, await ghResponse.text());
+    return json({ error: 'Failed to open an issue' }, 502);
+  }
   return json({ ok: true }, 200);
 }
