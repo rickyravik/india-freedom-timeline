@@ -114,6 +114,20 @@
   .on-sheet {
     --tooth: #f2ede2;
   }
+  /* PortraitMedallion's and the map tiles' per-instance ink: read from a
+     custom property, not a `style.backgroundColor`/`style.color` prop. A
+     real colour property gets its VALUE reinterpreted by the browser the
+     instant it's set (hex becomes rgb(), for one) — the prerender script
+     normalises formatting before capture, but it can't recover a hex string
+     a browser has already converted to rgb(). A custom property's value is
+     never reinterpreted, only ever stored and reflected back verbatim. */
+  .medallion-plate {
+    background-color: var(--medallion-bg);
+    color: var(--medallion-fg);
+  }
+  .map-tile-fill {
+    background-color: var(--map-tile-bg);
+  }
   /* Finer gauge, for a stamp small enough that a 12px tooth would read crude */
   .perf-fine {
     --tooth: #f2ede2;

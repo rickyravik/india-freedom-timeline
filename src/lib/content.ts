@@ -136,13 +136,57 @@ export function anniversariesOnDay(month: number, day: number): { fighter: Freed
   return out;
 }
 
+/** The integer seed `dailyPick`/`dailyShuffle` derive from today's date. Exposed for callers that need a stable daily index rather than a picked item (e.g. an initial index into a fixed-order list). */
+export function dailySeed(salt = 0): number {
+  const now = new Date();
+  return now.getFullYear() * 372 + (now.getMonth() + 1) * 31 + now.getDate() + salt;
+}
+
 /** Deterministic pseudo-random pick that changes daily (for "Discover someone new"). */
 export function dailyPick<T>(items: T[], salt = 0): T {
-  const now = new Date();
-  const seed = now.getFullYear() * 372 + (now.getMonth() + 1) * 31 + now.getDate() + salt;
-  return items[seed % items.length];
+  return items[dailySeed(salt) % items.length];
 }
 
 export function randomPick<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)];
+}
+
+/** A small deterministic PRNG (mulberry32), seeded by an integer. */
+function seededRandom(seed: number): () => number {
+  let a = seed;
+  return () => {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/**
+ * Same-day-stable shuffle: identical order for every render on a given
+ * calendar day (needed so build-time prerendered HTML matches what a
+ * visitor's browser computes on hydration), but changes daily like
+ * `dailyPick`. Use a real `Math.random()`-based shuffle instead for
+ * anything triggered by a user action (a "reshuffle" button, for example),
+ * which never has to match a prerendered snapshot.
+ */
+export function dailyShuffle<T>(items: T[], salt = 0): T[] {
+  const random = seededRandom(dailySeed(salt));
+  const out = [...items];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+/** Deterministic pick keyed by an arbitrary string (e.g. a record's own id),
+    for "the next thing to look at" choices that must stay stable across a
+    server-rendered snapshot and the client hydrating it. */
+export function hashPick<T>(items: T[], key: string): T | undefined {
+  if (items.length === 0) return undefined;
+  let hash = 0;
+  for (let i = 0; i < key.length; i++) hash = (hash * 31 + key.charCodeAt(i)) | 0;
+  return items[Math.abs(hash) % items.length];
 }

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { anniversariesOnDay, dailyPick, eras, events, eventsOnDay, fighterBySlug, fighters, movements, randomPick } from '@/lib/content';
+import { anniversariesOnDay, dailyPick, dailyShuffle, eras, events, eventsOnDay, fighterBySlug, fighters, movements, randomPick } from '@/lib/content';
 import { didYouKnowFacts } from '@/data/facts';
 import { regionNames } from '@/data/regions';
 import type { RegionId } from '@/types';
@@ -137,9 +137,9 @@ export default function HomePage() {
   usePageMeta('', "Millions resisted. Thousands sacrificed. Explore the people who fought for India's freedom — an immersive interactive timeline from 1757 to 1947.");
 
   const trail = useTrail();
-  const featured = useMemo(() => fighters.filter((f) => f.featured).sort(() => 0.5 - Math.random()).slice(0, 5), []);
-  const forgotten = useMemo(() => fighters.filter((f) => f.forgotten).sort(() => 0.5 - Math.random()).slice(0, 4), []);
-  const women = useMemo(() => fighters.filter((f) => f.gender === 'female').sort(() => 0.5 - Math.random()).slice(0, 4), []);
+  const featured = useMemo(() => dailyShuffle(fighters.filter((f) => f.featured), 1).slice(0, 5), []);
+  const forgotten = useMemo(() => dailyShuffle(fighters.filter((f) => f.forgotten), 2).slice(0, 4), []);
+  const women = useMemo(() => dailyShuffle(fighters.filter((f) => f.gender === 'female'), 3).slice(0, 4), []);
   const keyEvents = useMemo(() => events.filter((e) => e.featured).slice(0, 6), []);
   const facts = useMemo(() => [dailyPick(didYouKnowFacts), dailyPick(didYouKnowFacts, 5)], []);
   const featuredMovements = useMemo(() => movements.filter((m) => ['revolutionary-movement', 'tribal-resistance', 'azad-hind', 'early-uprisings'].includes(m.id)), []);

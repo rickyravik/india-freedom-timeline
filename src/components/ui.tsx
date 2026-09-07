@@ -235,8 +235,8 @@ export function PortraitMedallion({
   if (portrait && !imgFailed) {
     return (
       <span
-        className={`${perf} inline-flex shrink-0 select-none items-center justify-center overflow-hidden ${sizes[size]} ${className}`}
-        style={{ backgroundColor: onPane ? '#f7f3ea' : plate, '--tooth': onPane ? plate : '#f2ede2' } as CSSProperties}
+        className={`${perf} medallion-plate inline-flex shrink-0 select-none items-center justify-center overflow-hidden ${sizes[size]} ${className}`}
+        style={{ '--medallion-bg': onPane ? '#f7f3ea' : plate, '--tooth': onPane ? plate : '#f2ede2' } as CSSProperties}
       >
         <img
           src={portrait}
@@ -252,11 +252,11 @@ export function PortraitMedallion({
       aria-hidden="true"
       /* One stamp: the plate is the ink, the monogram is cut in the paper, and
          the edge is perforated at the gauge its size can carry. */
-      className={`${perf} inline-flex shrink-0 select-none items-center justify-center font-display font-bold ${sizes[size]} ${className}`}
+      className={`${perf} medallion-plate inline-flex shrink-0 select-none items-center justify-center font-display font-bold ${sizes[size]} ${className}`}
       style={
         {
-          backgroundColor: onPane ? '#f7f3ea' : plate,
-          color: onPane ? plate : '#f7f3ea',
+          '--medallion-bg': onPane ? '#f7f3ea' : plate,
+          '--medallion-fg': onPane ? plate : '#f7f3ea',
           '--tooth': onPane ? plate : '#f2ede2',
         } as CSSProperties
       }
@@ -270,7 +270,11 @@ export function PortraitMedallion({
 /* Lifespan bar — where a life falls against 1757–1947                 */
 const SPAN_START = 1740;
 const SPAN_END = 1950;
-const pct = (y: number) => ((Math.min(Math.max(y, SPAN_START), SPAN_END) - SPAN_START) / (SPAN_END - SPAN_START)) * 100;
+const round2 = (n: number) => Math.round(n * 100) / 100;
+/* Rounded to 2dp: a browser reformats an inline style's percentage to its
+   own precision the instant it's set, which otherwise no longer matches the
+   full-precision string React computes when checking this at hydration. */
+const pct = (y: number) => round2(((Math.min(Math.max(y, SPAN_START), SPAN_END) - SPAN_START) / (SPAN_END - SPAN_START)) * 100);
 
 export function LifespanBar({ birth, death, vault = true }: { birth?: number; death?: number; vault?: boolean }) {
   if (!birth && !death) return null;
@@ -287,14 +291,14 @@ export function LifespanBar({ birth, death, vault = true }: { birth?: number; de
             <span
               key={e.id}
               className={`absolute inset-y-0 ${vault ? eraAccent.bgVault[e.accent] : eraAccent.bg[e.accent]}`}
-              style={{ left: `${pct(e.startYear)}%`, width: `${pct(e.endYear + 1) - pct(e.startYear)}%` }}
+              style={{ left: `${pct(e.startYear)}%`, width: `${round2(pct(e.endYear + 1) - pct(e.startYear))}%` }}
             />
           ))}
         </div>
         {/* Life — the franked span, always the accent ink */}
         <div
           className="absolute top-1 h-5 bg-oxide ring-1 ring-ink/30"
-          style={{ left: `${pct(b)}%`, width: `${Math.max(pct(d) - pct(b), 1.2)}%` }}
+          style={{ left: `${pct(b)}%`, width: `${round2(Math.max(pct(d) - pct(b), 1.2))}%` }}
         />
       </div>
       <figcaption className={`num relative mt-1.5 h-4 font-body text-xs font-medium ${vault ? 'text-paper-200' : 'text-ink-faint'}`}>

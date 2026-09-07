@@ -1,20 +1,12 @@
 import { Component, lazy, Suspense, type ErrorInfo, type ReactNode } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import { Layout, RouteFallback } from '@/components/layout';
+import { routeTable, getPreloadedRoute } from '@/lib/routes';
 
-/* Route-based code splitting: each page loads on demand. */
-const HomePage = lazy(() => import('@/pages/HomePage'));
-const TimelinePage = lazy(() => import('@/pages/TimelinePage'));
-const FightersPage = lazy(() => import('@/pages/FightersPage'));
-const FighterProfilePage = lazy(() => import('@/pages/FighterProfilePage'));
-const EventsPage = lazy(() => import('@/pages/EventsPage'));
-const EventPage = lazy(() => import('@/pages/EventPage'));
-const MovementsPage = lazy(() => import('@/pages/MovementsPage'));
-const MovementPage = lazy(() => import('@/pages/MovementsPage').then((m) => ({ default: m.MovementPage })));
-const MapPage = lazy(() => import('@/pages/MapPage'));
-const SearchPage = lazy(() => import('@/pages/SearchPage'));
-const LearnPage = lazy(() => import('@/pages/LearnPage'));
-const AboutPage = lazy(() => import('@/pages/AboutPage'));
+/* Route-based code splitting: each page loads on demand. lazy() must be
+   called once per route at module scope (not per render), so this map is
+   built here rather than inside App(). */
+const lazyComponents = new Map(routeTable.map((r) => [r.path, lazy(r.loader)]));
 
 function NotFound() {
   return (
@@ -56,35 +48,25 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boole
 }
 
 export default function App() {
+  /* Set once, before the very first render (see src/lib/routes.tsx) — only
+     ever matches the route active on initial page load. */
+  const preloaded = getPreloadedRoute();
   return (
     <ErrorBoundary>
       <Routes>
         <Route element={<Layout />}>
-          <Route
-            index
-            element={
-              <Suspense fallback={<RouteFallback />}>
-                <HomePage />
-              </Suspense>
-            }
-          />
-          {(
-            [
-              ['/timeline', <TimelinePage />],
-              ['/fighters', <FightersPage />],
-              ['/fighters/:slug', <FighterProfilePage />],
-              ['/events', <EventsPage />],
-              ['/events/:slug', <EventPage />],
-              ['/movements', <MovementsPage />],
-              ['/movements/:slug', <MovementPage />],
-              ['/map', <MapPage />],
-              ['/search', <SearchPage />],
-              ['/learn', <LearnPage />],
-              ['/about', <AboutPage />],
-            ] as const
-          ).map(([path, el]) => (
-            <Route key={path} path={path} element={<Suspense fallback={<RouteFallback />}>{el}</Suspense>} />
-          ))}
+          {routeTable.map(({ path }) => {
+            const Lazy = lazyComponents.get(path)!;
+            const element =
+              preloaded && preloaded.path === path ? (
+                <preloaded.Component />
+              ) : (
+                <Suspense fallback={<RouteFallback />}>
+                  <Lazy />
+                </Suspense>
+              );
+            return path === '/' ? <Route key={path} index element={element} /> : <Route key={path} path={path} element={element} />;
+          })}
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -1,4 +1,14 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { useLocation } from 'react-router-dom';
+
+/** True only during the build-time prerender capture pass (set by scripts/prerender.mjs via Playwright's addInitScript, never in a real visitor's browser). */
+declare global {
+  interface Window {
+    __PRERENDERING__?: boolean;
+  }
+}
+
+const SITE_URL = (import.meta.env.VITE_SITE_URL as string | undefined) ?? 'https://india-freedom-timeline.pages.dev';
 
 /* ------------------------------------------------------------------ */
 /* Media & motion                                                      */
@@ -33,6 +43,7 @@ function getRevealObserver(): IntersectionObserver | null {
   if (typeof IntersectionObserver === 'undefined') return null;
   revealObserver ??= new IntersectionObserver(
     (entries) => {
+      if (window.__PRERENDERING__) return; // don't bake viewport-dependent state into a captured snapshot
       for (const entry of entries) {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
@@ -107,6 +118,13 @@ function readBookmarks(): string[] {
   return bookmarksCache;
 }
 
+/* A stable, shared reference: useSyncExternalStore compares getServerSnapshot's
+   return value with Object.is, so a fresh `[]` literal on every call reads as
+   "always different" and breaks hydration (confirmed: it produced React's
+   "getServerSnapshot should be cached" warning and real hydration mismatches
+   once real hydration — not just createRoot — started happening in Phase 2). */
+const EMPTY_STRINGS: string[] = [];
+
 function writeBookmarks(next: string[]) {
   bookmarksCache = next;
   try {
@@ -122,7 +140,7 @@ export function useBookmarks() {
     bookmarkListeners.add(cb);
     return () => bookmarkListeners.delete(cb);
   }, []);
-  const bookmarks = useSyncExternalStore(subscribe, readBookmarks, () => [] as string[]);
+  const bookmarks = useSyncExternalStore(subscribe, readBookmarks, () => EMPTY_STRINGS);
   const toggle = useCallback((slug: string) => {
     const current = readBookmarks();
     writeBookmarks(current.includes(slug) ? current.filter((s) => s !== slug) : [...current, slug]);
@@ -164,25 +182,71 @@ export function useTrail(): string[] {
     trailListeners.add(cb);
     return () => trailListeners.delete(cb);
   }, []);
-  return useSyncExternalStore(subscribe, readTrail, () => [] as string[]);
+  return useSyncExternalStore(subscribe, readTrail, () => EMPTY_STRINGS);
 }
 
 /* ------------------------------------------------------------------ */
 /* Page meta                                                           */
 
-export function usePageMeta(title: string, description?: string) {
+function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
+  let el = document.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.content = content;
+}
+
+function upsertCanonical(href: string) {
+  let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement('link');
+    link.rel = 'canonical';
+    document.head.appendChild(link);
+  }
+  link.href = href;
+}
+
+/**
+ * Sets the document title, description and (new) canonical/Open Graph/
+ * Twitter tags for the current route, then marks the page ready for the
+ * build-time prerender script to capture (`data-prerender-ready`) — see
+ * scripts/prerender.mjs, which waits on that flag before snapshotting.
+ *
+ * `deferReady` is for pages that load their real content asynchronously
+ * (a fighter/event's full record, lazily loaded): they pass it and set the
+ * flag themselves once that load resolves, instead of it happening here
+ * immediately.
+ */
+export function usePageMeta(
+  title: string,
+  description?: string,
+  opts?: { type?: 'website' | 'article'; image?: string; deferReady?: boolean },
+) {
+  const { pathname } = useLocation();
   useEffect(() => {
-    document.title = title ? `${title} — India's Freedom Timeline` : "India's Freedom Timeline";
+    const fullTitle = title ? `${title} — India's Freedom Timeline` : "India's Freedom Timeline";
+    document.title = fullTitle;
+    const url = `${SITE_URL}${pathname}`;
+    upsertCanonical(url);
+    upsertMeta('property', 'og:title', fullTitle);
+    upsertMeta('property', 'og:url', url);
+    upsertMeta('property', 'og:type', opts?.type ?? 'website');
+    upsertMeta('name', 'twitter:card', opts?.image ? 'summary_large_image' : 'summary');
+    upsertMeta('name', 'twitter:title', fullTitle);
     if (description) {
-      let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-      if (!meta) {
-        meta = document.createElement('meta');
-        meta.name = 'description';
-        document.head.appendChild(meta);
-      }
-      meta.content = description;
+      upsertMeta('name', 'description', description);
+      upsertMeta('property', 'og:description', description);
+      upsertMeta('name', 'twitter:description', description);
     }
-  }, [title, description]);
+    if (opts?.image) {
+      const imageUrl = `${SITE_URL}${opts.image}`;
+      upsertMeta('property', 'og:image', imageUrl);
+      upsertMeta('name', 'twitter:image', imageUrl);
+    }
+    if (!opts?.deferReady) document.documentElement.dataset.prerenderReady = 'true';
+  }, [title, description, pathname, opts?.type, opts?.image, opts?.deferReady]);
 }
 
 /* ------------------------------------------------------------------ */

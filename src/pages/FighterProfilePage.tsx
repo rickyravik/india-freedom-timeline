@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
-import { eventsForFighter, fighterBySlug, fighters, lifespan, movementById, organizationById, relatedFighters, roleLabels, randomPick } from '@/lib/content';
+import { eventsForFighter, fighterBySlug, fighters, lifespan, movementById, organizationById, relatedFighters, roleLabels, hashPick } from '@/lib/content';
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
 import { pushTrail, useBookmarks, useIsDesktop, usePageMeta, useShare, useTrail } from '@/lib/hooks';
@@ -133,7 +133,7 @@ export default function FighterProfilePage() {
   const { share, copied } = useShare();
   const trail = useTrail();
 
-  usePageMeta(fighter?.name ?? 'Freedom fighter', fighter?.summary);
+  usePageMeta(fighter?.name ?? 'Freedom fighter', fighter?.summary, { type: 'article' });
   useEffect(() => {
     if (fighter) pushTrail(fighter.slug);
   }, [fighter]);
@@ -142,7 +142,9 @@ export default function FighterProfilePage() {
   const timeline = useMemo(() => (fighter ? eventsForFighter(fighter) : []), [fighter]);
   const discoverNext = useMemo(() => {
     if (!fighter) return null;
-    return randomPick(fighters.filter((f) => f.id !== fighter.id && !fighter.relatedPeople.includes(f.id) && f.region !== fighter.region));
+    /* Deterministic (not truly random): a prerendered snapshot and the
+       browser hydrating it must agree on the pick. */
+    return hashPick(fighters.filter((f) => f.id !== fighter.id && !fighter.relatedPeople.includes(f.id) && f.region !== fighter.region), fighter.id);
   }, [fighter]);
 
   if (!fighter) return <Navigate to="/fighters" replace />;

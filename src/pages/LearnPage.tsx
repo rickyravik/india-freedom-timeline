@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { quizQuestions, guessWhoRounds } from '@/data/quizzes';
 import { didYouKnowFacts } from '@/data/facts';
-import { fighters, fighterById, lifespan, roleLabels, movementById } from '@/lib/content';
+import { fighters, fighterById, lifespan, roleLabels, movementById, dailyShuffle, dailySeed } from '@/lib/content';
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
 import { usePageMeta } from '@/lib/hooks';
@@ -29,8 +29,22 @@ function shuffleQuiz(): ShuffledQuestion[] {
     });
 }
 
+/* Same-day-stable version of shuffleQuiz, for the very first render only —
+   a prerendered snapshot and the browser hydrating it must compute the same
+   order. `restart()` (a user action, never part of a snapshot) uses the
+   real-random shuffleQuiz above instead. */
+function shuffleQuizDaily(): ShuffledQuestion[] {
+  return dailyShuffle(quizQuestions, 11)
+    .slice(0, 8)
+    .map((q, i) => {
+      const answer = q.options[q.answerIndex];
+      const options = dailyShuffle(q.options, i);
+      return { ...q, options, answerIndex: options.indexOf(answer) };
+    });
+}
+
 function Quiz() {
-  const [questions, setQuestions] = useState<ShuffledQuestion[]>(shuffleQuiz);
+  const [questions, setQuestions] = useState<ShuffledQuestion[]>(shuffleQuizDaily);
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const [score, setScore] = useState(0);
@@ -143,7 +157,7 @@ function Quiz() {
 
 /* ------------------------------------------------------------------ */
 function GuessWho() {
-  const [roundIdx, setRoundIdx] = useState(() => Math.floor(Math.random() * guessWhoRounds.length));
+  const [roundIdx, setRoundIdx] = useState(() => dailySeed(13) % guessWhoRounds.length);
   const [cluesShown, setCluesShown] = useState(1);
   const [revealed, setRevealed] = useState(false);
   const round = guessWhoRounds[roundIdx];
@@ -269,7 +283,7 @@ function Compare() {
 /* ------------------------------------------------------------------ */
 export default function LearnPage() {
   usePageMeta('Learn & Play', 'Quizzes, guessing games and comparisons — learn the freedom struggle by exploring it.');
-  const facts = useMemo(() => [...didYouKnowFacts].sort(() => Math.random() - 0.5).slice(0, 3), []);
+  const facts = useMemo(() => dailyShuffle(didYouKnowFacts, 17).slice(0, 3), []);
 
   return (
     <div className="pb-20">

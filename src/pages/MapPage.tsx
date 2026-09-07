@@ -90,7 +90,10 @@ export default function MapPage() {
               {/* The 8-column grid encodes the map, so it cannot reflow: below the
                   width where a tile would fall under 44px the plate scrolls. */}
               <div className="overflow-x-auto scrollbar-thin-archival">
-                <div role="group" aria-label="Stylised map of India — states" className="grid min-w-[460px] gap-1.5 sm:gap-2" style={{ gridTemplateColumns: 'repeat(8, minmax(0, 1fr))', gridTemplateRows: 'repeat(8, minmax(0, 1fr))' }}>
+                {/* `0px`, not `0`: a browser adds the unit itself inside minmax()
+                    the instant this is set, so the literal already matches what
+                    a hydrating page would otherwise mismatch against. */}
+                <div role="group" aria-label="Stylised map of India — states" className="grid min-w-[460px] gap-1.5 sm:gap-2" style={{ gridTemplateColumns: 'repeat(8, minmax(0px, 1fr))', gridTemplateRows: 'repeat(8, minmax(0px, 1fr))' }}>
                   {states.map((s) => {
                     const isSel = selected?.id === s.id;
                     const dim = hoverRegion && hoverRegion !== s.region && !isSel;
@@ -107,14 +110,14 @@ export default function MapPage() {
                         aria-pressed={isSel}
                         aria-label={`${s.name}, ${n} freedom fighter${n === 1 ? '' : 's'}`}
                         title={s.name}
-                        className={`perf-all relative flex aspect-square min-h-0 flex-col items-center justify-center text-center transition-[opacity,background-color] duration-400 ease-cinematic ${
+                        className={`perf-all map-tile-fill relative flex aspect-square min-h-0 flex-col items-center justify-center text-center transition-[opacity,background-color] duration-400 ease-cinematic ${
                           isSel ? 'z-10' : 'hover:opacity-90'
                         } ${dim ? 'opacity-60' : 'opacity-100'}`}
                         style={
                           {
                             gridColumn: s.col,
                             gridRow: s.row,
-                            backgroundColor: isSel ? '#f7f3ea' : s.region === 'abroad' ? `${regionHex.abroad}cc` : regionHex[s.region],
+                            '--map-tile-bg': isSel ? '#f7f3ea' : s.region === 'abroad' ? `${regionHex.abroad}cc` : regionHex[s.region],
                             '--tooth': MOUNT,
                           } as CSSProperties
                         }
@@ -137,7 +140,7 @@ export default function MapPage() {
               {(Object.keys(regionNames) as RegionId[]).map((r) => (
                 <li key={r} className="flex items-center gap-1.5">
                   {/* hairline so stamp green stays visible against the green pane */}
-                  <span aria-hidden="true" className="inline-block h-2.5 w-2.5 ring-1 ring-paper-100/50" style={{ backgroundColor: regionHex[r] }} />
+                  <span aria-hidden="true" className="map-tile-fill inline-block h-2.5 w-2.5 ring-1 ring-paper-100/50" style={{ '--map-tile-bg': regionHex[r] } as CSSProperties} />
                   {regionNames[r]}
                 </li>
               ))}

@@ -11,7 +11,7 @@ export default function EventPage() {
   const event = slug ? eventBySlug.get(slug) : undefined;
   const { share, copied } = useShare();
 
-  usePageMeta(event?.title ?? 'Event', event?.summary);
+  usePageMeta(event?.title ?? 'Event', event?.summary, { type: 'article' });
 
   const people = useMemo(() => (event ? fightersForEvent(event) : []), [event]);
   const neighbours = useMemo(() => {

@@ -46,7 +46,11 @@ export function Constellation({ subject, related }: { subject: FreedomFighter; r
       <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full" aria-hidden="true">
         {positions.map((p, i) => {
           const era = eraById.get(nodes[i].era);
-          const len = Math.hypot(p.x - cx, p.y - cy);
+          /* Rounded: a browser reformats an inline style's numeric value to
+             its own precision the instant it's set, which would otherwise
+             no longer match the full-precision string React computes when
+             checking this at hydration. */
+          const len = Math.round(Math.hypot(p.x - cx, p.y - cy) * 100) / 100;
           return (
             <line
               key={nodes[i].id}
@@ -80,7 +84,11 @@ export function Constellation({ subject, related }: { subject: FreedomFighter; r
               key={f.id}
               to={`/fighters/${f.slug}`}
               className="group absolute flex w-36 -translate-x-1/2 -translate-y-1/2 flex-col items-center text-center animate-fade-up"
-              style={{ left: `${(p.x / W) * 100}%`, top: `${(p.y / H) * 100}%`, animationDelay: `${200 + i * 90}ms` }}
+              /* Rounded: a browser reformats an inline style's percentage to
+                 its own precision the instant it's set, which would
+                 otherwise no longer match the full-precision string React
+                 computes when checking this at hydration. */
+              style={{ left: `${Math.round((p.x / W) * 10000) / 100}%`, top: `${Math.round((p.y / H) * 10000) / 100}%`, animationDelay: `${200 + i * 90}ms` }}
             >
               <PortraitMedallion name={f.name} era={era} portrait={f.portrait} size="md" className="transition-transform duration-400 ease-cinematic group-hover:scale-110" />
               <span className="mt-2 font-body text-xs font-medium leading-tight text-paper-100 transition-colors group-hover:text-brass-bright">{f.name}</span>

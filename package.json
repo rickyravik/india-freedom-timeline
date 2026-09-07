@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run validate && tsc --noEmit && vite build && node scripts/generate-sitemap.mjs",
+    "build": "npm run validate && tsc --noEmit && vite build && node scripts/prerender.mjs && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "validate": "tsx scripts/validate-content.ts"
