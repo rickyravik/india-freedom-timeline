@@ -97,7 +97,7 @@ function TodayLedger() {
               {todaysEvents.map((e) => (
                 <li key={e.id}>
                   <Link to={`/events/${e.slug}`} className="group">
-                    <span className="num font-display text-base font-bold text-oxide">{e.date.year}</span>
+                    <span className="num font-display text-base font-bold text-oxide-deep">{e.date.year}</span>
                     <span className="ml-2 font-display text-lg font-bold text-ink group-hover:text-oxide">{e.title}</span>
                   </Link>
                   <p className="mt-1 font-body text-meta text-ink-soft">{e.summary}</p>
@@ -259,7 +259,7 @@ export default function HomePage() {
               text={fact.text}
               action={
                 fact.relatedLink && (
-                  <Link to={fact.relatedLink.to} className="inline-flex items-center gap-2 font-body text-meta font-medium text-oxide underline decoration-oxide/40 underline-offset-4 hover:decoration-oxide">
+                  <Link to={fact.relatedLink.to} className="inline-flex items-center gap-2 font-body text-meta font-medium text-oxide-deep underline decoration-oxide-deep/40 underline-offset-4 hover:decoration-oxide-deep">
                     {fact.relatedLink.label}
                     <Icon d={icons.arrowRight} className="h-4 w-4" />
                   </Link>

@@ -1,5 +1,7 @@
 # India's Freedom Timeline
 
+[![CI](https://github.com/rickyravik/india-freedom-timeline/actions/workflows/ci.yml/badge.svg)](https://github.com/rickyravik/india-freedom-timeline/actions/workflows/ci.yml)
+
 **Millions resisted. Thousands sacrificed.** An immersive, interactive, mobile-first web experience exploring the people, movements, events and sacrifices of India's struggle against British colonial rule — from the earliest organized resistance (1757) to independence in 1947.
 
 Built like a premium historical product, not an encyclopedia: an interactive era-by-era timeline, immersive freedom fighter profiles with a child-friendly **Story Mode** and an adult **Detailed History** mode, a stylised explorable map of India, global search, quizzes and discovery trails where every profile leads somewhere else.

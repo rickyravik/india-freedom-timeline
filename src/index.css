@@ -196,8 +196,10 @@
   }
 
   /* Franking action — the ochre value the record is paid with */
+  /* bg-oxide-deep, not bg-oxide: white text on the mid cut measured 4.0:1,
+     just under the 4.5:1 AA minimum for this button's text size. */
   .btn-seal {
-    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-oxide px-5 font-body text-meta font-semibold text-paper-50 transition-colors duration-160 ease-cinematic hover:bg-oxide-deep;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-oxide-deep px-5 font-body text-meta font-semibold text-paper-50 transition-colors duration-160 ease-cinematic hover:bg-oxide;
   }
   .btn-ghost {
     @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-ink/40 bg-transparent px-5 font-body text-meta font-semibold text-ink transition-colors duration-160 ease-cinematic hover:border-ink hover:bg-paper-200/70;

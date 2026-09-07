@@ -119,7 +119,7 @@ export default function TimelinePage() {
             Filters{activeFilters > 0 && ` · ${activeFilters}`}
           </button>
           {activeFilters > 0 && (
-            <button type="button" onClick={clearFilters} className="font-body text-meta font-medium text-oxide underline decoration-oxide/40 underline-offset-4">
+            <button type="button" onClick={clearFilters} className="font-body text-meta font-medium text-oxide-deep underline decoration-oxide-deep/40 underline-offset-4">
               Clear
             </button>
           )}
@@ -256,7 +256,7 @@ export default function TimelinePage() {
                                     )}
                                   </div>
                                 )}
-                                <Link to={`/events/${event.slug}`} className="mt-4 inline-flex items-center gap-1.5 font-body text-meta font-medium text-oxide">
+                                <Link to={`/events/${event.slug}`} className="mt-4 inline-flex items-center gap-1.5 font-body text-meta font-medium text-oxide-deep">
                                   Read the full story <Icon d={icons.arrowRight} className="h-4 w-4" />
                                 </Link>
                               </div>

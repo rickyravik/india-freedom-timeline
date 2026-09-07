@@ -32,6 +32,20 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
   }, [results]);
   const flat = useMemo(() => grouped.flatMap((g) => g.items), [grouped]);
 
+  const go = useCallback(
+    (to: string) => {
+      onClose();
+      navigate(to);
+    },
+    [navigate, onClose],
+  );
+
+  /* Read inside the document-level key handler below so it can stay
+     subscribed for the whole time the palette is open (see that effect's
+     own comment) without re-registering the listener on every keystroke. */
+  const liveRef = useRef({ flat, cursor, go });
+  liveRef.current = { flat, cursor, go };
+
   useEffect(() => {
     if (!open) return;
     setQuery('');
@@ -40,21 +54,50 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(() => inputRef.current?.focus());
+    // A document-level listener, not onKeyDown on the dialog: the
+    // requestAnimationFrame above means focus hasn't necessarily moved
+    // inside the dialog yet on the very next keypress, and a keydown
+    // handler on the dialog element only ever sees a key press once focus
+    // (or its target) is somewhere inside that subtree — Escape pressed in
+    // that brief window would otherwise silently do nothing.
+    const onKey = (e: KeyboardEvent) => {
+      const { flat, cursor, go } = liveRef.current;
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (flat.length) setCursor((c) => Math.min(c + 1, flat.length - 1));
+      }
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setCursor((c) => Math.max(c - 1, 0));
+      }
+      if (e.key === 'Enter' && flat[cursor]) {
+        e.preventDefault();
+        go(flat[cursor].to);
+      }
+      if (e.key === 'Tab') {
+        const focusable = Array.from(dialogRef.current?.querySelectorAll<HTMLElement>('input, button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])') ?? []);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', onKey);
     return () => {
+      document.removeEventListener('keydown', onKey);
       document.body.style.overflow = previousOverflow;
       previouslyFocused?.focus?.();
     };
-  }, [open]);
+  }, [open, onClose]);
 
   useEffect(() => setCursor(0), [query]);
-
-  const go = useCallback(
-    (to: string) => {
-      onClose();
-      navigate(to);
-    },
-    [navigate, onClose],
-  );
 
   if (!open) return null;
 
@@ -67,34 +110,6 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
         aria-modal="true"
         aria-label="Search the archive"
         className="relative w-full max-w-xl overflow-hidden rounded-sm border border-paper-300 bg-paper-100 animate-fade-up"
-        onKeyDown={(e) => {
-          if (e.key === 'Escape') onClose();
-          if (e.key === 'ArrowDown') {
-            e.preventDefault();
-            if (flat.length) setCursor((c) => Math.min(c + 1, flat.length - 1));
-          }
-          if (e.key === 'ArrowUp') {
-            e.preventDefault();
-            setCursor((c) => Math.max(c - 1, 0));
-          }
-          if (e.key === 'Enter' && flat[cursor]) {
-            e.preventDefault();
-            go(flat[cursor].to);
-          }
-          if (e.key === 'Tab') {
-            const focusable = Array.from(dialogRef.current?.querySelectorAll<HTMLElement>('input, button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])') ?? []);
-            if (!focusable.length) return;
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-            if (e.shiftKey && document.activeElement === first) {
-              e.preventDefault();
-              last.focus();
-            } else if (!e.shiftKey && document.activeElement === last) {
-              e.preventDefault();
-              first.focus();
-            }
-          }
-        }}
       >
         <div className="flex items-center gap-3 border-b border-paper-300 px-4">
           <Icon d={icons.search} className="h-[18px] w-[18px] shrink-0 text-ink-faint" />

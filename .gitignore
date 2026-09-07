@@ -5,6 +5,9 @@ dist
 shots.mjs
 .wrangler
 .playwright-mcp
+test-results
+playwright-report
+.lighthouseci
 
 # Impeccable session artifacts — keep only the DESIGN.md sidecar
 .impeccable/*

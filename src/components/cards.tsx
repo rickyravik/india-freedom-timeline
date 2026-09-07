@@ -93,7 +93,7 @@ export function FighterFeature({ fighter }: { fighter: FreedomFighter }) {
           <div className="rule my-5" />
           <p className="prose-reading line-clamp-5">{clip(fighter.summary, 260)}</p>
         </div>
-        <p className="mt-6 inline-flex items-center gap-2 font-body text-meta font-medium text-oxide">
+        <p className="mt-6 inline-flex items-center gap-2 font-body text-meta font-medium text-oxide-deep">
           Open the story <Icon d={icons.arrowRight} className="h-4 w-4" />
         </p>
       </Link>

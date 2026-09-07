@@ -240,7 +240,11 @@ export function PortraitMedallion({
       >
         <img
           src={portrait}
-          alt={name}
+          /* Decorative, not alt={name}: every place this renders also shows
+             the person's name as real text right beside it (a card title,
+             a chip label, a page heading), so a screen reader announcing
+             the name twice was flagged as redundant alt text. */
+          alt=""
           className="h-full w-full object-cover object-top sepia-[.35] contrast-[1.05]"
           onError={() => setImgFailed(true)}
         />
@@ -317,7 +321,7 @@ export function DisputedNotes({ notes }: { notes: DisputedNote[] }) {
   return (
     <Reveal as="aside" className="rounded-sm border border-oxide/40 bg-oxide-wash/70 p-5" aria-label="Disputed or uncertain claims">
       <p className="mb-3 flex flex-wrap items-center gap-2 font-display text-base font-bold text-oxide-deep">
-        <span className="stamp text-oxide">Historians note</span> disputed or uncertain
+        <span className="stamp text-oxide-deep">Historians note</span> disputed or uncertain
       </p>
       <ul className="space-y-2.5">
         {notes.map((n) => (
@@ -427,7 +431,7 @@ export function FactCard({ text, action, index }: { text: string; action?: React
   return (
     <div className="doc p-5">
       <div className="mb-3 flex items-center justify-between">
-        <span className="stamp text-oxide">Did you know</span>
+        <span className="stamp text-oxide-deep">Did you know</span>
         {index !== undefined && <span className="num font-display text-sm font-bold text-brass-deep">No. {String(index + 1).padStart(2, '0')}</span>}
       </div>
       <div className="rule mb-4" />

@@ -130,7 +130,7 @@ function Quiz() {
           <p className="prose-reading">{q.explanation}</p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             {q.relatedLink && (
-              <Link to={q.relatedLink.to} className="inline-flex items-center gap-2 font-body text-meta font-medium text-oxide underline decoration-oxide/40 underline-offset-4">
+              <Link to={q.relatedLink.to} className="inline-flex items-center gap-2 font-body text-meta font-medium text-oxide-deep underline decoration-oxide-deep/40 underline-offset-4">
                 {q.relatedLink.label}
                 <Icon d={icons.arrowRight} className="h-4 w-4" />
               </Link>
@@ -324,7 +324,7 @@ export default function LearnPage() {
                 text={f.text}
                 action={
                   f.relatedLink && (
-                    <Link to={f.relatedLink.to} className="inline-flex items-center gap-2 font-body text-meta font-medium text-oxide underline decoration-oxide/40 underline-offset-4">
+                    <Link to={f.relatedLink.to} className="inline-flex items-center gap-2 font-body text-meta font-medium text-oxide-deep underline decoration-oxide-deep/40 underline-offset-4">
                       {f.relatedLink.label}
                       <Icon d={icons.arrowRight} className="h-4 w-4" />
                     </Link>
