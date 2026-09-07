@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState, type CSSProperties, type ElementType, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type CSSProperties, type ElementType, type FormEvent, type ReactNode } from 'react';
 import type { DisputedNote, Era, Quote, SourceRef } from '@/types';
 import { eras } from '@/data/eras';
 import { useReveal } from '@/lib/hooks';
@@ -406,6 +406,126 @@ export function SourceList({ sources }: { sources: SourceRef[] }) {
         ))}
       </ol>
     </Reveal>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Suggest a correction — posts to worker/correction.ts, which opens a
+   GitHub issue. Falls back to a blank mailto: on any non-OK response
+   (which is exactly what plain `vite dev` returns, no code changes needed
+   there — there's no Worker running under the dev server). */
+export function SuggestCorrection({ path, recordTitle }: { path: string; recordTitle: string }) {
+  const [open, setOpen] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [claim, setClaim] = useState('');
+  const [correction, setCorrection] = useState('');
+  const [sourceUrl, setSourceUrl] = useState('');
+  const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState(''); // honeypot — hidden from real visitors below
+
+  const mailtoBody = `Page: ${path}\n\nWhat's wrong:\n${claim}\n\nSuggested correction:\n${correction}${sourceUrl ? `\n\nSource:\n${sourceUrl}` : ''}`;
+  const mailto = `mailto:?subject=${encodeURIComponent(`Correction: ${recordTitle}`)}&body=${encodeURIComponent(mailtoBody)}`;
+
+  async function submit(e: FormEvent) {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/correction', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ path, recordTitle, claim, correction, sourceUrl: sourceUrl || undefined, email: email || undefined, website: website || undefined }),
+      });
+      const data: unknown = await res.json().catch(() => null);
+      const ok = res.ok && typeof data === 'object' && data !== null && (data as { ok?: boolean }).ok === true;
+      setStatus(ok ? 'sent' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  }
+
+  return (
+    <>
+      <button type="button" onClick={() => setOpen(true)} className="btn-ghost !min-h-10">
+        <Icon d={icons.file} className="h-4 w-4" />
+        Suggest a correction
+      </button>
+      <BottomSheet open={open} onClose={() => setOpen(false)} title={`Suggest a correction — ${recordTitle}`}>
+        {status === 'sent' ? (
+          <div className="py-8 text-center">
+            <p className="font-display text-h3 text-ink">Thank you</p>
+            <p className="mx-auto mt-2 max-w-sm font-body text-meta text-ink-soft">Your correction has been submitted for review.</p>
+          </div>
+        ) : status === 'error' ? (
+          <div className="py-8 text-center">
+            <p className="font-display text-h3 text-ink">Couldn’t submit that</p>
+            <p className="mx-auto mt-2 max-w-sm font-body text-meta text-ink-soft">
+              Please send it by email instead —{' '}
+              <a className="font-medium text-ink underline decoration-brass decoration-1 underline-offset-2 hover:text-oxide-deep" href={mailto}>
+                open a pre-filled email
+              </a>
+              .
+            </p>
+          </div>
+        ) : (
+          <form className="space-y-4 py-4" onSubmit={submit}>
+            {/* Real visitors never see or fill this — a filled honeypot marks the submission as spam. */}
+            <input
+              type="text"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              name="website"
+              autoComplete="off"
+              tabIndex={-1}
+              aria-hidden="true"
+              className="sr-only"
+            />
+            <label className="block">
+              <span className="label mb-1.5 block">What’s wrong?</span>
+              <textarea
+                required
+                value={claim}
+                onChange={(e) => setClaim(e.target.value)}
+                rows={2}
+                maxLength={2000}
+                className="w-full rounded-sm border border-paper-400 bg-paper-50 p-3 font-body text-meta text-ink focus:border-ink"
+              />
+            </label>
+            <label className="block">
+              <span className="label mb-1.5 block">Suggested correction</span>
+              <textarea
+                required
+                value={correction}
+                onChange={(e) => setCorrection(e.target.value)}
+                rows={2}
+                maxLength={2000}
+                className="w-full rounded-sm border border-paper-400 bg-paper-50 p-3 font-body text-meta text-ink focus:border-ink"
+              />
+            </label>
+            <label className="block">
+              <span className="label mb-1.5 block">Source (optional)</span>
+              <input
+                type="url"
+                value={sourceUrl}
+                onChange={(e) => setSourceUrl(e.target.value)}
+                className="w-full rounded-sm border border-paper-400 bg-paper-50 p-3 font-body text-meta text-ink focus:border-ink"
+              />
+            </label>
+            <label className="block">
+              <span className="label mb-1.5 block">Your email (optional, for follow-up)</span>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full rounded-sm border border-paper-400 bg-paper-50 p-3 font-body text-meta text-ink focus:border-ink"
+              />
+            </label>
+            <button type="submit" disabled={status === 'sending'} className="btn-seal min-h-12 w-full">
+              {status === 'sending' ? 'Sending…' : 'Submit correction'}
+            </button>
+          </form>
+        )}
+      </BottomSheet>
+    </>
   );
 }
 

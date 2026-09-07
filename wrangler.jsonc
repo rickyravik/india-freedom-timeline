@@ -1,9 +1,13 @@
 {
-  // Static-assets Worker: there is no server code, so no "main" entrypoint.
-  // Cloudflare serves ./dist directly and handles SPA routing itself.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "india-freedom-timeline",
   "compatibility_date": "2026-09-02",
+  // worker/index.ts — the "suggest a correction" endpoint (POST
+  // /api/correction). A request that matches a static asset is still served
+  // directly without invoking this Worker at all; only unmatched paths (this
+  // endpoint included, since it has no file in dist/) reach it. See
+  // worker/index.ts's own comment.
+  "main": "worker/index.ts",
   // Wrangler runs this before deploying, so `wrangler deploy` produces dist/
   // on its own. Without it the deploy depends on the platform's build command
   // being set, and an empty one fails with "assets.directory does not exist".
@@ -12,8 +16,21 @@
   },
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     // Every unmatched path returns index.html so react-router can route it,
-    // which is what public/_redirects does on Pages.
+    // which is what public/_redirects does on Pages. worker/index.ts's
+    // fallback (env.ASSETS.fetch) honors this same setting.
     "not_found_handling": "single-page-application"
+  },
+  "vars": {
+    "GITHUB_OWNER": "rickyravik",
+    "GITHUB_REPO": "india-freedom-timeline"
   }
+  // Rate limiting for POST /api/correction (optional — the endpoint works
+  // without it, just unthrottled beyond GitHub's own API limits). To enable:
+  // run `wrangler kv namespace create RATE_LIMIT_KV`, paste the id it prints
+  // below, and uncomment.
+  // "kv_namespaces": [
+  //   { "binding": "RATE_LIMIT_KV", "id": "<id from the create command>" }
+  // ]
 }

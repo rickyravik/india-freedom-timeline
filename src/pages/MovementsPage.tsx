@@ -3,7 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { eventsForMovement, fightersForMovement, movementBySlug, movements } from '@/lib/content';
 import { regionNames } from '@/data/regions';
 import { usePageMeta } from '@/lib/hooks';
-import { Icon, PageIntro, Postmark, Reveal, SectionHeading, SourceList, icons } from '@/components/ui';
+import { Icon, PageIntro, Postmark, Reveal, SectionHeading, SourceList, SuggestCorrection, icons } from '@/components/ui';
 import { EventCard, FighterCard, MovementCard } from '@/components/cards';
 
 export default function MovementsPage() {
@@ -89,7 +89,10 @@ export function MovementPage() {
           </section>
         )}
 
-        <SourceList sources={movement.sources} />
+        <div className="space-y-5">
+          <SourceList sources={movement.sources} />
+          <SuggestCorrection path={`/movements/${movement.slug}`} recordTitle={movement.name} />
+        </div>
       </div>
 
       {people.length > 0 && (

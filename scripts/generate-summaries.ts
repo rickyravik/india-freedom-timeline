@@ -14,7 +14,7 @@
  * resolves the `@/types` alias exactly like the real app, and reads the
  * data straight from the typed source files.
  */
-import { readdirSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { createServer, type ViteDevServer } from 'vite';
 import { pickEventSummary, pickFighterSummary } from './lib/summaries.ts';
 import type { FreedomFighter, HistoricalEvent } from '../src/types/index.ts';
@@ -37,9 +37,15 @@ async function sourceFileBySlug<T extends { slug: string }>(vite: ViteDevServer,
   return map;
 }
 
+/** Skips the write when the content hasn't actually changed: `wrangler dev`
+    restarts its build whenever a file under its watch changes, and this
+    script's own output lives under `src/` — an unconditional write would
+    have it retrigger itself, forever, on every single run. */
 function writeGeneratedFile(path: string, header: string, typeImport: string, exports: { name: string; type: string; value: unknown }[]) {
   const body = exports.map(({ name, type, value }) => `export const ${name}: ${type} = ${JSON.stringify(value, null, 2)};`).join('\n\n');
-  writeFileSync(path, `${header}\n\n${typeImport}\n\n${body}\n`);
+  const content = `${header}\n\n${typeImport}\n\n${body}\n`;
+  if (existsSync(path) && readFileSync(path, 'utf8') === content) return;
+  writeFileSync(path, content);
 }
 
 const vite = await createServer({ server: { middlewareMode: true }, appType: 'custom', logLevel: 'silent' });

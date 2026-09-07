@@ -5,7 +5,7 @@ import { loadFighter, peekFighter } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
 import { pushTrail, useBookmarks, useIsDesktop, usePageMeta, useShare, useTrail } from '@/lib/hooks';
-import { DisputedNotes, Icon, LifespanBar, Postmark, PortraitMedallion, QuoteCard, Reveal, Segmented, SourceList, eraAccent, icons } from '@/components/ui';
+import { DisputedNotes, Icon, LifespanBar, Postmark, PortraitMedallion, QuoteCard, Reveal, Segmented, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
 import { RouteFallback } from '@/components/layout';
 import { EventCard, FighterChip } from '@/components/cards';
 import { Constellation } from '@/components/constellation';
@@ -446,8 +446,9 @@ export default function FighterProfilePage() {
           </div>
 
           {/* Provenance closes the record */}
-          <div className="container-page py-14">
+          <div className="container-page space-y-5 py-14">
             <SourceList sources={fighter.sources} />
+            <SuggestCorrection path={`/fighters/${summary.slug}`} recordTitle={summary.name} />
           </div>
         </>
       )}

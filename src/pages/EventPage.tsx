@@ -4,7 +4,7 @@ import { categoryLabels, eventBySlug, events, fightersForEvent, movementById } f
 import { loadEvent, peekEvent } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { usePageMeta, useShare } from '@/lib/hooks';
-import { DisputedNotes, Icon, Postmark, Reveal, SourceList, eraAccent, icons } from '@/components/ui';
+import { DisputedNotes, Icon, Postmark, Reveal, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
 import { RouteFallback } from '@/components/layout';
 import { FighterCard } from '@/components/cards';
 import type { EventSummary, HistoricalEvent } from '@/types';
@@ -135,6 +135,7 @@ export default function EventPage() {
             {event.disputed && <DisputedNotes notes={event.disputed} />}
 
             <SourceList sources={event.sources} />
+            <SuggestCorrection path={`/events/${summary.slug}`} recordTitle={summary.title} />
           </div>
 
           <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">

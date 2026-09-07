@@ -1,0 +1,6 @@
+# `wrangler dev`'s build.command watcher rebuilds on any change under the
+# project tree, and the build's own first step (npm run generate:summaries)
+# writes into src/data/generated/ — without this, that write is itself seen
+# as a change, restarting the build, which writes the same files again,
+# forever. Doesn't affect `npm run build`/CI, which only run once.
+src/data/generated/

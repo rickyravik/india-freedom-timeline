@@ -4,6 +4,7 @@ dist
 .DS_Store
 shots.mjs
 .wrangler
+.dev.vars
 .playwright-mcp
 test-results
 playwright-report
