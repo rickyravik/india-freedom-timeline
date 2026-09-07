@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import type { EventCategory, HistoricalEvent, RegionId } from '@/types';
+import type { EventCategory, EventSummary, RegionId } from '@/types';
 import { categoryLabels, eras, events, fightersForEvent, fighters, movements } from '@/lib/content';
 import { regionNames } from '@/data/regions';
 import { useActiveSection, usePageMeta } from '@/lib/hooks';
@@ -10,7 +10,7 @@ import { FighterChip } from '@/components/cards';
 /* ------------------------------------------------------------------ */
 /* Ledger sub-line under the year: day/month for a single date, the    */
 /* full label for a range (so the end date always carries its year).   */
-function dateSubLine(event: HistoricalEvent): string {
+function dateSubLine(event: EventSummary): string {
   if (event.dateLabel.includes('–')) return event.dateLabel;
   return event.dateLabel.replace(String(event.date.year), '').trim();
 }

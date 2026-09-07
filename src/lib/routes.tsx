@@ -1,8 +1,18 @@
 import type { ComponentType } from 'react';
+import { loadEvent, loadFighter } from '@/lib/loadContent';
 
 export interface RouteEntry {
   path: string;
   loader: () => Promise<{ default: ComponentType }>;
+  /**
+   * For routes whose page loads a full record asynchronously on top of its
+   * summary (FighterProfilePage, EventPage — see loadContent.ts): prefetches
+   * that record so it's already cache-warm before the first hydration
+   * render. Without this, that first render would show the loading state
+   * (the record's effect hasn't fired yet) while the prerendered snapshot
+   * shows the full page, a hydration mismatch.
+   */
+  preload?: (params: Record<string, string | undefined>) => Promise<unknown>;
 }
 
 /**
@@ -14,9 +24,9 @@ export const routeTable: RouteEntry[] = [
   { path: '/', loader: () => import('@/pages/HomePage') },
   { path: '/timeline', loader: () => import('@/pages/TimelinePage') },
   { path: '/fighters', loader: () => import('@/pages/FightersPage') },
-  { path: '/fighters/:slug', loader: () => import('@/pages/FighterProfilePage') },
+  { path: '/fighters/:slug', loader: () => import('@/pages/FighterProfilePage'), preload: (p) => (p.slug ? loadFighter(p.slug) : Promise.resolve()) },
   { path: '/events', loader: () => import('@/pages/EventsPage') },
-  { path: '/events/:slug', loader: () => import('@/pages/EventPage') },
+  { path: '/events/:slug', loader: () => import('@/pages/EventPage'), preload: (p) => (p.slug ? loadEvent(p.slug) : Promise.resolve()) },
   { path: '/movements', loader: () => import('@/pages/MovementsPage') },
   { path: '/movements/:slug', loader: () => import('@/pages/MovementsPage').then((m) => ({ default: m.MovementPage })) },
   { path: '/map', loader: () => import('@/pages/MapPage') },

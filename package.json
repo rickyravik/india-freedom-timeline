@@ -5,10 +5,12 @@
   "description": "India's Freedom Timeline — an immersive, interactive journey through the people, movements and events of India's struggle for independence.",
   "type": "module",
   "scripts": {
+    "predev": "npm run generate:summaries",
     "dev": "vite",
-    "build": "npm run validate && tsc --noEmit && vite build && node scripts/prerender.mjs && tsx scripts/og-images.ts && node scripts/generate-sitemap.mjs",
+    "build": "npm run generate:summaries && npm run validate && tsc --noEmit && vite build && node scripts/prerender.mjs && tsx scripts/og-images.ts && node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
+    "generate:summaries": "tsx scripts/generate-summaries.ts",
     "validate": "tsx scripts/validate-content.ts",
     "test": "playwright test",
     "lighthouse": "lhci autorun"

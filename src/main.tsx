@@ -16,7 +16,7 @@ async function bootstrap() {
   )?.[0];
   const entry = matched && routeTable.find((r) => r.path === matched.route.path);
   if (entry) {
-    const mod = await entry.loader();
+    const [mod] = await Promise.all([entry.loader(), entry.preload?.(matched.params)]);
     setPreloadedRoute({ path: entry.path, Component: mod.default });
   }
 

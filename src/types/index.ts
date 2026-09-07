@@ -180,6 +180,60 @@ export interface HistoricalEvent {
   featured?: boolean;
 }
 
+/**
+ * The lightweight projection of a FreedomFighter shipped to every page
+ * except a fighter's own profile — everything the home page, browse/list
+ * pages, search, the map, Learn & Play and the "related people"
+ * constellation actually read. The full record (biography, quotes,
+ * sources, Story Mode...) loads lazily only when that profile opens — see
+ * src/lib/loadContent.ts. Generated from the full records by
+ * scripts/generate-summaries.ts; do not hand-edit src/data/generated/*.
+ */
+export interface FighterSummary {
+  id: string;
+  slug: string;
+  name: string;
+  alternateNames?: string[];
+  portrait?: string;
+  birthYear?: number;
+  deathYear?: number;
+  birthDateLabel?: string;
+  deathDateLabel?: string;
+  birthPlace?: string;
+  region: RegionId;
+  states: string[];
+  gender: Gender;
+  summary: string;
+  /** Needed by LearnPage's "Compare two lives" tool. */
+  ideology?: string;
+  legacy?: string;
+  timelineEvents: string[];
+  movements: string[];
+  roles: Role[];
+  tags?: string[];
+  era: string;
+  featured?: boolean;
+  forgotten?: boolean;
+}
+
+/** The lightweight projection of a HistoricalEvent — see FighterSummary. */
+export interface EventSummary {
+  id: string;
+  slug: string;
+  title: string;
+  date: HistoricalDate;
+  dateLabel: string;
+  location?: string;
+  region?: RegionId;
+  states?: string[];
+  summary: string;
+  people: string[];
+  movement?: string;
+  era: string;
+  category: EventCategory;
+  featured?: boolean;
+}
+
 export interface Movement {
   id: string;
   slug: string;

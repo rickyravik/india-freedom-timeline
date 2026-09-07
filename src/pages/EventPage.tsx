@@ -1,29 +1,63 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { categoryLabels, eventBySlug, events, fightersForEvent, movementById } from '@/lib/content';
+import { loadEvent, peekEvent } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { usePageMeta, useShare } from '@/lib/hooks';
 import { DisputedNotes, Icon, Postmark, Reveal, SourceList, eraAccent, icons } from '@/components/ui';
+import { RouteFallback } from '@/components/layout';
 import { FighterCard } from '@/components/cards';
+import type { EventSummary, HistoricalEvent } from '@/types';
 
 export default function EventPage() {
   const { slug } = useParams();
-  const event = slug ? eventBySlug.get(slug) : undefined;
+  /* The summary is already in hand synchronously — the hero paints
+     immediately from it. The full record (description, significance,
+     sources...) loads lazily; everything below the hero waits on it. */
+  const summary: EventSummary | undefined = slug ? eventBySlug.get(slug) : undefined;
+  /* A lazy initializer, not `undefined` — see FighterProfilePage.tsx's
+     matching comment: the initial route's record is prefetched before
+     hydration starts, so the first render must already reflect it. */
+  const [event, setEvent] = useState<HistoricalEvent | undefined>(() => (slug ? peekEvent(slug) : undefined));
   const { share, copied } = useShare();
 
-  usePageMeta(event?.title ?? 'Event', event?.summary, { type: 'article', image: event && `/og/events/${event.slug}.jpg` });
+  useEffect(() => {
+    const cached = slug ? peekEvent(slug) : undefined;
+    if (cached) {
+      setEvent(cached);
+      return;
+    }
+    setEvent(undefined);
+    if (!slug) return;
+    let live = true;
+    loadEvent(slug).then((e) => {
+      if (live) setEvent(e);
+    });
+    return () => {
+      live = false;
+    };
+  }, [slug]);
 
-  const people = useMemo(() => (event ? fightersForEvent(event) : []), [event]);
-  const neighbours = useMemo(() => {
-    if (!event) return { prev: [], next: [] };
-    const idx = events.findIndex((e) => e.id === event.id);
-    return { prev: events.slice(Math.max(0, idx - 1), idx), next: events.slice(idx + 1, idx + 3) };
+  usePageMeta(summary?.title ?? 'Event', summary?.summary, {
+    type: 'article',
+    image: summary && `/og/events/${summary.slug}.jpg`,
+    deferReady: true,
+  });
+  useEffect(() => {
+    if (event) document.documentElement.dataset.prerenderReady = 'true';
   }, [event]);
 
-  if (!event) return <Navigate to="/events" replace />;
+  const people = useMemo(() => (summary ? fightersForEvent(summary) : []), [summary]);
+  const neighbours = useMemo(() => {
+    if (!summary) return { prev: [], next: [] };
+    const idx = events.findIndex((e) => e.id === summary.id);
+    return { prev: events.slice(Math.max(0, idx - 1), idx), next: events.slice(idx + 1, idx + 3) };
+  }, [summary]);
 
-  const era = eraById.get(event.era);
-  const movement = event.movement ? movementById.get(event.movement) : undefined;
+  if (!summary) return <Navigate to="/events" replace />;
+
+  const era = eraById.get(summary.era);
+  const movement = summary.movement ? movementById.get(summary.movement) : undefined;
   const accent = era?.accent ?? 'brass';
   /* Every era pane is now a deep cut carrying paper lettering (ui.tsx). */
   const heroChip = 'chip-vault';
@@ -38,28 +72,28 @@ export default function EventPage() {
           }`}
         >
           <Postmark
-            lines={['India', 'Post', String(event.date.year)]}
+            lines={['India', 'Post', String(summary.date.year)]}
             className="absolute right-4 top-5 hidden sm:grid"
           />
 
-          <h1 className="max-w-4xl pr-0 text-h1 animate-fade-up sm:pr-28 sm:text-hero">{event.title}</h1>
+          <h1 className="max-w-4xl pr-0 text-h1 animate-fade-up sm:pr-28 sm:text-hero">{summary.title}</h1>
 
           <div className="mt-4 flex flex-wrap items-baseline gap-x-4 gap-y-2 animate-fade-up" style={{ animationDelay: '80ms' }}>
-            <time className="denom">{event.dateLabel}</time>
-            <span className={`stamp ${eraAccent.onInkMuted[accent]}`}>{categoryLabels[event.category]}</span>
+            <time className="denom">{summary.dateLabel}</time>
+            <span className={`stamp ${eraAccent.onInkMuted[accent]}`}>{categoryLabels[summary.category]}</span>
           </div>
-          {(era || event.location) && (
+          {(era || summary.location) && (
             <p className={`num mt-2 font-body text-label animate-fade-up ${eraAccent.onInkMuted[accent]}`} style={{ animationDelay: '160ms' }}>
               {era?.name}
-              {era && event.location && ' · '}
-              {event.location}
+              {era && summary.location && ' · '}
+              {summary.location}
             </p>
           )}
           <p className={`mt-6 max-w-prose font-reading text-reading animate-fade-up ${eraAccent.onInkMuted[accent]}`} style={{ animationDelay: '240ms' }}>
-            {event.summary}
+            {summary.summary}
           </p>
           <div className="mt-7 flex flex-wrap gap-2 animate-fade-up" style={{ animationDelay: '320ms' }}>
-            <button type="button" onClick={() => share(event.title, event.summary, `/events/${event.slug}`)} className={`${heroChip} min-h-10`}>
+            <button type="button" onClick={() => share(summary.title, summary.summary, `/events/${summary.slug}`)} className={`${heroChip} min-h-10`}>
               <Icon d={icons.share} className="h-4 w-4" />
               {copied ? 'Link copied' : 'Share'}
             </button>
@@ -69,7 +103,7 @@ export default function EventPage() {
                 <Icon d={icons.arrowRight} className="h-4 w-4" />
               </Link>
             )}
-            <Link to={`/timeline#era-${event.era}`} className={`${heroChip} min-h-10`}>
+            <Link to={`/timeline#era-${summary.era}`} className={`${heroChip} min-h-10`}>
               <Icon d={icons.clock} className="h-4 w-4" />
               See on the timeline
             </Link>
@@ -77,42 +111,46 @@ export default function EventPage() {
         </div>
       </header>
 
-      <div className="container-page grid gap-12 pb-12 pt-14 lg:grid-cols-[1fr_320px] lg:gap-16">
-        <div className="min-w-0 space-y-10">
-          <section className="max-w-prose space-y-5" aria-label="The story">
-            {event.description.map((para, i) => (
-              <Reveal as="p" key={i} className={`prose-reading ${i === 0 ? 'dropcap' : ''}`} delay={i * 60}>
-                {para}
-              </Reveal>
-            ))}
-          </section>
-
-          {event.significance && (
-            <Reveal as="section" className="doc p-6">
-              <div className="rule mb-4" />
-              <h2 className="text-h3 text-ink">Why it matters</h2>
-              <p className="prose-reading mt-3">{event.significance}</p>
-            </Reveal>
-          )}
-
-          {event.disputed && <DisputedNotes notes={event.disputed} />}
-
-          <SourceList sources={event.sources} />
-        </div>
-
-        <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
-          {people.length > 0 && (
-            <section aria-label="People of this event">
-              <p className="label mb-3">The people of this moment</p>
-              <div className="space-y-3">
-                {people.map((f, i) => (
-                  <FighterCard key={f.id} fighter={f} compact delay={i * 60} />
-                ))}
-              </div>
+      {!event ? (
+        <RouteFallback />
+      ) : (
+        <div className="container-page grid gap-12 pb-12 pt-14 lg:grid-cols-[1fr_320px] lg:gap-16">
+          <div className="min-w-0 space-y-10">
+            <section className="max-w-prose space-y-5" aria-label="The story">
+              {event.description.map((para, i) => (
+                <Reveal as="p" key={i} className={`prose-reading ${i === 0 ? 'dropcap' : ''}`} delay={i * 60}>
+                  {para}
+                </Reveal>
+              ))}
             </section>
-          )}
-        </aside>
-      </div>
+
+            {event.significance && (
+              <Reveal as="section" className="doc p-6">
+                <div className="rule mb-4" />
+                <h2 className="text-h3 text-ink">Why it matters</h2>
+                <p className="prose-reading mt-3">{event.significance}</p>
+              </Reveal>
+            )}
+
+            {event.disputed && <DisputedNotes notes={event.disputed} />}
+
+            <SourceList sources={event.sources} />
+          </div>
+
+          <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
+            {people.length > 0 && (
+              <section aria-label="People of this event">
+                <p className="label mb-3">The people of this moment</p>
+                <div className="space-y-3">
+                  {people.map((f, i) => (
+                    <FighterCard key={f.id} fighter={f} compact delay={i * 60} />
+                  ))}
+                </div>
+              </section>
+            )}
+          </aside>
+        </div>
+      )}
 
       {(neighbours.next.length > 0 || neighbours.prev.length > 0) && (
         <section className="vault mt-14 px-5 py-12 sm:mt-20 sm:px-8 sm:py-16" aria-label="Before and after">

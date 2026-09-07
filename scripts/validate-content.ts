@@ -16,6 +16,9 @@ import { eras } from '../src/data/eras.ts';
 import { states } from '../src/data/regions.ts';
 import { quizQuestions, guessWhoRounds } from '../src/data/quizzes.ts';
 import { didYouKnowFacts } from '../src/data/facts.ts';
+import { fighterSummaries, fighterSourceFile } from '../src/data/generated/fighters.summary.ts';
+import { eventSummaries, eventSourceFile } from '../src/data/generated/events.summary.ts';
+import { pickEventSummary, pickFighterSummary } from './lib/summaries.ts';
 
 type Level = 'error' | 'warn';
 interface Issue {
@@ -293,6 +296,23 @@ for (const q of quizQuestions) {
 }
 for (const f of didYouKnowFacts) checkRelatedLink('didYouKnowFacts', f.id, f.relatedLink);
 for (const r of guessWhoRounds) if (!fighterIds.has(r.answerId)) err('guessWhoRounds', r.id, `answerId "${r.answerId}" does not resolve to an existing fighter`);
+
+/* -------------------------------------------------------------------- */
+/* Generated summary staleness — src/data/generated/*.summary.ts is        */
+/* committed, not built on the fly; catch it drifting from the full        */
+/* records it's supposed to be projected from.                             */
+if (JSON.stringify(fighters.map(pickFighterSummary)) !== JSON.stringify(fighterSummaries)) {
+  err('generated', 'fighters.summary.ts', 'is stale — run `npm run generate:summaries` and commit the result');
+}
+if (JSON.stringify(events.map(pickEventSummary)) !== JSON.stringify(eventSummaries)) {
+  err('generated', 'events.summary.ts', 'is stale — run `npm run generate:summaries` and commit the result');
+}
+for (const f of fighters) {
+  if (!fighterSourceFile[f.slug]) err('generated', 'fighters.summary.ts', `no sourceFile entry for slug "${f.slug}" — run npm run generate:summaries`);
+}
+for (const e of events) {
+  if (!eventSourceFile[e.slug]) err('generated', 'events.summary.ts', `no sourceFile entry for slug "${e.slug}" — run npm run generate:summaries`);
+}
 
 /* -------------------------------------------------------------------- */
 /* Report                                                                */

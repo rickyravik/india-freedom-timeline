@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { FreedomFighter, HistoricalEvent, Movement } from '@/types';
+import type { EventSummary, FighterSummary, Movement } from '@/types';
 import { categoryLabels, lifespan, roleLabels } from '@/lib/content';
 import { eraById } from '@/data/eras';
 import { Icon, PortraitMedallion, Reveal, eraAccent, icons } from '@/components/ui';
@@ -19,7 +19,7 @@ export function FighterCard({
   compact = false,
   vault = false,
 }: {
-  fighter: FreedomFighter;
+  fighter: FighterSummary;
   compact?: boolean;
   /* accepted for call-site compatibility; repeated cards no longer animate in */
   delay?: number;
@@ -74,7 +74,7 @@ export function FighterCard({
 
 /* ------------------------------------------------------------------ */
 /* Large editorial feature card                                        */
-export function FighterFeature({ fighter }: { fighter: FreedomFighter }) {
+export function FighterFeature({ fighter }: { fighter: FighterSummary }) {
   const era = eraById.get(fighter.era);
   return (
     <Reveal mask className="h-full">
@@ -103,7 +103,7 @@ export function FighterFeature({ fighter }: { fighter: FreedomFighter }) {
 
 /* ------------------------------------------------------------------ */
 /* Person chip                                                         */
-export function FighterChip({ fighter, vault = false }: { fighter: FreedomFighter; vault?: boolean }) {
+export function FighterChip({ fighter, vault = false }: { fighter: FighterSummary; vault?: boolean }) {
   const era = eraById.get(fighter.era);
   return (
     <Link
@@ -120,7 +120,7 @@ export function FighterChip({ fighter, vault = false }: { fighter: FreedomFighte
 
 /* ------------------------------------------------------------------ */
 /* Event card — ledger date column + story                             */
-export function EventCard({ event }: { event: HistoricalEvent; delay?: number }) {
+export function EventCard({ event }: { event: EventSummary; delay?: number }) {
   const era = eraById.get(event.era);
   return (
       <Link to={`/events/${event.slug}`} className="doc-interactive group flex gap-4 p-4 sm:p-5">

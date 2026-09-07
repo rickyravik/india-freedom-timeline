@@ -2,21 +2,25 @@
  * Content access layer — the single place UI code goes to for historical
  * records and the connections between them.
  */
-import type { FreedomFighter, HistoricalEvent, Movement, RegionId } from '@/types';
-import { fighters, fighterById, fighterBySlug } from '@/data/fighters';
-import { events, eventById, eventBySlug } from '@/data/events';
+import type { EventSummary, FighterSummary, FreedomFighter, Movement, RegionId } from '@/types';
+import { fighterSummaries, fighterSourceFile } from '@/data/generated/fighters.summary';
+import { eventSummaries, eventSourceFile } from '@/data/generated/events.summary';
 import { movements, movementById } from '@/data/movements';
 import { organizations, organizationById } from '@/data/organizations';
 import { eras, eraById } from '@/data/eras';
 import { states, stateById } from '@/data/regions';
 
+/* The summary projection — everything except a record's own profile page
+   should only ever need these. Full records (biography, quotes, sources,
+   Story Mode...) load lazily via src/lib/loadContent.ts. */
+export const fighters: FighterSummary[] = fighterSummaries;
+export const fighterById = new Map(fighters.map((f) => [f.id, f]));
+export const fighterBySlug = new Map(fighters.map((f) => [f.slug, f]));
+export const events: EventSummary[] = eventSummaries;
+export const eventById = new Map(events.map((e) => [e.id, e]));
+export const eventBySlug = new Map(events.map((e) => [e.slug, e]));
+
 export {
-  fighters,
-  fighterById,
-  fighterBySlug,
-  events,
-  eventById,
-  eventBySlug,
   movements,
   movementById,
   organizations,
@@ -25,21 +29,23 @@ export {
   eraById,
   states,
   stateById,
+  fighterSourceFile,
+  eventSourceFile,
 };
 
 export const movementBySlug = new Map(movements.map((m) => [m.slug, m]));
 
 /** Fighters linked to an event (declared on either side of the relation). */
-export function fightersForEvent(event: HistoricalEvent): FreedomFighter[] {
+export function fightersForEvent(event: EventSummary): FighterSummary[] {
   const ids = new Set(event.people);
   for (const f of fighters) {
     if (f.timelineEvents.includes(event.id)) ids.add(f.id);
   }
-  return [...ids].map((id) => fighterById.get(id)).filter((f): f is FreedomFighter => Boolean(f));
+  return [...ids].map((id) => fighterById.get(id)).filter((f): f is FighterSummary => Boolean(f));
 }
 
 /** Events linked to a fighter (declared on either side of the relation). */
-export function eventsForFighter(fighter: FreedomFighter): HistoricalEvent[] {
+export function eventsForFighter(fighter: FighterSummary): EventSummary[] {
   const ids = new Set(fighter.timelineEvents);
   for (const e of events) {
     if (e.people.includes(fighter.id)) ids.add(e.id);
@@ -47,15 +53,15 @@ export function eventsForFighter(fighter: FreedomFighter): HistoricalEvent[] {
   return events.filter((e) => ids.has(e.id));
 }
 
-export function fightersForMovement(movement: Movement): FreedomFighter[] {
+export function fightersForMovement(movement: Movement): FighterSummary[] {
   const ids = new Set(movement.keyPeople);
   for (const f of fighters) {
     if (f.movements.includes(movement.id)) ids.add(f.id);
   }
-  return [...ids].map((id) => fighterById.get(id)).filter((f): f is FreedomFighter => Boolean(f));
+  return [...ids].map((id) => fighterById.get(id)).filter((f): f is FighterSummary => Boolean(f));
 }
 
-export function eventsForMovement(movement: Movement): HistoricalEvent[] {
+export function eventsForMovement(movement: Movement): EventSummary[] {
   const ids = new Set(movement.keyEvents);
   for (const e of events) {
     if (e.movement === movement.id) ids.add(e.id);
@@ -63,26 +69,28 @@ export function eventsForMovement(movement: Movement): HistoricalEvent[] {
   return events.filter((e) => ids.has(e.id));
 }
 
-export function fightersForState(stateName: string): FreedomFighter[] {
+export function fightersForState(stateName: string): FighterSummary[] {
   return fighters.filter((f) => f.states.includes(stateName));
 }
 
-export function eventsForState(stateName: string): HistoricalEvent[] {
+export function eventsForState(stateName: string): EventSummary[] {
   return events.filter((e) => e.states?.includes(stateName));
 }
 
-export function fightersForRegion(region: RegionId): FreedomFighter[] {
+export function fightersForRegion(region: RegionId): FighterSummary[] {
   return fighters.filter((f) => f.region === region);
 }
 
-export function relatedFighters(fighter: FreedomFighter): FreedomFighter[] {
+/** Only ever called with a fighter's own full record (its own profile
+    page), since `relatedPeople` isn't part of the lightweight summary. */
+export function relatedFighters(fighter: FreedomFighter): FighterSummary[] {
   return fighter.relatedPeople
     .map((id) => fighterById.get(id))
-    .filter((f): f is FreedomFighter => Boolean(f));
+    .filter((f): f is FighterSummary => Boolean(f));
 }
 
 /** Lifespan label, e.g. "1907 – 1931". */
-export function lifespan(f: FreedomFighter): string {
+export function lifespan(f: FighterSummary): string {
   const b = f.birthYear ? `${f.birthYear}` : '?';
   const d = f.deathYear ? `${f.deathYear}` : '?';
   return `${b} – ${d}`;
@@ -120,15 +128,15 @@ export const categoryLabels: Record<string, string> = {
 };
 
 /** Events that happened on this day of the year ("Today in Freedom History"). */
-export function eventsOnDay(month: number, day: number): HistoricalEvent[] {
+export function eventsOnDay(month: number, day: number): EventSummary[] {
   return events.filter((e) => e.date.month === month && e.date.day === day);
 }
 
 /** Fighters born or died on this day of the year, from date labels. */
-export function anniversariesOnDay(month: number, day: number): { fighter: FreedomFighter; kind: 'born' | 'died' }[] {
+export function anniversariesOnDay(month: number, day: number): { fighter: FighterSummary; kind: 'born' | 'died' }[] {
   const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const needle = `${day} ${monthNames[month - 1]}`;
-  const out: { fighter: FreedomFighter; kind: 'born' | 'died' }[] = [];
+  const out: { fighter: FighterSummary; kind: 'born' | 'died' }[] = [];
   for (const f of fighters) {
     if (f.birthDateLabel?.startsWith(`${needle} `)) out.push({ fighter: f, kind: 'born' });
     if (f.deathDateLabel?.startsWith(`${needle} `)) out.push({ fighter: f, kind: 'died' });

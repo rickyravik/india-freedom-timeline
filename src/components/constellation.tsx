@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { FreedomFighter } from '@/types';
+import type { FighterSummary } from '@/types';
 import { eraById } from '@/data/eras';
 import { lifespan } from '@/lib/content';
 import { useIsDesktop } from '@/lib/hooks';
@@ -11,7 +11,7 @@ import { FighterCard } from '@/components/cards';
  * Lines draw in on reveal; each node is a real link. On phones the
  * same relationships are shown as a swipeable row of cards.
  */
-export function Constellation({ subject, related }: { subject: FreedomFighter; related: FreedomFighter[] }) {
+export function Constellation({ subject, related }: { subject: FighterSummary; related: FighterSummary[] }) {
   const desktop = useIsDesktop();
   const nodes = related.slice(0, 8);
   if (nodes.length === 0) return null;
