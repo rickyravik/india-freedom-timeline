@@ -467,7 +467,7 @@ export const finalEvents: HistoricalEvent[] = [
     ],
     people: ['subhas-chandra-bose', 'jawaharlal-nehru', 'lakshmi-sahgal'],
     movement: 'azad-hind',
-    era: 'freedom-at-midnight',
+    era: 'quit-india-and-ina',
     category: 'trial',
     sources: [
       {

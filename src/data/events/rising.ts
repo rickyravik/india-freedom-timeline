@@ -112,7 +112,7 @@ export const risingEvents: HistoricalEvent[] = [
     ],
     people: ['lala-har-dayal', 'kartar-singh-sarabha'],
     movement: 'ghadar',
-    era: 'war-and-home-rule',
+    era: 'swadeshi-era',
     category: 'founding',
     sources: [
       {
