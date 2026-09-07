@@ -14,9 +14,11 @@
   // `npm run build` itself needs a Chromium binary (scripts/prerender.mjs,
   // scripts/og-images.ts) that isn't preinstalled in Cloudflare's build
   // container — install it first, same as the "Install Playwright browsers"
-  // CI step does.
+  // CI step does. Deliberately not `--with-deps`: that flag shells out to
+  // `apt-get install`, which needs root the build container doesn't grant —
+  // it hung for 10+ minutes rather than failing outright.
   "build": {
-    "command": "npx playwright install --with-deps chromium && npm run build"
+    "command": "npx playwright install chromium && npm run build"
   },
   "assets": {
     "directory": "./dist",
