@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { search } from '@/lib/search';
 import { dailyPick, fighters } from '@/lib/content';
+import { lengthBucket, track } from '@/lib/analytics';
 import { usePageMeta } from '@/lib/hooks';
 import { EmptyState, Icon, PageIntro, PortraitMedallion, Reveal, icons } from '@/components/ui';
 
@@ -21,7 +22,10 @@ export default function SearchPage() {
     setQuery(params.get('q') ?? '');
   }, [params]);
   useEffect(() => {
-    const t = setTimeout(() => setParams(query ? { q: query } : {}, { replace: true }), 250);
+    const t = setTimeout(() => {
+      setParams(query ? { q: query } : {}, { replace: true });
+      if (query.trim().length >= 2) track('search_performed', { length: lengthBucket(query.trim().length) });
+    }, 250);
     return () => clearTimeout(t);
   }, [query, setParams]);
 

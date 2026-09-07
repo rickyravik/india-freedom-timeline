@@ -2,6 +2,7 @@ import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { search, type SearchResult } from '@/lib/search';
 import { dailyPick, fighters } from '@/lib/content';
+import { track } from '@/lib/analytics';
 import { Icon, icons, PortraitMedallion } from '@/components/ui';
 
 const kindLabel: Record<SearchResult['kind'], string> = { fighter: 'People', event: 'Events', movement: 'Movements' };
@@ -48,6 +49,7 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
 
   useEffect(() => {
     if (!open) return;
+    track('palette_opened');
     setQuery('');
     setCursor(0);
     const previouslyFocused = document.activeElement as HTMLElement | null;

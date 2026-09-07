@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState, type CSSProperties, type ElementTyp
 import type { DisputedNote, Era, Quote, SourceRef } from '@/types';
 import { eras } from '@/data/eras';
 import { useReveal } from '@/lib/hooks';
+import { track } from '@/lib/analytics';
 
 /* ------------------------------------------------------------------ */
 /* Era accent maps — one source of truth for colour-coding             */
@@ -437,6 +438,7 @@ export function SuggestCorrection({ path, recordTitle }: { path: string; recordT
       });
       const data: unknown = await res.json().catch(() => null);
       const ok = res.ok && typeof data === 'object' && data !== null && (data as { ok?: boolean }).ok === true;
+      if (ok) track('correction_submitted');
       setStatus(ok ? 'sent' : 'error');
     } catch {
       setStatus('error');

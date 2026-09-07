@@ -5,6 +5,7 @@ import { loadFighter, peekFighter } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
 import { pushTrail, useBookmarks, useIsDesktop, usePageMeta, useShare, useTrail } from '@/lib/hooks';
+import { track } from '@/lib/analytics';
 import { DisputedNotes, Icon, LifespanBar, Postmark, PortraitMedallion, QuoteCard, Reveal, Segmented, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
 import { RouteFallback } from '@/components/layout';
 import { EventCard, FighterChip } from '@/components/cards';
@@ -73,7 +74,15 @@ function StoryMode({ chapters, accent }: { chapters: StoryChapter[]; accent: key
           ))}
         </div>
         {index < chapters.length - 1 ? (
-          <button type="button" className="btn-seal !min-h-12 !px-5" onClick={() => setIndex((i) => Math.min(chapters.length - 1, i + 1))} aria-label="Next chapter">
+          <button
+            type="button"
+            className="btn-seal !min-h-12 !px-5"
+            onClick={() => {
+              track('story_chapter_completed', { chapter: index + 1, of: chapters.length });
+              setIndex((i) => Math.min(chapters.length - 1, i + 1));
+            }}
+            aria-label="Next chapter"
+          >
             Next
             <Icon d={icons.arrowRight} className="h-4 w-4" />
           </button>

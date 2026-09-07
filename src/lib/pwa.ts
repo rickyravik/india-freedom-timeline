@@ -5,6 +5,7 @@
  * owning the registration itself.
  */
 import { registerSW } from 'virtual:pwa-register';
+import { track } from '@/lib/analytics';
 
 const listeners = new Set<() => void>();
 let needRefresh = false;
@@ -16,6 +17,7 @@ function notify() {
 
 /** Call once, from main.tsx — never during the prerender capture pass. */
 export function initServiceWorker() {
+  window.addEventListener('appinstalled', () => track('pwa_install_accepted'));
   if (!('serviceWorker' in navigator)) return;
   applyUpdate = registerSW({
     onNeedRefresh() {

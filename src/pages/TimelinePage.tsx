@@ -4,6 +4,7 @@ import type { EventCategory, EventSummary, RegionId } from '@/types';
 import { categoryLabels, eras, events, fightersForEvent, fighters, movements } from '@/lib/content';
 import { regionNames } from '@/data/regions';
 import { useActiveSection, usePageMeta } from '@/lib/hooks';
+import { track } from '@/lib/analytics';
 import { BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, Postmark, Reveal, Segmented, eraAccent, icons } from '@/components/ui';
 import { FighterChip } from '@/components/cards';
 
@@ -94,9 +95,33 @@ export default function TimelinePage() {
 
   const filterControls = (
     <>
-      <ChipGroup label="Region" options={(Object.keys(regionNames) as RegionId[]).map((r) => ({ value: r, label: regionNames[r] }))} value={region} onChange={setRegion} />
-      <ChipGroup label="Type of event" options={(Object.keys(categoryLabels) as EventCategory[]).map((c) => ({ value: c, label: categoryLabels[c] }))} value={category} onChange={setCategory} />
-      <ChipGroup label="Movement" options={movements.map((m) => ({ value: m.id, label: m.name }))} value={movementId} onChange={setMovementId} />
+      <ChipGroup
+        label="Region"
+        options={(Object.keys(regionNames) as RegionId[]).map((r) => ({ value: r, label: regionNames[r] }))}
+        value={region}
+        onChange={(v) => {
+          setRegion(v);
+          if (v) track('filter_applied', { filter: 'region' });
+        }}
+      />
+      <ChipGroup
+        label="Type of event"
+        options={(Object.keys(categoryLabels) as EventCategory[]).map((c) => ({ value: c, label: categoryLabels[c] }))}
+        value={category}
+        onChange={(v) => {
+          setCategory(v);
+          if (v) track('filter_applied', { filter: 'category' });
+        }}
+      />
+      <ChipGroup
+        label="Movement"
+        options={movements.map((m) => ({ value: m.id, label: m.name }))}
+        value={movementId}
+        onChange={(v) => {
+          setMovementId(v);
+          if (v) track('filter_applied', { filter: 'movement' });
+        }}
+      />
     </>
   );
 

@@ -71,6 +71,12 @@ npx wrangler deploy
 
 Optionally set `SITE_URL=https://your-domain.example` at build time so the sitemap and robots.txt reference your custom domain (see `scripts/generate-sitemap.mjs`).
 
+## Privacy and analytics
+
+Analytics are opt-in and off by default. Set `VITE_CF_BEACON_TOKEN` (your site's token from **Cloudflare -> Analytics -> Web Analytics**) at build time to enable [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) — a cookieless, no-fingerprinting beacon. Leave it unset and a build carries zero trace of it anywhere in the output; there is no default, third-party or otherwise.
+
+`src/lib/analytics.ts`'s `track()` is an honest no-op today — Cloudflare Web Analytics has no custom-event API yet — but every call site already passes only coarse, non-identifying shape (a length bucket, a filter's name, a boolean), never free text or anything a visitor typed, so instrumenting a custom-event backend later needs no call-site changes. In development, `track()` logs to the console instead, so you can see exactly what would be sent.
+
 ## Project structure
 
 ```

@@ -6,6 +6,7 @@ import { fighters, fighterById, lifespan, roleLabels, movementById, dailyShuffle
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
 import { usePageMeta } from '@/lib/hooks';
+import { track } from '@/lib/analytics';
 import { FactCard, Icon, PageIntro, PortraitMedallion, Reveal, SectionHeading, icons } from '@/components/ui';
 
 /* ------------------------------------------------------------------ */
@@ -139,8 +140,10 @@ function Quiz() {
               type="button"
               className="btn-seal ml-auto"
               onClick={() => {
-                if (index + 1 >= questions.length) setDone(true);
-                else {
+                if (index + 1 >= questions.length) {
+                  track('quiz_finished', { score, of: questions.length });
+                  setDone(true);
+                } else {
                   setIndex((i) => i + 1);
                   setPicked(null);
                 }
