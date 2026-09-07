@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import { useKeyboardShortcut } from '@/lib/hooks';
+import { useKeyboardShortcut, useServiceWorkerUpdate } from '@/lib/hooks';
+import { acceptUpdate, dismissUpdate } from '@/lib/pwa';
 import { SearchPalette } from '@/components/search-palette';
 import { BottomSheet, Icon, icons } from '@/components/ui';
 
@@ -203,6 +204,35 @@ function Footer() {
   );
 }
 
+/* A new service worker is waiting to activate (src/lib/pwa.ts). Dismissible
+   and keyboard-reachable: plain focusable buttons, no focus trap — this
+   isn't a blocking dialog. */
+function UpdateToast() {
+  const needRefresh = useServiceWorkerUpdate();
+  if (!needRefresh) return null;
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      className="doc shadow-sheet fixed inset-x-4 bottom-20 z-50 flex flex-wrap items-center gap-3 p-4 animate-fade-up sm:inset-x-auto sm:right-6 sm:max-w-sm md:bottom-6"
+    >
+      <p className="min-w-0 flex-1 font-body text-meta text-ink">
+        <span className="stamp mr-2 text-oxide-deep">Update</span>
+        A new version of the archive is ready.
+      </p>
+      <div className="flex shrink-0 gap-2">
+        <button type="button" onClick={dismissUpdate} className="btn-ghost !min-h-9 !px-3">
+          Later
+        </button>
+        <button type="button" onClick={acceptUpdate} className="btn-seal !min-h-9 !px-4">
+          <Icon d={icons.refresh} className="h-4 w-4" />
+          Refresh
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export function RouteFallback() {
   return (
     <div className="container-page py-8" aria-busy="true" aria-label="Loading">
@@ -249,6 +279,7 @@ export function Layout({ children }: { children?: ReactNode }) {
       <Footer />
       <MobileNav />
       <SearchPalette open={searchOpen} onClose={closeSearch} />
+      <UpdateToast />
     </div>
   );
 }

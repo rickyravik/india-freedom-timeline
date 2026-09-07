@@ -142,6 +142,7 @@ export const icons = {
   bookmark: 'M6 4h12v17l-6-4-6 4z',
   share: 'M12 4v12m0-12-4 4m4-4 4 4M5 14v5h14v-5',
   shuffle: 'M4 6h4l8 12h4M4 18h4l2-3M14 6h6m0 0-2-2m2 2-2 2M20 18l-2-2m2 2-2 2',
+  refresh: 'M20 11A8 8 0 1 0 18.5 16M20 11V5m0 6h-6',
   clock: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4v5l3 2',
   flag: 'M5 21V4m0 0h12l-2 4 2 4H5',
   map: 'M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z M9 4v14M15 6v14',

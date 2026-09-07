@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 
 /**
  * `vite preview`'s static server resolves a bare `/fighters` to
@@ -30,7 +31,48 @@ function prettyUrlPreviewFallback(): Plugin {
 export default defineConfig(() => ({
   // configurePreviewServer only ever runs under `vite preview`, so this is
   // inert for `vite dev`/`vite build` — no need to gate it on `command`.
-  plugins: [react(), prettyUrlPreviewFallback()],
+  plugins: [
+    react(),
+    prettyUrlPreviewFallback(),
+    VitePWA({
+      // injectManifest, not generateSW: a hand-written service worker
+      // (src/sw.ts) so navigation caching is registered exactly once, in
+      // the order we choose — generateSW's own navigateFallback option
+      // registers ahead of any runtimeCaching rule and wins unconditionally,
+      // which would silently defeat the cache-first-with-revalidate
+      // strategy src/sw.ts implements.
+      strategies: 'injectManifest',
+      srcDir: 'src',
+      filename: 'sw.ts',
+      injectRegister: false, // registered manually from src/lib/pwa.ts, not auto-injected
+      registerType: 'prompt', // the update toast (UpdateToast) controls when to activate a new SW
+      injectManifest: {
+        // The app shell only — OG images and the 157 per-record prerendered
+        // pages are content, not shell, and would bloat the precache by
+        // tens of megabytes for no offline benefit over runtime caching.
+        // The offline fallback page is cached separately, at install time
+        // (see src/sw.ts) — it doesn't exist yet at this point in the build,
+        // since scripts/prerender.mjs (which writes it) runs after `vite
+        // build` (and this manifest scan) completes.
+        globPatterns: ['assets/**/*.{js,css,woff2}', 'index.html'],
+      },
+      manifest: {
+        name: "India's Freedom Timeline",
+        short_name: 'Freedom Timeline',
+        description: "An immersive, interactive timeline of India's struggle for independence.",
+        start_url: '/',
+        scope: '/',
+        display: 'standalone',
+        background_color: '#10312b', // vault — matches body's own background
+        theme_color: '#c4611f', // oxide — the one accent ink
+        icons: [
+          { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+        ],
+      },
+    }),
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

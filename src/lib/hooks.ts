@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { useLocation } from 'react-router-dom';
+import { getNeedRefresh, subscribeNeedRefresh } from '@/lib/pwa';
 
 /** True only during the build-time prerender capture pass (set by scripts/prerender.mjs via Playwright's addInitScript, never in a real visitor's browser). */
 declare global {
@@ -277,6 +278,13 @@ export function useShare() {
     }
   }, []);
   return { share, copied };
+}
+
+/* ------------------------------------------------------------------ */
+/* Service worker update — see src/lib/pwa.ts                          */
+
+export function useServiceWorkerUpdate(): boolean {
+  return useSyncExternalStore(subscribeNeedRefresh, getNeedRefresh, () => false);
 }
 
 /* ------------------------------------------------------------------ */

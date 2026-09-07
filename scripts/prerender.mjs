@@ -9,7 +9,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { preview } from 'vite';
 import { chromium } from 'playwright';
-import { getAllRoutes } from './lib/routes.mjs';
+import { getAllRoutes, prerenderOnlyRoutes } from './lib/routes.mjs';
 
 const CONCURRENCY = 6;
 
@@ -140,7 +140,7 @@ const started = Date.now();
 // yet — crawl it last (alone, after the pool finishes), or a concurrent
 // crawl of some other route could get the home page's already-populated
 // DOM as its "empty shell" fallback and hydrate against the wrong content.
-const allRoutes = getAllRoutes();
+const allRoutes = [...getAllRoutes(), ...prerenderOnlyRoutes];
 const otherRoutes = allRoutes.filter((r) => r !== '');
 await crawlPool(otherRoutes);
 if (allRoutes.includes('')) await crawlRoute('');

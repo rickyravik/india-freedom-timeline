@@ -32,6 +32,10 @@ const slugRe = /slug:\s*'([a-z0-9-]+)'/g;
 
 export const staticRoutes = ['', '/timeline', '/fighters', '/events', '/movements', '/map', '/search', '/learn', '/about'];
 
+/** Prerendered like any other route, but excluded from the sitemap — it's the
+    service worker's offline fallback (src/sw.ts), not indexable content. */
+export const prerenderOnlyRoutes = ['/offline'];
+
 /** Every route in the app: static pages plus every fighter/event/movement slug. */
 export function getAllRoutes() {
   const fighters = slugsFrom('src/data/fighters', slugRe);

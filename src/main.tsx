@@ -3,12 +3,20 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter, matchRoutes } from 'react-router-dom';
 import App from './App';
 import { routeTable, setPreloadedRoute } from '@/lib/routes';
+import { initServiceWorker } from '@/lib/pwa';
 import './index.css';
 
 async function bootstrap() {
   // Real visitors only: never present during the prerender capture pass,
   // which re-adds this class right before snapshotting each page.
   document.documentElement.classList.remove('no-js');
+
+  // Never during the prerender capture pass (window.__PRERENDERING__, set by
+  // Playwright's addInitScript in scripts/prerender.mjs): a service worker
+  // persists in Chromium's user-data dir across page navigations within the
+  // same crawl, which would start serving stale cached routes to later pages
+  // in that same prerender run.
+  if (!window.__PRERENDERING__) initServiceWorker();
 
   const matched = matchRoutes(
     routeTable.map((r) => ({ path: r.path })),

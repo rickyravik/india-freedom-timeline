@@ -33,6 +33,7 @@ export const routeTable: RouteEntry[] = [
   { path: '/search', loader: () => import('@/pages/SearchPage') },
   { path: '/learn', loader: () => import('@/pages/LearnPage') },
   { path: '/about', loader: () => import('@/pages/AboutPage') },
+  { path: '/offline', loader: () => import('@/pages/OfflinePage') },
 ];
 
 export interface PreloadedRoute {
