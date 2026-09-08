@@ -137,6 +137,11 @@ export default {
           from: { transform: 'scaleY(0)' },
           to: { transform: 'scaleY(1)' },
         },
+        stampIn: {
+          from: { opacity: '0', transform: 'rotate(-22deg) scale(1.25)' },
+          '60%': { opacity: '0.8', transform: 'rotate(-13deg) scale(0.98)' },
+          to: { opacity: '0.7', transform: 'rotate(-13deg) scale(1)' },
+        },
       },
       animation: {
         'fade-up': 'fadeUp 0.7s cubic-bezier(0.22,0.61,0.36,1) both',
@@ -145,6 +150,7 @@ export default {
         'sheet-up': 'sheetUp 0.42s cubic-bezier(0.22,0.61,0.36,1) both',
         'page-enter': 'pageEnter 0.4s cubic-bezier(0.22,0.61,0.36,1) both',
         'draw-line': 'drawLine 1.1s cubic-bezier(0.22,0.61,0.36,1) both',
+        'stamp-in': 'stampIn 0.22s cubic-bezier(0.22,0.61,0.36,1) both',
       },
     },
   },

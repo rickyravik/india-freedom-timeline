@@ -177,6 +177,12 @@ export default function FighterProfilePage() {
   const location = useLocation();
   const from = (location.state as { from?: string } | null)?.from;
   const backTo = from && from.startsWith('/fighters?') ? from : '/fighters';
+  const [justToggled, setJustToggled] = useState<'saved' | 'removed' | null>(null);
+  useEffect(() => {
+    if (!justToggled) return;
+    const t = window.setTimeout(() => setJustToggled(null), 5000);
+    return () => window.clearTimeout(t);
+  }, [justToggled]);
 
   useEffect(() => {
     const cached = slug ? peekFighter(slug) : undefined;
@@ -225,6 +231,11 @@ export default function FighterProfilePage() {
   const previous = trail.filter((s) => s !== summary.slug).map((s) => fighterBySlug.get(s)).filter(Boolean).slice(0, 3);
   /* Every era pane is now a deep cut carrying paper lettering (ui.tsx). */
   const heroChip = 'chip-vault';
+  const toggleSave = () => {
+    const wasSaved = bookmarks.includes(summary.slug);
+    toggle(summary.slug);
+    setJustToggled(wasSaved ? 'removed' : 'saved');
+  };
   const postmarkLines = ['India', 'Post', String(summary.deathYear ?? summary.birthYear ?? era?.startYear ?? '')].filter(Boolean);
 
   return (
@@ -284,20 +295,40 @@ export default function FighterProfilePage() {
               </span>
             ))}
             <span className={`mx-1 hidden h-5 w-px sm:block bg-paper-100/20`} aria-hidden="true" />
-            <button
-              type="button"
-              onClick={() => toggle(summary.slug)}
-              aria-pressed={bookmarked}
-              className={`${heroChip} min-h-10 ${bookmarked ? '!bg-paper-50 !text-ink' : ''}`}
-            >
-              <Icon d={icons.bookmark} className={`h-4 w-4 ${bookmarked ? 'fill-current' : ''}`} />
-              {bookmarked ? 'Saved' : 'Save this story'}
-            </button>
+            <span className="relative inline-flex">
+              <button
+                type="button"
+                onClick={toggleSave}
+                aria-pressed={bookmarked}
+                className={`${heroChip} min-h-10 ${bookmarked ? '!bg-paper-50 !text-ink' : ''}`}
+              >
+                <Icon d={icons.bookmark} className={`h-4 w-4 ${bookmarked ? 'fill-current' : ''}`} />
+                {bookmarked ? 'Saved' : 'Save this story'}
+              </button>
+              {justToggled === 'saved' && (
+                <span aria-hidden="true" className="postmark-stamp">
+                  <span>
+                    <span className="block">Saved</span>
+                  </span>
+                </span>
+              )}
+            </span>
+            <p role="status" aria-live="polite" className="sr-only">
+              {justToggled === 'saved' ? 'Saved to your stories' : justToggled === 'removed' ? 'Removed from your stories' : ''}
+            </p>
             <button type="button" onClick={() => share(summary.name, summary.summary, `/fighters/${summary.slug}`)} className={`${heroChip} min-h-10`}>
               <Icon d={icons.share} className="h-4 w-4" />
               {copied ? 'Link copied' : 'Share'}
             </button>
           </div>
+          {justToggled && (
+            <div className="mt-4 flex items-center gap-3 font-body text-meta">
+              <span className={eraAccent.onInkMuted[accent]}>{justToggled === 'saved' ? 'Saved to your stories.' : 'Removed from your stories.'}</span>
+              <button type="button" className="chip-vault min-h-9" onClick={toggleSave}>
+                Undo
+              </button>
+            </div>
+          )}
         </div>
       </header>
 
