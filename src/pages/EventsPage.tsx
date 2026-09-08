@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import type { EventCategory } from '@/types';
 import { categoryLabels, events } from '@/lib/content';
 import { eraById } from '@/data/eras';
 import { usePageMeta, useUrlState } from '@/lib/hooks';
 import { oneOf } from '@/lib/url-state';
+import { useFlipList } from '@/lib/motion';
 import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, PageIntro, eraAccent } from '@/components/ui';
 import { EventRow } from '@/components/cards';
 
@@ -35,15 +36,22 @@ export default function EventsPage() {
     return [...map.entries()].sort((a, b) => a[0] - b[0]);
   }, [filtered]);
 
+  const listRef = useRef<HTMLOListElement>(null);
+  const flip = useFlipList(listRef, '[data-flip-id]', filtered.map((e) => e.id).join('|'));
+  const change = (patch: Partial<typeof filters>) => {
+    flip.capture();
+    setFilters(patch);
+  };
+
   const activeCount = [category, decade].filter(Boolean).length;
   const activeChips = [
-    category && { key: 'type', label: categoryLabels[category], onRemove: () => setFilters({ type: null }) },
-    decade && { key: 'decade', label: decade, onRemove: () => setFilters({ decade: null }) },
+    category && { key: 'type', label: categoryLabels[category], onRemove: () => change({ type: null }) },
+    decade && { key: 'decade', label: decade, onRemove: () => change({ decade: null }) },
   ].filter((c): c is { key: string; label: string; onRemove: () => void } => Boolean(c));
   const controls = (
     <>
-      <ChipGroup label="Decade" allLabel="All years" options={decades.map((d) => ({ value: d, label: d }))} value={decade} onChange={(v) => setFilters({ decade: v })} />
-      <ChipGroup label="Type" options={(Object.keys(categoryLabels) as EventCategory[]).map((c) => ({ value: c, label: categoryLabels[c] }))} value={category} onChange={(v) => setFilters({ type: v })} />
+      <ChipGroup label="Decade" allLabel="All years" options={decades.map((d) => ({ value: d, label: d }))} value={decade} onChange={(v) => change({ decade: v })} />
+      <ChipGroup label="Type" options={(Object.keys(categoryLabels) as EventCategory[]).map((c) => ({ value: c, label: categoryLabels[c] }))} value={category} onChange={(v) => change({ type: v })} />
     </>
   );
 
@@ -64,7 +72,7 @@ export default function EventsPage() {
               ))}
           </div>
         </div>
-        <ActiveFilters chips={activeChips} onClear={() => setFilters({ type: null, decade: null })} className="mt-3" />
+        <ActiveFilters chips={activeChips} onClear={() => change({ type: null, decade: null })} className="mt-3" />
       </PageIntro>
 
       <BottomSheet open={sheetOpen} onClose={() => setSheetOpen(false)} title="Filter events">
@@ -83,7 +91,7 @@ export default function EventsPage() {
             title="No events match"
             hint="Try another decade or type, or clear the filters."
             action={
-              <button type="button" className="btn-ghost" onClick={() => setFilters({ type: null, decade: null })}>
+              <button type="button" className="btn-ghost" onClick={() => change({ type: null, decade: null })}>
                 Clear filters
               </button>
             }
@@ -92,12 +100,12 @@ export default function EventsPage() {
           /* One continuous ledger, oldest first. Decade heads are markers in
              the flow, not separate grids — a decade with a single record gets
              a full-width row like every other. */
-          <ol className="space-y-3" aria-label="Events in date order">
+          <ol ref={listRef} data-flip-list className="space-y-3" aria-label="Events in date order">
             {groups.map(([dec, list]) =>
               list.map((e, i) => {
                 const era = eraById.get(e.era);
                 return (
-                  <li key={e.id} className={i === 0 && dec !== groups[0][0] ? 'pt-8' : undefined}>
+                  <li key={e.id} data-flip-id={e.id} className={i === 0 && dec !== groups[0][0] ? 'pt-8' : undefined}>
                     {i === 0 && (
                       <div id={`decade-${dec}s`} className="mb-3 flex scroll-mt-28 items-baseline gap-4">
                         <h2 className={`denom ${era ? eraAccent.text[era.accent] : 'text-oxide'}`}>{dec}s</h2>

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Gender, RegionId, Role } from '@/types';
 import { fighters, roleLabels } from '@/lib/content';
@@ -7,6 +7,7 @@ import { regionIds, regionNames } from '@/data/regions';
 import { useBookmarks, usePageMeta, useUrlState } from '@/lib/hooks';
 import { oneOf, oneOfDefault, text } from '@/lib/url-state';
 import { buildIndex, searchIndex } from '@/lib/search-core';
+import { useFlipList } from '@/lib/motion';
 import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, icons } from '@/components/ui';
 import { FighterCard } from '@/components/cards';
 
@@ -65,19 +66,27 @@ export default function FightersPage() {
     return sort === 'name' ? list.sort((a, b) => a.name.localeCompare(b.name)) : list.sort((a, b) => (a.birthYear ?? 0) - (b.birthYear ?? 0));
   }, [matched, collection, region, eraId, role, gender, sort, bookmarks]);
 
+  const listRef = useRef<HTMLDivElement>(null);
+  const flip = useFlipList(listRef, '[data-flip-id]', results.map((f) => f.slug).join('|'));
+  /* Query typing is excluded on purpose: keystrokes should not animate. */
+  const change = (patch: Partial<typeof filters>) => {
+    flip.capture();
+    setFilters(patch);
+  };
+
   const activeCount = [region, eraId, role, gender].filter(Boolean).length;
   const activeChips = [
-    region && { key: 'region', label: regionNames[region], onRemove: () => setFilters({ region: null }) },
-    eraId && { key: 'era', label: eras.find((e) => e.id === eraId)?.name ?? eraId, onRemove: () => setFilters({ era: null }) },
-    role && { key: 'role', label: roleLabels[role], onRemove: () => setFilters({ role: null }) },
-    gender && { key: 'gender', label: gender === 'female' ? 'Women' : 'Men', onRemove: () => setFilters({ gender: null }) },
+    region && { key: 'region', label: regionNames[region], onRemove: () => change({ region: null }) },
+    eraId && { key: 'era', label: eras.find((e) => e.id === eraId)?.name ?? eraId, onRemove: () => change({ era: null }) },
+    role && { key: 'role', label: roleLabels[role], onRemove: () => change({ role: null }) },
+    gender && { key: 'gender', label: gender === 'female' ? 'Women' : 'Men', onRemove: () => change({ gender: null }) },
   ].filter((c): c is { key: string; label: string; onRemove: () => void } => Boolean(c));
 
   const filterControls = (
     <>
-      <ChipGroup label="Region" options={(Object.keys(regionNames) as RegionId[]).map((r) => ({ value: r, label: regionNames[r] }))} value={region} onChange={(v) => setFilters({ region: v })} />
-      <ChipGroup label="Era" options={eras.map((e) => ({ value: e.id, label: `${e.startYear} · ${e.name}` }))} value={eraId} onChange={(v) => setFilters({ era: v })} />
-      <ChipGroup label="Role" options={(Object.keys(roleLabels) as Role[]).map((r) => ({ value: r, label: roleLabels[r] }))} value={role} onChange={(v) => setFilters({ role: v })} />
+      <ChipGroup label="Region" options={(Object.keys(regionNames) as RegionId[]).map((r) => ({ value: r, label: regionNames[r] }))} value={region} onChange={(v) => change({ region: v })} />
+      <ChipGroup label="Era" options={eras.map((e) => ({ value: e.id, label: `${e.startYear} · ${e.name}` }))} value={eraId} onChange={(v) => change({ era: v })} />
+      <ChipGroup label="Role" options={(Object.keys(roleLabels) as Role[]).map((r) => ({ value: r, label: roleLabels[r] }))} value={role} onChange={(v) => change({ role: v })} />
       <ChipGroup
         label="Gender"
         options={[
@@ -85,14 +94,14 @@ export default function FightersPage() {
           { value: 'male' as Gender, label: 'Men' },
         ]}
         value={gender}
-        onChange={(v) => setFilters({ gender: v })}
+        onChange={(v) => change({ gender: v })}
       />
       <ChipGroup
         label="Order"
         allLabel="By birth year"
         options={[{ value: 'name' as Sort, label: 'By name' }]}
         value={sort === 'name' ? 'name' : null}
-        onChange={(v) => setFilters({ sort: v ?? 'chronological' })}
+        onChange={(v) => change({ sort: v ?? 'chronological' })}
       />
     </>
   );
@@ -118,12 +127,12 @@ export default function FightersPage() {
         </div>
         <div className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:mx-0 sm:px-0" role="group" aria-label="Collections">
           {collections.map((c) => (
-            <button key={c.value} type="button" aria-pressed={collection === c.value} onClick={() => setFilters({ collection: c.value })} className={`chip shrink-0 whitespace-nowrap ${collection === c.value ? 'chip-active' : ''}`}>
+            <button key={c.value} type="button" aria-pressed={collection === c.value} onClick={() => change({ collection: c.value })} className={`chip shrink-0 whitespace-nowrap ${collection === c.value ? 'chip-active' : ''}`}>
               {c.label}
             </button>
           ))}
         </div>
-        <ActiveFilters chips={activeChips} onClear={() => setFilters({ region: null, era: null, role: null, gender: null })} className="mt-3" />
+        <ActiveFilters chips={activeChips} onClear={() => change({ region: null, era: null, role: null, gender: null })} className="mt-3" />
       </PageIntro>
 
       <BottomSheet open={sheetOpen} onClose={() => setSheetOpen(false)} title="Filter people">
@@ -155,9 +164,11 @@ export default function FightersPage() {
             }
           />
         ) : (
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div ref={listRef} data-flip-list className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {results.map((f, i) => (
-              <FighterCard key={f.id} fighter={f} delay={(i % 6) * 50} />
+              <div key={f.id} data-flip-id={f.slug}>
+                <FighterCard fighter={f} delay={(i % 6) * 50} />
+              </div>
             ))}
           </div>
         )}

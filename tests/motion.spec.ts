@@ -46,3 +46,23 @@ test('a chapter pane never appears as an empty rectangle: description text is vi
   const dur = await chapter.locator('.reveal-mask').first().evaluate((el) => getComputedStyle(el).transitionDuration);
   expect(dur.split(',')[0].trim()).toBe('0.45s');
 });
+
+test('changing a People filter keeps existing cards and moves them (FLIP), and does nothing extra under reduced motion', async ({ page }) => {
+  await page.goto('/fighters');
+  const grid = page.locator('[data-flip-list]');
+  await expect(grid.locator('[data-flip-id]').first()).toBeVisible();
+  await page.getByRole('button', { name: 'Women of the movement' }).click();
+  await expect(page.getByRole('status')).toHaveText(/Showing \d+ of 88/);
+  // GSAP was loaded lazily: a script chunk with "Flip" is present only after a filter change.
+  const flipLoaded = await page.evaluate(() => performance.getEntriesByType('resource').some((r) => /Flip|gsap/i.test(r.name)));
+  expect(flipLoaded).toBe(true);
+
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.reload();
+  // The resource timing buffer isn't cleared by reload; wipe it so the check
+  // below reflects only what loads (or doesn't) after this point.
+  await page.evaluate(() => performance.clearResourceTimings());
+  await page.getByRole('button', { name: 'Featured' }).click();
+  const gsapAfter = await page.evaluate(() => performance.getEntriesByType('resource').filter((r) => /Flip/i.test(r.name)).length);
+  expect(gsapAfter).toBe(0);
+});
