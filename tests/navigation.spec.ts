@@ -24,3 +24,14 @@ test('a chapter link from the home page lands with the chapter heading visible b
   expect(box!.y).toBeGreaterThan(64); // below the 64px header
   expect(box!.y).toBeLessThan(500); // the pane's own denomination numeral sits above the heading
 });
+
+test('a cold load of /timeline#era-x lands with the heading below the sticky header and era rail', async ({ page }) => {
+  await page.goto('/timeline#era-civil-disobedience');
+  const heading = page.locator('#era-civil-disobedience h2');
+  await expect(heading).toBeVisible();
+  const box = await heading.boundingBox();
+  expect(box!.y).toBeGreaterThan(100); // 64px header + ~44px rail
+  expect(box!.y).toBeLessThan(550);
+  // The rail marks the current chapter in text as well as colour.
+  await expect(page.getByRole('navigation', { name: 'Jump to era' }).locator('[aria-current="true"]')).toContainText('Civil Disobedience');
+});
