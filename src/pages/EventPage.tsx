@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import { categoryLabels, eventBySlug, events, fightersForEvent, movementById } from '@/lib/content';
 import { loadEvent, peekEvent } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { usePageMeta, useShare } from '@/lib/hooks';
-import { DisputedNotes, Icon, Postmark, Reveal, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
+import { Breadcrumbs, DisputedNotes, Icon, Postmark, Reveal, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
 import { ReadingText } from '@/components/reading';
 import { RouteFallback } from '@/components/layout';
 import { FighterCard } from '@/components/cards';
@@ -21,6 +21,9 @@ export default function EventPage() {
      hydration starts, so the first render must already reflect it. */
   const [event, setEvent] = useState<HistoricalEvent | undefined>(() => (slug ? peekEvent(slug) : undefined));
   const { share, copied } = useShare();
+  const location = useLocation();
+  const from = (location.state as { from?: string } | null)?.from;
+  const backTo = from && from.startsWith('/events?') ? from : '/events';
 
   useEffect(() => {
     const cached = slug ? peekEvent(slug) : undefined;
@@ -77,7 +80,9 @@ export default function EventPage() {
             className="absolute right-4 top-5 hidden sm:grid"
           />
 
-          <h1 className="max-w-4xl pr-0 text-h1 animate-fade-up sm:pr-28 sm:text-hero">{summary.title}</h1>
+          <Breadcrumbs vault items={[{ label: 'Home', to: '/' }, { label: 'Events', to: backTo }, { label: summary.title }]} />
+
+          <h1 className="mt-5 max-w-4xl pr-0 text-h1 animate-fade-up sm:pr-28 sm:text-hero">{summary.title}</h1>
 
           <div className="mt-4 flex flex-wrap items-baseline gap-x-4 gap-y-2 animate-fade-up" style={{ animationDelay: '80ms' }}>
             <time className="denom">{summary.dateLabel}</time>

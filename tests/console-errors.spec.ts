@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const routes = [
-  '/', '/timeline', '/fighters', '/fighters/bhagat-singh', '/events/dandi-march', '/movements/swadeshi-movement', '/map', '/learn', '/trails/women-who-led/stop/3',
+  '/', '/timeline', '/fighters', '/fighters/bhagat-singh', '/events/dandi-march', '/movements/swadeshi-movement', '/map', '/learn', '/start', '/trails', '/trails/women-who-led/stop/3',
   // Prerendered without a query string; hydrating with one must not mismatch.
   '/timeline?region=south&view=chapters', '/fighters?q=laxmibai&collection=women', '/events?type=massacre&decade=1910s', '/map?state=tamil-nadu&view=list',
 ];

@@ -31,6 +31,7 @@ export const routeTable: RouteEntry[] = [
   { path: '/movements/:slug', loader: () => import('@/pages/MovementsPage').then((m) => ({ default: m.MovementPage })) },
   { path: '/map', loader: () => import('@/pages/MapPage') },
   { path: '/search', loader: () => import('@/pages/SearchPage') },
+  { path: '/start', loader: () => import('@/pages/StartPage') },
   { path: '/trails', loader: () => import('@/pages/TrailPages') },
   { path: '/trails/:slug', loader: () => import('@/pages/TrailPages').then((m) => ({ default: m.TrailPage })) },
   { path: '/trails/:slug/stop/:n', loader: () => import('@/pages/TrailPages').then((m) => ({ default: m.TrailStopPage })) },

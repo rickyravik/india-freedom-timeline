@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import type { EventSummary, FighterSummary, Movement } from '@/types';
 import { categoryLabels, fightersForEvent, lifespan, roleLabels } from '@/lib/content';
 import { eraById } from '@/data/eras';
@@ -26,9 +26,11 @@ export function FighterCard({
   vault?: boolean;
 }) {
   const era = eraById.get(fighter.era);
+  const { pathname, search } = useLocation();
   return (
       <Link
         to={`/fighters/${fighter.slug}`}
+        state={{ from: `${pathname}${search}` }}
         /* A mounted issue: the head is a perforated stamp and the birth year
            is its denomination, hinged onto the album's own card. */
         className={`group flex gap-4 rounded-sm border p-4 transition-colors duration-160 ease-cinematic ${
@@ -76,9 +78,10 @@ export function FighterCard({
 /* Large editorial feature card                                        */
 export function FighterFeature({ fighter }: { fighter: FighterSummary }) {
   const era = eraById.get(fighter.era);
+  const { pathname, search } = useLocation();
   return (
     <Reveal mask className="h-full">
-      <Link to={`/fighters/${fighter.slug}`} className="doc-interactive group flex h-full flex-col justify-between p-6 sm:p-8">
+      <Link to={`/fighters/${fighter.slug}`} state={{ from: `${pathname}${search}` }} className="doc-interactive group flex h-full flex-col justify-between p-6 sm:p-8">
         <div>
           <div className="flex items-start gap-5">
             <PortraitMedallion name={fighter.name} era={era} portrait={fighter.portrait} size="xl" />
@@ -105,9 +108,11 @@ export function FighterFeature({ fighter }: { fighter: FighterSummary }) {
 /* Person chip                                                         */
 export function FighterChip({ fighter, vault = false }: { fighter: FighterSummary; vault?: boolean }) {
   const era = eraById.get(fighter.era);
+  const { pathname, search } = useLocation();
   return (
     <Link
       to={`/fighters/${fighter.slug}`}
+      state={{ from: `${pathname}${search}` }}
       className={`inline-flex min-h-9 items-center gap-2 rounded-sm border py-1 pl-1 pr-3 font-body text-label font-medium transition-colors duration-160 ease-cinematic ${
         vault ? 'border-paper-100/30 text-paper-200 hover:border-paper-100 hover:text-paper-50' : 'border-paper-400 bg-paper-50 text-ink-soft hover:border-ink hover:text-ink'
       }`}
@@ -122,8 +127,9 @@ export function FighterChip({ fighter, vault = false }: { fighter: FighterSummar
 /* Event card — ledger date column + story                             */
 export function EventCard({ event }: { event: EventSummary; delay?: number }) {
   const era = eraById.get(event.era);
+  const { pathname, search } = useLocation();
   return (
-      <Link to={`/events/${event.slug}`} className="doc-interactive group flex gap-4 p-4 sm:p-5">
+      <Link to={`/events/${event.slug}`} state={{ from: `${pathname}${search}` }} className="doc-interactive group flex gap-4 p-4 sm:p-5">
         <div className="w-[4.5rem] shrink-0 border-r border-paper-400/80 pr-4 text-right">
           <p className={`denom ${era ? eraAccent.text[era.accent] : 'text-oxide-deep'}`}>{event.date.year}</p>
           <p className="mt-1.5 font-body text-xs font-medium text-ink-faint">{categoryLabels[event.category]}</p>
@@ -148,6 +154,7 @@ export function EventRow({ event }: { event: EventSummary }) {
   const era = eraById.get(event.era);
   const people = fightersForEvent(event).slice(0, 3);
   const sub = dateSubLine(event);
+  const { pathname, search } = useLocation();
   return (
     <article className="doc grid gap-3 p-4 sm:grid-cols-[7.5rem_1fr] sm:gap-6 sm:p-5">
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-paper-400/80 pb-3 sm:block sm:border-b-0 sm:border-r sm:pb-0 sm:pr-5">
@@ -158,7 +165,7 @@ export function EventRow({ event }: { event: EventSummary }) {
       <div className="min-w-0">
         {event.location && <p className="font-body text-label text-ink-faint">{event.location}</p>}
         <h3 className="mt-0.5 text-h4">
-          <Link to={`/events/${event.slug}`} className="text-ink transition-colors duration-160 hover:text-oxide-deep">
+          <Link to={`/events/${event.slug}`} state={{ from: `${pathname}${search}` }} className="text-ink transition-colors duration-160 hover:text-oxide-deep">
             {event.title}
           </Link>
         </h3>

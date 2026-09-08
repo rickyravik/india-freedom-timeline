@@ -10,16 +10,23 @@ const NAV = [
   { to: '/timeline', label: 'Timeline', icon: 'M12 3v18M6 8h12M6 16h12' },
   { to: '/fighters', label: 'People', icon: icons.person },
   { to: '/map', label: 'Map', icon: icons.map },
+  { to: '/trails', label: 'Trails', icon: 'M4 19c4-8 8 0 12-8s4 0 4 0' },
   { to: '/learn', label: 'Learn', icon: 'M4 5h16v11H4zM8 21h8M12 16v5' },
 ];
 
+/* Phone bar: four destinations. Explore opens everything else. */
+const PHONE_NAV = NAV.filter((n) => ['/', '/trails', '/learn'].includes(n.to));
+
 /* Routes with no tab of their own. On phones the footer is the only other way
-   to reach them, and on a long page that is ten screens away — so the thumb
-   bar carries a More sheet. */
-const MORE = [
-  { to: '/events', label: 'Events', icon: icons.clock, hint: 'Every dated moment, 1757–1947' },
+   to reach some of these, and on a long page that is ten screens away — so
+   the thumb bar carries an Explore sheet. */
+const EXPLORE = [
+  { to: '/timeline', label: 'Timeline', icon: icons.clock, hint: 'Nine chapters, 1757–1947' },
+  { to: '/fighters', label: 'People', icon: icons.person, hint: 'Every life in the archive' },
+  { to: '/map', label: 'Map', icon: icons.map, hint: 'Explore by state and region' },
+  { to: '/events', label: 'Events', icon: icons.clock, hint: 'Every dated moment' },
   { to: '/movements', label: 'Movements', icon: icons.flag, hint: 'The many roads to freedom' },
-  { to: '/search', label: 'Search', icon: icons.search, hint: 'Find a name, a place, a year' },
+  { to: '/glossary', label: 'Glossary', icon: icons.file, hint: 'The words this history is told in' },
   { to: '/about', label: 'About & sources', icon: icons.file, hint: 'Historical method and corrections' },
 ];
 
@@ -155,43 +162,46 @@ function Header({ onSearch }: { onSearch: () => void }) {
 /* Thumb navigation on phones                                          */
 function MobileNav() {
   const { pathname } = useLocation();
-  const [moreOpen, setMoreOpen] = useState(false);
-  const moreActive = MORE.some((m) => pathname.startsWith(m.to));
+  const [exploreOpen, setExploreOpen] = useState(false);
+  const exploreActive = EXPLORE.some((m) => pathname.startsWith(m.to));
 
   /* Close the sheet on navigation, so a tap does not leave it hanging open. */
-  useEffect(() => setMoreOpen(false), [pathname]);
+  useEffect(() => setExploreOpen(false), [pathname]);
 
   const itemClass = (active: boolean) =>
     `relative flex min-h-14 min-w-12 flex-1 flex-col items-center justify-center gap-1 font-body text-xs font-medium transition-colors duration-160 ${
       active ? 'text-oxide-bright' : 'text-paper-300 active:text-paper-50'
     }`;
 
+  const renderItem = (n: (typeof PHONE_NAV)[number]) => (
+    <NavLink key={n.to} to={n.to} end={n.end} className={({ isActive }) => itemClass(isActive)}>
+      {({ isActive }) => (
+        <>
+          <span aria-hidden="true" className={`absolute top-0 h-0.5 w-8 bg-oxide-bright transition-transform duration-400 ease-cinematic ${isActive ? 'scale-x-100' : 'scale-x-0'}`} />
+          <Icon d={n.icon} className="h-[22px] w-[22px]" />
+          {n.label}
+        </>
+      )}
+    </NavLink>
+  );
+
   return (
     <>
       <nav aria-label="Primary" className="fixed inset-x-0 bottom-0 z-40 border-t border-brass-bright/25 bg-vault pb-safe md:hidden">
         <div className="mx-auto flex max-w-md items-stretch justify-around px-0.5">
-          {NAV.map((n) => (
-            <NavLink key={n.to} to={n.to} end={n.end} className={({ isActive }) => itemClass(isActive)}>
-              {({ isActive }) => (
-                <>
-                  <span aria-hidden="true" className={`absolute top-0 h-0.5 w-8 bg-oxide-bright transition-transform duration-400 ease-cinematic ${isActive ? 'scale-x-100' : 'scale-x-0'}`} />
-                  <Icon d={n.icon} className="h-[22px] w-[22px]" />
-                  {n.label}
-                </>
-              )}
-            </NavLink>
-          ))}
-          <button type="button" onClick={() => setMoreOpen(true)} aria-expanded={moreOpen} className={itemClass(moreActive)}>
-            <span aria-hidden="true" className={`absolute top-0 h-0.5 w-8 bg-oxide-bright transition-transform duration-400 ease-cinematic ${moreActive ? 'scale-x-100' : 'scale-x-0'}`} />
+          {PHONE_NAV.slice(0, 1).map(renderItem)}
+          <button type="button" onClick={() => setExploreOpen(true)} aria-expanded={exploreOpen} aria-label="Explore" className={itemClass(exploreActive)}>
+            <span aria-hidden="true" className={`absolute top-0 h-0.5 w-8 bg-oxide-bright transition-transform duration-400 ease-cinematic ${exploreActive ? 'scale-x-100' : 'scale-x-0'}`} />
             <Icon d={icons.more} className="h-[22px] w-[22px]" />
-            More
+            Explore
           </button>
+          {PHONE_NAV.slice(1).map(renderItem)}
         </div>
       </nav>
 
-      <BottomSheet open={moreOpen} onClose={() => setMoreOpen(false)} title="More of the archive">
+      <BottomSheet open={exploreOpen} onClose={() => setExploreOpen(false)} title="Explore the archive">
         <ul className="space-y-2">
-          {MORE.map((m) => (
+          {EXPLORE.map((m) => (
             <li key={m.to}>
               <Link to={m.to} className="doc-interactive flex items-start gap-3 p-4">
                 <Icon d={m.icon} className="mt-0.5 h-5 w-5 shrink-0 text-brass-deep" />
@@ -232,6 +242,8 @@ function Footer() {
                 ['/events', 'Events'],
                 ['/movements', 'Movements'],
                 ['/map', 'Map of India'],
+                ['/trails', 'Trails'],
+                ['/start', 'Start here'],
                 ['/learn', 'Learn & quiz'],
                 ['/search', 'Search'],
                 ['/glossary', 'Glossary'],
