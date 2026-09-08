@@ -5,6 +5,8 @@
 import type { EventSummary, FighterSummary, FreedomFighter, Movement, RegionId } from '@/types';
 import { fighterSummaries, fighterSourceFile } from '@/data/generated/fighters.summary';
 import { eventSummaries, eventSourceFile } from '@/data/generated/events.summary';
+import { connectionsById } from '@/data/generated/connections';
+import type { ConnectionType } from '@/lib/connections';
 import { movements, movementById } from '@/data/movements';
 import { organizations, organizationById } from '@/data/organizations';
 import { eras, eraById } from '@/data/eras';
@@ -93,6 +95,31 @@ export function relatedFighters(fighter: FreedomFighter): FighterSummary[] {
   return fighter.relatedPeople
     .map((id) => fighterById.get(id))
     .filter((f): f is FighterSummary => Boolean(f));
+}
+
+export interface ResolvedConnection {
+  fighter: FighterSummary;
+  type: ConnectionType;
+  note: string;
+  inferred: boolean;
+}
+
+export const connectionLabel: Record<ConnectionType, string> = { ally: 'Ally', opponent: 'Opponent', family: 'Family', mentor: 'Mentor', inspired: 'Inspired', successor: 'Successor' };
+
+/** Documented connections, both declared and reverse-declared (see src/lib/connections.ts). */
+export function connectionsFor(fighterId: string): ResolvedConnection[] {
+  return (connectionsById[fighterId] ?? [])
+    .map((c) => {
+      const fighter = fighterById.get(c.id);
+      return fighter ? { fighter, type: c.type, note: c.note, inferred: c.inferred } : null;
+    })
+    .filter((c): c is ResolvedConnection => c !== null);
+}
+
+/** People connected by theme only — `relatedPeople` minus anyone with a documented connection. */
+export function similarFor(fighter: FreedomFighter, connections: ResolvedConnection[]): FighterSummary[] {
+  const documented = new Set(connections.map((c) => c.fighter.id));
+  return relatedFighters(fighter).filter((f) => !documented.has(f.id));
 }
 
 /** Lifespan label, e.g. "1907 – 1931". */

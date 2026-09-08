@@ -376,7 +376,7 @@ export const fighterSummaries: FighterSummary[] = [
     "gender": "female",
     "summary": "The warrior queen of Jhansi who defended her city against siege in 1858, escaped through the enemy lines, seized Gwalior with Tatya Tope, and died fighting — the most celebrated heroine of 1857.",
     "readingMinutes": 1,
-    "connectionCount": 0,
+    "connectionCount": 2,
     "legacy": "The most celebrated heroine of 1857; namesake of the INA’s Rani of Jhansi Regiment and countless institutions.",
     "timelineEvents": [
       "revolt-1857",
@@ -2660,7 +2660,7 @@ export const fighterSummaries: FighterSummary[] = [
     "gender": "female",
     "summary": "Philosophy graduate and school headmistress who led the armed attack on the Pahartali European Club in 1932 and took cyanide rather than be captured — Bengal’s \"Birkannya\", the heroic daughter.",
     "readingMinutes": 1,
-    "connectionCount": 0,
+    "connectionCount": 1,
     "legacy": "Enduring symbol of women’s revolutionary courage in Bengal.",
     "timelineEvents": [
       "chittagong-armoury-raid"

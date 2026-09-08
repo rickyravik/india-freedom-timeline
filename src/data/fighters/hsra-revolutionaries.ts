@@ -756,6 +756,9 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     movements: ['revolutionary-movement'],
     organizations: ['indian-republican-army'],
     relatedPeople: ['surya-sen', 'kalpana-datta'],
+    connections: [
+      { id: 'surya-sen', type: 'mentor', note: 'She secretly joined Surya Sen’s revolutionary group in Chittagong, trained with weapons under it, and led its attack on the Pahartali European Club on 24 September 1932.' },
+    ],
     sources: [
       {
         title: 'Do and Die: The Chittagong Uprising 1930–34',
@@ -773,6 +776,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     tags: ['women', 'Chittagong', 'martyr'],
     featured: true,
     forgotten: true,
+    editorial: { status: 'draft' },
   },
   {
     id: 'kalpana-datta',

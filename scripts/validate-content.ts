@@ -19,7 +19,9 @@ import { didYouKnowFacts } from '../src/data/facts.ts';
 import { glossaryTerms } from '../src/data/glossary.ts';
 import { fighterSummaries, fighterSourceFile } from '../src/data/generated/fighters.summary.ts';
 import { eventSummaries, eventSourceFile } from '../src/data/generated/events.summary.ts';
+import { connectionsById } from '../src/data/generated/connections.ts';
 import { pickEventSummary, pickFighterSummary } from './lib/summaries.ts';
+import { resolveConnections } from '../src/lib/connections.ts';
 import { CITATION_RE } from '../src/lib/reading.ts';
 
 type Level = 'error' | 'warn';
@@ -396,6 +398,9 @@ for (const f of fighters) {
 }
 for (const e of events) {
   if (!eventSourceFile[e.slug]) err('generated', 'events.summary.ts', `no sourceFile entry for slug "${e.slug}" — run npm run generate:summaries`);
+}
+if (JSON.stringify(resolveConnections(fighters)) !== JSON.stringify(connectionsById)) {
+  err('generated', 'connections.ts', 'is stale — run `npm run generate:summaries` and commit the result');
 }
 
 /* -------------------------------------------------------------------- */

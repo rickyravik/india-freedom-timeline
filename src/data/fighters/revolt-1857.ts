@@ -147,6 +147,10 @@ export const revoltFighters: FreedomFighter[] = [
     movements: ['great-revolt'],
     organizations: [],
     relatedPeople: ['tatya-tope', 'jhalkari-bai', 'nana-saheb', 'rani-chennamma'],
+    connections: [
+      { id: 'jhalkari-bai', type: 'ally', note: 'Jhalkari Bai served in and rose to command the Durga Dal, the women’s guard of Jhansi, and is remembered for impersonating the Rani during the fall of the city in April 1858 to cover her escape. That account rests largely on oral tradition.' },
+      { id: 'tatya-tope', type: 'ally', note: 'After escaping Jhansi she joined Tatya Tope; together they seized the fortress of Gwalior in June 1858.' },
+    ],
     sources: [
       {
         title: 'The Rani of Jhansi: A Study in Female Heroism in India',
@@ -163,6 +167,7 @@ export const revoltFighters: FreedomFighter[] = [
     ],
     tags: ['1857', 'queen', 'women', 'Jhansi'],
     featured: true,
+    editorial: { status: 'draft' },
   },
   {
     id: 'jhalkari-bai',

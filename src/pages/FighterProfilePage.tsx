@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
-import { eventsForFighter, fighterBySlug, fighters, lifespan, movementById, organizationById, relatedFighters, roleLabels, hashPick } from '@/lib/content';
+import { connectionsFor, eventsForFighter, fighterBySlug, fighters, lifespan, movementById, organizationById, similarFor, roleLabels, hashPick } from '@/lib/content';
 import { loadFighter, peekFighter } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
@@ -11,7 +11,7 @@ import { Breadcrumbs, DisputedNotes, Icon, LifespanBar, Postmark, PortraitMedall
 import { DraftStamp, ReadingText, ReadingToolbar } from '@/components/reading';
 import { RouteFallback } from '@/components/layout';
 import { EventCard, FighterChip } from '@/components/cards';
-import { Constellation } from '@/components/constellation';
+import { Constellation, SimilarStories } from '@/components/constellation';
 import type { DisputedNote, FighterSummary, FreedomFighter, SourceRef, StoryChapter } from '@/types';
 
 /* ------------------------------------------------------------------ */
@@ -207,8 +207,8 @@ export default function FighterProfilePage() {
     if (fighter) pushTrail(fighter.slug);
   }, [fighter]);
 
-  const related = useMemo(() => (fighter ? relatedFighters(fighter) : []), [fighter]);
-  const connections: unknown[] = [];
+  const connections = useMemo(() => (fighter ? connectionsFor(fighter.id) : []), [fighter]);
+  const related = useMemo(() => (fighter ? similarFor(fighter, connections) : []), [fighter, connections]);
   const timeline = useMemo(() => (fighter ? eventsForFighter(fighter) : []), [fighter]);
   const discoverNext = useMemo(() => {
     if (!fighter) return null;
@@ -500,18 +500,19 @@ export default function FighterProfilePage() {
           </div>
 
           {/* Constellation — dark band */}
-          {related.length > 0 && (
-            <section className="vault mt-14 px-5 py-12 sm:mt-20 sm:px-8 sm:py-16" aria-label="Related freedom fighters">
+          {connections.length > 0 && (
+            <section id="connections" className="vault mt-14 scroll-mt-28 px-5 py-12 sm:mt-20 sm:px-8 sm:py-16" aria-label="Documented connections">
               <div className="container-page">
                 <Reveal className="mb-8 max-w-2xl">
                   <div className="rule-double-vault mb-5" />
                   <h2 className="text-h2 text-paper-50">People connected to {summary.shortName ?? summary.name}</h2>
-                  <p className="mt-2 font-body text-meta text-paper-300">Comrades, rivals, mentors and inheritors — every life connects to others. Select anyone to follow the thread.</p>
+                  <p className="mt-2 font-body text-meta text-paper-300">Only relationships the record documents are drawn here — an ally, an opponent, a teacher, a family member — each with what the connection was.</p>
                 </Reveal>
-                <Constellation subject={summary} related={related} />
+                <Constellation subject={summary} connections={connections} />
               </div>
             </section>
           )}
+          <SimilarStories people={related} id={connections.length ? undefined : 'connections'} />
 
           {/* Continue the thread */}
           <div className="container-page pt-14">

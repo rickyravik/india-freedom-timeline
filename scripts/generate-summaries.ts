@@ -17,6 +17,7 @@
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { createServer, type ViteDevServer } from 'vite';
 import { pickEventSummary, pickFighterSummary } from './lib/summaries.ts';
+import { resolveConnections } from '../src/lib/connections.ts';
 import type { FreedomFighter, HistoricalEvent } from '../src/types/index.ts';
 
 async function loadArrayExport<T>(vite: ViteDevServer, path: string): Promise<T[]> {
@@ -66,6 +67,9 @@ writeGeneratedFile('src/data/generated/fighters.summary.ts', GENERATED_HEADER, "
 writeGeneratedFile('src/data/generated/events.summary.ts', GENERATED_HEADER, "import type { EventSummary } from '@/types';", [
   { name: 'eventSummaries', type: 'EventSummary[]', value: events.map(pickEventSummary) },
   { name: 'eventSourceFile', type: 'Record<string, string>', value: eventSourceFile },
+]);
+writeGeneratedFile('src/data/generated/connections.ts', GENERATED_HEADER, "import type { ResolvedConnectionLike } from '@/lib/connections';", [
+  { name: 'connectionsById', type: 'Record<string, ResolvedConnectionLike[]>', value: resolveConnections(fighters) },
 ]);
 
 console.log(`Generated summaries for ${fighters.length} fighters and ${events.length} events.`);
