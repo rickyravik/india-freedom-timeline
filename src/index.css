@@ -411,6 +411,20 @@
     opacity: 0.35;
   }
 
+  /* Hand-written, not @apply animate-page-enter: Tailwind's JIT only emits a
+     utility's @keyframes when the utility class itself is scanned somewhere,
+     so relying on the theme.animation entry here silently produced no
+     @keyframes at all (same trap already hit by .draw and .grow). */
+  @keyframes pageEnter {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   .page-enter {
     animation: pageEnter 0.4s cubic-bezier(0.22, 0.61, 0.36, 1) both;
   }

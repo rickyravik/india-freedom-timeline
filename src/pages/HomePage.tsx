@@ -23,7 +23,7 @@ function Hero() {
           <span className="font-display text-base font-bold text-brass-bright">1757 — 1947</span>
         </div>
 
-        <h1 className="mt-5 max-w-3xl text-hero-sm font-medium text-paper-50 sm:mt-10 sm:text-hero">
+        <h1 className="mt-5 max-w-3xl break-words text-hero-sm font-medium text-paper-50 sm:mt-10 sm:text-hero">
           Millions resisted.
           <span className="mt-1 block text-brass-bright">Thousands sacrificed.</span>
         </h1>
@@ -63,7 +63,7 @@ function TodayLedger() {
 
   return (
     <Reveal as="section" aria-label="Today" className="doc overflow-hidden">
-      <div className="grid sm:grid-cols-[180px_1fr]">
+      <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr]">
         <div className="flex flex-col justify-between border-b border-paper-400 bg-paper-200/60 p-5 sm:border-b-0 sm:border-r">
           <p className="label">{hasContent ? 'Today in freedom history' : 'Today’s featured story'}</p>
           <p className="num mt-3 font-display text-h1 font-bold leading-none text-oxide">{dayLabel}</p>
@@ -148,7 +148,7 @@ export default function HomePage() {
       <div className="container-page space-y-14 pt-14 sm:space-y-20 sm:pt-16">
         <section aria-label="Featured story">
           <SectionHeading title="Featured story" />
-          <Link to={`/fighters/${featured.slug}`} className="doc-interactive group grid gap-6 p-6 sm:grid-cols-[auto_1fr] sm:p-8">
+          <Link to={`/fighters/${featured.slug}`} className="doc-interactive group grid grid-cols-1 gap-6 p-6 sm:grid-cols-[auto_1fr] sm:p-8">
             <PortraitMedallion name={featured.name} era={eraById.get(featured.era)} portrait={featured.portrait} size="xl" />
             <div className="min-w-0">
               <p className="font-display text-h2 text-ink group-hover:text-oxide">{featured.name}</p>
@@ -165,7 +165,7 @@ export default function HomePage() {
 
         <section aria-label="Guided trails">
           <SectionHeading title="Guided trails" lede="Short journeys with a question at the start and the evidence at every stop." action={<Link to="/trails" className="btn-ghost">All trails</Link>} />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {trails.map((t) => (
               <TrailCard key={t.id} trail={t} progress={progress[t.slug]} />
             ))}

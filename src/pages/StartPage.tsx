@@ -15,7 +15,7 @@ export default function StartPage() {
           <p className="prose-reading">Every person has a quick story and a detailed history. Every claim that matters carries a small numbered marker: touch it to see the source. Words like <em>satyagraha</em> or <em>palaiyakkarar</em> are explained the first time they appear.</p>
           <p className="prose-reading">Where historians disagree, or where a story rests on memory rather than documents, the page says so. Nothing here is invented — including the portraits: where no verified likeness exists, you will see a monogram instead.</p>
         </section>
-        <section aria-label="Choose a route" className="grid gap-4 sm:grid-cols-2">
+        <section aria-label="Choose a route" className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Link to="/trails" className="doc-interactive group flex flex-col p-6">
             <span className="stamp w-fit text-oxide-deep">Five minutes</span>
             <span className="mt-3 font-display text-h3 text-ink group-hover:text-oxide">Follow a trail</span>
@@ -31,7 +31,7 @@ export default function StartPage() {
         </section>
         <section aria-label="Trails">
           <h2 className="mb-4 text-h2 text-ink">All trails</h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {trails.map((t) => (
               <TrailCard key={t.id} trail={t} progress={progress[t.slug]} />
             ))}

@@ -82,7 +82,7 @@ export default function EventPage() {
 
           <Breadcrumbs vault items={[{ label: 'Home', to: '/' }, { label: 'Events', to: backTo }, { label: summary.title }]} />
 
-          <h1 className="mt-5 max-w-4xl pr-0 text-h1 animate-fade-up sm:pr-28 sm:text-hero">{summary.title}</h1>
+          <h1 className="mt-5 max-w-4xl break-words pr-0 text-h1 animate-fade-up sm:pr-28 sm:text-hero">{summary.title}</h1>
 
           <div className="mt-4 flex flex-wrap items-baseline gap-x-4 gap-y-2 animate-fade-up" style={{ animationDelay: '80ms' }}>
             <time className="denom">{summary.dateLabel}</time>
@@ -120,7 +120,7 @@ export default function EventPage() {
       {!event ? (
         <RouteFallback />
       ) : (
-        <div className="container-page grid gap-12 pb-12 pt-14 lg:grid-cols-[1fr_320px] lg:gap-16">
+        <div className="container-page grid grid-cols-1 gap-12 pb-12 pt-14 lg:grid-cols-[1fr_320px] lg:gap-16">
           <div className="min-w-0 space-y-10">
             <section aria-label="The story">
               <ReadingText paragraphs={event.description} sources={event.sources} dropcap className="max-w-prose" />
@@ -165,7 +165,7 @@ export default function EventPage() {
                 These are the chronological neighbours in the archive, not a chain of cause and effect. Much happened between them that this collection does not yet hold.
               </p>
             </Reveal>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {neighbours.prev.map((e) => (
                 <Link key={e.id} to={`/events/${e.slug}`} className="group rounded-sm border border-paper-100/15 p-5 transition-colors duration-160 ease-cinematic hover:border-paper-100/60">
                   <p className="font-display text-h3 font-bold text-paper-50 group-hover:text-brass-bright">{e.title}</p>

@@ -46,7 +46,7 @@ export default function MovementsPage() {
         {/* Movements as a chronological ledger */}
         <div className="relative">
           <div aria-hidden="true" className="absolute bottom-0 left-[7px] top-2 hidden w-px bg-paper-400/70 sm:block" />
-          <div className="grid gap-3 sm:grid-cols-2 sm:pl-8 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:pl-8 lg:grid-cols-3">
             {movements
               .slice()
               .sort((a, b) => a.startYear - b.startYear)
@@ -77,7 +77,7 @@ export function MovementPage() {
         <div className="vault animate-fade-up px-5 py-7 sm:px-9 sm:py-10">
           <Postmark lines={['India', 'Post', String(movement.startYear)]} className="absolute right-4 top-5 hidden sm:grid" />
 
-          <h1 className="max-w-3xl text-h1 text-paper-50 sm:pr-32">{movement.name}</h1>
+          <h1 className="max-w-3xl break-words text-h1 text-paper-50 sm:pr-32">{movement.name}</h1>
           <p className="label-vault num mt-3">
             {movement.period} · {movement.regions.map((r) => regionNames[r]).join(', ')}
           </p>
@@ -103,7 +103,7 @@ export function MovementPage() {
         </section>
 
         {(movement.aims || movement.methods || movement.reach || movement.participants || movement.disagreements || movement.outcomes) && (
-          <section aria-label="How this movement worked" className="grid gap-6 sm:grid-cols-2">
+          <section aria-label="How this movement worked" className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             <h2 className="text-h2 text-ink sm:col-span-2">How this movement worked</h2>
             {movement.editorial?.status === 'draft' && (
               <div className="sm:col-span-2">
@@ -123,7 +123,7 @@ export function MovementPage() {
         {relatedEvents.length > 0 && (
           <section aria-label="Events of this movement">
             <SectionHeading title="Events of the movement" />
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {relatedEvents.map((e, i) => (
                 <EventCard key={e.id} event={e} delay={i * 60} />
               ))}
@@ -141,7 +141,7 @@ export function MovementPage() {
         <section className="vault px-5 py-12 sm:px-8 sm:py-16" aria-label="People of this movement">
           <div className="container-page">
             <SectionHeading title="Who carried this movement" vault />
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {people.map((f, i) => (
                 <FighterCard key={f.id} fighter={f} compact vault delay={(i % 6) * 60} />
               ))}

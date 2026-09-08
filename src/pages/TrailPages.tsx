@@ -37,7 +37,7 @@ export default function TrailsPage() {
       <div className="container-page">
         <SectionHeading title="All trails" />
       </div>
-      <div className="container-page grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="container-page grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {trails.map((t) => (
           <TrailCard key={t.id} trail={t} progress={progress[t.slug]} />
         ))}
@@ -62,7 +62,7 @@ export function TrailPage() {
           <Postmark lines={['Trail', String(trail.stops.length), 'stops']} className="absolute right-4 top-5 hidden sm:grid" />
           <Breadcrumbs vault items={[{ label: 'Home', to: '/' }, { label: 'Trails', to: '/trails' }, { label: trail.title }]} />
           <p className={`stamp mt-5 w-fit ${eraAccent.onInkMuted[trail.accent]}`}>{trail.theme}</p>
-          <h1 className="mt-3 max-w-3xl text-h1 sm:pr-28 sm:text-hero">{trail.title}</h1>
+          <h1 className="mt-3 max-w-3xl break-words text-h1 sm:pr-28 sm:text-hero">{trail.title}</h1>
           <p className={`mt-4 max-w-2xl font-reading text-h4 italic ${eraAccent.onInkMuted[trail.accent]}`}>{trail.question}</p>
           <p className={`num mt-5 font-body text-label ${eraAccent.onInkMuted[trail.accent]}`}>
             {trail.stops.length} stops · about {trail.minutes} minutes · a text-only version is available on every stop
@@ -76,7 +76,7 @@ export function TrailPage() {
           </div>
         </div>
       </header>
-      <div className="container-page grid gap-10 py-14 lg:grid-cols-[1fr_320px]">
+      <div className="container-page grid grid-cols-1 gap-10 py-14 lg:grid-cols-[1fr_320px]">
         <div className="max-w-prose space-y-6">
           <p className="prose-reading dropcap">{trail.intro}</p>
           <div className="doc p-5">
@@ -137,12 +137,12 @@ export function TrailStopPage() {
         </div>
         <div className={`perf-all on-sheet relative mt-5 px-5 py-7 sm:px-9 sm:py-9 ${eraAccent.bg[focusEraAccent]} ${eraAccent.onInk[focusEraAccent]}`}>
           <p className={`stamp w-fit ${eraAccent.onInkMuted[focusEraAccent]}`}>{trail.title}</p>
-          <h1 className="mt-3 text-h1">{stop.title}</h1>
+          <h1 className="mt-3 break-words text-h1">{stop.title}</h1>
           {stop.question && <p className={`mt-3 max-w-2xl font-reading text-h4 italic ${eraAccent.onInkMuted[focusEraAccent]}`}>{stop.question}</p>}
         </div>
       </header>
 
-      <div className="container-page grid gap-10 py-10 lg:grid-cols-[1fr_320px]">
+      <div className="container-page grid grid-cols-1 gap-10 py-10 lg:grid-cols-[1fr_320px]">
         <div className="min-w-0 space-y-8">
           {stop.contentNote && (
             <p role="note" className="rounded-sm border border-paper-400 bg-paper-200/60 p-4 font-body text-meta text-ink-soft">
@@ -159,7 +159,7 @@ export function TrailStopPage() {
           )}
           {stop.bridge && <p className="max-w-prose font-reading text-reading italic text-ink-soft">{stop.bridge}</p>}
           <SourceList sources={stop.sources} />
-          <nav aria-label="Trail navigation" className="flex items-center justify-between gap-3 border-t border-paper-300 pt-6">
+          <nav aria-label="Trail navigation" className="flex flex-wrap items-center justify-between gap-3 border-t border-paper-300 pt-6">
             <Link to={prev} className="btn-ghost !min-h-12">
               <Icon d={icons.arrowLeft} className="h-4 w-4" />
               {index > 0 ? 'Previous stop' : 'Overview'}
@@ -204,7 +204,7 @@ export function TrailFinishPage() {
         <Breadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Trails', to: '/trails' }, { label: trail.title, to: `/trails/${trail.slug}` }, { label: 'Finish' }]} />
         <div className={`perf-all on-sheet relative mt-4 px-5 py-7 sm:px-9 sm:py-9 ${eraAccent.bg[trail.accent]} ${eraAccent.onInk[trail.accent]}`}>
           {done && <Postmark lines={['Trail', 'complete']} className="absolute right-4 top-5 hidden sm:grid" />}
-          <h1 className="text-h1 sm:pr-28">{done ? 'Trail complete' : 'The end of the trail'}</h1>
+          <h1 className="break-words text-h1 sm:pr-28">{done ? 'Trail complete' : 'The end of the trail'}</h1>
           <p className={`mt-3 max-w-2xl font-reading text-h4 italic ${eraAccent.onInkMuted[trail.accent]}`}>{trail.question}</p>
         </div>
       </header>

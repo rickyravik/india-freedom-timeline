@@ -851,7 +851,7 @@ export function PageIntro({
     <header className="container-page pb-6 pt-2 sm:pt-4">
       <div className="rule-double mb-6 animate-fade-up" />
       <div className="max-w-3xl">
-        <h1 className="text-h1 text-ink animate-fade-up" style={{ animationDelay: '60ms' }}>
+        <h1 className="break-words text-h1 text-ink animate-fade-up" style={{ animationDelay: '60ms' }}>
           {title}
         </h1>
         {lede && (

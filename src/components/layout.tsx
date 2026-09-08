@@ -223,7 +223,7 @@ function Footer() {
     <footer className="bg-vault pb-28 pt-14 text-paper-100 md:pb-14">
       <div className="container-page">
         <div className="rule-double-vault mb-10" />
-        <div className="grid gap-10 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
           <div>
             <div className="mb-3 flex items-center gap-2 text-paper-50">
               <Emblem className="h-7 w-7" />
@@ -307,7 +307,7 @@ export function RouteFallback() {
     <div className="container-page py-8" aria-busy="true" aria-label="Loading">
       <div className="rule-double mb-6" />
       <div className="mb-8 h-10 w-2/5 animate-pulse rounded-sm bg-paper-300" />
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className="doc h-44 animate-pulse bg-paper-200" />
         ))}

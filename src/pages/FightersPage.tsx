@@ -164,7 +164,7 @@ export default function FightersPage() {
             }
           />
         ) : (
-          <div ref={listRef} data-flip-list className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div ref={listRef} data-flip-list className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {results.map((f, i) => (
               <div key={f.id} data-flip-id={f.slug}>
                 <FighterCard fighter={f} delay={(i % 6) * 50} />

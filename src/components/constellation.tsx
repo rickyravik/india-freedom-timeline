@@ -119,7 +119,7 @@ export function SimilarStories({ people, id }: { people: FighterSummary[]; id?: 
       <div className="rule-double mb-5" />
       <h2 className="text-h2 text-ink">Similar stories</h2>
       <p className="mt-2 max-w-xl font-body text-meta text-ink-soft">People whose lives rhyme with this one — a theme, a region, a method — without a documented meeting. Read them as comparisons, not as comrades.</p>
-      <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {people.slice(0, 6).map((f) => (
           <FighterCard key={f.id} fighter={f} compact />
         ))}

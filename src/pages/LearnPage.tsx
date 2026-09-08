@@ -151,7 +151,7 @@ function Quiz() {
         ))}
       </div>
       <p className="font-display text-h3 font-bold text-ink animate-fade-up">{q.question}</p>
-      <div className="mt-5 grid gap-2">
+      <div className="mt-5 grid grid-cols-1 gap-2">
         {q.options.map((opt, i) => {
           const isPicked = picked === i;
           const isAnswer = i === q.answerIndex;
@@ -434,7 +434,7 @@ export default function LearnPage() {
         lede="Test what you know, guess who’s who, and compare the many roads people took to freedom. Every answer opens another story — these games honour the history they draw from."
       />
       <div className="container-page space-y-14 sm:space-y-20">
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           <section aria-label="History quiz">
             <SectionHeading title="History quiz" lede="Five questions on a topic you choose, with an explanation after each. About three minutes." />
             <Reveal>
@@ -458,7 +458,7 @@ export default function LearnPage() {
 
         <section aria-label="Did you know">
           <SectionHeading title="Did you know?" />
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {facts.map((f, i) => (
               <FactCard
                 key={f.id}

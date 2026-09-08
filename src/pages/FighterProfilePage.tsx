@@ -71,11 +71,14 @@ function StoryMode({ chapters, accent, sources }: { chapters: StoryChapter[]; ac
           </p>
         )}
       </div>
-      <div className="mt-4 flex items-center justify-between gap-3">
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <button type="button" className="btn-ghost !min-h-12 !px-5" onClick={() => setIndex((i) => Math.max(0, i - 1))} disabled={index === 0} aria-label="Previous chapter">
           <Icon d={icons.arrowLeft} className="h-4 w-4" />
         </button>
-        <div className="flex items-center gap-1.5" role="group" aria-label="Chapters">
+        {/* Each dot's tap target grew to 44px for touch accessibility, which
+           can outgrow the row on a narrow phone; giving the group its own
+           full-width line keeps it from ever pushing Next off-screen. */}
+        <div className="order-first flex w-full items-center justify-center gap-1.5 sm:order-none sm:w-auto" role="group" aria-label="Chapters">
           {chapters.map((c, i) => (
             <button
               key={c.title}
@@ -252,7 +255,7 @@ export default function FighterProfilePage() {
           <Breadcrumbs vault items={[{ label: 'Home', to: '/' }, { label: 'People', to: backTo }, { label: summary.name }]} />
           <Postmark lines={postmarkLines} className="absolute right-4 top-5 hidden sm:grid" />
 
-          <div className="mt-5 grid gap-7 md:grid-cols-[auto_1fr] md:items-end">
+          <div className="mt-5 grid grid-cols-1 gap-7 md:grid-cols-[auto_1fr] md:items-end">
             <figure className="flex flex-col items-center gap-2">
               <PortraitMedallion name={summary.name} era={era} portrait={summary.portrait} size="hero" onPane />
               {fighter?.portraitNote && (
@@ -263,7 +266,7 @@ export default function FighterProfilePage() {
               )}
             </figure>
             <div className="min-w-0">
-              <h1 className="pr-0 text-h1 animate-fade-up sm:pr-28 sm:text-hero" style={{ animationDelay: '80ms' }}>
+              <h1 className="break-words pr-0 text-h1 animate-fade-up sm:pr-28 sm:text-hero" style={{ animationDelay: '80ms' }}>
                 {summary.name}
               </h1>
               {summary.pronunciation && (
@@ -339,7 +342,7 @@ export default function FighterProfilePage() {
         <RouteFallback />
       ) : (
         <>
-          <div className="container-page grid gap-12 pb-12 pt-14 lg:grid-cols-[1fr_300px] lg:gap-16">
+          <div className="container-page grid grid-cols-1 gap-12 pb-12 pt-14 lg:grid-cols-[1fr_300px] lg:gap-16">
             <div className="min-w-0 space-y-12">
               {fighter.editorial?.status === 'draft' && <DraftStamp />}
 
@@ -404,7 +407,7 @@ export default function FighterProfilePage() {
               </section>
 
               {mode === 'detail' && (
-                <div className="grid gap-8 sm:grid-cols-2">
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                   {fighter.entryIntoStruggle && (
                     <Reveal as="section">
                       <h3 className="mb-3 text-h3 text-ink">Entry into the struggle</h3>
@@ -551,7 +554,7 @@ export default function FighterProfilePage() {
 
           {/* Continue the thread */}
           <div className="container-page pt-14">
-            <Reveal className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+            <Reveal className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <p className="label mb-2">Continue the thread</p>
                 {previous.length > 0 ? (

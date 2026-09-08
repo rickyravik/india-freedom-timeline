@@ -56,7 +56,7 @@ export function ChoiceActivity({ activity, onDone }: { activity: Choice; onDone:
   return (
     <div className="doc-mount p-5 sm:p-7">
       <p className="font-display text-h3 text-ink">{activity.prompt}</p>
-      <div className="mt-5 grid gap-2">
+      <div className="mt-5 grid grid-cols-1 gap-2">
         {activity.options.map((opt, i) => {
           const isAnswer = i === activity.answerIndex;
           let cls = 'border-paper-300 bg-paper-50 hover:border-ink';

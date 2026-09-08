@@ -45,7 +45,7 @@ export function FighterCard({
             {fighter.birthYear ?? '—'}
           </span>
         </div>
-        <div className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1 break-words">
           <p className={`font-display text-h4 font-bold transition-colors duration-160 ${vault ? 'text-paper-50 group-hover:text-brass-bright' : 'text-ink group-hover:text-oxide-deep'}`}>
             {fighter.name}
           </p>
@@ -156,7 +156,7 @@ export function EventRow({ event }: { event: EventSummary }) {
   const sub = dateSubLine(event);
   const { pathname, search } = useLocation();
   return (
-    <article className="doc grid gap-3 p-4 sm:grid-cols-[7.5rem_1fr] sm:gap-6 sm:p-5">
+    <article className="doc grid grid-cols-1 gap-3 p-4 sm:grid-cols-[7.5rem_1fr] sm:gap-6 sm:p-5">
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-paper-400/80 pb-3 sm:block sm:border-b-0 sm:border-r sm:pb-0 sm:pr-5">
         <time className={`denom block ${era ? eraAccent.text[era.accent] : 'text-oxide-deep'}`}>{event.date.year}</time>
         {sub && <p className="num font-body text-xs font-medium text-ink-soft sm:mt-1.5">{sub}</p>}

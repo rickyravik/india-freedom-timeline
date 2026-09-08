@@ -123,7 +123,7 @@ export default function MapPage() {
         </div>
       </PageIntro>
 
-      <div className="container-page grid gap-8 lg:grid-cols-[minmax(0,520px)_1fr] lg:gap-12">
+      <div className="container-page grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,520px)_1fr] lg:gap-12">
         {/* A sheet of stamps — every state is one perforated pane */}
         {params.view === 'map' ? (
         <Reveal className="min-w-0 lg:sticky lg:top-20 lg:self-start">
@@ -273,7 +273,7 @@ export default function MapPage() {
                   {stateFighters.length > 0 && (
                     <section aria-label={`Freedom fighters of ${selected.name}`}>
                       <p className="label num mb-3">Freedom fighters · {stateFighters.length}</p>
-                      <div className="grid gap-3 sm:grid-cols-2">
+                      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                         {stateFighters.map((f, i) => (
                           <FighterCard key={f.id} fighter={f} compact delay={(i % 6) * 50} />
                         ))}
@@ -285,7 +285,7 @@ export default function MapPage() {
                       <p className="label num mb-3">Events · {stateEvents.length}</p>
                       {/* One column: this panel is narrower than the fighters grid can
                          assume, and event titles run long ("Panchalankurichi", "Tiruchirappalli"). */}
-                      <div className="grid gap-3">
+                      <div className="grid grid-cols-1 gap-3">
                         {stateEvents.map((e, i) => (
                           <EventCard key={e.id} event={e} delay={(i % 6) * 50} />
                         ))}
