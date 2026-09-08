@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState, type CSSProperties, type ElementTyp
 import { Link } from 'react-router-dom';
 import type { DisputedNote, Era, Quote, SourceRef } from '@/types';
 import { eras } from '@/data/eras';
-import { useReveal } from '@/lib/hooks';
+import { usePreferences, useReveal } from '@/lib/hooks';
 import { track } from '@/lib/analytics';
 import { fallbackLink } from '@/lib/corrections';
 
@@ -228,6 +228,7 @@ export function PortraitMedallion({
   onPane?: boolean;
 }) {
   const [imgFailed, setImgFailed] = useState(false);
+  const [{ lowData }] = usePreferences();
   /* The head is struck in its era's ink, so a life and its chapter match. */
   const plate = era ? eraAccent.hexPlate[era.accent] : MEDALLION_PALETTES[hashString(name) % MEDALLION_PALETTES.length];
   const sizes = {
@@ -238,8 +239,9 @@ export function PortraitMedallion({
     xl: 'h-28 w-28 text-4xl',
     hero: 'h-32 w-32 text-5xl sm:h-40 sm:w-40 sm:text-6xl',
   };
+  const px = { xs: 28, sm: 40, md: 56, lg: 80, xl: 112, hero: 160 };
   const perf = size === 'xs' || size === 'sm' ? 'perf-fine' : 'perf-all';
-  if (portrait && !imgFailed) {
+  if (portrait && !imgFailed && !lowData) {
     return (
       <span
         className={`${perf} medallion-plate inline-flex shrink-0 select-none items-center justify-center overflow-hidden ${sizes[size]} ${className}`}
@@ -252,6 +254,11 @@ export function PortraitMedallion({
              a chip label, a page heading), so a screen reader announcing
              the name twice was flagged as redundant alt text. */
           alt=""
+          loading={size === 'hero' ? 'eager' : 'lazy'}
+          decoding="async"
+          width={px[size]}
+          height={px[size]}
+          fetchPriority={size === 'hero' ? 'high' : undefined}
           className="h-full w-full object-cover object-top sepia-[.35] contrast-[1.05]"
           onError={() => setImgFailed(true)}
         />

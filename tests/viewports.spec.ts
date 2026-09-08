@@ -41,3 +41,16 @@ test('the map keeps its intentional sideways scroll inside the sheet, not on the
   const sheetScrolls = await page.locator('.scrollbar-thin-archival').first().evaluate((el) => el.scrollWidth > el.clientWidth);
   expect(sheetScrolls).toBe(true);
 });
+
+test('portraits are lazy, sized, and replaced by monograms under the low-data preference', async ({ page }) => {
+  await page.goto('/fighters');
+  const img = page.locator('img[src*="/images/fighters/"]').first();
+  await expect(img).toHaveAttribute('loading', 'lazy');
+  await expect(img).toHaveAttribute('decoding', 'async');
+  await expect(img).toHaveAttribute('width', /\d+/);
+  await expect(img).toHaveAttribute('height', /\d+/);
+  await page.evaluate(() => localStorage.setItem('ift-prefs-v1', JSON.stringify({ lowData: true })));
+  await page.reload();
+  await expect(page.locator('img[src*="/images/fighters/"]')).toHaveCount(0);
+  await expect(page.locator('.medallion-plate').first()).toBeVisible();
+});
