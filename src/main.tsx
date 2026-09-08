@@ -39,13 +39,23 @@ async function bootstrap() {
   // Restored by ScrollManager (src/components/layout.tsx), not the browser:
   // lazily loaded routes aren't tall enough yet when the browser would try.
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  if (rootEl.hasChildNodes()) {
+  // A route with no prerendered file of its own (a trail stop, reached only
+  // by interaction) gets served the SPA fallback's markup instead — which is
+  // the home page's prerendered HTML (not-found_handling: single-page-application,
+  // wrangler.jsonc), not a matching snapshot of this route. hasChildNodes()
+  // alone can't tell the two apart; the canonical link every page's
+  // usePageMeta bakes in for its own route can, since it's stamped at the
+  // exact pathname the snapshot was captured for.
+  const canonicalPath = document.querySelector('link[rel="canonical"]')?.getAttribute('href');
+  const matchesThisRoute = canonicalPath ? new URL(canonicalPath, window.location.origin).pathname === window.location.pathname : false;
+  if (rootEl.hasChildNodes() && matchesThisRoute) {
     // Tells useUrlState's initialisers this first render must match the
     // prerendered snapshot (which was captured with no query string). App
     // clears it after the first commit.
     rootEl.dataset.hydrating = 'true';
     hydrateRoot(rootEl, app);
   } else {
+    rootEl.innerHTML = '';
     createRoot(rootEl).render(app);
   }
 }
