@@ -7,10 +7,10 @@ test('an event page calls its neighbours what they are: next in the collection',
   await expect(page.getByText('What happened next?')).toHaveCount(0);
 });
 
-test('the connections heading uses the full name, not the last word', async ({ page }) => {
+test('the connections heading uses the editorial short name, not just the last word', async ({ page }) => {
   await page.goto('/fighters/velu-nachiyar');
   await page.setViewportSize({ width: 1440, height: 900 });
-  await expect(page.getByRole('heading', { name: 'People connected to Rani Velu Nachiyar' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'People connected to Velu Nachiyar' })).toBeVisible();
 });
 
 test('a life that runs past 1947 says so on the lifespan bar', async ({ page }) => {
