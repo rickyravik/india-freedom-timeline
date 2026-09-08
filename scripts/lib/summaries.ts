@@ -6,6 +6,7 @@
  * generated file has drifted from what regenerating it would produce).
  */
 import type { EventSummary, FighterSummary, FreedomFighter, HistoricalEvent } from '../../src/types/index.ts';
+import { readingMinutes, wordCount } from '../../src/lib/reading.ts';
 
 export function pickFighterSummary(f: FreedomFighter): FighterSummary {
   return {
@@ -14,6 +15,8 @@ export function pickFighterSummary(f: FreedomFighter): FighterSummary {
     name: f.name,
     alternateNames: f.alternateNames,
     shortName: f.shortName,
+    pronunciation: f.pronunciation,
+    inAMinute: f.inAMinute,
     portrait: f.portrait,
     birthYear: f.birthYear,
     deathYear: f.deathYear,
@@ -24,6 +27,8 @@ export function pickFighterSummary(f: FreedomFighter): FighterSummary {
     states: f.states,
     gender: f.gender,
     summary: f.summary,
+    readingMinutes: readingMinutes(wordCount(f.fullBiography.join(' '))),
+    connectionCount: f.connections?.length ?? 0,
     ideology: f.ideology,
     legacy: f.legacy,
     timelineEvents: f.timelineEvents,

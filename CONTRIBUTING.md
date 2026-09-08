@@ -13,6 +13,18 @@ Content is data, not code — every fighter, event and movement lives in `src/da
 
 Every fighter, event and movement needs at least one entry in `sources`, with a `title` and a `type` (`book`, `archive`, `government`, `journal`, `museum` or `website`). Prefer government archives (National Archives of India / Abhilekh Patal), state archives, museums, and published academic research over general web pages. The validator fails the build if a record has none.
 
+## Citing a claim, not just a record
+
+Write `[^n]` straight after a sentence to cite the n-th entry of that record's `sources` (1-based): `She retook Sivaganga around 1780.[^2]`. The reader sees a small marker that previews the source; the validator fails the build if `n` points past the end of `sources`. Give each source an `evidence` kind (`contemporary`, `scholarship`, `oral-tradition`, `reference`) and, where you can, `pages` or an `archiveId` — "Search at Abhilekh Patal" is not a citation, a file number is.
+
+## Connections vs similar stories
+
+`connections` is for documented relationships only (`ally`, `opponent`, `family`, `mentor`, `inspired`, `successor`), each with a `note` saying what the connection was. `relatedPeople` remains for people connected by theme; the UI shows those as "Similar stories" and never draws a line between them.
+
+## Editorial status
+
+New or rewritten records carry `editorial: { status: 'draft' }` until a reviewer sets `reviewed`. Drafts are visible on the site with a "Draft — under editorial review" stamp so nothing reads as settled fact before it is.
+
 ## Marking disputed or uncertain claims
 
 Don't state a contested detail — casualty figures, attribution of an act, the exact circumstances of a death — as settled fact. Add a `disputed` entry (`{ claim, note }`) describing what's uncertain and why; the UI renders it as a labelled "Historians note" box instead of presenting legend as history. A quote whose exact wording or attribution is uncertain should carry `disputed: true` on the `Quote` itself.

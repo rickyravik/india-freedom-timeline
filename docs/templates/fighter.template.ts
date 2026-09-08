@@ -11,7 +11,10 @@ export const fighterTemplate: FreedomFighter = {
   name: 'Full name as commonly known',
   alternateNames: ['Other name or title, if any'], // optional — omit the key if none
   shortName: 'Short form for headings', // optional — used in "People connected to …"; omit to use the full name
+  pronunciation: 'plain-english syllables, CAPITALS on the stressed one', // optional
+  inAMinute: ['Who they were.', 'What they resisted and what it cost.', 'Why it matters now.'], // optional, exactly three
   portrait: undefined, // optional: '/images/fighters/<slug>.jpg' — only a genuine, correctly-attributed, freely-licensed image
+  portraitNote: { kind: 'photograph', caption: 'What the image shows and when it was made.', credit: 'Holder / licence' }, // optional; required when `portrait` is set (validator warns)
   birthYear: 1900, // optional if genuinely unknown, but include whenever documented
   deathYear: 1950,
   birthDateLabel: '1 January 1900', // optional precise display string
@@ -52,6 +55,9 @@ export const fighterTemplate: FreedomFighter = {
   roles: ['revolutionary'], // one or more: revolutionary | political-leader | satyagrahi | social-reformer |
   //                             tribal-leader | military-leader | ruler | writer-poet | journalist | lawyer | educator | organizer
   relatedPeople: ['other-fighter-id'], // must resolve to real fighter ids; link both directions where it makes sense
+  connections: [{ id: 'other-fighter-id', type: 'ally', note: 'What the documented connection was, in one or two sentences.' }], // optional; only documented relationships
+  contentNote: 'This life includes imprisonment and execution.', // optional
+  editorial: { status: 'draft' }, // flip to { status: 'reviewed', reviewedBy: 'Name', reviewedOn: 'YYYY-MM-DD' } after review
   sources: [
     // required — at least one, with a title and a type
     { title: 'Source title', publisher: 'Publisher or archive', type: 'archive', url: 'https://…' },

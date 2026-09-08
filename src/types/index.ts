@@ -56,6 +56,10 @@ export type SourceType =
   | 'museum'
   | 'website';
 
+/** What kind of evidence a source is — shown beside a citation so a reader
+    can tell a contemporary record from later scholarship or oral tradition. */
+export type EvidenceKind = 'contemporary' | 'scholarship' | 'oral-tradition' | 'reference';
+
 /** A citation. Every biography and event carries at least one. */
 export interface SourceRef {
   title: string;
@@ -64,6 +68,14 @@ export interface SourceRef {
   year?: number;
   url?: string;
   type: SourceType;
+  evidence?: EvidenceKind;
+  /** Precise locator: page range, chapter, folio, file number. */
+  pages?: string;
+  /** Archive or catalogue identifier (e.g. an Abhilekh Patal PR number). */
+  archiveId?: string;
+  edition?: string;
+  /** ISO date the URL was last checked. */
+  accessed?: string;
 }
 
 /**
@@ -74,6 +86,8 @@ export interface SourceRef {
 export interface DisputedNote {
   claim: string;
   note: string;
+  /** 0-based index into `fullBiography` the note belongs beside. Omit for a record-level note. */
+  paragraph?: number;
 }
 
 export interface Quote {
@@ -88,6 +102,8 @@ export interface Quote {
 export interface StoryChapter {
   title: string;
   text: string;
+  /** Short caution carried into the quick story so a cautious detailed account never becomes a definite quick one. */
+  uncertainty?: string;
 }
 
 /** A partial historical date. Month/day omitted when not reliably known. */
@@ -101,6 +117,35 @@ export interface HistoricalDate {
   approximate?: boolean;
 }
 
+/** Editorial state of a record. Anything not `reviewed` renders a visible draft stamp. */
+export type EditorialStatus = 'draft' | 'reviewed';
+export interface Editorial {
+  status: EditorialStatus;
+  reviewedBy?: string;
+  /** ISO date. */
+  reviewedOn?: string;
+  notes?: string;
+}
+
+/** A documented relationship. Only these draw a line in the constellation;
+    people related merely by theme stay in `relatedPeople` ("Similar stories"). */
+export type ConnectionType = 'ally' | 'opponent' | 'family' | 'mentor' | 'inspired' | 'successor';
+export interface Connection {
+  /** Fighter id. */
+  id: string;
+  type: ConnectionType;
+  /** One or two sentences saying what the documented connection was. */
+  note: string;
+}
+
+export interface PortraitNote {
+  kind: 'photograph' | 'painting' | 'statue' | 'stamp' | 'illustration' | 'other';
+  caption: string;
+  credit?: string;
+  /** When the image was made, e.g. "c. 1920" or "2008 (commemorative stamp)". */
+  created?: string;
+}
+
 export interface FreedomFighter {
   id: string;
   slug: string;
@@ -108,8 +153,14 @@ export interface FreedomFighter {
   alternateNames?: string[];
   /** Editorial short form for headings ("Velu Nachiyar", "Bhagat Singh"). Defaults to `name`; never derived automatically from the last word. */
   shortName?: string;
+  /** Plain-English pronunciation, e.g. "veh-loo NAH-chi-yar". */
+  pronunciation?: string;
+  /** "In a minute": three brief facts — the person, their struggle, why it matters. */
+  inAMinute?: [string, string, string];
   /** Path to a portrait image when one is added; the UI falls back to a generated archival monogram. */
   portrait?: string;
+  /** What the portrait actually is (photograph, painting, stamp...), so a later painting is never mistaken for an eyewitness record. */
+  portraitNote?: PortraitNote;
   birthYear?: number;
   deathYear?: number;
   /** Display strings, e.g. "28 September 1907". Omitted when unknown. */
@@ -146,6 +197,11 @@ export interface FreedomFighter {
   roles: Role[];
   /** Fighter ids of related people. */
   relatedPeople: string[];
+  /** Documented relationships. See Connection. */
+  connections?: Connection[];
+  /** Optional content note shown before the story when a life includes distressing material. */
+  contentNote?: string;
+  editorial?: Editorial;
   sources: SourceRef[];
   images?: string[];
   tags?: string[];
@@ -183,6 +239,9 @@ export interface HistoricalEvent {
   category: EventCategory;
   significance?: string;
   disputed?: DisputedNote[];
+  /** Editorially verified causal links, distinct from chronological neighbours. */
+  consequences?: { eventId: string; note: string }[];
+  editorial?: Editorial;
   sources: SourceRef[];
   /** Surfaced on home page key events. */
   featured?: boolean;
@@ -205,6 +264,8 @@ export interface FighterSummary {
   name: string;
   alternateNames?: string[];
   shortName?: string;
+  pronunciation?: string;
+  inAMinute?: [string, string, string];
   portrait?: string;
   birthYear?: number;
   deathYear?: number;
@@ -215,6 +276,10 @@ export interface FighterSummary {
   states: string[];
   gender: Gender;
   summary: string;
+  /** Whole minutes for the detailed history at 200 wpm; computed by scripts/generate-summaries.ts. */
+  readingMinutes: number;
+  /** Number of documented connections; computed by scripts/generate-summaries.ts. */
+  connectionCount: number;
   /** Needed by LearnPage's "Compare two lives" tool. */
   ideology?: string;
   legacy?: string;
@@ -265,6 +330,15 @@ export interface Movement {
   keyPeople: string[];
   /** Event ids. */
   keyEvents: string[];
+  aims?: string[];
+  methods?: string[];
+  /** Geographical reach, one paragraph. */
+  reach?: string;
+  /** Who took part, one paragraph. */
+  participants?: string;
+  disagreements?: string[];
+  outcomes?: string[];
+  editorial?: Editorial;
   sources: SourceRef[];
 }
 
@@ -300,12 +374,18 @@ export interface StateInfo {
 
 /** Educational content -------------------------------------------------- */
 
+export type QuizTopic = 'people' | 'events' | 'movements' | 'places';
 export interface QuizQuestion {
   id: string;
   question: string;
   options: string[];
   answerIndex: number;
   explanation: string;
+  topic: QuizTopic;
+  /** 1 recognition · 2 context · 3 depth */
+  difficulty: 1 | 2 | 3;
+  /** Optional follow-up: why the fact matters, beyond the date. */
+  whyItMatters?: string;
   /** Related fighter/event to explore after answering. */
   relatedLink?: { label: string; to: string };
 }

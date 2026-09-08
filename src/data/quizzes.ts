@@ -7,6 +7,8 @@ import type { QuizQuestion } from '@/types';
 export const quizQuestions: QuizQuestion[] = [
   {
     id: 'q-dandi',
+    topic: 'events',
+    difficulty: 1,
     question: 'What law did Gandhi break at the end of the Dandi March in April 1930?',
     options: ['The salt tax law', 'The Rowlatt Act', 'The Arms Act', 'The Press Act'],
     answerIndex: 0,
@@ -16,6 +18,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-1857-start',
+    topic: 'events',
+    difficulty: 1,
     question: 'Where did the Revolt of 1857 begin on 10 May 1857?',
     options: ['Meerut', 'Delhi', 'Kanpur', 'Jhansi'],
     answerIndex: 0,
@@ -25,6 +29,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-first-woman-president',
+    topic: 'people',
+    difficulty: 2,
     question: 'Who was the first woman to preside over the Indian National Congress?',
     options: ['Annie Besant (1917)', 'Sarojini Naidu (1925)', 'Kasturba Gandhi', 'Aruna Asaf Ali'],
     answerIndex: 0,
@@ -34,6 +40,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-ulgulan',
+    topic: 'people',
+    difficulty: 2,
     question: '"Ulgulan" — the Great Tumult of 1899–1900 — was led by which leader?',
     options: ['Birsa Munda', 'Sidhu Murmu', 'Tirot Sing', 'Alluri Sitarama Raju'],
     answerIndex: 0,
@@ -43,6 +51,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-assembly-1929',
+    topic: 'people',
+    difficulty: 2,
     question: 'Who threw non-lethal bombs into the Central Legislative Assembly in 1929 "to make the deaf hear"?',
     options: ['Bhagat Singh and Batukeshwar Dutt', 'Chandrashekhar Azad and Rajguru', 'Ram Prasad Bismil and Ashfaqulla Khan', 'Surya Sen and Pritilata Waddedar'],
     answerIndex: 0,
@@ -52,6 +62,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-jhansi-regiment',
+    topic: 'people',
+    difficulty: 2,
     question: 'The INA’s all-women combat unit was named after which freedom fighter?',
     options: ['Rani Lakshmibai of Jhansi', 'Rani Chennamma of Kittur', 'Begum Hazrat Mahal', 'Rani Velu Nachiyar'],
     answerIndex: 0,
@@ -61,6 +73,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-quit-india-mantra',
+    topic: 'events',
+    difficulty: 1,
     question: 'What mantra did Gandhi give the nation on 8 August 1942?',
     options: ['"Do or Die"', '"Swaraj is my birthright"', '"Inquilab Zindabad"', '"Jai Hind"'],
     answerIndex: 0,
@@ -70,6 +84,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-kakori',
+    topic: 'movements',
+    difficulty: 2,
     question: 'The Kakori train action of 1925 was carried out by which organization?',
     options: ['Hindustan Republican Association', 'Ghadar Party', 'Anushilan Samiti', 'Indian National Army'],
     answerIndex: 0,
@@ -79,6 +95,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-santhal-hul',
+    topic: 'events',
+    difficulty: 2,
     question: 'Who proclaimed the Santhal Hul at Bhognadih on 30 June 1855?',
     options: ['Sidhu and Kanhu Murmu', 'Tilka Manjhi', 'Birsa Munda', 'Komaram Bheem'],
     answerIndex: 0,
@@ -88,6 +106,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-first-indian-mp',
+    topic: 'people',
+    difficulty: 2,
     question: 'Who was the first Indian elected to the British House of Commons?',
     options: ['Dadabhai Naoroji', 'Gopal Krishna Gokhale', 'Surendranath Banerjee', 'Shyamji Krishna Varma'],
     answerIndex: 0,
@@ -97,6 +117,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-vedaranyam',
+    topic: 'events',
+    difficulty: 2,
     question: 'Who led the southern salt march to Vedaranyam in 1930?',
     options: ['C. Rajagopalachari', 'Tanguturi Prakasam', 'V. O. Chidambaram Pillai', 'Subramania Bharati'],
     answerIndex: 0,
@@ -106,6 +128,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-chittagong',
+    topic: 'people',
+    difficulty: 2,
     question: 'Who led the Chittagong armoury raid of April 1930?',
     options: ['Surya Sen', 'Bagha Jatin', 'Khudiram Bose', 'Rash Behari Bose'],
     answerIndex: 0,
@@ -115,6 +139,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-frontier-gandhi',
+    topic: 'movements',
+    difficulty: 3,
     question: 'The Khudai Khidmatgar — "Servants of God" — were founded by whom?',
     options: ['Khan Abdul Ghaffar Khan', 'Maulana Azad', 'Mohammad Ali Jouhar', 'Hakim Ajmal Khan'],
     answerIndex: 0,
@@ -124,6 +150,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-jallianwala-year',
+    topic: 'events',
+    difficulty: 1,
     question: 'In which year did the Jallianwala Bagh massacre take place?',
     options: ['1919', '1917', '1921', '1930'],
     answerIndex: 0,
@@ -133,6 +161,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-gaidinliu',
+    topic: 'people',
+    difficulty: 3,
     question: 'Which leader of the Naga hills was imprisoned for fourteen years from the age of sixteen?',
     options: ['Rani Gaidinliu', 'Kanaklata Barua', 'Pritilata Waddedar', 'Accamma Cherian'],
     answerIndex: 0,
@@ -142,6 +172,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-kattabomman',
+    topic: 'places',
+    difficulty: 3,
     question: 'Where was Veerapandiya Kattabomman hanged in October 1799?',
     options: ['Kayathar', 'Panchalankurichi', 'Tiruppathur', 'Sankagiri'],
     answerIndex: 0,
@@ -151,6 +183,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-vedaranyam-leader',
+    topic: 'people',
+    difficulty: 3,
     question: 'Who was the first woman in the Madras Presidency jailed in the Salt Satyagraha of 1930?',
     options: ['Rukmini Lakshmipathi', 'Sarojini Naidu', 'Kamaladevi Chattopadhyay', 'Accamma Cherian'],
     answerIndex: 0,
@@ -160,6 +194,8 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: 'q-kodi-kaatha',
+    topic: 'places',
+    difficulty: 3,
     question: '"Kodi Kaatha Kumaran" — the one who protected the flag — died in which town in 1932?',
     options: ['Tiruppur', 'Madurai', 'Tuticorin', 'Erode'],
     answerIndex: 0,

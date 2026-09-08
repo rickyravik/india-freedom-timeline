@@ -44,8 +44,11 @@ export function fightersForEvent(event: EventSummary): FighterSummary[] {
   return [...ids].map((id) => fighterById.get(id)).filter((f): f is FighterSummary => Boolean(f));
 }
 
-/** Events linked to a fighter (declared on either side of the relation). */
-export function eventsForFighter(fighter: FighterSummary): EventSummary[] {
+/** Events linked to a fighter (declared on either side of the relation).
+    Takes the minimal shape it needs, not FighterSummary, so it also accepts
+    a full FreedomFighter record — the only caller has one on hand and would
+    otherwise need to build a throwaway summary just to satisfy the type. */
+export function eventsForFighter(fighter: { id: string; timelineEvents: string[] }): EventSummary[] {
   const ids = new Set(fighter.timelineEvents);
   for (const e of events) {
     if (e.people.includes(fighter.id)) ids.add(e.id);

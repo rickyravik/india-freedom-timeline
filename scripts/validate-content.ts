@@ -19,6 +19,7 @@ import { didYouKnowFacts } from '../src/data/facts.ts';
 import { fighterSummaries, fighterSourceFile } from '../src/data/generated/fighters.summary.ts';
 import { eventSummaries, eventSourceFile } from '../src/data/generated/events.summary.ts';
 import { pickEventSummary, pickFighterSummary } from './lib/summaries.ts';
+import { CITATION_RE } from '../src/lib/reading.ts';
 
 type Level = 'error' | 'warn';
 interface Issue {
@@ -51,10 +52,32 @@ const sourceRefSchema = z.object({
   year: z.number().optional(),
   url: z.string().optional(),
   type: sourceType,
+  evidence: z.enum(['contemporary', 'scholarship', 'oral-tradition', 'reference']).optional(),
+  pages: z.string().optional(),
+  archiveId: z.string().optional(),
+  edition: z.string().optional(),
+  accessed: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
 });
-const disputedNoteSchema = z.object({ claim: z.string().min(1), note: z.string().min(1) });
+const disputedNoteSchema = z.object({ claim: z.string().min(1), note: z.string().min(1), paragraph: z.number().int().min(0).optional() });
 const quoteSchema = z.object({ text: z.string().min(1), context: z.string().optional(), source: z.string().optional(), disputed: z.boolean().optional() });
-const storyChapterSchema = z.object({ title: z.string().min(1), text: z.string().min(1) });
+const storyChapterSchema = z.object({ title: z.string().min(1), text: z.string().min(1), uncertainty: z.string().min(1).optional() });
+const editorialSchema = z.object({
+  status: z.enum(['draft', 'reviewed']),
+  reviewedBy: z.string().optional(),
+  reviewedOn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+  notes: z.string().optional(),
+});
+const connectionSchema = z.object({
+  id: z.string().min(1),
+  type: z.enum(['ally', 'opponent', 'family', 'mentor', 'inspired', 'successor']),
+  note: z.string().min(20, 'a connection note must say what the connection was'),
+});
+const portraitNoteSchema = z.object({
+  kind: z.enum(['photograph', 'painting', 'statue', 'stamp', 'illustration', 'other']),
+  caption: z.string().min(1),
+  credit: z.string().optional(),
+  created: z.string().optional(),
+});
 const historicalDateSchema = z.object({
   year: z.number(),
   month: z.number().min(1).max(12).optional(),
@@ -69,7 +92,10 @@ const fighterSchema = z.object({
   name: z.string().min(1),
   alternateNames: z.array(z.string()).optional(),
   shortName: z.string().min(1).optional(),
+  pronunciation: z.string().optional(),
+  inAMinute: z.tuple([z.string().min(1), z.string().min(1), z.string().min(1)]).optional(),
   portrait: z.string().optional(),
+  portraitNote: portraitNoteSchema.optional(),
   birthYear: z.number().optional(),
   deathYear: z.number().optional(),
   birthDateLabel: z.string().optional(),
@@ -94,6 +120,9 @@ const fighterSchema = z.object({
   organizations: z.array(z.string()),
   roles: z.array(role),
   relatedPeople: z.array(z.string()),
+  connections: z.array(connectionSchema).optional(),
+  contentNote: z.string().optional(),
+  editorial: editorialSchema.optional(),
   sources: z.array(sourceRefSchema),
   images: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
@@ -120,6 +149,8 @@ const eventSchema = z.object({
   category: eventCategory,
   significance: z.string().optional(),
   disputed: z.array(disputedNoteSchema).optional(),
+  consequences: z.array(z.object({ eventId: z.string().min(1), note: z.string().min(20) })).optional(),
+  editorial: editorialSchema.optional(),
   sources: z.array(sourceRefSchema),
   featured: z.boolean().optional(),
   searchAliases: z.array(z.string()).optional(),
@@ -137,6 +168,13 @@ const movementSchema = z.object({
   regions: z.array(regionId),
   keyPeople: z.array(z.string()),
   keyEvents: z.array(z.string()),
+  aims: z.array(z.string().min(1)).optional(),
+  methods: z.array(z.string().min(1)).optional(),
+  reach: z.string().optional(),
+  participants: z.string().optional(),
+  disagreements: z.array(z.string().min(1)).optional(),
+  outcomes: z.array(z.string().min(1)).optional(),
+  editorial: editorialSchema.optional(),
   sources: z.array(sourceRefSchema),
 });
 
@@ -168,6 +206,9 @@ const quizQuestionSchema = z.object({
   options: z.array(z.string().min(1)),
   answerIndex: z.number(),
   explanation: z.string().min(1),
+  topic: z.enum(['people', 'events', 'movements', 'places']),
+  difficulty: z.union([z.literal(1), z.literal(2), z.literal(3)]),
+  whyItMatters: z.string().optional(),
   relatedLink: relatedLinkSchema,
 });
 
@@ -241,6 +282,17 @@ function checkRefs(collection: string, ref: string, ids: string[], target: Set<s
   for (const id of ids) if (!target.has(id)) err(collection, ref, `references unknown ${targetName} id "${id}"`);
 }
 
+/** Every [^n] in the given texts must point inside `sources`. */
+function checkCitations(collection: string, ref: string, texts: (string | undefined)[], sourceCount: number) {
+  for (const text of texts) {
+    if (!text) continue;
+    for (const m of text.matchAll(CITATION_RE)) {
+      const n = Number(m[1]);
+      if (n < 1 || n > sourceCount) err(collection, ref, `citation marker [^${n}] has no matching source (record has ${sourceCount})`);
+    }
+  }
+}
+
 for (const f of fighters) {
   checkRefs('fighters', f.id, f.relatedPeople, fighterIds, 'fighter');
   checkRefs('fighters', f.id, f.timelineEvents, eventIds, 'event');
@@ -258,6 +310,16 @@ for (const f of fighters) {
     if (chapter.text.length > 600) warn('fighters', f.id, `shortStory chapter "${chapter.title}" is ${chapter.text.length} chars (expected under 600)`);
     if (/\b(brutal|gruesome|graphic)\b/i.test(chapter.text)) warn('fighters', f.id, `shortStory chapter "${chapter.title}" may need a gentler tone (found a flagged word)`);
   }
+  checkCitations('fighters', f.id, [...f.fullBiography, ...f.shortStory.map((c) => c.text), f.legacy, f.entryIntoStruggle, f.ideology, ...(f.sacrifices ?? []), ...(f.achievements ?? [])], f.sources.length);
+  for (const c of f.connections ?? []) {
+    if (!fighterIds.has(c.id)) err('fighters', f.id, `connection "${c.id}" is not a fighter id`);
+    if (c.id === f.id) err('fighters', f.id, 'a record cannot be connected to itself');
+  }
+  for (const d of f.disputed ?? []) {
+    if (d.paragraph !== undefined && d.paragraph >= f.fullBiography.length) err('fighters', f.id, `disputed note "${d.claim}" points at paragraph ${d.paragraph}, but there are ${f.fullBiography.length}`);
+  }
+  if (f.disputed?.length && !f.shortStory.some((c) => c.uncertainty)) warn('fighters', f.id, 'has disputed notes but no quick-story chapter carries an `uncertainty` line');
+  if (f.editorial?.status === 'draft') warn('fighters', f.id, 'editorial status is draft');
 }
 
 for (const e of events) {
@@ -271,6 +333,8 @@ for (const e of events) {
     }
   }
   if (e.sources.length === 0) err('events', e.id, 'has no sources');
+  checkCitations('events', e.id, [...e.description, e.significance], e.sources.length);
+  for (const c of e.consequences ?? []) if (!eventIds.has(c.eventId)) err('events', e.id, `consequence "${c.eventId}" is not an event id`);
 }
 
 for (const m of movements) {
@@ -278,6 +342,7 @@ for (const m of movements) {
   checkRefs('movements', m.id, m.keyEvents, eventIds, 'event');
   if (m.sources.length === 0) err('movements', m.id, 'has no sources');
   if (m.startYear > m.endYear) err('movements', m.id, `startYear (${m.startYear}) is after endYear (${m.endYear})`);
+  checkCitations('movements', m.id, [...m.description, m.reach, m.participants], m.sources.length);
 }
 
 function checkRelatedLink(collection: string, ref: string, link?: { label: string; to: string }) {

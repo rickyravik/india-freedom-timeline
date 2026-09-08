@@ -18,6 +18,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Palaiyakkarar (poligar) chieftain of Nerkattumseval, remembered as one of the earliest Indian rulers to fight the East India Company and its ally, the Nawab of Arcot.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Honoured in Tamil Nadu as among the first Indian rulers to resist British-allied power; his fort at Nerkattumseval is a protected monument.",
     "timelineEvents": [],
     "movements": [
@@ -52,6 +54,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "Queen of Sivaganga who fought the East India Company decades before 1857 — among the first Indian queens to wage war against Company rule, and one of the first to win her kingdom back.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Celebrated as \"Veeramangai\"; a pioneering symbol of women’s leadership in the freedom struggle.",
     "timelineEvents": [],
     "movements": [
@@ -91,6 +95,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The \"Lion of Kerala\", prince of Kottayam in Malabar, who fought the East India Company in two guerrilla wars across the Wayanad forests until his death in battle in 1805.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Kerala’s foremost symbol of early resistance; commemorated at the Pazhassi tomb, Mananthavady.",
     "timelineEvents": [
       "south-indian-rebellion-1801"
@@ -129,6 +135,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Adivasi leader of the Santhal Pargana hills who rose against Company famine-era exactions in the 1780s — often called the first Adivasi martyr of the freedom struggle.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Honoured as the first Adivasi martyr of the anti-colonial struggle; namesake of Tilka Manjhi Bhagalpur University.",
     "timelineEvents": [],
     "movements": [
@@ -164,6 +172,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Peasant leader of Bengal who organized cultivators against zamindars and indigo planters, built the famous bamboo fort at Narkelberia, and died defending it against Company artillery in 1831.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "The bamboo fort is a byword for courage against impossible odds in Bengali memory.",
     "timelineEvents": [],
     "movements": [
@@ -199,6 +209,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Syiem (chief) of Nongkhlaw who led the Khasi people in a four-year guerrilla war (1829–33) against British encroachment on the hills of present-day Meghalaya.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Meghalaya’s foremost freedom hero; commemorated annually on 17 July.",
     "timelineEvents": [
       "khasi-uprising"
@@ -235,6 +247,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "Queen of Kittur who took up arms against the East India Company in 1824 when it refused to recognise her adopted heir — a generation before Jhansi, and for the same cause.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "A defining heroine of Karnataka; her statue was unveiled in the Parliament complex in 2007.",
     "timelineEvents": [
       "kittur-rebellion"
@@ -273,6 +287,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The brothers who proclaimed the Santhal Hul of 1855 at Bhognadih, leading tens of thousands against moneylenders, landlords and the Company state that protected them.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Founders of the Hul tradition of resistance; commemorated on Hul Diwas, 30 June.",
     "timelineEvents": [
       "santhal-hul"
@@ -311,6 +327,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Sepoy of the 34th Bengal Native Infantry whose attack on British officers at Barrackpore on 29 March 1857, weeks before Meerut, made him the first celebrated figure of the great revolt.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "The first popular martyr of 1857; commemorated on stamps and at Shaheed Mangal Pandey Park, Barrackpore.",
     "timelineEvents": [
       "revolt-1857"
@@ -350,6 +368,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The warrior queen of Jhansi who defended her city against siege in 1858, escaped through the enemy lines, seized Gwalior with Tatya Tope, and died fighting — the most celebrated heroine of 1857.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "The most celebrated heroine of 1857; namesake of the INA’s Rani of Jhansi Regiment and countless institutions.",
     "timelineEvents": [
       "revolt-1857",
@@ -386,6 +406,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "Soldier and adviser in Rani Lakshmibai’s women’s guard, from a Dalit (Koli) family, remembered for impersonating the Rani during the fall of Jhansi to cover her escape.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "An icon of Dalit and women’s pride in the freedom struggle; commemorated by stamps and statues.",
     "timelineEvents": [
       "siege-of-jhansi"
@@ -424,6 +446,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "Queen of Awadh who led the revolt in Lucknow after the annexation of her state, crowned her son king, directed the long defence of the city — and refused British amnesty to die free in Nepal.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Honoured as one of the great leaders of 1857; a park in Lucknow and a stamp bear her name.",
     "timelineEvents": [
       "revolt-1857",
@@ -467,6 +491,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The revolt’s most brilliant general: Nana Saheb’s commander who retook Kanpur, relieved Jhansi, seized Gwalior with the Rani — and then led the British a year-long chase across central India.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Studied as one of history’s great guerrilla campaigners; memorials at Shivpuri and Kanpur.",
     "timelineEvents": [
       "revolt-1857",
@@ -504,6 +530,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The eighty-year-old zamindar of Jagdishpur who led Bihar’s revolt in 1857, campaigned across four provinces, and won his last battle at Jagdishpur days before his death.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Bihar’s foremost 1857 hero; Veer Kunwar Singh University and an annual Vijayotsav honour him.",
     "timelineEvents": [
       "revolt-1857"
@@ -541,6 +569,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Adopted heir of the last Peshwa, denied his pension by the Company, who became the leader of the revolt at Kanpur in 1857 — and vanished into Nepal, never captured.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Remembered as the proclaimed Peshwa of the revolt; Nana Rao Park in Kanpur marks his memory.",
     "timelineEvents": [
       "revolt-1857"
@@ -575,6 +605,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The last Mughal emperor — a poet-king in his eighties whom the rebels of 1857 proclaimed sovereign of Hindustan, and whom the British tried, exiled to Rangoon, and buried in an unmarked grave.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Remembered as poet and reluctant emperor; his Yangon dargah is visited by Indian leaders to this day.",
     "timelineEvents": [
       "revolt-1857"
@@ -615,6 +647,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The \"Grand Old Man of India\" — mathematician, three-time Congress president, first Indian MP in Britain, and author of the \"drain of wealth\" theory that armed nationalism with economics.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Liberal constitutionalism; economic nationalism.",
     "legacy": "The intellectual founder of Indian economic nationalism; mentor to Gokhale and Gandhi.",
     "timelineEvents": [
@@ -655,6 +689,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Dismissed from the civil service on a pretext, he built Indian nationalism instead — founding the Indian Association, editing The Bengalee, leading the anti-partition agitation, twice Congress president.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Constitutional liberalism.",
     "legacy": "Called \"Rashtraguru\" — teacher of the nation; trainer of a political generation in Bengal.",
     "timelineEvents": [
@@ -695,6 +731,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The great Moderate statesman — master of finance debates in the Imperial Council, founder of the Servants of India Society, and the man Gandhi called his political guru.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Liberal moderation; social reform with political reform.",
     "legacy": "The model of the scholar-statesman; his society continues social work to this day.",
     "timelineEvents": [
@@ -734,6 +772,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "\"Swaraj is my birthright, and I shall have it\" — the Lokmanya, editor of Kesari, prisoner of Mandalay, and the first leader to turn nationalism into a popular force.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Militant nationalism; swaraj through self-reliance, boycott and national education.",
     "legacy": "\"Father of Indian unrest\" to the British; Lokmanya to Indians — the bridge from petition to mass politics.",
     "timelineEvents": [
@@ -779,6 +819,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The Lion of Punjab — of the Lal-Bal-Pal trio, deported without trial in 1907, historian of empire’s exploitation, who died of injuries from a police lathi charge while protesting the Simon Commission.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Assertive nationalism; education and self-help; Hindu social reform.",
     "legacy": "Martyr of the Simon Commission protest; his death galvanised the revolutionary movement.",
     "timelineEvents": [
@@ -819,6 +861,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The orator of the Swadeshi movement — the \"Pal\" of Lal-Bal-Pal — whose thundering speeches carried boycott and national education across India, and who chose jail rather than testify against Aurobindo.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Composite patriotism; passive resistance; federal republicanism.",
     "legacy": "Remembered as one of the fathers of assertive nationalism.",
     "timelineEvents": [
@@ -860,6 +904,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Cambridge-educated theorist of complete independence, editor of Bande Mataram, accused in the Alipore Bomb Case — acquitted, and thereafter the sage of Pondicherry.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Complete independence; spiritual nationalism.",
     "legacy": "Nationalist thinker turned world philosopher; his ashram and Auroville continue his work.",
     "timelineEvents": [
@@ -900,6 +946,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "Irish-born Theosophist who made India her home, founded the Home Rule League and the paper New India, was interned for sedition — and became the first woman president of the Congress in 1917.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Home Rule within the Empire; educational and spiritual revival.",
     "legacy": "Proof that India’s cause crossed nations; pioneer of women’s leadership in Indian politics.",
     "timelineEvents": [
@@ -942,6 +990,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Four-time Congress president and founder of Banaras Hindu University — the \"Mahamana\" who returned to the courtroom once, unpaid, to save 156 Chauri Chaura prisoners from the gallows.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Educational nationalism; Sanatan values with constitutional politics.",
     "legacy": "The Mahamana; BHU remains his living memorial. Bharat Ratna, 2014.",
     "timelineEvents": [
@@ -987,6 +1037,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Oxford-educated journalist of the Comrade and Hamdard, leader with his brother Shaukat Ali of the Khilafat movement, Congress president in 1923 — who asked to be buried in a free land, and lies in Jerusalem.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Pan-Islamic solidarity joined to Indian nationalism.",
     "legacy": "Symbol of the freedom struggle’s composite character; Jamia Millia Islamia thrives as his legacy.",
     "timelineEvents": [
@@ -1027,6 +1079,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The eighteen-year-old revolutionary of the Muzaffarpur action, among the youngest to be executed in the freedom struggle — mourned in Bengali folk song ever since.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "An enduring symbol of youthful sacrifice; railway station and institutions bear his name.",
     "timelineEvents": [
       "muzaffarpur-action"
@@ -1067,6 +1121,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "\"Tiger\" Jatin — the Jugantar commander who once killed a leopard with a dagger, planned a German-armed rising in 1915, and died after a last stand on the banks of the Burha Balang.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Armed revolution; pan-Indian military rising.",
     "legacy": "The heroic ideal of Bengal’s revolutionaries; memorials at Balasore mark the battle site.",
     "timelineEvents": [],
@@ -1105,6 +1161,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The Mahakavi — Tamil’s national poet, editor of India and Swadesamitran, who sang freedom, women’s equality and the end of caste, and spent a decade in exile in Pondicherry for it.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Revolutionary nationalism; radical social equality.",
     "legacy": "Tamil Nadu’s national poet; his songs remain the soundtrack of Tamil public life.",
     "timelineEvents": [
@@ -1147,6 +1205,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The \"Tamil who sailed the ship\" — lawyer who founded the Swadeshi Steam Navigation Company to break the British shipping monopoly, and was sentenced to two life terms and set to a prison oil-press.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Economic swadeshi; labour rights within nationalism.",
     "legacy": "\"Kappalottiya Tamizhan\"; Thoothukudi’s major port is named for him.",
     "timelineEvents": [
@@ -1188,6 +1248,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Engineering student of the India House circle in London who assassinated Sir William Curzon Wyllie in 1909 and met death declaring that a conquered people’s only prayer is to die for their country.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Honoured among the first martyrs of the movement abroad.",
     "timelineEvents": [],
     "movements": [
@@ -1221,6 +1283,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Sanskrit scholar turned revolutionary patron — founder of India House and The Indian Sociologist in London, whose fellowships brought Savarkar and a generation of radicals to Europe.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Complete independence; Spencerian anti-imperialism.",
     "legacy": "Father of the expatriate revolutionary movement; Kranti Teerth memorial, Kutch.",
     "timelineEvents": [],
@@ -1260,6 +1324,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The \"Mother of Indian Revolution\" who unfurled an Indian national flag at the Stuttgart socialist congress in 1907 — and spent three decades of exile publishing sedition and sheltering revolutionaries.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "The great woman of the revolutionary emigration; her Stuttgart flag survives in Pune.",
     "timelineEvents": [],
     "movements": [
@@ -1299,6 +1365,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Founder of Abhinav Bharat and author of the banned 1857 history, sentenced to two life terms in the Cellular Jail — later the ideologue of Hindutva, and among the struggle’s most contested figures.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Revolutionary nationalism; later Hindutva — Hindu nationhood.",
     "legacy": "A founding figure of both revolutionary politics and Hindu nationalism; commemorated by admirers as Veer, contested by critics — his petitions, ideology and 1948 trial still debated.",
     "timelineEvents": [],
@@ -1336,6 +1404,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The brilliant Delhi scholar who resigned an Oxford scholarship on principle, taught at Stanford, and became the intellectual spark of the Ghadar Party before decades of wandering exile.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Revolutionary internationalism; anarchist-inflected anti-imperialism.",
     "legacy": "Remembered as the Ghadar Party’s founding voice.",
     "timelineEvents": [
@@ -1376,6 +1446,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The teenaged Ghadar organizer who sailed home from California to raise rebellion in 1915 and went to the gallows at nineteen — the hero Bhagat Singh kept as his model.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Punjab’s beloved boy-martyr; inspiration to Bhagat Singh’s generation.",
     "timelineEvents": [
       "founding-of-ghadar"
@@ -1415,6 +1487,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Mastermind of the 1912 bombing of Viceroy Hardinge’s procession and the 1915 Ghadar rising, who escaped to Japan, founded the Indian Independence League — and handed the INA to Subhas Bose.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "The bridge between the Ghadar generation and the INA.",
     "timelineEvents": [
       "founding-of-ghadar",
@@ -1461,6 +1535,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The Mahatma — inventor of satyagraha, leader of Non-Cooperation, the Dandi March and Quit India, who turned the Congress into a movement of millions and nonviolence into a weapon that helped end an empire.",
+    "readingMinutes": 2,
+    "connectionCount": 0,
     "ideology": "Satyagraha — truth-force; nonviolence (ahimsa); swaraj as self-rule in every sense; sarvodaya.",
     "legacy": "Father of the Nation; his birthday is the International Day of Non-Violence. His methods shaped liberation movements worldwide.",
     "timelineEvents": [
@@ -1516,6 +1592,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "\"Ba\" — satyagrahi in her own right from South Africa to Quit India, jailed repeatedly across four decades, who died a prisoner in the Aga Khan Palace in 1944.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "\"Ba\" — the movement’s mother; the KGNMT continues her memorial work.",
     "timelineEvents": [
       "dandi-march",
@@ -1558,6 +1636,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Gandhi’s chosen heir and the voice of Purna Swaraj — nine years in British jails, historian of India from a prison cell, and at midnight on 15 August 1947, free India’s first Prime Minister.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Democratic socialism; secular nationalism; scientific temper; internationalism.",
     "legacy": "Architect of the Indian state; his prison books remain classics; Children’s Day marks his birthday.",
     "timelineEvents": [
@@ -1608,6 +1688,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The Sardar — organizer of the Kheda and Bardoli satyagrahas, the Congress’s iron administrator through every movement, and after 1947 the unifier of 560+ princely states into one India.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Gandhian discipline with administrative realism.",
     "legacy": "The Iron Man of India; National Unity Day marks his birthday.",
     "timelineEvents": [
@@ -1655,6 +1737,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Islamic scholar and firebrand editor of Al-Hilal, youngest Congress president (1923) and its wartime president through Quit India — a lifelong voice of united India and free India’s first Education Minister.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Composite nationalism grounded in Islamic scholarship.",
     "legacy": "National Education Day honours him; his Al-Hilal journalism is a classic of Urdu prose.",
     "timelineEvents": [
@@ -1700,6 +1784,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Gandhi’s lieutenant from Champaran onwards, thrice Congress president, president of the Constituent Assembly — and the first President of the Republic of India.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Gandhian constructive nationalism.",
     "legacy": "The scholar-president; model of republican dignity.",
     "timelineEvents": [
@@ -1747,6 +1833,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Rajaji — Gandhi’s \"conscience-keeper\", leader of the Vedaranyam salt march, premier of Madras, free India’s first Indian Governor-General, and one of its sharpest minds.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Gandhian conservatism; later classical liberalism.",
     "legacy": "The south’s greatest Congress leader and independent India’s great contrarian.",
     "timelineEvents": [
@@ -1792,6 +1880,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The Nightingale of India — poet, first Indian woman president of the Congress (1925), commander of the Dharasana salt raid, and first woman Governor in free India.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "The Nightingale of India; icon of women’s political equality.",
     "timelineEvents": [
       "dandi-march",
@@ -1838,6 +1928,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Badshah Khan — the Frontier Gandhi — who raised the Khudai Khidmatgar, a nonviolent army of a hundred thousand Pashtuns, and spent a third of his ninety-eight years in prison for it.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Nonviolence rooted in Islam; Pashtun self-respect and reform.",
     "legacy": "Proof that nonviolence knew no community; honoured across India, Pakistan and Afghanistan.",
     "timelineEvents": [
@@ -1883,6 +1975,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Babasaheb — scholar, leader of the Depressed Classes, signatory of the Poona Pact, and principal architect of the Constitution — who insisted that freedom from Britain must also mean freedom from caste.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Annihilation of caste; constitutional social democracy; later Navayana Buddhism.",
     "legacy": "Babasaheb — with Gandhi, the most commemorated figure of modern India; the Constitution is his monument.",
     "timelineEvents": [
@@ -1928,6 +2022,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "JP — founder of the Congress Socialist Party, hero of the Quit India underground after his legendary escape over Hazaribagh jail’s walls, and later the Loknayak of Indian democracy.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Democratic socialism; later Sarvodaya and \"Total Revolution\".",
     "legacy": "Loknayak — the people’s leader; the conscience-keeper role in Indian democracy bears his stamp.",
     "timelineEvents": [
@@ -1970,6 +2066,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Gandhi’s chosen first satyagrahi of 1940 — scholar-saint of the ashram who spent five years in freedom’s prisons, and after 1947 walked India for twenty years collecting land as gifts for the poor.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Sarvodaya; nonviolence as a total way of life.",
     "legacy": "The spiritual heir of Gandhi; Bhoodan remains history’s largest voluntary land transfer.",
     "timelineEvents": [
@@ -2014,6 +2112,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Andhra Kesari — the Lion of Andhra — who bared his chest to British guns during the Simon Commission protests in Madras, gave a fortune to the movement, and became the first Chief Minister of Andhra State.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Andhra Kesari; Prakasam district and countless institutions carry his name.",
     "timelineEvents": [
       "simon-commission-protest",
@@ -2055,6 +2155,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The first Indian woman to stand for legislative election and the first arrested in the salt satyagraha — socialist, feminist, and after 1947 the renaissance builder of Indian handicrafts and theatre.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Socialist feminism within the national movement.",
     "legacy": "The founding mother of India’s cultural institutions and craft revival.",
     "timelineEvents": [
@@ -2098,6 +2200,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The schoolteacher who led a march of thousands to the Travancore Maharaja’s palace in 1938 and dared the police chief: \"Shoot me first\" — Gandhi hailed her as the Jhansi Rani of Travancore.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Kerala’s foremost woman freedom fighter; the princely-state struggles’ great heroine.",
     "timelineEvents": [
       "quit-india-launch"
@@ -2140,6 +2244,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Shaheed-e-Azam — the thinker-revolutionary of the HSRA who bombed the Assembly \"to make the deaf hear\", turned his trial into a tribune, read to his last hour, and was hanged at twenty-three.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Revolutionary socialism; rationalism and atheism; complete independence.",
     "legacy": "Shaheed-e-Azam — the great martyr; his writings are studied, his portrait carried in movements of every stripe, his memorial at Hussainiwala a site of national homage on 23 March.",
     "timelineEvents": [
@@ -2184,6 +2290,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "\"Azad\" — free — the name he gave a magistrate at fifteen and kept to his last bullet: chief of the HSRA who was never taken alive, dying in a gun battle at Alfred Park, Allahabad.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Armed revolution for complete independence; socialist republic (HSRA goal).",
     "legacy": "The unconquered ideal of the movement; Azad Park and countless institutions bear his name.",
     "timelineEvents": [
@@ -2222,6 +2330,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The HSRA’s Punjab organizer — recruiter, planner and Bhagat Singh’s closest comrade from the National College days — hanged with him and Rajguru on 23 March 1931.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Revolutionary socialism.",
     "legacy": "One of the immortal trio of Shaheed Diwas; his Ludhiana home is a protected memorial.",
     "timelineEvents": [
@@ -2260,6 +2370,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The HSRA’s marksman from Maharashtra — a Sanskrit scholar of Varanasi turned crack shot — who fired the first bullet at Saunders and was hanged with Bhagat Singh and Sukhdev.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Of the trio of 23 March; his birthplace bears his name.",
     "timelineEvents": [
       "simon-commission-protest",
@@ -2295,6 +2407,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Poet-founder of the Hindustan Republican Association and leader of the Kakori action — the author of \"Sarfaroshi ki Tamanna\", hanged at Gorakhpur in 1927 with the Gita in his thoughts and verses on his lips.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Republican revolution; Hindu-Muslim revolutionary unity.",
     "legacy": "Poet-martyr of Kakori; his verses open commemorations across north India.",
     "timelineEvents": [
@@ -2332,6 +2446,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Poet (\"Hasrat\") and Kakori revolutionary — Ram Prasad Bismil’s dearest comrade — the first Muslim to be hanged in a revolutionary conspiracy case, at Faizabad on 19 December 1927.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Revolutionary republicanism; communal unity.",
     "legacy": "His and Bismil’s joint memory anchors the tradition of united revolutionary struggle.",
     "timelineEvents": [
@@ -2372,6 +2488,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Bhagat Singh’s partner in the Assembly bombing, sentenced to transportation for life — survivor of the Cellular Jail and hunger strikes who lived on, half-forgotten, to be cremated beside his comrades at Hussainiwala.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "The survivor of 8 April 1929 — a reminder that sacrifice included the long, unglamorous years after.",
     "timelineEvents": [
       "assembly-bomb-case",
@@ -2411,6 +2529,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The HSRA’s bomb-maker who died in Lahore jail after a 63-day hunger strike for political prisoners’ rights — his funeral procession through India drew mourning millions.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "The martyr of the prison-rights struggle; commemorated in Bengal and Punjab alike.",
     "timelineEvents": [
       "assembly-bomb-case"
@@ -2451,6 +2571,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "\"Durga Bhabhi\" — the HSRA’s fearless sister-in-arms who escorted a disguised Bhagat Singh out of Lahore posing as his wife, and later exchanged gunfire with police at Lamington Road, Bombay.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "The revolutionary movement’s most celebrated woman activist in the north.",
     "timelineEvents": [
       "simon-commission-protest",
@@ -2490,6 +2612,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "\"Masterda\" — the schoolteacher who led the Chittagong armoury raid of 1930 with an army of students, held out underground for three years, and was tortured and hanged in 1934.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Armed insurrection; inspired by the Irish republican model.",
     "legacy": "\"Masterda\" is among Bengal’s most revered martyrs; the Kolkata Metro named a station for him.",
     "timelineEvents": [
@@ -2528,6 +2652,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "Philosophy graduate and school headmistress who led the armed attack on the Pahartali European Club in 1932 and took cyanide rather than be captured — Bengal’s \"Birkannya\", the heroic daughter.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Enduring symbol of women’s revolutionary courage in Bengal.",
     "timelineEvents": [
       "chittagong-armoury-raid"
@@ -2567,6 +2693,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "Science student turned Chittagong revolutionary — arrested in male disguise, defended by C. R. Das’s successors and Rabindranath’s appeals, sentenced to transportation — who lived to write the movement’s memoir.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Bridge between the revolutionary generation and later Indian public life.",
     "timelineEvents": [
       "chittagong-armoury-raid"
@@ -2606,6 +2734,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The orphan of Sunam who carried the memory of Jallianwala Bagh for twenty-one years, and in 1940 shot dead Sir Michael O’Dwyer — Punjab’s wartime governor of 1919 — in a London hall.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Shaheed-i-Azam Udham Singh in Punjabi memory; his chosen name remains a creed of unity.",
     "timelineEvents": [
       "jallianwala-bagh"
@@ -2646,6 +2776,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Dharti Aba — \"Father of the Earth\" — the young Munda prophet who led the Ulgulan of 1899–1900 for land and self-rule, died in Ranchi jail at about twenty-five, and is honoured today across India.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Religious revival fused with Adivasi self-rule — \"Abua raj\" (our kingdom).",
     "legacy": "The foremost national symbol of Adivasi resistance; Janjatiya Gaurav Divas marks his birth.",
     "timelineEvents": [
@@ -2686,6 +2818,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Manyam Veerudu — hero of the jungles — the ascetic who led the Koya and hill peoples of the Godavari agency in the Rampa rebellion of 1922–24, and was executed by firing squad without trial.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Armed defence of Adivasi land and dignity; influenced by, then departing from, Non-Cooperation.",
     "legacy": "Manyam Veerudu — Andhra’s great martyr; commemorated in statues, cinema and stamps.",
     "timelineEvents": [
@@ -2724,6 +2858,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The Gond leader of Adilabad who raised the cry \"Jal, Jangal, Zameen\" — water, forest, land — and fought the Nizam’s state until he fell at Jodeghat in 1940.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "\"Jal, Jangal, Zameen\" — Adivasi sovereignty over water, forest and land.",
     "legacy": "Deified by the Gonds; the watchword he raised guides Adivasi movements to this day.",
     "timelineEvents": [],
@@ -2761,6 +2897,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The Naga spiritual and political leader who rose against British rule at sixteen, spent fourteen years in colonial prisons, and was given the title \"Rani\" by Jawaharlal Nehru.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Naga religious revival (Heraka) and freedom from British rule.",
     "legacy": "The Northeast’s great woman freedom fighter; honoured nationally as Rani Gaidinliu.",
     "timelineEvents": [],
@@ -2802,6 +2940,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Netaji — twice Congress president, escapee from house arrest across three empires, Supreme Commander of the INA and head of the Azad Hind government: \"Give me blood, and I shall give you freedom!\"",
+    "readingMinutes": 2,
+    "connectionCount": 0,
     "ideology": "Militant nationalism; socialist planning; freedom by armed struggle when nonviolence stalled.",
     "legacy": "Netaji — his birthday is observed as Parakram Diwas; the INA memorial flame burns at the Red Fort, where his army was tried.",
     "timelineEvents": [
@@ -2851,6 +2991,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The doctor who commanded the INA’s Rani of Jhansi Regiment — \"Captain Lakshmi\" to history — Minister for Women in the Azad Hind government, and a people’s doctor in Kanpur for six decades after.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Militant nationalism; later Marxist social medicine — service as struggle.",
     "legacy": "Captain Lakshmi — the enduring emblem of women in arms for India’s freedom.",
     "timelineEvents": [
@@ -2896,6 +3038,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The heroine of 9 August 1942 — she hoisted the tricolour at Gowalia Tank as the Quit India crackdown began, then ran the underground for four years with a price on her head.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Radical nationalism; socialist politics.",
     "legacy": "The face of Quit India’s defiance; Bharat Ratna, 1997.",
     "timelineEvents": [
@@ -2936,6 +3080,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The twenty-two-year-old who ran the secret Congress Radio during Quit India — \"somewhere in India\" — until the transmitter was traced, and who paid with four years in prison.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Gandhian nonviolence.",
     "legacy": "The voice of the Quit India underground; her story reached new generations through cinema.",
     "timelineEvents": [
@@ -2977,6 +3123,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "\"Gandhi Buri\" — the old Gandhi — the seventy-one-year-old widow of Tamluk who led a Quit India march on the police station and died holding the tricolour aloft, Vande Mataram on her lips.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "\"Gandhi Buri\" — Bengal’s beloved martyr; her statues keep the flag she carried flying.",
     "timelineEvents": [
       "quit-india-launch"
@@ -3017,6 +3165,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The seventeen-year-old of Gohpur who led the Mrityu Bahini — the death squad of volunteers — to hoist the flag on the police station during Quit India, and was shot holding it high.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Assam’s Birbala; an icon of the movement’s youngest martyrs.",
     "timelineEvents": [
       "quit-india-launch"
@@ -3054,6 +3204,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The Gandhian tea-garden worker and Congress volunteer of Golaghat — hanged in 1943 for a train derailment he had no part in: the only martyr executed in the Quit India movement’s judicial reprisals in Assam.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Assam’s Saumya Shaheed; a standing lesson in the cost of collective punishment.",
     "timelineEvents": [
       "quit-india-launch"
@@ -3090,6 +3242,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Commander in Puli Thevar’s army from the Arunthathiyar (Dalit) community, remembered in Tamil tradition as one of the first to fall fighting the East India Company’s forces in the Tirunelveli country.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Honoured as an early Dalit hero of anti-colonial resistance; memorial at Nerkattumseval.",
     "timelineEvents": [],
     "movements": [
@@ -3123,6 +3277,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The palaiyakkarar of Panchalankurichi who refused to pay tribute to the East India Company, fought its army in 1799, and was hanged at Kayathar — Tamil Nadu’s most celebrated early martyr.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Tamil Nadu’s foremost early martyr; the Panchalankurichi memorial fort and countless institutions bear his name.",
     "timelineEvents": [
       "polygar-war-1799",
@@ -3164,6 +3320,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Rulers of Sivaganga who issued the Tiruchirappalli Proclamation of 1801 — one of the first calls for all Indians to rise together against the Company — and were hanged at Tiruppathur after the South Indian Rebellion.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Their proclamation is honoured as a founding document of Indian anti-colonial thought; annual commemoration at Kalayar Kovil.",
     "timelineEvents": [
       "south-indian-rebellion-1801"
@@ -3204,6 +3362,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Kongu chieftain who allied with Tipu Sultan against the Company, fought guerrilla campaigns around the Kaveri after Tipu’s fall, and was hanged with his brothers at Sankagiri fort in 1805.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Kongu Nadu’s greatest hero; commemorated each 31 July across Tamil Nadu.",
     "timelineEvents": [
       "south-indian-rebellion-1801"
@@ -3240,6 +3400,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Fiery orator of the Swadeshi movement in the Tamil country, arrested with V. O. Chidambaram Pillai in 1908 — the first political prisoner of the Madras Presidency — who contracted leprosy in prison and went on lecturing across the villages until his death.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Swadeshi nationalism with a devotional, Bharata Mata idiom.",
     "legacy": "Remembered alongside V.O.C. and Bharati; memorial at Papparapatti.",
     "timelineEvents": [
@@ -3283,6 +3445,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Barrister of the India House circle who escaped to Pondicherry in 1910, mentored young Tamil revolutionaries, and became the father of the modern Tamil short story.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Revolutionary nationalism; Tamil cultural revival.",
     "legacy": "A founder of modern Tamil prose and of the Tamil revolutionary tradition.",
     "timelineEvents": [
@@ -3326,6 +3490,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The twenty-five-year-old who shot Collector Robert Ashe at Maniyachi railway station in 1911 — the man held responsible for crushing the Tamil Swadeshi movement — and then took his own life.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Vanchi Maniyachi Junction and his Shenkottai home commemorate him.",
     "timelineEvents": [
       "maniyachi-1911"
@@ -3364,6 +3530,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "\"Kodi Kaatha Kumaran\" — the one who saved the flag: a young weaver-organizer of Tiruppur who died of police blows in 1932 still holding the banned national flag aloft.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Kodi Kaatha Kumaran — one of Tamil Nadu’s most beloved martyrs.",
     "timelineEvents": [],
     "movements": [
@@ -3403,6 +3571,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The Madras Congress’s great orator and parliamentarian — Swarajist, Mayor of Madras who gave the city its Poondi reservoir, mentor of Kamaraj — who died in 1943 with health broken by his last imprisonment.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Constitutional confrontation — the Swarajist path within nationalism.",
     "legacy": "Satyamurti Sagar and Satyamurti Bhavan carry his name; Kamaraj called him his political guru.",
     "timelineEvents": [
@@ -3442,6 +3612,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "female",
     "summary": "The first woman in the Madras Presidency jailed in the Salt Satyagraha — a Vedaranyam marcher of 1930 — and later the presidency’s first woman minister.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "legacy": "Pioneer of Tamil women’s participation in the national movement.",
     "timelineEvents": [
       "vedaranyam-salt-march"
@@ -3486,6 +3658,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "The school dropout from Virudhunagar who spent some eight years in British jails across six imprisonments, built the Congress in the Tamil villages — and later, as Chief Minister, put a school and a midday meal within reach of every Tamil child.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Gandhian constructive politics; education and welfare as the substance of freedom.",
     "legacy": "Perunthalaivar — Tamil Nadu’s \"Black Gandhi\"; his birthday is Education Development Day in the state. Bharat Ratna, 1976.",
     "timelineEvents": [
@@ -3527,6 +3701,8 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "gender": "male",
     "summary": "Subhas Chandra Bose’s lieutenant in the Tamil country — Forward Bloc leader, interned through the war years — who fought the colonial Criminal Tribes Act that branded whole communities as criminals.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
     "ideology": "Bose’s militant nationalism; social dignity for criminalised communities.",
     "legacy": "Revered across southern Tamil Nadu; Pasumpon Guru Puja is one of the state’s great annual commemorations.",
     "timelineEvents": [

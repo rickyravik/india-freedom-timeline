@@ -36,6 +36,8 @@ export const eventTemplate: HistoricalEvent = {
     // optional — use for any claim historians genuinely contest or that rests on uncertain evidence
     { claim: 'What is disputed', note: 'What the dispute actually is, and why.' },
   ],
+  consequences: [{ eventId: 'later-event-id', note: 'What the editorially verified causal link actually was.' }], // optional — distinct from chronological neighbours
+  editorial: { status: 'draft' }, // flip to { status: 'reviewed', reviewedBy: 'Name', reviewedOn: 'YYYY-MM-DD' } after review
   sources: [
     // required — at least one, with a title and a type
     { title: 'Source title', publisher: 'Publisher or archive', type: 'archive', url: 'https://…' },
