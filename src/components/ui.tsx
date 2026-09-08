@@ -379,21 +379,31 @@ function linkLabel(url: string): string {
   }
 }
 
+const evidenceTypeLabel: Record<string, string> = {
+  contemporary: 'Contemporary',
+  scholarship: 'Scholarship',
+  'oral-tradition': 'Oral tradition',
+  reference: 'Reference',
+};
+
 export function SourceList({ sources }: { sources: SourceRef[] }) {
   if (!sources.length) return null;
   return (
     <Reveal as="section" aria-label="Sources and references" className="doc p-5 sm:p-6">
-      <h2 className="mb-1 text-h3 text-ink">Sources & references</h2>
+      <h2 id="sources" className="mb-1 scroll-mt-28 text-h3 text-ink">Sources & references</h2>
       <div className="rule mb-4" />
       <ol className="space-y-3">
         {sources.map((s, i) => (
-          <li key={`${s.title}-${i}`} className="flex gap-3 font-body text-meta text-ink-soft">
+          <li key={`${s.title}-${i}`} id={`source-${i + 1}`} className="flex scroll-mt-28 gap-3 font-body text-meta text-ink-soft">
             <span className="num mt-px shrink-0 font-display text-sm font-bold text-brass-deep">{String(i + 1).padStart(2, '0')}</span>
             <span>
               <span className="font-semibold text-ink">{s.title}</span>
               {s.author && <> — {s.author}</>}
               {s.publisher && <>. {s.publisher}</>}
               {s.year && <>, {s.year}</>}
+              {s.edition && <>, {s.edition}</>}
+              {s.pages && <>, pp. {s.pages}</>}
+              {s.archiveId && <> · {s.archiveId}</>}
               {s.url && (
                 <>
                   {' · '}
@@ -409,6 +419,7 @@ export function SourceList({ sources }: { sources: SourceRef[] }) {
                 </>
               )}
               <span className="stamp ml-2 align-middle text-sepia">{typeLabel[s.type] ?? s.type}</span>
+              {s.evidence && <span className="stamp ml-1 align-middle text-oxide-deep">{evidenceTypeLabel[s.evidence]}</span>}
             </span>
           </li>
         ))}

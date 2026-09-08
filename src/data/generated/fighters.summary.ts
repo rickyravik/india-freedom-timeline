@@ -44,6 +44,13 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Veeramangai"
     ],
+    "shortName": "Velu Nachiyar",
+    "pronunciation": "VAY-loo NAH-chee-yar",
+    "inAMinute": [
+      "Queen of Sivaganga in the Tamil country, trained from childhood in riding, archery and languages.",
+      "Widowed in 1772 when Company and Arcot forces killed her husband; spent eight years in hiding building alliances, then retook her kingdom around 1780.",
+      "One of the first Indian rulers to defeat the East India Company in battle and win a kingdom back — decades before 1857."
+    ],
     "portrait": "/images/fighters/velu-nachiyar.jpg",
     "birthYear": 1730,
     "deathYear": 1796,
@@ -55,7 +62,7 @@ export const fighterSummaries: FighterSummary[] = [
     "gender": "female",
     "summary": "Queen of Sivaganga who fought the East India Company decades before 1857 — among the first Indian queens to wage war against Company rule, and one of the first to win her kingdom back.",
     "readingMinutes": 1,
-    "connectionCount": 0,
+    "connectionCount": 1,
     "legacy": "Celebrated as \"Veeramangai\"; a pioneering symbol of women’s leadership in the freedom struggle.",
     "timelineEvents": [],
     "movements": [

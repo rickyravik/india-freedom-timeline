@@ -3,7 +3,8 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { eventsForMovement, fightersForMovement, movementBySlug, movements } from '@/lib/content';
 import { regionNames } from '@/data/regions';
 import { usePageMeta } from '@/lib/hooks';
-import { Icon, PageIntro, Postmark, Reveal, SectionHeading, SourceList, SuggestCorrection, icons } from '@/components/ui';
+import { Icon, PageIntro, Postmark, SectionHeading, SourceList, SuggestCorrection, icons } from '@/components/ui';
+import { ReadingText } from '@/components/reading';
 import { EventCard, FighterCard, MovementCard } from '@/components/cards';
 
 export default function MovementsPage() {
@@ -70,12 +71,8 @@ export function MovementPage() {
       </header>
 
       <div className="container-page space-y-14 py-14 sm:space-y-20 sm:py-16">
-        <section className="max-w-prose space-y-5" aria-label="About this movement">
-          {movement.description.map((para, i) => (
-            <Reveal as="p" key={i} className={`prose-reading ${i === 0 ? 'dropcap' : ''}`} delay={i * 60}>
-              {para}
-            </Reveal>
-          ))}
+        <section aria-label="About this movement">
+          <ReadingText paragraphs={movement.description} sources={movement.sources} dropcap className="max-w-prose" />
         </section>
 
         {relatedEvents.length > 0 && (

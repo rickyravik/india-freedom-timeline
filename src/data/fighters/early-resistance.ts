@@ -102,6 +102,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       {
         title: 'The queen strikes back',
         text: 'With the help of Hyder Ali of Mysore and the Marudhu brothers, she raised an army — including a women’s unit named after her commander Udaiyaal — and took Sivaganga back around 1780.',
+        uncertainty: 'The story of her commander Kuyili’s fire attack comes from oral tradition; no contemporary record confirms it.',
       },
       {
         title: 'Veeramangai',
@@ -111,7 +112,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     fullBiography: [
       'Velu Nachiyar was born in 1730 to the Raja of Ramanathapuram and, as the only heir, received a prince’s education — martial arts, weaponry, horsemanship, and languages including French, English and Urdu. She married Muthuvaduganathaperiya Udaiyathevar, ruler of Sivaganga.',
       'In 1772 Company forces with the Nawab of Arcot’s army killed her husband at the Kalaiyar Koil battle. Velu Nachiyar escaped with her daughter and took refuge near Dindigul under the protection of Hyder Ali of Mysore, whom she impressed enough to win military support. For roughly eight years she built alliances, gathered intelligence and organized forces, aided by the Marudhu brothers.',
-      'Around 1780 she retook Sivaganga. Tradition holds that her commander Kuyili carried out a suicide attack — dousing herself in ghee and setting the Company’s ammunition store ablaze — one of the earliest such recorded acts; the details rest on oral tradition. Velu Nachiyar ruled for about a decade, granting the Marudhu brothers administrative powers, and died in 1796.',
+      'Around 1780 she retook Sivaganga.[^1] Tradition holds that her commander Kuyili carried out a suicide attack — dousing herself in ghee and setting the Company’s ammunition store ablaze — one of the earliest such recorded acts; the details rest on oral tradition. Velu Nachiyar ruled for about a decade, granting the Marudhu brothers administrative powers, and died in 1796.[^2]',
       'She stands at the head of a long line of fighting queens — Chennamma of Kittur, Lakshmibai of Jhansi, Begum Hazrat Mahal — and Tamil Nadu commemorates her each year; a coastal defence ship and a postage stamp carry her name.',
     ],
     entryIntoStruggle: 'The killing of her husband by Company and Arcot forces in 1772.',
@@ -130,28 +131,43 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       {
         claim: 'Kuyili’s fire attack',
         note: 'The celebrated account of Kuyili igniting the Sivaganga armoury comes from oral tradition and later retellings; contemporary documentation is lacking.',
+        paragraph: 2,
       },
     ],
     timelineEvents: [],
     movements: ['early-uprisings'],
     organizations: [],
     relatedPeople: ['marudhu-brothers', 'puli-thevar', 'rani-chennamma', 'rani-lakshmibai'],
+    connections: [
+      { id: 'marudhu-brothers', type: 'ally', note: 'The Marudhu brothers helped her raise the army that retook Sivaganga around 1780; she then granted them administrative powers, and they later ruled the kingdom themselves.' },
+    ],
     sources: [
       {
         title: 'Rani Velu Nachiyar commemorations',
         publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
         url: 'https://amritkaal.nic.in/',
         type: 'government',
+        evidence: 'reference',
       },
       {
         title: 'Sivaganga District Gazetteer',
         publisher: 'Government of Tamil Nadu',
         type: 'archive',
+        evidence: 'scholarship',
       },
     ],
     tags: ['queen', 'women', 'Tamil Nadu', 'early resistance'],
     featured: true,
     forgotten: true,
+    shortName: 'Velu Nachiyar',
+    pronunciation: 'VAY-loo NAH-chee-yar',
+    inAMinute: [
+      'Queen of Sivaganga in the Tamil country, trained from childhood in riding, archery and languages.',
+      'Widowed in 1772 when Company and Arcot forces killed her husband; spent eight years in hiding building alliances, then retook her kingdom around 1780.',
+      'One of the first Indian rulers to defeat the East India Company in battle and win a kingdom back — decades before 1857.',
+    ],
+    portraitNote: { kind: 'stamp', caption: 'Commemorative postage stamp issued by India Post, 2008. No contemporary likeness of the queen survives.', credit: 'India Post', created: '2008' },
+    editorial: { status: 'draft' },
   },
   {
     id: 'pazhassi-raja',

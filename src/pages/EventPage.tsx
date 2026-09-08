@@ -5,6 +5,7 @@ import { loadEvent, peekEvent } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { usePageMeta, useShare } from '@/lib/hooks';
 import { DisputedNotes, Icon, Postmark, Reveal, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
+import { ReadingText } from '@/components/reading';
 import { RouteFallback } from '@/components/layout';
 import { FighterCard } from '@/components/cards';
 import type { EventSummary, HistoricalEvent } from '@/types';
@@ -116,19 +117,15 @@ export default function EventPage() {
       ) : (
         <div className="container-page grid gap-12 pb-12 pt-14 lg:grid-cols-[1fr_320px] lg:gap-16">
           <div className="min-w-0 space-y-10">
-            <section className="max-w-prose space-y-5" aria-label="The story">
-              {event.description.map((para, i) => (
-                <Reveal as="p" key={i} className={`prose-reading ${i === 0 ? 'dropcap' : ''}`} delay={i * 60}>
-                  {para}
-                </Reveal>
-              ))}
+            <section aria-label="The story">
+              <ReadingText paragraphs={event.description} sources={event.sources} dropcap className="max-w-prose" />
             </section>
 
             {event.significance && (
               <Reveal as="section" className="doc p-6">
                 <div className="rule mb-4" />
                 <h2 className="text-h3 text-ink">Why it matters</h2>
-                <p className="prose-reading mt-3">{event.significance}</p>
+                <ReadingText paragraphs={[event.significance]} sources={event.sources} className="mt-3" />
               </Reveal>
             )}
 

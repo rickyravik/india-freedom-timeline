@@ -7,14 +7,15 @@ import { regionNames } from '@/data/regions';
 import { pushTrail, useBookmarks, useIsDesktop, usePageMeta, useShare, useTrail } from '@/lib/hooks';
 import { track } from '@/lib/analytics';
 import { DisputedNotes, Icon, LifespanBar, Postmark, PortraitMedallion, QuoteCard, Reveal, Segmented, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
+import { ReadingText } from '@/components/reading';
 import { RouteFallback } from '@/components/layout';
 import { EventCard, FighterChip } from '@/components/cards';
 import { Constellation } from '@/components/constellation';
-import type { FighterSummary, FreedomFighter, StoryChapter } from '@/types';
+import type { DisputedNote, FighterSummary, FreedomFighter, SourceRef, StoryChapter } from '@/types';
 
 /* ------------------------------------------------------------------ */
 /* Story Mode — stepper on phones, full chapter list on desktop         */
-function StoryMode({ chapters, accent }: { chapters: StoryChapter[]; accent: keyof typeof eraAccent.bg }) {
+function StoryMode({ chapters, accent, sources }: { chapters: StoryChapter[]; accent: keyof typeof eraAccent.bg; sources: SourceRef[] }) {
   const desktop = useIsDesktop();
   const [index, setIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
@@ -31,7 +32,13 @@ function StoryMode({ chapters, accent }: { chapters: StoryChapter[]; accent: key
               {i + 1}
             </span>
             <h3 className="text-h3 text-ink">{chapter.title}</h3>
-            <p className="prose-reading mt-2">{chapter.text}</p>
+            <ReadingText paragraphs={[chapter.text]} sources={sources} className="mt-2" />
+            {chapter.uncertainty && (
+              <p className="mt-3 font-body text-label text-ink-soft">
+                <span className="stamp mr-2 text-oxide-deep">Uncertain</span>
+                {chapter.uncertainty}
+              </p>
+            )}
           </Reveal>
         ))}
         {!desktop && (
@@ -55,7 +62,13 @@ function StoryMode({ chapters, accent }: { chapters: StoryChapter[]; accent: key
         <p className="label num mt-1">
           Chapter {index + 1} of {chapters.length}
         </p>
-        <p className="prose-reading mt-4">{chapter.text}</p>
+        <ReadingText paragraphs={[chapter.text]} sources={sources} className="mt-4" />
+        {chapter.uncertainty && (
+          <p className="mt-3 font-body text-label text-ink-soft">
+            <span className="stamp mr-2 text-oxide-deep">Uncertain</span>
+            {chapter.uncertainty}
+          </p>
+        )}
       </div>
       <div className="mt-4 flex items-center justify-between gap-3">
         <button type="button" className="btn-ghost !min-h-12 !px-5" onClick={() => setIndex((i) => Math.max(0, i - 1))} disabled={index === 0} aria-label="Previous chapter">
@@ -111,6 +124,12 @@ function ListBlock({ title, items }: { title: string; items?: string[] }) {
       </ul>
     </Reveal>
   );
+}
+
+function notesByParagraph(notes: DisputedNote[] | undefined): Record<number, DisputedNote[]> {
+  const out: Record<number, DisputedNote[]> = {};
+  for (const n of notes ?? []) if (n.paragraph !== undefined) (out[n.paragraph] ??= []).push(n);
+  return out;
 }
 
 function Ledger({ fighter }: { fighter: FreedomFighter }) {
@@ -288,15 +307,15 @@ export default function FighterProfilePage() {
                 </div>
 
                 {mode === 'story' ? (
-                  <StoryMode chapters={fighter.shortStory} accent={accent} />
+                  <StoryMode chapters={fighter.shortStory} accent={accent} sources={fighter.sources} />
                 ) : (
-                  <div className="max-w-prose space-y-5 animate-fade-in">
-                    {fighter.fullBiography.map((para, i) => (
-                      <p key={i} className={`prose-reading ${i === 0 ? 'dropcap' : ''}`}>
-                        {para}
-                      </p>
-                    ))}
-                  </div>
+                  <ReadingText
+                    paragraphs={fighter.fullBiography}
+                    sources={fighter.sources}
+                    dropcap
+                    className="max-w-prose animate-fade-in"
+                    notesByParagraph={notesByParagraph(fighter.disputed)}
+                  />
                 )}
               </section>
 
@@ -331,11 +350,13 @@ export default function FighterProfilePage() {
                 <Reveal as="section" className="doc p-6">
                   <div className="rule mb-4" />
                   <h3 className="text-h3 text-ink">Legacy</h3>
-                  <p className="prose-reading mt-3">{fighter.legacy}</p>
+                  <ReadingText paragraphs={[fighter.legacy]} sources={fighter.sources} className="mt-3" />
                 </Reveal>
               )}
 
-              {fighter.disputed && <DisputedNotes notes={fighter.disputed} />}
+              {fighter.disputed && fighter.disputed.filter((d) => d.paragraph === undefined).length > 0 && (
+                <DisputedNotes notes={fighter.disputed.filter((d) => d.paragraph === undefined)} />
+              )}
 
               {fighter.facts && fighter.facts.length > 0 && (
                 <Reveal as="section" className="doc p-6">
