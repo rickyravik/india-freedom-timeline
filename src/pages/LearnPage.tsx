@@ -5,9 +5,10 @@ import { didYouKnowFacts } from '@/data/facts';
 import { fighters, fighterById, lifespan, roleLabels, movementById, dailyShuffle, dailySeed } from '@/lib/content';
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
+import type { QuizTopic } from '@/types';
 import { usePageMeta } from '@/lib/hooks';
 import { track } from '@/lib/analytics';
-import { FactCard, Icon, PageIntro, PortraitMedallion, Reveal, SectionHeading, icons } from '@/components/ui';
+import { ChipGroup, FactCard, Icon, PageIntro, PortraitMedallion, Reveal, SectionHeading, icons } from '@/components/ui';
 
 /* ------------------------------------------------------------------ */
 interface ShuffledQuestion {
@@ -16,82 +17,131 @@ interface ShuffledQuestion {
   options: string[];
   answerIndex: number;
   explanation: string;
+  topic: QuizTopic;
+  difficulty: 1 | 2 | 3;
+  whyItMatters?: string;
   relatedLink?: { label: string; to: string };
 }
 
-function shuffleQuiz(): ShuffledQuestion[] {
-  return [...quizQuestions]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 8)
-    .map((q) => {
-      const answer = q.options[q.answerIndex];
-      const options = [...q.options].sort(() => Math.random() - 0.5);
-      return { ...q, options, answerIndex: options.indexOf(answer) };
-    });
-}
+type Topic = QuizTopic | 'all';
+type Difficulty = 1 | 2 | 3 | 'any';
 
-/* Same-day-stable version of shuffleQuiz, for the very first render only —
-   a prerendered snapshot and the browser hydrating it must compute the same
-   order. `restart()` (a user action, never part of a snapshot) uses the
-   real-random shuffleQuiz above instead. */
-function shuffleQuizDaily(): ShuffledQuestion[] {
-  return dailyShuffle(quizQuestions, 11)
-    .slice(0, 8)
-    .map((q, i) => {
-      const answer = q.options[q.answerIndex];
-      const options = dailyShuffle(q.options, i);
-      return { ...q, options, answerIndex: options.indexOf(answer) };
-    });
+/* `daily` picks a same-day-stable order for the very first, hydration-visible
+   render — a prerendered snapshot and the browser hydrating it must compute
+   the same set. Starting a new set (a user action, never part of a snapshot)
+   uses real randomness instead. */
+function pickQuestions(topic: Topic, difficulty: Difficulty, daily: boolean): ShuffledQuestion[] {
+  const pool = quizQuestions.filter((q) => (topic === 'all' || q.topic === topic) && (difficulty === 'any' || q.difficulty === difficulty));
+  const ordered = daily ? dailyShuffle(pool, 11) : [...pool].sort(() => Math.random() - 0.5);
+  /* Short sets: five questions, never a long test. */
+  return ordered.slice(0, 5).map((q, i) => {
+    const answer = q.options[q.answerIndex];
+    const options = daily ? dailyShuffle(q.options, i) : [...q.options].sort(() => Math.random() - 0.5);
+    return { ...q, options, answerIndex: options.indexOf(answer) };
+  });
 }
 
 function Quiz() {
-  const [questions, setQuestions] = useState<ShuffledQuestion[]>(shuffleQuizDaily);
+  const [stage, setStage] = useState<'start' | 'play' | 'review'>('start');
+  const [topic, setTopic] = useState<Topic>('all');
+  const [difficulty, setDifficulty] = useState<Difficulty>('any');
+  const [questions, setQuestions] = useState<ShuffledQuestion[]>([]);
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
-  const [score, setScore] = useState(0);
-  const [done, setDone] = useState(false);
+  const [answers, setAnswers] = useState<Record<string, number>>({});
 
-  const q = questions[index];
-  const restart = () => {
-    setQuestions(shuffleQuiz());
+  const start = (set: ShuffledQuestion[]) => {
+    setQuestions(set);
     setIndex(0);
     setPicked(null);
-    setScore(0);
-    setDone(false);
+    setAnswers({});
+    setStage('play');
   };
+  const missed = questions.filter((q) => answers[q.id] !== q.answerIndex);
 
-  if (done) {
+  if (stage === 'start') {
+    const pool = quizQuestions.filter((q) => (topic === 'all' || q.topic === topic) && (difficulty === 'any' || q.difficulty === difficulty)).length;
     return (
-      <div className="doc-mount p-8 text-center animate-fade-up">
-        <p className="font-display font-bold num text-h2 text-ink">
-          {score}
-          <span className="text-h3 text-ink-faint"> / {questions.length}</span>
+      <div className="doc-mount p-5 sm:p-7">
+        <p className="font-body text-meta text-ink-soft">Five questions, an explanation after each one, and no timer. Pick a topic and how deep to go.</p>
+        <div className="mt-5 space-y-4">
+          <ChipGroup
+            label="Topic"
+            options={[
+              { value: 'people' as Topic, label: 'People' },
+              { value: 'events' as Topic, label: 'Events' },
+              { value: 'movements' as Topic, label: 'Movements' },
+              { value: 'places' as Topic, label: 'Places' },
+            ]}
+            value={topic === 'all' ? null : topic}
+            onChange={(v) => setTopic(v ?? 'all')}
+          />
+          <ChipGroup
+            label="Depth"
+            allLabel="Any"
+            options={[
+              { value: '1', label: 'Recognise' },
+              { value: '2', label: 'Explain' },
+              { value: '3', label: 'Go deeper' },
+            ]}
+            value={difficulty === 'any' ? null : String(difficulty)}
+            onChange={(v) => setDifficulty(v ? (Number(v) as 1 | 2 | 3) : 'any')}
+          />
+        </div>
+        <button type="button" className="btn-seal mt-6" disabled={pool < 3} onClick={() => start(pickQuestions(topic, difficulty, true))}>
+          Start quiz
+        </button>
+        {pool < 3 && <p className="mt-2 font-body text-label text-ink-faint">Not enough questions for that combination yet — widen the topic or depth.</p>}
+      </div>
+    );
+  }
+
+  if (stage === 'review') {
+    const right = questions.length - missed.length;
+    return (
+      <div className="doc-mount p-5 sm:p-7 animate-fade-up">
+        <h3 className="text-h3 text-ink">Review</h3>
+        <p className="num mt-1 font-body text-meta text-ink-soft">
+          {right} of {questions.length} answered correctly. Every question you missed is a story waiting to be read.
         </p>
-        <p className="label num mt-2">Quiz complete</p>
-        <p className="mx-auto mt-3 max-w-sm font-body text-meta text-ink-soft">
-          {score === questions.length ? 'Perfect — a historian in the making.' : score >= questions.length / 2 ? 'Well done. Every question you missed is a story waiting to be read.' : 'A fine start — the timeline holds all the answers.'}
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button type="button" onClick={restart} className="btn-seal">
-            Try again
+        {missed.length > 0 && (
+          <ul className="mt-5 space-y-3" aria-label="Questions to revisit">
+            {missed.map((q) => (
+              <li key={q.id} className="doc p-4">
+                <p className="font-display text-h4 text-ink">{q.question}</p>
+                <p className="mt-1 font-body text-meta text-ink-soft">
+                  <span className="font-semibold text-forest-deep">{q.options[q.answerIndex]}</span> — {q.explanation}
+                </p>
+                {q.relatedLink && (
+                  <Link to={q.relatedLink.to} className="mt-2 inline-flex items-center gap-2 font-body text-meta font-medium text-oxide-deep underline decoration-oxide-deep/40 underline-offset-4">
+                    {q.relatedLink.label}
+                    <Icon d={icons.arrowRight} className="h-4 w-4" />
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="mt-6 flex flex-wrap gap-2">
+          {missed.length > 0 && (
+            <button type="button" className="btn-seal" onClick={() => start(missed.map((q) => ({ ...q })))}>
+              Retry the ones I missed
+            </button>
+          )}
+          <button type="button" className="btn-ghost" onClick={() => setStage('start')}>
+            New set
           </button>
-          <Link to="/timeline" className="btn-ghost">
-            Explore the timeline
-          </Link>
         </div>
       </div>
     );
   }
 
+  const q = questions[index];
   return (
     <div className="doc-mount p-5 sm:p-7" key={q.id}>
-      <div className="mb-4 flex items-center justify-between">
-        <p className="label num">
-          Question {index + 1} of {questions.length}
-        </p>
-        <p className="num font-display text-meta font-bold text-ink">Score {score}</p>
-      </div>
-      {/* progress */}
+      <p className="label num mb-4">
+        Question {index + 1} of {questions.length}
+      </p>
       <div className="mb-5 flex gap-1" aria-hidden="true">
         {questions.map((_, i) => (
           <span key={i} className={`h-1 flex-1 transition-colors duration-400 ${i < index ? 'bg-oxide' : i === index ? 'bg-brass' : 'bg-paper-300'}`} />
@@ -103,11 +153,7 @@ function Quiz() {
           const isPicked = picked === i;
           const isAnswer = i === q.answerIndex;
           let cls = 'border-paper-300 bg-paper-50 hover:border-ink';
-          if (picked !== null) {
-            if (isAnswer) cls = 'border-forest bg-forest-wash text-forest-deep font-semibold';
-            else if (isPicked) cls = 'border-oxide bg-oxide-wash text-oxide-deep';
-            else cls = 'border-paper-300 bg-paper-50 opacity-50';
-          }
+          if (picked !== null) cls = isAnswer ? 'border-forest bg-forest-wash text-forest-deep font-semibold' : isPicked ? 'border-oxide bg-oxide-wash text-oxide-deep' : 'border-paper-300 bg-paper-50 opacity-50';
           return (
             <button
               key={opt}
@@ -115,10 +161,9 @@ function Quiz() {
               disabled={picked !== null}
               onClick={() => {
                 setPicked(i);
-                if (i === q.answerIndex) setScore((s) => s + 1);
+                setAnswers((a) => ({ ...a, [q.id]: i }));
               }}
-              className={`flex min-h-12 items-center gap-3 rounded-sm border px-4 py-3 text-left font-body text-meta transition-[background-color,border-color,opacity] duration-400 ease-cinematic animate-fade-up ${cls}`}
-              style={{ animationDelay: `${60 + i * 50}ms` }}
+              className={`flex min-h-12 items-center gap-3 rounded-sm border px-4 py-3 text-left font-body text-meta transition-[background-color,border-color,opacity] duration-400 ease-cinematic ${cls}`}
             >
               <span className="num flex h-7 w-7 shrink-0 items-center justify-center rounded-sm border border-current font-display text-meta font-bold">{String.fromCharCode(65 + i)}</span>
               {opt}
@@ -127,8 +172,14 @@ function Quiz() {
         })}
       </div>
       {picked !== null && (
-        <div className="mt-5 rounded-sm bg-paper-200/70 p-5 animate-fade-up">
+        <section aria-label="Explanation" className="mt-5 rounded-sm bg-paper-200/70 p-5 animate-fade-up">
           <p className="prose-reading">{q.explanation}</p>
+          {q.whyItMatters && (
+            <p className="prose-reading mt-3">
+              <span className="stamp mr-2 text-sepia">Why it matters</span>
+              {q.whyItMatters}
+            </p>
+          )}
           <div className="mt-4 flex flex-wrap items-center gap-3">
             {q.relatedLink && (
               <Link to={q.relatedLink.to} className="inline-flex items-center gap-2 font-body text-meta font-medium text-oxide-deep underline decoration-oxide-deep/40 underline-offset-4">
@@ -141,18 +192,18 @@ function Quiz() {
               className="btn-seal ml-auto"
               onClick={() => {
                 if (index + 1 >= questions.length) {
-                  track('quiz_finished', { score, of: questions.length });
-                  setDone(true);
+                  track('quiz_reviewed', { of: questions.length });
+                  setStage('review');
                 } else {
                   setIndex((i) => i + 1);
                   setPicked(null);
                 }
               }}
             >
-              {index + 1 >= questions.length ? 'See result' : 'Next question'}
+              {index + 1 >= questions.length ? 'See review' : 'Next question'}
             </button>
           </div>
-        </div>
+        </section>
       )}
     </div>
   );
@@ -297,13 +348,13 @@ export default function LearnPage() {
       <div className="container-page space-y-14 sm:space-y-20">
         <div className="grid gap-8 lg:grid-cols-2">
           <section aria-label="History quiz">
-            <SectionHeading title="History quiz" />
+            <SectionHeading title="History quiz" lede="Five questions on a topic you choose, with an explanation after each. About three minutes." />
             <Reveal>
               <Quiz />
             </Reveal>
           </section>
           <section aria-label="Guess the freedom fighter">
-            <SectionHeading title="Guess the freedom fighter" />
+            <SectionHeading title="Guess the freedom fighter" lede="Four clues, one person. Type a guess or ask for another clue." />
             <Reveal delay={80}>
               <GuessWho />
             </Reveal>
@@ -311,7 +362,7 @@ export default function LearnPage() {
         </div>
 
         <section aria-label="Compare two historical figures">
-          <SectionHeading title="Compare two lives" lede="Choose any two people — a poet and a general, a queen and a satyagrahi — and see how their paths differed." />
+          <SectionHeading title="Compare two lives" lede="Two lives side by side, with a note on why they are worth comparing." />
           <Reveal>
             <Compare />
           </Reveal>
