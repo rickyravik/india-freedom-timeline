@@ -18,6 +18,7 @@ import { quizQuestions, guessWhoRounds } from '../src/data/quizzes.ts';
 import { didYouKnowFacts } from '../src/data/facts.ts';
 import { glossaryTerms } from '../src/data/glossary.ts';
 import { trails } from '../src/data/trails/index.ts';
+import { comparePairs } from '../src/data/compare-pairs.ts';
 import { fighterSummaries, fighterSourceFile } from '../src/data/generated/fighters.summary.ts';
 import { eventSummaries, eventSourceFile } from '../src/data/generated/events.summary.ts';
 import { connectionsById } from '../src/data/generated/connections.ts';
@@ -273,6 +274,14 @@ const trailSchema = z.object({
   editorial: editorialSchema,
 });
 
+const comparePairSchema = z.object({
+  id: z.string().min(1),
+  a: z.string().min(1),
+  b: z.string().min(1),
+  why: z.string().min(80),
+  editorial: editorialSchema,
+});
+
 /* -------------------------------------------------------------------- */
 /* Schema pass                                                           */
 function checkSchema<T>(collection: string, items: T[], schema: z.ZodType<T>, refOf: (item: T) => string) {
@@ -296,6 +305,7 @@ checkSchema('didYouKnowFacts', didYouKnowFacts, factSchema, (f) => f.id);
 checkSchema('guessWhoRounds', guessWhoRounds, guessWhoRoundSchema, (r) => r.id);
 checkSchema('glossary', glossaryTerms, glossaryTermSchema, (t) => t.id);
 checkSchema('trails', trails, trailSchema, (t) => t.id);
+checkSchema('comparePairs', comparePairs, comparePairSchema, (p) => p.id);
 
 /* -------------------------------------------------------------------- */
 /* Uniqueness                                                            */
@@ -316,6 +326,7 @@ checkUnique('organizations', organizations);
 checkUnique('eras', eras.map((e) => ({ id: e.id })));
 checkUnique('glossary', glossaryTerms.map((t) => ({ id: t.id })));
 checkUnique('trails', trails);
+checkUnique('comparePairs', comparePairs);
 
 /* -------------------------------------------------------------------- */
 /* Cross-references                                                      */
@@ -445,6 +456,13 @@ for (const t of trails) {
   if (t.editorial.status === 'draft') warn('trails', t.id, 'editorial status is draft');
 }
 
+for (const p of comparePairs) {
+  if (!fighterIds.has(p.a)) err('comparePairs', p.id, `"a" ("${p.a}") is not a fighter id`);
+  if (!fighterIds.has(p.b)) err('comparePairs', p.id, `"b" ("${p.b}") is not a fighter id`);
+  if (p.a === p.b) err('comparePairs', p.id, '"a" and "b" are the same fighter');
+  if (p.editorial.status === 'draft') warn('comparePairs', p.id, 'editorial status is draft');
+}
+
 /* -------------------------------------------------------------------- */
 /* Generated summary staleness — src/data/generated/*.summary.ts is        */
 /* committed, not built on the fly; catch it drifting from the full        */
@@ -481,7 +499,7 @@ for (const group of [errors, warnings]) {
 }
 
 console.log(
-  `\nValidated ${fighters.length} fighters, ${events.length} events, ${movements.length} movements, ${organizations.length} organizations, ${eras.length} eras, ${quizQuestions.length} quiz questions, ${didYouKnowFacts.length} facts, ${guessWhoRounds.length} guess-who rounds, ${glossaryTerms.length} glossary terms, ${trails.length} trails.`,
+  `\nValidated ${fighters.length} fighters, ${events.length} events, ${movements.length} movements, ${organizations.length} organizations, ${eras.length} eras, ${quizQuestions.length} quiz questions, ${didYouKnowFacts.length} facts, ${guessWhoRounds.length} guess-who rounds, ${glossaryTerms.length} glossary terms, ${trails.length} trails, ${comparePairs.length} compare pairs.`,
 );
 console.log(`${errors.length} error(s), ${warnings.length} warning(s).`);
 

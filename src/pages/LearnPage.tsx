@@ -2,13 +2,16 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { quizQuestions, guessWhoRounds } from '@/data/quizzes';
 import { didYouKnowFacts } from '@/data/facts';
+import { comparePairs } from '@/data/compare-pairs';
 import { fighters, fighterById, lifespan, roleLabels, movementById, dailyShuffle, dailySeed } from '@/lib/content';
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
 import type { QuizTopic } from '@/types';
 import { usePageMeta } from '@/lib/hooks';
 import { track } from '@/lib/analytics';
+import { diceCoefficient, normalizeTranslit } from '@/lib/search-core';
 import { ChipGroup, FactCard, Icon, PageIntro, PortraitMedallion, Reveal, SectionHeading, icons } from '@/components/ui';
+import { DraftStamp } from '@/components/reading';
 
 /* ------------------------------------------------------------------ */
 interface ShuffledQuestion {
@@ -214,6 +217,8 @@ function GuessWho() {
   const [roundIdx, setRoundIdx] = useState(() => dailySeed(13) % guessWhoRounds.length);
   const [cluesShown, setCluesShown] = useState(1);
   const [revealed, setRevealed] = useState(false);
+  const [guess, setGuess] = useState('');
+  const [verdict, setVerdict] = useState<'right' | 'wrong' | null>(null);
   const round = guessWhoRounds[roundIdx];
   const fighter = fighterById.get(round.answerId);
 
@@ -221,6 +226,16 @@ function GuessWho() {
     setRoundIdx((i) => (i + 1) % guessWhoRounds.length);
     setCluesShown(1);
     setRevealed(false);
+    setGuess('');
+    setVerdict(null);
+  };
+
+  const check = () => {
+    const g = normalizeTranslit(guess);
+    const names = [round.answerName, fighter?.name ?? '', ...(fighter?.alternateNames ?? [])].map(normalizeTranslit);
+    const ok = g.length >= 3 && names.some((n) => n === g || n.includes(g) || diceCoefficient(n, g) >= 0.8);
+    setVerdict(ok ? 'right' : 'wrong');
+    if (ok) setRevealed(true);
   };
 
   return (
@@ -234,6 +249,30 @@ function GuessWho() {
           </li>
         ))}
       </ol>
+      {!revealed && (
+        <form
+          className="mt-5 flex flex-wrap gap-2"
+          onSubmit={(e) => {
+            e.preventDefault();
+            check();
+          }}
+        >
+          <label className="min-w-0 flex-1">
+            <span className="sr-only">Your guess</span>
+            <input
+              aria-label="Your guess"
+              value={guess}
+              onChange={(e) => setGuess(e.target.value)}
+              className="min-h-11 w-full rounded-sm border border-paper-100/40 bg-transparent px-3 font-body text-meta text-paper-50 placeholder:text-paper-400"
+              placeholder="Type a name…"
+            />
+          </label>
+          <button type="submit" className="btn-seal">
+            Check
+          </button>
+        </form>
+      )}
+      {verdict && <p role="status" className="mt-3 font-body text-meta text-paper-200">{verdict === 'right' ? 'That’s right.' : 'Not this time — try another clue, or reveal.'}</p>}
       <div className="mt-5 flex flex-wrap gap-2">
         {!revealed && cluesShown < round.clues.length && (
           <button type="button" className="btn-ghost-vault" onClick={() => setCluesShown((c) => c + 1)}>
@@ -284,17 +323,48 @@ function Compare() {
   const sorted = useMemo(() => [...fighters].sort((x, y) => x.name.localeCompare(y.name)), []);
   const [aId, setAId] = useState('bhagat-singh');
   const [bId, setBId] = useState('mahatma-gandhi');
+  const [pairId, setPairId] = useState<string | null>(null);
   const a = fighterById.get(aId);
   const b = fighterById.get(bId);
+  const pair = comparePairs.find((p) => p.id === pairId);
   if (!a || !b) return null;
   const selectCls = 'min-h-12 w-full rounded-sm border border-paper-300 bg-paper-50 px-4 font-body text-meta font-medium text-ink focus:border-ink';
 
   return (
     <div className="doc-mount p-5 sm:p-7">
+      <p className="label mb-2">Suggested pairs</p>
+      <div className="mb-4 flex flex-wrap gap-2" role="group" aria-label="Suggested pairs">
+        {comparePairs.map((p) => {
+          const pa = fighterById.get(p.a);
+          const pb = fighterById.get(p.b);
+          return pa && pb ? (
+            <button
+              key={p.id}
+              type="button"
+              className={`chip ${pairId === p.id ? 'chip-active' : ''}`}
+              aria-pressed={pairId === p.id}
+              onClick={() => {
+                setAId(p.a);
+                setBId(p.b);
+                setPairId(p.id);
+              }}
+            >
+              {pa.shortName ?? pa.name} · {pb.shortName ?? pb.name}
+            </button>
+          ) : null;
+        })}
+      </div>
       <div className="grid grid-cols-2 gap-3">
         <label>
           <span className="sr-only">First person</span>
-          <select className={selectCls} value={aId} onChange={(e) => setAId(e.target.value)}>
+          <select
+            className={selectCls}
+            value={aId}
+            onChange={(e) => {
+              setAId(e.target.value);
+              setPairId(null);
+            }}
+          >
             {sorted.map((f) => (
               <option key={f.id} value={f.id}>
                 {f.name}
@@ -304,7 +374,14 @@ function Compare() {
         </label>
         <label>
           <span className="sr-only">Second person</span>
-          <select className={selectCls} value={bId} onChange={(e) => setBId(e.target.value)}>
+          <select
+            className={selectCls}
+            value={bId}
+            onChange={(e) => {
+              setBId(e.target.value);
+              setPairId(null);
+            }}
+          >
             {sorted.map((f) => (
               <option key={f.id} value={f.id}>
                 {f.name}
@@ -330,6 +407,17 @@ function Compare() {
         <CompareRow label="Ideology" a={a.ideology} b={b.ideology} />
         <CompareRow label="Legacy" a={a.legacy} b={b.legacy} />
       </div>
+      {pair && (
+        <div className="mt-5 rounded-sm bg-paper-200/70 p-5">
+          <p className="label mb-1">Why compare them</p>
+          <p className="prose-reading">{pair.why}</p>
+          {pair.editorial.status === 'draft' && (
+            <div className="mt-2">
+              <DraftStamp />
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

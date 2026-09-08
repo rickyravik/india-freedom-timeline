@@ -442,3 +442,12 @@ export interface Trail {
   followOn: { label: string; to: string };
   editorial: Editorial;
 }
+
+/** Two lives worth reading side by side, and why. Never a ranking. */
+export interface ComparePair {
+  id: string;
+  a: string;
+  b: string;
+  why: string;
+  editorial: Editorial;
+}
