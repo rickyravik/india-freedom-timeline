@@ -1,10 +1,11 @@
 import { useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import type { Gender, RegionId, Role } from '@/types';
 import { fighters, roleLabels } from '@/lib/content';
 import { eras } from '@/data/eras';
 import { regionNames } from '@/data/regions';
 import { useBookmarks, usePageMeta } from '@/lib/hooks';
+import { buildIndex, searchIndex } from '@/lib/search-core';
 import { BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, icons } from '@/components/ui';
 import { FighterCard } from '@/components/cards';
 
@@ -24,6 +25,10 @@ const regionValues = new Set<RegionId>(Object.keys(regionNames) as RegionId[]);
 const roleValues = new Set<Role>(Object.keys(roleLabels) as Role[]);
 const eraValues = new Set(eras.map(({ id }) => id));
 
+/* People-only index, built once. Same four-tier matcher as global search, so
+   a spelling that works in the palette works here too. */
+const peopleIndex = buildIndex(fighters, [], []);
+
 export default function FightersPage() {
   usePageMeta('Freedom Fighters', 'Browse the people of India’s freedom struggle — revolutionaries, satyagrahis, queens, poets and tribal leaders from every region.');
   const [params] = useSearchParams();
@@ -41,8 +46,12 @@ export default function FightersPage() {
   const [sheetOpen, setSheetOpen] = useState(false);
   const { bookmarks } = useBookmarks();
 
+  const q = query.trim();
+  const matched = useMemo(() => (q.length >= 2 ? searchIndex(peopleIndex, q, fighters.length) : null), [q]);
+  const fuzzyHint = matched && matched[0] && !matched[0].exact ? matched[0].title : null;
+
   const results = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const rank = matched ? new Map(matched.map((r, i) => [r.to.replace('/fighters/', ''), i])) : null;
     const list = fighters.filter((f) => {
       if (collection === 'featured' && !f.featured) return false;
       if (collection === 'forgotten' && !f.forgotten) return false;
@@ -52,14 +61,13 @@ export default function FightersPage() {
       if (eraId && f.era !== eraId) return false;
       if (role && !f.roles.includes(role)) return false;
       if (gender && f.gender !== gender) return false;
-      if (q) {
-        const hay = [f.name, ...(f.alternateNames ?? []), f.birthPlace ?? '', f.states.join(' '), (f.tags ?? []).join(' ')].join(' ').toLowerCase();
-        if (!hay.includes(q)) return false;
-      }
+      if (rank && !rank.has(f.slug)) return false;
       return true;
     });
+    /* With a query, relevance order; otherwise the chosen sort. */
+    if (rank) return list.sort((a, b) => rank.get(a.slug)! - rank.get(b.slug)!);
     return sort === 'name' ? list.sort((a, b) => a.name.localeCompare(b.name)) : list.sort((a, b) => (a.birthYear ?? 0) - (b.birthYear ?? 0));
-  }, [query, collection, region, eraId, role, gender, sort, bookmarks]);
+  }, [matched, collection, region, eraId, role, gender, sort, bookmarks]);
 
   const activeCount = [region, eraId, role, gender].filter(Boolean).length;
 
@@ -126,10 +134,22 @@ export default function FightersPage() {
         <p className="num mb-4 font-body text-label text-ink-faint" role="status">
           Showing {results.length} of {fighters.length}
         </p>
+        {fuzzyHint && (
+          <p className="label mb-3">
+            Did you mean <span className="font-semibold text-sepia">{fuzzyHint}</span>?
+          </p>
+        )}
         {results.length === 0 ? (
           <EmptyState
             title={collection === 'saved' ? 'No saved stories yet' : 'No one matches these filters'}
             hint={collection === 'saved' ? 'Tap "Save this story" on any profile to keep it here.' : 'Try clearing a filter or two.'}
+            action={
+              q.length >= 2 && (
+                <Link to={`/search?q=${encodeURIComponent(q)}`} className="btn-ghost">
+                  Search the whole archive
+                </Link>
+              )
+            }
           />
         ) : (
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

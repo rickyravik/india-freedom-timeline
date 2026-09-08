@@ -17,6 +17,10 @@ import { eventSummaries } from '../src/data/generated/events.summary.ts';
 import { movements } from '../src/data/movements.ts';
 
 const index = buildIndex(fighterSummaries, eventSummaries, movements);
+// The People page filters with a people-only index (no events/movements), so
+// the same spelling tolerance must hold there — this was the 7 September
+// finding: "laxmibai" worked in global search and found nobody under People.
+const peopleIndex = buildIndex(fighterSummaries, [], []);
 
 interface Case {
   query: string;
@@ -50,6 +54,13 @@ for (const { query, expectSlugIncludes } of cases) {
   const top = results[0];
   const ok = top?.to.includes(expectSlugIncludes);
   console.log(`${ok ? 'ok  ' : 'FAIL'} "${query}" -> ${top?.to ?? '(no results)'} (expected to include "${expectSlugIncludes}")`);
+  if (!ok) failed = true;
+}
+
+{
+  const top = searchIndex(peopleIndex, 'laxmibai', 5)[0];
+  const ok = top?.to.includes('lakshmibai');
+  console.log(`${ok ? 'ok  ' : 'FAIL'} people-only "laxmibai" -> ${top?.to ?? '(no results)'}`);
   if (!ok) failed = true;
 }
 
