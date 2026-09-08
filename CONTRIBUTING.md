@@ -5,7 +5,7 @@ Content is data, not code — every fighter, event and movement lives in `src/da
 ## Adding a fighter or event
 
 1. Copy the relevant template — [`docs/templates/fighter.template.ts`](./docs/templates/fighter.template.ts) or [`docs/templates/event.template.ts`](./docs/templates/event.template.ts) — into the right file under `src/data/fighters/` or `src/data/events/` (grouped by era; add to an existing file unless you're introducing a whole new period, in which case create a file and export it through that folder's `index.ts`).
-2. Fill in every field the template comments call for. TypeScript's strict mode will flag missing required fields immediately.
+2. Fill in every field the template comments call for. TypeScript's strict mode will flag missing required fields immediately. Use `shortName` for the form of the name a heading should use; the UI never guesses one from the last word.
 3. Link it both ways: reference event ids in `timelineEvents`, movement ids in `movements`, organization ids in `organizations`, and fighter ids in `relatedPeople` — the validator checks every one of these resolves to a real record.
 4. Run `npm run validate` (also runs automatically as the first step of `npm run build`).
 

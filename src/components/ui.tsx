@@ -313,6 +313,12 @@ export function LifespanBar({ birth, death, vault = true }: { birth?: number; de
         <span className="absolute left-1/2 -translate-x-1/2">a life against the struggle</span>
         <span className="absolute -translate-x-1/2" style={{ left: `${pct(1947)}%` }}>1947</span>
       </figcaption>
+      {((birth !== undefined && birth < 1757) || (death !== undefined && death > 1947)) && (
+        <p className={`num mt-5 font-body text-xs ${vault ? 'text-paper-200' : 'text-ink-faint'}`}>
+          {birth !== undefined && birth < 1757 && `Born ${birth}, before this frame begins. `}
+          {death !== undefined && death > 1947 && `Lived to ${death}, beyond the end of this frame.`}
+        </p>
+      )}
     </figure>
   );
 }

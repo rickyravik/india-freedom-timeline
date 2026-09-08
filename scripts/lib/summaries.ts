@@ -13,6 +13,7 @@ export function pickFighterSummary(f: FreedomFighter): FighterSummary {
     slug: f.slug,
     name: f.name,
     alternateNames: f.alternateNames,
+    shortName: f.shortName,
     portrait: f.portrait,
     birthYear: f.birthYear,
     deathYear: f.deathYear,

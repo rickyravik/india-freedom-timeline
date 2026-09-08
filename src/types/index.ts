@@ -106,6 +106,8 @@ export interface FreedomFighter {
   slug: string;
   name: string;
   alternateNames?: string[];
+  /** Editorial short form for headings ("Velu Nachiyar", "Bhagat Singh"). Defaults to `name`; never derived automatically from the last word. */
+  shortName?: string;
   /** Path to a portrait image when one is added; the UI falls back to a generated archival monogram. */
   portrait?: string;
   birthYear?: number;
@@ -202,6 +204,7 @@ export interface FighterSummary {
   slug: string;
   name: string;
   alternateNames?: string[];
+  shortName?: string;
   portrait?: string;
   birthYear?: number;
   deathYear?: number;

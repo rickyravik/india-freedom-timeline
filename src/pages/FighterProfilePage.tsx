@@ -421,7 +421,7 @@ export default function FighterProfilePage() {
               <div className="container-page">
                 <Reveal className="mb-8 max-w-2xl">
                   <div className="rule-double-vault mb-5" />
-                  <h2 className="text-h2 text-paper-50">People connected to {summary.name.split(' ').slice(-1)[0]}</h2>
+                  <h2 className="text-h2 text-paper-50">People connected to {summary.shortName ?? summary.name}</h2>
                   <p className="mt-2 font-body text-meta text-paper-300">Comrades, rivals, mentors and inheritors — every life connects to others. Select anyone to follow the thread.</p>
                 </Reveal>
                 <Constellation subject={summary} related={related} />

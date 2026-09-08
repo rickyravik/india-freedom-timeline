@@ -154,24 +154,27 @@ export default function EventPage() {
       )}
 
       {(neighbours.next.length > 0 || neighbours.prev.length > 0) && (
-        <section className="vault mt-14 px-5 py-12 sm:mt-20 sm:px-8 sm:py-16" aria-label="Before and after">
+        <section className="vault mt-14 px-5 py-12 sm:mt-20 sm:px-8 sm:py-16" aria-label="Neighbouring records">
           <div className="container-page">
-            <Reveal className="mb-8">
+            <Reveal className="mb-8 max-w-2xl">
               <div className="rule-double-vault mb-5" />
-              <h2 className="text-h2 text-paper-50">What happened next?</h2>
+              <h2 className="text-h2 text-paper-50">Next in this collection</h2>
+              <p className="mt-2 font-body text-meta text-paper-300">
+                These are the chronological neighbours in the archive, not a chain of cause and effect. Much happened between them that this collection does not yet hold.
+              </p>
             </Reveal>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {neighbours.prev.map((e) => (
                 <Link key={e.id} to={`/events/${e.slug}`} className="group rounded-sm border border-paper-100/15 p-5 transition-colors duration-160 ease-cinematic hover:border-paper-100/60">
                   <p className="font-display text-h3 font-bold text-paper-50 group-hover:text-brass-bright">{e.title}</p>
-                  <p className="label-vault num mt-1 inline-flex items-center gap-2"><Icon d={icons.arrowLeft} className="h-4 w-4" />Before · {e.date.year}</p>
+                  <p className="label-vault num mt-1 inline-flex items-center gap-2"><Icon d={icons.arrowLeft} className="h-4 w-4" />Earlier · {e.date.year}</p>
                 </Link>
               ))}
               {neighbours.next.map((e, i) => (
                 <Link key={e.id} to={`/events/${e.slug}`} className="group rounded-sm border border-paper-100/15 p-5 transition-colors duration-160 ease-cinematic hover:border-paper-100/60">
                   <p className="font-display text-h3 font-bold text-paper-50 group-hover:text-brass-bright">{e.title}</p>
                   <p className="label-vault num mt-1 inline-flex items-center gap-2">
-                    {i === 0 ? 'Next' : 'Then'} · {e.date.year}
+                    {i === 0 ? 'Next' : 'Later'} · {e.date.year}
                     <Icon d={icons.arrowRight} className="h-4 w-4" />
                   </p>
                   <p className="mt-1.5 line-clamp-2 font-body text-meta text-paper-300">{e.summary}</p>

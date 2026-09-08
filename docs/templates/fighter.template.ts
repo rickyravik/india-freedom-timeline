@@ -10,6 +10,7 @@ export const fighterTemplate: FreedomFighter = {
   slug: 'kebab-case-id', // usually the same as id; this is the URL /fighters/<slug>
   name: 'Full name as commonly known',
   alternateNames: ['Other name or title, if any'], // optional — omit the key if none
+  shortName: 'Short form for headings', // optional — used in "People connected to …"; omit to use the full name
   portrait: undefined, // optional: '/images/fighters/<slug>.jpg' — only a genuine, correctly-attributed, freely-licensed image
   birthYear: 1900, // optional if genuinely unknown, but include whenever documented
   deathYear: 1950,

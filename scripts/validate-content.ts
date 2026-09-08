@@ -68,6 +68,7 @@ const fighterSchema = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/, 'slug must be lowercase kebab-case'),
   name: z.string().min(1),
   alternateNames: z.array(z.string()).optional(),
+  shortName: z.string().min(1).optional(),
   portrait: z.string().optional(),
   birthYear: z.number().optional(),
   deathYear: z.number().optional(),

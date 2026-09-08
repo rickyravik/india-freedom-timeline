@@ -84,10 +84,10 @@ function TodayLedger() {
   const monthLabel = today.toLocaleDateString('en-IN', { month: 'long' });
 
   return (
-    <Reveal as="section" aria-label="Today in freedom history" className="doc overflow-hidden">
+    <Reveal as="section" aria-label="Today" className="doc overflow-hidden">
       <div className="grid sm:grid-cols-[180px_1fr]">
         <div className="flex flex-col justify-between border-b border-paper-400 bg-paper-200/60 p-5 sm:border-b-0 sm:border-r">
-          <p className="label">Today in freedom history</p>
+          <p className="label">{hasContent ? 'Today in freedom history' : 'Today’s featured story'}</p>
           <p className="num mt-3 font-display text-h1 font-bold leading-none text-oxide">{dayLabel}</p>
           <p className="font-display text-lg font-bold text-ink">{monthLabel}</p>
         </div>
@@ -116,14 +116,14 @@ function TodayLedger() {
             </ul>
           ) : (
             <div>
-              <p className="font-body text-meta text-ink-faint">No dated record for today. Meet today’s featured life instead:</p>
-              <Link to={`/fighters/${fallback.slug}`} className="group mt-2 block">
+              <Link to={`/fighters/${fallback.slug}`} className="group block">
                 <span className="inline-flex items-center gap-2 font-display text-h3 font-bold text-ink group-hover:text-oxide">
                   {fallback.name}
                   <Icon d={icons.arrowRight} className="h-4 w-4" />
                 </span>
                 <span className="mt-1 block font-body text-meta text-ink-soft">{fallback.summary}</span>
               </Link>
+              <p className="mt-3 font-body text-label text-ink-faint">A different life each day. Dated anniversaries appear here when the collection holds one.</p>
             </div>
           )}
         </div>
