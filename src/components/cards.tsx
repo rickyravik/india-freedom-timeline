@@ -128,7 +128,7 @@ export function EventCard({ event }: { event: EventSummary; delay?: number }) {
           <p className={`denom ${era ? eraAccent.text[era.accent] : 'text-oxide-deep'}`}>{event.date.year}</p>
           <p className="mt-1.5 font-body text-xs font-medium text-ink-faint">{categoryLabels[event.category]}</p>
         </div>
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1 break-words">
           <p className="font-display text-h4 font-bold text-ink transition-colors duration-160 group-hover:text-oxide-deep">{event.title}</p>
           {event.location && <p className="mt-0.5 font-body text-label text-ink-faint">{event.location}</p>}
           <p className="mt-1.5 line-clamp-3 font-body text-meta text-ink-soft">{clip(event.summary, 165)}</p>

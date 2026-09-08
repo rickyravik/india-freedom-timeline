@@ -283,7 +283,9 @@ export default function MapPage() {
                   {stateEvents.length > 0 && (
                     <section aria-label={`Events in ${selected.name}`}>
                       <p className="label num mb-3">Events · {stateEvents.length}</p>
-                      <div className="grid gap-3 sm:grid-cols-2">
+                      {/* One column: this panel is narrower than the fighters grid can
+                         assume, and event titles run long ("Panchalankurichi", "Tiruchirappalli"). */}
+                      <div className="grid gap-3">
                         {stateEvents.map((e, i) => (
                           <EventCard key={e.id} event={e} delay={(i % 6) * 50} />
                         ))}
