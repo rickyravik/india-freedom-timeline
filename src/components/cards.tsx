@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { EventSummary, FighterSummary, Movement } from '@/types';
-import { categoryLabels, lifespan, roleLabels } from '@/lib/content';
+import { categoryLabels, fightersForEvent, lifespan, roleLabels } from '@/lib/content';
 import { eraById } from '@/data/eras';
 import { Icon, PortraitMedallion, Reveal, eraAccent, icons } from '@/components/ui';
 
@@ -134,6 +134,44 @@ export function EventCard({ event }: { event: EventSummary; delay?: number }) {
           <p className="mt-1.5 line-clamp-3 font-body text-meta text-ink-soft">{clip(event.summary, 165)}</p>
         </div>
       </Link>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Event row — the directory's full-width ledger line                  */
+function dateSubLine(event: EventSummary): string {
+  if (event.dateLabel.includes('–')) return event.dateLabel;
+  return event.dateLabel.replace(String(event.date.year), '').trim();
+}
+
+export function EventRow({ event }: { event: EventSummary }) {
+  const era = eraById.get(event.era);
+  const people = fightersForEvent(event).slice(0, 3);
+  const sub = dateSubLine(event);
+  return (
+    <article className="doc grid gap-3 p-4 sm:grid-cols-[7.5rem_1fr] sm:gap-6 sm:p-5">
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-paper-400/80 pb-3 sm:block sm:border-b-0 sm:border-r sm:pb-0 sm:pr-5">
+        <time className={`denom block ${era ? eraAccent.text[era.accent] : 'text-oxide-deep'}`}>{event.date.year}</time>
+        {sub && <p className="num font-body text-xs font-medium text-ink-soft sm:mt-1.5">{sub}</p>}
+        <p className="stamp text-sepia sm:mt-2">{categoryLabels[event.category]}</p>
+      </div>
+      <div className="min-w-0">
+        {event.location && <p className="font-body text-label text-ink-faint">{event.location}</p>}
+        <h3 className="mt-0.5 text-h4">
+          <Link to={`/events/${event.slug}`} className="text-ink transition-colors duration-160 hover:text-oxide-deep">
+            {event.title}
+          </Link>
+        </h3>
+        <p className="mt-1.5 font-body text-meta text-ink-soft">{event.summary}</p>
+        {people.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {people.map((f) => (
+              <FighterChip key={f.id} fighter={f} />
+            ))}
+          </div>
+        )}
+      </div>
+    </article>
   );
 }
 
