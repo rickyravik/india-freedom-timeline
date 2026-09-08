@@ -33,3 +33,23 @@ test('reduce motion stops reveals from hiding content, everywhere', async ({ pag
   const reveal = page.locator('.reveal, .reveal-mask').first();
   await expect(reveal).toHaveCSS('opacity', '1');
 });
+
+test('switching reading mode keeps focus on the control and the heading in place', async ({ page }) => {
+  await page.goto('/fighters/bhagat-singh');
+  const heading = page.getByRole('heading', { name: 'Quick story' });
+  const detail = page.getByRole('button', { name: 'Detailed history' });
+  // Bring the control into view first, so the upcoming focus() call — which
+  // would otherwise auto-scroll on its own — can't shift the viewport
+  // between the "before" and "after" measurements.
+  await detail.scrollIntoViewIfNeeded();
+  const before = await heading.boundingBox();
+  await detail.focus();
+  await page.keyboard.press('Enter');
+  await expect(detail).toBeFocused();
+  const detailHeading = page.getByRole('heading', { name: 'Detailed history' });
+  await expect(detailHeading).toBeVisible();
+  const after = await detailHeading.boundingBox();
+  expect(Math.abs(after!.y - before!.y)).toBeLessThan(2);
+  const dur = await page.locator('[data-mode-swap]').evaluate((el) => getComputedStyle(el).animationDuration);
+  expect(dur).toBe('0.16s');
+});

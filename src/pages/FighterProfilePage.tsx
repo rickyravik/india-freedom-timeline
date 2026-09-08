@@ -381,22 +381,24 @@ export default function FighterProfilePage() {
 
               <section id="story" aria-label="Life story" className="scroll-mt-28">
                 <div className="rule-double mb-5" />
-                <div className="mb-2 flex flex-wrap items-center justify-between gap-3">
+                <div className="mb-2 flex flex-wrap items-start justify-between gap-3">
                   <h2 className="text-h2 text-ink">{mode === 'story' ? 'Quick story' : 'Detailed history'}</h2>
                   <ReadingToolbar />
                 </div>
                 <p className="label num mb-6">{readingTimeLabel(mode === 'story' ? readingMinutes(wordCount(fighter.shortStory.map((c) => c.text).join(' '))) : summary.readingMinutes)}</p>
-                {mode === 'story' ? (
-                  <StoryMode chapters={fighter.shortStory} accent={accent} sources={fighter.sources} />
-                ) : (
-                  <ReadingText
-                    paragraphs={fighter.fullBiography}
-                    sources={fighter.sources}
-                    dropcap
-                    className="max-w-prose animate-fade-in"
-                    notesByParagraph={notesByParagraph(fighter.disputed)}
-                  />
-                )}
+                <div key={mode} data-mode-swap className="animate-mode-swap">
+                  {mode === 'story' ? (
+                    <StoryMode chapters={fighter.shortStory} accent={accent} sources={fighter.sources} />
+                  ) : (
+                    <ReadingText
+                      paragraphs={fighter.fullBiography}
+                      sources={fighter.sources}
+                      dropcap
+                      className="max-w-prose"
+                      notesByParagraph={notesByParagraph(fighter.disputed)}
+                    />
+                  )}
+                </div>
               </section>
 
               {mode === 'detail' && (

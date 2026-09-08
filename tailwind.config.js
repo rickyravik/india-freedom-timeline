@@ -151,6 +151,7 @@ export default {
         'page-enter': 'pageEnter 0.4s cubic-bezier(0.22,0.61,0.36,1) both',
         'draw-line': 'drawLine 1.1s cubic-bezier(0.22,0.61,0.36,1) both',
         'stamp-in': 'stampIn 0.22s cubic-bezier(0.22,0.61,0.36,1) both',
+        'mode-swap': 'fadeIn 0.16s cubic-bezier(0.22,0.61,0.36,1) both',
       },
     },
   },
