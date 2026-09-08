@@ -1,10 +1,11 @@
-import { useMemo, useState, type CSSProperties } from 'react';
+import { useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import { eventsForState, fightersForState, movements } from '@/lib/content';
-import { regionNames, states } from '@/data/regions';
-import type { RegionId, StateInfo } from '@/types';
-import { usePageMeta } from '@/lib/hooks';
-import { EmptyState, Icon, PageIntro, Reveal, icons } from '@/components/ui';
+import { regionNames, states, stateById } from '@/data/regions';
+import type { RegionId } from '@/types';
+import { usePageMeta, useUrlState } from '@/lib/hooks';
+import { oneOf, oneOfDefault } from '@/lib/url-state';
+import { EmptyState, Icon, PageIntro, Reveal, Segmented, icons } from '@/components/ui';
 import { EventCard, FighterCard } from '@/components/cards';
 
 /* One stamp ink per region — the sheet is printed in seven inks. Ochre and
@@ -60,29 +61,71 @@ const stateCodes: Record<string, string> = {
   abroad: 'Abroad',
 };
 
+const mapParams = {
+  state: oneOf(states.map((s) => s.id)),
+  view: oneOfDefault(['map', 'list'] as const, 'map'),
+};
+const peopleCount = new Map(states.map((s) => [s.id, fightersForState(s.name).length]));
+const eventCount = new Map(states.map((s) => [s.id, eventsForState(s.name).length]));
+
 export default function MapPage() {
   usePageMeta('Explore by Region', 'A stylised map of India — select a state to discover its freedom fighters, movements and events.');
-  const [selected, setSelected] = useState<StateInfo | null>(null);
+  const [params, setParams] = useUrlState(mapParams);
+  const selected = params.state ? stateById.get(params.state) ?? null : null;
+  const select = (id: string | null) => setParams({ state: id });
   const [hoverRegion, setHoverRegion] = useState<RegionId | null>(null);
+  const resultsRef = useRef<HTMLHeadingElement>(null);
+  const counts = peopleCount;
+  const viewStories = () => {
+    resultsRef.current?.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    resultsRef.current?.focus({ preventScroll: true });
+  };
 
-  const stateFighters = useMemo(() => (selected ? fightersForState(selected.name) : []), [selected]);
-  const stateEvents = useMemo(() => (selected ? eventsForState(selected.name) : []), [selected]);
-  const stateMovements = useMemo(() => {
+  const stateFighters = selected ? fightersForState(selected.name) : [];
+  const stateEvents = selected ? eventsForState(selected.name) : [];
+  const stateMovements = (() => {
     if (!selected) return [];
     const ids = new Set(stateFighters.flatMap((f) => f.movements));
     return movements.filter((m) => ids.has(m.id));
-  }, [selected, stateFighters]);
-  const counts = useMemo(() => new Map(states.map((s) => [s.id, fightersForState(s.name).length])), []);
+  })();
 
   return (
     <div className="pb-20">
       <PageIntro
         title="Explore by State & Region"
-        lede="Select a state to meet its freedom fighters and relive its battles, marches and uprisings. A stylised, schematic map — tiles show modern states, not exact boundaries."
-      />
+        lede="Choose a state to meet its freedom fighters and the battles, marches and uprisings that happened there. The tiles are a schematic of present-day states, not a boundary map — see the note below the sheet."
+      >
+        <div className="flex flex-wrap items-end gap-3">
+          <label className="block min-w-0 flex-1 sm:max-w-sm">
+            <span className="label mb-1.5 block">Choose a state</span>
+            <select
+              className="min-h-12 w-full rounded-sm border border-paper-400 bg-paper-50 px-4 font-body text-meta font-medium text-ink focus:border-ink"
+              value={params.state ?? ''}
+              onChange={(e) => select(e.target.value || null)}
+            >
+              <option value="">All of India</option>
+              {states.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.name} ({peopleCount.get(s.id)} people, {eventCount.get(s.id)} events)
+                </option>
+              ))}
+            </select>
+          </label>
+          <Segmented
+            label="View"
+            value={params.view}
+            onChange={(v) => setParams({ view: v })}
+            options={[
+              { value: 'map', label: 'Map' },
+              { value: 'list', label: 'List' },
+            ]}
+          />
+        </div>
+      </PageIntro>
 
       <div className="container-page grid gap-8 lg:grid-cols-[minmax(0,520px)_1fr] lg:gap-12">
         {/* A sheet of stamps — every state is one perforated pane */}
+        {params.view === 'map' ? (
         <Reveal className="min-w-0 lg:sticky lg:top-20 lg:self-start">
           <div className="vault px-4 py-5 sm:px-5 sm:py-6">
             {/* The mount: the panes' teeth are cut from this ground */}
@@ -102,7 +145,7 @@ export default function MapPage() {
                       <button
                         key={s.id}
                         type="button"
-                        onClick={() => setSelected(isSel ? null : s)}
+                        onClick={() => select(isSel ? null : s.id)}
                         onMouseEnter={() => setHoverRegion(s.region)}
                         onMouseLeave={() => setHoverRegion(null)}
                         onFocus={() => setHoverRegion(s.region)}
@@ -147,7 +190,35 @@ export default function MapPage() {
             </ul>
             <p className="mt-3 font-body text-xs text-paper-300">Marks in the corner show states with records. “Abroad” covers the struggle beyond India’s shores — London, Paris, San Francisco, Tokyo, Singapore.</p>
           </div>
+          {selected && (
+            <button type="button" className="btn-seal mt-4 w-full lg:hidden" onClick={viewStories}>
+              View stories from {selected.name}
+              <Icon d={icons.arrowRight} className="h-4 w-4" />
+            </button>
+          )}
         </Reveal>
+        ) : (
+          <ul className="min-w-0 space-y-2" aria-label="States and territories">
+            {(Object.keys(regionNames) as RegionId[]).flatMap((r) =>
+              states
+                .filter((s) => s.region === r)
+                .map((s) => (
+                  <li key={s.id} className="doc flex items-center justify-between gap-3 p-3.5">
+                    <button
+                      type="button"
+                      onClick={() => select(s.id)}
+                      aria-pressed={selected?.id === s.id}
+                      className="min-w-0 flex-1 text-left font-body text-meta text-ink hover:text-oxide-deep"
+                    >
+                      <span className="font-semibold">{s.name}</span>
+                      <span className="num text-ink-faint"> · {peopleCount.get(s.id)} people · {eventCount.get(s.id)} events</span>
+                    </button>
+                    <span className="label shrink-0">{regionNames[r]}</span>
+                  </li>
+                )),
+            )}
+          </ul>
+        )}
 
         {/* Detail panel */}
         <div aria-live="polite" className="min-w-0">
@@ -168,8 +239,12 @@ export default function MapPage() {
             <div key={selected.id} className="animate-fade-up">
               <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
                 <div>
-                  <h2 className="text-h2 text-ink">{selected.name}</h2>
-                  <p className="label mt-1">{regionNames[selected.region]}</p>
+                  <h2 ref={resultsRef} id="state-results" tabIndex={-1} className="scroll-mt-28 text-h2 text-ink outline-none">
+                    {selected.name}
+                  </h2>
+                  <p className="label num mt-1">
+                    {regionNames[selected.region]} · {stateFighters.length} people · {stateEvents.length} events
+                  </p>
                 </div>
                 <Link to={`/fighters?region=${selected.region}`} className="btn-ghost !min-h-10 !px-4">
                   All from {regionNames[selected.region]}
@@ -178,7 +253,21 @@ export default function MapPage() {
               </div>
 
               {stateFighters.length === 0 && stateEvents.length === 0 ? (
-                <EmptyState title={`No records for ${selected.name} yet`} hint="The collection grows continually — every state has its heroes, and their records are being added." />
+                <EmptyState
+                  title={`Coverage for ${selected.name} is still growing`}
+                  hint="Records are added region by region. In the meantime, nearby states in the same region already have stories:"
+                  action={
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {states
+                        .filter((s) => s.region === selected.region && s.id !== selected.id && (peopleCount.get(s.id) ?? 0) > 0)
+                        .map((s) => (
+                          <Link key={s.id} to={`/map?state=${s.id}`} className="chip min-h-10">
+                            {s.name} · {peopleCount.get(s.id)}
+                          </Link>
+                        ))}
+                    </div>
+                  }
+                />
               ) : (
                 <div className="space-y-10">
                   {stateFighters.length > 0 && (

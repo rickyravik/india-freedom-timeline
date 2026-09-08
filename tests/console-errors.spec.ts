@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 const routes = [
   '/', '/timeline', '/fighters', '/fighters/bhagat-singh', '/events/dandi-march', '/movements/swadeshi-movement', '/map', '/learn',
   // Prerendered without a query string; hydrating with one must not mismatch.
-  '/timeline?region=south&view=chapters', '/fighters?q=laxmibai&collection=women', '/events?type=massacre&decade=1910s',
+  '/timeline?region=south&view=chapters', '/fighters?q=laxmibai&collection=women', '/events?type=massacre&decade=1910s', '/map?state=tamil-nadu&view=list',
 ];
 const viewports = [
   { width: 375, height: 812 },
