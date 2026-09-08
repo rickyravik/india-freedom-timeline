@@ -35,7 +35,7 @@ The interface follows the **"Commemorative Sheet"** system documented in [`DESIG
 - [react-router-dom 6](https://reactrouter.com) with lazy-loaded routes
 - [GSAP 3](https://gsap.com) installed as an application dependency for animation work (rather than loaded from a deferred third-party script)
 - Self-hosted fonts via Fontsource: Bodoni Moda Variable (engraved display), Archivo Narrow Variable (denominations, labels, UI), Faustina Variable (long-form reading)
-- **No backend** — fully static, ideal for Cloudflare Pages
+- **No backend** — fully static, deployed as a Cloudflare Workers Assets project
 
 ## Getting started
 
@@ -45,7 +45,19 @@ npm run dev        # local dev server
 npm run typecheck  # strict TypeScript check
 npm run build      # typecheck + production build + sitemap → dist/
 npm run preview    # preview the production build
+npm run test:unit  # vitest: pure logic (url-state, search, corrections…)
+npm test           # playwright: end-to-end against the production build
 ```
+
+## Configuration
+
+Build-time settings live in the committed `.env` file and are read through `import.meta.env.VITE_*` in the app and `scripts/lib/site.mjs` in the build scripts:
+
+- `VITE_SITE_URL` — the public origin, no trailing slash. Drives every canonical, Open Graph, JSON-LD, sitemap and robots URL. Change this one line when a custom domain is attached.
+- `VITE_CORRECTIONS_EMAIL` — inbox for the correction form's email fallback. Empty means the fallback offers a pre-filled GitHub issue instead.
+- `VITE_EVENTS` — `on` enables the pilot's coarse event beacons (see Analytics).
+
+A process environment variable of the same name overrides the file, which is how CI can build for a different domain without editing the repo.
 
 ## Deploying to Cloudflare
 
@@ -53,12 +65,12 @@ The project deploys as a **static-assets Worker**, configured by [`wrangler.json
 
 - `assets.directory` is `./dist`
 - `assets.not_found_handling` is `single-page-application`, so every unmatched path serves `index.html` and react-router takes over
-- `build.command` runs `npm run build`, so `wrangler deploy` is self-contained and does not depend on a platform build command being set
+- There is deliberately no `build.command`: GitHub Actions builds and tests `dist/` and then deploys that exact artifact. Deploying by hand means `npm run build && npx wrangler deploy`.
 - `.node-version` pins Node 22, which Vite 7 requires (`^20.19.0 || >=22.12.0`)
 
 ### Via the dashboard
 
-**Workers & Pages -> Create application -> import a repository**, select the repo, and set the deploy command to `npx wrangler deploy`. The build command may be left empty, since wrangler runs the build itself.
+Cloudflare's own Git-connected build does not run this project's build (see the CI comment above); the deploy happens from GitHub Actions instead, on every push to `main`. **Workers & Pages -> Create application -> import a repository** is only relevant if you want to point Cloudflare's dashboard at the repo for visibility — the actual deploy command is `npx wrangler deploy`, run in CI after `npm run build`.
 
 ### Via Wrangler CLI
 
@@ -68,8 +80,6 @@ npx wrangler deploy
 ```
 
 `public/_headers` ships with the build and supplies cache-control and security headers. There is deliberately **no `_redirects` file**: `/* /index.html 200` is the Cloudflare *Pages* SPA idiom, and Workers Assets rejects it as an infinite loop because it already strips `.html` and `/index`. SPA routing is handled by `not_found_handling` instead.
-
-Optionally set `SITE_URL=https://your-domain.example` at build time so the sitemap and robots.txt reference your custom domain (see `scripts/generate-sitemap.mjs`).
 
 ## Privacy and analytics
 

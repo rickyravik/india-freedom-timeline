@@ -9,7 +9,8 @@ declare global {
   }
 }
 
-const SITE_URL = (import.meta.env.VITE_SITE_URL as string | undefined) ?? 'https://india-freedom-timeline.pages.dev';
+/* Set in .env; vite.config.ts fails the build if it's missing, so this is never undefined at runtime. */
+const SITE_URL = (import.meta.env.VITE_SITE_URL as string).replace(/\/$/, '');
 
 /* ------------------------------------------------------------------ */
 /* Media & motion                                                      */

@@ -8,18 +8,10 @@
   // endpoint included, since it has no file in dist/) reach it. See
   // worker/index.ts's own comment.
   "main": "worker/index.ts",
-  // Wrangler runs this before deploying, so `wrangler deploy` produces dist/
-  // on its own. Without it the deploy depends on the platform's build command
-  // being set, and an empty one fails with "assets.directory does not exist".
-  // `npm run build` itself needs a Chromium binary (scripts/prerender.mjs,
-  // scripts/og-images.ts) that isn't preinstalled in Cloudflare's build
-  // container — install it first, same as the "Install Playwright browsers"
-  // CI step does. Deliberately not `--with-deps`: that flag shells out to
-  // `apt-get install`, which needs root the build container doesn't grant —
-  // it hung for 10+ minutes rather than failing outright.
-  "build": {
-    "command": "npx playwright install chromium && npm run build"
-  },
+  // No `build.command`: CI (.github/workflows/ci.yml) builds and tests dist/
+  // first and then runs `wrangler deploy`, which must ship exactly that tested
+  // artifact rather than rebuilding it. `wrangler deploy` therefore requires
+  // an existing dist/ — run `npm run build` first when deploying by hand.
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",

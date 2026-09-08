@@ -63,6 +63,9 @@ function cloudflareBeacon(token: string): Plugin {
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_');
+  if (!env.VITE_SITE_URL) {
+    throw new Error('VITE_SITE_URL is not set — add it to .env (see README, "Configuration").');
+  }
   return {
     // configurePreviewServer only ever runs under `vite preview`, so this is
     // inert for `vite dev`/`vite build` — no need to gate it on `command`.
