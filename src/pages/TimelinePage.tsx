@@ -49,6 +49,7 @@ function EraRail({ activeId }: { activeId: string | null }) {
                 active ? 'bg-ink text-paper-50' : 'text-ink-soft hover:bg-paper-200'
               }`}
             >
+              {active && <span className="sr-only">Current chapter: </span>}
               <span className={`num font-display font-bold ${active ? 'text-brass-bright' : eraAccent.text[era.accent]}`}>{era.startYear}</span>
               <span>{era.name}</span>
             </a>
@@ -206,7 +207,7 @@ export default function TimelinePage() {
               </div>
             )}
 
-            <div className="relative mt-8">
+            <div className="relative mt-8" data-timeline-spine>
               {/* Spine with scroll-linked progress */}
               <div aria-hidden="true" className="absolute bottom-0 left-[11px] top-0 w-px bg-paper-400/60 sm:left-[15px]" />
               <div aria-hidden="true" className="spine-progress absolute bottom-0 left-[11px] top-0 w-px bg-oxide sm:left-[15px]" />

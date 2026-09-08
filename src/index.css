@@ -343,16 +343,42 @@
     clip-path: none;
   }
 
-  /* Scroll-driven spine (progressive; static where unsupported)      */
-  @supports (animation-timeline: scroll()) {
+  /* Hand-written, not tailwind.config.js: a keyframe reached only through a
+     raw `animation:` declaration (never a scanned `animate-*` utility class)
+     is invisible to Tailwind's content-scanning JIT and gets silently
+     dropped from the compiled CSS — the animation then has no effect to
+     play at all (transform stays at its unanimated `none`, indistinguishable
+     by eye from "fully progressed"). Confirmed missing from the built output
+     before this fix. */
+  @keyframes grow {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  /* Scroll-driven spine, bound to the timeline container itself — not the
+     document — so the footer never counts and a filter that shortens the
+     timeline recalculates for free. Progressive: static where unsupported. */
+  @supports (animation-timeline: view()) {
+    [data-timeline-spine] {
+      view-timeline-name: --timeline;
+      view-timeline-axis: block;
+    }
     .spine-progress {
       transform-origin: top;
       animation: grow linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0% 100%;
+      animation-timeline: --timeline;
+      /* `contain` collapses to a point for a subject taller than the
+         viewport (this one always is), which finishes the animation
+         almost immediately; `entry`/`exit` scale with viewport height
+         instead and were verified against the spec below. */
+      animation-range: entry 100% exit 100%;
     }
   }
-  @supports not (animation-timeline: scroll()) {
+  @supports not (animation-timeline: view()) {
     .spine-progress {
       transform: scaleY(1);
       opacity: 0.35;
@@ -362,11 +388,13 @@
     .spine-progress {
       animation: none !important;
       transform: none !important;
+      opacity: 0.35;
     }
   }
   html[data-motion='reduce'] .spine-progress {
     animation: none !important;
     transform: none !important;
+    opacity: 0.35;
   }
 
   .page-enter {
