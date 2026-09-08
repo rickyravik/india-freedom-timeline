@@ -24,3 +24,9 @@ test('the home ledger never calls a missing record a gap in history', async ({ p
   const ledger = page.getByRole('region', { name: /Today/ });
   await expect(ledger).toBeVisible();
 });
+
+test('a movement page explains aims, methods, reach, participants, disagreements and outcomes when recorded', async ({ page }) => {
+  await page.goto('/movements/civil-disobedience-movement');
+  for (const h of ['Aims', 'Methods', 'Where', 'Who took part', 'Disagreements', 'Outcomes']) await expect(page.getByRole('heading', { name: h })).toBeVisible();
+  await expect(page.getByText(/did not share identical aims or methods/)).toBeVisible();
+});

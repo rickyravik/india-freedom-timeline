@@ -3,9 +3,36 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { eventsForMovement, fightersForMovement, movementBySlug, movements } from '@/lib/content';
 import { regionNames } from '@/data/regions';
 import { usePageMeta } from '@/lib/hooks';
-import { Icon, PageIntro, Postmark, SectionHeading, SourceList, SuggestCorrection, icons } from '@/components/ui';
-import { ReadingText } from '@/components/reading';
+import { Icon, PageIntro, Postmark, Reveal, SectionHeading, SourceList, SuggestCorrection, icons } from '@/components/ui';
+import { DraftStamp, ReadingText } from '@/components/reading';
 import { EventCard, FighterCard, MovementCard } from '@/components/cards';
+import type { SourceRef } from '@/types';
+
+/* ------------------------------------------------------------------ */
+function ListBlock({ title, items }: { title: string; items?: string[] }) {
+  if (!items?.length) return null;
+  return (
+    <Reveal as="section">
+      <h3 className="mb-3 text-h3 text-ink">{title}</h3>
+      <ul className="space-y-2">
+        {items.map((item) => (
+          <li key={item} className="flex gap-3 font-body text-meta text-ink-soft">
+            <span aria-hidden="true" className="mt-2.5 h-1 w-4 shrink-0 bg-brass" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </Reveal>
+  );
+}
+function TextBlock({ title, text, sources }: { title: string; text: string; sources: SourceRef[] }) {
+  return (
+    <Reveal as="section">
+      <h3 className="mb-3 text-h3 text-ink">{title}</h3>
+      <ReadingText paragraphs={[text]} sources={sources} className="[&_p]:font-body [&_p]:text-meta [&_p]:text-ink-soft" />
+    </Reveal>
+  );
+}
 
 export default function MovementsPage() {
   usePageMeta('Movements', 'The movements of India’s freedom struggle — from early uprisings and Swadeshi to Quit India and the INA.');
@@ -64,7 +91,7 @@ export function MovementPage() {
             <span className="chip-vault num">{relatedEvents.length} events</span>
             <Link to={`/timeline?movement=${movement.id}`} className="chip-vault min-h-10">
               <Icon d={icons.clock} className="h-4 w-4" />
-              Filter the timeline by this movement
+              See these events in order
             </Link>
           </div>
         </div>
@@ -74,6 +101,23 @@ export function MovementPage() {
         <section aria-label="About this movement">
           <ReadingText paragraphs={movement.description} sources={movement.sources} dropcap className="max-w-prose" />
         </section>
+
+        {(movement.aims || movement.methods || movement.reach || movement.participants || movement.disagreements || movement.outcomes) && (
+          <section aria-label="How this movement worked" className="grid gap-6 sm:grid-cols-2">
+            {movement.editorial?.status === 'draft' && (
+              <div className="sm:col-span-2">
+                <DraftStamp />
+              </div>
+            )}
+            <ListBlock title="Aims" items={movement.aims} />
+            <ListBlock title="Methods" items={movement.methods} />
+            {movement.reach && <TextBlock title="Where" text={movement.reach} sources={movement.sources} />}
+            {movement.participants && <TextBlock title="Who took part" text={movement.participants} sources={movement.sources} />}
+            <ListBlock title="Disagreements" items={movement.disagreements} />
+            <ListBlock title="Outcomes" items={movement.outcomes} />
+            <p className="font-body text-label text-ink-faint sm:col-span-2">Movements that overlapped in time did not share identical aims or methods; each page describes its own.</p>
+          </section>
+        )}
 
         {relatedEvents.length > 0 && (
           <section aria-label="Events of this movement">

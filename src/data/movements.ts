@@ -352,6 +352,13 @@ export const movements: Movement[] = [
         type: 'museum',
       },
     ],
+    aims: ['Purna Swaraj — complete independence, declared by the Congress in December 1929', 'Repeal of the salt tax as the first, universal grievance to break'],
+    methods: ['Openly breaking the salt law and accepting arrest', 'Boycott of foreign cloth and liquor', 'Non-payment of taxes in selected districts', 'Marches and mass meetings'],
+    reach: 'From Gujarat’s coast at Dandi to Vedaranyam in the Tamil country, the North-West Frontier and Bengal; around 90,000 people were imprisoned in 1930–31.',
+    participants: 'Congress volunteers, peasants and traders, and women in unprecedented numbers — Sarojini Naidu at Dharasana, Rukmini Lakshmipathi at Vedaranyam, Kamaladevi Chattopadhyay in Bombay.',
+    disagreements: ['Revolutionaries such as Bhagat Singh’s generation rejected non-violence as insufficient', 'The Gandhi–Irwin Pact of 1931 that paused the campaign was criticised within the Congress'],
+    outcomes: ['The Gandhi–Irwin Pact (March 1931) and the Round Table Conference', 'A movement that was, for the first time, truly popular across regions and classes'],
+    editorial: { status: 'draft' },
   },
   {
     id: 'quit-india',
