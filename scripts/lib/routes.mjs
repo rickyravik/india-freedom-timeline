@@ -30,7 +30,7 @@ function slugsFrom(path, pattern) {
 
 const slugRe = /slug:\s*'([a-z0-9-]+)'/g;
 
-export const staticRoutes = ['', '/timeline', '/fighters', '/events', '/movements', '/map', '/search', '/learn', '/glossary', '/about'];
+export const staticRoutes = ['', '/timeline', '/fighters', '/events', '/movements', '/map', '/search', '/trails', '/learn', '/glossary', '/about'];
 
 /** Prerendered like any other route, but excluded from the sitemap — it's the
     service worker's offline fallback (src/sw.ts), not indexable content. */
@@ -41,10 +41,12 @@ export function getAllRoutes() {
   const fighters = slugsFrom('src/data/fighters', slugRe);
   const events = slugsFrom('src/data/events', slugRe);
   const movements = slugsFrom('src/data/movements.ts', slugRe);
+  const trails = slugsFrom('src/data/trails', slugRe);
   return [
     ...staticRoutes,
     ...fighters.map((s) => `/fighters/${s}`),
     ...events.map((s) => `/events/${s}`),
     ...movements.map((s) => `/movements/${s}`),
+    ...trails.map((s) => `/trails/${s}`),
   ];
 }
