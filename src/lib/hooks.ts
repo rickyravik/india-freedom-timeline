@@ -3,6 +3,7 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 import { getNeedRefresh, subscribeNeedRefresh } from '@/lib/pwa';
 import { parseParams, serializeParams, type Schema, type StateOf } from '@/lib/url-state';
 import { DEFAULT_PREFERENCES, readPreferences, subscribePreferences, writePreferences, type Preferences } from '@/lib/preferences';
+import { EMPTY_PROGRESS, readProgress, subscribeProgress, type ProgressMap } from '@/lib/trails-progress';
 
 /** True only during the build-time prerender capture pass (set by scripts/prerender.mjs via Playwright's addInitScript, never in a real visitor's browser). */
 declare global {
@@ -197,6 +198,12 @@ export function useTrail(): string[] {
     return () => trailListeners.delete(cb);
   }, []);
   return useSyncExternalStore(subscribe, readTrail, () => EMPTY_STRINGS);
+}
+
+/* ------------------------------------------------------------------ */
+/* Guided-trail progress (localStorage, per device — src/lib/trails-progress.ts) */
+export function useTrailProgress(): ProgressMap {
+  return useSyncExternalStore(subscribeProgress, readProgress, () => EMPTY_PROGRESS);
 }
 
 /* ------------------------------------------------------------------ */

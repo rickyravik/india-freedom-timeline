@@ -12,6 +12,7 @@ import { organizations, organizationById } from '@/data/organizations';
 import { eras, eraById } from '@/data/eras';
 import { states, stateById } from '@/data/regions';
 import { glossaryTerms, glossaryById } from '@/data/glossary';
+import { trails, trailBySlug } from '@/data/trails';
 
 /* The summary projection — everything except a record's own profile page
    should only ever need these. Full records (biography, quotes, sources,
@@ -36,6 +37,8 @@ export {
   eventSourceFile,
   glossaryTerms,
   glossaryById,
+  trails,
+  trailBySlug,
 };
 
 export const movementBySlug = new Map(movements.map((m) => [m.slug, m]));

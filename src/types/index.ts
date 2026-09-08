@@ -407,3 +407,38 @@ export interface DidYouKnowFact {
   text: string;
   relatedLink?: { label: string; to: string };
 }
+
+/** A guided trail — a short editorial journey built on existing records. */
+export type TrailRef = { kind: 'fighter' | 'event' | 'movement'; id: string };
+export interface TrailStop {
+  id: string; // kebab, unique within the trail
+  title: string;
+  question?: string; // the stop's guiding question
+  text: string[]; // 1–3 short paragraphs; [^n] markers refer to `sources`
+  focus: TrailRef; // the record this stop is built on (visual + "Open the full story")
+  also?: TrailRef[]; // further records worth opening
+  sources: SourceRef[]; // at least one; copied from the focus record, so an update there is a prompt to update here
+  uncertainty?: string; // carried from the record's disputed notes when the stop touches them
+  contentNote?: string;
+  bridge: string; // one sentence to the next stop; '' on the last
+}
+export type TrailActivity =
+  | { kind: 'choice'; prompt: string; options: string[]; answerIndex: number; explanation: string }
+  | { kind: 'order'; prompt: string; items: { label: string; year: number; ref?: TrailRef }[]; explanation: string };
+export interface Trail {
+  id: string;
+  slug: string;
+  version: number; // bump when stop text changes; translations point at a version
+  title: string;
+  question: string;
+  theme: string;
+  minutes: number; // approximate, design target until measured
+  learningGoal: string;
+  intro: string;
+  accent: Era['accent'];
+  stops: TrailStop[]; // 3–7
+  reflection: string; // a prompt, never a form
+  activity: TrailActivity;
+  followOn: { label: string; to: string };
+  editorial: Editorial;
+}

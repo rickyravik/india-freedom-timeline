@@ -17,6 +17,7 @@ import { states } from '../src/data/regions.ts';
 import { quizQuestions, guessWhoRounds } from '../src/data/quizzes.ts';
 import { didYouKnowFacts } from '../src/data/facts.ts';
 import { glossaryTerms } from '../src/data/glossary.ts';
+import { trails } from '../src/data/trails/index.ts';
 import { fighterSummaries, fighterSourceFile } from '../src/data/generated/fighters.summary.ts';
 import { eventSummaries, eventSourceFile } from '../src/data/generated/events.summary.ts';
 import { connectionsById } from '../src/data/generated/connections.ts';
@@ -237,6 +238,41 @@ const glossaryTermSchema = z.object({
   editorial: editorialSchema,
 });
 
+const trailRefSchema = z.object({ kind: z.enum(['fighter', 'event', 'movement']), id: z.string().min(1) });
+const trailStopSchema = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  title: z.string().min(1),
+  question: z.string().optional(),
+  text: z.array(z.string().min(1).max(900)).min(1).max(3),
+  focus: trailRefSchema,
+  also: z.array(trailRefSchema).optional(),
+  sources: z.array(sourceRefSchema).min(1),
+  uncertainty: z.string().optional(),
+  contentNote: z.string().optional(),
+  bridge: z.string(),
+});
+const trailActivitySchema = z.discriminatedUnion('kind', [
+  z.object({ kind: z.literal('choice'), prompt: z.string().min(1), options: z.array(z.string().min(1)).min(3).max(5), answerIndex: z.number().int(), explanation: z.string().min(1) }),
+  z.object({ kind: z.literal('order'), prompt: z.string().min(1), items: z.array(z.object({ label: z.string().min(1), year: z.number().int(), ref: trailRefSchema.optional() })).min(3).max(6), explanation: z.string().min(1) }),
+]);
+const trailSchema = z.object({
+  id: z.string().min(1),
+  slug: z.string().regex(/^[a-z0-9-]+$/),
+  version: z.number().int().min(1),
+  title: z.string().min(1),
+  question: z.string().min(1),
+  theme: z.string().min(1),
+  minutes: z.number().int().min(3).max(30),
+  learningGoal: z.string().min(1),
+  intro: z.string().min(1),
+  accent: z.enum(['indigo', 'oxide', 'saffron', 'forest', 'sepia', 'brass']),
+  stops: z.array(trailStopSchema).min(3).max(7),
+  reflection: z.string().min(1),
+  activity: trailActivitySchema,
+  followOn: z.object({ label: z.string().min(1), to: z.string().regex(/^\//) }),
+  editorial: editorialSchema,
+});
+
 /* -------------------------------------------------------------------- */
 /* Schema pass                                                           */
 function checkSchema<T>(collection: string, items: T[], schema: z.ZodType<T>, refOf: (item: T) => string) {
@@ -259,6 +295,7 @@ checkSchema('quizQuestions', quizQuestions, quizQuestionSchema, (q) => q.id);
 checkSchema('didYouKnowFacts', didYouKnowFacts, factSchema, (f) => f.id);
 checkSchema('guessWhoRounds', guessWhoRounds, guessWhoRoundSchema, (r) => r.id);
 checkSchema('glossary', glossaryTerms, glossaryTermSchema, (t) => t.id);
+checkSchema('trails', trails, trailSchema, (t) => t.id);
 
 /* -------------------------------------------------------------------- */
 /* Uniqueness                                                            */
@@ -278,6 +315,7 @@ checkUnique('movements', movements);
 checkUnique('organizations', organizations);
 checkUnique('eras', eras.map((e) => ({ id: e.id })));
 checkUnique('glossary', glossaryTerms.map((t) => ({ id: t.id })));
+checkUnique('trails', trails);
 
 /* -------------------------------------------------------------------- */
 /* Cross-references                                                      */
@@ -383,6 +421,30 @@ for (const t of glossaryTerms) {
   if (t.editorial.status === 'draft') warn('glossary', t.id, 'editorial status is draft');
 }
 
+function refExists(ref: { kind: string; id: string }): boolean {
+  return ref.kind === 'fighter' ? fighterIds.has(ref.id) : ref.kind === 'event' ? eventIds.has(ref.id) : movementIds.has(ref.id);
+}
+for (const t of trails) {
+  const stopIds = new Set<string>();
+  for (const s of t.stops) {
+    if (stopIds.has(s.id)) err('trails', t.id, `duplicate stop id "${s.id}"`);
+    stopIds.add(s.id);
+    if (!refExists(s.focus)) err('trails', t.id, `stop "${s.id}" focus ${s.focus.kind} "${s.focus.id}" does not exist`);
+    for (const r of s.also ?? []) if (!refExists(r)) err('trails', t.id, `stop "${s.id}" also-ref ${r.kind} "${r.id}" does not exist`);
+    checkCitations('trails', `${t.id}/${s.id}`, s.text, s.sources.length);
+  }
+  if (t.stops[t.stops.length - 1].bridge !== '') warn('trails', t.id, 'the last stop has a bridge sentence; nothing follows it');
+  if (t.activity.kind === 'choice') {
+    if (new Set(t.activity.options).size !== t.activity.options.length) err('trails', t.id, 'activity options are not distinct');
+    if (t.activity.answerIndex < 0 || t.activity.answerIndex >= t.activity.options.length) err('trails', t.id, 'activity answerIndex out of range');
+  } else {
+    const years = t.activity.items.map((i) => i.year);
+    if (new Set(years).size !== years.length) err('trails', t.id, 'order activity has two items with the same year');
+    for (const i of t.activity.items) if (i.ref && !refExists(i.ref)) err('trails', t.id, `order item "${i.label}" ref does not exist`);
+  }
+  if (t.editorial.status === 'draft') warn('trails', t.id, 'editorial status is draft');
+}
+
 /* -------------------------------------------------------------------- */
 /* Generated summary staleness — src/data/generated/*.summary.ts is        */
 /* committed, not built on the fly; catch it drifting from the full        */
@@ -419,7 +481,7 @@ for (const group of [errors, warnings]) {
 }
 
 console.log(
-  `\nValidated ${fighters.length} fighters, ${events.length} events, ${movements.length} movements, ${organizations.length} organizations, ${eras.length} eras, ${quizQuestions.length} quiz questions, ${didYouKnowFacts.length} facts, ${guessWhoRounds.length} guess-who rounds, ${glossaryTerms.length} glossary terms.`,
+  `\nValidated ${fighters.length} fighters, ${events.length} events, ${movements.length} movements, ${organizations.length} organizations, ${eras.length} eras, ${quizQuestions.length} quiz questions, ${didYouKnowFacts.length} facts, ${guessWhoRounds.length} guess-who rounds, ${glossaryTerms.length} glossary terms, ${trails.length} trails.`,
 );
 console.log(`${errors.length} error(s), ${warnings.length} warning(s).`);
 
