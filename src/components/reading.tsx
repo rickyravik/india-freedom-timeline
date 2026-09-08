@@ -5,7 +5,8 @@ import { splitCitations } from '@/lib/reading';
 import { annotateFirstOccurrences } from '@/lib/glossary';
 import { track } from '@/lib/analytics';
 import { glossaryById, glossaryTerms } from '@/lib/content';
-import { Icon, icons } from '@/components/ui';
+import { BottomSheet, Icon, Segmented, icons } from '@/components/ui';
+import { usePreferences } from '@/lib/hooks';
 
 /* ------------------------------------------------------------------ */
 /* Popover — a small note anchored under its trigger. Closed in every  */
@@ -206,5 +207,71 @@ export function DraftStamp({ vault = false }: { vault?: boolean }) {
       <span className={`stamp ${vault ? 'text-oxide-bright' : 'text-oxide-deep'}`}>Draft</span>
       under editorial review — wording may change
     </p>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* A labelled on/off row, styled as a chip so it reads as this design  */
+/* system's own control rather than a borrowed OS switch.              */
+function ToggleRow({ label, hint, checked, onChange }: { label: string; hint: string; checked: boolean; onChange: (v: boolean) => void }) {
+  return (
+    <div className="flex items-center justify-between gap-4">
+      <span>
+        <span className="block font-body text-meta font-medium text-ink">{label}</span>
+        <span className="block font-body text-label text-ink-soft">{hint}</span>
+      </span>
+      <button type="button" role="switch" aria-checked={checked} aria-label={label} onClick={() => onChange(!checked)} className={`chip min-w-16 justify-center ${checked ? 'chip-active' : ''}`}>
+        {checked ? 'On' : 'Off'}
+      </button>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Reading toolbar — the reading-mode switch, a jump to sources, and    */
+/* the reading-settings sheet (text size, reduce motion, low data).     */
+export function ReadingToolbar({ vault = false }: { vault?: boolean }) {
+  const [prefs, setPrefs] = usePreferences();
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="flex flex-wrap items-center justify-between gap-3">
+      <Segmented
+        label="Reading mode"
+        vault={vault}
+        value={prefs.readingMode}
+        onChange={(v) => setPrefs({ readingMode: v })}
+        options={[
+          { value: 'story', label: 'Quick story' },
+          { value: 'detail', label: 'Detailed history' },
+        ]}
+      />
+      <div className="flex items-center gap-3">
+        <a href="#sources" className={`font-body text-meta font-medium underline underline-offset-2 ${vault ? 'text-paper-200 hover:text-paper-50' : 'text-ink-soft hover:text-ink'}`}>
+          Sources
+        </a>
+        <button type="button" onClick={() => setOpen(true)} className={vault ? 'chip-vault' : 'chip'}>
+          Reading settings
+        </button>
+      </div>
+      <BottomSheet open={open} onClose={() => setOpen(false)} title="Reading settings">
+        <div className="space-y-5">
+          <div>
+            <p className="label mb-2">Text size</p>
+            <Segmented
+              label="Text size"
+              value={prefs.textSize}
+              onChange={(v) => setPrefs({ textSize: v })}
+              options={[
+                { value: 'default', label: 'Default' },
+                { value: 'large', label: 'Large' },
+                { value: 'larger', label: 'Larger' },
+              ]}
+            />
+          </div>
+          <ToggleRow label="Reduce motion" hint="Turns off page reveals and scroll animation." checked={prefs.motion === 'reduce'} onChange={(v) => setPrefs({ motion: v ? 'reduce' : 'system' })} />
+          <ToggleRow label="Prefer text and small images" hint="Uses less data on a slow connection." checked={prefs.lowData} onChange={(v) => setPrefs({ lowData: v })} />
+        </div>
+      </BottomSheet>
+    </div>
   );
 }

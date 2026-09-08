@@ -14,6 +14,13 @@
   html {
     -webkit-text-size-adjust: 100%;
     scroll-padding-top: 7rem;
+    --reading-scale: 1;
+  }
+  html[data-text-size='large'] {
+    --reading-scale: 1.15;
+  }
+  html[data-text-size='larger'] {
+    --reading-scale: 1.3;
   }
 
   /* The album page is the field; gummed sheets are mounted on it.
@@ -69,6 +76,24 @@
       transform: none !important;
       clip-path: none !important;
     }
+  }
+
+  /* The persistent "Reduce motion" preference (src/lib/preferences.ts) mirrors
+     the OS-level query above, so either one alone is enough to calm motion. */
+  html[data-motion='reduce'] *,
+  html[data-motion='reduce'] *::before,
+  html[data-motion='reduce'] *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html[data-motion='reduce'] .reveal,
+  html[data-motion='reduce'] .reveal-mask,
+  html[data-motion='reduce'] .reveal-mask > * {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
   }
 }
 
@@ -224,6 +249,12 @@
   .prose-reading-vault {
     @apply font-reading text-reading text-paper-200;
   }
+  /* Text-size preference: scales reading copy only, set via data-text-size
+     on <html> (src/lib/preferences.ts), applied before paint. */
+  .prose-reading,
+  .prose-reading-vault {
+    font-size: calc(1.0625rem * var(--reading-scale, 1));
+  }
   .dropcap::first-letter {
     @apply float-left mr-2 mt-1 font-display text-h1 font-bold leading-[0.8] text-oxide;
   }
@@ -332,6 +363,10 @@
       animation: none !important;
       transform: none !important;
     }
+  }
+  html[data-motion='reduce'] .spine-progress {
+    animation: none !important;
+    transform: none !important;
   }
 
   .page-enter {

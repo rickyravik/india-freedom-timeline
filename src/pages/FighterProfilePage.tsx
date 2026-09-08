@@ -4,10 +4,10 @@ import { eventsForFighter, fighterBySlug, fighters, lifespan, movementById, orga
 import { loadFighter, peekFighter } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
-import { pushTrail, useBookmarks, useIsDesktop, usePageMeta, useShare, useTrail } from '@/lib/hooks';
+import { pushTrail, useBookmarks, useIsDesktop, usePageMeta, usePreferences, useShare, useTrail } from '@/lib/hooks';
 import { track } from '@/lib/analytics';
-import { DisputedNotes, Icon, LifespanBar, Postmark, PortraitMedallion, QuoteCard, Reveal, Segmented, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
-import { ReadingText } from '@/components/reading';
+import { DisputedNotes, Icon, LifespanBar, Postmark, PortraitMedallion, QuoteCard, Reveal, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
+import { ReadingText, ReadingToolbar } from '@/components/reading';
 import { RouteFallback } from '@/components/layout';
 import { EventCard, FighterChip } from '@/components/cards';
 import { Constellation } from '@/components/constellation';
@@ -169,7 +169,7 @@ export default function FighterProfilePage() {
      below, or that first render would mismatch the full body React captured
      into the static HTML. */
   const [fighter, setFighter] = useState<FreedomFighter | undefined>(() => (slug ? peekFighter(slug) : undefined));
-  const [mode, setMode] = useState<'story' | 'detail'>('story');
+  const [{ readingMode: mode }] = usePreferences();
   const { bookmarks, toggle } = useBookmarks();
   const { share, copied } = useShare();
   const trail = useTrail();
@@ -293,17 +293,9 @@ export default function FighterProfilePage() {
             <div className="min-w-0 space-y-12">
               <section aria-label="Life story">
                 <div className="rule-double mb-5" />
-                <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-                  <h2 className="text-h2 text-ink">{mode === 'story' ? 'Quick story' : 'Detailed history'}</h2>
-                  <Segmented
-                    label="Reading mode"
-                    value={mode}
-                    onChange={setMode}
-                    options={[
-                      { value: 'story', label: 'Quick story' },
-                      { value: 'detail', label: 'Detailed history' },
-                    ]}
-                  />
+                <h2 className="mb-4 text-h2 text-ink">{mode === 'story' ? 'Quick story' : 'Detailed history'}</h2>
+                <div className="mb-6">
+                  <ReadingToolbar />
                 </div>
 
                 {mode === 'story' ? (

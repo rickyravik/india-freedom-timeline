@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from '
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { getNeedRefresh, subscribeNeedRefresh } from '@/lib/pwa';
 import { parseParams, serializeParams, type Schema, type StateOf } from '@/lib/url-state';
+import { DEFAULT_PREFERENCES, readPreferences, subscribePreferences, writePreferences, type Preferences } from '@/lib/preferences';
 
 /** True only during the build-time prerender capture pass (set by scripts/prerender.mjs via Playwright's addInitScript, never in a real visitor's browser). */
 declare global {
@@ -28,9 +29,19 @@ function useMatchMedia(query: string, fallback = false): boolean {
   return useSyncExternalStore(subscribe, () => window.matchMedia(query).matches, () => fallback);
 }
 
-/** Respect the user's reduced-motion preference. */
+/* ------------------------------------------------------------------ */
+/* Reading preferences (localStorage, mirrored to <html data-*>)       */
+
+export function usePreferences(): [Preferences, (patch: Partial<Preferences>) => void] {
+  const prefs = useSyncExternalStore(subscribePreferences, readPreferences, () => DEFAULT_PREFERENCES);
+  return [prefs, writePreferences];
+}
+
+/** Respect the OS preference, or the site's own persistent "Reduce motion" setting. */
 export function useReducedMotion(): boolean {
-  return useMatchMedia('(prefers-reduced-motion: reduce)');
+  const media = useMatchMedia('(prefers-reduced-motion: reduce)');
+  const [prefs] = usePreferences();
+  return media || prefs.motion === 'reduce';
 }
 
 /** True at the md breakpoint and above (768px). */

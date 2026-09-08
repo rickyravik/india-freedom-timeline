@@ -4,6 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#c4611f" />
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('ift-prefs-v1');
+          var p = raw ? JSON.parse(raw) : {};
+          var textSize = p.textSize === 'large' || p.textSize === 'larger' ? p.textSize : 'default';
+          var motion = p.motion === 'reduce' ? 'reduce' : 'system';
+          var lowData = p.lowData === true;
+          var d = document.documentElement.dataset;
+          d.textSize = textSize;
+          d.motion = motion;
+          d.lowData = lowData ? 'true' : 'false';
+        } catch (e) {
+          /* defaults apply via CSS fallback */
+        }
+      })();
+    </script>
     <title>India's Freedom Timeline — Explore the People Who Fought for India's Freedom</title>
     <meta
       name="description"
