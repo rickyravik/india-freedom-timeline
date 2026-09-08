@@ -36,7 +36,14 @@ async function bootstrap() {
       </BrowserRouter>
     </StrictMode>
   );
+  // Restored by ScrollManager (src/components/layout.tsx), not the browser:
+  // lazily loaded routes aren't tall enough yet when the browser would try.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   if (rootEl.hasChildNodes()) {
+    // Tells useUrlState's initialisers this first render must match the
+    // prerendered snapshot (which was captured with no query string). App
+    // clears it after the first commit.
+    rootEl.dataset.hydrating = 'true';
     hydrateRoot(rootEl, app);
   } else {
     createRoot(rootEl).render(app);

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { getNeedRefresh, subscribeNeedRefresh } from '@/lib/pwa';
+import { parseParams, serializeParams, type Schema, type StateOf } from '@/lib/url-state';
 
 /** True only during the build-time prerender capture pass (set by scripts/prerender.mjs via Playwright's addInitScript, never in a real visitor's browser). */
 declare global {
@@ -185,6 +186,60 @@ export function useTrail(): string[] {
     return () => trailListeners.delete(cb);
   }, []);
   return useSyncExternalStore(subscribe, readTrail, () => EMPTY_STRINGS);
+}
+
+/* ------------------------------------------------------------------ */
+/* URL state                                                           */
+
+/** True only during the first render of a prerendered page in a real browser
+    (set on #root by main.tsx before hydrateRoot, cleared by App afterwards).
+    Prerendered HTML was captured with no query string, so any state that
+    normally initialises from the URL must initialise to its defaults during
+    this one render or React reports a hydration mismatch. */
+export function isHydratingFirstRender(): boolean {
+  return typeof document !== 'undefined' && document.getElementById('root')?.dataset.hydrating === 'true';
+}
+
+const EMPTY_PARAMS = new URLSearchParams();
+
+/**
+ * Filter/view state that lives in the query string. `schema` must be a
+ * module-scope constant. Returns [state, update(patch), reset()]. Writes use
+ * replace, so typing in a filter never litters history; back/forward still
+ * re-read the URL.
+ */
+export function useUrlState<S extends Schema>(schema: S): [StateOf<S>, (patch: Partial<StateOf<S>>) => void, () => void] {
+  const [params, setParams] = useSearchParams();
+  const deferred = useRef(isHydratingFirstRender());
+  const [state, setState] = useState<StateOf<S>>(() => parseParams(schema, deferred.current ? EMPTY_PARAMS : params));
+  const stateRef = useRef(state);
+  stateRef.current = state;
+
+  /* After hydration, adopt what the URL actually says. */
+  useEffect(() => {
+    if (!deferred.current) return;
+    deferred.current = false;
+    setState(parseParams(schema, new URLSearchParams(window.location.search)));
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  /* Back/forward (or a Link to the same page with other params). */
+  const paramsKey = params.toString();
+  useEffect(() => {
+    if (deferred.current) return;
+    setState(parseParams(schema, params));
+  }, [paramsKey]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const update = useCallback(
+    (patch: Partial<StateOf<S>>) => {
+      const next = { ...stateRef.current, ...patch };
+      setState(next);
+      setParams(serializeParams(schema, next, new URLSearchParams(window.location.search)), { replace: true });
+    },
+    [schema, setParams],
+  );
+  const reset = useCallback(() => update(parseParams(schema, EMPTY_PARAMS)), [schema, update]);
+
+  return [state, update, reset];
 }
 
 /* ------------------------------------------------------------------ */

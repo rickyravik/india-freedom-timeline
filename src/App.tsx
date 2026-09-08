@@ -1,4 +1,4 @@
-import { Component, lazy, Suspense, type ErrorInfo, type ReactNode } from 'react';
+import { Component, lazy, Suspense, useEffect, type ErrorInfo, type ReactNode } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import { Layout, RouteFallback } from '@/components/layout';
 import { routeTable, getPreloadedRoute } from '@/lib/routes';
@@ -51,6 +51,13 @@ export default function App() {
   /* Set once, before the very first render (see src/lib/routes.tsx) — only
      ever matches the route active on initial page load. */
   const preloaded = getPreloadedRoute();
+  /* The hydration mark set by main.tsx is only meaningful for the very first
+     render; every state initialiser that needs it has run by the time this
+     effect fires (children's effects run first, but they only read the flag
+     during render). */
+  useEffect(() => {
+    delete document.getElementById('root')?.dataset.hydrating;
+  }, []);
   return (
     <ErrorBoundary>
       <Routes>
