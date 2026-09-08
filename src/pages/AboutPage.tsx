@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { events, fighters, movements } from '@/lib/content';
 import { usePageMeta } from '@/lib/hooks';
-import { PageIntro, Reveal } from '@/components/ui';
+import { CORRECTIONS_EMAIL, REPO_ISSUES_URL } from '@/lib/corrections';
+import { PageIntro, Reveal, SuggestCorrection } from '@/components/ui';
 
 export default function AboutPage() {
   usePageMeta('About & Sources', 'How this archive is built: sources, historical method, and how disputed claims are handled.');
@@ -72,8 +73,22 @@ export default function AboutPage() {
           <h2 className="mb-1 text-h3 text-ink">Corrections</h2>
           <div className="rule mb-4" />
           <p className="prose-reading max-w-prose">
-            History deserves correction. If you find an error of fact, a missing attribution, or a person whose story should be here, please open an issue on the project
-            repository — each record is a structured, citable file that is straightforward to improve.
+            History deserves correction. If you find an error of fact, a missing attribution, or a person whose story should be here, send a suggestion from this page or from the record itself. Every suggestion is read by an editor and checked against sources before anything changes.
+          </p>
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <SuggestCorrection path="/about" recordTitle="General suggestion" />
+            {CORRECTIONS_EMAIL && (
+              <a className="font-body text-meta font-medium text-ink underline decoration-brass underline-offset-2 hover:text-oxide-deep" href={`mailto:${CORRECTIONS_EMAIL}`}>
+                or email {CORRECTIONS_EMAIL}
+              </a>
+            )}
+          </div>
+          <p className="mt-4 font-body text-label text-ink-faint">
+            If you use GitHub, each record is also a structured file you can propose changes to:{' '}
+            <a className="underline" href={REPO_ISSUES_URL} target="_blank" rel="noopener noreferrer">
+              open an issue<span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            .
           </p>
         </Reveal>
 

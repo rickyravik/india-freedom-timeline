@@ -3,6 +3,7 @@ import type { DisputedNote, Era, Quote, SourceRef } from '@/types';
 import { eras } from '@/data/eras';
 import { useReveal } from '@/lib/hooks';
 import { track } from '@/lib/analytics';
+import { fallbackLink } from '@/lib/corrections';
 
 /* ------------------------------------------------------------------ */
 /* Era accent maps — one source of truth for colour-coding             */
@@ -424,8 +425,7 @@ export function SuggestCorrection({ path, recordTitle }: { path: string; recordT
   const [email, setEmail] = useState('');
   const [website, setWebsite] = useState(''); // honeypot — hidden from real visitors below
 
-  const mailtoBody = `Page: ${path}\n\nWhat's wrong:\n${claim}\n\nSuggested correction:\n${correction}${sourceUrl ? `\n\nSource:\n${sourceUrl}` : ''}`;
-  const mailto = `mailto:?subject=${encodeURIComponent(`Correction: ${recordTitle}`)}&body=${encodeURIComponent(mailtoBody)}`;
+  const fallback = fallbackLink({ path, recordTitle, claim, correction, sourceUrl: sourceUrl || undefined });
 
   async function submit(e: FormEvent) {
     e.preventDefault();
@@ -455,18 +455,29 @@ export function SuggestCorrection({ path, recordTitle }: { path: string; recordT
         {status === 'sent' ? (
           <div className="py-8 text-center">
             <p className="font-display text-h3 text-ink">Thank you</p>
-            <p className="mx-auto mt-2 max-w-sm font-body text-meta text-ink-soft">Your correction has been submitted for review.</p>
+            <p className="mx-auto mt-2 max-w-sm font-body text-meta text-ink-soft">
+              Your suggestion has been received. An editor reviews every correction against its sources before anything on the site changes — nothing is published automatically.
+            </p>
           </div>
         ) : status === 'error' ? (
-          <div className="py-8 text-center">
-            <p className="font-display text-h3 text-ink">Couldn’t submit that</p>
+          <div className="py-8 text-center" role="alert">
+            <p className="font-display text-h3 text-ink">Couldn’t send that just now</p>
             <p className="mx-auto mt-2 max-w-sm font-body text-meta text-ink-soft">
-              Please send it by email instead —{' '}
-              <a className="font-medium text-ink underline decoration-brass decoration-1 underline-offset-2 hover:text-oxide-deep" href={mailto}>
-                open a pre-filled email
+              Nothing you typed was lost. You can try again, or{' '}
+              <a
+                className="font-medium text-ink underline decoration-brass decoration-1 underline-offset-2 hover:text-oxide-deep"
+                href={fallback.href}
+                target={fallback.kind === 'issue' ? '_blank' : undefined}
+                rel={fallback.kind === 'issue' ? 'noopener noreferrer' : undefined}
+              >
+                {fallback.label}
               </a>
               .
             </p>
+            <button type="button" className="btn-ghost mt-5" onClick={() => setStatus('idle')}>
+              <Icon d={icons.refresh} className="h-4 w-4" />
+              Try again
+            </button>
           </div>
         ) : (
           <form className="space-y-4 py-4" onSubmit={submit}>
@@ -524,6 +535,7 @@ export function SuggestCorrection({ path, recordTitle }: { path: string; recordT
             <button type="submit" disabled={status === 'sending'} className="btn-seal min-h-12 w-full">
               {status === 'sending' ? 'Sending…' : 'Submit correction'}
             </button>
+            <p className="font-body text-label text-ink-faint">Suggestions are reviewed by an editor before publication.</p>
           </form>
         )}
       </BottomSheet>
