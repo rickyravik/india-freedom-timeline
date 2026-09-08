@@ -13,14 +13,23 @@ import { VitePWA } from 'vite-plugin-pwa';
  * real prerendered file. Only affects `vite preview`; has no effect on
  * `vite dev` or the production build itself, and Cloudflare Workers Assets
  * (the real deploy target) resolves this correctly on its own.
+ *
+ * The path must be checked with its query string stripped off first: a
+ * request like `/timeline?region=south` otherwise never matches
+ * `dist/timeline?region=south/index.html` (which can't exist), silently
+ * falls through to the raw app shell instead of the prerendered snapshot for
+ * that route, and hydrates against the wrong DOM — a real hydration
+ * mismatch, not a bug in whatever page is being visited.
  */
 function prettyUrlPreviewFallback(): Plugin {
   return {
     name: 'pretty-url-preview-fallback',
     configurePreviewServer(server) {
       server.middlewares.use((req, _res, next) => {
-        if (req.url && !req.url.includes('.') && existsSync(`dist${req.url}/index.html`)) {
-          req.url = `${req.url}/index.html`;
+        if (!req.url) return next();
+        const [pathname, search] = req.url.split('?');
+        if (!pathname.includes('.') && existsSync(`dist${pathname}/index.html`)) {
+          req.url = `${pathname}/index.html${search ? `?${search}` : ''}`;
         }
         next();
       });

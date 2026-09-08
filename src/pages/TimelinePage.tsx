@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import type { EventCategory, EventSummary, RegionId } from '@/types';
-import { categoryLabels, eras, events, fightersForEvent, fighters, movements } from '@/lib/content';
-import { regionNames } from '@/data/regions';
-import { useActiveSection, usePageMeta } from '@/lib/hooks';
+import { categoryLabels, eras, events, fightersForEvent, fighters, movementById, movements } from '@/lib/content';
+import { regionIds, regionNames } from '@/data/regions';
+import { useActiveSection, usePageMeta, useUrlState } from '@/lib/hooks';
+import { oneOf, oneOfDefault } from '@/lib/url-state';
 import { track } from '@/lib/analytics';
-import { BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, Postmark, Reveal, Segmented, eraAccent, icons } from '@/components/ui';
+import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, Postmark, Reveal, Segmented, eraAccent, icons } from '@/components/ui';
 import { FighterChip } from '@/components/cards';
 
 /* ------------------------------------------------------------------ */
@@ -15,6 +16,13 @@ function dateSubLine(event: EventSummary): string {
   if (event.dateLabel.includes('–')) return event.dateLabel;
   return event.dateLabel.replace(String(event.date.year), '').trim();
 }
+
+const timelineParams = {
+  region: oneOf(regionIds),
+  category: oneOf(Object.keys(categoryLabels) as EventCategory[]),
+  movement: oneOf(movements.map((m) => m.id)),
+  view: oneOfDefault(['chapters', 'full'] as const, 'full'),
+};
 
 /* ------------------------------------------------------------------ */
 /* Era rail — sticky chapter nav, on the sheet's own paper             */
@@ -55,12 +63,9 @@ function EraRail({ activeId }: { activeId: string | null }) {
 export default function TimelinePage() {
   usePageMeta('Interactive Timeline', "Scroll through India's freedom struggle from 1757 to 1947 — nine chapters, their events, and the people who shaped them.");
 
-  const [params, setParams] = useSearchParams();
-  const [zoom, setZoom] = useState<'chapters' | 'full'>('full');
+  const [filters, setFilters] = useUrlState(timelineParams);
+  const { region, category, movement: movementId, view: zoom } = filters;
   const [sheetOpen, setSheetOpen] = useState(false);
-  const [region, setRegion] = useState<RegionId | null>((params.get('region') as RegionId) || null);
-  const [category, setCategory] = useState<EventCategory | null>((params.get('category') as EventCategory) || null);
-  const [movementId, setMovementId] = useState<string | null>(params.get('movement'));
 
   const filtered = useMemo(
     () => events.filter((e) => (!region || e.region === region) && (!category || e.category === category) && (!movementId || e.movement === movementId)),
@@ -86,12 +91,12 @@ export default function TimelinePage() {
     [filtered, region],
   );
 
-  const clearFilters = () => {
-    setRegion(null);
-    setCategory(null);
-    setMovementId(null);
-    setParams({}, { replace: true });
-  };
+  const clearFilters = () => setFilters({ region: null, category: null, movement: null });
+  const activeChips = [
+    region && { key: 'region', label: regionNames[region], onRemove: () => setFilters({ region: null }) },
+    category && { key: 'category', label: categoryLabels[category], onRemove: () => setFilters({ category: null }) },
+    movementId && { key: 'movement', label: movementById.get(movementId)?.name ?? movementId, onRemove: () => setFilters({ movement: null }) },
+  ].filter((c): c is { key: string; label: string; onRemove: () => void } => Boolean(c));
 
   const filterControls = (
     <>
@@ -100,7 +105,7 @@ export default function TimelinePage() {
         options={(Object.keys(regionNames) as RegionId[]).map((r) => ({ value: r, label: regionNames[r] }))}
         value={region}
         onChange={(v) => {
-          setRegion(v);
+          setFilters({ region: v });
           if (v) track('filter_applied', { filter: 'region' });
         }}
       />
@@ -109,7 +114,7 @@ export default function TimelinePage() {
         options={(Object.keys(categoryLabels) as EventCategory[]).map((c) => ({ value: c, label: categoryLabels[c] }))}
         value={category}
         onChange={(v) => {
-          setCategory(v);
+          setFilters({ category: v });
           if (v) track('filter_applied', { filter: 'category' });
         }}
       />
@@ -118,7 +123,7 @@ export default function TimelinePage() {
         options={movements.map((m) => ({ value: m.id, label: m.name }))}
         value={movementId}
         onChange={(v) => {
-          setMovementId(v);
+          setFilters({ movement: v });
           if (v) track('filter_applied', { filter: 'movement' });
         }}
       />
@@ -133,7 +138,7 @@ export default function TimelinePage() {
           <Segmented
             label="View"
             value={zoom}
-            onChange={setZoom}
+            onChange={(v) => setFilters({ view: v })}
             options={[
               { value: 'chapters', label: 'Chapters' },
               { value: 'full', label: 'Full timeline' },
@@ -143,15 +148,11 @@ export default function TimelinePage() {
             <Icon d="M4 6h16M7 12h10M10 18h4" className="h-3.5 w-3.5" />
             Filters{activeFilters > 0 && ` · ${activeFilters}`}
           </button>
-          {activeFilters > 0 && (
-            <button type="button" onClick={clearFilters} className="font-body text-meta font-medium text-oxide-deep underline decoration-oxide-deep/40 underline-offset-4">
-              Clear
-            </button>
-          )}
           <p className="label num ml-auto" role="status">
             {filtered.length} of {events.length} events
           </p>
         </div>
+        <ActiveFilters chips={activeChips} onClear={clearFilters} className="mt-3" />
       </PageIntro>
 
       <BottomSheet open={sheetOpen} onClose={() => setSheetOpen(false)} title="Filter the timeline">
@@ -173,7 +174,7 @@ export default function TimelinePage() {
                   <button
                     type="button"
                     onClick={() => {
-                      setZoom('full');
+                      setFilters({ view: 'full' });
                       requestAnimationFrame(() => requestAnimationFrame(() => document.getElementById(`era-${era.id}`)?.scrollIntoView({ block: 'start' })));
                     }}
                     className={`perf-all on-sheet flex h-full w-full flex-col px-5 py-7 text-left transition-opacity duration-160 ease-cinematic hover:opacity-90 sm:px-6 ${eraAccent.bg[era.accent]} ${eraAccent.onInk[era.accent]}`}

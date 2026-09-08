@@ -1,12 +1,13 @@
 import { useMemo, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import type { Gender, RegionId, Role } from '@/types';
 import { fighters, roleLabels } from '@/lib/content';
 import { eras } from '@/data/eras';
-import { regionNames } from '@/data/regions';
-import { useBookmarks, usePageMeta } from '@/lib/hooks';
+import { regionIds, regionNames } from '@/data/regions';
+import { useBookmarks, usePageMeta, useUrlState } from '@/lib/hooks';
+import { oneOf, oneOfDefault, text } from '@/lib/url-state';
 import { buildIndex, searchIndex } from '@/lib/search-core';
-import { BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, icons } from '@/components/ui';
+import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, icons } from '@/components/ui';
 import { FighterCard } from '@/components/cards';
 
 type Collection = 'all' | 'featured' | 'forgotten' | 'women' | 'saved';
@@ -20,29 +21,24 @@ const collections: { value: Collection; label: string }[] = [
   { value: 'saved', label: 'Saved' },
 ];
 
-const collectionValues = new Set<Collection>(collections.map(({ value }) => value));
-const regionValues = new Set<RegionId>(Object.keys(regionNames) as RegionId[]);
-const roleValues = new Set<Role>(Object.keys(roleLabels) as Role[]);
-const eraValues = new Set(eras.map(({ id }) => id));
-
 /* People-only index, built once. Same four-tier matcher as global search, so
    a spelling that works in the palette works here too. */
 const peopleIndex = buildIndex(fighters, [], []);
 
+const peopleParams = {
+  q: text(),
+  collection: oneOfDefault(collections.map((c) => c.value), 'all' as Collection),
+  region: oneOf(regionIds),
+  era: oneOf(eras.map((e) => e.id)),
+  role: oneOf(Object.keys(roleLabels) as Role[]),
+  gender: oneOf(['female', 'male'] as Gender[]),
+  sort: oneOfDefault(['chronological', 'name'] as Sort[], 'chronological' as Sort),
+};
+
 export default function FightersPage() {
   usePageMeta('Freedom Fighters', 'Browse the people of India’s freedom struggle — revolutionaries, satyagrahis, queens, poets and tribal leaders from every region.');
-  const [params] = useSearchParams();
-  const requestedCollection = params.get('collection') as Collection | null;
-  const requestedRegion = params.get('region') as RegionId | null;
-  const requestedRole = params.get('role') as Role | null;
-  const requestedEra = params.get('era');
-  const [query, setQuery] = useState('');
-  const [collection, setCollection] = useState<Collection>(requestedCollection && collectionValues.has(requestedCollection) ? requestedCollection : 'all');
-  const [region, setRegion] = useState<RegionId | null>(requestedRegion && regionValues.has(requestedRegion) ? requestedRegion : null);
-  const [eraId, setEraId] = useState<string | null>(requestedEra && eraValues.has(requestedEra) ? requestedEra : null);
-  const [role, setRole] = useState<Role | null>(requestedRole && roleValues.has(requestedRole) ? requestedRole : null);
-  const [gender, setGender] = useState<Gender | null>(null);
-  const [sort, setSort] = useState<Sort>('chronological');
+  const [filters, setFilters] = useUrlState(peopleParams);
+  const { q: query, collection, region, era: eraId, role, gender, sort } = filters;
   const [sheetOpen, setSheetOpen] = useState(false);
   const { bookmarks } = useBookmarks();
 
@@ -70,12 +66,18 @@ export default function FightersPage() {
   }, [matched, collection, region, eraId, role, gender, sort, bookmarks]);
 
   const activeCount = [region, eraId, role, gender].filter(Boolean).length;
+  const activeChips = [
+    region && { key: 'region', label: regionNames[region], onRemove: () => setFilters({ region: null }) },
+    eraId && { key: 'era', label: eras.find((e) => e.id === eraId)?.name ?? eraId, onRemove: () => setFilters({ era: null }) },
+    role && { key: 'role', label: roleLabels[role], onRemove: () => setFilters({ role: null }) },
+    gender && { key: 'gender', label: gender === 'female' ? 'Women' : 'Men', onRemove: () => setFilters({ gender: null }) },
+  ].filter((c): c is { key: string; label: string; onRemove: () => void } => Boolean(c));
 
   const filterControls = (
     <>
-      <ChipGroup label="Region" options={(Object.keys(regionNames) as RegionId[]).map((r) => ({ value: r, label: regionNames[r] }))} value={region} onChange={setRegion} />
-      <ChipGroup label="Era" options={eras.map((e) => ({ value: e.id, label: `${e.startYear} · ${e.name}` }))} value={eraId} onChange={setEraId} />
-      <ChipGroup label="Role" options={(Object.keys(roleLabels) as Role[]).map((r) => ({ value: r, label: roleLabels[r] }))} value={role} onChange={setRole} />
+      <ChipGroup label="Region" options={(Object.keys(regionNames) as RegionId[]).map((r) => ({ value: r, label: regionNames[r] }))} value={region} onChange={(v) => setFilters({ region: v })} />
+      <ChipGroup label="Era" options={eras.map((e) => ({ value: e.id, label: `${e.startYear} · ${e.name}` }))} value={eraId} onChange={(v) => setFilters({ era: v })} />
+      <ChipGroup label="Role" options={(Object.keys(roleLabels) as Role[]).map((r) => ({ value: r, label: roleLabels[r] }))} value={role} onChange={(v) => setFilters({ role: v })} />
       <ChipGroup
         label="Gender"
         options={[
@@ -83,14 +85,14 @@ export default function FightersPage() {
           { value: 'male' as Gender, label: 'Men' },
         ]}
         value={gender}
-        onChange={setGender}
+        onChange={(v) => setFilters({ gender: v })}
       />
       <ChipGroup
         label="Order"
         allLabel="By birth year"
         options={[{ value: 'name' as Sort, label: 'By name' }]}
         value={sort === 'name' ? 'name' : null}
-        onChange={(v) => setSort(v ?? 'chronological')}
+        onChange={(v) => setFilters({ sort: v ?? 'chronological' })}
       />
     </>
   );
@@ -105,7 +107,7 @@ export default function FightersPage() {
             <input
               type="search"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => setFilters({ q: e.target.value })}
               placeholder="Name, place, tag…"
               className="min-h-12 w-full rounded-sm border border-paper-400 bg-paper-50 pl-11 pr-4 font-body text-meta text-ink placeholder:text-ink-faint focus:border-ink"
             />
@@ -116,11 +118,12 @@ export default function FightersPage() {
         </div>
         <div className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:mx-0 sm:px-0" role="group" aria-label="Collections">
           {collections.map((c) => (
-            <button key={c.value} type="button" aria-pressed={collection === c.value} onClick={() => setCollection(c.value)} className={`chip shrink-0 whitespace-nowrap ${collection === c.value ? 'chip-active' : ''}`}>
+            <button key={c.value} type="button" aria-pressed={collection === c.value} onClick={() => setFilters({ collection: c.value })} className={`chip shrink-0 whitespace-nowrap ${collection === c.value ? 'chip-active' : ''}`}>
               {c.label}
             </button>
           ))}
         </div>
+        <ActiveFilters chips={activeChips} onClear={() => setFilters({ region: null, era: null, role: null, gender: null })} className="mt-3" />
       </PageIntro>
 
       <BottomSheet open={sheetOpen} onClose={() => setSheetOpen(false)} title="Filter people">

@@ -2,20 +2,23 @@ import { useMemo, useState } from 'react';
 import type { EventCategory } from '@/types';
 import { categoryLabels, events } from '@/lib/content';
 import { eraById } from '@/data/eras';
-import { usePageMeta } from '@/lib/hooks';
-import { BottomSheet, ChipGroup, EmptyState, PageIntro, Reveal, eraAccent } from '@/components/ui';
+import { usePageMeta, useUrlState } from '@/lib/hooks';
+import { oneOf } from '@/lib/url-state';
+import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, PageIntro, Reveal, eraAccent } from '@/components/ui';
 import { EventCard } from '@/components/cards';
+
+const decades = [...new Set(events.map((e) => Math.floor(e.date.year / 10) * 10))].sort((a, b) => a - b).map((d) => `${d}s`);
+
+const eventParams = {
+  type: oneOf(Object.keys(categoryLabels) as EventCategory[]),
+  decade: oneOf(decades),
+};
 
 export default function EventsPage() {
   usePageMeta('Historical Events', 'Uprisings, marches, trials and turning points of India’s freedom struggle, 1757–1947.');
-  const [category, setCategory] = useState<EventCategory | null>(null);
-  const [decade, setDecade] = useState<string | null>(null);
+  const [filters, setFilters] = useUrlState(eventParams);
+  const { type: category, decade } = filters;
   const [sheetOpen, setSheetOpen] = useState(false);
-
-  const decades = useMemo(() => {
-    const set = new Set(events.map((e) => Math.floor(e.date.year / 10) * 10));
-    return [...set].sort((a, b) => a - b).map((d) => `${d}s`);
-  }, []);
 
   const filtered = useMemo(
     () => events.filter((e) => (!category || e.category === category) && (!decade || Math.floor(e.date.year / 10) * 10 === Number(decade.slice(0, -1)))),
@@ -33,10 +36,14 @@ export default function EventsPage() {
   }, [filtered]);
 
   const activeCount = [category, decade].filter(Boolean).length;
+  const activeChips = [
+    category && { key: 'type', label: categoryLabels[category], onRemove: () => setFilters({ type: null }) },
+    decade && { key: 'decade', label: decade, onRemove: () => setFilters({ decade: null }) },
+  ].filter((c): c is { key: string; label: string; onRemove: () => void } => Boolean(c));
   const controls = (
     <>
-      <ChipGroup label="Decade" allLabel="All years" options={decades.map((d) => ({ value: d, label: d }))} value={decade} onChange={setDecade} />
-      <ChipGroup label="Type" options={(Object.keys(categoryLabels) as EventCategory[]).map((c) => ({ value: c, label: categoryLabels[c] }))} value={category} onChange={setCategory} />
+      <ChipGroup label="Decade" allLabel="All years" options={decades.map((d) => ({ value: d, label: d }))} value={decade} onChange={(v) => setFilters({ decade: v })} />
+      <ChipGroup label="Type" options={(Object.keys(categoryLabels) as EventCategory[]).map((c) => ({ value: c, label: categoryLabels[c] }))} value={category} onChange={(v) => setFilters({ type: v })} />
     </>
   );
 
@@ -49,12 +56,13 @@ export default function EventsPage() {
           </button>
           <div className="-mx-4 flex gap-2 overflow-x-auto px-4 scrollbar-none sm:mx-0 sm:px-0" role="group" aria-label="Jump to decade">
             {decades.map((d) => (
-              <button key={d} type="button" aria-pressed={decade === d} onClick={() => setDecade(decade === d ? null : d)} className={`chip num shrink-0 ${decade === d ? 'chip-active' : ''}`}>
+              <button key={d} type="button" aria-pressed={decade === d} onClick={() => setFilters({ decade: decade === d ? null : d })} className={`chip num shrink-0 ${decade === d ? 'chip-active' : ''}`}>
                 {d}
               </button>
             ))}
           </div>
         </div>
+        <ActiveFilters chips={activeChips} onClear={() => setFilters({ type: null, decade: null })} className="mt-3" />
       </PageIntro>
 
       <BottomSheet open={sheetOpen} onClose={() => setSheetOpen(false)} title="Filter events">

@@ -695,6 +695,37 @@ export function ChipGroup<T extends string>({
 }
 
 /* ------------------------------------------------------------------ */
+/* Active filters — what's narrowing the list, each removable          */
+export function ActiveFilters({
+  chips,
+  onClear,
+  className = '',
+}: {
+  chips: { key: string; label: string; onRemove: () => void }[];
+  onClear: () => void;
+  className?: string;
+}) {
+  if (chips.length === 0) return null;
+  return (
+    <ul className={`flex flex-wrap items-center gap-2 ${className}`} aria-label="Active filters">
+      {chips.map((c) => (
+        <li key={c.key}>
+          <button type="button" onClick={c.onRemove} className="chip chip-active min-h-10" aria-label={`Remove filter: ${c.label}`}>
+            {c.label}
+            <Icon d={icons.close} className="h-3 w-3" />
+          </button>
+        </li>
+      ))}
+      <li>
+        <button type="button" onClick={onClear} className="font-body text-meta font-medium text-oxide-deep underline decoration-oxide-deep/40 underline-offset-4">
+          Clear all
+        </button>
+      </li>
+    </ul>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /* Segmented control                                                   */
 export function Segmented<T extends string>({
   label,
