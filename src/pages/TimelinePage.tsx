@@ -216,7 +216,7 @@ export default function TimelinePage() {
                 {chapters.map(({ era, index, eraEvents, eraPeople }, position) => (
                   <section key={era.id} id={`era-${era.id}`} aria-label={era.name} className="scroll-mt-36">
                     {/* Chapter pane — a commemorative in this chapter's own ink */}
-                    <Reveal mask className="relative ml-8 sm:ml-12">
+                    <div className="relative ml-8 sm:ml-12">
                       <span
                         aria-hidden="true"
                         className={`absolute -left-8 top-8 h-4 w-4 outline outline-4 outline-paper-100 sm:-left-12 ${eraAccent.bg[era.accent]}`}
@@ -224,18 +224,27 @@ export default function TimelinePage() {
                       />
                       <header className={`perf-all on-sheet relative px-5 py-7 sm:px-8 sm:py-9 ${eraAccent.bg[era.accent]} ${eraAccent.onInk[era.accent]}`}>
                         {position === 0 && <Postmark lines={['India', 'Post', '1757 — 1947']} className="absolute right-4 top-5 hidden sm:grid" />}
-                        {/* The denomination sets `leading-none`; at display sizes the
-                            digits then overflow their own line box and the reveal
-                            mask shaves their tops. Give the numeral its own room. */}
-                        <p className="denom block text-h1 leading-[1.12] sm:text-hero sm:leading-[1.08]">{era.startYear}</p>
-                        <h2 className={`mt-4 max-w-2xl text-h2 ${position === 0 ? 'sm:pr-28' : ''}`}>{era.name}</h2>
-                        <p className={`num mt-2 font-body text-label ${eraAccent.onInkMuted[era.accent]}`}>
-                          Chapter {index + 1} · {era.startYear}–{era.endYear}
-                        </p>
-                        <p className={`mt-4 max-w-xl font-reading text-reading italic ${eraAccent.onInkMuted[era.accent]}`}>{era.tagline}</p>
-                        <p className="mt-4 max-w-prose font-reading text-reading">{era.description}</p>
+                        {/* The introduction: denomination, title and chapter line reveal together, once, in 450ms. */}
+                        <Reveal mask duration={450}>
+                          <div>
+                            {/* The denomination sets `leading-none`; at display sizes the
+                                digits then overflow their own line box and the reveal
+                                mask shaves their tops. Give the numeral its own room. */}
+                            <p className="denom block text-h1 leading-[1.12] sm:text-hero sm:leading-[1.08]">{era.startYear}</p>
+                            <h2 className={`mt-4 max-w-2xl text-h2 ${position === 0 ? 'sm:pr-28' : ''}`}>{era.name}</h2>
+                            <p className={`num mt-2 font-body text-label ${eraAccent.onInkMuted[era.accent]}`}>
+                              Chapter {index + 1} · {era.startYear}–{era.endYear}
+                            </p>
+                          </div>
+                        </Reveal>
+                        {/* The body is never masked: a chapter must not read as an empty pane. */}
+                        <div data-chapter-body>
+                          <p className={`mt-4 max-w-xl font-reading text-reading italic ${eraAccent.onInkMuted[era.accent]}`}>{era.tagline}</p>
+                          <p className={`label mt-6 ${eraAccent.onInkMuted[era.accent]}`}>What was changing</p>
+                          <p className="mt-2 max-w-prose font-reading text-reading">{era.description}</p>
+                        </div>
                       </header>
-                    </Reveal>
+                    </div>
 
                     {eraPeople.length > 0 && (
                       <Reveal className="ml-8 mt-5 sm:ml-12">
@@ -292,6 +301,13 @@ export default function TimelinePage() {
                         );
                       })}
                     </ol>
+                    {eras[index + 1] ? (
+                      <a href={`#era-${eras[index + 1].id}`} className="ml-8 mt-6 block font-reading text-reading italic text-ink-soft hover:text-ink sm:ml-12">
+                        Next chapter: {eras[index + 1].name}
+                      </a>
+                    ) : (
+                      <p className="ml-8 mt-6 font-reading text-reading italic text-ink-soft sm:ml-12">Next chapter: Independence — and the archive’s end</p>
+                    )}
                   </section>
                 ))}
               </div>

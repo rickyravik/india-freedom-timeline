@@ -106,6 +106,7 @@ export function Reveal({
   as: Tag = 'div',
   className = '',
   delay = 0,
+  duration,
   mask = false,
   style,
   children,
@@ -114,13 +115,15 @@ export function Reveal({
   as?: ElementType;
   className?: string;
   delay?: number;
+  /** Overrides the default 700ms (900ms masked) transition, in ms. */
+  duration?: number;
   mask?: boolean;
   style?: CSSProperties;
   children: ReactNode;
   [key: string]: unknown;
 }) {
   const ref = useReveal<HTMLElement>();
-  const merged = { ...style, '--reveal-delay': `${delay}ms` } as CSSProperties;
+  const merged = { ...style, '--reveal-delay': `${delay}ms`, ...(duration !== undefined ? { '--reveal-duration': `${duration}ms` } : {}) } as CSSProperties;
   return (
     <Tag ref={ref} className={`${mask ? 'reveal-mask' : 'reveal'} ${className}`} style={merged} {...rest}>
       {children}

@@ -34,3 +34,15 @@ test('with reduced motion the spine is a static line and the current chapter is 
   await expect(page.getByRole('navigation', { name: 'Jump to era' }).locator('[aria-current="true"]')).toContainText('Non-Cooperation');
   await expect(page.getByRole('navigation', { name: 'Jump to era' }).locator('[aria-current="true"] .sr-only')).toHaveText('Current chapter:');
 });
+
+test('a chapter pane never appears as an empty rectangle: description text is visible before the heading reveal completes', async ({ page }) => {
+  await page.goto('/timeline');
+  const chapter = page.locator('#era-revolt-1857');
+  await chapter.scrollIntoViewIfNeeded();
+  // The description paragraph is not masked; it is visible immediately.
+  const desc = chapter.locator('[data-chapter-body] p').first();
+  await expect(desc).toHaveCSS('opacity', '1');
+  // The heading group reveals over ~450ms (not 900ms).
+  const dur = await chapter.locator('.reveal-mask').first().evaluate((el) => getComputedStyle(el).transitionDuration);
+  expect(dur.split(',')[0].trim()).toBe('0.45s');
+});
