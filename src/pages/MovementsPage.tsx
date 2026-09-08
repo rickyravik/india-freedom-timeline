@@ -104,6 +104,7 @@ export function MovementPage() {
 
         {(movement.aims || movement.methods || movement.reach || movement.participants || movement.disagreements || movement.outcomes) && (
           <section aria-label="How this movement worked" className="grid gap-6 sm:grid-cols-2">
+            <h2 className="text-h2 text-ink sm:col-span-2">How this movement worked</h2>
             {movement.editorial?.status === 'draft' && (
               <div className="sm:col-span-2">
                 <DraftStamp />

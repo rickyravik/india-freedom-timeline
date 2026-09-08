@@ -83,8 +83,10 @@ function StoryMode({ chapters, accent, sources }: { chapters: StoryChapter[]; ac
               aria-current={i === index ? 'step' : undefined}
               aria-label={`Chapter ${i + 1}: ${c.title}`}
               onClick={() => setIndex(i)}
-              className={`h-2.5 w-2.5 rounded-none transition-colors duration-400 ease-cinematic ${i === index ? eraAccent.bg[accent] : 'bg-paper-400'}`}
-            />
+              className="flex h-11 w-11 items-center justify-center"
+            >
+              <span aria-hidden="true" className={`block h-2.5 w-2.5 rounded-none transition-colors duration-400 ease-cinematic ${i === index ? eraAccent.bg[accent] : 'bg-paper-400'}`} />
+            </button>
           ))}
         </div>
         {index < chapters.length - 1 ? (
@@ -300,7 +302,7 @@ export default function FighterProfilePage() {
                 type="button"
                 onClick={toggleSave}
                 aria-pressed={bookmarked}
-                className={`${heroChip} min-h-10 ${bookmarked ? '!bg-paper-50 !text-ink' : ''}`}
+                className={`${heroChip} min-h-11 ${bookmarked ? '!bg-paper-50 !text-ink' : ''}`}
               >
                 <Icon d={icons.bookmark} className={`h-4 w-4 ${bookmarked ? 'fill-current' : ''}`} />
                 {bookmarked ? 'Saved' : 'Save this story'}
@@ -316,7 +318,7 @@ export default function FighterProfilePage() {
             <p role="status" aria-live="polite" className="sr-only">
               {justToggled === 'saved' ? 'Saved to your stories' : justToggled === 'removed' ? 'Removed from your stories' : ''}
             </p>
-            <button type="button" onClick={() => share(summary.name, summary.summary, `/fighters/${summary.slug}`)} className={`${heroChip} min-h-10`}>
+            <button type="button" onClick={() => share(summary.name, summary.summary, `/fighters/${summary.slug}`)} className={`${heroChip} min-h-11`}>
               <Icon d={icons.share} className="h-4 w-4" />
               {copied ? 'Link copied' : 'Share'}
             </button>

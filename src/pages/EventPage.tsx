@@ -99,17 +99,17 @@ export default function EventPage() {
             {summary.summary}
           </p>
           <div className="mt-7 flex flex-wrap gap-2 animate-fade-up" style={{ animationDelay: '320ms' }}>
-            <button type="button" onClick={() => share(summary.title, summary.summary, `/events/${summary.slug}`)} className={`${heroChip} min-h-10`}>
+            <button type="button" onClick={() => share(summary.title, summary.summary, `/events/${summary.slug}`)} className={`${heroChip} min-h-11`}>
               <Icon d={icons.share} className="h-4 w-4" />
               {copied ? 'Link copied' : 'Share'}
             </button>
             {movement && (
-              <Link to={`/movements/${movement.slug}`} className={`${heroChip} min-h-10`}>
+              <Link to={`/movements/${movement.slug}`} className={`${heroChip} min-h-11`}>
                 Part of: {movement.name}
                 <Icon d={icons.arrowRight} className="h-4 w-4" />
               </Link>
             )}
-            <Link to={`/timeline#era-${summary.era}`} className={`${heroChip} min-h-10`}>
+            <Link to={`/timeline#era-${summary.era}`} className={`${heroChip} min-h-11`}>
               <Icon d={icons.clock} className="h-4 w-4" />
               See on the timeline
             </Link>

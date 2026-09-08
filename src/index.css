@@ -16,6 +16,15 @@
     scroll-padding-top: 7rem;
     --reading-scale: 1;
   }
+  /* The phone thumb bar (MobileNav, md:hidden) is fixed, not part of layout,
+     so a browser's own scroll-into-view (including focus-driven scrolling)
+     has no reason to leave room for it — a focused control can otherwise
+     land with its bottom edge under the bar. */
+  @media (max-width: 767px) {
+    html {
+      scroll-padding-bottom: 5rem;
+    }
+  }
   html[data-text-size='large'] {
     --reading-scale: 1.15;
   }

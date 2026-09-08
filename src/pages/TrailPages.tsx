@@ -6,7 +6,7 @@ import { usePageMeta, useTrailProgress, useUrlState } from '@/lib/hooks';
 import { flag } from '@/lib/url-state';
 import { markComplete, setStop } from '@/lib/trails-progress';
 import { track } from '@/lib/analytics';
-import { Breadcrumbs, Icon, PageIntro, Postmark, SourceList, eraAccent, icons } from '@/components/ui';
+import { Breadcrumbs, Icon, PageIntro, Postmark, SectionHeading, SourceList, eraAccent, icons } from '@/components/ui';
 import { DraftStamp, ReadingText } from '@/components/reading';
 import { ChoiceActivity, OrderActivity, TrailCard, TrailProgress } from '@/components/trails';
 import { EventCard, FighterCard, MovementCard } from '@/components/cards';
@@ -34,6 +34,9 @@ export default function TrailsPage() {
   return (
     <div className="pb-20">
       <PageIntro title="Trails" lede="A trail is a short editorial journey: it starts with a question, moves through a few people, events and places with their sources beside them, and ends with something to think about. Stop and leave whenever you like — your place is kept on this device." />
+      <div className="container-page">
+        <SectionHeading title="All trails" />
+      </div>
       <div className="container-page grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {trails.map((t) => (
           <TrailCard key={t.id} trail={t} progress={progress[t.slug]} />

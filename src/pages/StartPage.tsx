@@ -29,10 +29,13 @@ export default function StartPage() {
             <Icon d={icons.arrowRight} className="mt-auto h-4 w-4 text-brass-deep" />
           </Link>
         </section>
-        <section aria-label="Trails" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {trails.map((t) => (
-            <TrailCard key={t.id} trail={t} progress={progress[t.slug]} />
-          ))}
+        <section aria-label="Trails">
+          <h2 className="mb-4 text-h2 text-ink">All trails</h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {trails.map((t) => (
+              <TrailCard key={t.id} trail={t} progress={progress[t.slug]} />
+            ))}
+          </div>
         </section>
       </div>
     </div>
