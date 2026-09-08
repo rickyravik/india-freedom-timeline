@@ -1,24 +1,26 @@
 /**
- * Privacy-friendly analytics. Cloudflare Web Analytics (the beacon
- * vite.config.ts injects into index.html at build time, only when
- * VITE_CF_BEACON_TOKEN is set) has no custom-event API today, so track()
- * is an honest no-op in production — it exists so call sites don't need to
- * change if that ever becomes possible. In dev it logs to the console
- * instead, so instrumentation can be verified without a deployed beacon.
- *
- * Every call site passes only coarse, non-identifying shape — a length
- * bucket, a filter's name (never its value), a boolean — never free text,
- * a search query, or anything else a visitor typed.
+ * Privacy-friendly analytics. In dev, every track() logs to the console. In
+ * production, only the allow-listed pilot events (src/lib/event-names.ts) are
+ * sent — as a fire-and-forget beacon to POST /api/event (worker/events.ts) —
+ * and only when VITE_EVENTS=on at build time. Never during prerendering.
+ * Every call site passes coarse shape (a slug, a count, a bucket), never
+ * free text or anything a visitor typed.
  */
-const configured = Boolean(import.meta.env.VITE_CF_BEACON_TOKEN);
+import { isEventName } from '@/lib/event-names';
+
+const enabled = import.meta.env.VITE_EVENTS === 'on';
 
 export function track(event: string, props?: Record<string, string | number | boolean>): void {
   if (import.meta.env.DEV) {
     console.debug('[analytics]', event, props ?? {});
     return;
   }
-  if (!configured) return;
-  // No-op: Cloudflare Web Analytics doesn't expose a custom-event API yet.
+  if (!enabled || window.__PRERENDERING__ || !isEventName(event)) return;
+  try {
+    navigator.sendBeacon('/api/event', new Blob([JSON.stringify({ name: event, props: props ?? {} })], { type: 'application/json' }));
+  } catch {
+    /* never let counting break reading */
+  }
 }
 
 /** "0", "1-3", "4-8", "9-20", "21+" — never the actual length or content. */

@@ -23,7 +23,9 @@
   "vars": {
     "GITHUB_OWNER": "rickyravik",
     "GITHUB_REPO": "india-freedom-timeline"
-  }
+  },
+  // Pilot event counts (worker/events.ts). The dataset is created on first write.
+  "analytics_engine_datasets": [{ "binding": "EVENTS", "dataset": "ift_events" }]
   // Rate limiting for POST /api/correction (optional — the endpoint works
   // without it, just unthrottled beyond GitHub's own API limits). To enable:
   // run `wrangler kv namespace create RATE_LIMIT_KV`, paste the id it prints

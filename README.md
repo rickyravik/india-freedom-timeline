@@ -83,9 +83,10 @@ npx wrangler deploy
 
 ## Privacy and analytics
 
-Analytics are opt-in and off by default. Set `VITE_CF_BEACON_TOKEN` (your site's token from **Cloudflare -> Analytics -> Web Analytics**) at build time to enable [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) — a cookieless, no-fingerprinting beacon. Leave it unset and a build carries zero trace of it anywhere in the output; there is no default, third-party or otherwise.
+Two opt-in, off-by-default mechanisms:
 
-`src/lib/analytics.ts`'s `track()` is an honest no-op today — Cloudflare Web Analytics has no custom-event API yet — but every call site already passes only coarse, non-identifying shape (a length bucket, a filter's name, a boolean), never free text or anything a visitor typed, so instrumenting a custom-event backend later needs no call-site changes. In development, `track()` logs to the console instead, so you can see exactly what would be sent.
+- **Page views** — set `VITE_CF_BEACON_TOKEN` at build time to enable Cloudflare Web Analytics (cookieless, no fingerprinting). Unset, a build carries no trace of it.
+- **Pilot events** — set `VITE_EVENTS=on` in `.env` to have `track()` send the seven allow-listed events in `src/lib/event-names.ts` (trail start/stop/complete, source opened, glossary opened, quiz reviewed, correction submitted) to `POST /api/event`, which counts them in a Cloudflare Analytics Engine dataset (`ift_events`). Props are at most three short `key=value` blobs, cut to 40 characters; no free text, names or search queries are ever sent. Query it with the Analytics Engine SQL API, e.g. `SELECT blob1 AS event, SUM(_sample_interval) AS n FROM ift_events WHERE timestamp > NOW() - INTERVAL '7' DAY GROUP BY event`.
 
 ## Project structure
 

@@ -6,8 +6,9 @@
  * POST /api/correction, which has no file in dist/) fall through here.
  */
 import { handleCorrection, type CorrectionEnv } from './correction';
+import { handleEvent, type EventsEnv } from './events';
 
-export interface Env extends CorrectionEnv {
+export interface Env extends CorrectionEnv, EventsEnv {
   ASSETS: Fetcher;
 }
 
@@ -16,6 +17,9 @@ export default {
     const url = new URL(request.url);
     if (request.method === 'POST' && url.pathname === '/api/correction') {
       return handleCorrection(request, env);
+    }
+    if (request.method === 'POST' && url.pathname === '/api/event') {
+      return handleEvent(request, env);
     }
     // env.ASSETS.fetch honors wrangler.jsonc's assets.not_found_handling,
     // so this still resolves an unmatched SPA route to index.html exactly
