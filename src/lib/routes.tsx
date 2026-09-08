@@ -32,6 +32,7 @@ export const routeTable: RouteEntry[] = [
   { path: '/map', loader: () => import('@/pages/MapPage') },
   { path: '/search', loader: () => import('@/pages/SearchPage') },
   { path: '/learn', loader: () => import('@/pages/LearnPage') },
+  { path: '/glossary', loader: () => import('@/pages/GlossaryPage') },
   { path: '/about', loader: () => import('@/pages/AboutPage') },
   { path: '/offline', loader: () => import('@/pages/OfflinePage') },
 ];

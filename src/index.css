@@ -228,6 +228,13 @@
     @apply float-left mr-2 mt-1 font-display text-h1 font-bold leading-[0.8] text-oxide;
   }
 
+  /* A glossary term: inherits the reading face, dotted gauge-gold underline, no button chrome */
+  .gloss {
+    @apply rounded-sm bg-transparent p-0 underline decoration-brass decoration-dotted decoration-1 underline-offset-4 hover:decoration-solid hover:decoration-ink;
+    font: inherit;
+    color: inherit;
+  }
+
   /* Ledger-style label/value */
   .ledger-row {
     @apply num flex items-baseline justify-between gap-4 border-b border-paper-400/70 py-2 font-body text-meta;

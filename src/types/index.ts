@@ -374,6 +374,18 @@ export interface StateInfo {
 
 /** Educational content -------------------------------------------------- */
 
+/** A term explained at its first appearance on a page, and listed at /glossary. */
+export interface GlossaryTerm {
+  id: string;
+  term: string;
+  /** Other surface forms that should trigger the same explanation. */
+  aliases?: string[];
+  /** Plain English, one or two sentences, no more than ~45 words. */
+  definition: string;
+  moreLink?: { label: string; to: string };
+  editorial: Editorial;
+}
+
 export type QuizTopic = 'people' | 'events' | 'movements' | 'places';
 export interface QuizQuestion {
   id: string;

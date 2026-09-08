@@ -16,6 +16,7 @@ import { eras } from '../src/data/eras.ts';
 import { states } from '../src/data/regions.ts';
 import { quizQuestions, guessWhoRounds } from '../src/data/quizzes.ts';
 import { didYouKnowFacts } from '../src/data/facts.ts';
+import { glossaryTerms } from '../src/data/glossary.ts';
 import { fighterSummaries, fighterSourceFile } from '../src/data/generated/fighters.summary.ts';
 import { eventSummaries, eventSourceFile } from '../src/data/generated/events.summary.ts';
 import { pickEventSummary, pickFighterSummary } from './lib/summaries.ts';
@@ -225,6 +226,15 @@ const guessWhoRoundSchema = z.object({
   answerName: z.string().min(1),
 });
 
+const glossaryTermSchema = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  term: z.string().min(1),
+  aliases: z.array(z.string().min(1)).optional(),
+  definition: z.string().min(1).max(320),
+  moreLink: relatedLinkSchema,
+  editorial: editorialSchema,
+});
+
 /* -------------------------------------------------------------------- */
 /* Schema pass                                                           */
 function checkSchema<T>(collection: string, items: T[], schema: z.ZodType<T>, refOf: (item: T) => string) {
@@ -246,6 +256,7 @@ checkSchema('eras', eras, eraSchema, (e) => e.id);
 checkSchema('quizQuestions', quizQuestions, quizQuestionSchema, (q) => q.id);
 checkSchema('didYouKnowFacts', didYouKnowFacts, factSchema, (f) => f.id);
 checkSchema('guessWhoRounds', guessWhoRounds, guessWhoRoundSchema, (r) => r.id);
+checkSchema('glossary', glossaryTerms, glossaryTermSchema, (t) => t.id);
 
 /* -------------------------------------------------------------------- */
 /* Uniqueness                                                            */
@@ -264,6 +275,7 @@ checkUnique('events', events);
 checkUnique('movements', movements);
 checkUnique('organizations', organizations);
 checkUnique('eras', eras.map((e) => ({ id: e.id })));
+checkUnique('glossary', glossaryTerms.map((t) => ({ id: t.id })));
 
 /* -------------------------------------------------------------------- */
 /* Cross-references                                                      */
@@ -364,6 +376,10 @@ for (const q of quizQuestions) {
 }
 for (const f of didYouKnowFacts) checkRelatedLink('didYouKnowFacts', f.id, f.relatedLink);
 for (const r of guessWhoRounds) if (!fighterIds.has(r.answerId)) err('guessWhoRounds', r.id, `answerId "${r.answerId}" does not resolve to an existing fighter`);
+for (const t of glossaryTerms) {
+  checkRelatedLink('glossary', t.id, t.moreLink);
+  if (t.editorial.status === 'draft') warn('glossary', t.id, 'editorial status is draft');
+}
 
 /* -------------------------------------------------------------------- */
 /* Generated summary staleness — src/data/generated/*.summary.ts is        */
@@ -398,7 +414,7 @@ for (const group of [errors, warnings]) {
 }
 
 console.log(
-  `\nValidated ${fighters.length} fighters, ${events.length} events, ${movements.length} movements, ${organizations.length} organizations, ${eras.length} eras, ${quizQuestions.length} quiz questions, ${didYouKnowFacts.length} facts, ${guessWhoRounds.length} guess-who rounds.`,
+  `\nValidated ${fighters.length} fighters, ${events.length} events, ${movements.length} movements, ${organizations.length} organizations, ${eras.length} eras, ${quizQuestions.length} quiz questions, ${didYouKnowFacts.length} facts, ${guessWhoRounds.length} guess-who rounds, ${glossaryTerms.length} glossary terms.`,
 );
 console.log(`${errors.length} error(s), ${warnings.length} warning(s).`);
 

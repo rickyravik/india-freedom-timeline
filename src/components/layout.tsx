@@ -234,6 +234,7 @@ function Footer() {
                 ['/map', 'Map of India'],
                 ['/learn', 'Learn & quiz'],
                 ['/search', 'Search'],
+                ['/glossary', 'Glossary'],
                 ['/about', 'About & sources'],
               ].map(([to, label]) => (
                 <li key={to}>

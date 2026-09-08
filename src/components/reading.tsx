@@ -1,7 +1,10 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import type { DisputedNote, SourceRef } from '@/types';
 import { splitCitations } from '@/lib/reading';
+import { annotateFirstOccurrences } from '@/lib/glossary';
 import { track } from '@/lib/analytics';
+import { glossaryById, glossaryTerms } from '@/lib/content';
 import { Icon, icons } from '@/components/ui';
 
 /* ------------------------------------------------------------------ */
@@ -104,13 +107,57 @@ function InlineNote({ note, vault }: { note: DisputedNote; vault: boolean }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Reading text — paragraphs with citations                            */
+/* Glossary term — dotted underline, explains itself on demand         */
+export function GlossButton({ text, termId, open, onToggle, onClose }: { text: string; termId: string; open: boolean; onToggle: () => void; onClose: () => void }) {
+  const id = useId();
+  const btn = useRef<HTMLButtonElement>(null);
+  const term = glossaryById.get(termId);
+  const close = () => {
+    onClose();
+    btn.current?.focus();
+  };
+  return (
+    <span className="relative inline">
+      <button
+        ref={btn}
+        type="button"
+        onClick={() => {
+          if (!open) track('glossary_opened');
+          onToggle();
+        }}
+        aria-expanded={open}
+        aria-controls={open ? id : undefined}
+        className="gloss"
+      >
+        {text}
+      </button>
+      <Popover id={id} open={open} onClose={close} label={`Meaning of ${term?.term ?? text}`}>
+        <span className="block font-display text-base font-bold text-ink">{term?.term}</span>
+        <span className="mt-1 block">{term?.definition}</span>
+        <span className="mt-2 flex flex-wrap gap-3">
+          {term?.moreLink && (
+            <Link to={term.moreLink.to} className="font-medium text-oxide-deep underline underline-offset-2">
+              {term.moreLink.label}
+            </Link>
+          )}
+          <Link to={`/glossary#${termId}`} className="font-medium text-ink underline underline-offset-2">
+            Glossary
+          </Link>
+        </span>
+      </Popover>
+    </span>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Reading text — paragraphs with glossary terms and citations         */
 export function ReadingText({
   paragraphs,
   sources,
   notesByParagraph,
   dropcap = false,
   vault = false,
+  glossary = true,
   className = '',
 }: {
   paragraphs: string[];
@@ -118,20 +165,29 @@ export function ReadingText({
   notesByParagraph?: Record<number, DisputedNote[]>;
   dropcap?: boolean;
   vault?: boolean;
+  glossary?: boolean;
   className?: string;
 }) {
-  /* One open popover per reading block: "p2-c1" = paragraph 2, cite 1. */
+  /* One open popover per reading block: "p2-g1" = paragraph 2, glossary term 1;
+     "p2-g1-c0" = the same paragraph's first citation after that term. */
   const [open, setOpen] = useState<string | null>(null);
   const prose = vault ? 'prose-reading-vault' : 'prose-reading';
+  const glossed = glossary ? annotateFirstOccurrences(paragraphs, glossaryTerms) : paragraphs.map((text) => [{ kind: 'text' as const, text }]);
   return (
     <div data-reading-text className={`space-y-5 ${className}`}>
-      {paragraphs.flatMap((para, i) => {
+      {paragraphs.flatMap((_, i) => {
         const nodes: ReactNode[] = [
           <p key={`p${i}`} className={`${prose} ${dropcap && i === 0 ? 'dropcap' : ''}`}>
-            {splitCitations(para).map((seg, j) => {
-              if (seg.kind === 'text') return seg.text;
-              const key = `p${i}-c${j}`;
-              return <CitationMarker key={key} index={seg.index} source={sources[seg.index - 1]} open={open === key} onToggle={() => setOpen(open === key ? null : key)} onClose={() => setOpen(null)} />;
+            {glossed[i].flatMap((g, gi) => {
+              if (g.kind === 'term') {
+                const key = `p${i}-g${gi}`;
+                return [<GlossButton key={key} text={g.text} termId={g.termId} open={open === key} onToggle={() => setOpen(open === key ? null : key)} onClose={() => setOpen(null)} />];
+              }
+              return splitCitations(g.text).map((seg, j) => {
+                if (seg.kind === 'text') return seg.text;
+                const key = `p${i}-g${gi}-c${j}`;
+                return <CitationMarker key={key} index={seg.index} source={sources[seg.index - 1]} open={open === key} onToggle={() => setOpen(open === key ? null : key)} onClose={() => setOpen(null)} />;
+              });
             })}
           </p>,
         ];
