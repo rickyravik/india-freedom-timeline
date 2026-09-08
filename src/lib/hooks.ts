@@ -4,6 +4,7 @@ import { getNeedRefresh, subscribeNeedRefresh } from '@/lib/pwa';
 import { parseParams, serializeParams, type Schema, type StateOf } from '@/lib/url-state';
 import { DEFAULT_PREFERENCES, readPreferences, subscribePreferences, writePreferences, type Preferences } from '@/lib/preferences';
 import { EMPTY_PROGRESS, readProgress, subscribeProgress, type ProgressMap } from '@/lib/trails-progress';
+import { useMotionAllowed } from '@/lib/motion';
 
 /** True only during the build-time prerender capture pass (set by scripts/prerender.mjs via Playwright's addInitScript, never in a real visitor's browser). */
 declare global {
@@ -40,9 +41,7 @@ export function usePreferences(): [Preferences, (patch: Partial<Preferences>) =>
 
 /** Respect the OS preference, or the site's own persistent "Reduce motion" setting. */
 export function useReducedMotion(): boolean {
-  const media = useMatchMedia('(prefers-reduced-motion: reduce)');
-  const [prefs] = usePreferences();
-  return media || prefs.motion === 'reduce';
+  return !useMotionAllowed();
 }
 
 /** True at the md breakpoint and above (768px). */
@@ -88,7 +87,11 @@ export function useReveal<T extends HTMLElement>() {
       return;
     }
     observer.observe(el);
-    return () => observer.unobserve(el);
+    const fallback = window.setTimeout(() => el.classList.add('in-view'), 1500);
+    return () => {
+      window.clearTimeout(fallback);
+      observer.unobserve(el);
+    };
   }, [reduced]);
   return ref;
 }
