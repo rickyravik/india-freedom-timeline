@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation, useNavigationType } from 'react-router-dom';
 import { useKeyboardShortcut, useServiceWorkerUpdate } from '@/lib/hooks';
 import { acceptUpdate, dismissUpdate } from '@/lib/pwa';
 import { SearchPalette } from '@/components/search-palette';
@@ -44,11 +44,67 @@ export function Emblem({ className = 'h-8 w-8' }: { className?: string }) {
   );
 }
 
-export function ScrollToTop() {
-  const { pathname } = useLocation();
+/* Scroll positions per history entry, kept in memory for this tab. A reload
+   forgets them, which is fine: a reload is a fresh PUSH, not a POP. */
+const scrollPositions = new Map<string, number>();
+
+function afterLayout(fn: () => boolean, maxFrames = 60) {
+  let frames = 0;
+  const tick = () => {
+    if (fn() || frames++ >= maxFrames) return;
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+
+export function ScrollManager() {
+  const location = useLocation();
+  const navType = useNavigationType();
+
+  /* Remember where this entry is, throttled to one write per frame. */
   useEffect(() => {
-    if (!window.location.hash) window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-  }, [pathname]);
+    const key = location.key;
+    let queued = false;
+    const save = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => {
+        queued = false;
+        scrollPositions.set(key, window.scrollY);
+      });
+    };
+    window.addEventListener('scroll', save, { passive: true });
+    return () => window.removeEventListener('scroll', save);
+  }, [location.key]);
+
+  useEffect(() => {
+    const instant = { behavior: 'instant' as ScrollBehavior };
+    if (location.hash) {
+      /* In-app <Link to="/timeline#era-x">: the browser only jumps to a hash
+         on a full load, and the chapter may still be mounting. `scroll-mt`
+         on the target clears the sticky header and era rail. */
+      const id = decodeURIComponent(location.hash.slice(1));
+      afterLayout(() => {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        el.scrollIntoView({ block: 'start', ...instant });
+        return true;
+      });
+      return;
+    }
+    if (navType === 'POP') {
+      const y = scrollPositions.get(location.key) ?? 0;
+      afterLayout(() => {
+        const tallEnough = document.documentElement.scrollHeight >= y + window.innerHeight;
+        if (!tallEnough) return false;
+        window.scrollTo({ top: y, ...instant });
+        return true;
+      });
+      return;
+    }
+    window.scrollTo({ top: 0, ...instant });
+  }, [location.key]); // eslint-disable-line react-hooks/exhaustive-deps
+
   return null;
 }
 
@@ -266,7 +322,7 @@ export function Layout({ children }: { children?: ReactNode }) {
       >
         Skip to content
       </a>
-      <ScrollToTop />
+      <ScrollManager />
       <Header onSearch={openSearch} />
       {/* Every route is one gummed sheet, mounted on the album page. */}
       <main id="main" className="flex-1">
