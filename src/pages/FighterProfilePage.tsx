@@ -1,13 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import { eventsForFighter, fighterBySlug, fighters, lifespan, movementById, organizationById, relatedFighters, roleLabels, hashPick } from '@/lib/content';
 import { loadFighter, peekFighter } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
 import { pushTrail, useBookmarks, useIsDesktop, usePageMeta, usePreferences, useShare, useTrail } from '@/lib/hooks';
 import { track } from '@/lib/analytics';
-import { DisputedNotes, Icon, LifespanBar, Postmark, PortraitMedallion, QuoteCard, Reveal, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
-import { ReadingText, ReadingToolbar } from '@/components/reading';
+import { readingMinutes, readingTimeLabel, wordCount } from '@/lib/reading';
+import { Breadcrumbs, DisputedNotes, Icon, LifespanBar, Postmark, PortraitMedallion, QuoteCard, Reveal, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
+import { DraftStamp, ReadingText, ReadingToolbar } from '@/components/reading';
 import { RouteFallback } from '@/components/layout';
 import { EventCard, FighterChip } from '@/components/cards';
 import { Constellation } from '@/components/constellation';
@@ -173,6 +174,9 @@ export default function FighterProfilePage() {
   const { bookmarks, toggle } = useBookmarks();
   const { share, copied } = useShare();
   const trail = useTrail();
+  const location = useLocation();
+  const from = (location.state as { from?: string } | null)?.from;
+  const backTo = from && from.startsWith('/fighters?') ? from : '/fighters';
 
   useEffect(() => {
     const cached = slug ? peekFighter(slug) : undefined;
@@ -204,6 +208,7 @@ export default function FighterProfilePage() {
   }, [fighter]);
 
   const related = useMemo(() => (fighter ? relatedFighters(fighter) : []), [fighter]);
+  const connections: unknown[] = [];
   const timeline = useMemo(() => (fighter ? eventsForFighter(fighter) : []), [fighter]);
   const discoverNext = useMemo(() => {
     if (!fighter) return null;
@@ -231,14 +236,26 @@ export default function FighterProfilePage() {
             'on-vault'
           }`}
         >
+          <Breadcrumbs vault items={[{ label: 'Home', to: '/' }, { label: 'People', to: backTo }, { label: summary.name }]} />
           <Postmark lines={postmarkLines} className="absolute right-4 top-5 hidden sm:grid" />
 
-          <div className="grid gap-7 md:grid-cols-[auto_1fr] md:items-end">
-            <PortraitMedallion name={summary.name} era={era} portrait={summary.portrait} size="hero" onPane />
+          <div className="mt-5 grid gap-7 md:grid-cols-[auto_1fr] md:items-end">
+            <figure className="flex flex-col items-center gap-2">
+              <PortraitMedallion name={summary.name} era={era} portrait={summary.portrait} size="hero" onPane />
+              {fighter?.portraitNote && (
+                <figcaption className={`max-w-[10rem] text-center font-body text-xs ${eraAccent.onInkMuted[accent]}`}>
+                  <span className="stamp mr-1">{fighter.portraitNote.kind}</span>
+                  {fighter.portraitNote.caption}
+                </figcaption>
+              )}
+            </figure>
             <div className="min-w-0">
               <h1 className="pr-0 text-h1 animate-fade-up sm:pr-28 sm:text-hero" style={{ animationDelay: '80ms' }}>
                 {summary.name}
               </h1>
+              {summary.pronunciation && (
+                <p className={`mt-1 font-body text-label ${eraAccent.onInkMuted[accent]}`}>Say it: {summary.pronunciation}</p>
+              )}
               {summary.alternateNames && summary.alternateNames.length > 0 && (
                 <p className={`mt-2 font-reading text-reading italic animate-fade-up ${eraAccent.onInkMuted[accent]}`} style={{ animationDelay: '140ms' }}>
                   {summary.alternateNames.join(' · ')}
@@ -291,13 +308,53 @@ export default function FighterProfilePage() {
         <>
           <div className="container-page grid gap-12 pb-12 pt-14 lg:grid-cols-[1fr_300px] lg:gap-16">
             <div className="min-w-0 space-y-12">
-              <section aria-label="Life story">
+              {fighter.editorial?.status === 'draft' && <DraftStamp />}
+
+              {fighter.contentNote && (
+                <p role="note" className="rounded-sm border border-paper-400 bg-paper-200/60 p-4 font-body text-meta text-ink-soft">
+                  <span className="stamp mr-2 text-sepia">Content note</span>
+                  {fighter.contentNote}
+                </p>
+              )}
+
+              {fighter.inAMinute && (
+                <section id="in-a-minute" aria-label="In a minute" className="doc scroll-mt-28 p-5 sm:p-6">
+                  <p className="label mb-3">In a minute</p>
+                  <ol className="space-y-2.5">
+                    {fighter.inAMinute.map((line, i) => (
+                      <li key={i} className="flex gap-3 font-body text-meta text-ink">
+                        <span className="num shrink-0 font-display text-sm font-bold text-brass-deep">{i + 1}</span>
+                        {line}
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              )}
+
+              <nav aria-label="On this page" className="flex flex-wrap gap-2">
+                {[
+                  ['#story', 'Story'],
+                  ['#dates', 'Dates'],
+                  fighter.sacrifices?.length ? ['#cost', 'Cost of resistance'] : null,
+                  fighter.legacy ? ['#legacy', 'Legacy'] : null,
+                  related.length || connections.length ? ['#connections', 'Connections'] : null,
+                  ['#sources', 'Sources'],
+                ]
+                  .filter((x): x is [string, string] => Boolean(x))
+                  .map(([href, label]) => (
+                    <a key={href} href={href} className="chip min-h-9">
+                      {label}
+                    </a>
+                  ))}
+              </nav>
+
+              <section id="story" aria-label="Life story" className="scroll-mt-28">
                 <div className="rule-double mb-5" />
-                <h2 className="mb-4 text-h2 text-ink">{mode === 'story' ? 'Quick story' : 'Detailed history'}</h2>
-                <div className="mb-6">
+                <div className="mb-2 flex flex-wrap items-center justify-between gap-3">
+                  <h2 className="text-h2 text-ink">{mode === 'story' ? 'Quick story' : 'Detailed history'}</h2>
                   <ReadingToolbar />
                 </div>
-
+                <p className="label num mb-6">{readingTimeLabel(mode === 'story' ? readingMinutes(wordCount(fighter.shortStory.map((c) => c.text).join(' '))) : summary.readingMinutes)}</p>
                 {mode === 'story' ? (
                   <StoryMode chapters={fighter.shortStory} accent={accent} sources={fighter.sources} />
                 ) : (
@@ -326,7 +383,6 @@ export default function FighterProfilePage() {
                     </Reveal>
                   )}
                   <ListBlock title="Key achievements" items={fighter.achievements} />
-                  <ListBlock title="Personal sacrifices" items={fighter.sacrifices} />
                 </div>
               )}
 
@@ -338,8 +394,40 @@ export default function FighterProfilePage() {
                 </section>
               )}
 
+              {timeline.length > 0 && (
+                <section id="dates" aria-label="A life in dates" className="scroll-mt-28">
+                  <h2 className="mb-5 text-h2 text-ink">A life in dates</h2>
+                  <div className="relative">
+                    <div aria-hidden="true" className="absolute bottom-3 left-[7px] top-3 w-px bg-paper-400/70" />
+                    <ol className="space-y-4 pl-8">
+                      {timeline.map((event, i) => (
+                        <li key={event.id} className="relative">
+                          <span aria-hidden="true" className={`absolute -left-8 top-6 h-2.5 w-2.5 ring-4 ring-paper-100 ${eraAccent.bg[accent]}`} />
+                          <EventCard event={event} delay={i * 60} />
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                </section>
+              )}
+
+              {fighter.sacrifices && fighter.sacrifices.length > 0 && (
+                <section id="cost" aria-label="The cost of resistance" className="doc scroll-mt-28 p-6">
+                  <div className="rule mb-4" />
+                  <h2 className="text-h3 text-ink">The cost of resistance</h2>
+                  <ul className="mt-3 space-y-2">
+                    {fighter.sacrifices.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span aria-hidden="true" className="mt-2.5 h-1 w-4 shrink-0 bg-brass" />
+                        <ReadingText paragraphs={[item]} sources={fighter.sources} glossary={false} className="font-body text-meta text-ink-soft [&_p]:font-body [&_p]:text-meta" />
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
+
               {fighter.legacy && (
-                <Reveal as="section" className="doc p-6">
+                <Reveal as="section" id="legacy" className="doc scroll-mt-28 p-6">
                   <div className="rule mb-4" />
                   <h3 className="text-h3 text-ink">Legacy</h3>
                   <ReadingText paragraphs={[fighter.legacy]} sources={fighter.sources} className="mt-3" />
@@ -363,23 +451,6 @@ export default function FighterProfilePage() {
                     ))}
                   </ul>
                 </Reveal>
-              )}
-
-              {timeline.length > 0 && (
-                <section aria-label="Events in this life">
-                  <h2 className="mb-5 text-h2 text-ink">On the timeline</h2>
-                  <div className="relative">
-                    <div aria-hidden="true" className="absolute bottom-3 left-[7px] top-3 w-px bg-paper-400/70" />
-                    <ol className="space-y-4 pl-8">
-                      {timeline.map((event, i) => (
-                        <li key={event.id} className="relative">
-                          <span aria-hidden="true" className={`absolute -left-8 top-6 h-2.5 w-2.5 ring-4 ring-paper-100 ${eraAccent.bg[accent]}`} />
-                          <EventCard event={event} delay={i * 60} />
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                </section>
               )}
             </div>
 

@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState, type CSSProperties, type ElementType, type FormEvent, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import type { DisputedNote, Era, Quote, SourceRef } from '@/types';
 import { eras } from '@/data/eras';
 import { useReveal } from '@/lib/hooks';
@@ -788,6 +789,31 @@ export function Segmented<T extends string>({
         );
       })}
     </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Breadcrumbs — where this record sits in the archive                 */
+export function Breadcrumbs({ items, vault = false }: { items: { label: string; to?: string }[]; vault?: boolean }) {
+  return (
+    <nav aria-label="Breadcrumb" className={`font-body text-label ${vault ? 'text-paper-300' : 'text-ink-faint'}`}>
+      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+        {items.map((item, i) => (
+          <li key={`${item.label}-${i}`} className="flex items-center gap-2">
+            {item.to ? (
+              <Link to={item.to} className={`underline decoration-1 underline-offset-2 ${vault ? 'hover:text-paper-50' : 'hover:text-ink'}`}>
+                {item.label}
+              </Link>
+            ) : (
+              <span aria-current="page" className={vault ? 'text-paper-100' : 'text-ink-soft'}>
+                {item.label}
+              </span>
+            )}
+            {i < items.length - 1 && <span aria-hidden="true">›</span>}
+          </li>
+        ))}
+      </ol>
+    </nav>
   );
 }
 
