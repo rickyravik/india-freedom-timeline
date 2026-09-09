@@ -382,7 +382,17 @@ The silhouette that carries the world is the perforated edge. `.perf-all` cuts t
 
 **The constellation** (`Constellation`): related lives on an ellipse around the subject, connected by 1.2px lines in each life's era ink (`eraAccent.hex`) that draw in over 1.1s at 90ms intervals, on a dashed gauge-gold guide circle. Desktop only; under `md` the same relationships become a swipeable row of cards.
 
-**Motion.** One easing, `cubic-bezier(0.22, 0.61, 0.36, 1)`, and three durations: 160ms for colour and state, 400ms for page entry and control transitions, 700–900ms for reveals. The vocabulary is fixed: `fade-up` (18px, `.reveal`), mask reveal (`clip-path` from the bottom, `.reveal-mask`, applied to children so the observed box is never clipped), line-draw for connections, a scroll-linked spine via `animation-timeline: scroll(root)` with a static fallback, and a 400ms page-enter crossfade keyed on pathname. No bounce, no spin, no parallax. `prefers-reduced-motion` collapses every duration to 0.01ms and forces revealed content visible, and a `.no-js` root does the same.
+**Motion.** One easing, `cubic-bezier(0.22, 0.61, 0.36, 1)`, and three durations: 160ms for colour and state, 400ms for page entry and control transitions, 700–900ms for reveals. The vocabulary is fixed: `fade-up` (18px, `.reveal`), mask reveal (`clip-path` from the bottom, `.reveal-mask`, applied to children so the observed box is never clipped), line-draw for connections, a spine bound to the timeline's own container via a named `animation-timeline` (`[data-timeline-spine]`) with a static fallback, and a 400ms page-enter crossfade keyed on pathname. No bounce, no spin, no parallax. `prefers-reduced-motion` collapses every duration to 0.01ms and forces revealed content visible, and a `.no-js` root does the same.
+
+Stage 3 added:
+
+- **Chapter introduction** — a chapter pane's denomination, title and chapter line reveal together once over 450ms (`Reveal mask duration={450}`); tagline and description are never masked. No motion: everything is simply there.
+- **Timeline progress** — the spine's `scaleY` is bound to the timeline container with `animation-timeline: view()` (`[data-timeline-spine]`), not to the document. Unsupported or no motion: a static line at 35% opacity; the era rail names the current chapter in text.
+- **Saved-story postmark** — a 64px `.postmark-stamp` stamps in over 220ms after a deliberate save; a polite live region announces "Saved to your stories" / "Removed…"; Undo is offered for five seconds; nothing replays on load.
+- **Filter rearrangement** — surviving cards slide to their new positions over 220ms with GSAP `Flip`, loaded only when motion is allowed and only on first filter change; entering cards fade in. No motion: the list updates in place.
+- **Reading-mode swap** — a 160ms crossfade of the content only; the heading row and the toolbar do not remount, so focus stays on the control.
+
+**The One Question Rule.** Every animation asks `motionAllowed()` (`src/lib/motion.ts`). There is no second opinion — not a component-local media query, not an inline check of `prefers-reduced-motion`.
 
 ## Do's and Don'ts
 

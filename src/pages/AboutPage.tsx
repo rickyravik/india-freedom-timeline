@@ -41,6 +41,7 @@ export default function AboutPage() {
               Much beloved popular history rests on oral tradition — songs, ballads and family memory. Oral tradition is itself a historical source, especially for communities the
               colonial record ignored; we include such accounts with their nature stated, so readers can tell documented fact from cherished memory.
             </p>
+            <p className="prose-reading-vault">The site can be installed on a phone; pages you have opened stay readable offline, and only those.</p>
           </div>
         </Reveal>
 

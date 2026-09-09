@@ -173,7 +173,15 @@ export default function HomePage() {
         </section>
 
         <section aria-label="Stories beyond the familiar names">
-          <SectionHeading title="Stories beyond the familiar names" lede="Weavers, schoolteachers, hill chiefs and queens whose records deserve to be read." action={<Link to="/fighters?collection=forgotten" className="btn-ghost">More</Link>} />
+          <SectionHeading
+            title="Stories beyond the familiar names"
+            lede="Weavers, schoolteachers, hill chiefs and queens whose records deserve to be read."
+            action={
+              <Link to="/fighters?collection=forgotten" className="btn-ghost">
+                More stories
+              </Link>
+            }
+          />
           <div className="flex flex-wrap gap-2">
             {beyond.map((f) => (
               <FighterChip key={f.id} fighter={f} />

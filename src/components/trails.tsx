@@ -8,6 +8,7 @@ import { DraftStamp } from '@/components/reading';
 export function TrailCard({ trail, progress }: { trail: Trail; progress?: Progress }) {
   const resume = progress && !progress.completed && progress.stop > 0;
   const to = resume ? `/trails/${trail.slug}/stop/${progress.stop}` : `/trails/${trail.slug}`;
+  const label = progress?.completed ? 'Read again' : resume ? `Resume at stop ${progress.stop}` : 'Start the trail';
   return (
     <article className={`perf-all on-sheet relative flex h-full flex-col px-5 py-6 ${eraAccent.bg[trail.accent]} ${eraAccent.onInk[trail.accent]}`}>
       {progress?.completed && <Postmark lines={['Trail', 'complete']} className="absolute right-3 top-3 hidden sm:grid" />}
@@ -22,8 +23,8 @@ export function TrailCard({ trail, progress }: { trail: Trail; progress?: Progre
         {trail.stops.length} stops · about {trail.minutes} minutes
       </p>
       <div className="mt-auto flex flex-wrap items-center gap-3 pt-5">
-        <Link to={to} className="btn-seal !min-h-10 !px-4 text-label">
-          {progress?.completed ? 'Read again' : resume ? `Resume at stop ${progress.stop}` : 'Start'}
+        <Link to={to} className="btn-seal !min-h-10 !px-4 text-label" aria-label={`${label}: ${trail.title}`}>
+          {label}
           <Icon d={icons.arrowRight} className="h-4 w-4" />
         </Link>
         {trail.editorial.status !== 'reviewed' && <DraftStamp vault />}

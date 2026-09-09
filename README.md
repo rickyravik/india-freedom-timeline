@@ -16,6 +16,7 @@ Built like a premium historical product, not an encyclopedia: an interactive era
 - **Mobile-first**: thumb-friendly bottom navigation, touch-sized targets, bottom-sheet filters, smooth vertical timeline, works from ~320 px wide upward.
 - **Accessibility**: semantic HTML, keyboard operable, visible focus rings, ARIA labels, `prefers-reduced-motion` support, strong contrast on an archival palette.
 - **Performance**: route-based code splitting, self-hosted fonts, a small dependency surface, long-cache immutable assets, and a generated sitemap.
+- **Installable, partly offline**: the app shell is cached on install, and any page you have already opened stays readable without a connection. Pages you have not visited need a connection the first time (an offline page says so). Saving a whole trail for offline reading is Stage 4.
 
 ## Design
 

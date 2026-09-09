@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('a trail can be completed keyboard-only, keeps its place, and marks completion', async ({ page }) => {
   await page.goto('/trails');
   await expect(page.getByRole('article')).toHaveCount(3);
-  await page.getByRole('link', { name: 'Women who led resistance' }).click();
+  await page.getByRole('link', { name: 'Women who led resistance', exact: true }).click();
   await expect(page.getByRole('heading', { level: 1, name: 'Women who led resistance' })).toBeVisible();
   await page.getByRole('link', { name: 'Start the trail' }).focus();
   await page.keyboard.press('Enter');
