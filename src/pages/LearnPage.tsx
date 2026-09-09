@@ -94,7 +94,7 @@ function Quiz() {
         <button type="button" className="btn-seal mt-6" disabled={pool < 3} onClick={() => start(pickQuestions(topic, difficulty, true))}>
           Start quiz
         </button>
-        {pool < 3 && <p className="mt-2 font-body text-label text-ink-faint">Not enough questions for that combination yet — widen the topic or depth.</p>}
+        {pool < 3 && <p className="mt-2 font-body text-label text-ink-faint">Not enough questions for that combination yet. Widen the topic or depth.</p>}
       </div>
     );
   }
@@ -113,7 +113,7 @@ function Quiz() {
               <li key={q.id} className="doc p-4">
                 <p className="font-display text-h4 text-ink">{q.question}</p>
                 <p className="mt-1 font-body text-meta text-ink-soft">
-                  <span className="font-semibold text-forest-deep">{q.options[q.answerIndex]}</span> — {q.explanation}
+                  <span className="font-semibold text-forest-deep">{q.options[q.answerIndex]}</span>: {q.explanation}
                 </p>
                 {q.relatedLink && (
                   <Link to={q.relatedLink.to} className="mt-2 inline-flex items-center gap-2 font-body text-meta font-medium text-oxide-deep underline decoration-oxide-deep/40 underline-offset-4">
@@ -272,7 +272,7 @@ function GuessWho() {
           </button>
         </form>
       )}
-      {verdict && <p role="status" className="mt-3 font-body text-meta text-paper-200">{verdict === 'right' ? 'That’s right.' : 'Not this time — try another clue, or reveal.'}</p>}
+      {verdict && <p role="status" className="mt-3 font-body text-meta text-paper-200">{verdict === 'right' ? 'That’s right.' : 'Not this time. Try another clue, or reveal.'}</p>}
       <div className="mt-5 flex flex-wrap gap-2">
         {!revealed && cluesShown < round.clues.length && (
           <button type="button" className="btn-ghost-vault" onClick={() => setCluesShown((c) => c + 1)}>
@@ -424,14 +424,14 @@ function Compare() {
 
 /* ------------------------------------------------------------------ */
 export default function LearnPage() {
-  usePageMeta('Learn & Play', 'Quizzes, guessing games and comparisons — learn the freedom struggle by exploring it.');
+  usePageMeta('Learn & Play', 'Quizzes, guessing games and comparisons: learn the freedom struggle by exploring it.');
   const facts = useMemo(() => dailyShuffle(didYouKnowFacts, 17).slice(0, 3), []);
 
   return (
     <div className="pb-20">
       <PageIntro
         title="Learn & Play"
-        lede="Test what you know, guess who’s who, and compare the many roads people took to freedom. Every answer opens another story — these games honour the history they draw from."
+        lede="Test what you know, guess who’s who, and compare the many roads people took to freedom. Every answer opens another story, and these games honour the history they draw from."
       />
       <div className="container-page space-y-14 sm:space-y-20">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">

@@ -73,7 +73,7 @@ export function ChoiceActivity({ activity, onDone }: { activity: Choice; onDone:
       {picked !== null && (
         <div className="mt-5 rounded-sm bg-paper-200/70 p-5">
           <p className="prose-reading">
-            {picked === activity.answerIndex ? 'That’s it. ' : 'Not quite — and here is why it matters. '}
+            {picked === activity.answerIndex ? 'That’s it. ' : 'Not quite. Here is why it matters. '}
             {activity.explanation}
           </p>
           <button type="button" className="btn-seal mt-4" onClick={onDone}>
@@ -125,7 +125,7 @@ export function OrderActivity({ activity, onDone }: { activity: Order; onDone: (
         <button type="button" className="btn-ghost" onClick={() => setChecked(true)}>
           Check the order
         </button>
-        {checked && <p role="status" className="font-body text-meta text-ink-soft">{isCorrect ? 'In order.' : 'Not yet — the years are shown; try again or read the explanation.'}</p>}
+        {checked && <p role="status" className="font-body text-meta text-ink-soft">{isCorrect ? 'In order.' : 'Not yet. The years are shown; try again or read the explanation.'}</p>}
       </div>
       {checked && (
         <div className="mt-5 rounded-sm bg-paper-200/70 p-5">

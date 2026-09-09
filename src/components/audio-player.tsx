@@ -56,7 +56,7 @@ export function AudioPlayer({
     <section aria-label="Listen to this stop" className="doc p-4">
       <p className="font-body text-label text-ink-faint">
         <span className="stamp mr-2 text-sepia">Recorded narration</span>
-        by {narrator}, {recordedOn.slice(0, 4)} — a new recording made for this site, not a historical one. The text below is complete on its own.
+        by {narrator}, {recordedOn.slice(0, 4)}: a new recording made for this site, not a historical one. The text below is complete on its own.
       </p>
       <audio
         ref={ref}

@@ -36,3 +36,13 @@ test('back from a record returns to the filtered list', async ({ page }) => {
   await page.getByRole('navigation', { name: 'Breadcrumb' }).getByRole('link', { name: 'People' }).click();
   await expect(page).toHaveURL(/\/fighters\?collection=women$/);
 });
+
+test('a back-to-top control appears once the page is scrolled and returns it to the top', async ({ page }) => {
+  await page.goto('/fighters');
+  const backToTop = page.getByRole('button', { name: 'Back to top' });
+  await expect(backToTop).toBeHidden();
+  await page.mouse.wheel(0, 2000);
+  await expect(backToTop).toBeVisible();
+  await backToTop.click();
+  await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+});

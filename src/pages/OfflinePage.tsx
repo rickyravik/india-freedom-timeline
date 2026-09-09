@@ -9,7 +9,7 @@ import { EmptyState, Icon, PageIntro, icons } from '@/components/ui';
  * can hand it back with no network at all.
  */
 export default function OfflinePage() {
-  usePageMeta("You're offline", 'This page needs a connection the first time you open it — pages you have already visited stay available offline.');
+  usePageMeta("You're offline", 'This page needs a connection the first time you open it. Pages you have already visited stay available offline.');
 
   return (
     <div className="pb-20">

@@ -156,6 +156,7 @@ export const icons = {
   person: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0',
   file: 'M6 3h8l4 4v14H6zM14 3v4h4',
   more: 'M5 12h.01M12 12h.01M19 12h.01',
+  up: 'M12 19V5m0 0-6 6m6-6 6 6',
 } as const;
 
 /* ------------------------------------------------------------------ */
@@ -485,7 +486,7 @@ export function SuggestCorrection({ path, recordTitle }: { path: string; recordT
           <div className="py-8 text-center">
             <p className="font-display text-h3 text-ink">Thank you</p>
             <p className="mx-auto mt-2 max-w-sm font-body text-meta text-ink-soft">
-              Your suggestion has been received. An editor reviews every correction against its sources before anything on the site changes — nothing is published automatically.
+              Your suggestion has been received. An editor reviews every correction against its sources before anything on the site changes; nothing is published automatically.
             </p>
           </div>
         ) : status === 'error' ? (

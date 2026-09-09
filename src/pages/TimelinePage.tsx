@@ -62,7 +62,7 @@ function EraRail({ activeId }: { activeId: string | null }) {
 
 /* ------------------------------------------------------------------ */
 export default function TimelinePage() {
-  usePageMeta('Interactive Timeline', "Scroll through India's freedom struggle from 1757 to 1947 — nine chapters, their events, and the people who shaped them.");
+  usePageMeta('Interactive Timeline', "Scroll through India's freedom struggle from 1757 to 1947: nine chapters, their events, and the people who shaped them.");
 
   const [filters, setFilters] = useUrlState(timelineParams);
   const { region, category, movement: movementId, view: zoom } = filters;
@@ -133,7 +133,7 @@ export default function TimelinePage() {
 
   return (
     <div className="pb-16">
-      <PageIntro title="The Freedom Timeline" lede="Two centuries of resistance, chapter by chapter. Select any moment to meet the people behind it — every story leads to another.">
+      <PageIntro title="The Freedom Timeline" lede="Two centuries of resistance, chapter by chapter. Select any moment to meet the people behind it: every story leads to another.">
         <p className="label num mb-4">1757 – 1947 · nine chapters</p>
         <div className="flex flex-wrap items-center gap-3">
           <Segmented
@@ -203,7 +203,7 @@ export default function TimelinePage() {
             <EraRail activeId={activeEraId} />
             {filtered.length === 0 && (
               <div className="mt-10">
-                <EmptyState title="No events match these filters" hint="Try widening the region or type — or clear the filters." action={<button type="button" className="btn-ghost" onClick={clearFilters}>Clear filters</button>} />
+                <EmptyState title="No events match these filters" hint="Try widening the region or type, or clear the filters." action={<button type="button" className="btn-ghost" onClick={clearFilters}>Clear filters</button>} />
               </div>
             )}
 
@@ -306,7 +306,7 @@ export default function TimelinePage() {
                         Next chapter: {eras[index + 1].name}
                       </a>
                     ) : (
-                      <p className="ml-8 mt-6 font-reading text-reading italic text-ink-soft sm:ml-12">Next chapter: Independence — and the archive’s end</p>
+                      <p className="ml-8 mt-6 font-reading text-reading italic text-ink-soft sm:ml-12">Next chapter: Independence, and the archive’s end</p>
                     )}
                   </section>
                 ))}

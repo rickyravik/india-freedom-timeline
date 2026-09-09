@@ -5,11 +5,11 @@ import { PageIntro } from '@/components/ui';
 import { DraftStamp } from '@/components/reading';
 
 export default function GlossaryPage() {
-  usePageMeta('Glossary', 'Plain-English explanations of the terms that appear across the archive — Company rule, satyagraha, palaiyakkarar and more.');
+  usePageMeta('Glossary', 'Plain-English explanations of the terms that appear across the archive: Company rule, satyagraha, palaiyakkarar and more.');
   const sorted = [...glossaryTerms].sort((a, b) => a.term.localeCompare(b.term));
   return (
     <div className="pb-20">
-      <PageIntro title="Glossary" lede="The words this history is told in, explained the first time you meet them on any page — and all together here." />
+      <PageIntro title="Glossary" lede="The words this history is told in, explained the first time you meet them on any page, and all together here." />
       <div className="container-page max-w-3xl">
         <dl className="divide-y divide-paper-300">
           {sorted.map((t) => (

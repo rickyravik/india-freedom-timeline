@@ -70,7 +70,7 @@ const peopleCount = new Map(states.map((s) => [s.id, fightersForState(s.name).le
 const eventCount = new Map(states.map((s) => [s.id, eventsForState(s.name).length]));
 
 export default function MapPage() {
-  usePageMeta('Explore by Region', 'A stylised map of India — select a state to discover its freedom fighters, movements and events.');
+  usePageMeta('Explore by Region', 'A stylised map of India: select a state to discover its freedom fighters, movements and events.');
   const [params, setParams] = useUrlState(mapParams);
   const selected = params.state ? stateById.get(params.state) ?? null : null;
   const select = (id: string | null) => setParams({ state: id });
@@ -190,7 +190,7 @@ export default function MapPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-3 font-body text-xs text-paper-300">Marks in the corner show states with records. “Abroad” covers the struggle beyond India’s shores — London, Paris, San Francisco, Tokyo, Singapore.</p>
+            <p className="mt-3 font-body text-xs text-paper-300">Marks in the corner show states with records. “Abroad” covers the struggle beyond India’s shores: London, Paris, San Francisco, Tokyo, Singapore.</p>
             <div className="mt-3">
               <GeographyFrame frame="present-day" vault />
             </div>
@@ -235,7 +235,7 @@ export default function MapPage() {
                   <div className="rule-double mx-auto mb-5 max-w-[6rem]" aria-hidden="true" />
                   <p className="font-display text-h3 text-ink">Select a state to begin</p>
                   <p className="mx-auto mt-1 max-w-sm font-body text-meta text-ink-faint">
-                    Freedom fighters, movements, uprisings, prisons and protest sites — region by region.
+                    Freedom fighters, movements, uprisings, prisons and protest sites, region by region.
                   </p>
                 </div>
               </div>

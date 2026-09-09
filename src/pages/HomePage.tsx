@@ -28,7 +28,7 @@ function Hero() {
           <span className="mt-1 block text-brass-bright">Thousands sacrificed.</span>
         </h1>
         <p className="mt-4 max-w-xl font-reading text-reading text-paper-200 sm:mt-6 sm:text-h4">
-          Discover the people who resisted British rule — from the first risings against the East India Company to the midnight of 15 August 1947 — especially the lives most of us were never taught.
+          Discover the people who resisted British rule, from the first risings against the East India Company to the midnight of 15 August 1947, especially the lives most of us were never taught.
         </p>
         <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
           <Link to="/start" className="btn-seal">
@@ -135,7 +135,7 @@ function StateSelect() {
 
 /* ------------------------------------------------------------------ */
 export default function HomePage() {
-  usePageMeta('', "Millions resisted. Thousands sacrificed. Discover the people who fought for India's freedom, 1757 to 1947 — with the evidence beside every story.");
+  usePageMeta('', "Millions resisted. Thousands sacrificed. Discover the people who fought for India's freedom, 1757 to 1947, with the evidence beside every story.");
   const trail = useTrail();
   const progress = useTrailProgress();
   const featured = useMemo(() => dailyPick(fighters.filter((f) => f.featured), 1), []);

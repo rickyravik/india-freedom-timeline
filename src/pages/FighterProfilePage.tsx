@@ -565,7 +565,7 @@ export default function FighterProfilePage() {
                 <Reveal className="mb-8 max-w-2xl">
                   <div className="rule-double-vault mb-5" />
                   <h2 className="text-h2 text-paper-50">People connected to {summary.shortName ?? summary.name}</h2>
-                  <p className="mt-2 font-body text-meta text-paper-300">Only relationships the record documents are drawn here — an ally, an opponent, a teacher, a family member — each with what the connection was.</p>
+                  <p className="mt-2 font-body text-meta text-paper-300">Only relationships the record documents are drawn here (an ally, an opponent, a teacher, a family member), each with what the connection was.</p>
                 </Reveal>
                 <Constellation subject={summary} connections={connections} />
               </div>

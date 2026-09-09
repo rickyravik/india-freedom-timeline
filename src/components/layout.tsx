@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigationType } from 'react-router-dom';
 import { useKeyboardShortcut, useServiceWorkerUpdate } from '@/lib/hooks';
+import { useMotionAllowed } from '@/lib/motion';
 import { acceptUpdate, dismissUpdate } from '@/lib/pwa';
 import { SearchPalette } from '@/components/search-palette';
 import { BottomSheet, Icon, icons } from '@/components/ui';
@@ -28,7 +29,7 @@ const EXPLORE = [
   { to: '/movements', label: 'Movements', icon: icons.flag, hint: 'The many roads to freedom' },
   { to: '/glossary', label: 'Glossary', icon: icons.file, hint: 'The words this history is told in' },
   { to: '/about', label: 'About & sources', icon: icons.file, hint: 'Historical method and corrections' },
-  { to: '/passport', label: 'Your passport', icon: icons.bookmark, hint: 'Trails completed, stories saved — private to this device' },
+  { to: '/passport', label: 'Your passport', icon: icons.bookmark, hint: 'Trails completed, stories saved; private to this device' },
 ];
 
 /* The Ashoka Chakra has 24 spokes. */
@@ -121,7 +122,7 @@ function Header({ onSearch }: { onSearch: () => void }) {
   return (
     <header className="sticky top-0 z-40 border-b border-brass-bright/25 bg-vault text-paper-100">
       <div className="container-page flex h-16 items-center justify-between gap-3">
-        <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label="India's Freedom Timeline — home">
+        <Link to="/" className="flex min-w-0 items-center gap-2.5" aria-label="India's Freedom Timeline, home">
           <Emblem className="h-8 w-8 shrink-0 text-brass-bright" />
           <span className="truncate font-display text-lg font-bold text-paper-50">India’s Freedom Timeline</span>
         </Link>
@@ -219,6 +220,43 @@ function MobileNav() {
   );
 }
 
+/* Back to top: appears once the reader has scrolled about a screen down, so
+   it's never competing with content near the top of a short page. Sits above
+   the phone bar on mobile, clear of it on desktop; a fixed footer button
+   would otherwise need its own escape from MobileNav's bottom strip. */
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+  const motionAllowed = useMotionAllowed();
+
+  useEffect(() => {
+    let queued = false;
+    const check = () => {
+      queued = false;
+      setVisible(window.scrollY > 640);
+    };
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(check);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    check();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  if (!visible) return null;
+  return (
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: motionAllowed ? 'smooth' : 'instant' })}
+      aria-label="Back to top"
+      className="back-to-top fixed bottom-20 right-4 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-vault text-paper-100 shadow-lg ring-1 ring-paper-100/25 transition-colors duration-160 hover:text-paper-50 sm:bottom-6 sm:right-6"
+    >
+      <Icon d={icons.up} className="h-5 w-5" />
+    </button>
+  );
+}
+
 function Footer() {
   return (
     <footer className="bg-vault pb-28 pt-14 text-paper-100 md:pb-14">
@@ -262,7 +300,7 @@ function Footer() {
           <div className="font-body text-meta text-paper-400">
             <p className="label-vault mb-3">A note on history</p>
             <p>
-              Biographies cite published sources; claims historians dispute are labelled. Found an error? History deserves correction — see{' '}
+              Biographies cite published sources; claims historians dispute are labelled. Found an error? History deserves correction: see{' '}
               <Link to="/about" className="text-paper-200 underline decoration-brass-bright/60 underline-offset-2 hover:text-brass-bright">
                 About
               </Link>
@@ -349,6 +387,7 @@ export function Layout({ children }: { children?: ReactNode }) {
       </main>
       <Footer />
       <MobileNav />
+      <BackToTop />
       <SearchPalette open={searchOpen} onClose={closeSearch} />
       <UpdateToast />
     </div>

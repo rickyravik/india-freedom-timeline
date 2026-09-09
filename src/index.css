@@ -469,7 +469,8 @@
   .btn-ghost,
   .chip,
   [role='toolbar'],
-  .postmark {
+  .postmark,
+  .back-to-top {
     display: none !important;
   }
   .sheet {

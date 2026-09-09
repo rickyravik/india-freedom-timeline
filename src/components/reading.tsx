@@ -211,7 +211,7 @@ export function DraftStamp({ vault = false }: { vault?: boolean }) {
   return (
     <p className={`inline-flex items-center gap-2 font-body text-label ${vault ? 'text-paper-300' : 'text-ink-faint'}`}>
       <span className={`stamp ${vault ? 'text-oxide-bright' : 'text-oxide-deep'}`}>Draft</span>
-      under editorial review — wording may change
+      under editorial review; wording may change
     </p>
   );
 }

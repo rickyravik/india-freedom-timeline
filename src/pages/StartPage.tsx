@@ -9,11 +9,11 @@ export default function StartPage() {
   const progress = useTrailProgress();
   return (
     <div className="pb-20">
-      <PageIntro title="Start exploring" lede="This is an archive of the people who resisted British rule in India between 1757 and 1947 — the famous names and, above all, the ones most of us were never taught." />
+      <PageIntro title="Start exploring" lede="This is an archive of the people who resisted British rule in India between 1757 and 1947: the famous names and, above all, the ones most of us were never taught." />
       <div className="container-page space-y-14">
         <section className="max-w-prose space-y-5" aria-label="How to read this archive">
           <p className="prose-reading">Every person has a quick story and a detailed history. Every claim that matters carries a small numbered marker: touch it to see the source. Words like <em>satyagraha</em> or <em>palaiyakkarar</em> are explained the first time they appear.</p>
-          <p className="prose-reading">Where historians disagree, or where a story rests on memory rather than documents, the page says so. Nothing here is invented — including the portraits: where no verified likeness exists, you will see a monogram instead.</p>
+          <p className="prose-reading">Where historians disagree, or where a story rests on memory rather than documents, the page says so. Nothing here is invented, including the portraits: where no verified likeness exists, you will see a monogram instead.</p>
         </section>
         <section aria-label="Choose a route" className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Link to="/trails" className="doc-interactive group flex flex-col p-6">

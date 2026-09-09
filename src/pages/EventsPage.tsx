@@ -57,7 +57,7 @@ export default function EventsPage() {
 
   return (
     <div className="pb-20">
-      <PageIntro title="Key Historical Events" lede="From Plassey to the midnight of freedom — the uprisings, marches, trials and turning points that made a nation.">
+      <PageIntro title="Key Historical Events" lede="From Plassey to the midnight of freedom: the uprisings, marches, trials and turning points that made a nation.">
         <div className="flex flex-wrap items-center gap-2">
           <button type="button" className={`chip min-h-12 !px-5 text-meta ${activeCount ? 'chip-active' : ''}`} onClick={() => setSheetOpen(true)} aria-haspopup="dialog">
             Filters{activeCount > 0 && ` · ${activeCount}`}

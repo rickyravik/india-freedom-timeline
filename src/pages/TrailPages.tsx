@@ -106,11 +106,11 @@ function RefCard({ target: r, compact = false }: { target: TrailRef; compact?: b
 
 /* ------------------------------------------------------------------ */
 export default function TrailsPage() {
-  usePageMeta('Trails', 'Short guided journeys through the archive — a question, a handful of stops, and the evidence behind each one.');
+  usePageMeta('Trails', 'Short guided journeys through the archive: a question, a handful of stops, and the evidence behind each one.');
   const progress = useTrailProgress();
   return (
     <div className="pb-20">
-      <PageIntro title="Trails" lede="A trail is a short editorial journey: it starts with a question, moves through a few people, events and places with their sources beside them, and ends with something to think about. Stop and leave whenever you like — your place is kept on this device." />
+      <PageIntro title="Trails" lede="A trail is a short editorial journey: it starts with a question, moves through a few people, events and places with their sources beside them, and ends with something to think about. Stop and leave whenever you like; your place is kept on this device." />
       <div className="container-page">
         <SectionHeading title="All trails" />
       </div>
@@ -341,7 +341,7 @@ export function TrailFinishPage() {
         <section aria-label="Reflection" className="doc p-6">
           <p className="label mb-2">Something to think about</p>
           <p className="prose-reading">{trail.reflection}</p>
-          <p className="mt-3 font-body text-label text-ink-faint">Talk it over, or keep it to yourself — nothing you think here is collected.</p>
+          <p className="mt-3 font-body text-label text-ink-faint">Talk it over, or keep it to yourself; nothing you think here is collected.</p>
         </section>
         <section aria-label="Knowledge check">
           <p className="label mb-3">One question, no score</p>

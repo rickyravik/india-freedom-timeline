@@ -35,12 +35,12 @@ function TextBlock({ title, text, sources }: { title: string; text: string; sour
 }
 
 export default function MovementsPage() {
-  usePageMeta('Movements', 'The movements of India’s freedom struggle — from early uprisings and Swadeshi to Quit India and the INA.');
+  usePageMeta('Movements', 'The movements of India’s freedom struggle, from early uprisings and Swadeshi to Quit India and the INA.');
   return (
     <div className="pb-20">
       <PageIntro
         title="Movements of the Struggle"
-        lede="Petition and boycott, satyagraha and armed revolt, Adivasi risings and soldiers’ armies — the freedom struggle was many struggles, arguing with and strengthening one another."
+        lede="Petition and boycott, satyagraha and armed revolt, Adivasi risings and soldiers’ armies: the freedom struggle was many struggles, arguing with and strengthening one another."
       />
       <div className="container-page">
         {/* Movements as a chronological ledger */}

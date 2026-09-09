@@ -37,7 +37,7 @@ const peopleParams = {
 };
 
 export default function FightersPage() {
-  usePageMeta('Freedom Fighters', 'Browse the people of India’s freedom struggle — revolutionaries, satyagrahis, queens, poets and tribal leaders from every region.');
+  usePageMeta('Freedom Fighters', 'Browse the people of India’s freedom struggle: revolutionaries, satyagrahis, queens, poets and tribal leaders from every region.');
   const [filters, setFilters] = useUrlState(peopleParams);
   const { q: query, collection, region, era: eraId, role, gender, sort } = filters;
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -108,7 +108,7 @@ export default function FightersPage() {
 
   return (
     <div className="pb-20">
-      <PageIntro title="Freedom Fighters" lede="Queens and schoolteachers, poets and generals, satyagrahis and revolutionaries — from every region, community and creed.">
+      <PageIntro title="Freedom Fighters" lede="Queens and schoolteachers, poets and generals, satyagrahis and revolutionaries, from every region, community and creed.">
         <div className="flex flex-wrap items-center gap-2">
           <label className="relative min-w-0 flex-1 sm:max-w-sm">
             <span className="sr-only">Search by name, place or tag</span>
