@@ -7,7 +7,7 @@ import { usePageMeta, useUrlState } from '@/lib/hooks';
 import { oneOf, oneOfDefault } from '@/lib/url-state';
 import { EmptyState, Icon, PageIntro, Reveal, Segmented, icons } from '@/components/ui';
 import { EventCard, FighterCard } from '@/components/cards';
-import { GeographyFrame, PlaceChip } from '@/components/places';
+import { GeographyFrame, IndiaOutline, PlaceChip } from '@/components/places';
 
 /* One stamp ink per region — the sheet is printed in seven inks. Ochre and
    gauge gold use their deep cuts: the mid cuts only reached 4.0:1 against
@@ -181,16 +181,23 @@ export default function MapPage() {
             </div>
             <p className="label-vault mt-3 sm:hidden">Scroll the map sideways for the full sheet.</p>
             <div className="rule-vault mt-5" />
-            <ul className="label-vault mt-3 flex flex-wrap gap-x-4 gap-y-1.5" aria-label="Region legend">
-              {(Object.keys(regionNames) as RegionId[]).map((r) => (
-                <li key={r} className="flex items-center gap-1.5">
-                  {/* hairline so stamp green stays visible against the green pane */}
-                  <span aria-hidden="true" className="map-tile-fill inline-block h-2.5 w-2.5 ring-1 ring-paper-100/50" style={{ '--map-tile-bg': regionHex[r] } as CSSProperties} />
-                  {regionNames[r]}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-3 font-body text-xs text-paper-300">Marks in the corner show states with records. “Abroad” covers the struggle beyond India’s shores: London, Paris, San Francisco, Tokyo, Singapore.</p>
+            {/* The locator sits with the legend, not over the sheet: it explains
+                the grid's shape without competing with the tiles. */}
+            <div className="mt-3 flex items-start gap-4">
+              <IndiaOutline className="h-20 w-20 shrink-0 text-paper-200" />
+              <div className="min-w-0">
+                <ul className="label-vault flex flex-wrap gap-x-4 gap-y-1.5" aria-label="Region legend">
+                  {(Object.keys(regionNames) as RegionId[]).map((r) => (
+                    <li key={r} className="flex items-center gap-1.5">
+                      {/* hairline so stamp green stays visible against the green pane */}
+                      <span aria-hidden="true" className="map-tile-fill inline-block h-2.5 w-2.5 ring-1 ring-paper-100/50" style={{ '--map-tile-bg': regionHex[r] } as CSSProperties} />
+                      {regionNames[r]}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-3 font-body text-xs text-paper-300">Marks in the corner show states with records. “Abroad” covers the struggle beyond India’s shores: London, Paris, San Francisco, Tokyo, Singapore. The outline is for orientation only, not a survey map.</p>
+              </div>
+            </div>
             <div className="mt-3">
               <GeographyFrame frame="present-day" vault />
             </div>

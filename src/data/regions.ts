@@ -25,10 +25,12 @@ export const states: StateInfo[] = [
   { id: 'rajasthan', name: 'Rajasthan', region: 'west', col: 2, row: 3 },
   { id: 'uttar-pradesh', name: 'Uttar Pradesh', region: 'north', col: 4, row: 3 },
   { id: 'bihar', name: 'Bihar', region: 'east', col: 5, row: 3 },
-  { id: 'assam', name: 'Assam', region: 'northeast', col: 7, row: 2 },
-  { id: 'nagaland', name: 'Nagaland', region: 'northeast', col: 8, row: 2 },
-  { id: 'meghalaya', name: 'Meghalaya', region: 'northeast', col: 7, row: 3 },
-  { id: 'manipur', name: 'Manipur', region: 'northeast', col: 8, row: 3 },
+  /* The Northeast sits level with Bihar and Bengal (Guwahati is on Patna's
+     latitude), not up beside Punjab; the gap at col 6 is Bangladesh. */
+  { id: 'assam', name: 'Assam', region: 'northeast', col: 7, row: 3 },
+  { id: 'nagaland', name: 'Nagaland', region: 'northeast', col: 8, row: 3 },
+  { id: 'meghalaya', name: 'Meghalaya', region: 'northeast', col: 7, row: 4 },
+  { id: 'manipur', name: 'Manipur', region: 'northeast', col: 8, row: 4 },
   { id: 'gujarat', name: 'Gujarat', region: 'west', col: 1, row: 4 },
   { id: 'madhya-pradesh', name: 'Madhya Pradesh', region: 'central', col: 3, row: 4 },
   { id: 'jharkhand', name: 'Jharkhand', region: 'east', col: 5, row: 4 },
