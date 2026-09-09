@@ -33,7 +33,7 @@ export const queensProclamation1858: ArchiveDocument = {
     },
     {
       id: 'religion',
-      text: 'Firmly relying Ourselves on the truth of Christianity… We disclaim alike the Right and the Desire to impose Our Convictions on any of Our Subjects… and We do strictly charge and enjoin all those who may be in authority under Us, that they abstain from all interference with the Religious Belief or Worship of any of Our Subjects.',
+      text: 'Firmly relying Ourselves on the truth of Christianity… We disclaim alike the Right and the Desire to impose Our Convictions on any of Our Subjects… and We do strictly charge and enjoin all those who may be in authority under Us, that they abstain from all interference with the Religious Belief or Worship of any of Our Subjects…',
       guide: {
         author: 'The Crown.',
         audience: 'Soldiers and civilians whose fear for religion and custom had fuelled the revolt.',
@@ -57,5 +57,9 @@ export const queensProclamation1858: ArchiveDocument = {
     { title: 'Proclamation by the Queen in Council, 1 November 1858', publisher: 'Parliamentary Papers / India Office Records', type: 'archive', evidence: 'contemporary' },
     { title: 'From Plassey to Partition and After', author: 'Sekhar Bandyopadhyay', publisher: 'Orient BlackSwan', year: 2015, type: 'book', evidence: 'scholarship' },
   ],
-  editorial: { status: 'draft', notes: 'Public-domain Crown text. Wording to be verified against a scan; a licensed image (e.g. a Wikimedia Commons scan with its licence recorded) to be added as `image` with credit and licence.' },
+  editorial: {
+    status: 'draft',
+    notes:
+      'Public-domain Crown text. Cross-checked 2026-09-09 against the transcription at Wikisource and archive.org: the "transfer", "treaties" and "office" passages match the published wording; the "religion" passage was missing its trailing ellipsis (the real sentence continues "…on pain of Our highest Displeasure" after "Worship of any of Our Subjects", now marked with an ellipsis rather than a false full stop). Wikisource/archive.org transcriptions are not themselves primary sources, so wording should still be checked against a scan or the Parliamentary Papers before marking reviewed. A licensed image (e.g. a Wikimedia Commons scan with its licence recorded) is still needed as `image` with credit and licence.',
+  },
 };
