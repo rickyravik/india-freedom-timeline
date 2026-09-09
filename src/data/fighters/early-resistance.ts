@@ -83,6 +83,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     birthYear: 1730,
     deathYear: 1796,
     birthPlace: 'Ramanathapuram, Tamil Nadu',
+    locations: [{ placeId: 'kalayar-kovil', kind: 'activity', note: 'Her husband was killed here in 1772; she retook Sivaganga around 1780' }],
     region: 'south',
     states: ['Tamil Nadu'],
     gender: 'female',

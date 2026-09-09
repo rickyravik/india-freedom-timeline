@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
-import { categoryLabels, eventBySlug, events, fightersForEvent, movementById } from '@/lib/content';
+import { categoryLabels, eventBySlug, events, fightersForEvent, movementById, placesForEvent } from '@/lib/content';
 import { loadEvent, peekEvent } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { usePageMeta, useShare } from '@/lib/hooks';
@@ -62,6 +62,7 @@ export default function EventPage() {
 
   const era = eraById.get(summary.era);
   const movement = summary.movement ? movementById.get(summary.movement) : undefined;
+  const wherePlaces = placesForEvent(summary.id);
   const accent = era?.accent ?? 'brass';
   /* Every era pane is now a deep cut carrying paper lettering (ui.tsx). */
   const heroChip = 'chip-vault';
@@ -109,6 +110,12 @@ export default function EventPage() {
                 <Icon d={icons.arrowRight} className="h-4 w-4" />
               </Link>
             )}
+            {wherePlaces.map((p) => (
+              <Link key={p.id} to={`/places/${p.slug}`} className={`${heroChip} min-h-11`}>
+                Where: {p.name}
+                <Icon d={icons.arrowRight} className="h-4 w-4" />
+              </Link>
+            ))}
             <Link to={`/timeline#era-${summary.era}`} className={`${heroChip} min-h-11`}>
               <Icon d={icons.clock} className="h-4 w-4" />
               See on the timeline

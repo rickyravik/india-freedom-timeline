@@ -217,6 +217,33 @@ export interface FreedomFighter {
   featured?: boolean;
   /** Lesser-known heroes surfaced in the "Forgotten Heroes" section. */
   forgotten?: boolean;
+  /** Places this life touched, beyond what a place record's own `people` list infers. */
+  locations?: { placeId: string; kind: LocationKind; note?: string }[];
+}
+
+export type PlaceKind = 'fort' | 'prison' | 'meeting-ground' | 'port' | 'protest-site' | 'town' | 'region' | 'coast';
+export type LocationKind = 'birth' | 'activity' | 'imprisonment' | 'exile' | 'death';
+export interface Place {
+  id: string;
+  slug: string;
+  name: string;
+  /** Names used in the period, with dates where known: "Tuticorin (Thoothukudi)". */
+  historicalNames?: string[];
+  /** Must match a name in src/data/regions.ts. */
+  state: string;
+  kind: PlaceKind;
+  summary: string;
+  /** [^n] markers into `sources`. */
+  description: string[];
+  /** Years the place matters for in this archive, e.g. "1799, 1801". */
+  dates?: string;
+  /** Fighter ids. */
+  people: string[];
+  /** Event ids. */
+  events: string[];
+  sources: SourceRef[];
+  images?: { src: string; caption: string; credit: string; created?: string }[];
+  editorial: Editorial;
 }
 
 export interface HistoricalEvent {

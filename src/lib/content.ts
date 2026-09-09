@@ -2,7 +2,8 @@
  * Content access layer — the single place UI code goes to for historical
  * records and the connections between them.
  */
-import type { EventSummary, FighterSummary, FreedomFighter, Movement, RegionId } from '@/types';
+import type { EventSummary, FighterSummary, FreedomFighter, LocationKind, Movement, Place, RegionId } from '@/types';
+import { places, placeById, placeBySlug } from '@/data/places';
 import { fighterSummaries, fighterSourceFile } from '@/data/generated/fighters.summary';
 import { eventSummaries, eventSourceFile } from '@/data/generated/events.summary';
 import { connectionsById } from '@/data/generated/connections';
@@ -39,6 +40,9 @@ export {
   glossaryById,
   trails,
   trailBySlug,
+  places,
+  placeById,
+  placeBySlug,
 };
 
 export const movementBySlug = new Map(movements.map((m) => [m.slug, m]));
@@ -78,6 +82,26 @@ export function eventsForMovement(movement: Movement): EventSummary[] {
     if (e.movement === movement.id) ids.add(e.id);
   }
   return events.filter((e) => ids.has(e.id));
+}
+
+export function placesForState(stateName: string): Place[] {
+  return places.filter((p) => p.state === stateName);
+}
+
+export function placesForEvent(eventId: string): Place[] {
+  return places.filter((p) => p.events.includes(eventId));
+}
+
+/** Takes the minimal shape it needs (see eventsForFighter above), so it
+    accepts either a FighterSummary or a full FreedomFighter record. */
+export function placesForFighter(fighter: { id: string; locations?: { placeId: string; kind: LocationKind; note?: string }[] }): { place: Place; kind: LocationKind; note?: string }[] {
+  const fromRecord: { place: Place; kind: LocationKind; note?: string }[] = [];
+  for (const l of fighter.locations ?? []) {
+    const place = placeById.get(l.placeId);
+    if (place) fromRecord.push({ place, kind: l.kind, note: l.note });
+  }
+  const mentioned = places.filter((p) => p.people.includes(fighter.id) && !fromRecord.some((l) => l.place.id === p.id)).map((place) => ({ place, kind: 'activity' as LocationKind }));
+  return [...fromRecord, ...mentioned];
 }
 
 export function fightersForState(stateName: string): FighterSummary[] {
@@ -145,6 +169,25 @@ export const roleLabels: Record<string, string> = {
   lawyer: 'Lawyer',
   educator: 'Educator',
   organizer: 'Organizer',
+};
+
+export const placeKindLabels: Record<string, string> = {
+  fort: 'Fort',
+  prison: 'Prison',
+  'meeting-ground': 'Meeting ground',
+  port: 'Port',
+  'protest-site': 'Protest site',
+  town: 'Town',
+  region: 'Region',
+  coast: 'Coast',
+};
+
+export const locationKindLabels: Record<string, string> = {
+  birth: 'Born',
+  activity: 'Active',
+  imprisonment: 'Imprisoned',
+  exile: 'Exiled',
+  death: 'Died',
 };
 
 export const categoryLabels: Record<string, string> = {

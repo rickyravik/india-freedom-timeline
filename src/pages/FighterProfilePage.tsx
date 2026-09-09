@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
-import { connectionsFor, eventsForFighter, fighterBySlug, fighters, lifespan, movementById, organizationById, similarFor, roleLabels, hashPick } from '@/lib/content';
+import { connectionsFor, eventsForFighter, fighterBySlug, fighters, lifespan, locationKindLabels, movementById, organizationById, placesForFighter, similarFor, roleLabels, hashPick } from '@/lib/content';
 import { loadFighter, peekFighter } from '@/lib/loadContent';
 import { eraById } from '@/data/eras';
 import { regionNames } from '@/data/regions';
@@ -218,6 +218,7 @@ export default function FighterProfilePage() {
     if (fighter) pushTrail(fighter.slug);
   }, [fighter]);
 
+  const places = useMemo(() => (fighter ? placesForFighter(fighter) : []), [fighter]);
   const connections = useMemo(() => (fighter ? connectionsFor(fighter.id) : []), [fighter]);
   const related = useMemo(() => (fighter ? similarFor(fighter, connections) : []), [fighter, connections]);
   const timeline = useMemo(() => (fighter ? eventsForFighter(fighter) : []), [fighter]);
@@ -498,6 +499,26 @@ export default function FighterProfilePage() {
                 <p className="label mb-3">At a glance</p>
                 <Ledger fighter={fighter} />
               </Reveal>
+
+              {places.length > 0 && (
+                <Reveal as="section" aria-label="Places in this life" className="doc p-5" delay={40}>
+                  <p className="label mb-3">Places in this life</p>
+                  <dl className="space-y-2.5">
+                    {places.map(({ place, kind, note }, i) => (
+                      <div key={`${place.id}-${i}`} className="flex items-baseline justify-between gap-2 font-body text-meta">
+                        <dt className="text-ink-faint" title={note}>
+                          {locationKindLabels[kind]}
+                        </dt>
+                        <dd>
+                          <Link to={`/places/${place.slug}`} className="font-semibold text-ink hover:text-oxide">
+                            {place.name}
+                          </Link>
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </Reveal>
+              )}
 
               {fighter.movements.length > 0 && (
                 <Reveal className="doc p-5" delay={60}>

@@ -19,6 +19,7 @@ import { didYouKnowFacts } from '../src/data/facts.ts';
 import { glossaryTerms } from '../src/data/glossary.ts';
 import { trails } from '../src/data/trails/index.ts';
 import { comparePairs } from '../src/data/compare-pairs.ts';
+import { places } from '../src/data/places.ts';
 import { fighterSummaries, fighterSourceFile } from '../src/data/generated/fighters.summary.ts';
 import { eventSummaries, eventSourceFile } from '../src/data/generated/events.summary.ts';
 import { connectionsById } from '../src/data/generated/connections.ts';
@@ -135,6 +136,9 @@ const fighterSchema = z.object({
   era: z.string().min(1),
   featured: z.boolean().optional(),
   forgotten: z.boolean().optional(),
+  locations: z
+    .array(z.object({ placeId: z.string().min(1), kind: z.enum(['birth', 'activity', 'imprisonment', 'exile', 'death']), note: z.string().optional() }))
+    .optional(),
 });
 
 const eventSchema = z.object({
@@ -282,6 +286,23 @@ const comparePairSchema = z.object({
   editorial: editorialSchema,
 });
 
+const placeSchema = z.object({
+  id: z.string().min(1),
+  slug: z.string().regex(/^[a-z0-9-]+$/, 'slug must be lowercase kebab-case'),
+  name: z.string().min(1),
+  historicalNames: z.array(z.string().min(1)).optional(),
+  state: z.string().min(1),
+  kind: z.enum(['fort', 'prison', 'meeting-ground', 'port', 'protest-site', 'town', 'region', 'coast']),
+  summary: z.string().min(1),
+  description: z.array(z.string().min(1)),
+  dates: z.string().optional(),
+  people: z.array(z.string()),
+  events: z.array(z.string()),
+  sources: z.array(sourceRefSchema),
+  images: z.array(z.object({ src: z.string().min(1), caption: z.string().min(1), credit: z.string().min(1), created: z.string().optional() })).optional(),
+  editorial: editorialSchema,
+});
+
 /* -------------------------------------------------------------------- */
 /* Schema pass                                                           */
 function checkSchema<T>(collection: string, items: T[], schema: z.ZodType<T>, refOf: (item: T) => string) {
@@ -306,6 +327,7 @@ checkSchema('guessWhoRounds', guessWhoRounds, guessWhoRoundSchema, (r) => r.id);
 checkSchema('glossary', glossaryTerms, glossaryTermSchema, (t) => t.id);
 checkSchema('trails', trails, trailSchema, (t) => t.id);
 checkSchema('comparePairs', comparePairs, comparePairSchema, (p) => p.id);
+checkSchema('places', places, placeSchema, (p) => p.id);
 
 /* -------------------------------------------------------------------- */
 /* Uniqueness                                                            */
@@ -327,6 +349,7 @@ checkUnique('eras', eras.map((e) => ({ id: e.id })));
 checkUnique('glossary', glossaryTerms.map((t) => ({ id: t.id })));
 checkUnique('trails', trails);
 checkUnique('comparePairs', comparePairs);
+checkUnique('places', places);
 
 /* -------------------------------------------------------------------- */
 /* Cross-references                                                      */
@@ -463,6 +486,21 @@ for (const p of comparePairs) {
   if (p.editorial.status === 'draft') warn('comparePairs', p.id, 'editorial status is draft');
 }
 
+const placeIds = new Set(places.map((p) => p.id));
+for (const p of places) {
+  if (!knownStateNames.has(p.state)) err('places', p.id, `state "${p.state}" is not in src/data/regions.ts`);
+  checkRefs('places', p.id, p.people, fighterIds, 'fighter');
+  checkRefs('places', p.id, p.events, eventIds, 'event');
+  if (p.sources.length === 0) err('places', p.id, 'has no sources');
+  checkCitations('places', p.id, p.description, p.sources.length);
+  if (p.editorial.status === 'draft') warn('places', p.id, 'editorial status is draft');
+}
+for (const f of fighters) {
+  for (const l of f.locations ?? []) {
+    if (!placeIds.has(l.placeId)) err('fighters', f.id, `locations references unknown place id "${l.placeId}"`);
+  }
+}
+
 /* -------------------------------------------------------------------- */
 /* Generated summary staleness — src/data/generated/*.summary.ts is        */
 /* committed, not built on the fly; catch it drifting from the full        */
@@ -499,7 +537,7 @@ for (const group of [errors, warnings]) {
 }
 
 console.log(
-  `\nValidated ${fighters.length} fighters, ${events.length} events, ${movements.length} movements, ${organizations.length} organizations, ${eras.length} eras, ${quizQuestions.length} quiz questions, ${didYouKnowFacts.length} facts, ${guessWhoRounds.length} guess-who rounds, ${glossaryTerms.length} glossary terms, ${trails.length} trails, ${comparePairs.length} compare pairs.`,
+  `\nValidated ${fighters.length} fighters, ${events.length} events, ${movements.length} movements, ${organizations.length} organizations, ${eras.length} eras, ${quizQuestions.length} quiz questions, ${didYouKnowFacts.length} facts, ${guessWhoRounds.length} guess-who rounds, ${glossaryTerms.length} glossary terms, ${trails.length} trails, ${comparePairs.length} compare pairs, ${places.length} places.`,
 );
 console.log(`${errors.length} error(s), ${warnings.length} warning(s).`);
 

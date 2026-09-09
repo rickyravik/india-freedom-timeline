@@ -1,12 +1,13 @@
 import { useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
-import { eventsForState, fightersForState, movements } from '@/lib/content';
+import { eventsForState, fightersForState, movements, placesForState } from '@/lib/content';
 import { regionNames, states, stateById } from '@/data/regions';
 import type { RegionId } from '@/types';
 import { usePageMeta, useUrlState } from '@/lib/hooks';
 import { oneOf, oneOfDefault } from '@/lib/url-state';
 import { EmptyState, Icon, PageIntro, Reveal, Segmented, icons } from '@/components/ui';
 import { EventCard, FighterCard } from '@/components/cards';
+import { PlaceChip } from '@/components/places';
 
 /* One stamp ink per region — the sheet is printed in seven inks. Ochre and
    gauge gold use their deep cuts: the mid cuts only reached 4.0:1 against
@@ -83,6 +84,7 @@ export default function MapPage() {
 
   const stateFighters = selected ? fightersForState(selected.name) : [];
   const stateEvents = selected ? eventsForState(selected.name) : [];
+  const statePlaces = selected ? placesForState(selected.name) : [];
   const stateMovements = (() => {
     if (!selected) return [];
     const ids = new Set(stateFighters.flatMap((f) => f.movements));
@@ -270,6 +272,16 @@ export default function MapPage() {
                 />
               ) : (
                 <div className="space-y-10">
+                  {statePlaces.length > 0 && (
+                    <section aria-label={`Places in ${selected.name}`}>
+                      <p className="label num mb-3">Places · {statePlaces.length}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {statePlaces.map((p) => (
+                          <PlaceChip key={p.id} place={p} />
+                        ))}
+                      </div>
+                    </section>
+                  )}
                   {stateFighters.length > 0 && (
                     <section aria-label={`Freedom fighters of ${selected.name}`}>
                       <p className="label num mb-3">Freedom fighters · {stateFighters.length}</p>
