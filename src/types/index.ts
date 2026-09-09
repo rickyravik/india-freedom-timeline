@@ -470,6 +470,15 @@ export interface Trail {
   editorial: Editorial;
   narration?: TrailNarration[];
   translations?: TrailTranslation[];
+  teaching?: {
+    /** Labelled "proposed" until an educator reviews it. */
+    alignment: string;
+    /** Stop ids for a 15-minute version. */
+    shortVersion: string[];
+    prompts: string[];
+    facilitatorNotes: string[];
+    editorial: Editorial;
+  };
 }
 
 export type TrailLang = 'en' | 'ta' | 'hi';

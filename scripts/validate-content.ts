@@ -308,6 +308,15 @@ const trailSchema = z.object({
   editorial: editorialSchema,
   narration: z.array(trailNarrationSchema).optional(),
   translations: z.array(trailTranslationSchema).optional(),
+  teaching: z
+    .object({
+      alignment: z.string().min(1),
+      shortVersion: z.array(z.string().min(1)).min(1),
+      prompts: z.array(z.string().min(1)),
+      facilitatorNotes: z.array(z.string().min(1)),
+      editorial: editorialSchema,
+    })
+    .optional(),
 });
 
 const comparePairSchema = z.object({
@@ -580,6 +589,10 @@ for (const t of trails) {
       if (english) checkCitations('trails', `${t.id}/${tr.lang}/${english.id}`, s.text, english.sources.length);
     });
     if (tr.editorial.status === 'draft') warn('trails', t.id, `translation (${tr.lang}) editorial status is draft`);
+  }
+  if (t.teaching) {
+    for (const id of t.teaching.shortVersion) if (!stopIds.has(id)) err('trails', t.id, `teaching.shortVersion references unknown stop id "${id}"`);
+    if (t.teaching.editorial.status === 'draft') warn('trails', t.id, 'teaching editorial status is draft');
   }
   if (t.activity.kind === 'choice') {
     if (new Set(t.activity.options).size !== t.activity.options.length) err('trails', t.id, 'activity options are not distinct');

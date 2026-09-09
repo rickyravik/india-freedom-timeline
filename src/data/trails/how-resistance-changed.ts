@@ -139,4 +139,19 @@ export const howResistanceChanged: Trail = {
   },
   followOn: { label: 'Browse the nine chapters', to: '/timeline?view=chapters' },
   editorial: { status: 'draft', notes: 'Drafted 2026-09-08 from the six event records and linked biographies. A qualified reviewer should check the Partition sentence before the pilot.' },
+  teaching: {
+    alignment: 'Proposed: upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. To be reviewed by a qualified educator.',
+    shortVersion: ['plassey', 'revolt-1857', 'salt-1930'],
+    prompts: [
+      'This trail spans 1757 to 1942. Pick two stops and describe what changed in HOW people resisted, not just WHEN.',
+      'Satyagraha — openly breaking a law and accepting arrest — first appears at the 1930 stop. Why might that method not have worked in 1857?',
+      'The final stop carries a content note for killings and executions. Why might a trail about resistance need to include violence honestly rather than skip it?',
+    ],
+    facilitatorNotes: [
+      'Plassey is a good anchor for discussing how a trading company acquired governing power, distinct from a straightforward military conquest narrative.',
+      'Encourage students to name at least one "less familiar" person per stop, per the reflection prompt, before naming the famous one.',
+      'The content note on the final stop is a deliberate signal, not an afterthought — read it aloud before that section if working with younger students.',
+    ],
+    editorial: { status: 'draft' },
+  },
 };

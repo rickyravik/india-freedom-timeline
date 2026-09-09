@@ -99,6 +99,9 @@ export function TrailPage() {
               {resume > 1 ? `Resume at stop ${resume}` : 'Start the trail'}
               <Icon d={icons.arrowRight} className="h-4 w-4" />
             </Link>
+            <Link to={`/trails/${trail.slug}/teach`} className="btn-ghost-vault">
+              For teachers and families
+            </Link>
             {trail.editorial.status !== 'reviewed' && <DraftStamp vault />}
           </div>
         </div>

@@ -110,4 +110,19 @@ export const womenWhoLed: Trail = {
   },
   followOn: { label: 'Meet more women of the movement', to: '/fighters?collection=women' },
   editorial: { status: 'draft', notes: 'Drafted 2026-09-08 from the five records’ own text. Needs historical review before the pilot.' },
+  teaching: {
+    alignment: 'Proposed: upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. To be reviewed by a qualified educator.',
+    shortVersion: ['velu-nachiyar', 'pritilata', 'usha-mehta'],
+    prompts: [
+      'Each of these five women is remembered differently by history — some in official records, some mainly in memory and oral tradition. Why might that be, and does it change how much we should trust their stories?',
+      'These women acted eighteen years, seventy years and a century apart. What stayed the same about what leadership cost them, and what changed?',
+      'The trail says none of these five women worked together. What would it have meant for the freedom struggle if they had?',
+    ],
+    facilitatorNotes: [
+      'Kuyili\'s fire attack is the trail\'s clearest example of an unverified claim — useful for a short exercise in "what counts as evidence."',
+      'Encourage students to name the specific cost each woman paid (exile, imprisonment, a death sentence, years underground) rather than a general "sacrifice."',
+      'If time allows, connect Usha Mehta\'s underground radio to the availability of technology as a factor in how resistance was organised by the 1940s.',
+    ],
+    editorial: { status: 'draft' },
+  },
 };

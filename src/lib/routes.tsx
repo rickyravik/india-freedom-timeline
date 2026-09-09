@@ -40,6 +40,7 @@ export const routeTable: RouteEntry[] = [
   { path: '/trails/:slug', loader: () => import('@/pages/TrailPages').then((m) => ({ default: m.TrailPage })) },
   { path: '/trails/:slug/stop/:n', loader: () => import('@/pages/TrailPages').then((m) => ({ default: m.TrailStopPage })) },
   { path: '/trails/:slug/finish', loader: () => import('@/pages/TrailPages').then((m) => ({ default: m.TrailFinishPage })) },
+  { path: '/trails/:slug/teach', loader: () => import('@/pages/TrailTeachPage') },
   { path: '/learn', loader: () => import('@/pages/LearnPage') },
   { path: '/glossary', loader: () => import('@/pages/GlossaryPage') },
   { path: '/about', loader: () => import('@/pages/AboutPage') },

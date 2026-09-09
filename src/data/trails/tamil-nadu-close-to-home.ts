@@ -116,4 +116,19 @@ export const tamilNaduCloseToHome: Trail = {
   },
   followOn: { label: 'Explore Tamil Nadu on the map', to: '/map?state=tamil-nadu' },
   editorial: { status: 'draft', notes: 'Drafted 2026-09-08 from the records’ own text. Present-day/historical place names to be checked by a reviewer.' },
+  teaching: {
+    alignment: 'Proposed: upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. To be reviewed by a qualified educator.',
+    shortVersion: ['panchalankurichi', 'vedaranyam', 'tiruppur-1932'],
+    prompts: [
+      'This trail moves from an armed fort to a shipping company to a fistful of salt to a flag. What had to change in society for each later method to become possible?',
+      'A century separates the fall of Panchalankurichi from the Vedaranyam salt march. What stayed the same about what the Company or the government was defending?',
+      'Which of these five moments do you think local students in Tamil Nadu are most likely to have heard about already — and which the least? Why might that be?',
+    ],
+    facilitatorNotes: [
+      'The order activity works well as a warm-up before discussion, since students often assume armed resistance came later than mass civil disobedience.',
+      'V.O. Chidambaram Pillai\'s shipping venture is a useful bridge between economic and political resistance — draw that connection out explicitly.',
+      'If a student asks why the Tirunelveli rising is less well known nationally than the Salt March, that is worth sitting with rather than answering quickly.',
+    ],
+    editorial: { status: 'draft' },
+  },
 };
