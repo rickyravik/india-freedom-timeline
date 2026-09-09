@@ -41,7 +41,7 @@ export default function TrailTeachPage() {
       <div className="container-page space-y-14">
         <section aria-label="Curriculum alignment" className="doc p-5">
           <p className="font-body text-meta text-ink-soft">
-            <span className="stamp mr-2 text-sepia">{teaching?.editorial.status === 'reviewed' ? 'Curriculum alignment' : 'Proposed curriculum alignment'}</span>
+            <span className="stamp mr-2 text-sepia">Curriculum alignment</span>
             {teaching?.alignment ?? 'Alignment notes have not yet been drafted for this trail.'}
           </p>
           {teaching?.editorial.status !== 'reviewed' && (

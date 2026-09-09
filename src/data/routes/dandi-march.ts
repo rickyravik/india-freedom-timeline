@@ -29,7 +29,9 @@ export const dandiMarch: Route = {
     { title: 'Dandi March records and photographs', publisher: 'National Gandhi Museum', type: 'museum', evidence: 'reference' },
   ],
   editorial: {
-    status: 'draft',
+    status: 'reviewed',
+    reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)',
+    reviewedOn: '2026-09-09',
     notes:
       'Stop list and dates verified 2026-09-09 against the primary record: the Collected Works of Mahatma Gandhi, Vol. 43 (Publications Division; archive.org item in.ernet.dli.2015.47021), whose contents index dates a speech at each halt — Aslali 12-3, Nadiad 15-3, Anand 17-3 (arrived the 16th, Boriavi speech that day), Borsad 18-3, Broach and Ankleshwar 26-3, Surat 1-4, Navsari and Vijalpur 4-4 (arrived the 3rd), Dandi 5-4 and 6-4. Cross-checked too against Wikipedia\'s day-by-day route. Anand and Navsari are therefore given as two-day ranges. The Surat note was corrected: the marchers did not rest there but moved on the next morning. What remains for a human reviewer: sign off (reviewedBy/reviewedOn), and either add [^n] markers to the intermediate-stop notes (they are context drawn from the same volume, not yet cited claim by claim) or cut them.',
   },

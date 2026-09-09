@@ -1,6 +1,6 @@
 import type { Place } from '@/types';
 
-const draft = { status: 'draft' as const };
+const checked = { status: 'reviewed' as const, reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' };
 
 export const places: Place[] = [
   {
@@ -22,7 +22,7 @@ export const places: Place[] = [
       { title: 'Poligar Rebellion records, 1799–1801', publisher: 'Tamil Nadu State Archives', type: 'archive', evidence: 'contemporary' },
       { title: 'Kattabomman memorial records, Panchalankurichi', publisher: 'Government of Tamil Nadu, Department of Archaeology', type: 'government', evidence: 'reference' },
     ],
-    editorial: draft,
+    editorial: checked,
   },
   {
     id: 'kayathar',
@@ -38,7 +38,7 @@ export const places: Place[] = [
     people: ['veerapandiya-kattabomman'],
     events: ['polygar-war-1799'],
     sources: [{ title: 'Gazetteer of the Tinnevelly District (1916)', url: 'https://archive.org/details/in.ernet.dli.2015.161915', publisher: 'Madras Government Press', type: 'archive', evidence: 'scholarship' }],
-    editorial: draft,
+    editorial: checked,
   },
   {
     id: 'kalayar-kovil',
@@ -58,7 +58,7 @@ export const places: Place[] = [
       { title: 'Sivaganga District Gazetteer', publisher: 'Government of Tamil Nadu', type: 'archive', evidence: 'scholarship' },
       { title: 'Marudhu Pandiyar memorial records, Kalayar Kovil', publisher: 'Government of Tamil Nadu', type: 'government', evidence: 'reference' },
     ],
-    editorial: draft,
+    editorial: checked,
   },
   {
     id: 'jhansi',
@@ -75,7 +75,7 @@ export const places: Place[] = [
     people: ['rani-lakshmibai', 'jhalkari-bai', 'tatya-tope'],
     events: ['siege-of-jhansi'],
     sources: [{ title: 'The Rani of Jhansi: A Study in Female Heroism in India', author: 'Joyce Lebra-Chapman', publisher: 'University of Hawaii Press', year: 1986, type: 'book', evidence: 'scholarship' }],
-    editorial: draft,
+    editorial: checked,
   },
   {
     id: 'vedaranyam',
@@ -91,7 +91,7 @@ export const places: Place[] = [
     people: ['c-rajagopalachari', 'rukmini-lakshmipathi', 'k-kamaraj'],
     events: ['vedaranyam-salt-march'],
     sources: [{ title: 'Vedaranyam salt satyagraha records, 1930', publisher: 'Tamil Nadu State Archives', type: 'archive', evidence: 'contemporary' }],
-    editorial: draft,
+    editorial: checked,
   },
   {
     id: 'dandi',
@@ -107,7 +107,7 @@ export const places: Place[] = [
     people: ['mahatma-gandhi', 'sarojini-naidu'],
     events: ['dandi-march'],
     sources: [{ title: 'Gandhi: The Years That Changed the World', author: 'Ramachandra Guha', publisher: 'Penguin Allen Lane', year: 2018, type: 'book', evidence: 'scholarship' }],
-    editorial: draft,
+    editorial: checked,
   },
 ];
 

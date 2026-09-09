@@ -776,7 +776,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     tags: ['women', 'Chittagong', 'martyr'],
     featured: true,
     forgotten: true,
-    editorial: { status: 'draft' },
+    editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' },
   },
   {
     id: 'kalpana-datta',

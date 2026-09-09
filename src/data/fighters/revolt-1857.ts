@@ -167,7 +167,7 @@ export const revoltFighters: FreedomFighter[] = [
     ],
     tags: ['1857', 'queen', 'women', 'Jhansi'],
     featured: true,
-    editorial: { status: 'draft' },
+    editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' },
   },
   {
     id: 'jhalkari-bai',

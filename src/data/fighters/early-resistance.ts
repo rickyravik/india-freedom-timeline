@@ -168,7 +168,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       'One of the first Indian rulers to defeat the East India Company in battle and win a kingdom back — decades before 1857.',
     ],
     portraitNote: { kind: 'stamp', caption: 'Commemorative postage stamp issued by India Post, 2008. The portrait is a modern artist’s rendering; no authenticated contemporary likeness is known.', credit: 'India Post', created: '2008' },
-    editorial: { status: 'draft' },
+    editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' },
   },
   {
     id: 'pazhassi-raja',

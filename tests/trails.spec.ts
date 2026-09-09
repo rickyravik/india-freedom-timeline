@@ -36,9 +36,10 @@ test('a trail can be completed keyboard-only, keeps its place, and marks complet
   await expect(page.getByRole('link', { name: 'Read again' }).first()).toBeVisible();
 });
 
-test('a draft trail says so', async ({ page }) => {
+test('a checked trail carries no draft stamp', async ({ page }) => {
   await page.goto('/trails/how-resistance-changed');
-  await expect(page.getByText(/under editorial review/)).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  await expect(page.getByText(/under editorial review/)).toHaveCount(0);
 });
 
 test('asking for a language that has no translation falls back to English without a switch', async ({ page }) => {

@@ -41,6 +41,10 @@ export default function AboutPage() {
               Much beloved popular history rests on oral tradition — songs, ballads and family memory. Oral tradition is itself a historical source, especially for communities the
               colonial record ignored; we include such accounts with their nature stated, so readers can tell documented fact from cherished memory.
             </p>
+            <p className="prose-reading-vault">
+              Every record is checked against the published sources it cites before it loses its draft marking. That check is made by the archive’s maintainers with AI assistance, not by a
+              professional historian — which is why the sources are always shown: so that you can check them too, and tell us when we are wrong.
+            </p>
             <p className="prose-reading-vault">The site can be installed on a phone; pages you have opened stay readable offline, and only those.</p>
           </div>
         </Reveal>

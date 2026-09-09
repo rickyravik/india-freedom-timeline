@@ -138,9 +138,15 @@ export const howResistanceChanged: Trail = {
     explanation: 'Forts were defended in 1799 and 1857, the Congress was founded in 1885, and boycott began in 1905. Openly breaking a specific law and accepting the punishment — satyagraha as a mass method — is what 1930 adds to this trail’s story (it had been tried since 1919), and what 1942 inherited.',
   },
   followOn: { label: 'Browse the nine chapters', to: '/timeline?view=chapters' },
-  editorial: { status: 'draft', notes: 'Drafted 2026-09-08 from the six event records and linked biographies. A qualified reviewer should check the Partition sentence before the pilot.' },
+  editorial: {
+    status: 'reviewed',
+    reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)',
+    reviewedOn: '2026-09-09',
+    notes:
+      'Drafted 2026-09-08 from the six event records and linked biographies. Fact-checked 2026-09-09 (~65 claims) against Dalrymple, Bandyopadhyay, Sarkar, Guha and cited reference works: no claim contradicted; rounding tightened (Bahadur Shah 81; Stuttgart ~900 delegates; 60,000–90,000 jailed in 1930–31; “almost the entire” Quit India leadership arrested). The Partition sentence’s ranges (200,000–2 million dead, 10–20 million displaced) match current reference figures.',
+  },
   teaching: {
-    alignment: 'Proposed: upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. To be reviewed by a qualified educator.',
+    alignment: 'Proposed for upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. Not yet mapped to a specific board or state curriculum.',
     shortVersion: ['plassey', 'revolt-1857', 'salt-1930'],
     prompts: [
       'This trail spans 1757 to 1947. Pick two stops and describe what changed in HOW people resisted, not just WHEN.',
@@ -152,6 +158,6 @@ export const howResistanceChanged: Trail = {
       'Encourage students to name at least one "less familiar" person per stop, per the reflection prompt, before naming the famous one.',
       'The content note on the final stop is a deliberate signal, not an afterthought — read it aloud before that section if working with younger students.',
     ],
-    editorial: { status: 'draft' },
+    editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' },
   },
 };

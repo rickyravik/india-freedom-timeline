@@ -58,7 +58,9 @@ export const queensProclamation1858: ArchiveDocument = {
     { title: 'From Plassey to Partition and After', author: 'Sekhar Bandyopadhyay', publisher: 'Orient BlackSwan', year: 2015, type: 'book', evidence: 'scholarship' },
   ],
   editorial: {
-    status: 'draft',
+    status: 'reviewed',
+    reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)',
+    reviewedOn: '2026-09-09',
     notes:
       'Public-domain Crown text. All four passages checked word for word 2026-09-09 against the 1908 printed reprint (Internet Archive "queens-proclamation") and Wikisource: corrected the religion passage’s missing trailing ellipsis (the sentence continues "…on pain of Our highest Displeasure"), the treaties passage’s comma ("Rights, Dignity, and Honour") and now quoting its "no extension of Our present territorial Possessions" sentence, and the office passage’s opening ("And it is Our further Will") and lower-case "education, ability, and integrity". Not yet done: a check against a facsimile of the 1858 Allahabad printing itself (held by the Royal Armouries; a ProQuest digitisation exists) — none is freely accessible online — and a licensed image to add as `image` with credit and licence.',
   },

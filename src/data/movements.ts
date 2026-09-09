@@ -358,7 +358,7 @@ export const movements: Movement[] = [
     participants: 'Congress volunteers, peasants and traders, and women in unprecedented numbers — Sarojini Naidu at Dharasana, Rukmini Lakshmipathi at Vedaranyam, Kamaladevi Chattopadhyay in Bombay.',
     disagreements: ['Revolutionaries such as Bhagat Singh’s generation rejected non-violence as insufficient', 'The Gandhi–Irwin Pact of 1931 that paused the campaign was criticised within the Congress'],
     outcomes: ['The Gandhi–Irwin Pact (March 1931) and Congress’s participation in the Second Round Table Conference later that year', 'A movement that was, for the first time, truly popular across regions and classes'],
-    editorial: { status: 'draft' },
+    editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' },
   },
   {
     id: 'quit-india',

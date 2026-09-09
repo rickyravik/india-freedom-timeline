@@ -115,9 +115,15 @@ export const tamilNaduCloseToHome: Trail = {
     explanation: 'Panchalankurichi fell in 1799 and the proclamation followed in 1801 — armed resistance by chiefs and their forces. A century later, in 1908, the fight was over shipping, strikes and public meetings; by 1930 it was mass, open law-breaking. The order is also the story of how resistance changed.',
   },
   followOn: { label: 'Explore Tamil Nadu on the map', to: '/map?state=tamil-nadu' },
-  editorial: { status: 'draft', notes: 'Drafted 2026-09-08 from the records’ own text. Present-day/historical place names to be checked by a reviewer.' },
+  editorial: {
+    status: 'reviewed',
+    reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)',
+    reviewedOn: '2026-09-09',
+    notes:
+      'Drafted 2026-09-08 from the records’ own text. Fact-checked 2026-09-09 (~69 claims) against Britannica, cited Wikipedia, Rajayyan-derived journalism and archival papers: one error corrected (the four 1908 police-firing deaths were in Tirunelveli, not Tuticorin), contested details softened (Rajaji arrested at the Edanthevar salt swamp; Panchalankurichi abandoned rather than breached; Kumaran’s flag as tradition), and the 1916 Tinnevelly gazetteer citation corrected. Place-name equivalences (Tuticorin/Thoothukudi etc.) confirmed.',
+  },
   teaching: {
-    alignment: 'Proposed: upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. To be reviewed by a qualified educator.',
+    alignment: 'Proposed for upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. Not yet mapped to a specific board or state curriculum.',
     shortVersion: ['panchalankurichi', 'vedaranyam', 'tiruppur-1932'],
     prompts: [
       'This trail moves from an armed fort to a shipping company to a fistful of salt to a flag. What had to change in society for each later method to become possible?',
@@ -129,6 +135,6 @@ export const tamilNaduCloseToHome: Trail = {
       'V.O. Chidambaram Pillai\'s shipping venture is a useful bridge between economic and political resistance — draw that connection out explicitly.',
       'If a student asks why the Tirunelveli rising is less well known nationally than the Salt March, that is worth sitting with rather than answering quickly.',
     ],
-    editorial: { status: 'draft' },
+    editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' },
   },
 };

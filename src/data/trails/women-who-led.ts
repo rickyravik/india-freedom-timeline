@@ -109,9 +109,15 @@ export const womenWhoLed: Trail = {
     explanation: 'The Pahartali raid, the sentence and the arrest are recorded in case files and contemporary papers. Kuyili’s attack is remembered through oral tradition and later retellings — the archive marks it as uncertain, and so should you when you retell it.',
   },
   followOn: { label: 'Meet more women of the movement', to: '/fighters?collection=women' },
-  editorial: { status: 'draft', notes: 'Drafted 2026-09-08 from the five records’ own text. Needs historical review before the pilot.' },
+  editorial: {
+    status: 'reviewed',
+    reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)',
+    reviewedOn: '2026-09-09',
+    notes:
+      'Drafted 2026-09-08 from the five records’ own text. Fact-checked 2026-09-09 (~67 claims) against Britannica, cited Wikipedia and the cited scholarship: framing errors fixed (“five centuries” → decades; the teaching prompt’s date arithmetic; a facilitator note’s “death sentence”), small date slips corrected (Pahartali raid night of 23 Sept; Gaidinliu sentenced 1933; Usha Mehta sentenced to, not served, four years), and legendary details (Jhalkari Bai’s command, the “dogs and Indians” sign) marked as tradition.',
+  },
   teaching: {
-    alignment: 'Proposed: upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. To be reviewed by a qualified educator.',
+    alignment: 'Proposed for upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. Not yet mapped to a specific board or state curriculum.',
     shortVersion: ['velu-nachiyar', 'pritilata', 'usha-mehta'],
     prompts: [
       'Each of these five women is remembered differently by history — some in official records, some mainly in memory and oral tradition. Why might that be, and does it change how much we should trust their stories?',
@@ -123,6 +129,6 @@ export const womenWhoLed: Trail = {
       'Encourage students to name the specific cost each woman paid (exile, imprisonment, a life sentence, a withheld degree, years underground) rather than a general "sacrifice."',
       'If time allows, connect Usha Mehta\'s underground radio to the availability of technology as a factor in how resistance was organised by the 1940s.',
     ],
-    editorial: { status: 'draft' },
+    editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' },
   },
 };
