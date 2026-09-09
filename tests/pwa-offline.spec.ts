@@ -57,3 +57,16 @@ test('service worker precaches the shell and offline page, and caches visited na
   await expect(page.locator('h1')).toBeVisible();
   await page.context().setOffline(false);
 });
+
+test('saving a trail for offline puts its pages in a trail cache, and removing it empties them', async ({ page }) => {
+  await page.goto('/trails/women-who-led');
+  await page.waitForFunction(() => navigator.serviceWorker.ready.then(() => true));
+  await page.getByRole('button', { name: /Save this trail for offline/ }).click();
+  await expect(page.getByText(/Saved for offline/)).toBeVisible();
+  const cached = await page.evaluate(
+    async () => (await caches.has('trail-women-who-led')) && (await (await caches.open('trail-women-who-led')).match('/trails/women-who-led/stop/1')) !== undefined,
+  );
+  expect(cached).toBe(true);
+  await page.getByRole('button', { name: 'Remove' }).click();
+  await expect.poll(() => page.evaluate(() => caches.has('trail-women-who-led'))).toBe(false);
+});

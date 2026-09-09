@@ -45,3 +45,33 @@ export function dismissUpdate() {
   needRefresh = false;
   notify();
 }
+
+/** Saves a trail's pages (and portraits) for offline reading. Resolves once
+    the service worker confirms every URL is cached. */
+export function cacheTrail(slug: string, urls: string[]): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (!('serviceWorker' in navigator)) {
+      reject(new Error('Service workers are not supported here.'));
+      return;
+    }
+    const onMessage = (event: MessageEvent) => {
+      if (event.data?.type === 'TRAIL_CACHED' && event.data.slug === slug) {
+        navigator.serviceWorker.removeEventListener('message', onMessage);
+        resolve();
+      }
+    };
+    navigator.serviceWorker.addEventListener('message', onMessage);
+    void navigator.serviceWorker.ready.then((reg) => reg.active?.postMessage({ type: 'CACHE_TRAIL', slug, urls }));
+  });
+}
+
+export async function dropTrail(slug: string): Promise<void> {
+  if (!('serviceWorker' in navigator)) return;
+  const reg = await navigator.serviceWorker.ready;
+  reg.active?.postMessage({ type: 'DROP_TRAIL', slug });
+}
+
+export async function isTrailCached(slug: string): Promise<boolean> {
+  if (!('caches' in window)) return false;
+  return caches.has(`trail-${slug}`);
+}

@@ -45,11 +45,26 @@ registerRoute(
     try {
       return await pages.handle(options);
     } catch {
-      return (await caches.match(OFFLINE_URL)) ?? Response.error();
+      // A saved trail's own cache (trail-<slug>, see the CACHE_TRAIL handler
+      // below) isn't named here on purpose: caches.match with no cacheName
+      // searches every cache this origin owns, so a page saved for offline
+      // reading is found before falling back to the generic offline page.
+      return (await caches.match(options.request)) ?? (await caches.match(OFFLINE_URL)) ?? Response.error();
     }
   },
 );
 
 self.addEventListener('message', (event) => {
-  if (event.data?.type === 'SKIP_WAITING') self.skipWaiting();
+  const data = event.data as { type?: string; slug?: string; urls?: string[] } | undefined;
+  if (data?.type === 'SKIP_WAITING') self.skipWaiting();
+  if (data?.type === 'CACHE_TRAIL' && data.slug && data.urls) {
+    const { slug, urls } = data;
+    event.waitUntil(
+      caches
+        .open(`trail-${slug}`)
+        .then((c) => c.addAll(urls))
+        .then(() => event.source?.postMessage({ type: 'TRAIL_CACHED', slug })),
+    );
+  }
+  if (data?.type === 'DROP_TRAIL' && data.slug) event.waitUntil(caches.delete(`trail-${data.slug}`));
 });

@@ -7,12 +7,14 @@ import { flag, oneOfDefault } from '@/lib/url-state';
 import { markComplete, setStop } from '@/lib/trails-progress';
 import { track } from '@/lib/analytics';
 import { fontImportFor, resolveTrailText } from '@/lib/translations';
+import { trailUrls, estimateBytes, formatBytes } from '@/lib/offline-trail';
+import { cacheTrail, dropTrail, isTrailCached } from '@/lib/pwa';
 import { Breadcrumbs, Icon, PageIntro, Postmark, SectionHeading, Segmented, SourceList, eraAccent, icons } from '@/components/ui';
 import { DraftStamp, ReadingText } from '@/components/reading';
 import { ChoiceActivity, OrderActivity, TrailCard, TrailProgress } from '@/components/trails';
 import { EventCard, FighterCard, MovementCard } from '@/components/cards';
 import { AudioPlayer } from '@/components/audio-player';
-import type { TrailLang } from '@/types';
+import type { Trail, TrailLang } from '@/types';
 
 const TRAIL_LANGS = ['en', 'ta', 'hi'] as const;
 const langLabel: Record<TrailLang, string> = { en: 'English', ta: 'தமிழ்', hi: 'हिन्दी' };
@@ -25,6 +27,68 @@ function LanguageSwitch({ trail, lang, onChange }: { trail: { translations?: { l
 
 const stopParams = { text: flag(), lang: oneOfDefault(TRAIL_LANGS, 'en') };
 const overviewParams = { lang: oneOfDefault(TRAIL_LANGS, 'en') };
+
+function OfflineControl({ trail }: { trail: Trail }) {
+  const supported = typeof navigator !== 'undefined' && 'serviceWorker' in navigator;
+  const [cached, setCached] = useState<boolean | null>(null);
+  const [saving, setSaving] = useState(false);
+
+  useEffect(() => {
+    if (!supported) return;
+    let live = true;
+    void isTrailCached(trail.slug).then((v) => {
+      if (live) setCached(v);
+    });
+    return () => {
+      live = false;
+    };
+  }, [trail.slug, supported]);
+
+  if (!supported) {
+    return <p className="font-body text-label text-ink-faint">Saving for offline reading needs a browser with service worker support.</p>;
+  }
+  if (cached === null) return null;
+
+  const urls = trailUrls(trail, {
+    fighterSlug: (id) => fighterById.get(id)?.slug,
+    eventSlug: (id) => eventById.get(id)?.slug,
+    portrait: (id) => fighterById.get(id)?.portrait,
+  });
+
+  if (cached) {
+    return (
+      <div className="flex flex-wrap items-center gap-3">
+        <p className="font-body text-label text-ink-faint">Saved for offline</p>
+        <button
+          type="button"
+          className="btn-ghost !min-h-10 !px-4"
+          onClick={async () => {
+            await dropTrail(trail.slug);
+            setCached(false);
+          }}
+        >
+          Remove
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      className="btn-ghost !min-h-10 !px-4"
+      disabled={saving}
+      onClick={async () => {
+        setSaving(true);
+        await cacheTrail(trail.slug, urls);
+        setSaving(false);
+        setCached(true);
+      }}
+    >
+      {saving ? 'Saving…' : `Save this trail for offline reading (${formatBytes(estimateBytes(urls))})`}
+    </button>
+  );
+}
 
 /* `target`, not `ref`: React reserves the `ref` prop on function components. */
 function RefCard({ target: r, compact = false }: { target: TrailRef; compact?: boolean }) {
@@ -113,6 +177,7 @@ export function TrailPage() {
             <p className="label mb-1">What you will be able to do</p>
             <p className="font-body text-meta text-ink">{trail.learningGoal}</p>
           </div>
+          <OfflineControl trail={trail} />
         </div>
         <aside>
           <p className="label mb-3">The stops</p>
