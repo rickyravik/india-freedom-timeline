@@ -7,7 +7,7 @@ test('the home page leads with Start exploring, one featured story and the trail
   await expect(page.getByRole('link', { name: 'Explore by place' })).toHaveAttribute('href', '/map');
   const featured = page.getByRole('region', { name: 'Featured story' });
   await expect(featured.getByText(/\d+ min read/)).toBeVisible();
-  await expect(page.getByRole('region', { name: 'Guided trails' }).getByRole('article')).toHaveCount(3);
+  await expect(page.getByRole('region', { name: 'Guided trails' }).getByRole('article')).toHaveCount(6);
   await expect(page.getByRole('region', { name: 'Stories beyond the familiar names' })).toBeVisible();
   await expect(page.getByRole('region', { name: 'Sources and corrections' })).toBeVisible();
 });
