@@ -7,7 +7,7 @@ import { usePageMeta, useUrlState } from '@/lib/hooks';
 import { oneOf, oneOfDefault } from '@/lib/url-state';
 import { EmptyState, Icon, PageIntro, Reveal, Segmented, icons } from '@/components/ui';
 import { EventCard, FighterCard } from '@/components/cards';
-import { PlaceChip } from '@/components/places';
+import { GeographyFrame, PlaceChip } from '@/components/places';
 
 /* One stamp ink per region — the sheet is printed in seven inks. Ochre and
    gauge gold use their deep cuts: the mid cuts only reached 4.0:1 against
@@ -95,7 +95,7 @@ export default function MapPage() {
     <div className="pb-20">
       <PageIntro
         title="Explore by State & Region"
-        lede="Choose a state to meet its freedom fighters and the battles, marches and uprisings that happened there. The tiles are a schematic of present-day states, not a boundary map — see the note below the sheet."
+        lede="Choose a state to meet its freedom fighters and the battles, marches and uprisings that happened there."
       >
         <div className="flex flex-wrap items-end gap-3">
           <label className="block min-w-0 flex-1 sm:max-w-sm">
@@ -191,6 +191,9 @@ export default function MapPage() {
               ))}
             </ul>
             <p className="mt-3 font-body text-xs text-paper-300">Marks in the corner show states with records. “Abroad” covers the struggle beyond India’s shores — London, Paris, San Francisco, Tokyo, Singapore.</p>
+            <div className="mt-3">
+              <GeographyFrame frame="present-day" vault />
+            </div>
           </div>
           {selected && (
             <button type="button" className="btn-seal mt-4 w-full lg:hidden" onClick={viewStories}>

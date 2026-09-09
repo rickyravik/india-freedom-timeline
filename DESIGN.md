@@ -394,6 +394,8 @@ Stage 3 added:
 
 **The One Question Rule.** Every animation asks `motionAllowed()` (`src/lib/motion.ts`). There is no second opinion — not a component-local media query, not an inline check of `prefers-reduced-motion`.
 
+**The Frame Rule.** Any map, route or boundary states whether it shows present-day or dated historical geography, using `GeographyFrame` (`src/components/places.tsx`). Modern borders are never presented as the political geography of 1857 or 1947.
+
 ## Do's and Don'ts
 
 ### Do:
