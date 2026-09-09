@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState, type CSSProperties, type ElementType, type FormEvent, type ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import type { DisputedNote, Era, Quote, SourceRef } from '@/types';
 import { eras } from '@/data/eras';
@@ -655,7 +656,12 @@ export function BottomSheet({
 
   if (!open) return null;
 
-  return (
+  // Portalled to <body>: a `position: fixed` box inside any transformed
+  // ancestor is positioned relative to that ancestor, not the viewport, and
+  // paints in its stacking context. The page sheet animates with a transform
+  // on entry and list pages use GSAP Flip, so an in-page sheet must not depend
+  // on where in the tree it was opened from.
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center" role="presentation">
       <button type="button" aria-label="Close" className="absolute inset-0 cursor-default bg-vault/60 animate-fade-in" onClick={onClose} tabIndex={-1} />
       <div
@@ -692,7 +698,8 @@ export function BottomSheet({
         </div>
         <div className="pb-5">{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

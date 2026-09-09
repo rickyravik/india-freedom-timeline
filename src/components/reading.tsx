@@ -252,7 +252,7 @@ export function ReadingToolbar({ vault = false }: { vault?: boolean }) {
         ]}
       />
       <div className="flex items-center gap-3">
-        <a href="#sources" className={`font-body text-meta font-medium underline underline-offset-2 ${vault ? 'text-paper-200 hover:text-paper-50' : 'text-ink-soft hover:text-ink'}`}>
+        <a href="#sources" className={vault ? 'chip-vault' : 'chip'}>
           Sources
         </a>
         <button type="button" onClick={() => setOpen(true)} className={vault ? 'chip-vault' : 'chip'}>
