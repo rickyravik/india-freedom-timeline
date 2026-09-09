@@ -23,9 +23,17 @@
   "vars": {
     "GITHUB_OWNER": "rickyravik",
     "GITHUB_REPO": "india-freedom-timeline"
-  },
-  // Pilot event counts (worker/events.ts). The dataset is created on first write.
-  "analytics_engine_datasets": [{ "binding": "EVENTS", "dataset": "ift_events" }]
+  }
+  // Pilot event counts (worker/events.ts). Disabled 2026-09-09: the Cloudflare
+  // account has not enabled Analytics Engine, and `wrangler deploy` rejects any
+  // script that binds a dataset until it is (API error 10089), which blocked the
+  // first production deploy of Stages 1-4. worker/events.ts already tolerates
+  // the missing binding (env.EVENTS is optional) and the client sends nothing
+  // while VITE_EVENTS=off. To turn the pilot counts on: enable Analytics Engine
+  // at dash.cloudflare.com -> Workers & Pages -> Analytics Engine, add a trailing
+  // comma after the "vars" block above, uncomment the line below, and set
+  // VITE_EVENTS=on in .env. The dataset is created on first write.
+  // "analytics_engine_datasets": [{ "binding": "EVENTS", "dataset": "ift_events" }]
   // Rate limiting for POST /api/correction (optional — the endpoint works
   // without it, just unthrottled beyond GitHub's own API limits). To enable:
   // run `wrangler kv namespace create RATE_LIMIT_KV`, paste the id it prints
