@@ -273,7 +273,10 @@ export default function MapPage() {
                   {stateFighters.length > 0 && (
                     <section aria-label={`Freedom fighters of ${selected.name}`}>
                       <p className="label num mb-3">Freedom fighters · {stateFighters.length}</p>
-                      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      {/* One column: this panel is narrower than a fighters grid can
+                         assume, and full names ("Shyamji Krishna Varma") were breaking
+                         mid-word once split into two columns here. */}
+                      <div className="grid grid-cols-1 gap-3">
                         {stateFighters.map((f, i) => (
                           <FighterCard key={f.id} fighter={f} compact delay={(i % 6) * 50} />
                         ))}
