@@ -140,7 +140,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     organizations: [],
     relatedPeople: ['marudhu-brothers', 'puli-thevar', 'rani-chennamma', 'rani-lakshmibai'],
     connections: [
-      { id: 'marudhu-brothers', type: 'ally', note: 'The Marudhu brothers helped her raise the army that retook Sivaganga around 1780; she then granted them administrative powers, and they later ruled the kingdom themselves.' },
+      { id: 'marudhu-brothers', type: 'ally', note: 'The Marudhu brothers helped her raise the army that retook Sivaganga around 1780; she then granted them administrative powers, and after her death they became the real power behind her daughter’s throne, until the Company executed them in 1801.' },
     ],
     sources: [
       {
@@ -167,7 +167,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       'Widowed in 1772 when Company and Arcot forces killed her husband; spent eight years in hiding building alliances, then retook her kingdom around 1780.',
       'One of the first Indian rulers to defeat the East India Company in battle and win a kingdom back — decades before 1857.',
     ],
-    portraitNote: { kind: 'stamp', caption: 'Commemorative postage stamp issued by India Post, 2008. No contemporary likeness of the queen survives.', credit: 'India Post', created: '2008' },
+    portraitNote: { kind: 'stamp', caption: 'Commemorative postage stamp issued by India Post, 2008. The portrait is a modern artist’s rendering; no authenticated contemporary likeness is known.', credit: 'India Post', created: '2008' },
     editorial: { status: 'draft' },
   },
   {

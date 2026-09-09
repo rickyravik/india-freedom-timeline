@@ -34,7 +34,7 @@ export const howResistanceChanged: Trail = {
       title: 'Sepoys, queens and an eighty-year-old zamindar',
       question: 'Who joined the revolt of 1857, and why?',
       text: [
-        'On 10 May 1857 sepoys at Meerut broke open the jail, killed their officers and rode through the night to Delhi, proclaiming the eighty-two-year-old Mughal emperor the sovereign of Hindustan. Within weeks whole populations had joined: Awadh under Begum Hazrat Mahal, Bihar under Kunwar Singh, and from March 1858 Rani Lakshmibai in besieged Jhansi.[^1]',
+        'On 10 May 1857 sepoys at Meerut broke open the jail, killed their officers and rode through the night to Delhi, proclaiming the eighty-one-year-old Mughal emperor the sovereign of Hindustan. Within months whole populations had joined: Awadh under Begum Hazrat Mahal, Bihar under Kunwar Singh, and from March 1858 Rani Lakshmibai in besieged Jhansi.[^1]',
         'The grievances ran deeper than the greased cartridges that sparked it — annexed states, ruined artisans and landholders, and fear for religion and custom. The rising was suppressed by mid-1858 with great violence. It ended Company rule and brought India under the Crown.[^2]',
       ],
       focus: { kind: 'event', id: 'revolt-1857' },
@@ -74,7 +74,7 @@ export const howResistanceChanged: Trail = {
       question: 'How did shopping become political?',
       text: [
         'Weeks before the partition of Bengal took effect, delegates met at Calcutta Town Hall on 7 August 1905 and resolved to boycott British goods. Bonfires of Manchester cloth followed; national schools, swadeshi mills and banks were founded, and the movement spread to Maharashtra, Punjab and the Madras coast.[^1]',
-        'In Tuticorin, V. O. Chidambaram Pillai took swadeshi to sea with an Indian shipping company. In Stuttgart in 1907, Bhikaji Cama unfurled a flag of free India before a thousand socialist delegates. Swadeshi gave the movement an economic weapon and a cultural self-confidence; 7 August is now National Handloom Day.[^2]',
+        'In Tuticorin, V. O. Chidambaram Pillai took swadeshi to sea with an Indian shipping company. In Stuttgart in 1907, Bhikaji Cama unfurled a flag of free India before nearly nine hundred socialist delegates. Swadeshi gave the movement an economic weapon and a cultural self-confidence; 7 August is now National Handloom Day.[^2]',
       ],
       focus: { kind: 'event', id: 'swadeshi-movement-launch' },
       also: [
@@ -93,7 +93,7 @@ export const howResistanceChanged: Trail = {
       question: 'Why choose a small tax to break a big law?',
       text: [
         'Gandhi chose the salt tax — a small, universal injustice touching the poorest. He left Sabarmati Ashram on 12 March 1930 with seventy-eight volunteers and walked for twenty-four days as the world’s press followed. At Dandi on the morning of 6 April he picked up a lump of natural salt.[^1]',
-        'Salt was made and sold illegally along the coasts; Rajagopalachari marched to Vedaranyam in the south, where Rukmini Lakshmipathi became the Madras Presidency’s first woman jailed in the movement. Around 90,000 people — women in unprecedented numbers — filled the jails before the campaign paused in 1931.[^2]',
+        'Salt was made and sold illegally along the coasts; Rajagopalachari marched to Vedaranyam in the south, where Rukmini Lakshmipathi became the first woman anywhere in India jailed in the movement. Some 60,000 people or more — by some counts 90,000 — women among them in unprecedented numbers, filled the jails before the campaign paused in 1931.[^2]',
       ],
       focus: { kind: 'event', id: 'dandi-march' },
       also: [
@@ -111,7 +111,7 @@ export const howResistanceChanged: Trail = {
       title: 'Do or die',
       question: 'What happens to a movement when every leader is arrested overnight?',
       text: [
-        'On 8 August 1942 the Congress passed the Quit India resolution and Gandhi gave the country a mantra: "Do or Die." Before dawn the entire leadership was arrested. The uprising that followed was the fiercest since 1857 — railways cut, police stations burned, parallel governments in Satara, Talcher and Tamluk, and Usha Mehta’s underground Congress Radio.[^1]',
+        'On 8 August 1942 the Congress passed the Quit India resolution and Gandhi gave the country a mantra: "Do or Die." Before dawn almost the entire leadership was arrested. The uprising that followed was the fiercest since 1857 — railways cut, police stations burned, parallel governments in Satara, Talcher and Tamluk, and Usha Mehta’s underground Congress Radio.[^1]',
         'Its cost fell on ordinary people: Kanaklata Barua, seventeen, shot carrying the flag at Gohpur; Kushal Konwar, hanged in 1943 for a derailment he opposed. Repression killed over a thousand by official count. Britain now knew India could not be held. Freedom came on 15 August 1947 — divided by Partition, whose casualty figures remain disputed.[^2]',
       ],
       focus: { kind: 'event', id: 'quit-india-launch' },
@@ -135,7 +135,7 @@ export const howResistanceChanged: Trail = {
     prompt: 'Which of these appears for the first time in this trail with the Salt Satyagraha of 1930?',
     options: ['Armed defence of a fort against the Company', 'An all-India political organisation', 'Boycott of foreign goods', 'Deliberately breaking a law in public and accepting arrest'],
     answerIndex: 3,
-    explanation: 'Forts were defended in 1799 and 1857, the Congress was founded in 1885, and boycott began in 1905. Openly breaking a specific law and accepting the punishment — satyagraha as a mass method — is what 1930 added, and 1942 inherited.',
+    explanation: 'Forts were defended in 1799 and 1857, the Congress was founded in 1885, and boycott began in 1905. Openly breaking a specific law and accepting the punishment — satyagraha as a mass method — is what 1930 adds to this trail’s story (it had been tried since 1919), and what 1942 inherited.',
   },
   followOn: { label: 'Browse the nine chapters', to: '/timeline?view=chapters' },
   editorial: { status: 'draft', notes: 'Drafted 2026-09-08 from the six event records and linked biographies. A qualified reviewer should check the Partition sentence before the pilot.' },
@@ -143,7 +143,7 @@ export const howResistanceChanged: Trail = {
     alignment: 'Proposed: upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. To be reviewed by a qualified educator.',
     shortVersion: ['plassey', 'revolt-1857', 'salt-1930'],
     prompts: [
-      'This trail spans 1757 to 1942. Pick two stops and describe what changed in HOW people resisted, not just WHEN.',
+      'This trail spans 1757 to 1947. Pick two stops and describe what changed in HOW people resisted, not just WHEN.',
       'Satyagraha — openly breaking a law and accepting arrest — first appears at the 1930 stop. Why might that method not have worked in 1857?',
       'The final stop carries a content note for killings and executions. Why might a trail about resistance need to include violence honestly rather than skip it?',
     ],

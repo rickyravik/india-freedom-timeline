@@ -18,14 +18,14 @@ export const tamilNaduCloseToHome: Trail = {
       title: 'The chief who would not pay',
       question: 'What happened to a ruler who refused the Company’s demand for tribute?',
       text: [
-        'Kattabomman ruled Panchalankurichi, a small palaiyam in the far south. The East India Company demanded tribute; after a violent confrontation with the Collector in 1798, the Company resolved on his destruction. In September 1799 Major Bannerman’s army breached his fort after costly fighting, and he fled, only to be handed over by the ruler of Pudukkottai.[^1]',
+        'Kattabomman ruled Panchalankurichi, a small palaiyam in the far south. The East India Company demanded tribute; after a violent confrontation with the Collector in 1798, the Company resolved on his destruction. In September 1799 Major Bannerman’s army assaulted his fort at heavy cost; Kattabomman abandoned it by night and fled, only to be handed over by the ruler of Pudukkottai.[^1]',
         'Tried summarily at Kayathar on 16 October 1799 in front of the region’s chiefs, he was hanged from a tamarind tree the same day. The lesson misfired: within two years the whole south was in revolt.[^2]',
       ],
       focus: { kind: 'event', id: 'polygar-war-1799' },
       also: [{ kind: 'fighter', id: 'veerapandiya-kattabomman' }],
       sources: [
         { title: 'Poligar Rebellion records, 1799–1801', publisher: 'Tamil Nadu State Archives', type: 'archive', evidence: 'contemporary' },
-        { title: 'Tirunelveli District Gazetteer', url: 'https://archive.org/details/in.ernet.dli.2015.161915', publisher: 'Government of Tamil Nadu', type: 'archive', evidence: 'scholarship' },
+        { title: 'Gazetteer of the Tinnevelly District (1916)', url: 'https://archive.org/details/in.ernet.dli.2015.161915', publisher: 'Madras Government Press', type: 'archive', evidence: 'scholarship' },
       ],
       uncertainty: 'The stirring speech attributed to Kattabomman before the Collector comes from Tamil ballads and a 1959 film; Company records confirm his defiance but not the words.',
       contentNote: 'This stop describes an execution.',
@@ -56,7 +56,7 @@ export const tamilNaduCloseToHome: Trail = {
       question: 'How did buying and selling become a form of resistance?',
       text: [
         'V. O. Chidambaram Pillai was a lawyer in the port of Tuticorin. In 1906 he founded the Swadeshi Steam Navigation Company to compete with the British shipping line — Swadeshi, the movement to buy Indian, taken to sea. The British company slashed fares to ruin him.[^1]',
-        'In February 1908 he took up the cause of strikers at the European-owned Coral Mills and, with Subramania Siva, addressed swelling public meetings. On 12 March both were arrested; Tirunelveli erupted the next day, and police firing at Tuticorin killed four people. Pillai was sentenced to two life terms and set to a prison oil-press. Tamil Nadu calls him Kappalottiya Tamizhan, the Tamil who sailed the ship.[^2]',
+        'In February 1908 he took up the cause of strikers at the European-owned Coral Mills and, with Subramania Siva, addressed swelling public meetings. On 12 March both were arrested; Tirunelveli erupted the next day and police firing there killed four people; Tuticorin answered with a general strike. Pillai was sentenced to two life terms and set to a prison oil-press. Tamil Nadu calls him Kappalottiya Tamizhan, the Tamil who sailed the ship.[^2]',
       ],
       focus: { kind: 'fighter', id: 'vo-chidambaram-pillai' },
       also: [{ kind: 'event', id: 'tirunelveli-uprising-1908' }],
@@ -71,8 +71,8 @@ export const tamilNaduCloseToHome: Trail = {
       title: 'Salt at Vedaranyam',
       question: 'Why walk 240 kilometres to pick up a handful of salt?',
       text: [
-        'Days after Gandhi reached Dandi, the Tamil Nadu Congress launched its own salt satyagraha. On 13 April 1930 C. Rajagopalachari set out from Tiruchirappalli with about a hundred volunteers, marching through the Kaveri delta to the coast at Vedaranyam, welcomed in every village despite government threats to punish anyone who fed or sheltered them. On 30 April he lifted salt on the shore and was arrested.[^1]',
-        'Mass arrests followed. Rukmini Lakshmipathi became the first woman in the Madras Presidency jailed in the movement, serving a year; the young K. Kamaraj served two. Vedaranyam made the salt satyagraha an all-India event.[^2]',
+        'Days after Gandhi reached Dandi, the Tamil Nadu Congress launched its own salt satyagraha. On 13 April 1930 C. Rajagopalachari set out from Tiruchirappalli with about a hundred volunteers, marching through the Kaveri delta to the coast at Vedaranyam, welcomed in every village despite government threats to punish anyone who fed or sheltered them. On 30 April he walked out to the Edanthevar salt swamp to lift salt and was arrested.[^1]',
+        'Mass arrests followed. Rukmini Lakshmipathi became the first woman anywhere in India jailed in the movement, serving a year; the young K. Kamaraj served two. Vedaranyam carried the salt satyagraha to the deep south.[^2]',
       ],
       focus: { kind: 'event', id: 'vedaranyam-salt-march' },
       also: [
@@ -90,8 +90,8 @@ export const tamilNaduCloseToHome: Trail = {
       title: 'The one who protected the flag',
       question: 'What made carrying a piece of cloth an act of resistance?',
       text: [
-        'Kumaran grew up in a weaving family near Erode and worked in the textile town of Tiruppur, where he founded a youth association to bring young workers into Gandhi’s movement. In January 1932, after Gandhi’s arrest, the British banned the national flag. Kumaran led a procession through Tiruppur carrying it anyway.[^1]',
-        'Police attacked the marchers on the banks of the Noyyal river. Kumaran was beaten to the ground; witnesses saw the flag still raised in his hands when he died. He was twenty-seven. Tamil Nadu named him Kodi Kaatha Kumaran, the one who protected the flag.[^2]',
+        'Kumaran grew up in a weaving family near Erode and worked in the textile town of Tiruppur, where he founded a youth association to bring young workers into Gandhi’s movement. In January 1932, days after Gandhi’s arrest, Kumaran led a procession through Tiruppur carrying the banned national flag.[^1]',
+        'Police attacked the marchers on the banks of the Noyyal river. Kumaran was beaten to the ground and died the next day; he is said to have held the flag aloft even as he fell. He was twenty-seven. Tamil Nadu named him Kodi Kaatha Kumaran, the one who protected the flag.[^2]',
       ],
       focus: { kind: 'fighter', id: 'tiruppur-kumaran' },
       sources: [
@@ -121,7 +121,7 @@ export const tamilNaduCloseToHome: Trail = {
     shortVersion: ['panchalankurichi', 'vedaranyam', 'tiruppur-1932'],
     prompts: [
       'This trail moves from an armed fort to a shipping company to a fistful of salt to a flag. What had to change in society for each later method to become possible?',
-      'A century separates the fall of Panchalankurichi from the Vedaranyam salt march. What stayed the same about what the Company or the government was defending?',
+      'More than a century separates the fall of Panchalankurichi from the Vedaranyam salt march. What stayed the same about what the Company or the government was defending?',
       'Which of these five moments do you think local students in Tamil Nadu are most likely to have heard about already — and which the least? Why might that be?',
     ],
     facilitatorNotes: [

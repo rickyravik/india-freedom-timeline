@@ -11,12 +11,12 @@ export const places: Place[] = [
     kind: 'fort',
     dates: '1799, 1801',
     summary:
-      'The mud fort of Veerapandiya Kattabomman in the Tirunelveli country, stormed by Major Bannerman’s Company army in September 1799 and levelled after his execution; taken again in 1801 during the South Indian Rebellion.',
+      'The mud fort of Veerapandiya Kattabomman in the Tirunelveli country, besieged and taken by Major Bannerman’s Company army in September 1799 and levelled after his execution; taken again in 1801 during the South Indian Rebellion.',
     description: [
-      'Panchalankurichi was the seat of a small palaiyam whose chief refused the East India Company’s demand for tribute. After Kattabomman’s violent confrontation with the Collector in 1798, the Company resolved on his destruction; Major Bannerman marched on the fort in September 1799 and breached it on 5 September after costly fighting.[^1]',
+      'Panchalankurichi was the seat of a small palaiyam whose chief refused the East India Company’s demand for tribute. After Kattabomman’s violent confrontation with the Collector in 1798, the Company resolved on his destruction; Major Bannerman attacked the fort on 5 September 1799; the first assault was repulsed with heavy loss, and Kattabomman abandoned the fort by night when Company guns arrived later that month.[^1]',
       'The fort was levelled after Kattabomman was hanged at Kayathar, and fell again in May 1801 when Oomaithurai’s escape reignited the southern rising. The reconstructed fort and memorial at the site, built by the state in 1974, remain a place of pilgrimage.[^2]',
     ],
-    people: ['veerapandiya-kattabomman', 'ondiveeran'],
+    people: ['veerapandiya-kattabomman'],
     events: ['polygar-war-1799', 'south-indian-rebellion-1801'],
     sources: [
       { title: 'Poligar Rebellion records, 1799–1801', publisher: 'Tamil Nadu State Archives', type: 'archive', evidence: 'contemporary' },
@@ -37,7 +37,7 @@ export const places: Place[] = [
     ],
     people: ['veerapandiya-kattabomman'],
     events: ['polygar-war-1799'],
-    sources: [{ title: 'Tirunelveli District Gazetteer', url: 'https://archive.org/details/in.ernet.dli.2015.161915', publisher: 'Government of Tamil Nadu', type: 'archive', evidence: 'scholarship' }],
+    sources: [{ title: 'Gazetteer of the Tinnevelly District (1916)', url: 'https://archive.org/details/in.ernet.dli.2015.161915', publisher: 'Madras Government Press', type: 'archive', evidence: 'scholarship' }],
     editorial: draft,
   },
   {
@@ -47,9 +47,9 @@ export const places: Place[] = [
     state: 'Tamil Nadu',
     kind: 'fort',
     dates: '1772, October 1801',
-    summary: 'The forest stronghold of Sivaganga: where Velu Nachiyar’s husband fell to Company and Arcot forces in 1772, and where the Marudhu brothers’ rising ended in October 1801.',
+    summary: 'The forest stronghold of Sivaganga: where Velu Nachiyar’s husband fell to Company troops acting for the Nawab of Arcot in 1772, and where the Marudhu brothers’ rising ended in October 1801.',
     description: [
-      'In 1772 Company forces with the Nawab of Arcot’s army killed the ruler of Sivaganga at the Kalaiyar Koil battle; his widow Velu Nachiyar escaped to spend eight years building the alliance that retook the kingdom around 1780.[^1]',
+      'In 1772 Company troops acting for the Nawab of Arcot killed the ruler of Sivaganga at the Kalaiyar Koil battle; his widow Velu Nachiyar escaped to spend eight years building the alliance that retook the kingdom around 1780.[^1]',
       'Three decades later Kalayar Kovil was the Marudhu brothers’ stronghold in the South Indian Rebellion. It fell in October 1801; the brothers were captured and hanged at Tiruppathur on 24 October.[^2]',
     ],
     people: ['velu-nachiyar', 'marudhu-brothers'],
@@ -70,7 +70,7 @@ export const places: Place[] = [
     dates: 'March–April 1858',
     summary: 'The walled city and fort Rani Lakshmibai defended for two weeks against Sir Hugh Rose’s Central India Field Force in 1858, and escaped from by night when it fell.',
     description: [
-      'In March 1858 the Central India Field Force besieged Jhansi. The Rani directed the defence from the walls; when the city fell after bombardment and street fighting she escaped through the lines by night and rode to join Tatya Tope. Jhalkari Bai, of the women’s guard, is remembered for impersonating her to cover the escape.[^1]',
+      'In March 1858 the Central India Field Force besieged Jhansi. The Rani directed the defence from the walls; when the city fell after bombardment and street fighting she escaped through the lines by night and rode to join Tatya Tope. Later tradition, unsupported by contemporary records, credits Jhalkari Bai of the women’s guard with impersonating her to cover the escape.[^1]',
     ],
     people: ['rani-lakshmibai', 'jhalkari-bai', 'tatya-tope'],
     events: ['siege-of-jhansi'],
@@ -86,7 +86,7 @@ export const places: Place[] = [
     dates: '30 April 1930',
     summary: 'The salt coast at the end of C. Rajagopalachari’s 240-kilometre march from Tiruchirappalli, where salt was lifted in defiance of the law on 30 April 1930.',
     description: [
-      'Sardar Vedaratnam Pillai organised the coast for the marchers’ arrival. On 30 April 1930 Rajaji lifted salt on the shore and was arrested; mass arrests followed, including Rukmini Lakshmipathi — the first woman in the Madras Presidency jailed in the movement — and the young K. Kamaraj.[^1]',
+      'Sardar Vedaratnam Pillai organised the coast for the marchers’ arrival. On 30 April 1930 Rajaji walked out to the Edanthevar salt swamp to lift salt and was arrested; mass arrests followed, including — in May — Rukmini Lakshmipathi, the first woman in India jailed in the Salt Satyagraha, and the young K. Kamaraj.[^1]',
     ],
     people: ['c-rajagopalachari', 'rukmini-lakshmipathi', 'k-kamaraj'],
     events: ['vedaranyam-salt-march'],

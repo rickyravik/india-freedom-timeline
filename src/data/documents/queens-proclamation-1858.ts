@@ -23,7 +23,7 @@ export const queensProclamation1858: ArchiveDocument = {
     },
     {
       id: 'treaties',
-      text: 'We shall respect the Rights, Dignity and Honour of Native Princes as Our own; and We desire that they, as well as Our own Subjects, should enjoy that Prosperity and that social Advancement which can only be secured by internal Peace and good Government.',
+      text: 'We desire no extension of Our present territorial Possessions… We shall respect the Rights, Dignity and Honour of Native Princes as Our own; and We desire that they, as well as Our own Subjects, should enjoy that Prosperity and that social Advancement which can only be secured by internal Peace and good Government.',
       guide: {
         author: 'The Crown.',
         audience: 'Rulers of the princely states, many of whom had stayed loyal in 1857.',

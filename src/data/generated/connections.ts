@@ -9,7 +9,7 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
     {
       "id": "marudhu-brothers",
       "type": "ally",
-      "note": "The Marudhu brothers helped her raise the army that retook Sivaganga around 1780; she then granted them administrative powers, and they later ruled the kingdom themselves.",
+      "note": "The Marudhu brothers helped her raise the army that retook Sivaganga around 1780; she then granted them administrative powers, and after her death they became the real power behind her daughter’s throne, until the Company executed them in 1801.",
       "inferred": false
     }
   ],
@@ -134,7 +134,7 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
     {
       "id": "velu-nachiyar",
       "type": "ally",
-      "note": "The Marudhu brothers helped her raise the army that retook Sivaganga around 1780; she then granted them administrative powers, and they later ruled the kingdom themselves.",
+      "note": "The Marudhu brothers helped her raise the army that retook Sivaganga around 1780; she then granted them administrative powers, and after her death they became the real power behind her daughter’s throne, until the Company executed them in 1801.",
       "inferred": true
     }
   ],
