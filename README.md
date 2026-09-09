@@ -16,7 +16,14 @@ Built like a premium historical product, not an encyclopedia: an interactive era
 - **Mobile-first**: thumb-friendly bottom navigation, touch-sized targets, bottom-sheet filters, smooth vertical timeline, works from ~320 px wide upward.
 - **Accessibility**: semantic HTML, keyboard operable, visible focus rings, ARIA labels, `prefers-reduced-motion` support, strong contrast on an archival palette.
 - **Performance**: route-based code splitting, self-hosted fonts, a small dependency surface, long-cache immutable assets, and a generated sitemap.
-- **Installable, partly offline**: the app shell is cached on install, and any page you have already opened stays readable without a connection. Pages you have not visited need a connection the first time (an offline page says so). Saving a whole trail for offline reading is Stage 4.
+- **Installable, partly offline**: the app shell is cached on install, and any page you have already opened stays readable without a connection. Pages you have not visited need a connection the first time (an offline page says so). Any trail can also be saved in full — every stop, its people and events, and their portraits — for offline reading, with a size estimate and a remove control.
+- **Places as records**: six drafted places (forts, towns, a coast) link the people and events that happened there, each stating whether its map shows present-day or historical geography.
+- **A narrated route**: the Salt March draws stop by stop on a schematic map that never claims to be a surveyed one, with a plain-text list beside it.
+- **An archival document you can inspect**: the Proclamation of 1858, transcription-first, each passage explained by who wrote it, who it was for, what it claims and what it leaves out.
+- **Trails you can listen to**: an opt-in, clearly labelled narration player synced to the reading text, never autoplaying.
+- **Trails in Tamil and Hindi**: a translation is versioned against the English text it was made from and flagged if it falls behind; the site's own chrome stays English throughout.
+- **Teacher packs**: every trail has a printable 15-minute version, discussion prompts, a timeline and facilitator answers, with curriculum alignment labelled "proposed" until an educator reviews it.
+- **A private passport**: completed trails, trails in progress and saved stories, kept on-device only — nothing to rank or compete for.
 
 ## Design
 

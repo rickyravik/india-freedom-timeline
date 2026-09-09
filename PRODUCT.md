@@ -24,13 +24,13 @@ An interactive, historically grounded archive of the people, movements and event
 
 ## Operating Context
 
-Fully static SPA (React 18, Vite 7, Tailwind 3, react-router 6), deployed to Cloudflare Pages. All historical content lives in `src/data/` as typed records (88 fighters, 47 events, 13 movements, 20 organizations, 9 eras); UI never hard-codes history. Self-hosted fonts via Fontsource. No backend, no analytics.
+Fully static SPA (React 18, Vite 7, Tailwind 3, react-router 6), deployed to Cloudflare Pages. All historical content lives in `src/data/` as typed records (88 fighters, 47 events, 13 movements, 20 organizations, 9 eras, 3 trails, 6 places, 1 narrated route, 1 archival document); UI never hard-codes history. Self-hosted fonts via Fontsource, plus Tamil/Devanagari webfonts loaded only on a translated trail. No backend, no analytics.
 
 ## Capabilities and Constraints
 
 - Routes: home, chapter-based timeline with filters, people index with filters, fighter profiles (Story Mode stepper on phones, Detailed mode), events, movements, stylised map of India, global search (command palette ⌘K / "/"), Learn (quiz, guess, compare), About.
 - Content house rules: at least one reputable source per record; never invent dates, quotes or facts; disputed claims carry a `disputed` note; Story Mode chapters age-appropriate.
-- **No Hindi / Devanagari text anywhere in the product** (owner decision, 2026-09-02). Typography is Latin-first; other Indic scripts are not ruled out but must be asked about before use.
+- **UI chrome stays Latin-first** (owner decision, 2026-09-02, revised 2026-09-08). Tamil and Hindi now appear in the translated reading content of a trail — a reviewed translation, versioned against the English text it was made from — but never in navigation, buttons or labels. A new script beyond Tamil/Hindi must still be asked about before use.
 - Portraits: records support a `portrait` path; the project ships without images and renders a typographic fallback rather than unverified likenesses.
 - Map geography currently uses modern state boundaries with a caveat; a period-accurate (provinces & princely states) view is an open decision.
 
@@ -42,7 +42,7 @@ Fully static SPA (React 18, Vite 7, Tailwind 3, react-router 6), deployed to Clo
 
 ## Evidence on Hand
 
-- 88 biographies, 47 events, 13 movements, 20 organizations, 9 eras with sources, in `src/data/`.
+- 88 biographies, 47 events, 13 movements, 20 organizations, 9 eras, 3 trails, 6 places, 1 narrated route, 1 archival document, all with sources, in `src/data/`.
 - Did-you-know facts (`src/data/facts.ts`) and quizzes (`src/data/quizzes.ts`).
 - No portrait images, no testimonials, no usage metrics. Future work must not fabricate any of these.
 

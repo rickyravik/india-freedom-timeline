@@ -125,6 +125,8 @@ These block a task from being *finished*, not from being *built*. Each stage pla
 - **Parallel histories ("Meanwhile elsewhere"), exhibition mode, community contributions, conversational guide** — after pilot / after classroom testing / capacity-dependent per §15.
 - **Boundary toggle for historical geography** — requires reviewed datasets; Stage 4 Task 2 only labels the frame.
 
+**Stage 4 close (confirmed still deferred, unchanged preconditions):** all four items above remain deferred. Stage 4 built one drafted example of each extension the proposal asks for — places, a narrated route, a document viewer, a listened-to and translated trail, a teacher pack, a passport, offline trails — but none of it widens past that first example, and the pilot (Validation, above) has not yet run. Per §15/§16: new activity candidates and a larger content library wait for pilot results; portrait-to-biography transition and inspection animation wait for testing to show benefit on the current, simpler interactions; parallel histories, exhibition mode, community contributions and a conversational guide wait for the pilot, classroom testing, or capacity, respectively; the boundary toggle waits for reviewed historical-boundary datasets that do not exist yet.
+
 ---
 
 ## Validation (the pilot) — checklist, not code
