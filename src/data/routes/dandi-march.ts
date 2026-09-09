@@ -13,11 +13,11 @@ export const dandiMarch: Route = {
     { id: 'sabarmati', name: 'Sabarmati Ashram, Ahmedabad', dateLabel: '12 March 1930', note: 'Gandhi left the ashram at dawn with seventy-eight chosen volunteers, having announced the plan to the Viceroy in advance.[^1]', x: 22, y: 12, approximate: true },
     { id: 'aslali', name: 'Aslali', dateLabel: '12 March 1930', note: 'The first night’s halt, a few hours south of the ashram; villagers gathered to hear the marchers.', x: 26, y: 20, approximate: true },
     { id: 'nadiad', name: 'Nadiad', dateLabel: '15 March 1930', note: 'Into the Kheda district, where Gandhi had led a peasant satyagraha over land revenue in 1918.', x: 32, y: 30, approximate: true },
-    { id: 'anand', name: 'Anand', dateLabel: '16 March 1930', note: 'Public meetings each evening; village headmen along the route began resigning their posts. The marchers rested here a day before continuing.', x: 36, y: 37, approximate: true },
+    { id: 'anand', name: 'Anand', dateLabel: '16–17 March 1930', note: 'Public meetings each evening; village headmen along the route began resigning their posts. The marchers rested here a day before continuing.', x: 36, y: 37, approximate: true },
     { id: 'borsad', name: 'Borsad', dateLabel: '18 March 1930', note: 'The marchers were welcomed by the villages of the 1923 Borsad satyagraha.', x: 38, y: 43, approximate: true },
     { id: 'bharuch', name: 'Bharuch (Broach)', dateLabel: '26 March 1930', note: 'Crossing the Narmada; the world’s press was now following the march village to village.[^1]', x: 44, y: 56, approximate: true },
     { id: 'surat', name: 'Surat', dateLabel: '1 April 1930', note: 'Some 30,000 people gathered to hear the marchers, who moved on the next morning towards the coast.', x: 52, y: 70, approximate: true },
-    { id: 'navsari', name: 'Navsari', dateLabel: '3 April 1930', note: 'The last town before the sea; crowds walked the final miles with the volunteers.', x: 58, y: 80, approximate: true },
+    { id: 'navsari', name: 'Navsari', dateLabel: '3–4 April 1930', note: 'The last town before the sea; crowds walked the final miles with the volunteers.', x: 58, y: 80, approximate: true },
     { id: 'dandi', name: 'Dandi', dateLabel: '5–6 April 1930', note: 'On the morning of 6 April Gandhi picked up a lump of natural salt on the beach; Sarojini Naidu, beside him, cried "Hail, Deliverer!"[^1]', x: 64, y: 90, approximate: true, placeId: 'dandi' },
   ],
   outcome: [
@@ -31,6 +31,6 @@ export const dandiMarch: Route = {
   editorial: {
     status: 'draft',
     notes:
-      'Stop list and dates cross-checked 2026-09-09 against Wikipedia\'s "Salt March" day-by-day route (itself sourced to Guha and contemporary press) — 6 of 8 intermediate dates matched exactly; Anand was corrected from 17 to 16 March (day of arrival; the 17th was a rest day there) and Navsari from 4 to 3 April (the 4th was the Navsari–Matwad leg). The Surat note was also corrected: the marchers did not rest there but moved on the next morning. Still recommended before marking reviewed: verify against a primary source (National Gandhi Museum / Collected Works of Mahatma Gandhi), since Wikipedia is not itself a primary record. Intermediate-stop notes are context, not sourced claims; add [^n] markers or cut them.',
+      'Stop list and dates verified 2026-09-09 against the primary record: the Collected Works of Mahatma Gandhi, Vol. 43 (Publications Division; archive.org item in.ernet.dli.2015.47021), whose contents index dates a speech at each halt — Aslali 12-3, Nadiad 15-3, Anand 17-3 (arrived the 16th, Boriavi speech that day), Borsad 18-3, Broach and Ankleshwar 26-3, Surat 1-4, Navsari and Vijalpur 4-4 (arrived the 3rd), Dandi 5-4 and 6-4. Cross-checked too against Wikipedia\'s day-by-day route. Anand and Navsari are therefore given as two-day ranges. The Surat note was corrected: the marchers did not rest there but moved on the next morning. What remains for a human reviewer: sign off (reviewedBy/reviewedOn), and either add [^n] markers to the intermediate-stop notes (they are context drawn from the same volume, not yet cited claim by claim) or cut them.',
   },
 };

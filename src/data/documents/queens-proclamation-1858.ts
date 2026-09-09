@@ -23,7 +23,7 @@ export const queensProclamation1858: ArchiveDocument = {
     },
     {
       id: 'treaties',
-      text: 'We desire no extension of Our present territorial Possessions… We shall respect the Rights, Dignity and Honour of Native Princes as Our own; and We desire that they, as well as Our own Subjects, should enjoy that Prosperity and that social Advancement which can only be secured by internal Peace and good Government.',
+      text: 'We desire no extension of Our present territorial Possessions… We shall respect the Rights, Dignity, and Honour of Native Princes as Our own; and We desire that they, as well as Our own Subjects, should enjoy that Prosperity and that social Advancement which can only be secured by internal Peace and good Government.',
       guide: {
         author: 'The Crown.',
         audience: 'Rulers of the princely states, many of whom had stayed loyal in 1857.',
@@ -43,7 +43,7 @@ export const queensProclamation1858: ArchiveDocument = {
     },
     {
       id: 'office',
-      text: 'It is Our further Will that, so far as may be, Our Subjects, of whatever Race or Creed, be freely and impartially admitted to Offices in Our Service, the Duties of which they may be qualified by their Education, Ability and Integrity duly to discharge.',
+      text: 'And it is Our further Will that, so far as may be, Our Subjects, of whatever Race or Creed, be freely and impartially admitted to Offices in Our Service, the Duties of which they may be qualified, by their education, ability, and integrity, duly to discharge.',
       guide: {
         author: 'The Crown.',
         audience: 'Educated Indians.',
@@ -52,14 +52,14 @@ export const queensProclamation1858: ArchiveDocument = {
       },
     },
   ],
-  transcriptionNote: 'Transcribed from the published text of the Proclamation; spelling and capitalisation follow the original. Ellipses mark omitted passages. To be checked word for word against a scan before review.',
+  transcriptionNote: 'Transcribed from the 1908 printed reprint of the Proclamation (Internet Archive, "queens-proclamation"); spelling and capitalisation follow that printing, which keeps the 1858 convention of capitalising Our, Us and the principal nouns — Wikisource’s transcription of the same text is modernised to lower case. Ellipses mark omitted passages.',
   sources: [
-    { title: 'Proclamation by the Queen in Council, 1 November 1858', publisher: 'Parliamentary Papers / India Office Records', type: 'archive', evidence: 'contemporary' },
+    { title: 'Proclamation by the Queen in Council, 1 November 1858 (1908 printed reprint)', url: 'https://archive.org/details/queens-proclamation', publisher: 'Internet Archive; original in the Parliamentary Papers / India Office Records', type: 'archive', evidence: 'contemporary' },
     { title: 'From Plassey to Partition and After', author: 'Sekhar Bandyopadhyay', publisher: 'Orient BlackSwan', year: 2015, type: 'book', evidence: 'scholarship' },
   ],
   editorial: {
     status: 'draft',
     notes:
-      'Public-domain Crown text. Cross-checked 2026-09-09 against the transcription at Wikisource and archive.org: the "transfer", "treaties" and "office" passages match the published wording; the "religion" passage was missing its trailing ellipsis (the real sentence continues "…on pain of Our highest Displeasure" after "Worship of any of Our Subjects", now marked with an ellipsis rather than a false full stop). Wikisource/archive.org transcriptions are not themselves primary sources, so wording should still be checked against a scan or the Parliamentary Papers before marking reviewed. A licensed image (e.g. a Wikimedia Commons scan with its licence recorded) is still needed as `image` with credit and licence.',
+      'Public-domain Crown text. All four passages checked word for word 2026-09-09 against the 1908 printed reprint (Internet Archive "queens-proclamation") and Wikisource: corrected the religion passage’s missing trailing ellipsis (the sentence continues "…on pain of Our highest Displeasure"), the treaties passage’s comma ("Rights, Dignity, and Honour") and now quoting its "no extension of Our present territorial Possessions" sentence, and the office passage’s opening ("And it is Our further Will") and lower-case "education, ability, and integrity". Not yet done: a check against a facsimile of the 1858 Allahabad printing itself (held by the Royal Armouries; a ProQuest digitisation exists) — none is freely accessible online — and a licensed image to add as `image` with credit and licence.',
   },
 };
