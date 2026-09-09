@@ -3,16 +3,28 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import type { TrailRef } from '@/types';
 import { eventById, fighterById, movementById, trailBySlug, trails } from '@/lib/content';
 import { usePageMeta, useTrailProgress, useUrlState } from '@/lib/hooks';
-import { flag } from '@/lib/url-state';
+import { flag, oneOfDefault } from '@/lib/url-state';
 import { markComplete, setStop } from '@/lib/trails-progress';
 import { track } from '@/lib/analytics';
-import { Breadcrumbs, Icon, PageIntro, Postmark, SectionHeading, SourceList, eraAccent, icons } from '@/components/ui';
+import { fontImportFor, resolveTrailText } from '@/lib/translations';
+import { Breadcrumbs, Icon, PageIntro, Postmark, SectionHeading, Segmented, SourceList, eraAccent, icons } from '@/components/ui';
 import { DraftStamp, ReadingText } from '@/components/reading';
 import { ChoiceActivity, OrderActivity, TrailCard, TrailProgress } from '@/components/trails';
 import { EventCard, FighterCard, MovementCard } from '@/components/cards';
 import { AudioPlayer } from '@/components/audio-player';
+import type { TrailLang } from '@/types';
 
-const stopParams = { text: flag() };
+const TRAIL_LANGS = ['en', 'ta', 'hi'] as const;
+const langLabel: Record<TrailLang, string> = { en: 'English', ta: 'தமிழ்', hi: 'हिन्दी' };
+
+function LanguageSwitch({ trail, lang, onChange }: { trail: { translations?: { lang: Exclude<TrailLang, 'en'> }[] }; lang: TrailLang; onChange: (l: TrailLang) => void }) {
+  if (!trail.translations?.length) return null;
+  const available: TrailLang[] = ['en', ...trail.translations.map((t) => t.lang)];
+  return <Segmented label="Language" value={lang} onChange={onChange} options={available.map((l) => ({ value: l, label: langLabel[l] }))} />;
+}
+
+const stopParams = { text: flag(), lang: oneOfDefault(TRAIL_LANGS, 'en') };
+const overviewParams = { lang: oneOfDefault(TRAIL_LANGS, 'en') };
 
 /* `target`, not `ref`: React reserves the `ref` prop on function components. */
 function RefCard({ target: r, compact = false }: { target: TrailRef; compact?: boolean }) {
@@ -53,7 +65,15 @@ export function TrailPage() {
   const trail = slug ? trailBySlug.get(slug) : undefined;
   usePageMeta(trail?.title ?? 'Trail', trail?.question);
   const progress = useTrailProgress();
-  if (!trail) return <Navigate to="/trails" replace />;
+  const [{ lang }, setParams] = useUrlState(overviewParams);
+  const text = trail ? resolveTrailText(trail, lang) : undefined;
+
+  useEffect(() => {
+    if (text && text.lang !== 'en') void fontImportFor[text.lang]();
+  }, [text?.lang]);
+
+  if (!trail || !text) return <Navigate to="/trails" replace />;
+
   const p = progress[trail.slug];
   const resume = p && !p.completed && p.stop > 0 ? p.stop : 1;
   return (
@@ -62,9 +82,15 @@ export function TrailPage() {
         <div className={`perf-all on-sheet relative animate-fade-up px-5 py-7 sm:px-9 sm:py-10 ${eraAccent.bg[trail.accent]} ${eraAccent.onInk[trail.accent]} on-vault`}>
           <Postmark lines={['Trail', String(trail.stops.length), 'stops']} className="absolute right-4 top-5 hidden sm:grid" />
           <Breadcrumbs vault items={[{ label: 'Home', to: '/' }, { label: 'Trails', to: '/trails' }, { label: trail.title }]} />
-          <p className={`stamp mt-5 w-fit ${eraAccent.onInkMuted[trail.accent]}`}>{trail.theme}</p>
-          <h1 className="mt-3 max-w-3xl break-words text-h1 sm:pr-28 sm:text-hero">{trail.title}</h1>
-          <p className={`mt-4 max-w-2xl font-reading text-h4 italic ${eraAccent.onInkMuted[trail.accent]}`}>{trail.question}</p>
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+            <p className={`stamp w-fit ${eraAccent.onInkMuted[trail.accent]}`}>{trail.theme}</p>
+            <LanguageSwitch trail={trail} lang={lang} onChange={(l) => setParams({ lang: l })} />
+          </div>
+          <div lang={text.lang}>
+            <h1 className="mt-3 max-w-3xl break-words text-h1 sm:pr-28 sm:text-hero">{text.title}</h1>
+            <p className={`mt-4 max-w-2xl font-reading text-h4 italic ${eraAccent.onInkMuted[trail.accent]}`}>{text.question}</p>
+          </div>
+          {text.stale && <p className={`num mt-3 font-body text-label ${eraAccent.onInkMuted[trail.accent]}`}>This translation was made from an earlier English version; wording may differ until it is updated.</p>}
           <p className={`num mt-5 font-body text-label ${eraAccent.onInkMuted[trail.accent]}`}>
             {trail.stops.length} stops · about {trail.minutes} minutes · a text-only version is available on every stop
           </p>
@@ -78,8 +104,8 @@ export function TrailPage() {
         </div>
       </header>
       <div className="container-page grid grid-cols-1 gap-10 py-14 lg:grid-cols-[1fr_320px]">
-        <div className="max-w-prose space-y-6">
-          <p className="prose-reading dropcap">{trail.intro}</p>
+        <div lang={text.lang} className="max-w-prose space-y-6">
+          <p className="prose-reading dropcap">{text.intro}</p>
           <div className="doc p-5">
             <p className="label mb-1">What you will be able to do</p>
             <p className="font-body text-meta text-ink">{trail.learningGoal}</p>
@@ -88,11 +114,13 @@ export function TrailPage() {
         <aside>
           <p className="label mb-3">The stops</p>
           <ol className="space-y-2">
-            {trail.stops.map((s, i) => (
-              <li key={s.id}>
+            {text.stops.map((s, i) => (
+              <li key={trail.stops[i].id}>
                 <Link to={`/trails/${trail.slug}/stop/${i + 1}`} className="doc-interactive flex items-baseline gap-3 p-3 font-body text-meta">
                   <span className="num font-display font-bold text-brass-deep">{i + 1}</span>
-                  <span className="text-ink">{s.title}</span>
+                  <span lang={text.lang} className="text-ink">
+                    {s.title}
+                  </span>
                 </Link>
               </li>
             ))}
@@ -109,11 +137,11 @@ export function TrailStopPage() {
   const trail = slug ? trailBySlug.get(slug) : undefined;
   const index = Number(n) - 1;
   const stop = trail && Number.isInteger(index) && index >= 0 && index < trail.stops.length ? trail.stops[index] : undefined;
-  const [{ text: textOnly }, setParams] = useUrlState(stopParams);
-  usePageMeta(stop && trail ? `${stop.title} — ${trail.title}` : 'Trail', stop?.question ?? trail?.question);
-  /* Language switching lands in a later task; every reader hears English until then. */
-  const lang: 'en' | 'ta' | 'hi' = 'en';
-  const narration = trail?.narration?.find((n) => n.lang === lang);
+  const [{ text: textOnly, lang }, setParams] = useUrlState(stopParams);
+  const text = trail ? resolveTrailText(trail, lang) : undefined;
+  const translatedStop = text?.stops[index];
+  usePageMeta(translatedStop && trail ? `${translatedStop.title} — ${trail.title}` : 'Trail', translatedStop?.question ?? trail?.question);
+  const narration = trail?.narration?.find((n) => n.lang === text?.lang);
   const [listening, setListening] = useState(false);
   const [highlightParagraph, setHighlightParagraph] = useState<number | null>(null);
 
@@ -128,9 +156,13 @@ export function TrailStopPage() {
     setHighlightParagraph(null);
   }, [stop?.id]);
 
+  useEffect(() => {
+    if (text && text.lang !== 'en') void fontImportFor[text.lang]();
+  }, [text?.lang]);
+
   const focusEraAccent = useMemo(() => trail?.accent ?? 'brass', [trail]);
   if (!trail) return <Navigate to="/trails" replace />;
-  if (!stop) return <Navigate to={`/trails/${trail.slug}`} replace />;
+  if (!stop || !text || !translatedStop) return <Navigate to={`/trails/${trail.slug}`} replace />;
 
   const total = trail.stops.length;
   const prev = index > 0 ? `/trails/${trail.slug}/stop/${index}` : `/trails/${trail.slug}`;
@@ -142,7 +174,8 @@ export function TrailStopPage() {
         <Breadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Trails', to: '/trails' }, { label: trail.title, to: `/trails/${trail.slug}` }, { label: `Stop ${index + 1}` }]} />
         <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
           <TrailProgress current={index + 1} total={total} />
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <LanguageSwitch trail={trail} lang={lang} onChange={(l) => setParams({ lang: l })} />
             {narration && (
               <button type="button" className={`chip min-h-10 ${listening ? 'chip-active' : ''}`} aria-pressed={listening} onClick={() => setListening((v) => !v)}>
                 Listen
@@ -155,30 +188,37 @@ export function TrailStopPage() {
         </div>
         <div className={`perf-all on-sheet relative mt-5 px-5 py-7 sm:px-9 sm:py-9 ${eraAccent.bg[focusEraAccent]} ${eraAccent.onInk[focusEraAccent]}`}>
           <p className={`stamp w-fit ${eraAccent.onInkMuted[focusEraAccent]}`}>{trail.title}</p>
-          <h1 className="mt-3 break-words text-h1">{stop.title}</h1>
-          {stop.question && <p className={`mt-3 max-w-2xl font-reading text-h4 italic ${eraAccent.onInkMuted[focusEraAccent]}`}>{stop.question}</p>}
+          <div lang={text.lang}>
+            <h1 className="mt-3 break-words text-h1">{translatedStop.title}</h1>
+            {translatedStop.question && <p className={`mt-3 max-w-2xl font-reading text-h4 italic ${eraAccent.onInkMuted[focusEraAccent]}`}>{translatedStop.question}</p>}
+          </div>
+          {text.stale && <p className={`num mt-3 font-body text-label ${eraAccent.onInkMuted[focusEraAccent]}`}>This translation was made from an earlier English version; wording may differ until it is updated.</p>}
         </div>
       </header>
 
       <div className="container-page grid grid-cols-1 gap-10 py-10 lg:grid-cols-[1fr_320px]">
         <div className="min-w-0 space-y-8">
-          {stop.contentNote && (
-            <p role="note" className="rounded-sm border border-paper-400 bg-paper-200/60 p-4 font-body text-meta text-ink-soft">
+          {translatedStop.contentNote && (
+            <p role="note" lang={text.lang} className="rounded-sm border border-paper-400 bg-paper-200/60 p-4 font-body text-meta text-ink-soft">
               <span className="stamp mr-2 text-sepia">Content note</span>
-              {stop.contentNote}
+              {translatedStop.contentNote}
             </p>
           )}
           {narration && listening && (
             <AudioPlayer src={narration.src} cues={narration.cues} stopId={stop.id} narrator={narration.narrator} recordedOn={narration.recordedOn} onCue={setHighlightParagraph} />
           )}
-          <ReadingText paragraphs={stop.text} sources={stop.sources} className="max-w-prose" highlight={listening ? highlightParagraph : null} />
-          {stop.uncertainty && (
-            <p role="note" aria-label="Uncertainty" className="max-w-prose border-l-2 border-oxide pl-4 font-body text-meta text-ink-soft">
+          <ReadingText paragraphs={translatedStop.text} sources={stop.sources} className="max-w-prose" highlight={listening ? highlightParagraph : null} lang={text.lang} glossary={text.lang === 'en'} />
+          {translatedStop.uncertainty && (
+            <p role="note" lang={text.lang} aria-label="Uncertainty" className="max-w-prose border-l-2 border-oxide pl-4 font-body text-meta text-ink-soft">
               <span className="stamp mr-2 text-oxide-deep">Uncertain</span>
-              {stop.uncertainty}
+              {translatedStop.uncertainty}
             </p>
           )}
-          {stop.bridge && <p className="max-w-prose font-reading text-reading italic text-ink-soft">{stop.bridge}</p>}
+          {translatedStop.bridge && (
+            <p lang={text.lang} className="max-w-prose font-reading text-reading italic text-ink-soft">
+              {translatedStop.bridge}
+            </p>
+          )}
           <SourceList sources={stop.sources} />
           <nav aria-label="Trail navigation" className="flex flex-wrap items-center justify-between gap-3 border-t border-paper-300 pt-6">
             <Link to={prev} className="btn-ghost !min-h-12">

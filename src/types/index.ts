@@ -469,6 +469,22 @@ export interface Trail {
   followOn: { label: string; to: string };
   editorial: Editorial;
   narration?: TrailNarration[];
+  translations?: TrailTranslation[];
+}
+
+export type TrailLang = 'en' | 'ta' | 'hi';
+export interface TrailTranslation {
+  lang: Exclude<TrailLang, 'en'>;
+  /** The English `version` this translation was made from. */
+  sourceVersion: number;
+  translator: string;
+  title: string;
+  question: string;
+  intro: string;
+  stops: { title: string; question?: string; text: string[]; bridge: string; uncertainty?: string; contentNote?: string }[];
+  reflection: string;
+  activity: { prompt: string; options?: string[]; items?: string[]; explanation: string };
+  editorial: Editorial;
 }
 
 export interface TrailNarration {

@@ -40,3 +40,9 @@ test('a draft trail says so', async ({ page }) => {
   await page.goto('/trails/how-resistance-changed');
   await expect(page.getByText(/under editorial review/)).toBeVisible();
 });
+
+test('asking for a language that has no translation falls back to English without a switch', async ({ page }) => {
+  await page.goto('/trails/how-resistance-changed/stop/1?lang=ta');
+  await expect(page.locator('[data-reading-text]').first()).toHaveAttribute('lang', 'en');
+  await expect(page.getByRole('group', { name: 'Language' })).toHaveCount(0);
+});

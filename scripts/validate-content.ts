@@ -262,6 +262,26 @@ const trailActivitySchema = z.discriminatedUnion('kind', [
   z.object({ kind: z.literal('choice'), prompt: z.string().min(1), options: z.array(z.string().min(1)).min(3).max(5), answerIndex: z.number().int(), explanation: z.string().min(1) }),
   z.object({ kind: z.literal('order'), prompt: z.string().min(1), items: z.array(z.object({ label: z.string().min(1), year: z.number().int(), ref: trailRefSchema.optional() })).min(3).max(6), explanation: z.string().min(1) }),
 ]);
+const trailTranslationStopSchema = z.object({
+  title: z.string().min(1),
+  question: z.string().optional(),
+  text: z.array(z.string().min(1)),
+  bridge: z.string(),
+  uncertainty: z.string().optional(),
+  contentNote: z.string().optional(),
+});
+const trailTranslationSchema = z.object({
+  lang: z.enum(['ta', 'hi']),
+  sourceVersion: z.number().int().min(1),
+  translator: z.string().min(1),
+  title: z.string().min(1),
+  question: z.string().min(1),
+  intro: z.string().min(1),
+  stops: z.array(trailTranslationStopSchema).min(1),
+  reflection: z.string().min(1),
+  activity: z.object({ prompt: z.string().min(1), options: z.array(z.string().min(1)).optional(), items: z.array(z.string().min(1)).optional(), explanation: z.string().min(1) }),
+  editorial: editorialSchema,
+});
 const trailNarrationSchema = z.object({
   lang: z.enum(['en', 'ta', 'hi']),
   src: z.string().regex(/^\/audio\//, 'src must start with /audio/'),
@@ -287,6 +307,7 @@ const trailSchema = z.object({
   followOn: z.object({ label: z.string().min(1), to: z.string().regex(/^\//) }),
   editorial: editorialSchema,
   narration: z.array(trailNarrationSchema).optional(),
+  translations: z.array(trailTranslationSchema).optional(),
 });
 
 const comparePairSchema = z.object({
@@ -543,6 +564,22 @@ for (const t of trails) {
       if (c.start < lastEnd) err('trails', t.id, `narration (${n.lang}) cues are not in ascending, non-overlapping order at stop "${c.stopId}"`);
       lastEnd = c.end;
     }
+  }
+  const translationLangs = new Set<string>();
+  for (const tr of t.translations ?? []) {
+    if (translationLangs.has(tr.lang)) err('trails', t.id, `duplicate translation for language "${tr.lang}"`);
+    translationLangs.add(tr.lang);
+    if (tr.sourceVersion > t.version) err('trails', t.id, `translation (${tr.lang}) sourceVersion (${tr.sourceVersion}) is ahead of the trail's own version (${t.version})`);
+    else if (tr.sourceVersion < t.version) warn('trails', t.id, `translation (${tr.lang}) is stale: made from version ${tr.sourceVersion}, trail is now version ${t.version}`);
+    if (tr.stops.length !== t.stops.length) err('trails', t.id, `translation (${tr.lang}) has ${tr.stops.length} stops but the English trail has ${t.stops.length}`);
+    tr.stops.forEach((s, i) => {
+      const english = t.stops[i];
+      if (english && s.text.length !== english.text.length) {
+        warn('trails', t.id, `translation (${tr.lang}) stop ${i + 1} has ${s.text.length} paragraphs but the English stop has ${english.text.length}`);
+      }
+      if (english) checkCitations('trails', `${t.id}/${tr.lang}/${english.id}`, s.text, english.sources.length);
+    });
+    if (tr.editorial.status === 'draft') warn('trails', t.id, `translation (${tr.lang}) editorial status is draft`);
   }
   if (t.activity.kind === 'choice') {
     if (new Set(t.activity.options).size !== t.activity.options.length) err('trails', t.id, 'activity options are not distinct');

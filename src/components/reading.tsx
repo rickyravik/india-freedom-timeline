@@ -161,6 +161,7 @@ export function ReadingText({
   glossary = true,
   className = '',
   highlight,
+  lang,
 }: {
   paragraphs: string[];
   sources: SourceRef[];
@@ -171,6 +172,8 @@ export function ReadingText({
   className?: string;
   /** The paragraph a narration player is currently reading aloud, if any. */
   highlight?: number | null;
+  /** BCP 47 tag for translated content, e.g. "ta" or "hi"; omitted for English. */
+  lang?: string;
 }) {
   /* One open popover per reading block: "p2-g1" = paragraph 2, glossary term 1;
      "p2-g1-c0" = the same paragraph's first citation after that term. */
@@ -178,7 +181,7 @@ export function ReadingText({
   const prose = vault ? 'prose-reading-vault' : 'prose-reading';
   const glossed = glossary ? annotateFirstOccurrences(paragraphs, glossaryTerms) : paragraphs.map((text) => [{ kind: 'text' as const, text }]);
   return (
-    <div data-reading-text className={`space-y-5 ${className}`}>
+    <div data-reading-text lang={lang} className={`space-y-5 ${className}`}>
       {paragraphs.flatMap((_, i) => {
         const nodes: ReactNode[] = [
           <p key={`p${i}`} className={`${prose} ${dropcap && i === 0 ? 'dropcap' : ''} ${highlight === i ? 'bg-oxide-wash/60' : ''}`}>

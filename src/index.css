@@ -273,6 +273,19 @@
     @apply float-left mr-2 mt-1 font-display text-h1 font-bold leading-[0.8] text-oxide;
   }
 
+  /* Trail translations: a script's own face, loaded only on the route that
+     reads it (see src/lib/translations.ts's fontImportFor). */
+  [lang='ta'] .prose-reading,
+  [lang='ta'] .text-h1,
+  [lang='ta'] .text-h3 {
+    font-family: 'Noto Sans Tamil', 'Faustina Variable', serif;
+  }
+  [lang='hi'] .prose-reading,
+  [lang='hi'] .text-h1,
+  [lang='hi'] .text-h3 {
+    font-family: 'Noto Serif Devanagari', 'Faustina Variable', serif;
+  }
+
   /* A glossary term: inherits the reading face, dotted gauge-gold underline, no button chrome */
   .gloss {
     @apply rounded-sm bg-transparent p-0 underline decoration-brass decoration-dotted decoration-1 underline-offset-4 hover:decoration-solid hover:decoration-ink;
