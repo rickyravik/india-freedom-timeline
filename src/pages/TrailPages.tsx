@@ -292,6 +292,9 @@ export function TrailFinishPage() {
               <Link to={`/trails/${trail.slug}/stop/1`} className="btn-ghost">
                 Read again
               </Link>
+              <Link to="/passport" className="btn-ghost">
+                Your passport
+              </Link>
             </div>
           </section>
         )}

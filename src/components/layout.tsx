@@ -28,6 +28,7 @@ const EXPLORE = [
   { to: '/movements', label: 'Movements', icon: icons.flag, hint: 'The many roads to freedom' },
   { to: '/glossary', label: 'Glossary', icon: icons.file, hint: 'The words this history is told in' },
   { to: '/about', label: 'About & sources', icon: icons.file, hint: 'Historical method and corrections' },
+  { to: '/passport', label: 'Your passport', icon: icons.bookmark, hint: 'Trails completed, stories saved — private to this device' },
 ];
 
 /* The Ashoka Chakra has 24 spokes. */
@@ -248,6 +249,7 @@ function Footer() {
                 ['/search', 'Search'],
                 ['/glossary', 'Glossary'],
                 ['/about', 'About & sources'],
+                ['/passport', 'Your passport'],
               ].map(([to, label]) => (
                 <li key={to}>
                   <Link className="transition-colors hover:text-brass-bright" to={to}>
