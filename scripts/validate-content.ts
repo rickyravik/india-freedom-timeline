@@ -262,6 +262,14 @@ const trailActivitySchema = z.discriminatedUnion('kind', [
   z.object({ kind: z.literal('choice'), prompt: z.string().min(1), options: z.array(z.string().min(1)).min(3).max(5), answerIndex: z.number().int(), explanation: z.string().min(1) }),
   z.object({ kind: z.literal('order'), prompt: z.string().min(1), items: z.array(z.object({ label: z.string().min(1), year: z.number().int(), ref: trailRefSchema.optional() })).min(3).max(6), explanation: z.string().min(1) }),
 ]);
+const trailNarrationSchema = z.object({
+  lang: z.enum(['en', 'ta', 'hi']),
+  src: z.string().regex(/^\/audio\//, 'src must start with /audio/'),
+  narrator: z.string().min(1),
+  recordedOn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'recordedOn must be an ISO date'),
+  reviewedBy: z.string().optional(),
+  cues: z.array(z.object({ stopId: z.string().min(1), paragraph: z.number().int().min(0), start: z.number().min(0), end: z.number().min(0) })),
+});
 const trailSchema = z.object({
   id: z.string().min(1),
   slug: z.string().regex(/^[a-z0-9-]+$/),
@@ -278,6 +286,7 @@ const trailSchema = z.object({
   activity: trailActivitySchema,
   followOn: z.object({ label: z.string().min(1), to: z.string().regex(/^\//) }),
   editorial: editorialSchema,
+  narration: z.array(trailNarrationSchema).optional(),
 });
 
 const comparePairSchema = z.object({
@@ -512,14 +521,29 @@ function refExists(ref: { kind: string; id: string }): boolean {
 }
 for (const t of trails) {
   const stopIds = new Set<string>();
+  const stopParagraphCount = new Map<string, number>();
   for (const s of t.stops) {
     if (stopIds.has(s.id)) err('trails', t.id, `duplicate stop id "${s.id}"`);
     stopIds.add(s.id);
+    stopParagraphCount.set(s.id, s.text.length);
     if (!refExists(s.focus)) err('trails', t.id, `stop "${s.id}" focus ${s.focus.kind} "${s.focus.id}" does not exist`);
     for (const r of s.also ?? []) if (!refExists(r)) err('trails', t.id, `stop "${s.id}" also-ref ${r.kind} "${r.id}" does not exist`);
     checkCitations('trails', `${t.id}/${s.id}`, s.text, s.sources.length);
   }
   if (t.stops[t.stops.length - 1].bridge !== '') warn('trails', t.id, 'the last stop has a bridge sentence; nothing follows it');
+  for (const n of t.narration ?? []) {
+    let lastEnd = -Infinity;
+    for (const c of n.cues) {
+      if (!stopIds.has(c.stopId)) err('trails', t.id, `narration (${n.lang}) cue references unknown stop id "${c.stopId}"`);
+      const paraCount = stopParagraphCount.get(c.stopId);
+      if (paraCount !== undefined && (c.paragraph < 0 || c.paragraph >= paraCount)) {
+        err('trails', t.id, `narration (${n.lang}) cue paragraph ${c.paragraph} out of range for stop "${c.stopId}" (${paraCount} paragraphs)`);
+      }
+      if (c.start >= c.end) err('trails', t.id, `narration (${n.lang}) cue for stop "${c.stopId}" has start (${c.start}) >= end (${c.end})`);
+      if (c.start < lastEnd) err('trails', t.id, `narration (${n.lang}) cues are not in ascending, non-overlapping order at stop "${c.stopId}"`);
+      lastEnd = c.end;
+    }
+  }
   if (t.activity.kind === 'choice') {
     if (new Set(t.activity.options).size !== t.activity.options.length) err('trails', t.id, 'activity options are not distinct');
     if (t.activity.answerIndex < 0 || t.activity.answerIndex >= t.activity.options.length) err('trails', t.id, 'activity answerIndex out of range');

@@ -160,6 +160,7 @@ export function ReadingText({
   vault = false,
   glossary = true,
   className = '',
+  highlight,
 }: {
   paragraphs: string[];
   sources: SourceRef[];
@@ -168,6 +169,8 @@ export function ReadingText({
   vault?: boolean;
   glossary?: boolean;
   className?: string;
+  /** The paragraph a narration player is currently reading aloud, if any. */
+  highlight?: number | null;
 }) {
   /* One open popover per reading block: "p2-g1" = paragraph 2, glossary term 1;
      "p2-g1-c0" = the same paragraph's first citation after that term. */
@@ -178,7 +181,7 @@ export function ReadingText({
     <div data-reading-text className={`space-y-5 ${className}`}>
       {paragraphs.flatMap((_, i) => {
         const nodes: ReactNode[] = [
-          <p key={`p${i}`} className={`${prose} ${dropcap && i === 0 ? 'dropcap' : ''}`}>
+          <p key={`p${i}`} className={`${prose} ${dropcap && i === 0 ? 'dropcap' : ''} ${highlight === i ? 'bg-oxide-wash/60' : ''}`}>
             {glossed[i].flatMap((g, gi) => {
               if (g.kind === 'term') {
                 const key = `p${i}-g${gi}`;

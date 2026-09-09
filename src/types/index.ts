@@ -468,6 +468,20 @@ export interface Trail {
   activity: TrailActivity;
   followOn: { label: string; to: string };
   editorial: Editorial;
+  narration?: TrailNarration[];
+}
+
+export interface TrailNarration {
+  lang: 'en' | 'ta' | 'hi';
+  /** /audio/trails/<slug>/<lang>.mp3 */
+  src: string;
+  narrator: string;
+  /** ISO date. */
+  recordedOn: string;
+  /** Pronunciation/date/tone check. */
+  reviewedBy?: string;
+  /** Cue per stop paragraph: seconds into the file. */
+  cues: { stopId: string; paragraph: number; start: number; end: number }[];
 }
 
 /** Two lives worth reading side by side, and why. Never a ranking. */

@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import type { TrailRef } from '@/types';
 import { eventById, fighterById, movementById, trailBySlug, trails } from '@/lib/content';
@@ -10,6 +10,7 @@ import { Breadcrumbs, Icon, PageIntro, Postmark, SectionHeading, SourceList, era
 import { DraftStamp, ReadingText } from '@/components/reading';
 import { ChoiceActivity, OrderActivity, TrailCard, TrailProgress } from '@/components/trails';
 import { EventCard, FighterCard, MovementCard } from '@/components/cards';
+import { AudioPlayer } from '@/components/audio-player';
 
 const stopParams = { text: flag() };
 
@@ -110,12 +111,22 @@ export function TrailStopPage() {
   const stop = trail && Number.isInteger(index) && index >= 0 && index < trail.stops.length ? trail.stops[index] : undefined;
   const [{ text: textOnly }, setParams] = useUrlState(stopParams);
   usePageMeta(stop && trail ? `${stop.title} — ${trail.title}` : 'Trail', stop?.question ?? trail?.question);
+  /* Language switching lands in a later task; every reader hears English until then. */
+  const lang: 'en' | 'ta' | 'hi' = 'en';
+  const narration = trail?.narration?.find((n) => n.lang === lang);
+  const [listening, setListening] = useState(false);
+  const [highlightParagraph, setHighlightParagraph] = useState<number | null>(null);
 
   useEffect(() => {
     if (!trail || !stop) return;
     setStop(trail.slug, index + 1);
     track('trail_stop_viewed', { trail: trail.slug, stop: index + 1 });
   }, [trail, stop, index]);
+
+  useEffect(() => {
+    setListening(false);
+    setHighlightParagraph(null);
+  }, [stop?.id]);
 
   const focusEraAccent = useMemo(() => trail?.accent ?? 'brass', [trail]);
   if (!trail) return <Navigate to="/trails" replace />;
@@ -131,9 +142,16 @@ export function TrailStopPage() {
         <Breadcrumbs items={[{ label: 'Home', to: '/' }, { label: 'Trails', to: '/trails' }, { label: trail.title, to: `/trails/${trail.slug}` }, { label: `Stop ${index + 1}` }]} />
         <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
           <TrailProgress current={index + 1} total={total} />
-          <button type="button" className={`chip min-h-10 ${textOnly ? 'chip-active' : ''}`} aria-pressed={textOnly} onClick={() => setParams({ text: !textOnly })}>
-            Text only
-          </button>
+          <div className="flex flex-wrap gap-2">
+            {narration && (
+              <button type="button" className={`chip min-h-10 ${listening ? 'chip-active' : ''}`} aria-pressed={listening} onClick={() => setListening((v) => !v)}>
+                Listen
+              </button>
+            )}
+            <button type="button" className={`chip min-h-10 ${textOnly ? 'chip-active' : ''}`} aria-pressed={textOnly} onClick={() => setParams({ text: !textOnly })}>
+              Text only
+            </button>
+          </div>
         </div>
         <div className={`perf-all on-sheet relative mt-5 px-5 py-7 sm:px-9 sm:py-9 ${eraAccent.bg[focusEraAccent]} ${eraAccent.onInk[focusEraAccent]}`}>
           <p className={`stamp w-fit ${eraAccent.onInkMuted[focusEraAccent]}`}>{trail.title}</p>
@@ -150,7 +168,10 @@ export function TrailStopPage() {
               {stop.contentNote}
             </p>
           )}
-          <ReadingText paragraphs={stop.text} sources={stop.sources} className="max-w-prose" />
+          {narration && listening && (
+            <AudioPlayer src={narration.src} cues={narration.cues} stopId={stop.id} narrator={narration.narrator} recordedOn={narration.recordedOn} onCue={setHighlightParagraph} />
+          )}
+          <ReadingText paragraphs={stop.text} sources={stop.sources} className="max-w-prose" highlight={listening ? highlightParagraph : null} />
           {stop.uncertainty && (
             <p role="note" aria-label="Uncertainty" className="max-w-prose border-l-2 border-oxide pl-4 font-body text-meta text-ink-soft">
               <span className="stamp mr-2 text-oxide-deep">Uncertain</span>
