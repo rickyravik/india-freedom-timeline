@@ -59,10 +59,13 @@ test('changing a People filter keeps existing cards and moves them (FLIP), and d
 
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.reload();
-  // The resource timing buffer isn't cleared by reload; wipe it so the check
-  // below reflects only what loads (or doesn't) after this point.
-  await page.evaluate(() => performance.clearResourceTimings());
   await page.getByRole('button', { name: 'Featured' }).click();
+  await expect(page.getByRole('status')).toHaveText(/Showing \d+ of 88/);
+  // Give any stray fetch time to register, then check the whole document's
+  // timeline: under reduced motion GSAP must never be fetched — not on
+  // hydration (which once leaked it via the server snapshot) and not on a
+  // filter change. Clearing the buffer first would only hide a late fetch.
+  await page.waitForTimeout(500);
   const gsapAfter = await page.evaluate(() => performance.getEntriesByType('resource').filter((r) => /Flip/i.test(r.name)).length);
   expect(gsapAfter).toBe(0);
 });

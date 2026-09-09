@@ -25,6 +25,14 @@ export function useMotionAllowed(): boolean {
   return motionAllowed({ osReduced, setting: prefs.motion });
 }
 
+/** The live answer, read directly from the media query and stored preference.
+    On the hydration render `useMotionAllowed()` still returns the server
+    snapshot (never reduced) and only corrects itself a render later, so an
+    effect that spends a network request on the answer must ask this instead. */
+export function motionAllowedNow(): boolean {
+  return motionAllowed({ osReduced: window.matchMedia(REDUCE).matches, setting: readPreferences().motion });
+}
+
 export interface FlipHandle {
   capture(): void;
 }
@@ -59,6 +67,9 @@ export function useFlipList(container: RefObject<HTMLElement>, itemSelector: str
 
   useEffect(() => {
     if (!allowed || flip.current) return;
+    /* `allowed` can be the hydration render's server snapshot; a reduced-motion
+       reader would otherwise download GSAP on every visit to a list page. */
+    if (!motionAllowedNow()) return;
     let live = true;
     loadFlip().then((m) => {
       if (live) flip.current = m;
