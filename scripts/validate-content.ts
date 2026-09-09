@@ -21,6 +21,7 @@ import { trails } from '../src/data/trails/index.ts';
 import { comparePairs } from '../src/data/compare-pairs.ts';
 import { places } from '../src/data/places.ts';
 import { routes } from '../src/data/routes/index.ts';
+import { documents } from '../src/data/documents/index.ts';
 import { fighterSummaries, fighterSourceFile } from '../src/data/generated/fighters.summary.ts';
 import { eventSummaries, eventSourceFile } from '../src/data/generated/events.summary.ts';
 import { connectionsById } from '../src/data/generated/connections.ts';
@@ -329,6 +330,27 @@ const routeSchema = z.object({
   editorial: editorialSchema,
 });
 
+const documentPassageSchema = z.object({
+  id: z.string().min(1),
+  text: z.string().min(1),
+  box: z.object({ x: z.number(), y: z.number(), w: z.number(), h: z.number() }).optional(),
+  guide: z.object({ author: z.string().optional(), audience: z.string().optional(), claim: z.string().optional(), limitation: z.string().optional() }).optional(),
+});
+const documentSchema = z.object({
+  id: z.string().min(1),
+  slug: z.string().regex(/^[a-z0-9-]+$/, 'slug must be lowercase kebab-case'),
+  title: z.string().min(1),
+  dateLabel: z.string().min(1),
+  kind: z.enum(['proclamation', 'letter', 'newspaper', 'leaflet', 'photograph', 'other']),
+  image: z.object({ src: z.string().min(1), width: z.number(), height: z.number(), credit: z.string().min(1), licence: z.string().min(1), created: z.string().optional() }).optional(),
+  context: z.array(z.string().min(1)),
+  passages: z.array(documentPassageSchema).min(1),
+  transcriptionNote: z.string().min(1),
+  eventId: z.string().optional(),
+  sources: z.array(sourceRefSchema),
+  editorial: editorialSchema,
+});
+
 /* -------------------------------------------------------------------- */
 /* Schema pass                                                           */
 function checkSchema<T>(collection: string, items: T[], schema: z.ZodType<T>, refOf: (item: T) => string) {
@@ -355,6 +377,7 @@ checkSchema('trails', trails, trailSchema, (t) => t.id);
 checkSchema('comparePairs', comparePairs, comparePairSchema, (p) => p.id);
 checkSchema('places', places, placeSchema, (p) => p.id);
 checkSchema('routes', routes, routeSchema, (r) => r.id);
+checkSchema('documents', documents, documentSchema, (d) => d.id);
 
 /* -------------------------------------------------------------------- */
 /* Uniqueness                                                            */
@@ -378,6 +401,7 @@ checkUnique('trails', trails);
 checkUnique('comparePairs', comparePairs);
 checkUnique('places', places);
 checkUnique('routes', routes);
+checkUnique('documents', documents);
 
 /* -------------------------------------------------------------------- */
 /* Cross-references                                                      */
@@ -541,6 +565,18 @@ for (const r of routes) {
   if (r.editorial.status === 'draft') warn('routes', r.id, 'editorial status is draft');
 }
 
+for (const d of documents) {
+  if (d.eventId && !eventIds.has(d.eventId)) err('documents', d.id, `references unknown event id "${d.eventId}"`);
+  const passageIds = new Set<string>();
+  for (const p of d.passages) {
+    if (passageIds.has(p.id)) err('documents', d.id, `duplicate passage id "${p.id}"`);
+    passageIds.add(p.id);
+    if (p.box && !d.image) warn('documents', d.id, `passage "${p.id}" has a box but the document has no image`);
+  }
+  checkCitations('documents', d.id, d.context, d.sources.length);
+  if (d.editorial.status === 'draft') warn('documents', d.id, 'editorial status is draft');
+}
+
 /* -------------------------------------------------------------------- */
 /* Generated summary staleness — src/data/generated/*.summary.ts is        */
 /* committed, not built on the fly; catch it drifting from the full        */
@@ -577,7 +613,7 @@ for (const group of [errors, warnings]) {
 }
 
 console.log(
-  `\nValidated ${fighters.length} fighters, ${events.length} events, ${movements.length} movements, ${organizations.length} organizations, ${eras.length} eras, ${quizQuestions.length} quiz questions, ${didYouKnowFacts.length} facts, ${guessWhoRounds.length} guess-who rounds, ${glossaryTerms.length} glossary terms, ${trails.length} trails, ${comparePairs.length} compare pairs, ${places.length} places, ${routes.length} routes.`,
+  `\nValidated ${fighters.length} fighters, ${events.length} events, ${movements.length} movements, ${organizations.length} organizations, ${eras.length} eras, ${quizQuestions.length} quiz questions, ${didYouKnowFacts.length} facts, ${guessWhoRounds.length} guess-who rounds, ${glossaryTerms.length} glossary terms, ${trails.length} trails, ${comparePairs.length} compare pairs, ${places.length} places, ${routes.length} routes, ${documents.length} documents.`,
 );
 console.log(`${errors.length} error(s), ${warnings.length} warning(s).`);
 

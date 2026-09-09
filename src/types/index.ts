@@ -511,3 +511,29 @@ export interface Route {
   sources: SourceRef[];
   editorial: Editorial;
 }
+
+export interface DocumentPassage {
+  id: string;
+  text: string;
+  /** % box on the image, when a scan exists. */
+  box?: { x: number; y: number; w: number; h: number };
+  guide?: { author?: string; audience?: string; claim?: string; limitation?: string };
+}
+export interface ArchiveDocument {
+  id: string;
+  slug: string;
+  title: string;
+  dateLabel: string;
+  kind: 'proclamation' | 'letter' | 'newspaper' | 'leaflet' | 'photograph' | 'other';
+  /** The scan. Absent until a licensed image is supplied; the page is then text-first. */
+  image?: { src: string; width: number; height: number; credit: string; licence: string; created?: string };
+  /** [^n] into sources. */
+  context: string[];
+  /** The transcription, in reading order. */
+  passages: DocumentPassage[];
+  /** Where the text comes from and how it was checked. */
+  transcriptionNote: string;
+  eventId?: string;
+  sources: SourceRef[];
+  editorial: Editorial;
+}

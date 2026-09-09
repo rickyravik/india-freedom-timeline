@@ -5,6 +5,7 @@
 import type { EventSummary, FighterSummary, FreedomFighter, LocationKind, Movement, Place, RegionId } from '@/types';
 import { places, placeById, placeBySlug } from '@/data/places';
 import { routes, routeBySlug } from '@/data/routes';
+import { documents, documentBySlug } from '@/data/documents';
 import { fighterSummaries, fighterSourceFile } from '@/data/generated/fighters.summary';
 import { eventSummaries, eventSourceFile } from '@/data/generated/events.summary';
 import { connectionsById } from '@/data/generated/connections';
@@ -46,6 +47,8 @@ export {
   placeBySlug,
   routes,
   routeBySlug,
+  documents,
+  documentBySlug,
 };
 
 export const movementBySlug = new Map(movements.map((m) => [m.slug, m]));
@@ -172,6 +175,15 @@ export const roleLabels: Record<string, string> = {
   lawyer: 'Lawyer',
   educator: 'Educator',
   organizer: 'Organizer',
+};
+
+export const documentKindLabels: Record<string, string> = {
+  proclamation: 'Proclamation',
+  letter: 'Letter',
+  newspaper: 'Newspaper',
+  leaflet: 'Leaflet',
+  photograph: 'Photograph',
+  other: 'Document',
 };
 
 export const placeKindLabels: Record<string, string> = {

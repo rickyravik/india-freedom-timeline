@@ -33,6 +33,7 @@ export const routeTable: RouteEntry[] = [
   { path: '/places', loader: () => import('@/pages/PlacesPage') },
   { path: '/places/:slug', loader: () => import('@/pages/PlacesPage').then((m) => ({ default: m.PlacePage })) },
   { path: '/routes/:slug', loader: () => import('@/pages/RoutePage') },
+  { path: '/documents/:slug', loader: () => import('@/pages/DocumentPage') },
   { path: '/search', loader: () => import('@/pages/SearchPage') },
   { path: '/start', loader: () => import('@/pages/StartPage') },
   { path: '/trails', loader: () => import('@/pages/TrailPages') },
