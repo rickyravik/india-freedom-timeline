@@ -43,6 +43,7 @@ export function getAllRoutes() {
   const movements = slugsFrom('src/data/movements.ts', slugRe);
   const trails = slugsFrom('src/data/trails', slugRe);
   const places = slugsFrom('src/data/places.ts', slugRe);
+  const routes = slugsFrom('src/data/routes', slugRe);
   return [
     ...staticRoutes,
     ...fighters.map((s) => `/fighters/${s}`),
@@ -50,5 +51,6 @@ export function getAllRoutes() {
     ...movements.map((s) => `/movements/${s}`),
     ...trails.map((s) => `/trails/${s}`),
     ...places.map((s) => `/places/${s}`),
+    ...routes.map((s) => `/routes/${s}`),
   ];
 }

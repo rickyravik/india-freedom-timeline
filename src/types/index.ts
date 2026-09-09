@@ -478,3 +478,36 @@ export interface ComparePair {
   why: string;
   editorial: Editorial;
 }
+
+export interface RouteStop {
+  id: string;
+  name: string;
+  /** Display date, e.g. "12 March 1930". */
+  dateLabel: string;
+  /** One or two sentences; [^n] into the route's own `sources`. */
+  note: string;
+  /** Schematic position 0–100 on the route map's own canvas — NOT geographic coordinates. */
+  x: number;
+  y: number;
+  /** True unless the location is documented to the site. */
+  approximate: boolean;
+  /** Link to a Place record when one exists. */
+  placeId?: string;
+}
+export interface Route {
+  id: string;
+  slug: string;
+  title: string;
+  question: string;
+  summary: string;
+  frame: 'present-day' | 'historical';
+  frameNote: string;
+  /** The event this route belongs to. */
+  eventId: string;
+  /** 3–24 stops. */
+  stops: RouteStop[];
+  /** Closing paragraphs, [^n] into sources. */
+  outcome: string[];
+  sources: SourceRef[];
+  editorial: Editorial;
+}

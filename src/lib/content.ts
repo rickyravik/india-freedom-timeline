@@ -4,6 +4,7 @@
  */
 import type { EventSummary, FighterSummary, FreedomFighter, LocationKind, Movement, Place, RegionId } from '@/types';
 import { places, placeById, placeBySlug } from '@/data/places';
+import { routes, routeBySlug } from '@/data/routes';
 import { fighterSummaries, fighterSourceFile } from '@/data/generated/fighters.summary';
 import { eventSummaries, eventSourceFile } from '@/data/generated/events.summary';
 import { connectionsById } from '@/data/generated/connections';
@@ -43,6 +44,8 @@ export {
   places,
   placeById,
   placeBySlug,
+  routes,
+  routeBySlug,
 };
 
 export const movementBySlug = new Map(movements.map((m) => [m.slug, m]));
