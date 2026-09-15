@@ -853,4 +853,69 @@ export const tamilNaduFighters: FreedomFighter[] = [
     tags: ['Tamil Nadu', 'Forward Bloc', 'Criminal Tribes Act', 'Bose'],
     forgotten: true,
   },
+  {
+    id: 'sardar-vedaratnam-pillai',
+    slug: 'sardar-vedaratnam-pillai',
+    name: 'Sardar Vedaratnam Pillai',
+    birthYear: 1897,
+    deathYear: 1961,
+    birthPlace: 'Vedaranyam, Tanjore district, Tamil Nadu',
+    region: 'south',
+    states: ['Tamil Nadu'],
+    gender: 'male',
+    era: 'civil-disobedience',
+    roles: ['organizer', 'satyagrahi'],
+    summary:
+      'Landowner and Congress worker of Vedaranyam who organised the coastal end of the 1930 salt march that C. Rajagopalachari led from Tiruchirappalli, mobilising the villages of the Tanjore delta and the salt-pan workers of the coast to receive the marchers.',
+    shortStory: [
+      {
+        title: 'A son of the delta',
+        text: 'Vedaratnam Pillai was a respected landowner of Vedaranyam, a small coastal town in the Tanjore delta known for its salt pans. Like many in the Congress of his time, he gave his energy and his money to the freedom movement.',
+      },
+      {
+        title: 'Preparing for the marchers',
+        text: 'In 1930, when C. Rajagopalachari announced a salt march from Tiruchirappalli to Vedaranyam — the south’s answer to Gandhi’s Dandi march — Vedaratnam organised the villages along its 150-mile route and arranged the camp and welcome for the marchers when they reached the coast.',
+      },
+      {
+        title: 'Breaking the law by the sea',
+        text: 'On 30 April 1930, Rajagopalachari and his companions walked to the shore near Vedaranyam and made salt in defiance of British law. Vedaratnam Pillai stood among them, and the salt-pan workers of the coast he had organised joined the satyagraha.',
+      },
+      {
+        title: 'A lifetime of service',
+        text: 'Honoured with the title "Sardar" the following year, he went on to serve three terms in the Madras legislature, gave his earnings to charity, and founded a home for orphaned girls at Vedaranyam that still serves the town today.',
+      },
+    ],
+    fullBiography: [
+      'Vedaratnam Pillai was a landowner of Vedaranyam, the small salt-producing town on the Tanjore coast, and an established Congress worker in the district by the time C. Rajagopalachari planned the south’s answer to Gandhi’s Dandi march.',
+      'When Rajagopalachari set out from Tiruchirappalli on 13 April 1930 with some 150 volunteers on the roughly 150-mile march to Vedaranyam, Vedaratnam organised the coastal end of the campaign — mobilising the villages of the delta the marchers passed through and arranging their reception and camp at Vedaranyam itself, drawing in the salt-pan workers of the coast. On 30 April, Rajagopalachari and a group of satyagrahis walked to the shore and broke the salt law; Vedaratnam Pillai was among those who took part.',
+      'For his part in the march he was given the honorific "Sardar" by a Tamil Nadu gathering in 1931. He served three terms — some fourteen years — in the Madras legislature, donated his earnings as a legislator to the Ramakrishna Mission, led the Tanjore District Congress Committee for a decade, and in 1946 founded the Kasturba Gandhi Kanya Gurukulam at Vedaranyam, a home and school for orphaned girls that continues its work.',
+    ],
+    entryIntoStruggle: 'Congress work in the Tanjore delta through the 1920s; the Vedaranyam salt march, 1930.',
+    achievements: [
+      'Organised the coastal end of the Vedaranyam salt march of 1930',
+      'Founded a lasting institution for orphaned girls at Vedaranyam',
+    ],
+    sacrifices: ['Gave his legislative earnings to charitable work rather than personal gain'],
+    legacy: 'Remembered in the Tanjore delta as the organiser who made Vedaranyam ready to receive Rajaji’s marchers; his Kasturba Gandhi Kanya Gurukulam still serves the town.',
+    facts: ['He donated all his earnings as a member of the Madras legislature to the Ramakrishna Mission.'],
+    timelineEvents: ['vedaranyam-salt-march'],
+    movements: ['civil-disobedience'],
+    organizations: ['inc'],
+    relatedPeople: ['c-rajagopalachari', 'rukmini-lakshmipathi', 'k-kamaraj'],
+    sources: [
+      {
+        title: 'Sardar Vedaratnam commemorative records',
+        publisher: 'Government of Tamil Nadu',
+        type: 'government',
+      },
+      {
+        title: 'Vedaranyam salt satyagraha records, 1930',
+        publisher: 'Tamil Nadu State Archives',
+        type: 'archive',
+      },
+    ],
+    tags: ['Tamil Nadu', 'salt satyagraha', 'Vedaranyam'],
+    forgotten: true,
+    editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-15' },
+  },
 ];

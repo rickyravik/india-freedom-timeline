@@ -8,6 +8,11 @@ import { hsraRevolutionaries } from './hsra-revolutionaries';
 import { tribalLeaders } from './tribal-leaders';
 import { quitIndiaInaFighters } from './quit-india-ina';
 import { tamilNaduFighters } from './tamil-nadu';
+import { odishaFighters } from './odisha';
+import { karnatakaFighters } from './karnataka';
+import { keralaFighters } from './kerala';
+import { andhraTelanganaFighters } from './andhra-telangana';
+import { northeastLeaders } from './northeast-leaders';
 
 export const fighters: FreedomFighter[] = [
   ...earlyResistanceFighters,
@@ -19,6 +24,11 @@ export const fighters: FreedomFighter[] = [
   ...tribalLeaders,
   ...quitIndiaInaFighters,
   ...tamilNaduFighters,
+  ...odishaFighters,
+  ...karnatakaFighters,
+  ...keralaFighters,
+  ...andhraTelanganaFighters,
+  ...northeastLeaders,
 ];
 
 export const fighterById = new Map(fighters.map((f) => [f.id, f]));

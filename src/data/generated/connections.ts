@@ -17,7 +17,14 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   "tilka-manjhi": [],
   "titumir": [],
   "tirot-sing": [],
-  "rani-chennamma": [],
+  "rani-chennamma": [
+    {
+      "id": "sangolli-rayanna",
+      "type": "ally",
+      "note": "Served as a commander in Rani Chennamma’s Kittur forces and continued the resistance after her defeat and imprisonment in 1824.",
+      "inferred": true
+    }
+  ],
   "sidhu-kanhu-murmu": [],
   "mangal-pandey": [],
   "rani-lakshmibai": [
@@ -54,6 +61,9 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   "kunwar-singh": [],
   "nana-saheb": [],
   "bahadur-shah-zafar": [],
+  "azimullah-khan": [],
+  "uda-devi": [],
+  "veer-narayan-singh": [],
   "dadabhai-naoroji": [],
   "surendranath-banerjee": [],
   "gopal-krishna-gokhale": [],
@@ -64,6 +74,13 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   "annie-besant": [],
   "madan-mohan-malaviya": [],
   "mohammad-ali-jouhar": [],
+  "motilal-nehru": [],
+  "chittaranjan-das": [],
+  "virendranath-chattopadhyaya": [],
+  "sohan-singh-bhakna": [],
+  "baba-gurdit-singh": [],
+  "saifuddin-kitchlew": [],
+  "bhulabhai-desai": [],
   "khudiram-bose": [],
   "bagha-jatin": [],
   "subramania-bharati": [],
@@ -75,6 +92,7 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   "lala-har-dayal": [],
   "kartar-singh-sarabha": [],
   "rash-behari-bose": [],
+  "prafulla-chaki": [],
   "mahatma-gandhi": [],
   "kasturba-gandhi": [],
   "jawaharlal-nehru": [],
@@ -98,7 +116,14 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   "ashfaqulla-khan": [],
   "batukeshwar-dutt": [],
   "jatindra-nath-das": [],
-  "durgawati-devi": [],
+  "durgawati-devi": [
+    {
+      "id": "bhagwati-charan-vohra",
+      "type": "family",
+      "note": "Her husband — the HSRA’s chief pamphleteer; she carried on the movement’s work after his death testing a bomb in May 1930.",
+      "inferred": true
+    }
+  ],
   "surya-sen": [
     {
       "id": "pritilata-waddedar",
@@ -117,17 +142,47 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   ],
   "kalpana-datta": [],
   "udham-singh": [],
+  "rajendra-lahiri": [],
+  "roshan-singh": [],
+  "sachindra-nath-sanyal": [],
+  "bhagwati-charan-vohra": [
+    {
+      "id": "durgawati-devi",
+      "type": "family",
+      "note": "Her husband — the HSRA’s chief pamphleteer; she carried on the movement’s work after his death testing a bomb in May 1930.",
+      "inferred": false
+    }
+  ],
   "birsa-munda": [],
   "alluri-sitarama-raju": [],
   "komaram-bheem": [],
   "rani-gaidinliu": [],
+  "govind-guru": [],
+  "phulo-jhano-murmu": [],
   "subhas-chandra-bose": [],
-  "lakshmi-sahgal": [],
+  "lakshmi-sahgal": [
+    {
+      "id": "prem-kumar-sahgal",
+      "type": "family",
+      "note": "Married Lakshmi Swaminathan — \"Captain Lakshmi\" of the Rani of Jhansi Regiment — in March 1947; the couple later settled in Kanpur.",
+      "inferred": true
+    }
+  ],
   "aruna-asaf-ali": [],
   "usha-mehta": [],
   "matangini-hazra": [],
   "kanaklata-barua": [],
   "kushal-konwar": [],
+  "shah-nawaz-khan": [],
+  "prem-kumar-sahgal": [
+    {
+      "id": "lakshmi-sahgal",
+      "type": "family",
+      "note": "Married Lakshmi Swaminathan — \"Captain Lakshmi\" of the Rani of Jhansi Regiment — in March 1947; the couple later settled in Kanpur.",
+      "inferred": false
+    }
+  ],
+  "gurbaksh-singh-dhillon": [],
   "ondiveeran": [],
   "veerapandiya-kattabomman": [],
   "marudhu-brothers": [
@@ -146,5 +201,26 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   "s-satyamurti": [],
   "rukmini-lakshmipathi": [],
   "k-kamaraj": [],
-  "muthuramalinga-thevar": []
+  "muthuramalinga-thevar": [],
+  "sardar-vedaratnam-pillai": [],
+  "buxi-jagabandhu": [],
+  "veer-surendra-sai": [],
+  "laxman-naik": [],
+  "gopabandhu-das": [],
+  "sangolli-rayanna": [
+    {
+      "id": "rani-chennamma",
+      "type": "ally",
+      "note": "Served as a commander in Rani Chennamma’s Kittur forces and continued the resistance after her defeat and imprisonment in 1824.",
+      "inferred": false
+    }
+  ],
+  "karnad-sadashiva-rao": [],
+  "velu-thampi-dalawa": [],
+  "ak-gopalan": [],
+  "uyyalawada-narasimha-reddy": [],
+  "pingali-venkayya": [],
+  "turrebaz-khan": [],
+  "bir-tikendrajit": [],
+  "maniram-dewan": []
 };

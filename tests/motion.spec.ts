@@ -52,7 +52,7 @@ test('changing a People filter keeps existing cards and moves them (FLIP), and d
   const grid = page.locator('[data-flip-list]');
   await expect(grid.locator('[data-flip-id]').first()).toBeVisible();
   await page.getByRole('button', { name: 'Women of the movement' }).click();
-  await expect(page.getByRole('status')).toHaveText(/Showing \d+ of 88/);
+  await expect(page.getByRole('status')).toHaveText(/Showing \d+ of \d+/);
   // GSAP was loaded lazily: a script chunk with "Flip" is present only after a filter change.
   const flipLoaded = await page.evaluate(() => performance.getEntriesByType('resource').some((r) => /Flip|gsap/i.test(r.name)));
   expect(flipLoaded).toBe(true);
@@ -60,7 +60,7 @@ test('changing a People filter keeps existing cards and moves them (FLIP), and d
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.reload();
   await page.getByRole('button', { name: 'Featured' }).click();
-  await expect(page.getByRole('status')).toHaveText(/Showing \d+ of 88/);
+  await expect(page.getByRole('status')).toHaveText(/Showing \d+ of \d+/);
   // Give any stray fetch time to register, then check the whole document's
   // timeline: under reduced motion GSAP must never be fetched — not on
   // hydration (which once leaked it via the server snapshot) and not on a

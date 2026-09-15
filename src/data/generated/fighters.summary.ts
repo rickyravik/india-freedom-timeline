@@ -634,6 +634,111 @@ export const fighterSummaries: FighterSummary[] = [
     "era": "revolt-1857"
   },
   {
+    "id": "azimullah-khan",
+    "slug": "azimullah-khan",
+    "name": "Azimullah Khan",
+    "birthYear": 1830,
+    "deathYear": 1859,
+    "birthDateLabel": "17 September 1830",
+    "birthPlace": "Near Kanpur, Uttar Pradesh",
+    "region": "north",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "gender": "male",
+    "summary": "Confidential secretary and adviser to Nana Saheb, who carried the Peshwa’s pension appeal to London and observed the Crimean War before 1857 — and whose exact part in the terrible events at Kanpur remains disputed among historians.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Remembered as one of 1857’s most enigmatic figures — an adviser whose influence on the revolt’s darkest hours historians still cannot agree on.",
+    "timelineEvents": [
+      "revolt-1857"
+    ],
+    "movements": [
+      "great-revolt"
+    ],
+    "roles": [
+      "political-leader",
+      "organizer"
+    ],
+    "tags": [
+      "1857",
+      "Kanpur",
+      "adviser"
+    ],
+    "era": "revolt-1857",
+    "forgotten": true
+  },
+  {
+    "id": "uda-devi",
+    "slug": "uda-devi",
+    "name": "Uda Devi",
+    "deathYear": 1857,
+    "deathDateLabel": "November 1857 (Battle of Sikandar Bagh)",
+    "birthPlace": "Awadh, Uttar Pradesh",
+    "region": "north",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "gender": "female",
+    "summary": "A Dalit (Pasi) sharpshooter in Begum Hazrat Mahal’s forces who fired on advancing British troops from a tree at Sikandar Bagh, Lucknow, in November 1857 — a story kept alive chiefly through Awadhi oral memory rather than any contemporary record.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Honoured today as a Dalit heroine of 1857, alongside Begum Hazrat Mahal and Jhalkari Bai; schools, roads and a park in Lucknow bear her name.",
+    "timelineEvents": [
+      "revolt-1857"
+    ],
+    "movements": [
+      "great-revolt"
+    ],
+    "roles": [
+      "military-leader"
+    ],
+    "tags": [
+      "1857",
+      "women",
+      "Dalit",
+      "Lucknow"
+    ],
+    "era": "revolt-1857",
+    "forgotten": true
+  },
+  {
+    "id": "veer-narayan-singh",
+    "slug": "veer-narayan-singh",
+    "name": "Veer Narayan Singh",
+    "birthYear": 1795,
+    "deathYear": 1857,
+    "deathDateLabel": "10 December 1857",
+    "birthPlace": "Sonakhan, Chhattisgarh",
+    "region": "central",
+    "states": [
+      "Chhattisgarh"
+    ],
+    "gender": "male",
+    "summary": "Zamindar of Sonakhan who opened his grain stores to feed a famine-struck population against Company orders, then led an armed rising in 1857 — hanged at Raipur that December as one of the revolt’s earliest executions and the first martyr of the Chhattisgarh region.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Honoured as Chhattisgarh’s first freedom fighter; a university, a stadium and a park in Raipur carry his name.",
+    "timelineEvents": [
+      "revolt-1857"
+    ],
+    "movements": [
+      "great-revolt"
+    ],
+    "roles": [
+      "ruler",
+      "military-leader"
+    ],
+    "tags": [
+      "1857",
+      "Chhattisgarh",
+      "zamindar",
+      "martyr"
+    ],
+    "era": "revolt-1857",
+    "forgotten": true
+  },
+  {
     "id": "dadabhai-naoroji",
     "slug": "dadabhai-naoroji",
     "name": "Dadabhai Naoroji",
@@ -1068,6 +1173,283 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "era": "non-cooperation",
     "forgotten": true
+  },
+  {
+    "id": "motilal-nehru",
+    "slug": "motilal-nehru",
+    "name": "Motilal Nehru",
+    "portrait": "/images/fighters/motilal-nehru.jpg",
+    "birthYear": 1861,
+    "deathYear": 1931,
+    "birthDateLabel": "6 May 1861",
+    "deathDateLabel": "6 February 1931",
+    "birthPlace": "Agra, Uttar Pradesh",
+    "region": "north",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "gender": "male",
+    "summary": "One of Allahabad’s most successful barristers, who gave up silk gowns and a European style of living for the freedom movement — twice Congress president, co-founder of the Swaraj Party, and father of Jawaharlal Nehru.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Constitutional nationalism combined with council-entry politics; dominion status evolving toward self-government.",
+    "legacy": "Founding figure of Congress’s council-entry politics and constitutional draftsmanship; patriarch of the Nehru family in the freedom movement.",
+    "timelineEvents": [
+      "jallianwala-bagh"
+    ],
+    "movements": [
+      "non-cooperation"
+    ],
+    "roles": [
+      "political-leader",
+      "lawyer"
+    ],
+    "tags": [
+      "Swaraj Party",
+      "Congress",
+      "Allahabad",
+      "lawyer"
+    ],
+    "era": "non-cooperation"
+  },
+  {
+    "id": "chittaranjan-das",
+    "slug": "chittaranjan-das",
+    "name": "Chittaranjan Das",
+    "alternateNames": [
+      "Deshbandhu"
+    ],
+    "portrait": "/images/fighters/chittaranjan-das.jpg",
+    "birthYear": 1870,
+    "deathYear": 1925,
+    "birthDateLabel": "5 November 1870",
+    "deathDateLabel": "16 June 1925",
+    "birthPlace": "Calcutta, Bengal",
+    "region": "east",
+    "states": [
+      "West Bengal"
+    ],
+    "gender": "male",
+    "summary": "\"Deshbandhu\" — friend of the nation — the Calcutta barrister who defended Aurobindo Ghose, gave up a princely legal income for the freedom movement, and co-founded the Swaraj Party with Motilal Nehru.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Constitutional nationalism combined with council-entry politics; Hindu-Muslim political unity.",
+    "legacy": "Remembered across Bengal as \"Deshbandhu\"; his Swaraj Party reshaped Congress’s relationship with the legislatures.",
+    "timelineEvents": [],
+    "movements": [
+      "non-cooperation"
+    ],
+    "roles": [
+      "political-leader",
+      "lawyer"
+    ],
+    "tags": [
+      "Swaraj Party",
+      "Bengal",
+      "Congress",
+      "lawyer"
+    ],
+    "era": "non-cooperation"
+  },
+  {
+    "id": "virendranath-chattopadhyaya",
+    "slug": "virendranath-chattopadhyaya",
+    "name": "Virendranath Chattopadhyaya",
+    "alternateNames": [
+      "Chatto"
+    ],
+    "portrait": "/images/fighters/virendranath-chattopadhyaya.jpg",
+    "birthYear": 1880,
+    "deathYear": 1937,
+    "birthDateLabel": "31 October 1880",
+    "birthPlace": "Hyderabad, Deccan",
+    "region": "abroad",
+    "states": [
+      "Telangana",
+      "Abroad"
+    ],
+    "gender": "male",
+    "summary": "Hyderabad-born revolutionary known as \"Chatto\" — brother of Sarojini Naidu, who led the Berlin Committee’s wartime bid for German help against British rule, then drifted into the Comintern orbit and vanished into Stalin’s purges.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Anti-colonial revolutionary nationalism seeking foreign state support; later international Communism.",
+    "legacy": "A largely forgotten figure of the revolutionary \"internationalist\" wing of the freedom struggle, whose fate was obscured for decades by Cold War-era silence on both sides.",
+    "timelineEvents": [],
+    "movements": [
+      "ghadar"
+    ],
+    "roles": [
+      "revolutionary",
+      "organizer",
+      "writer-poet"
+    ],
+    "tags": [
+      "revolutionary",
+      "Berlin Committee",
+      "abroad",
+      "forgotten"
+    ],
+    "era": "war-and-home-rule",
+    "forgotten": true
+  },
+  {
+    "id": "sohan-singh-bhakna",
+    "slug": "sohan-singh-bhakna",
+    "name": "Sohan Singh Bhakna",
+    "portrait": "/images/fighters/sohan-singh-bhakna.jpg",
+    "birthYear": 1870,
+    "deathYear": 1968,
+    "birthPlace": "Bhakna, Amritsar district, Punjab",
+    "region": "abroad",
+    "states": [
+      "Punjab",
+      "Abroad"
+    ],
+    "gender": "male",
+    "summary": "Punjabi migrant labourer who became the founding president of the Ghadar Party in North America in 1913, returned to India to fight British rule, and spent decades of his long life in colonial prisons.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Revolutionary anti-colonial nationalism; later agrarian socialism through the Kirti Kisan movement.",
+    "legacy": "Remembered in Punjab as the patriarch of the Ghadar generation and of the province’s peasant-left politics.",
+    "timelineEvents": [],
+    "movements": [
+      "ghadar"
+    ],
+    "roles": [
+      "revolutionary",
+      "organizer"
+    ],
+    "tags": [
+      "Ghadar",
+      "Punjab",
+      "abroad",
+      "forgotten"
+    ],
+    "era": "war-and-home-rule",
+    "forgotten": true
+  },
+  {
+    "id": "baba-gurdit-singh",
+    "slug": "baba-gurdit-singh",
+    "name": "Baba Gurdit Singh",
+    "portrait": "/images/fighters/baba-gurdit-singh.jpg",
+    "birthYear": 1860,
+    "deathYear": 1954,
+    "birthPlace": "Sarhali, Amritsar district, Punjab",
+    "region": "abroad",
+    "states": [
+      "Punjab",
+      "Abroad"
+    ],
+    "gender": "male",
+    "summary": "The Singapore-based businessman who chartered the ship Komagata Maru in 1914 to challenge Canada’s racially exclusionary immigration laws — a voyage that ended in the Budge Budge riot near Calcutta.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Anti-colonial and anti-racial-exclusion activism on behalf of Indian migrants across the British Empire.",
+    "legacy": "The Komagata Maru voyage remains a defining episode in the history of Indian migration and imperial racial policy, marked today by memorials in both Canada and India.",
+    "timelineEvents": [
+      "komagata-maru"
+    ],
+    "movements": [
+      "ghadar"
+    ],
+    "roles": [
+      "revolutionary",
+      "organizer"
+    ],
+    "tags": [
+      "Komagata Maru",
+      "Ghadar",
+      "Punjab",
+      "abroad",
+      "forgotten"
+    ],
+    "era": "war-and-home-rule",
+    "forgotten": true
+  },
+  {
+    "id": "saifuddin-kitchlew",
+    "slug": "saifuddin-kitchlew",
+    "name": "Saifuddin Kitchlew",
+    "alternateNames": [
+      "Dr Saifuddin Kitchlew"
+    ],
+    "portrait": "/images/fighters/saifuddin-kitchlew.jpg",
+    "birthYear": 1888,
+    "deathYear": 1963,
+    "birthDateLabel": "15 January 1888",
+    "deathDateLabel": "9 October 1963",
+    "birthPlace": "Amritsar, Punjab",
+    "region": "north",
+    "states": [
+      "Punjab"
+    ],
+    "gender": "male",
+    "summary": "Amritsar lawyer whose arrest, alongside Dr Satyapal, on 10 April 1919 triggered the protests that led directly to the Jallianwala Bagh massacre; later a Khilafat and Congress leader, and a long-time campaigner for world peace.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Congress-Khilafat unity; later international peace and non-alignment.",
+    "legacy": "His arrest is remembered as the spark that set off the events culminating in the Jallianwala Bagh massacre; a Punjab and Khilafat leader who later carried India’s voice into the world peace movement.",
+    "timelineEvents": [
+      "jallianwala-bagh",
+      "rowlatt-satyagraha"
+    ],
+    "movements": [
+      "non-cooperation",
+      "khilafat"
+    ],
+    "roles": [
+      "political-leader",
+      "lawyer"
+    ],
+    "tags": [
+      "Jallianwala Bagh",
+      "Khilafat",
+      "Punjab",
+      "forgotten"
+    ],
+    "era": "non-cooperation",
+    "forgotten": true
+  },
+  {
+    "id": "bhulabhai-desai",
+    "slug": "bhulabhai-desai",
+    "name": "Bhulabhai Desai",
+    "portrait": "/images/fighters/bhulabhai-desai.jpg",
+    "birthYear": 1877,
+    "deathYear": 1946,
+    "birthDateLabel": "13 October 1877",
+    "deathDateLabel": "6 May 1946",
+    "birthPlace": "Valsad, Gujarat",
+    "region": "west",
+    "states": [
+      "Gujarat",
+      "Maharashtra",
+      "Delhi"
+    ],
+    "gender": "male",
+    "summary": "Eminent Bombay lawyer and Congress legislator best remembered for leading the defence of the Indian National Army officers at the Red Fort trial in 1945, a case that turned the INA into a national cause.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Constitutional nationalism through legislative and legal advocacy.",
+    "legacy": "The Red Fort trial defence he led helped turn the INA officers’ case into a unifying national cause in the last years before independence.",
+    "timelineEvents": [
+      "ina-trials"
+    ],
+    "movements": [
+      "quit-india"
+    ],
+    "roles": [
+      "political-leader",
+      "lawyer"
+    ],
+    "tags": [
+      "INA trials",
+      "Bombay",
+      "lawyer",
+      "Congress"
+    ],
+    "era": "quit-india-and-ina"
   },
   {
     "id": "khudiram-bose",
@@ -1517,6 +1899,44 @@ export const fighterSummaries: FighterSummary[] = [
       "Ghadar"
     ],
     "era": "war-and-home-rule",
+    "forgotten": true
+  },
+  {
+    "id": "prafulla-chaki",
+    "slug": "prafulla-chaki",
+    "name": "Prafulla Chaki",
+    "birthYear": 1888,
+    "deathYear": 1908,
+    "birthDateLabel": "10 December 1888",
+    "deathDateLabel": "1 May 1908",
+    "birthPlace": "Bogra district, Bengal (now Bangladesh)",
+    "region": "east",
+    "states": [
+      "West Bengal",
+      "Bihar"
+    ],
+    "gender": "male",
+    "summary": "Alongside Khudiram Bose, threw the bomb meant for magistrate Kingsford at Muzaffarpur in 1908 — killing two British women by mistake — and when cornered by police at Mokama, shot himself rather than be taken alive.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Remembered alongside Khudiram Bose as one of the Swadeshi era’s first martyr-revolutionaries; a Bihar railway station and institutions in Bengal bear his name.",
+    "timelineEvents": [
+      "muzaffarpur-action"
+    ],
+    "movements": [
+      "revolutionary-movement",
+      "swadeshi"
+    ],
+    "roles": [
+      "revolutionary"
+    ],
+    "tags": [
+      "revolutionary",
+      "Bengal",
+      "Bihar",
+      "martyr"
+    ],
+    "era": "swadeshi-era",
     "forgotten": true
   },
   {
@@ -2764,6 +3184,163 @@ export const fighterSummaries: FighterSummary[] = [
     "featured": true
   },
   {
+    "id": "rajendra-lahiri",
+    "slug": "rajendra-lahiri",
+    "name": "Rajendra Nath Lahiri",
+    "portrait": "/images/fighters/rajendra-lahiri.jpg",
+    "birthYear": 1901,
+    "deathYear": 1927,
+    "birthDateLabel": "23 June 1901",
+    "deathDateLabel": "17 December 1927",
+    "birthPlace": "Lahiri Mohanpur, Pabna district, Bengal (now in Bangladesh)",
+    "region": "north",
+    "states": [
+      "Uttar Pradesh",
+      "West Bengal"
+    ],
+    "gender": "male",
+    "summary": "An MA history student of Banaras Hindu University who joined the Kakori action of 1925 — hanged two days ahead of schedule at Gonda jail, the first of the four Kakori martyrs to die.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Republican revolution (HRA).",
+    "legacy": "Remembered with Bismil, Ashfaqulla Khan and Roshan Singh as one of the four Kakori martyrs.",
+    "timelineEvents": [
+      "kakori-train-action"
+    ],
+    "movements": [
+      "revolutionary-movement"
+    ],
+    "roles": [
+      "revolutionary"
+    ],
+    "tags": [
+      "HRA",
+      "Kakori",
+      "martyr",
+      "Bengal"
+    ],
+    "era": "non-cooperation",
+    "forgotten": true
+  },
+  {
+    "id": "roshan-singh",
+    "slug": "roshan-singh",
+    "name": "Thakur Roshan Singh",
+    "portrait": "/images/fighters/roshan-singh.jpg",
+    "birthYear": 1892,
+    "deathYear": 1927,
+    "birthDateLabel": "22 January 1892",
+    "deathDateLabel": "19 December 1927",
+    "birthPlace": "Nabada village, Shahjahanpur district, Uttar Pradesh",
+    "region": "north",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "gender": "male",
+    "summary": "The fourth man hanged in the Kakori case — convicted not for the train action itself but for a related dacoity, and sentenced to death alongside Bismil, Ashfaqulla Khan and Lahiri at Allahabad’s Naini jail.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Republican revolution (HRA).",
+    "legacy": "Counted among the four Kakori martyrs in popular memory, though the case that sent him to the gallows was a separate one.",
+    "timelineEvents": [
+      "kakori-train-action"
+    ],
+    "movements": [
+      "revolutionary-movement"
+    ],
+    "roles": [
+      "revolutionary"
+    ],
+    "tags": [
+      "HRA",
+      "Kakori",
+      "martyr"
+    ],
+    "era": "non-cooperation",
+    "forgotten": true
+  },
+  {
+    "id": "sachindra-nath-sanyal",
+    "slug": "sachindra-nath-sanyal",
+    "name": "Sachindra Nath Sanyal",
+    "portrait": "/images/fighters/sachindra-nath-sanyal.jpg",
+    "birthYear": 1893,
+    "deathYear": 1942,
+    "birthDateLabel": "3 June 1893",
+    "deathDateLabel": "7 February 1942",
+    "birthPlace": "Varanasi, United Provinces (now Uttar Pradesh)",
+    "region": "north",
+    "states": [
+      "Uttar Pradesh",
+      "West Bengal"
+    ],
+    "gender": "male",
+    "summary": "Co-founder of the Hindustan Republican Association and mentor to the generation that followed — transported to the Andaman Cellular Jail twice, first for the 1915 Benares Conspiracy Case and again after Kakori, and author of the underground memoir Bandi Jivan.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Republican revolution; principal architect of the HRA’s founding vision.",
+    "legacy": "A mentor to the HSRA generation that followed him; Bandi Jivan remains a founding text of revolutionary prison writing.",
+    "timelineEvents": [
+      "kakori-train-action"
+    ],
+    "movements": [
+      "revolutionary-movement"
+    ],
+    "roles": [
+      "revolutionary",
+      "writer-poet",
+      "organizer"
+    ],
+    "tags": [
+      "HRA",
+      "Kakori",
+      "Cellular Jail",
+      "writer"
+    ],
+    "era": "non-cooperation",
+    "forgotten": true
+  },
+  {
+    "id": "bhagwati-charan-vohra",
+    "slug": "bhagwati-charan-vohra",
+    "name": "Bhagwati Charan Vohra",
+    "portrait": "/images/fighters/bhagwati-charan-vohra.jpg",
+    "birthYear": 1903,
+    "deathYear": 1930,
+    "birthDateLabel": "15 November 1903",
+    "deathDateLabel": "28 May 1930",
+    "birthPlace": "Lahore, Punjab (now in Pakistan)",
+    "region": "north",
+    "states": [
+      "Punjab"
+    ],
+    "gender": "male",
+    "summary": "The HSRA’s philosopher — co-founder of the Naujawan Bharat Sabha and, with Yashpal, author of \"The Philosophy of the Bomb\" answering Gandhi’s critique of revolutionary violence — killed testing a bomb on the banks of the Ravi in 1930.",
+    "readingMinutes": 1,
+    "connectionCount": 1,
+    "ideology": "Revolutionary socialism; defended armed struggle against Gandhian nonviolence in \"The Philosophy of the Bomb\".",
+    "legacy": "The HSRA’s clearest theoretical voice; his pamphlet remains a key primary text of the era’s argument between constitutional and revolutionary politics.",
+    "timelineEvents": [
+      "simon-commission-protest"
+    ],
+    "movements": [
+      "revolutionary-movement"
+    ],
+    "roles": [
+      "revolutionary",
+      "writer-poet",
+      "organizer"
+    ],
+    "tags": [
+      "HSRA",
+      "Punjab",
+      "martyr",
+      "ideologue"
+    ],
+    "era": "civil-disobedience",
+    "forgotten": true
+  },
+  {
     "id": "birsa-munda",
     "slug": "birsa-munda",
     "name": "Birsa Munda",
@@ -2924,6 +3501,84 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "era": "civil-disobedience",
     "featured": true,
+    "forgotten": true
+  },
+  {
+    "id": "govind-guru",
+    "slug": "govind-guru",
+    "name": "Govind Guru",
+    "alternateNames": [
+      "Govindgiri",
+      "Govind Giri"
+    ],
+    "birthYear": 1858,
+    "deathYear": 1931,
+    "deathDateLabel": "30 October 1931",
+    "birthPlace": "Bansiya, Dungarpur State, Rajasthan",
+    "region": "west",
+    "states": [
+      "Rajasthan",
+      "Gujarat",
+      "Madhya Pradesh"
+    ],
+    "gender": "male",
+    "summary": "Banjara-born reformer who became guru to the Bhils of the Rajasthan–Gujarat–Madhya Pradesh borderlands, building the Bhagat movement against liquor and exploitation and leading tens of thousands to Mangarh hill, where troops opened fire on 17 November 1913.",
+    "readingMinutes": 2,
+    "connectionCount": 0,
+    "ideology": "Social reform and self-respect for the Bhils, growing into demands for self-rule.",
+    "legacy": "Revered across the Bhil country of Rajasthan, Gujarat and Madhya Pradesh; Govind Guru University in Banswara and an annual Mangarh gathering carry his memory forward.",
+    "timelineEvents": [],
+    "movements": [
+      "tribal-resistance"
+    ],
+    "roles": [
+      "tribal-leader",
+      "social-reformer"
+    ],
+    "tags": [
+      "Adivasi",
+      "Bhil",
+      "Rajasthan",
+      "Mangarh"
+    ],
+    "era": "swadeshi-era",
+    "forgotten": true
+  },
+  {
+    "id": "phulo-jhano-murmu",
+    "slug": "phulo-and-jhano-murmu",
+    "name": "Phulo Murmu & Jhano Murmu",
+    "alternateNames": [
+      "Phulo Murmu",
+      "Jhano Murmu"
+    ],
+    "deathYear": 1855,
+    "birthPlace": "Bhognadih, Santhal Parganas, Jharkhand",
+    "region": "east",
+    "states": [
+      "Jharkhand"
+    ],
+    "gender": "female",
+    "summary": "Santhal sisters of Sidhu and Kanhu Murmu, remembered in Hul tradition as taking up arms in the 1855 Santhal rebellion alongside their brothers — their story carried almost entirely by Santhal oral memory rather than colonial record.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Honoured alongside Sidhu and Kanhu on Hul Diwas; Santhal cultural and political commemorations increasingly raise their names beside their brothers’.",
+    "timelineEvents": [
+      "santhal-hul"
+    ],
+    "movements": [
+      "tribal-resistance"
+    ],
+    "roles": [
+      "tribal-leader"
+    ],
+    "tags": [
+      "Santhal",
+      "Adivasi",
+      "Jharkhand",
+      "women"
+    ],
+    "era": "early-resistance",
     "forgotten": true
   },
   {
@@ -3229,6 +3884,120 @@ export const fighterSummaries: FighterSummary[] = [
       "Assam",
       "martyr",
       "nonviolence"
+    ],
+    "era": "quit-india-and-ina",
+    "forgotten": true
+  },
+  {
+    "id": "shah-nawaz-khan",
+    "slug": "shah-nawaz-khan",
+    "name": "Shah Nawaz Khan",
+    "portrait": "/images/fighters/shah-nawaz-khan.jpg",
+    "birthYear": 1914,
+    "deathYear": 1983,
+    "birthDateLabel": "24 January 1914",
+    "deathDateLabel": "9 December 1983",
+    "birthPlace": "Rawalpindi, Punjab (now in Pakistan)",
+    "region": "north",
+    "states": [
+      "Punjab",
+      "Delhi",
+      "Abroad"
+    ],
+    "gender": "male",
+    "summary": "One of the three INA officers tried together at the Red Fort in November 1945 — \"Sahgal, Dhillon, Shah Nawaz\" — a British Indian Army officer turned INA divisional commander whose joint trial united India across communal lines.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "The \"Shah Nawaz\" of the Red Fort trial slogan; later a long-serving member of independent India’s Parliament.",
+    "timelineEvents": [
+      "ina-trials"
+    ],
+    "movements": [
+      "azad-hind"
+    ],
+    "roles": [
+      "military-leader",
+      "political-leader"
+    ],
+    "tags": [
+      "INA",
+      "Red Fort trial"
+    ],
+    "era": "quit-india-and-ina",
+    "forgotten": false
+  },
+  {
+    "id": "prem-kumar-sahgal",
+    "slug": "prem-kumar-sahgal",
+    "name": "Prem Kumar Sahgal",
+    "alternateNames": [
+      "Prem Sahgal"
+    ],
+    "portrait": "/images/fighters/prem-kumar-sahgal.jpg",
+    "birthYear": 1917,
+    "deathYear": 1992,
+    "birthDateLabel": "25 March 1917",
+    "deathDateLabel": "17 October 1992",
+    "region": "north",
+    "states": [
+      "Punjab",
+      "Delhi",
+      "Abroad"
+    ],
+    "gender": "male",
+    "summary": "The second of the Red Fort trial’s three officers — an INA divisional commander in the Burma campaign whose joint trial with Shah Nawaz Khan and Gurbaksh Singh Dhillon became a national cause, and who later married Captain Lakshmi Sahgal.",
+    "readingMinutes": 1,
+    "connectionCount": 1,
+    "legacy": "Remembered as one of \"Sahgal, Dhillon, Shah Nawaz\"; his marriage to Captain Lakshmi Sahgal joined two of the INA’s best-known figures.",
+    "timelineEvents": [
+      "ina-trials"
+    ],
+    "movements": [
+      "azad-hind"
+    ],
+    "roles": [
+      "military-leader"
+    ],
+    "tags": [
+      "INA",
+      "Red Fort trial"
+    ],
+    "era": "quit-india-and-ina",
+    "forgotten": true
+  },
+  {
+    "id": "gurbaksh-singh-dhillon",
+    "slug": "gurbaksh-singh-dhillon",
+    "name": "Gurbaksh Singh Dhillon",
+    "portrait": "/images/fighters/gurbaksh-singh-dhillon.jpg",
+    "birthYear": 1914,
+    "deathYear": 2006,
+    "birthDateLabel": "18 March 1914",
+    "deathDateLabel": "6 February 2006",
+    "region": "north",
+    "states": [
+      "Punjab",
+      "Delhi",
+      "Abroad"
+    ],
+    "gender": "male",
+    "summary": "The third officer of the Red Fort trial, a Sikh — tried alongside a Hindu and a Muslim comrade by deliberate design, so that Britain’s case against the INA would unite every community against it.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "The Sikh officer of \"Sahgal, Dhillon, Shah Nawaz\" — proof, in the trial’s own design, that the INA’s cause crossed every communal line.",
+    "timelineEvents": [
+      "ina-trials"
+    ],
+    "movements": [
+      "azad-hind"
+    ],
+    "roles": [
+      "military-leader"
+    ],
+    "tags": [
+      "INA",
+      "Red Fort trial",
+      "Sikh"
     ],
     "era": "quit-india-and-ina",
     "forgotten": true
@@ -3730,10 +4499,525 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "era": "quit-india-and-ina",
     "forgotten": true
+  },
+  {
+    "id": "sardar-vedaratnam-pillai",
+    "slug": "sardar-vedaratnam-pillai",
+    "name": "Sardar Vedaratnam Pillai",
+    "birthYear": 1897,
+    "deathYear": 1961,
+    "birthPlace": "Vedaranyam, Tanjore district, Tamil Nadu",
+    "region": "south",
+    "states": [
+      "Tamil Nadu"
+    ],
+    "gender": "male",
+    "summary": "Landowner and Congress worker of Vedaranyam who organised the coastal end of the 1930 salt march that C. Rajagopalachari led from Tiruchirappalli, mobilising the villages of the Tanjore delta and the salt-pan workers of the coast to receive the marchers.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Remembered in the Tanjore delta as the organiser who made Vedaranyam ready to receive Rajaji’s marchers; his Kasturba Gandhi Kanya Gurukulam still serves the town.",
+    "timelineEvents": [
+      "vedaranyam-salt-march"
+    ],
+    "movements": [
+      "civil-disobedience"
+    ],
+    "roles": [
+      "organizer",
+      "satyagrahi"
+    ],
+    "tags": [
+      "Tamil Nadu",
+      "salt satyagraha",
+      "Vedaranyam"
+    ],
+    "era": "civil-disobedience",
+    "forgotten": true
+  },
+  {
+    "id": "buxi-jagabandhu",
+    "slug": "buxi-jagabandhu",
+    "name": "Buxi Jagabandhu Bidyadhar",
+    "alternateNames": [
+      "Jagabandhu Bidyadhar Mohapatra Bhramarbar Ray",
+      "Bakshi Jagabandhu"
+    ],
+    "portrait": "/images/fighters/buxi-jagabandhu.jpg",
+    "birthYear": 1773,
+    "deathYear": 1829,
+    "deathDateLabel": "24 January 1829",
+    "birthPlace": "Khurda, Odisha",
+    "region": "east",
+    "states": [
+      "Odisha"
+    ],
+    "gender": "male",
+    "summary": "Military commander (Buxi) of the Raja of Khurda who led the Paika Rebellion of 1817 against Company land-revenue and administrative reforms that had dispossessed Odisha’s hereditary Paika militia.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Odisha’s foremost symbol of early resistance to Company rule; commemorated at the Paika Rebellion’s 2017 bicentenary.",
+    "timelineEvents": [],
+    "movements": [
+      "early-uprisings"
+    ],
+    "roles": [
+      "military-leader"
+    ],
+    "tags": [
+      "Odisha",
+      "Paika Rebellion",
+      "early resistance"
+    ],
+    "era": "early-resistance",
+    "forgotten": true
+  },
+  {
+    "id": "veer-surendra-sai",
+    "slug": "veer-surendra-sai",
+    "name": "Veer Surendra Sai",
+    "portrait": "/images/fighters/veer-surendra-sai.jpg",
+    "birthYear": 1809,
+    "deathYear": 1884,
+    "birthPlace": "Khinda, Sambalpur, Odisha",
+    "region": "east",
+    "states": [
+      "Odisha"
+    ],
+    "gender": "male",
+    "summary": "Rightful claimant to the Sambalpur throne who led nearly four decades of resistance against Company rule from the forests of western Odisha, captured and released more than once, and who died in British custody at Asirgarh fort in 1884.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Sambalpur’s airport and Veer Surendra Sai University of Technology are named for him; a central figure of Odisha’s resistance history.",
+    "timelineEvents": [],
+    "movements": [
+      "early-uprisings",
+      "great-revolt"
+    ],
+    "roles": [
+      "military-leader",
+      "ruler"
+    ],
+    "tags": [
+      "Odisha",
+      "Sambalpur",
+      "1857",
+      "early resistance"
+    ],
+    "era": "revolt-1857",
+    "forgotten": true
+  },
+  {
+    "id": "laxman-naik",
+    "slug": "laxman-naik",
+    "name": "Laxman Naik",
+    "alternateNames": [
+      "Laxman Nayak"
+    ],
+    "portrait": "/images/fighters/laxman-naik.jpg",
+    "birthYear": 1899,
+    "deathYear": 1943,
+    "birthDateLabel": "22 November 1899",
+    "deathDateLabel": "29 March 1943",
+    "birthPlace": "Tentuligumma, Koraput district, Odisha",
+    "region": "east",
+    "states": [
+      "Odisha"
+    ],
+    "gender": "male",
+    "summary": "Bhumia tribal Gandhian leader from Koraput who led a peaceful Quit India march in 1942, was convicted of a forest guard’s murder on evidence many historians consider fabricated, and was hanged in 1943 — one of the few executions carried out during the Quit India movement.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Gandhian non-violence, applied to tribal Koraput.",
+    "legacy": "Remembered in Odisha as the \"Gandhi of Koraput\"; commemorated with a Government of India postage stamp.",
+    "timelineEvents": [],
+    "movements": [
+      "quit-india"
+    ],
+    "roles": [
+      "tribal-leader",
+      "satyagrahi"
+    ],
+    "tags": [
+      "Odisha",
+      "Quit India",
+      "tribal leader",
+      "martyr"
+    ],
+    "era": "quit-india-and-ina",
+    "forgotten": true
+  },
+  {
+    "id": "gopabandhu-das",
+    "slug": "gopabandhu-das",
+    "name": "Gopabandhu Das",
+    "alternateNames": [
+      "Utkalmani"
+    ],
+    "portrait": "/images/fighters/gopabandhu-das.jpg",
+    "birthYear": 1877,
+    "deathYear": 1928,
+    "birthPlace": "Suando, Puri district, Odisha",
+    "region": "east",
+    "states": [
+      "Odisha"
+    ],
+    "gender": "male",
+    "summary": "Known as Utkalmani — \"the jewel of Odisha\" — he founded the nationalist Satyabadi school in 1909 and the newspaper Samaja, led the Non-Cooperation movement in Odisha through the 1920s, and worked to unite Odia-speaking tracts scattered across neighbouring provinces.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Gandhian nationalism combined with Odia linguistic and regional self-assertion.",
+    "legacy": "Honoured as Utkalmani; the Satyabadi school and Samaja newspaper both endure as part of his legacy.",
+    "timelineEvents": [],
+    "movements": [
+      "non-cooperation"
+    ],
+    "roles": [
+      "political-leader",
+      "educator",
+      "journalist"
+    ],
+    "tags": [
+      "Odisha",
+      "Non-Cooperation",
+      "education",
+      "journalism"
+    ],
+    "era": "non-cooperation",
+    "forgotten": true
+  },
+  {
+    "id": "sangolli-rayanna",
+    "slug": "sangolli-rayanna",
+    "name": "Sangolli Rayanna",
+    "portrait": "/images/fighters/sangolli-rayanna.jpg",
+    "birthYear": 1798,
+    "deathYear": 1831,
+    "birthDateLabel": "15 August 1798",
+    "deathDateLabel": "26 January 1831",
+    "birthPlace": "Sangolli, Belagavi district, Karnataka",
+    "region": "south",
+    "states": [
+      "Karnataka"
+    ],
+    "gender": "male",
+    "summary": "A commander in Rani Chennamma of Kittur’s forces who kept up armed resistance against the East India Company in the Kittur region after her defeat, and was captured and hanged in 1831.",
+    "readingMinutes": 1,
+    "connectionCount": 1,
+    "legacy": "Remembered across Karnataka in folk song alongside Rani Chennamma; a memorial at Nandagad marks his execution.",
+    "timelineEvents": [
+      "kittur-rebellion"
+    ],
+    "movements": [
+      "early-uprisings"
+    ],
+    "roles": [
+      "military-leader"
+    ],
+    "tags": [
+      "Karnataka",
+      "Kittur",
+      "early resistance",
+      "martyr"
+    ],
+    "era": "early-resistance",
+    "forgotten": true
+  },
+  {
+    "id": "karnad-sadashiva-rao",
+    "slug": "karnad-sadashiva-rao",
+    "name": "Karnad Sadashiva Rao",
+    "portrait": "/images/fighters/karnad-sadashiva-rao.jpg",
+    "birthYear": 1881,
+    "deathYear": 1937,
+    "deathDateLabel": "9 January 1937",
+    "birthPlace": "Mangalore, Madras Presidency (now Karnataka)",
+    "region": "south",
+    "states": [
+      "Karnataka"
+    ],
+    "gender": "male",
+    "summary": "A Mangalore-born lawyer who gave up his practice and his wealth to build the Congress in coastal and southern Karnataka from 1919 onward, and founded the Mahila Sabha to help widows and poor women.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Sadashivanagar in Bangalore and a road in Mangalore are named in his honour.",
+    "timelineEvents": [],
+    "movements": [
+      "non-cooperation",
+      "civil-disobedience"
+    ],
+    "roles": [
+      "political-leader",
+      "lawyer",
+      "social-reformer"
+    ],
+    "tags": [
+      "Karnataka",
+      "Congress",
+      "Mangalore",
+      "social reform"
+    ],
+    "era": "non-cooperation",
+    "forgotten": true
+  },
+  {
+    "id": "velu-thampi-dalawa",
+    "slug": "velu-thampi-dalawa",
+    "name": "Velu Thampi Dalawa",
+    "alternateNames": [
+      "Veluthampi Dalawa"
+    ],
+    "portrait": "/images/fighters/velu-thampi-dalawa.jpg",
+    "birthYear": 1765,
+    "deathYear": 1809,
+    "birthPlace": "Kalkulam, Travancore (present-day Tamil Nadu/Kerala border region)",
+    "region": "south",
+    "states": [
+      "Kerala"
+    ],
+    "gender": "male",
+    "summary": "Dalawa (chief minister) of Travancore who resisted the East India Company’s crushing subsidiary-alliance demands, issued the Kundara Proclamation of 1809 calling Travancore’s people to rise, and died besieged by British forces — one of the earliest Indian officials to openly defy Company power.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Commemorated annually at Kundara; remembered in Kerala as one of the earliest officials to defy Company rule by force.",
+    "timelineEvents": [],
+    "movements": [
+      "early-uprisings"
+    ],
+    "roles": [
+      "political-leader",
+      "military-leader"
+    ],
+    "tags": [
+      "Kerala",
+      "Travancore",
+      "early resistance",
+      "Kundara Proclamation"
+    ],
+    "era": "early-resistance",
+    "forgotten": true
+  },
+  {
+    "id": "ak-gopalan",
+    "slug": "ak-gopalan",
+    "name": "A. K. Gopalan",
+    "alternateNames": [
+      "AKG",
+      "Ayillyath Kuttiari Gopalan Nambiar"
+    ],
+    "portrait": "/images/fighters/ak-gopalan.jpg",
+    "birthYear": 1904,
+    "deathYear": 1977,
+    "birthPlace": "Peralasseri, Kannur district, Kerala",
+    "region": "south",
+    "states": [
+      "Kerala"
+    ],
+    "gender": "male",
+    "summary": "Known to all as AKG — a Malabar peasant organiser who joined the 1930 Salt Satyagraha, was imprisoned repeatedly through the 1930s and 1940s for Congress and later Kisan Sabha organising among Malabar’s peasantry, and became one of Kerala’s founding Communist leaders.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Began as a Congress satyagrahi; moved through the Congress Socialist Party to Communism by 1939, organising around peasant and labour rights.",
+    "legacy": "Remembered in Kerala as AKG, a founding figure of both its peasant movement and its Communist politics.",
+    "timelineEvents": [],
+    "movements": [
+      "civil-disobedience"
+    ],
+    "roles": [
+      "political-leader",
+      "organizer",
+      "satyagrahi"
+    ],
+    "tags": [
+      "Kerala",
+      "Malabar",
+      "Salt Satyagraha",
+      "Kisan Sabha"
+    ],
+    "era": "civil-disobedience",
+    "forgotten": true
+  },
+  {
+    "id": "uyyalawada-narasimha-reddy",
+    "slug": "uyyalawada-narasimha-reddy",
+    "name": "Uyyalawada Narasimha Reddy",
+    "birthYear": 1806,
+    "deathYear": 1847,
+    "birthDateLabel": "24 November 1806",
+    "deathDateLabel": "23 February 1847",
+    "birthPlace": "Kurnool district, Andhra Pradesh",
+    "region": "south",
+    "states": [
+      "Andhra Pradesh"
+    ],
+    "gender": "male",
+    "summary": "A palegar (poligar) chief of Rayalaseema who led an armed rebellion against East India Company revenue demands in 1846–47 — one of the earliest organized armed uprisings in the Andhra country, roughly a decade before the Revolt of 1857 — and was captured and hanged in 1847.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Remembered in Andhra Pradesh as an early martyr of armed resistance to Company rule; his story reached a national audience through the 2019 film Sye Raa Narasimha Reddy.",
+    "timelineEvents": [],
+    "movements": [
+      "early-uprisings"
+    ],
+    "roles": [
+      "ruler",
+      "military-leader"
+    ],
+    "tags": [
+      "Andhra Pradesh",
+      "Rayalaseema",
+      "early resistance",
+      "poligar"
+    ],
+    "era": "early-resistance",
+    "forgotten": true
+  },
+  {
+    "id": "pingali-venkayya",
+    "slug": "pingali-venkayya",
+    "name": "Pingali Venkayya",
+    "birthYear": 1876,
+    "deathYear": 1963,
+    "birthDateLabel": "2 August 1876",
+    "deathDateLabel": "4 July 1963",
+    "birthPlace": "Bhatlapenumarru, Krishna district, Andhra Pradesh",
+    "region": "south",
+    "states": [
+      "Andhra Pradesh"
+    ],
+    "gender": "male",
+    "summary": "Agriculturist, geologist and educator who spent decades campaigning for a national flag, and whose 1921 design — presented to Gandhi at the Vijayawada AICC session — became the Congress flag and the direct ancestor of independent India’s Tricolour.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Widely honoured today as the designer of the Indian national flag; commemorated on an Indian postage stamp in 2009.",
+    "timelineEvents": [],
+    "movements": [
+      "non-cooperation"
+    ],
+    "roles": [
+      "organizer",
+      "educator"
+    ],
+    "tags": [
+      "Andhra Pradesh",
+      "national flag",
+      "Congress"
+    ],
+    "era": "non-cooperation",
+    "forgotten": true
+  },
+  {
+    "id": "turrebaz-khan",
+    "slug": "turrebaz-khan",
+    "name": "Turrebaz Khan",
+    "alternateNames": [
+      "Turram Khan"
+    ],
+    "deathYear": 1859,
+    "deathDateLabel": "24 January 1859 (some accounts give 1857)",
+    "region": "south",
+    "states": [
+      "Telangana"
+    ],
+    "gender": "male",
+    "summary": "Rohilla leader who, with Maulvi Allauddin, led an armed rising against the British Residency in Hyderabad in July 1857 in sympathy with the wider Revolt of 1857; captured and later killed by British-Nizam forces, though accounts differ on the exact date and manner of his death.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Hyderabad’s Turrebaz Khan Stadium and other landmarks preserve his memory as an early resister to British power in the Deccan.",
+    "timelineEvents": [],
+    "movements": [
+      "great-revolt"
+    ],
+    "roles": [
+      "revolutionary",
+      "military-leader"
+    ],
+    "tags": [
+      "Telangana",
+      "Hyderabad",
+      "Revolt of 1857"
+    ],
+    "era": "revolt-1857",
+    "forgotten": true
+  },
+  {
+    "id": "bir-tikendrajit",
+    "slug": "bir-tikendrajit",
+    "name": "Bir Tikendrajit",
+    "alternateNames": [
+      "Yuvraj Tikendrajit Singh",
+      "Senapati Tikendrajit"
+    ],
+    "birthYear": 1856,
+    "deathYear": 1891,
+    "deathDateLabel": "13 August 1891",
+    "birthPlace": "Imphal, Manipur",
+    "region": "northeast",
+    "states": [
+      "Manipur"
+    ],
+    "gender": "male",
+    "summary": "Senapati (commander-in-chief) of Manipur and the central figure of the Anglo-Manipur War of 1891, whose resistance to British interference in the kingdom’s succession led to the deaths of several British officers and, after the kingdom fell, his own public execution — an event Manipur still marks each year.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Manipur observes 13 August as Patriots’ Day in his memory and that of General Thangal and others executed after the war.",
+    "timelineEvents": [],
+    "movements": [],
+    "roles": [
+      "military-leader",
+      "ruler"
+    ],
+    "tags": [
+      "Manipur",
+      "Anglo-Manipur War",
+      "Northeast"
+    ],
+    "era": "rise-of-nationalism",
+    "forgotten": true
+  },
+  {
+    "id": "maniram-dewan",
+    "slug": "maniram-dewan",
+    "name": "Maniram Dewan",
+    "alternateNames": [
+      "Maniram Dutta Baruah"
+    ],
+    "birthYear": 1806,
+    "deathYear": 1858,
+    "birthDateLabel": "17 April 1806",
+    "deathDateLabel": "26 February 1858",
+    "birthPlace": "Charing, near Jorhat, Assam",
+    "region": "northeast",
+    "states": [
+      "Assam"
+    ],
+    "gender": "male",
+    "summary": "Assamese aristocrat and Assam’s first independent tea planter who, disillusioned with Company rule, worked to restore the Ahom monarchy and was hanged at Jorhat in 1858 for his part in a plot to incite the 1857 revolt in Assam.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Remembered in Assam as an early martyr of the freedom struggle and the founder of Assamese-owned tea planting.",
+    "timelineEvents": [],
+    "movements": [
+      "great-revolt"
+    ],
+    "roles": [
+      "organizer",
+      "political-leader"
+    ],
+    "tags": [
+      "Assam",
+      "tea",
+      "Revolt of 1857",
+      "Ahom"
+    ],
+    "era": "revolt-1857",
+    "forgotten": true
   }
 ];
 
 export const fighterSourceFile: Record<string, string> = {
+  "uyyalawada-narasimha-reddy": "andhra-telangana",
+  "pingali-venkayya": "andhra-telangana",
+  "turrebaz-khan": "andhra-telangana",
   "puli-thevar": "early-resistance",
   "velu-nachiyar": "early-resistance",
   "pazhassi-raja": "early-resistance",
@@ -3770,6 +5054,14 @@ export const fighterSourceFile: Record<string, string> = {
   "pritilata-waddedar": "hsra-revolutionaries",
   "kalpana-datta": "hsra-revolutionaries",
   "udham-singh": "hsra-revolutionaries",
+  "rajendra-lahiri": "hsra-revolutionaries",
+  "roshan-singh": "hsra-revolutionaries",
+  "sachindra-nath-sanyal": "hsra-revolutionaries",
+  "bhagwati-charan-vohra": "hsra-revolutionaries",
+  "sangolli-rayanna": "karnataka",
+  "karnad-sadashiva-rao": "karnataka",
+  "velu-thampi-dalawa": "kerala",
+  "ak-gopalan": "kerala",
   "dadabhai-naoroji": "nationalists",
   "surendranath-banerjee": "nationalists",
   "gopal-krishna-gokhale": "nationalists",
@@ -3780,6 +5072,19 @@ export const fighterSourceFile: Record<string, string> = {
   "annie-besant": "nationalists",
   "madan-mohan-malaviya": "nationalists",
   "mohammad-ali-jouhar": "nationalists",
+  "motilal-nehru": "nationalists",
+  "chittaranjan-das": "nationalists",
+  "virendranath-chattopadhyaya": "nationalists",
+  "sohan-singh-bhakna": "nationalists",
+  "baba-gurdit-singh": "nationalists",
+  "saifuddin-kitchlew": "nationalists",
+  "bhulabhai-desai": "nationalists",
+  "bir-tikendrajit": "northeast-leaders",
+  "maniram-dewan": "northeast-leaders",
+  "buxi-jagabandhu": "odisha",
+  "veer-surendra-sai": "odisha",
+  "laxman-naik": "odisha",
+  "gopabandhu-das": "odisha",
   "subhas-chandra-bose": "quit-india-ina",
   "lakshmi-sahgal": "quit-india-ina",
   "aruna-asaf-ali": "quit-india-ina",
@@ -3787,6 +5092,9 @@ export const fighterSourceFile: Record<string, string> = {
   "matangini-hazra": "quit-india-ina",
   "kanaklata-barua": "quit-india-ina",
   "kushal-konwar": "quit-india-ina",
+  "shah-nawaz-khan": "quit-india-ina",
+  "prem-kumar-sahgal": "quit-india-ina",
+  "gurbaksh-singh-dhillon": "quit-india-ina",
   "mangal-pandey": "revolt-1857",
   "rani-lakshmibai": "revolt-1857",
   "jhalkari-bai": "revolt-1857",
@@ -3795,6 +5103,9 @@ export const fighterSourceFile: Record<string, string> = {
   "kunwar-singh": "revolt-1857",
   "nana-saheb": "revolt-1857",
   "bahadur-shah-zafar": "revolt-1857",
+  "azimullah-khan": "revolt-1857",
+  "uda-devi": "revolt-1857",
+  "veer-narayan-singh": "revolt-1857",
   "khudiram-bose": "swadeshi-revolutionaries",
   "bagha-jatin": "swadeshi-revolutionaries",
   "subramania-bharati": "swadeshi-revolutionaries",
@@ -3806,6 +5117,7 @@ export const fighterSourceFile: Record<string, string> = {
   "lala-har-dayal": "swadeshi-revolutionaries",
   "kartar-singh-sarabha": "swadeshi-revolutionaries",
   "rash-behari-bose": "swadeshi-revolutionaries",
+  "prafulla-chaki": "swadeshi-revolutionaries",
   "ondiveeran": "tamil-nadu",
   "veerapandiya-kattabomman": "tamil-nadu",
   "marudhu-brothers": "tamil-nadu",
@@ -3818,8 +5130,11 @@ export const fighterSourceFile: Record<string, string> = {
   "rukmini-lakshmipathi": "tamil-nadu",
   "k-kamaraj": "tamil-nadu",
   "muthuramalinga-thevar": "tamil-nadu",
+  "sardar-vedaratnam-pillai": "tamil-nadu",
   "birsa-munda": "tribal-leaders",
   "alluri-sitarama-raju": "tribal-leaders",
   "komaram-bheem": "tribal-leaders",
-  "rani-gaidinliu": "tribal-leaders"
+  "rani-gaidinliu": "tribal-leaders",
+  "govind-guru": "tribal-leaders",
+  "phulo-and-jhano-murmu": "tribal-leaders"
 };
