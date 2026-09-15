@@ -860,6 +860,8 @@ export const tamilNaduFighters: FreedomFighter[] = [
     birthYear: 1897,
     deathYear: 1961,
     birthPlace: 'Vedaranyam, Tanjore district, Tamil Nadu',
+    portrait: '/images/fighters/sardar-vedaratnam-pillai.jpg',
+    portraitNote: { kind: 'stamp', caption: 'Commemorative postage stamp issued by India Post, 1998, marking his birth centenary.', credit: 'India Post', created: '1998' },
     region: 'south',
     states: ['Tamil Nadu'],
     gender: 'male',

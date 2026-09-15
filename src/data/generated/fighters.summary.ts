@@ -169,6 +169,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Syed Mir Nisar Ali"
     ],
+    "portrait": "/images/fighters/titumir.jpg",
     "birthYear": 1782,
     "deathYear": 1831,
     "deathDateLabel": "19 November 1831",
@@ -637,6 +638,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "azimullah-khan",
     "slug": "azimullah-khan",
     "name": "Azimullah Khan",
+    "portrait": "/images/fighters/azimullah-khan.jpg",
     "birthYear": 1830,
     "deathYear": 1859,
     "birthDateLabel": "17 September 1830",
@@ -672,6 +674,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "uda-devi",
     "slug": "uda-devi",
     "name": "Uda Devi",
+    "portrait": "/images/fighters/uda-devi.jpg",
     "deathYear": 1857,
     "deathDateLabel": "November 1857 (Battle of Sikandar Bagh)",
     "birthPlace": "Awadh, Uttar Pradesh",
@@ -706,6 +709,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "veer-narayan-singh",
     "slug": "veer-narayan-singh",
     "name": "Veer Narayan Singh",
+    "portrait": "/images/fighters/veer-narayan-singh.jpg",
     "birthYear": 1795,
     "deathYear": 1857,
     "deathDateLabel": "10 December 1857",
@@ -1178,6 +1182,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "motilal-nehru",
     "slug": "motilal-nehru",
     "name": "Motilal Nehru",
+    "portrait": "/images/fighters/motilal-nehru.jpg",
     "birthYear": 1861,
     "deathYear": 1931,
     "birthDateLabel": "6 May 1861",
@@ -1218,6 +1223,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Deshbandhu"
     ],
+    "portrait": "/images/fighters/chittaranjan-das.jpg",
     "birthYear": 1870,
     "deathYear": 1925,
     "birthDateLabel": "5 November 1870",
@@ -1256,6 +1262,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Chatto"
     ],
+    "portrait": "/images/fighters/virendranath-chattopadhyaya.jpg",
     "birthYear": 1880,
     "deathYear": 1937,
     "birthDateLabel": "31 October 1880",
@@ -1293,6 +1300,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "sohan-singh-bhakna",
     "slug": "sohan-singh-bhakna",
     "name": "Sohan Singh Bhakna",
+    "portrait": "/images/fighters/sohan-singh-bhakna.jpg",
     "birthYear": 1870,
     "deathYear": 1968,
     "birthPlace": "Bhakna, Amritsar district, Punjab",
@@ -1328,6 +1336,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "baba-gurdit-singh",
     "slug": "baba-gurdit-singh",
     "name": "Baba Gurdit Singh",
+    "portrait": "/images/fighters/baba-gurdit-singh.jpg",
     "birthYear": 1860,
     "deathYear": 1954,
     "birthPlace": "Sarhali, Amritsar district, Punjab",
@@ -1369,6 +1378,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Dr Saifuddin Kitchlew"
     ],
+    "portrait": "/images/fighters/saifuddin-kitchlew.jpg",
     "birthYear": 1888,
     "deathYear": 1963,
     "birthDateLabel": "15 January 1888",
@@ -1409,6 +1419,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "bhulabhai-desai",
     "slug": "bhulabhai-desai",
     "name": "Bhulabhai Desai",
+    "portrait": "/images/fighters/bhulabhai-desai.png",
     "birthYear": 1877,
     "deathYear": 1946,
     "birthDateLabel": "13 October 1877",
@@ -1488,6 +1499,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Sarala Devi"
     ],
+    "portrait": "/images/fighters/sarala-devi-chaudhurani.jpg",
     "birthYear": 1872,
     "deathYear": 1945,
     "birthDateLabel": "9 September 1872",
@@ -1977,6 +1989,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "prafulla-chaki",
     "slug": "prafulla-chaki",
     "name": "Prafulla Chaki",
+    "portrait": "/images/fighters/prafulla-chaki.jpg",
     "birthYear": 1888,
     "deathYear": 1908,
     "birthDateLabel": "10 December 1888",
@@ -2015,6 +2028,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "bina-das",
     "slug": "bina-das",
     "name": "Bina Das",
+    "portrait": "/images/fighters/bina-das.jpg",
     "birthYear": 1911,
     "deathYear": 1986,
     "birthDateLabel": "24 August 1911",
@@ -2054,6 +2068,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Santi Ghose"
     ],
+    "portrait": "/images/fighters/shanti-ghosh.jpg",
     "birthYear": 1916,
     "deathYear": 1989,
     "birthDateLabel": "22 November 1916",
@@ -2087,6 +2102,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "suniti-choudhury",
     "slug": "suniti-choudhury",
     "name": "Suniti Choudhury",
+    "portrait": "/images/fighters/suniti-choudhury.jpg",
     "birthYear": 1917,
     "deathYear": 1988,
     "birthDateLabel": "22 May 1917",
@@ -2833,6 +2849,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "amrit-kaur",
     "slug": "amrit-kaur",
     "name": "Rajkumari Amrit Kaur",
+    "portrait": "/images/fighters/amrit-kaur.png",
     "birthYear": 1887,
     "deathYear": 1964,
     "birthDateLabel": "2 February 1887",
@@ -2870,6 +2887,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "vijaya-lakshmi-pandit",
     "slug": "vijaya-lakshmi-pandit",
     "name": "Vijaya Lakshmi Pandit",
+    "portrait": "/images/fighters/vijaya-lakshmi-pandit.jpg",
     "birthYear": 1900,
     "deathYear": 1990,
     "birthDateLabel": "18 August 1900",
@@ -3438,6 +3456,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "rajendra-lahiri",
     "slug": "rajendra-lahiri",
     "name": "Rajendra Nath Lahiri",
+    "portrait": "/images/fighters/rajendra-lahiri.jpg",
     "birthYear": 1901,
     "deathYear": 1927,
     "birthDateLabel": "23 June 1901",
@@ -3476,6 +3495,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "roshan-singh",
     "slug": "roshan-singh",
     "name": "Thakur Roshan Singh",
+    "portrait": "/images/fighters/roshan-singh.jpg",
     "birthYear": 1892,
     "deathYear": 1927,
     "birthDateLabel": "22 January 1892",
@@ -3512,6 +3532,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "sachindra-nath-sanyal",
     "slug": "sachindra-nath-sanyal",
     "name": "Sachindra Nath Sanyal",
+    "portrait": "/images/fighters/sachindra-nath-sanyal.jpg",
     "birthYear": 1893,
     "deathYear": 1942,
     "birthDateLabel": "3 June 1893",
@@ -3552,6 +3573,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "bhagwati-charan-vohra",
     "slug": "bhagwati-charan-vohra",
     "name": "Bhagwati Charan Vohra",
+    "portrait": "/images/fighters/bhagwati-charan-vohra.jpg",
     "birthYear": 1903,
     "deathYear": 1930,
     "birthDateLabel": "15 November 1903",
@@ -3758,6 +3780,7 @@ export const fighterSummaries: FighterSummary[] = [
       "Govindgiri",
       "Govind Giri"
     ],
+    "portrait": "/images/fighters/govind-guru.jpg",
     "birthYear": 1858,
     "deathYear": 1931,
     "deathDateLabel": "30 October 1931",
@@ -4139,6 +4162,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "shah-nawaz-khan",
     "slug": "shah-nawaz-khan",
     "name": "Shah Nawaz Khan",
+    "portrait": "/images/fighters/shah-nawaz-khan.jpg",
     "birthYear": 1914,
     "deathYear": 1983,
     "birthDateLabel": "24 January 1914",
@@ -4179,6 +4203,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Prem Sahgal"
     ],
+    "portrait": "/images/fighters/prem-kumar-sahgal.jpg",
     "birthYear": 1917,
     "deathYear": 1992,
     "birthDateLabel": "25 March 1917",
@@ -4214,6 +4239,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "gurbaksh-singh-dhillon",
     "slug": "gurbaksh-singh-dhillon",
     "name": "Gurbaksh Singh Dhillon",
+    "portrait": "/images/fighters/gurbaksh-singh-dhillon.jpg",
     "birthYear": 1914,
     "deathYear": 2006,
     "birthDateLabel": "18 March 1914",
@@ -4791,6 +4817,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "sardar-vedaratnam-pillai",
     "slug": "sardar-vedaratnam-pillai",
     "name": "Sardar Vedaratnam Pillai",
+    "portrait": "/images/fighters/sardar-vedaratnam-pillai.jpg",
     "birthYear": 1897,
     "deathYear": 1961,
     "birthPlace": "Vedaranyam, Tanjore district, Tamil Nadu",
@@ -4829,6 +4856,7 @@ export const fighterSummaries: FighterSummary[] = [
       "Jagabandhu Bidyadhar Mohapatra Bhramarbar Ray",
       "Bakshi Jagabandhu"
     ],
+    "portrait": "/images/fighters/buxi-jagabandhu.png",
     "birthYear": 1773,
     "deathYear": 1829,
     "deathDateLabel": "24 January 1829",
@@ -4861,6 +4889,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "veer-surendra-sai",
     "slug": "veer-surendra-sai",
     "name": "Veer Surendra Sai",
+    "portrait": "/images/fighters/veer-surendra-sai.jpg",
     "birthYear": 1809,
     "deathYear": 1884,
     "birthPlace": "Khinda, Sambalpur, Odisha",
@@ -4898,6 +4927,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Laxman Nayak"
     ],
+    "portrait": "/images/fighters/laxman-naik.jpg",
     "birthYear": 1899,
     "deathYear": 1943,
     "birthDateLabel": "22 November 1899",
@@ -4937,6 +4967,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Utkalmani"
     ],
+    "portrait": "/images/fighters/gopabandhu-das.jpg",
     "birthYear": 1877,
     "deathYear": 1928,
     "birthPlace": "Suando, Puri district, Odisha",
@@ -4972,6 +5003,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "sangolli-rayanna",
     "slug": "sangolli-rayanna",
     "name": "Sangolli Rayanna",
+    "portrait": "/images/fighters/sangolli-rayanna.jpg",
     "birthYear": 1798,
     "deathYear": 1831,
     "birthDateLabel": "15 August 1798",
@@ -5047,6 +5079,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Veluthampi Dalawa"
     ],
+    "portrait": "/images/fighters/velu-thampi-dalawa.jpg",
     "birthYear": 1765,
     "deathYear": 1809,
     "birthPlace": "Kalkulam, Travancore (present-day Tamil Nadu/Kerala border region)",
@@ -5084,6 +5117,7 @@ export const fighterSummaries: FighterSummary[] = [
       "AKG",
       "Ayillyath Kuttiari Gopalan Nambiar"
     ],
+    "portrait": "/images/fighters/ak-gopalan.jpg",
     "birthYear": 1904,
     "deathYear": 1977,
     "birthPlace": "Peralasseri, Kannur district, Kerala",
@@ -5119,6 +5153,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "uyyalawada-narasimha-reddy",
     "slug": "uyyalawada-narasimha-reddy",
     "name": "Uyyalawada Narasimha Reddy",
+    "portrait": "/images/fighters/uyyalawada-narasimha-reddy.jpg",
     "birthYear": 1806,
     "deathYear": 1847,
     "birthDateLabel": "24 November 1806",
@@ -5154,6 +5189,7 @@ export const fighterSummaries: FighterSummary[] = [
     "id": "pingali-venkayya",
     "slug": "pingali-venkayya",
     "name": "Pingali Venkayya",
+    "portrait": "/images/fighters/pingali-venkayya.jpg",
     "birthYear": 1876,
     "deathYear": 1963,
     "birthDateLabel": "2 August 1876",
@@ -5225,6 +5261,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "G. Durgabai"
     ],
+    "portrait": "/images/fighters/durgabai-deshmukh.jpg",
     "birthYear": 1909,
     "deathYear": 1981,
     "birthDateLabel": "15 July 1909",
@@ -5266,6 +5303,7 @@ export const fighterSummaries: FighterSummary[] = [
       "Yuvraj Tikendrajit Singh",
       "Senapati Tikendrajit"
     ],
+    "portrait": "/images/fighters/bir-tikendrajit.jpg",
     "birthYear": 1856,
     "deathYear": 1891,
     "deathDateLabel": "13 August 1891",
@@ -5300,6 +5338,7 @@ export const fighterSummaries: FighterSummary[] = [
     "alternateNames": [
       "Maniram Dutta Baruah"
     ],
+    "portrait": "/images/fighters/maniram-dewan.jpg",
     "birthYear": 1806,
     "deathYear": 1858,
     "birthDateLabel": "17 April 1806",

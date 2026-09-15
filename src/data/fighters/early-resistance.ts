@@ -313,6 +313,13 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     slug: 'titumir',
     name: 'Titumir',
     alternateNames: ['Syed Mir Nisar Ali'],
+    portrait: '/images/fighters/titumir.jpg',
+    portraitNote: {
+      kind: 'illustration',
+      caption: 'A later artist’s conception of Titumir (Syed Mir Nisar Ali), reproduced from Bangladeshi academic sources. No contemporary (pre-photography-era) likeness is known to survive.',
+      credit: 'Wikimedia Commons (public domain dedication)',
+      created: 'artist and date unknown',
+    },
     birthYear: 1782,
     deathYear: 1831,
     deathDateLabel: '19 November 1831',

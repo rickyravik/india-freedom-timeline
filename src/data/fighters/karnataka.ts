@@ -9,6 +9,13 @@ export const karnatakaFighters: FreedomFighter[] = [
     id: 'sangolli-rayanna',
     slug: 'sangolli-rayanna',
     name: 'Sangolli Rayanna',
+    portrait: '/images/fighters/sangolli-rayanna.jpg',
+    portraitNote: {
+      kind: 'statue',
+      caption: 'Statue of Sangolli Rayanna in Bengaluru. No contemporary (pre-photography-era) likeness of Rayanna is known to survive; Karnataka’s memorials and folk-art depictions are all later commemorative works.',
+      credit: 'Photograph by Chidhuc26, Wikimedia Commons',
+      created: 'photographed 2021',
+    },
     birthYear: 1798,
     deathYear: 1831,
     birthDateLabel: '15 August 1798',

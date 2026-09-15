@@ -307,6 +307,7 @@ export const tribalLeaders: FreedomFighter[] = [
     deathYear: 1931,
     deathDateLabel: '30 October 1931',
     birthPlace: 'Bansiya, Dungarpur State, Rajasthan',
+    portrait: '/images/fighters/govind-guru.jpg',
     region: 'west',
     states: ['Rajasthan', 'Gujarat', 'Madhya Pradesh'],
     gender: 'male',
