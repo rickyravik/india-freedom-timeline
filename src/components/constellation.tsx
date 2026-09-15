@@ -90,17 +90,26 @@ export function Constellation({ subject, connections }: { subject: FighterSummar
               <Link
                 key={c.fighter.id}
                 to={`/fighters/${c.fighter.slug}`}
-                className="group absolute flex w-36 -translate-x-1/2 -translate-y-1/2 flex-col items-center text-center animate-fade-up"
+                className="group absolute w-36 -translate-x-1/2 -translate-y-1/2"
                 /* Rounded: a browser reformats an inline style's percentage to
                    its own precision the instant it's set, which would
                    otherwise no longer match the full-precision string React
                    computes when checking this at hydration. */
-                style={{ left: `${Math.round((p.x / W) * 10000) / 100}%`, top: `${Math.round((p.y / H) * 10000) / 100}%`, animationDelay: `${200 + i * 90}ms` }}
+                style={{ left: `${Math.round((p.x / W) * 10000) / 100}%`, top: `${Math.round((p.y / H) * 10000) / 100}%` }}
               >
-                <span className="stamp mb-1 text-brass-bright">{connectionLabel[c.type]}</span>
-                <PortraitMedallion name={c.fighter.name} era={era} portrait={c.fighter.portrait} size="md" className="transition-transform duration-400 ease-cinematic group-hover:scale-110" />
-                <span className="mt-2 font-body text-xs font-medium leading-tight text-paper-100 transition-colors group-hover:text-brass-bright">{c.fighter.name}</span>
-                <span className="num font-body text-xs text-paper-400">{lifespan(c.fighter)}</span>
+                {/* The entrance animation lives on this inner wrapper, not the
+                   positioned Link above: `animate-fade-up` sets `transform`
+                   itself, which would otherwise overwrite the Link's own
+                   `-translate-x-1/2 -translate-y-1/2` centering transform the
+                   moment the animation finished, leaving every node's
+                   top-left corner (not its centre) sitting at the point the
+                   line was drawn to. */}
+                <div className="flex flex-col items-center text-center animate-fade-up" style={{ animationDelay: `${200 + i * 90}ms` }}>
+                  <span className="stamp mb-1 text-brass-bright">{connectionLabel[c.type]}</span>
+                  <PortraitMedallion name={c.fighter.name} era={era} portrait={c.fighter.portrait} size="md" className="transition-transform duration-400 ease-cinematic group-hover:scale-110" />
+                  <span className="mt-2 font-body text-xs font-medium leading-tight text-paper-100 transition-colors group-hover:text-brass-bright">{c.fighter.name}</span>
+                  <span className="num font-body text-xs text-paper-400">{lifespan(c.fighter)}</span>
+                </div>
               </Link>
             );
           })}
