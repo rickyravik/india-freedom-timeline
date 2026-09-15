@@ -239,4 +239,111 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
     tags: ['Telangana', 'Hyderabad', 'Revolt of 1857'],
     forgotten: true,
   },
+  {
+    id: 'durgabai-deshmukh',
+    slug: 'durgabai-deshmukh',
+    name: 'Durgabai Deshmukh',
+    alternateNames: ['G. Durgabai'],
+    birthYear: 1909,
+    deathYear: 1981,
+    birthDateLabel: '15 July 1909',
+    deathDateLabel: '9 May 1981',
+    birthPlace: 'Rajahmundry, Madras Presidency (now Andhra Pradesh)',
+    region: 'south',
+    states: ['Andhra Pradesh'],
+    gender: 'female',
+    era: 'civil-disobedience',
+    roles: ['political-leader', 'social-reformer', 'lawyer', 'organizer'],
+    summary:
+      'A child bride who left an arranged marriage at fifteen and quit school at twelve in protest at English-medium education, she organized women for the 1930 Salt Satyagraha in Madras and Andhra, was imprisoned three times, founded the Andhra Mahila Sabha, and later trained as a lawyer, going on to serve in the Constituent Assembly and independent India’s first Planning Commission.',
+    shortStory: [
+      {
+        title: 'A school given up',
+        text: 'Durgabai had been married as a small child, by family custom, to a boy from a well-off family. At twelve, during the Non-Cooperation movement of 1921, she left her English-medium school in protest and helped start a small Hindi school for girls in Rajahmundry instead.',
+      },
+      {
+        title: 'Walking away',
+        text: 'At fifteen, with her own family standing by her, Durgabai ended the marriage that had been arranged for her as a child — an unusual and quietly difficult step for a young woman in 1920s Andhra.',
+      },
+      {
+        title: 'Salt and prison',
+        text: 'In 1930 she organized women to join Gandhi’s Salt Satyagraha across Madras and Andhra, and stepped in to lead the Madras movement herself after the veteran Andhra Congress leader Tanguturi Prakasam was arrested. She was arrested in turn and spent close to three years in jail, part of it in solitary confinement.',
+      },
+      {
+        title: 'A sabha for Andhra’s women',
+        text: 'Prison had shown her how little support poor and destitute women could find. Soon after her release she founded the Andhra Mahila Sabha, which grew from a small literacy class into one of South India’s leading institutions for women’s education and welfare.',
+        uncertainty: 'Sources give the Andhra Mahila Sabha’s founding year as either 1937 or 1938; this record follows the more commonly cited 1937 without full certainty.',
+      },
+      {
+        title: 'From prison to the law',
+        text: 'Watching women pass through the courts and jails without help of their own convinced Durgabai to study law herself. She was enrolled at the Madras Bar in 1942, and built a career defending women who could not otherwise afford one.',
+      },
+      {
+        title: 'After freedom',
+        text: 'Independence brought her a seat in the Constituent Assembly of India and, later, membership of the country’s first Planning Commission — a long public career this archive, focused on the freedom struggle itself, does not trace in detail.',
+      },
+    ],
+    fullBiography: [
+      'Durgabai was born in 1909 in Rajahmundry and, by the custom of her family, married as a small child. At twelve, during the Non-Cooperation movement of 1921, she gave up her English-medium schooling in protest and helped start a Hindi school for girls in Rajahmundry; a few years later, at fifteen and with her own family’s support, she ended the child marriage altogether.',
+      'In 1930 she threw herself into organizing women for Gandhi’s Salt Satyagraha in Madras and across Andhra, and took over leadership of the Madras satyagraha when the veteran Andhra Congress leader Tanguturi Prakasam was arrested. She was arrested herself and spent close to three years in prison between 1930 and 1933, including about a year in solitary confinement — an experience that turned her toward the law, so she might one day defend women who had no one else to speak for them.',
+      'Soon after her release she founded the Andhra Mahila Sabha, built initially around adult literacy classes for widowed and destitute women; it grew within a decade into one of South India’s major institutions for women’s education, health and welfare, and remains active today. She was enrolled at the Madras Bar in 1942 and practised law, with a particular commitment to women’s legal aid.',
+      'After independence Durgabai was elected to the Constituent Assembly of India, one of a small number of women members, and later served on the Planning Commission and married the economist C. D. Deshmukh in 1953. This archive, centred on the freedom struggle itself, does not trace her long later career in public life and social work in detail.',
+    ],
+    entryIntoStruggle: 'Organizing women satyagrahis for the 1930 Salt Satyagraha in Madras and Andhra.',
+    achievements: [
+      'Organized women satyagrahis for the 1930 Salt Satyagraha in Madras and Andhra, leading the Madras movement after Tanguturi Prakasam’s arrest',
+      'Founded the Andhra Mahila Sabha, one of South India’s major institutions for women’s education and welfare',
+      'One of the few women members of the Constituent Assembly of India, and later a member of independent India’s first Planning Commission',
+    ],
+    sacrifices: ['Imprisoned three times between 1930 and 1933, including about a year in solitary confinement'],
+    legacy: 'Remembered as a pioneering organizer of women in the freedom movement and the founder of one of South India’s longest-running women’s welfare institutions.',
+    facts: [
+      'She began studying law partly because of what she had seen of women prisoners during her own years in jail.',
+      'She was enrolled at the Madras Bar in 1942, in the year of the Quit India movement.',
+    ],
+    disputed: [
+      {
+        claim: 'The exact founding year of the Andhra Mahila Sabha',
+        note: 'Sources give either 1937 or 1938; this record follows the more commonly cited 1937, but the exact year is not settled.',
+        paragraph: 2,
+      },
+    ],
+    timelineEvents: [],
+    movements: ['civil-disobedience'],
+    organizations: ['inc'],
+    relatedPeople: ['tanguturi-prakasam', 'mahatma-gandhi'],
+    connections: [
+      {
+        id: 'tanguturi-prakasam',
+        type: 'ally',
+        note: 'Organized women satyagrahis alongside him for the 1930 Salt Satyagraha in Madras, and took over leadership of the Madras movement after his arrest.',
+      },
+    ],
+    editorial: {
+      status: 'reviewed',
+      reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)',
+      reviewedOn: '2026-09-15',
+    },
+    sources: [
+      {
+        title: 'Durgabai Deshmukh: profile and Constituent Assembly record',
+        publisher: 'Constitution of India (constitutionofindia.net), CPR India',
+        url: 'https://www.constitutionofindia.net/members/g-durgabai/',
+        type: 'website',
+      },
+      {
+        title: 'Durgabai Deshmukh commemorations',
+        publisher: 'Ministry of Culture, Azadi Ka Amrit Mahotsav',
+        url: 'https://amritkaal.nic.in/',
+        type: 'government',
+      },
+      {
+        title: 'Andhra Mahila Sabha and Durgabai Deshmukh records',
+        publisher: 'Andhra Pradesh State Archives',
+        type: 'archive',
+      },
+    ],
+    tags: ['Andhra Pradesh', 'women', 'Salt Satyagraha', 'social reform'],
+    forgotten: true,
+  },
 ];

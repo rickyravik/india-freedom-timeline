@@ -60,7 +60,7 @@ Written down once so they don't get re-litigated per-session:
 
 ## State/territory coverage (refresh this table when adding records)
 
-As of the 2026-09-15 addition round (88 → 122 records), counts by state:
+As of the 2026-09-15 addition rounds (88 → 122 → 131 records), counts by state:
 
 | State | Records | State | Records |
 |---|---|---|---|
@@ -86,15 +86,18 @@ Chhattisgarh, Meghalaya and Nagaland are the thinnest now.
 Adding anyone from those needs a new entry in `regions.ts` first (see the
 mechanical checklist below).
 
-**Known gap from this round:** the 34 new records added only 2 women
-(gender split moved from 67M/21F to 99M/23F) — the reference-completion
-and regional-gap priorities this round happened to surface mostly male
-military/political figures. The next addition round should deliberately
-target women under-represented across every era: Rajkumari Amrit Kaur,
-Vijaya Lakshmi Pandit, Bina Das, Suniti Choudhury, Shanti Ghosh, Durgabai
-Deshmukh, Basanti Devi, Sarala Devi Chaudhurani, and Janaki Thevar of the
-Rani of Jhansi Regiment are the strongest-evidenced candidates already
-identified.
+**2026-09-15, first round (88 → 122):** added 34 records closing
+narrative and regional gaps, but only 2 of them were women (67M/21F →
+99M/23F) — the reference-completion and regional-gap priorities that
+round happened to surface mostly male military/political figures.
+
+**2026-09-15, second round (122 → 131):** closed that gap directly —
+Rajkumari Amrit Kaur, Vijaya Lakshmi Pandit, Basanti Devi, Sarala Devi
+Chaudhurani, Bina Das, Shanti Ghosh, Suniti Choudhury, Durgabai Deshmukh,
+and Janaki Thevar of the Rani of Jhansi Regiment. Gender split is now
+99M/32F — a slightly higher female share than the original 88-record set
+had, though still well short of parity. Keep watching this on every
+future round rather than treating one correction as sufficient.
 
 Adding a person from a territory not yet in `regions.ts` requires adding
 that territory to the state list first (with a `col`/`row` grid position)

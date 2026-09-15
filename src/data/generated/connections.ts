@@ -81,6 +81,8 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   "baba-gurdit-singh": [],
   "saifuddin-kitchlew": [],
   "bhulabhai-desai": [],
+  "basanti-devi": [],
+  "sarala-devi-chaudhurani": [],
   "khudiram-bose": [],
   "bagha-jatin": [],
   "subramania-bharati": [],
@@ -93,6 +95,23 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   "kartar-singh-sarabha": [],
   "rash-behari-bose": [],
   "prafulla-chaki": [],
+  "bina-das": [],
+  "shanti-ghosh": [
+    {
+      "id": "suniti-choudhury",
+      "type": "ally",
+      "note": "Together, as schoolgirls in Comilla’s Jugantar underground, they shot dead the district magistrate Charles Stevens on 14 December 1931 and served their sentences and released together in 1939.",
+      "inferred": false
+    }
+  ],
+  "suniti-choudhury": [
+    {
+      "id": "shanti-ghosh",
+      "type": "ally",
+      "note": "Together, as schoolgirls in Comilla’s Jugantar underground, they shot dead the district magistrate Charles Stevens on 14 December 1931 and were released together in 1939.",
+      "inferred": false
+    }
+  ],
   "mahatma-gandhi": [],
   "kasturba-gandhi": [],
   "jawaharlal-nehru": [],
@@ -105,9 +124,18 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   "br-ambedkar": [],
   "jayaprakash-narayan": [],
   "vinoba-bhave": [],
-  "tanguturi-prakasam": [],
+  "tanguturi-prakasam": [
+    {
+      "id": "durgabai-deshmukh",
+      "type": "ally",
+      "note": "Organized women satyagrahis alongside him for the 1930 Salt Satyagraha in Madras, and took over leadership of the Madras movement after his arrest.",
+      "inferred": true
+    }
+  ],
   "kamaladevi-chattopadhyay": [],
   "accamma-cherian": [],
+  "amrit-kaur": [],
+  "vijaya-lakshmi-pandit": [],
   "bhagat-singh": [],
   "chandrashekhar-azad": [],
   "sukhdev-thapar": [],
@@ -183,6 +211,7 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
     }
   ],
   "gurbaksh-singh-dhillon": [],
+  "janaki-thevar": [],
   "ondiveeran": [],
   "veerapandiya-kattabomman": [],
   "marudhu-brothers": [
@@ -221,6 +250,14 @@ export const connectionsById: Record<string, ResolvedConnectionLike[]> = {
   "uyyalawada-narasimha-reddy": [],
   "pingali-venkayya": [],
   "turrebaz-khan": [],
+  "durgabai-deshmukh": [
+    {
+      "id": "tanguturi-prakasam",
+      "type": "ally",
+      "note": "Organized women satyagrahis alongside him for the 1930 Salt Satyagraha in Madras, and took over leadership of the Madras movement after his arrest.",
+      "inferred": false
+    }
+  ],
   "bir-tikendrajit": [],
   "maniram-dewan": []
 };

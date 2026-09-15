@@ -1452,6 +1452,87 @@ export const fighterSummaries: FighterSummary[] = [
     "era": "quit-india-and-ina"
   },
   {
+    "id": "basanti-devi",
+    "slug": "basanti-devi",
+    "name": "Basanti Devi",
+    "portrait": "/images/fighters/basanti-devi.jpg",
+    "birthYear": 1880,
+    "deathYear": 1974,
+    "birthDateLabel": "23 March 1880",
+    "deathDateLabel": "7 May 1974",
+    "birthPlace": "Calcutta, Bengal",
+    "region": "east",
+    "states": [
+      "West Bengal"
+    ],
+    "gender": "female",
+    "summary": "Wife of Chittaranjan Das who, after his 1921 arrest, courted arrest herself selling khadi and picketing foreign-cloth shops — helping draw large numbers of Bengali women into the freedom movement.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "One of the women credited with bringing Bengali women of her class into active politics.",
+    "timelineEvents": [],
+    "movements": [
+      "non-cooperation",
+      "civil-disobedience"
+    ],
+    "roles": [
+      "political-leader",
+      "organizer",
+      "satyagrahi"
+    ],
+    "tags": [
+      "women",
+      "Bengal",
+      "khadi",
+      "non-cooperation"
+    ],
+    "era": "non-cooperation",
+    "forgotten": true
+  },
+  {
+    "id": "sarala-devi-chaudhurani",
+    "slug": "sarala-devi-chaudhurani",
+    "name": "Sarala Devi Chaudhurani",
+    "alternateNames": [
+      "Sarala Devi"
+    ],
+    "portrait": "/images/fighters/sarala-devi-chaudhurani.jpg",
+    "birthYear": 1872,
+    "deathYear": 1945,
+    "birthDateLabel": "9 September 1872",
+    "deathDateLabel": "18 August 1945",
+    "birthPlace": "Calcutta, Bengal",
+    "region": "east",
+    "states": [
+      "West Bengal",
+      "Punjab"
+    ],
+    "gender": "female",
+    "summary": "Niece of Rabindranath Tagore who founded one of India’s first all-India women’s organizations in 1910, trained young Bengali men in physical culture during the Swadeshi years, and later organized Non-Cooperation among women across Punjab.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Assertive, self-reliant nationalism combined with women’s education and organization.",
+    "legacy": "A pioneer of organized Indian women’s politics whose contribution is far less remembered than that of her male contemporaries.",
+    "timelineEvents": [],
+    "movements": [
+      "swadeshi",
+      "non-cooperation"
+    ],
+    "roles": [
+      "organizer",
+      "social-reformer",
+      "writer-poet"
+    ],
+    "tags": [
+      "women",
+      "Bengal",
+      "Punjab",
+      "Swadeshi"
+    ],
+    "era": "swadeshi-era",
+    "forgotten": true
+  },
+  {
     "id": "khudiram-bose",
     "slug": "khudiram-bose",
     "name": "Khudiram Bose",
@@ -1937,6 +2018,112 @@ export const fighterSummaries: FighterSummary[] = [
       "martyr"
     ],
     "era": "swadeshi-era",
+    "forgotten": true
+  },
+  {
+    "id": "bina-das",
+    "slug": "bina-das",
+    "name": "Bina Das",
+    "birthYear": 1911,
+    "deathYear": 1986,
+    "birthDateLabel": "24 August 1911",
+    "deathDateLabel": "26 December 1986",
+    "birthPlace": "Krishnanagar, Nadia district, Bengal",
+    "region": "east",
+    "states": [
+      "West Bengal"
+    ],
+    "gender": "female",
+    "summary": "The Bethune College student who rose during her own convocation to fire on the Governor of Bengal, and went on to a long, contested second life in Congress politics.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "ideology": "Revolutionary nationalism, later constitutional and left-leaning Congress politics.",
+    "legacy": "Remembered as one of Bengal’s best-known women revolutionaries; Calcutta University later restored the degree it had withheld.",
+    "timelineEvents": [],
+    "movements": [
+      "revolutionary-movement"
+    ],
+    "roles": [
+      "revolutionary",
+      "political-leader"
+    ],
+    "tags": [
+      "women",
+      "Bengal",
+      "Chhatri Sangha",
+      "revolutionary"
+    ],
+    "era": "civil-disobedience",
+    "forgotten": true
+  },
+  {
+    "id": "shanti-ghosh",
+    "slug": "shanti-ghosh",
+    "name": "Shanti Ghosh",
+    "alternateNames": [
+      "Santi Ghose"
+    ],
+    "birthYear": 1916,
+    "deathYear": 1989,
+    "birthDateLabel": "22 November 1916",
+    "birthPlace": "Comilla, Tippera district, Bengal (now Bangladesh)",
+    "region": "east",
+    "states": [
+      "West Bengal"
+    ],
+    "gender": "female",
+    "summary": "Schoolgirl of the Comilla revolutionary underground who, with Suniti Choudhury, shot dead the district’s British magistrate in 1931 — among the youngest women ever convicted of a political killing in British India.",
+    "readingMinutes": 1,
+    "connectionCount": 1,
+    "legacy": "Remembered with Suniti Choudhury as among the youngest women convicted of a political killing in British India.",
+    "timelineEvents": [],
+    "movements": [
+      "revolutionary-movement"
+    ],
+    "roles": [
+      "revolutionary"
+    ],
+    "tags": [
+      "women",
+      "Bengal",
+      "Comilla",
+      "youth"
+    ],
+    "era": "civil-disobedience",
+    "forgotten": true
+  },
+  {
+    "id": "suniti-choudhury",
+    "slug": "suniti-choudhury",
+    "name": "Suniti Choudhury",
+    "birthYear": 1917,
+    "deathYear": 1988,
+    "birthDateLabel": "22 May 1917",
+    "deathDateLabel": "12 January 1988",
+    "birthPlace": "Comilla, Tippera district, Bengal (now Bangladesh)",
+    "region": "east",
+    "states": [
+      "West Bengal"
+    ],
+    "gender": "female",
+    "summary": "At fourteen, the youngest of Comilla’s revolutionary schoolgirls to shoot dead the district’s British magistrate alongside Shanti Ghosh — who later trained as a doctor and practised medicine in independent India.",
+    "readingMinutes": 1,
+    "connectionCount": 1,
+    "legacy": "Remembered with Shanti Ghosh as among the youngest women convicted of a political killing in British India.",
+    "timelineEvents": [],
+    "movements": [
+      "revolutionary-movement"
+    ],
+    "roles": [
+      "revolutionary"
+    ],
+    "tags": [
+      "women",
+      "Bengal",
+      "Comilla",
+      "youth"
+    ],
+    "era": "civil-disobedience",
     "forgotten": true
   },
   {
@@ -2650,6 +2837,81 @@ export const fighterSummaries: FighterSummary[] = [
     ],
     "era": "quit-india-and-ina",
     "forgotten": true
+  },
+  {
+    "id": "amrit-kaur",
+    "slug": "amrit-kaur",
+    "name": "Rajkumari Amrit Kaur",
+    "portrait": "/images/fighters/amrit-kaur.jpg",
+    "birthYear": 1887,
+    "deathYear": 1964,
+    "birthDateLabel": "2 February 1887",
+    "deathDateLabel": "6 February 1964",
+    "birthPlace": "Lucknow, Uttar Pradesh",
+    "region": "north",
+    "states": [
+      "Punjab",
+      "Delhi"
+    ],
+    "gender": "female",
+    "summary": "Princess of the Kapurthala royal family turned satyagrahi — Gandhi’s secretary for sixteen years, a founder of the All India Women’s Conference, and independent India’s first Health Minister.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "Her decade as Health Minister shaped India’s public health institutions, including AIIMS.",
+    "timelineEvents": [],
+    "movements": [
+      "civil-disobedience",
+      "quit-india"
+    ],
+    "roles": [
+      "political-leader",
+      "organizer",
+      "satyagrahi"
+    ],
+    "tags": [
+      "women",
+      "AIWC",
+      "health minister",
+      "Kapurthala"
+    ],
+    "era": "civil-disobedience"
+  },
+  {
+    "id": "vijaya-lakshmi-pandit",
+    "slug": "vijaya-lakshmi-pandit",
+    "name": "Vijaya Lakshmi Pandit",
+    "portrait": "/images/fighters/vijaya-lakshmi-pandit.jpg",
+    "birthYear": 1900,
+    "deathYear": 1990,
+    "birthDateLabel": "18 August 1900",
+    "deathDateLabel": "1 December 1990",
+    "birthPlace": "Allahabad, Uttar Pradesh",
+    "region": "north",
+    "states": [
+      "Uttar Pradesh",
+      "Delhi"
+    ],
+    "gender": "female",
+    "summary": "Jawaharlal Nehru’s younger sister and one of the earliest women to hold cabinet rank in a provincial government in British India — jailed three times in the freedom struggle, and later independent India’s pioneering woman diplomat.",
+    "readingMinutes": 1,
+    "connectionCount": 0,
+    "legacy": "A pioneer of women’s leadership in Indian politics and diplomacy on the world stage.",
+    "timelineEvents": [],
+    "movements": [
+      "civil-disobedience",
+      "quit-india"
+    ],
+    "roles": [
+      "political-leader",
+      "satyagrahi"
+    ],
+    "tags": [
+      "women",
+      "Congress",
+      "diplomat",
+      "United Provinces"
+    ],
+    "era": "civil-disobedience"
   },
   {
     "id": "bhagat-singh",
@@ -4003,6 +4265,49 @@ export const fighterSummaries: FighterSummary[] = [
     "forgotten": true
   },
   {
+    "id": "janaki-thevar",
+    "slug": "janaki-thevar",
+    "name": "Janaki Thevar",
+    "alternateNames": [
+      "Janaky Athi Nahappan",
+      "Janaki Athinahappan"
+    ],
+    "birthYear": 1925,
+    "deathYear": 2014,
+    "birthDateLabel": "25 February 1925",
+    "deathDateLabel": "9 May 2014",
+    "birthPlace": "Kuala Lumpur, British Malaya",
+    "region": "abroad",
+    "states": [
+      "Tamil Nadu",
+      "Abroad"
+    ],
+    "gender": "female",
+    "summary": "A Malayan-Tamil volunteer of the INA’s Rani of Jhansi Regiment who trained under Captain Lakshmi Sahgal in Singapore, rose to become the regiment’s second-in-command, and served through the Burma campaign of 1944–45 — though popular claims that she took over full command of its Burma contingent remain unconfirmed by this record.",
+    "readingMinutes": 2,
+    "connectionCount": 0,
+    "legacy": "Remembered, alongside Captain Lakshmi Sahgal, as one of the Rani of Jhansi Regiment’s most senior Indian-origin officers; honoured with the Padma Shri in 2000.",
+    "timelineEvents": [
+      "azad-hind-government",
+      "imphal-campaign"
+    ],
+    "movements": [
+      "azad-hind"
+    ],
+    "roles": [
+      "military-leader",
+      "organizer"
+    ],
+    "tags": [
+      "INA",
+      "Rani of Jhansi Regiment",
+      "Malaya",
+      "women"
+    ],
+    "era": "quit-india-and-ina",
+    "forgotten": true
+  },
+  {
     "id": "ondiveeran",
     "slug": "ondiveeran",
     "name": "Ondiveeran",
@@ -4940,6 +5245,46 @@ export const fighterSummaries: FighterSummary[] = [
     "forgotten": true
   },
   {
+    "id": "durgabai-deshmukh",
+    "slug": "durgabai-deshmukh",
+    "name": "Durgabai Deshmukh",
+    "alternateNames": [
+      "G. Durgabai"
+    ],
+    "birthYear": 1909,
+    "deathYear": 1981,
+    "birthDateLabel": "15 July 1909",
+    "deathDateLabel": "9 May 1981",
+    "birthPlace": "Rajahmundry, Madras Presidency (now Andhra Pradesh)",
+    "region": "south",
+    "states": [
+      "Andhra Pradesh"
+    ],
+    "gender": "female",
+    "summary": "A child bride who left an arranged marriage at fifteen and quit school at twelve in protest at English-medium education, she organized women for the 1930 Salt Satyagraha in Madras and Andhra, was imprisoned three times, founded the Andhra Mahila Sabha, and later trained as a lawyer, going on to serve in the Constituent Assembly and independent India’s first Planning Commission.",
+    "readingMinutes": 1,
+    "connectionCount": 1,
+    "legacy": "Remembered as a pioneering organizer of women in the freedom movement and the founder of one of South India’s longest-running women’s welfare institutions.",
+    "timelineEvents": [],
+    "movements": [
+      "civil-disobedience"
+    ],
+    "roles": [
+      "political-leader",
+      "social-reformer",
+      "lawyer",
+      "organizer"
+    ],
+    "tags": [
+      "Andhra Pradesh",
+      "women",
+      "Salt Satyagraha",
+      "social reform"
+    ],
+    "era": "civil-disobedience",
+    "forgotten": true
+  },
+  {
     "id": "bir-tikendrajit",
     "slug": "bir-tikendrajit",
     "name": "Bir Tikendrajit",
@@ -5018,6 +5363,7 @@ export const fighterSourceFile: Record<string, string> = {
   "uyyalawada-narasimha-reddy": "andhra-telangana",
   "pingali-venkayya": "andhra-telangana",
   "turrebaz-khan": "andhra-telangana",
+  "durgabai-deshmukh": "andhra-telangana",
   "puli-thevar": "early-resistance",
   "velu-nachiyar": "early-resistance",
   "pazhassi-raja": "early-resistance",
@@ -5041,6 +5387,8 @@ export const fighterSourceFile: Record<string, string> = {
   "tanguturi-prakasam": "gandhian-era",
   "kamaladevi-chattopadhyay": "gandhian-era",
   "accamma-cherian": "gandhian-era",
+  "amrit-kaur": "gandhian-era",
+  "vijaya-lakshmi-pandit": "gandhian-era",
   "bhagat-singh": "hsra-revolutionaries",
   "chandrashekhar-azad": "hsra-revolutionaries",
   "sukhdev-thapar": "hsra-revolutionaries",
@@ -5079,6 +5427,8 @@ export const fighterSourceFile: Record<string, string> = {
   "baba-gurdit-singh": "nationalists",
   "saifuddin-kitchlew": "nationalists",
   "bhulabhai-desai": "nationalists",
+  "basanti-devi": "nationalists",
+  "sarala-devi-chaudhurani": "nationalists",
   "bir-tikendrajit": "northeast-leaders",
   "maniram-dewan": "northeast-leaders",
   "buxi-jagabandhu": "odisha",
@@ -5095,6 +5445,7 @@ export const fighterSourceFile: Record<string, string> = {
   "shah-nawaz-khan": "quit-india-ina",
   "prem-kumar-sahgal": "quit-india-ina",
   "gurbaksh-singh-dhillon": "quit-india-ina",
+  "janaki-thevar": "quit-india-ina",
   "mangal-pandey": "revolt-1857",
   "rani-lakshmibai": "revolt-1857",
   "jhalkari-bai": "revolt-1857",
@@ -5118,6 +5469,9 @@ export const fighterSourceFile: Record<string, string> = {
   "kartar-singh-sarabha": "swadeshi-revolutionaries",
   "rash-behari-bose": "swadeshi-revolutionaries",
   "prafulla-chaki": "swadeshi-revolutionaries",
+  "bina-das": "swadeshi-revolutionaries",
+  "shanti-ghosh": "swadeshi-revolutionaries",
+  "suniti-choudhury": "swadeshi-revolutionaries",
   "ondiveeran": "tamil-nadu",
   "veerapandiya-kattabomman": "tamil-nadu",
   "marudhu-brothers": "tamil-nadu",

@@ -711,4 +711,93 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     forgotten: true,
     editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-15' },
   },
+  {
+    id: 'janaki-thevar',
+    slug: 'janaki-thevar',
+    name: 'Janaki Thevar',
+    alternateNames: ['Janaky Athi Nahappan', 'Janaki Athinahappan'],
+    birthYear: 1925,
+    deathYear: 2014,
+    birthDateLabel: '25 February 1925',
+    deathDateLabel: '9 May 2014',
+    birthPlace: 'Kuala Lumpur, British Malaya',
+    region: 'abroad',
+    states: ['Tamil Nadu', 'Abroad'],
+    gender: 'female',
+    era: 'quit-india-and-ina',
+    roles: ['military-leader', 'organizer'],
+    summary:
+      'A Malayan-Tamil volunteer of the INA’s Rani of Jhansi Regiment who trained under Captain Lakshmi Sahgal in Singapore, rose to become the regiment’s second-in-command, and served through the Burma campaign of 1944–45 — though popular claims that she took over full command of its Burma contingent remain unconfirmed by this record.',
+    shortStory: [
+      {
+        title: 'A gift of gold',
+        text: 'Janaki grew up in a well-off Tamil family in British Malaya. When Subhas Chandra Bose came to Singapore in 1943 appealing to Indians abroad to give everything they could to the cause of freedom, she took off her own gold earrings on the spot — and resolved to join the women’s regiment he was raising.',
+      },
+      {
+        title: 'Into the Rani of Jhansi Regiment',
+        text: 'Her father objected strongly to a daughter of the family training as a soldier, but eventually gave his consent. Janaki joined the Rani of Jhansi Regiment — the INA’s all-women unit raised in Singapore in October 1943 — and trained hard alongside more than a thousand other volunteers.',
+      },
+      {
+        title: 'Second-in-command, and a disputed claim',
+        text: 'By 1944 Janaki had risen to become second-in-command of the regiment under Captain Lakshmi Sahgal. Several popular accounts go further and say she took over full command of the regiment’s Burma contingent that year — a claim this record could not fully confirm.',
+        uncertainty: 'Popular accounts describe Janaki taking command of the Burma contingent from a wounded Lakshmi Sahgal in 1944 and holding the rank of Captain; more conservative sources describe her only as second-in-command, and this archive’s own record of Lakshmi Sahgal does not corroborate a 1944 wounding or handover of command.',
+      },
+      {
+        title: 'Through the Burma campaign',
+        text: 'The regiment served through the hard 1944–45 Burma campaign — training, nursing and organizing more than fighting in the field — and Janaki is remembered helping move wounded soldiers to safety when Rangoon’s Red Cross hospital came under bombing.',
+      },
+      {
+        title: 'A long public life',
+        text: 'After the war Janaki helped found the Malayan Indian Congress in 1946 and went on to a long career in Malaysian public life, honoured in 2000 as the first woman of Indian origin outside India to receive the Padma Shri. This archive, centred on India’s own freedom struggle, does not trace that later career in detail.',
+      },
+    ],
+    fullBiography: [
+      'Janaki Thevar — later known, after her marriage, as Janaky Athi Nahappan — was born in 1925 to a well-off Tamil family in British Malaya. When Subhas Chandra Bose arrived in Singapore in 1943 appealing to Indians abroad to give everything they could to the independence struggle, she was among those who responded immediately, donating her own gold jewellery. Over her father’s initial objections, she won permission to join the Rani of Jhansi Regiment — the Indian National Army’s all-women unit, raised in Singapore in October 1943 under Captain Lakshmi Sahgal — and trained alongside more than a thousand other women volunteers.',
+      'By 1944 she had risen within the regiment to become, by most accounts, its second-in-command. Several popular retellings go further, describing her as taking over full command of the regiment’s Burma contingent — with the rank of Captain — after Sahgal was wounded that year; more cautious sources describe her only as second-in-command, and this archive’s own record of Lakshmi Sahgal does not corroborate a 1944 wounding or a handover of command. Scholarship on the regiment, notably Vera Hildebrand’s Women at War, also cautions that some individual soldiers’ wartime stories have been embellished in popular retelling, and that the regiment, despite dramatic accounts, was in the end not committed to direct combat.',
+      'What is well documented is that she served with the regiment through the difficult 1944–45 Burma campaign, including helping move wounded soldiers to safety when the Red Cross hospital in Rangoon came under bombing, before the regiment was disbanded with Japan’s surrender in August 1945.',
+      'After the war she remained in public life: she helped found the Malayan, later Malaysian, Indian Congress in 1946, married the newspaper editor Athi Nahappan in 1949, and went on to serve in Malaysia’s Senate and various women’s and civic organisations, receiving India’s Padma Shri in 2000 — the first woman of Indian origin outside India so honoured. She died in Kuala Lumpur in 2014. This archive, centred on India’s own freedom struggle, does not trace her long Malaysian public career in detail.',
+    ],
+    entryIntoStruggle: 'Volunteered for the Rani of Jhansi Regiment in Singapore after hearing Subhas Chandra Bose’s 1943 appeal to Indians abroad.',
+    achievements: [
+      'Joined the Rani of Jhansi Regiment, the INA’s all-women unit, and rose to become, by most accounts, its second-in-command',
+      'Served through the Burma campaign of 1944–45, including helping move wounded soldiers during the bombing of Rangoon',
+      'Among the founders of the Malayan Indian Congress in 1946',
+    ],
+    sacrifices: ['Left a comfortable family home as a teenager, against her father’s initial wishes, to train and serve far from safety'],
+    legacy: 'Remembered, alongside Captain Lakshmi Sahgal, as one of the Rani of Jhansi Regiment’s most senior Indian-origin officers; honoured with the Padma Shri in 2000.',
+    facts: ['She was the first woman of Indian origin outside India to receive India’s Padma Shri, awarded in 2000.'],
+    disputed: [
+      {
+        claim: 'That Janaki took over full command of the regiment’s Burma contingent, with the rank of Captain, after Lakshmi Sahgal was wounded in 1944',
+        note: 'This claim appears in several popular accounts, but more conservative sourcing describes her only as second-in-command, and this archive’s own record of Lakshmi Sahgal does not corroborate a 1944 wounding or a formal handover of command. Scholarship on the regiment (Vera Hildebrand’s Women at War) also cautions that popular retellings of individual soldiers’ service have sometimes gone beyond what can be documented.',
+        paragraph: 1,
+      },
+    ],
+    timelineEvents: ['azad-hind-government', 'imphal-campaign'],
+    movements: ['azad-hind'],
+    organizations: ['azad-hind-fauj'],
+    relatedPeople: ['lakshmi-sahgal', 'subhas-chandra-bose'],
+    sources: [
+      {
+        title: 'The Rani of Jhansi Regiment records',
+        publisher: 'Netaji Research Bureau, Kolkata',
+        type: 'archive',
+      },
+      {
+        title: 'Women at War: Subhas Chandra Bose and the Rani of Jhansi Regiment',
+        author: 'Vera Hildebrand',
+        publisher: 'Naval Institute Press',
+        year: 2016,
+        type: 'book',
+      },
+      {
+        title: 'Padma Awards directory, 2000',
+        publisher: 'Ministry of Home Affairs, Government of India',
+        type: 'government',
+      },
+    ],
+    tags: ['INA', 'Rani of Jhansi Regiment', 'Malaya', 'women'],
+    forgotten: true,
+    editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-15' },
+  },
 ];
