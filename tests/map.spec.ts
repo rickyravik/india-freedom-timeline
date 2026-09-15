@@ -28,7 +28,7 @@ test('the list view names every state in full with its record counts', async ({ 
 });
 
 test('a state without records says coverage is growing and offers neighbours', async ({ page }) => {
-  await page.goto('/map?state=chhattisgarh');
-  await expect(page.getByText(/Coverage for Chhattisgarh is still growing/)).toBeVisible();
-  await expect(page.getByRole('link', { name: /Madhya Pradesh/ })).toBeVisible();
+  await page.goto('/map?state=jammu-kashmir');
+  await expect(page.getByText(/Coverage for Jammu & Kashmir is still growing/)).toBeVisible();
+  await expect(page.getByRole('link', { name: /Punjab/ })).toBeVisible();
 });
