@@ -5,7 +5,7 @@ import { eraById } from '@/data/eras';
 import { useHorizontalWheelScroll, usePageMeta, useUrlState } from '@/lib/hooks';
 import { oneOf } from '@/lib/url-state';
 import { useFlipList } from '@/lib/motion';
-import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, PageIntro, eraAccent } from '@/components/ui';
+import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, PageIntro, RailEdgeFade, eraAccent } from '@/components/ui';
 import { EventRow } from '@/components/cards';
 
 const decades = [...new Set(events.map((e) => Math.floor(e.date.year / 10) * 10))].sort((a, b) => a - b).map((d) => `${d}s`);
@@ -64,14 +64,17 @@ export default function EventsPage() {
           <button type="button" className={`chip min-h-12 !px-5 text-meta ${activeCount ? 'chip-active' : ''}`} onClick={() => setSheetOpen(true)} aria-haspopup="dialog">
             Filters{activeCount > 0 && ` · ${activeCount}`}
           </button>
-          <div ref={decadeRailRef} className="-mx-4 flex gap-2 overflow-x-auto px-4 scrollbar-none sm:mx-0 sm:px-0" role="group" aria-label="Jump to decade">
-            {decades
-              .filter((d) => groups.some(([dec]) => `${dec}s` === d))
-              .map((d) => (
-                <a key={d} href={`#decade-${d}`} className="chip num shrink-0">
-                  {d}
-                </a>
-              ))}
+          <div className="relative min-w-0 flex-1">
+            <div ref={decadeRailRef} className="-mx-4 flex gap-2 overflow-x-auto px-4 scrollbar-thin-archival sm:mx-0 sm:px-0" role="group" aria-label="Jump to decade">
+              {decades
+                .filter((d) => groups.some(([dec]) => `${dec}s` === d))
+                .map((d) => (
+                  <a key={d} href={`#decade-${d}`} className="chip num shrink-0">
+                    {d}
+                  </a>
+                ))}
+            </div>
+            <RailEdgeFade />
           </div>
         </div>
         <ActiveFilters chips={activeChips} onClear={() => change({ type: null, decade: null })} className="mt-3" />

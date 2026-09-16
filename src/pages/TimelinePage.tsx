@@ -6,7 +6,7 @@ import { regionIds, regionNames } from '@/data/regions';
 import { useActiveSection, useHorizontalWheelScroll, usePageMeta, useUrlState } from '@/lib/hooks';
 import { oneOf, oneOfDefault } from '@/lib/url-state';
 import { track } from '@/lib/analytics';
-import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, Postmark, Reveal, Segmented, eraAccent, icons } from '@/components/ui';
+import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, Postmark, RailEdgeFade, Reveal, Segmented, eraAccent, icons } from '@/components/ui';
 import { FighterChip } from '@/components/cards';
 
 /* ------------------------------------------------------------------ */
@@ -37,25 +37,28 @@ function EraRail({ activeId }: { activeId: string | null }) {
 
   return (
     <nav aria-label="Jump to era" className="sticky top-16 z-30 -mx-4 border-b border-paper-300/80 bg-paper-100 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-      <div ref={railRef} className="flex gap-1 overflow-x-auto py-2 scrollbar-none">
-        {eras.map((era) => {
-          const active = era.id === activeId;
-          return (
-            <a
-              key={era.id}
-              data-era={era.id}
-              href={`#era-${era.id}`}
-              aria-current={active ? 'true' : undefined}
-              className={`relative flex shrink-0 items-baseline gap-2 whitespace-nowrap rounded-sm px-3.5 py-2 font-body text-meta font-medium transition-colors duration-160 ease-cinematic ${
-                active ? 'bg-ink text-paper-50' : 'text-ink-soft hover:bg-paper-200'
-              }`}
-            >
-              {active && <span className="sr-only">Current chapter: </span>}
-              <span className={`num font-display font-bold ${active ? 'text-brass-bright' : eraAccent.text[era.accent]}`}>{era.startYear}</span>
-              <span>{era.name}</span>
-            </a>
-          );
-        })}
+      <div className="relative">
+        <div ref={railRef} className="flex gap-1 overflow-x-auto py-2 scrollbar-thin-archival">
+          {eras.map((era) => {
+            const active = era.id === activeId;
+            return (
+              <a
+                key={era.id}
+                data-era={era.id}
+                href={`#era-${era.id}`}
+                aria-current={active ? 'true' : undefined}
+                className={`relative flex shrink-0 items-baseline gap-2 whitespace-nowrap rounded-sm px-3.5 py-2 font-body text-meta font-medium transition-colors duration-160 ease-cinematic ${
+                  active ? 'bg-ink text-paper-50' : 'text-ink-soft hover:bg-paper-200'
+                }`}
+              >
+                {active && <span className="sr-only">Current chapter: </span>}
+                <span className={`num font-display font-bold ${active ? 'text-brass-bright' : eraAccent.text[era.accent]}`}>{era.startYear}</span>
+                <span>{era.name}</span>
+              </a>
+            );
+          })}
+        </div>
+        <RailEdgeFade />
       </div>
     </nav>
   );
@@ -66,12 +69,15 @@ function ChapterPeopleRail({ people }: { people: FighterSummary[] }) {
   const railRef = useRef<HTMLDivElement>(null);
   useHorizontalWheelScroll(railRef);
   return (
-    <div ref={railRef} className="-mr-4 flex gap-2 overflow-x-auto pb-2 pr-4 scrollbar-none">
-      {people.map((f) => (
-        <span key={f.id} className="shrink-0">
-          <FighterChip fighter={f} />
-        </span>
-      ))}
+    <div className="relative">
+      <div ref={railRef} className="-mr-4 flex gap-2 overflow-x-auto pb-2 pr-4 scrollbar-thin-archival">
+        {people.map((f) => (
+          <span key={f.id} className="shrink-0">
+            <FighterChip fighter={f} />
+          </span>
+        ))}
+      </div>
+      <RailEdgeFade className="-mr-4" />
     </div>
   );
 }

@@ -8,7 +8,7 @@ import { useBookmarks, useHorizontalWheelScroll, usePageMeta, useUrlState } from
 import { oneOf, oneOfDefault, text } from '@/lib/url-state';
 import { buildIndex, searchIndex } from '@/lib/search-core';
 import { useFlipList } from '@/lib/motion';
-import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, icons } from '@/components/ui';
+import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, RailEdgeFade, icons } from '@/components/ui';
 import { FighterCard } from '@/components/cards';
 
 type Collection = 'all' | 'featured' | 'forgotten' | 'women' | 'saved';
@@ -127,12 +127,15 @@ export default function FightersPage() {
             Filters{activeCount > 0 && ` · ${activeCount}`}
           </button>
         </div>
-        <div ref={collectionsRailRef} className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:mx-0 sm:px-0" role="group" aria-label="Collections">
-          {collections.map((c) => (
-            <button key={c.value} type="button" aria-pressed={collection === c.value} onClick={() => change({ collection: c.value })} className={`chip shrink-0 whitespace-nowrap ${collection === c.value ? 'chip-active' : ''}`}>
-              {c.label}
-            </button>
-          ))}
+        <div className="relative">
+          <div ref={collectionsRailRef} className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1 scrollbar-thin-archival sm:mx-0 sm:px-0" role="group" aria-label="Collections">
+            {collections.map((c) => (
+              <button key={c.value} type="button" aria-pressed={collection === c.value} onClick={() => change({ collection: c.value })} className={`chip shrink-0 whitespace-nowrap ${collection === c.value ? 'chip-active' : ''}`}>
+                {c.label}
+              </button>
+            ))}
+          </div>
+          <RailEdgeFade className="mt-4" />
         </div>
         <ActiveFilters chips={activeChips} onClear={() => change({ region: null, era: null, role: null, gender: null })} className="mt-3" />
       </PageIntro>

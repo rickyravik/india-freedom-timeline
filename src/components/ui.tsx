@@ -186,6 +186,26 @@ export function SectionHeading({
   );
 }
 
+/**
+ * A soft "there's more this way" hint at a horizontal rail's trailing edge.
+ * Deliberately unconditional and JS-free: whether a rail actually overflows
+ * is layout state only knowable after a client-only effect runs, and any
+ * markup gated on that would differ between the prerendered snapshot
+ * (captured after the effect ran) and a fresh hydration's first render
+ * (before it has) - the same class of bug fixed once already for
+ * useHorizontalWheelScroll's callers. A rail that happens not to overflow
+ * just gets a harmless soft edge instead of a meaningful cue; that's the
+ * trade this makes on purpose. Darkens toward ink rather than fading to a
+ * matching paper tone: paper-50 and paper-100 differ by only a few RGB
+ * points, so a colour-matched fade over a chip row (itself paper-50)
+ * was rendering correctly but was visually indistinguishable from doing
+ * nothing. A translucent dark overlay stays visible against any of this
+ * app's light content, not just the one background it happens to match.
+ */
+export function RailEdgeFade({ className = '' }: { className?: string }) {
+  return <span aria-hidden="true" className={`pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-ink/15 to-transparent ${className}`} />;
+}
+
 /* ------------------------------------------------------------------ */
 /* Portrait plate - typographic monogram, era-ruled                    */
 /* Plate inks for a life with no era on record */
