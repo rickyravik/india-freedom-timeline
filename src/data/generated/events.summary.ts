@@ -166,7 +166,11 @@ export const eventSummaries: EventSummary[] = [
     "movement": "early-uprisings",
     "era": "early-resistance",
     "category": "execution",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "Poligar War",
+      "Panchalankurichi"
+    ]
   },
   {
     "id": "south-indian-rebellion-1801",
@@ -195,7 +199,10 @@ export const eventSummaries: EventSummary[] = [
     "movement": "early-uprisings",
     "era": "early-resistance",
     "category": "uprising",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "South Indian Rebellion"
+    ]
   },
   {
     "id": "vellore-mutiny",
@@ -237,7 +244,11 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "early-uprisings",
     "era": "early-resistance",
-    "category": "uprising"
+    "category": "uprising",
+    "searchAliases": [
+      "Kittur Rebellion",
+      "Kittur"
+    ]
   },
   {
     "id": "khasi-uprising",
@@ -259,7 +270,11 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "tribal-resistance",
     "era": "early-resistance",
-    "category": "uprising"
+    "category": "uprising",
+    "searchAliases": [
+      "Khasi uprising",
+      "Khasi war"
+    ]
   },
   {
     "id": "santhal-hul",
@@ -286,7 +301,11 @@ export const eventSummaries: EventSummary[] = [
     "movement": "tribal-resistance",
     "era": "early-resistance",
     "category": "uprising",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "Santhal Hul",
+      "the Hul"
+    ]
   },
   {
     "id": "revolt-1857",
@@ -317,7 +336,11 @@ export const eventSummaries: EventSummary[] = [
     "movement": "great-revolt",
     "era": "revolt-1857",
     "category": "uprising",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "Revolt of 1857",
+      "Sepoy Mutiny"
+    ]
   },
   {
     "id": "siege-of-jhansi",
@@ -343,7 +366,10 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "great-revolt",
     "era": "revolt-1857",
-    "category": "battle"
+    "category": "battle",
+    "searchAliases": [
+      "Siege of Jhansi"
+    ]
   },
   {
     "id": "queens-proclamation",
@@ -363,7 +389,11 @@ export const eventSummaries: EventSummary[] = [
     "summary": "After the revolt, the British Crown takes direct control of India from the East India Company, promising non-interference in religion, promises nationalists would hold it to.",
     "people": [],
     "era": "revolt-1857",
-    "category": "political"
+    "category": "political",
+    "searchAliases": [
+      "Queen's Proclamation",
+      "Queen’s Proclamation"
+    ]
   },
   {
     "id": "founding-of-inc",
@@ -413,7 +443,10 @@ export const eventSummaries: EventSummary[] = [
     "movement": "tribal-resistance",
     "era": "rise-of-nationalism",
     "category": "uprising",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "Ulgulan"
+    ]
   },
   {
     "id": "swadeshi-movement-launch",
@@ -440,7 +473,10 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "swadeshi",
     "era": "swadeshi-era",
-    "category": "movement-launch"
+    "category": "movement-launch",
+    "searchAliases": [
+      "Swadeshi movement"
+    ]
   },
   {
     "id": "partition-of-bengal",
@@ -466,7 +502,10 @@ export const eventSummaries: EventSummary[] = [
     "movement": "swadeshi",
     "era": "swadeshi-era",
     "category": "political",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "Partition of Bengal"
+    ]
   },
   {
     "id": "tirunelveli-uprising-1908",
@@ -491,7 +530,11 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "swadeshi",
     "era": "swadeshi-era",
-    "category": "protest"
+    "category": "protest",
+    "searchAliases": [
+      "Tirunelveli rising",
+      "Tuticorin strike"
+    ]
   },
   {
     "id": "muzaffarpur-action",
@@ -516,7 +559,12 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "revolutionary-movement",
     "era": "swadeshi-era",
-    "category": "trial"
+    "category": "trial",
+    "searchAliases": [
+      "Muzaffarpur bombing",
+      "Alipore Bomb Case",
+      "Alipore case"
+    ]
   },
   {
     "id": "maniyachi-1911",
@@ -541,7 +589,10 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "revolutionary-movement",
     "era": "swadeshi-era",
-    "category": "turning-point"
+    "category": "turning-point",
+    "searchAliases": [
+      "Maniyachi"
+    ]
   },
   {
     "id": "founding-of-ghadar",
@@ -564,7 +615,10 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "ghadar",
     "era": "swadeshi-era",
-    "category": "founding"
+    "category": "founding",
+    "searchAliases": [
+      "Ghadar Party"
+    ]
   },
   {
     "id": "komagata-maru",
@@ -587,7 +641,10 @@ export const eventSummaries: EventSummary[] = [
     "people": [],
     "movement": "ghadar",
     "era": "war-and-home-rule",
-    "category": "turning-point"
+    "category": "turning-point",
+    "searchAliases": [
+      "Komagata Maru"
+    ]
   },
   {
     "id": "home-rule-movement",
@@ -612,7 +669,11 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "home-rule",
     "era": "war-and-home-rule",
-    "category": "movement-launch"
+    "category": "movement-launch",
+    "searchAliases": [
+      "Home Rule League",
+      "Home Rule movement"
+    ]
   },
   {
     "id": "lucknow-pact",
@@ -699,7 +760,8 @@ export const eventSummaries: EventSummary[] = [
     "category": "massacre",
     "featured": true,
     "searchAliases": [
-      "Amritsar Massacre"
+      "Amritsar Massacre",
+      "Jallianwala Bagh"
     ]
   },
   {
@@ -726,7 +788,11 @@ export const eventSummaries: EventSummary[] = [
     "movement": "non-cooperation",
     "era": "non-cooperation",
     "category": "movement-launch",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "Non-Cooperation Movement",
+      "Non-Cooperation"
+    ]
   },
   {
     "id": "chauri-chaura",
@@ -798,7 +864,10 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "revolutionary-movement",
     "era": "non-cooperation",
-    "category": "trial"
+    "category": "trial",
+    "searchAliases": [
+      "Kakori"
+    ]
   },
   {
     "id": "bardoli-satyagraha",
@@ -846,7 +915,10 @@ export const eventSummaries: EventSummary[] = [
       "durgawati-devi"
     ],
     "era": "civil-disobedience",
-    "category": "protest"
+    "category": "protest",
+    "searchAliases": [
+      "Simon Commission"
+    ]
   },
   {
     "id": "assembly-bomb-case",
@@ -873,7 +945,11 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "revolutionary-movement",
     "era": "civil-disobedience",
-    "category": "trial"
+    "category": "trial",
+    "searchAliases": [
+      "Assembly bombing",
+      "Assembly Bomb Case"
+    ]
   },
   {
     "id": "purna-swaraj",
@@ -897,7 +973,10 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "civil-disobedience",
     "era": "civil-disobedience",
-    "category": "political"
+    "category": "political",
+    "searchAliases": [
+      "Purna Swaraj"
+    ]
   },
   {
     "id": "dandi-march",
@@ -927,7 +1006,12 @@ export const eventSummaries: EventSummary[] = [
     "movement": "civil-disobedience",
     "era": "civil-disobedience",
     "category": "march",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "Dandi March",
+      "Salt March",
+      "Salt Satyagraha"
+    ]
   },
   {
     "id": "chittagong-armoury-raid",
@@ -953,7 +1037,11 @@ export const eventSummaries: EventSummary[] = [
     "movement": "revolutionary-movement",
     "era": "civil-disobedience",
     "category": "uprising",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "Chittagong armoury raid",
+      "Chittagong"
+    ]
   },
   {
     "id": "vedaranyam-salt-march",
@@ -1134,7 +1222,8 @@ export const eventSummaries: EventSummary[] = [
     "featured": true,
     "searchAliases": [
       "August Kranti",
-      "August Revolution"
+      "August Revolution",
+      "Quit India"
     ]
   },
   {
@@ -1160,7 +1249,11 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "azad-hind",
     "era": "quit-india-and-ina",
-    "category": "founding"
+    "category": "founding",
+    "searchAliases": [
+      "Azad Hind",
+      "Provisional Government of Free India"
+    ]
   },
   {
     "id": "imphal-campaign",
@@ -1185,7 +1278,11 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "azad-hind",
     "era": "quit-india-and-ina",
-    "category": "battle"
+    "category": "battle",
+    "searchAliases": [
+      "Imphal",
+      "Moirang"
+    ]
   },
   {
     "id": "ina-trials",
@@ -1209,7 +1306,11 @@ export const eventSummaries: EventSummary[] = [
     ],
     "movement": "azad-hind",
     "era": "quit-india-and-ina",
-    "category": "trial"
+    "category": "trial",
+    "searchAliases": [
+      "Red Fort trial",
+      "Red Fort trials"
+    ]
   },
   {
     "id": "rin-mutiny",
@@ -1233,7 +1334,11 @@ export const eventSummaries: EventSummary[] = [
     ],
     "era": "freedom-at-midnight",
     "category": "mutiny",
-    "featured": true
+    "featured": true,
+    "searchAliases": [
+      "RIN mutiny",
+      "Naval Mutiny"
+    ]
   },
   {
     "id": "cabinet-mission",
@@ -1259,7 +1364,10 @@ export const eventSummaries: EventSummary[] = [
       "br-ambedkar"
     ],
     "era": "freedom-at-midnight",
-    "category": "political"
+    "category": "political",
+    "searchAliases": [
+      "Cabinet Mission"
+    ]
   },
   {
     "id": "independence-1947",

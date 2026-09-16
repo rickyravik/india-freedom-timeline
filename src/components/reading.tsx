@@ -1,8 +1,8 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import type { DisputedNote, SourceRef } from '@/types';
+import type { DisputedNote, EventSummary, SourceRef } from '@/types';
 import { splitCitations } from '@/lib/reading';
-import { annotateFirstOccurrences } from '@/lib/glossary';
+import { annotateEventMentions, annotateFirstOccurrences } from '@/lib/glossary';
 import { track } from '@/lib/analytics';
 import { glossaryById, glossaryTerms } from '@/lib/content';
 import { BottomSheet, Icon, Segmented, icons } from '@/components/ui';
@@ -150,6 +150,44 @@ export function GlossButton({ text, termId, open, onToggle, onClose }: { text: s
   );
 }
 
+/** Same idea as GlossButton, for a passing mention of an event the record
+    is itself linked to ("the terrible days of April 1919") rather than a
+    general term - so a reader who doesn't already know what happened gets
+    a one-line answer without leaving the page. */
+export function EventRefButton({ text, event, open, onToggle, onClose }: { text: string; event: EventSummary; open: boolean; onToggle: () => void; onClose: () => void }) {
+  const id = useId();
+  const btn = useRef<HTMLButtonElement>(null);
+  const close = () => {
+    onClose();
+    btn.current?.focus();
+  };
+  return (
+    <span className="relative inline">
+      <button
+        ref={btn}
+        type="button"
+        onClick={() => {
+          if (!open) track('event_ref_opened');
+          onToggle();
+        }}
+        aria-expanded={open}
+        aria-controls={open ? id : undefined}
+        className="gloss"
+      >
+        {text}
+      </button>
+      <Popover id={id} open={open} onClose={close} label={`What happened: ${event.title}`}>
+        <span className="block font-display text-base font-bold text-ink">{event.title}</span>
+        <span className="num mt-0.5 block font-body text-label text-ink-faint">{event.dateLabel}</span>
+        <span className="mt-1.5 block">{event.summary}</span>
+        <Link to={`/events/${event.slug}`} className="mt-2 inline-block font-medium text-oxide-deep underline underline-offset-2">
+          Read the full story
+        </Link>
+      </Popover>
+    </span>
+  );
+}
+
 /* ------------------------------------------------------------------ */
 /* Reading text - paragraphs with glossary terms and citations         */
 export function ReadingText({
@@ -159,6 +197,7 @@ export function ReadingText({
   dropcap = false,
   vault = false,
   glossary = true,
+  events = [],
   className = '',
   highlight,
   lang,
@@ -169,6 +208,12 @@ export function ReadingText({
   dropcap?: boolean;
   vault?: boolean;
   glossary?: boolean;
+  /** Events this record is itself linked to (e.g. `eventsForFighter(fighter)`),
+      so a passing mention of one ("the terrible days of April 1919") can
+      become the same kind of inline reference a glossary term gets.
+      Deliberately not every event on the site - only this record's own,
+      so a generic-sounding alias can't misfire on an unrelated page. */
+  events?: EventSummary[];
   className?: string;
   /** The paragraph a narration player is currently reading aloud, if any. */
   highlight?: number | null;
@@ -176,19 +221,28 @@ export function ReadingText({
   lang?: string;
 }) {
   /* One open popover per reading block: "p2-g1" = paragraph 2, glossary term 1;
-     "p2-g1-c0" = the same paragraph's first citation after that term. */
+     "p2-g1-c0" = the same paragraph's first citation after that term;
+     "p2-e1" = the paragraph's first event reference. */
   const [open, setOpen] = useState<string | null>(null);
   const prose = vault ? 'prose-reading-vault' : 'prose-reading';
   const glossed = glossary ? annotateFirstOccurrences(paragraphs, glossaryTerms) : paragraphs.map((text) => [{ kind: 'text' as const, text }]);
+  const eventById = new Map(events.map((e) => [e.id, e]));
+  const withEvents = events.length > 0 ? annotateEventMentions(glossed, events) : glossed;
   return (
     <div data-reading-text lang={lang} className={`space-y-5 ${className}`}>
       {paragraphs.flatMap((_, i) => {
         const nodes: ReactNode[] = [
           <p key={`p${i}`} className={`${prose} ${dropcap && i === 0 ? 'dropcap' : ''} ${highlight === i ? 'bg-oxide-wash/60' : ''}`}>
-            {glossed[i].flatMap((g, gi) => {
+            {withEvents[i].flatMap((g, gi) => {
               if (g.kind === 'term') {
                 const key = `p${i}-g${gi}`;
                 return [<GlossButton key={key} text={g.text} termId={g.termId} open={open === key} onToggle={() => setOpen(open === key ? null : key)} onClose={() => setOpen(null)} />];
+              }
+              if (g.kind === 'event') {
+                const key = `p${i}-e${gi}`;
+                const event = eventById.get(g.eventId);
+                if (!event) return [g.text];
+                return [<EventRefButton key={key} text={g.text} event={event} open={open === key} onToggle={() => setOpen(open === key ? null : key)} onClose={() => setOpen(null)} />];
               }
               return splitCitations(g.text).map((seg, j) => {
                 if (seg.kind === 'text') return seg.text;

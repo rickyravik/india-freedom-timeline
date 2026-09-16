@@ -13,11 +13,11 @@ import { DraftStamp, ReadingText, ReadingToolbar } from '@/components/reading';
 import { RouteFallback } from '@/components/layout';
 import { EventCard, FighterChip } from '@/components/cards';
 import { Constellation, SimilarStories } from '@/components/constellation';
-import type { DisputedNote, FighterSummary, FreedomFighter, SourceRef, StoryChapter } from '@/types';
+import type { DisputedNote, EventSummary, FighterSummary, FreedomFighter, SourceRef, StoryChapter } from '@/types';
 
 /* ------------------------------------------------------------------ */
 /* Story Mode - stepper on phones, full chapter list on desktop         */
-function StoryMode({ chapters, accent, sources }: { chapters: StoryChapter[]; accent: keyof typeof eraAccent.bg; sources: SourceRef[] }) {
+function StoryMode({ chapters, accent, sources, events }: { chapters: StoryChapter[]; accent: keyof typeof eraAccent.bg; sources: SourceRef[]; events: EventSummary[] }) {
   const desktop = useIsDesktop();
   const [index, setIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
@@ -34,7 +34,7 @@ function StoryMode({ chapters, accent, sources }: { chapters: StoryChapter[]; ac
               {i + 1}
             </span>
             <h3 className="text-h3 text-ink">{chapter.title}</h3>
-            <ReadingText paragraphs={[chapter.text]} sources={sources} className="mt-2" />
+            <ReadingText paragraphs={[chapter.text]} sources={sources} events={events} className="mt-2" />
             {chapter.uncertainty && (
               <p className="mt-3 font-body text-label text-ink-soft">
                 <span className="stamp mr-2 text-oxide-deep">Uncertain</span>
@@ -64,7 +64,7 @@ function StoryMode({ chapters, accent, sources }: { chapters: StoryChapter[]; ac
         <p className="label num mt-1">
           Chapter {index + 1} of {chapters.length}
         </p>
-        <ReadingText paragraphs={[chapter.text]} sources={sources} className="mt-4" />
+        <ReadingText paragraphs={[chapter.text]} sources={sources} events={events} className="mt-4" />
         {chapter.uncertainty && (
           <p className="mt-3 font-body text-label text-ink-soft">
             <span className="stamp mr-2 text-oxide-deep">Uncertain</span>
@@ -396,11 +396,12 @@ export default function FighterProfilePage() {
                 <ReadAloud className="mb-6" paragraphs={mode === 'story' ? fighter.shortStory.map((c) => `${c.title}. ${c.text}`) : fighter.fullBiography} />
                 <div key={mode} data-mode-swap className="animate-mode-swap">
                   {mode === 'story' ? (
-                    <StoryMode chapters={fighter.shortStory} accent={accent} sources={fighter.sources} />
+                    <StoryMode chapters={fighter.shortStory} accent={accent} sources={fighter.sources} events={timeline} />
                   ) : (
                     <ReadingText
                       paragraphs={fighter.fullBiography}
                       sources={fighter.sources}
+                      events={timeline}
                       dropcap
                       className="max-w-prose"
                       notesByParagraph={notesByParagraph(fighter.disputed)}
@@ -471,7 +472,7 @@ export default function FighterProfilePage() {
                 <Reveal as="section" id="legacy" className="doc scroll-mt-28 p-6">
                   <div className="rule mb-4" />
                   <h3 className="text-h3 text-ink">Legacy</h3>
-                  <ReadingText paragraphs={[fighter.legacy]} sources={fighter.sources} className="mt-3" />
+                  <ReadingText paragraphs={[fighter.legacy]} sources={fighter.sources} events={timeline} className="mt-3" />
                 </Reveal>
               )}
 

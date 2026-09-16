@@ -34,6 +34,7 @@ export const tamilNaduEvents: HistoricalEvent[] = [
         type: 'archive',
       },
     ],
+    searchAliases: ['Poligar War', 'Panchalankurichi'],
     featured: true,
   },
   {
@@ -70,6 +71,7 @@ export const tamilNaduEvents: HistoricalEvent[] = [
         type: 'government',
       },
     ],
+    searchAliases: ['South Indian Rebellion'],
     featured: true,
   },
   {
@@ -103,6 +105,7 @@ export const tamilNaduEvents: HistoricalEvent[] = [
         type: 'journal',
       },
     ],
+    searchAliases: ['Tirunelveli rising', 'Tuticorin strike'],
   },
   {
     id: 'maniyachi-1911',
@@ -135,6 +138,7 @@ export const tamilNaduEvents: HistoricalEvent[] = [
         type: 'government',
       },
     ],
+    searchAliases: ['Maniyachi'],
   },
   {
     id: 'vedaranyam-salt-march',

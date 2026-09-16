@@ -30,6 +30,7 @@ export const risingEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Partition of Bengal'],
     featured: true,
   },
   {
@@ -65,6 +66,7 @@ export const risingEvents: HistoricalEvent[] = [
         type: 'government',
       },
     ],
+    searchAliases: ['Swadeshi movement'],
   },
   {
     id: 'muzaffarpur-action',
@@ -94,6 +96,7 @@ export const risingEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Muzaffarpur bombing', 'Alipore Bomb Case', 'Alipore case'],
   },
   {
     id: 'founding-of-ghadar',
@@ -128,6 +131,7 @@ export const risingEvents: HistoricalEvent[] = [
         type: 'archive',
       },
     ],
+    searchAliases: ['Ghadar Party'],
   },
   {
     id: 'komagata-maru',
@@ -157,6 +161,7 @@ export const risingEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Komagata Maru'],
   },
   {
     id: 'home-rule-movement',
@@ -191,6 +196,7 @@ export const risingEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Home Rule League', 'Home Rule movement'],
   },
   {
     id: 'lucknow-pact',
@@ -285,7 +291,7 @@ export const risingEvents: HistoricalEvent[] = [
     id: 'jallianwala-bagh',
     slug: 'jallianwala-bagh-massacre',
     title: 'Jallianwala Bagh massacre',
-    searchAliases: ['Amritsar Massacre'],
+    searchAliases: ['Amritsar Massacre', 'Jallianwala Bagh'],
     date: { year: 1919, month: 4, day: 13 },
     dateLabel: '13 April 1919',
     location: 'Amritsar, Punjab',
@@ -353,6 +359,7 @@ export const risingEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Non-Cooperation Movement', 'Non-Cooperation'],
     featured: true,
   },
   {
@@ -445,5 +452,6 @@ export const risingEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Kakori'],
   },
 ];

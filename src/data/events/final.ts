@@ -35,6 +35,7 @@ export const finalEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Simon Commission'],
   },
   {
     id: 'bardoli-satyagraha',
@@ -99,6 +100,7 @@ export const finalEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Assembly bombing', 'Assembly Bomb Case'],
   },
   {
     id: 'purna-swaraj',
@@ -126,6 +128,7 @@ export const finalEvents: HistoricalEvent[] = [
         type: 'archive',
       },
     ],
+    searchAliases: ['Purna Swaraj'],
   },
   {
     id: 'dandi-march',
@@ -161,6 +164,7 @@ export const finalEvents: HistoricalEvent[] = [
         type: 'museum',
       },
     ],
+    searchAliases: ['Dandi March', 'Salt March', 'Salt Satyagraha'],
     featured: true,
   },
   {
@@ -191,6 +195,7 @@ export const finalEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Chittagong armoury raid', 'Chittagong'],
     featured: true,
   },
   {
@@ -347,7 +352,7 @@ export const finalEvents: HistoricalEvent[] = [
     id: 'quit-india-launch',
     slug: 'quit-india-launch',
     title: 'Quit India: "Do or Die"',
-    searchAliases: ['August Kranti', 'August Revolution'],
+    searchAliases: ['August Kranti', 'August Revolution', 'Quit India'],
     date: { year: 1942, month: 8, day: 8 },
     dateLabel: '8 August 1942',
     location: 'Gowalia Tank Maidan, Bombay',
@@ -416,6 +421,7 @@ export const finalEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Azad Hind', 'Provisional Government of Free India'],
   },
   {
     id: 'imphal-campaign',
@@ -450,6 +456,7 @@ export const finalEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Imphal', 'Moirang'],
   },
   {
     id: 'ina-trials',
@@ -485,6 +492,7 @@ export const finalEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Red Fort trial', 'Red Fort trials'],
   },
   {
     id: 'rin-mutiny',
@@ -513,6 +521,7 @@ export const finalEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['RIN mutiny', 'Naval Mutiny'],
     featured: true,
   },
   {
@@ -547,6 +556,7 @@ export const finalEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Cabinet Mission'],
   },
   {
     id: 'independence-1947',

@@ -98,6 +98,7 @@ export const earlyEvents: HistoricalEvent[] = [
         type: 'archive',
       },
     ],
+    searchAliases: ['Kittur Rebellion', 'Kittur'],
   },
   {
     id: 'khasi-uprising',
@@ -125,6 +126,7 @@ export const earlyEvents: HistoricalEvent[] = [
         type: 'government',
       },
     ],
+    searchAliases: ['Khasi uprising', 'Khasi war'],
   },
   {
     id: 'santhal-hul',
@@ -165,6 +167,7 @@ export const earlyEvents: HistoricalEvent[] = [
         type: 'government',
       },
     ],
+    searchAliases: ['Santhal Hul', 'the Hul'],
     featured: true,
   },
   {
@@ -202,6 +205,7 @@ export const earlyEvents: HistoricalEvent[] = [
         type: 'archive',
       },
     ],
+    searchAliases: ['Revolt of 1857', 'Sepoy Mutiny'],
     featured: true,
   },
   {
@@ -238,6 +242,7 @@ export const earlyEvents: HistoricalEvent[] = [
         type: 'book',
       },
     ],
+    searchAliases: ['Siege of Jhansi'],
   },
   {
     id: 'queens-proclamation',
@@ -264,6 +269,7 @@ export const earlyEvents: HistoricalEvent[] = [
         type: 'archive',
       },
     ],
+    searchAliases: ['Queen\'s Proclamation', 'Queen’s Proclamation'],
   },
   {
     id: 'founding-of-inc',
@@ -334,6 +340,7 @@ export const earlyEvents: HistoricalEvent[] = [
         type: 'government',
       },
     ],
+    searchAliases: ['Ulgulan'],
     featured: true,
   },
 ];
