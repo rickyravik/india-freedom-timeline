@@ -190,7 +190,7 @@ export default function HomePage() {
         </section>
 
         <section aria-label="Browse by chapter">
-          <SectionHeading title="Browse by chapter" lede="Nine chapters, 1757–1947. Boundaries are aids to navigation, not hard breaks in history." />
+          <SectionHeading title="Browse by chapter" lede="Ten chapters, 1600–1947: a prelude, then nine chapters of resistance. Boundaries are aids to navigation, not hard breaks in history." />
           <ol className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-9" aria-label="Eras of the freedom struggle">
             {eras.map((era) => (
               <li key={era.id}>

@@ -14,6 +14,7 @@ import { DraftStamp, ReadingText } from '@/components/reading';
 import { ChoiceActivity, OrderActivity, TrailCard, TrailProgress } from '@/components/trails';
 import { EventCard, FighterCard, MovementCard } from '@/components/cards';
 import { AudioPlayer } from '@/components/audio-player';
+import { ReadAloud } from '@/components/read-aloud';
 import type { Trail, TrailLang } from '@/types';
 
 const TRAIL_LANGS = ['en', 'ta', 'hi'] as const;
@@ -35,6 +36,11 @@ function OfflineControl({ trail }: { trail: Trail }) {
 
   useEffect(() => {
     if (!supported) return;
+    // Never resolve during the prerender capture pass: the control renders
+    // nothing until the cache check answers, and if the answer were baked
+    // into the snapshot a fresh visitor's first render (still null) would
+    // not match it and hydration would fail on every trail overview page.
+    if (window.__PRERENDERING__) return;
     let live = true;
     void isTrailCached(trail.slug).then((v) => {
       if (live) setCached(v);
@@ -275,6 +281,8 @@ export function TrailStopPage() {
           {narration && listening && (
             <AudioPlayer src={narration.src} cues={narration.cues} stopId={stop.id} narrator={narration.narrator} recordedOn={narration.recordedOn} onCue={setHighlightParagraph} />
           )}
+          {/* No recording for this stop: offer the device's own voice instead. */}
+          {!narration && <ReadAloud paragraphs={[translatedStop.title, ...translatedStop.text]} lang={text.lang} />}
           <ReadingText paragraphs={translatedStop.text} sources={stop.sources} className="max-w-prose" highlight={listening ? highlightParagraph : null} lang={text.lang} glossary={text.lang === 'en'} />
           {translatedStop.uncertainty && (
             <p role="note" lang={text.lang} aria-label="Uncertainty" className="max-w-prose border-l-2 border-oxide pl-4 font-body text-meta text-ink-soft">

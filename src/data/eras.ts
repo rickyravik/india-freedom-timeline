@@ -1,10 +1,21 @@
 import type { Era } from '@/types';
 
 /**
- * The nine broad phases the timeline is organised around.
+ * The ten broad phases the timeline is organised around. The first is a
+ * prelude: how a trading company came to be in a position to rule at all.
  * Boundaries are navigational aids, not hard historical breaks.
  */
 export const eras: Era[] = [
+  {
+    id: 'before-the-empire',
+    name: 'Before the Empire',
+    startYear: 1600,
+    endYear: 1756,
+    tagline: 'A rich subcontinent, a trading company, a fracturing empire',
+    description:
+      'In 1600 a London company received a royal charter to trade in the East. For a century and a half it bought Indian cloth under licences granted by the Mughal emperor, while the empire itself splintered after Aurangzeb’s death in 1707 into rival successor states. India’s wealth was real, its political divisions were real, and the Company’s soldiers were for hire to any prince who would pay. This chapter has no freedom fighters in it: it explains what they would later be fighting.',
+    accent: 'indigo',
+  },
   {
     id: 'early-resistance',
     name: 'Early Resistance',

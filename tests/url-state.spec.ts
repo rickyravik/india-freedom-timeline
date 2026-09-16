@@ -4,16 +4,27 @@ test.describe('filters live in the URL', () => {
   test('timeline: a region in the URL narrows the list, survives reload, and Clear all removes it', async ({ page }) => {
     await page.goto('/timeline?region=south');
     const status = page.getByRole('status');
-    await expect(status).toHaveText(/^(?!47 of)\d+ of 47 events$/);
+    // "a of b events" where a < b: narrowed, without pinning the total to a content count.
+    const counts = async () => {
+      const m = (await status.textContent())!.match(/^(\d+) of (\d+) events$/);
+      expect(m, `status text was "${await status.textContent()}"`).not.toBeNull();
+      return { shown: Number(m![1]), total: Number(m![2]) };
+    };
+    await expect(status).toHaveText(/^\d+ of \d+ events$/);
+    let c = await counts();
+    expect(c.shown).toBeGreaterThan(0);
+    expect(c.shown).toBeLessThan(c.total);
     const chips = page.getByRole('list', { name: 'Active filters' });
     await expect(chips.getByRole('button', { name: 'Remove filter: South India' })).toBeVisible();
 
     await page.reload();
-    await expect(status).toHaveText(/^(?!47 of)\d+ of 47 events$/);
+    await expect(status).toHaveText(/^\d+ of \d+ events$/);
+    c = await counts();
+    expect(c.shown).toBeLessThan(c.total);
 
     await chips.getByRole('button', { name: 'Clear all' }).click();
     await expect(page).toHaveURL(/\/timeline$/);
-    await expect(status).toHaveText('47 of 47 events');
+    await expect(status).toHaveText(/^(\d+) of \1 events$/);
   });
 
   test('timeline: choosing a filter writes the URL', async ({ page }) => {
@@ -34,7 +45,9 @@ test.describe('filters live in the URL', () => {
 
   test('events: type in the URL narrows the list', async ({ page }) => {
     await page.goto('/events?type=massacre');
-    await expect(page.getByRole('status')).toHaveText(/^Showing [1-9]\d* of 47$/);
-    await expect(page.getByRole('status')).not.toHaveText('Showing 47 of 47');
+    const status = page.getByRole('status');
+    await expect(status).toHaveText(/^Showing [1-9]\d* of \d+$/);
+    const m = (await status.textContent())!.match(/^Showing (\d+) of (\d+)$/)!;
+    expect(Number(m[1])).toBeLessThan(Number(m[2]));
   });
 });

@@ -22,7 +22,7 @@ const PHONE_NAV = NAV.filter((n) => ['/', '/trails', '/learn'].includes(n.to));
    to reach some of these, and on a long page that is ten screens away — so
    the thumb bar carries an Explore sheet. */
 const EXPLORE = [
-  { to: '/timeline', label: 'Timeline', icon: icons.clock, hint: 'Nine chapters, 1757–1947' },
+  { to: '/timeline', label: 'Timeline', icon: icons.clock, hint: 'Ten chapters, 1600–1947' },
   { to: '/fighters', label: 'People', icon: icons.person, hint: 'Every life in the archive' },
   { to: '/map', label: 'Map', icon: icons.map, hint: 'Explore by state and region' },
   { to: '/events', label: 'Events', icon: icons.clock, hint: 'Every dated moment' },

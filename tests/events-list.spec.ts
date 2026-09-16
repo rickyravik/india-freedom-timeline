@@ -3,7 +3,12 @@ import { test, expect } from '@playwright/test';
 test('events are one continuous chronological list with full-width rows, grouped under decade headings', async ({ page }) => {
   await page.goto('/events');
   const rows = page.locator('ol[aria-label="Events in date order"] > li');
-  await expect(rows).toHaveCount(47);
+  // The list is every event record; its length is content, not a contract,
+  // so the status line is the source of truth for the total.
+  await expect(page.getByRole('status')).toHaveText(/^Showing (\d+) of \1$/);
+  const total = Number((await page.getByRole('status').textContent())!.match(/of (\d+)/)![1]);
+  await expect(rows).toHaveCount(total);
+  expect(total).toBeGreaterThan(0);
   // Every row spans the list's full width (no multi-column grid).
   const listBox = await page.locator('ol[aria-label="Events in date order"]').boundingBox();
   const firstRow = await rows.first().boundingBox();

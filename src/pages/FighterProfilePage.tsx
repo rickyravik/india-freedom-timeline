@@ -8,6 +8,7 @@ import { pushTrail, useBookmarks, useIsDesktop, usePageMeta, usePreferences, use
 import { track } from '@/lib/analytics';
 import { readingMinutes, readingTimeLabel, wordCount } from '@/lib/reading';
 import { Breadcrumbs, DisputedNotes, Icon, LifespanBar, Postmark, PortraitMedallion, QuoteCard, Reveal, SourceList, SuggestCorrection, eraAccent, icons } from '@/components/ui';
+import { ReadAloud } from '@/components/read-aloud';
 import { DraftStamp, ReadingText, ReadingToolbar } from '@/components/reading';
 import { RouteFallback } from '@/components/layout';
 import { EventCard, FighterChip } from '@/components/cards';
@@ -392,6 +393,7 @@ export default function FighterProfilePage() {
                   <ReadingToolbar />
                 </div>
                 <p className="label num mb-6">{readingTimeLabel(mode === 'story' ? readingMinutes(wordCount(fighter.shortStory.map((c) => c.text).join(' '))) : summary.readingMinutes)}</p>
+                <ReadAloud className="mb-6" paragraphs={mode === 'story' ? fighter.shortStory.map((c) => `${c.title}. ${c.text}`) : fighter.fullBiography} />
                 <div key={mode} data-mode-swap className="animate-mode-swap">
                   {mode === 'story' ? (
                     <StoryMode chapters={fighter.shortStory} accent={accent} sources={fighter.sources} />

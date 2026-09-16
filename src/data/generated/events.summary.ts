@@ -5,6 +5,84 @@ import type { EventSummary } from '@/types';
 
 export const eventSummaries: EventSummary[] = [
   {
+    "id": "east-india-company-charter",
+    "slug": "east-india-company-charter",
+    "title": "A charter to trade in the East",
+    "date": {
+      "year": 1600,
+      "month": 12,
+      "day": 31
+    },
+    "dateLabel": "31 December 1600",
+    "location": "London",
+    "region": "abroad",
+    "states": [
+      "Abroad"
+    ],
+    "summary": "Queen Elizabeth I grants a group of London merchants a monopoly of English trade east of the Cape of Good Hope. The East India Company is born as a business, not an empire.",
+    "people": [],
+    "era": "before-the-empire",
+    "category": "founding"
+  },
+  {
+    "id": "death-of-aurangzeb",
+    "slug": "death-of-aurangzeb",
+    "title": "Death of Aurangzeb",
+    "date": {
+      "year": 1707,
+      "month": 3,
+      "day": 3
+    },
+    "dateLabel": "3 March 1707",
+    "location": "Ahmednagar, Deccan",
+    "region": "west",
+    "states": [
+      "Maharashtra"
+    ],
+    "summary": "The last of the great Mughal emperors dies after half a century on the throne, most of it spent at war in the Deccan. Within a generation the empire he leaves is an empire in name.",
+    "people": [],
+    "era": "before-the-empire",
+    "category": "turning-point"
+  },
+  {
+    "id": "farrukhsiyar-farman",
+    "slug": "farrukhsiyar-farman",
+    "title": "The Farrukhsiyar farman",
+    "date": {
+      "year": 1717
+    },
+    "dateLabel": "1717",
+    "location": "Delhi and Bengal",
+    "region": "north",
+    "states": [
+      "Delhi",
+      "West Bengal"
+    ],
+    "summary": "The Mughal emperor grants the Company duty-free trade in Bengal for a token annual payment. The Company later called it its Magna Carta; Bengal’s rulers spent forty years trying to contain it.",
+    "people": [],
+    "era": "before-the-empire",
+    "category": "pact"
+  },
+  {
+    "id": "nadir-shah-sacks-delhi",
+    "slug": "nadir-shah-sacks-delhi",
+    "title": "Nadir Shah sacks Delhi",
+    "date": {
+      "year": 1739,
+      "month": 3
+    },
+    "dateLabel": "March 1739",
+    "location": "Delhi",
+    "region": "north",
+    "states": [
+      "Delhi"
+    ],
+    "summary": "The Persian ruler Nadir Shah crushes the Mughal army at Karnal, occupies Delhi, orders a massacre after a riot, and leaves with the Peacock Throne. The empire’s weakness is now visible to everyone.",
+    "people": [],
+    "era": "before-the-empire",
+    "category": "turning-point"
+  },
+  {
     "id": "battle-of-plassey",
     "slug": "battle-of-plassey",
     "title": "Battle of Plassey",
@@ -23,6 +101,46 @@ export const eventSummaries: EventSummary[] = [
     "people": [],
     "era": "early-resistance",
     "category": "battle",
+    "featured": true
+  },
+  {
+    "id": "third-battle-of-panipat",
+    "slug": "third-battle-of-panipat",
+    "title": "Third Battle of Panipat",
+    "date": {
+      "year": 1761,
+      "month": 1,
+      "day": 14
+    },
+    "dateLabel": "14 January 1761",
+    "location": "Panipat (present-day Haryana)",
+    "region": "north",
+    "summary": "Ahmad Shah Durrani’s Afghan army destroys the Maratha force that had come to dominate northern India. Neither side stays to rule the north; the Company, consolidating Bengal, faces no single rival there.",
+    "people": [],
+    "era": "early-resistance",
+    "category": "battle"
+  },
+  {
+    "id": "grant-of-diwani",
+    "slug": "grant-of-diwani",
+    "title": "The Diwani of Bengal",
+    "date": {
+      "year": 1765,
+      "month": 8,
+      "day": 12
+    },
+    "dateLabel": "12 August 1765",
+    "location": "Allahabad",
+    "region": "north",
+    "states": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Bihar"
+    ],
+    "summary": "After defeating the Nawab of Bengal, the Nawab of Awadh and the Mughal emperor together at Buxar, the Company is granted the right to collect the revenues of Bengal, Bihar and Orissa. Conquest now pays for itself.",
+    "people": [],
+    "era": "early-resistance",
+    "category": "pact",
     "featured": true
   },
   {
@@ -1199,6 +1317,12 @@ export const eventSourceFile: Record<string, string> = {
   "royal-indian-navy-mutiny": "final",
   "cabinet-mission": "final",
   "independence-1947": "final",
+  "east-india-company-charter": "prelude",
+  "death-of-aurangzeb": "prelude",
+  "farrukhsiyar-farman": "prelude",
+  "nadir-shah-sacks-delhi": "prelude",
+  "third-battle-of-panipat": "prelude",
+  "grant-of-diwani": "prelude",
   "partition-of-bengal": "rising",
   "swadeshi-movement-launch": "rising",
   "muzaffarpur-action": "rising",

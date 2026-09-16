@@ -1,10 +1,11 @@
 import type { HistoricalEvent } from '@/types';
+import { preludeEvents } from './prelude';
 import { earlyEvents } from './early';
 import { risingEvents } from './rising';
 import { finalEvents } from './final';
 import { tamilNaduEvents } from './tamil-nadu';
 
-export const events: HistoricalEvent[] = [...earlyEvents, ...risingEvents, ...finalEvents, ...tamilNaduEvents].sort(
+export const events: HistoricalEvent[] = [...preludeEvents, ...earlyEvents, ...risingEvents, ...finalEvents, ...tamilNaduEvents].sort(
   (a, b) => a.date.year - b.date.year || (a.date.month ?? 0) - (b.date.month ?? 0) || (a.date.day ?? 0) - (b.date.day ?? 0),
 );
 

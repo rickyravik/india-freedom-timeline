@@ -62,7 +62,7 @@ function EraRail({ activeId }: { activeId: string | null }) {
 
 /* ------------------------------------------------------------------ */
 export default function TimelinePage() {
-  usePageMeta('Interactive Timeline', "Scroll through India's freedom struggle from 1757 to 1947: nine chapters, their events, and the people who shaped them.");
+  usePageMeta('Interactive Timeline', "Scroll through India's freedom struggle from 1600 to 1947: a prelude and nine chapters of resistance, their events, and the people who shaped them.");
 
   const [filters, setFilters] = useUrlState(timelineParams);
   const { region, category, movement: movementId, view: zoom } = filters;
@@ -134,7 +134,7 @@ export default function TimelinePage() {
   return (
     <div className="pb-16">
       <PageIntro title="The Freedom Timeline" lede="Two centuries of resistance, chapter by chapter. Select any moment to meet the people behind it: every story leads to another.">
-        <p className="label num mb-4">1757 – 1947 · nine chapters</p>
+        <p className="label num mb-4">1600 – 1947 · ten chapters</p>
         <div className="flex flex-wrap items-center gap-3">
           <Segmented
             label="View"

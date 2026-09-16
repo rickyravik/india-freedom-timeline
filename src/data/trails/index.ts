@@ -5,8 +5,9 @@ import { howResistanceChanged } from './how-resistance-changed';
 import { theYearTheCompanyFell } from './the-year-the-company-fell';
 import { anArmyInExile } from './an-army-in-exile';
 import { theForestFightsBack } from './the-forest-fights-back';
+import { beforeTheEmpire } from './before-the-empire';
 
-/** Guided trails — short editorial journeys through existing records. One file per trail; add new ones here. */
-export const trails: Trail[] = [womenWhoLed, tamilNaduCloseToHome, howResistanceChanged, theForestFightsBack, theYearTheCompanyFell, anArmyInExile];
+/** Guided trails — short editorial journeys through existing records. One file per trail; add new ones here. The prelude goes first. */
+export const trails: Trail[] = [beforeTheEmpire, womenWhoLed, tamilNaduCloseToHome, howResistanceChanged, theForestFightsBack, theYearTheCompanyFell, anArmyInExile];
 
 export const trailBySlug = new Map(trails.map((t) => [t.slug, t]));

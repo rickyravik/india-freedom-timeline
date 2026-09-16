@@ -137,7 +137,7 @@ export const howResistanceChanged: Trail = {
     answerIndex: 3,
     explanation: 'Forts were defended in 1799 and 1857, the Congress was founded in 1885, and boycott began in 1905. Openly breaking a specific law and accepting the punishment — satyagraha as a mass method — is what 1930 adds to this trail’s story (it had been tried since 1919), and what 1942 inherited.',
   },
-  followOn: { label: 'Browse the nine chapters', to: '/timeline?view=chapters' },
+  followOn: { label: 'Browse all the chapters', to: '/timeline?view=chapters' },
   editorial: {
     status: 'reviewed',
     reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)',
