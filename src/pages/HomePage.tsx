@@ -65,7 +65,12 @@ function TodayLedger() {
     <Reveal as="section" aria-label="Today" className="doc overflow-hidden">
       <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr]">
         <div className="flex flex-col justify-between border-b border-paper-400 bg-paper-200/60 p-5 sm:border-b-0 sm:border-r">
-          <p className="label">{hasContent ? 'Today in freedom history' : 'Today’s featured story'}</p>
+          {/* Deliberately not "featured story" here: that label belongs to the
+             curated section above (records marked `featured: true`). This is
+             a different thing, an unrelated day-seeded pick across every
+             record, and calling both "featured" read as the same panel
+             twice. */}
+          <p className="label">{hasContent ? 'Today in freedom history' : 'A life to discover'}</p>
           <p className="num mt-3 font-display text-h1 font-bold leading-none text-oxide">{dayLabel}</p>
           <p className="font-display text-lg font-bold text-ink">{monthLabel}</p>
         </div>
