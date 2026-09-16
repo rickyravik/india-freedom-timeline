@@ -172,6 +172,9 @@ export function TrailPage() {
             <Link to={`/trails/${trail.slug}/teach`} className="btn-ghost-vault">
               For teachers and families
             </Link>
+            <Link to="/timeline" className="btn-ghost-vault">
+              View on Timeline
+            </Link>
             {trail.editorial.status !== 'reviewed' && <DraftStamp vault />}
           </div>
         </div>
@@ -258,6 +261,13 @@ export function TrailStopPage() {
             <button type="button" className={`chip min-h-10 ${textOnly ? 'chip-active' : ''}`} aria-pressed={textOnly} onClick={() => setParams({ text: !textOnly })}>
               Text only
             </button>
+            {/* An escape hatch back to the chronological view: reviewers on a
+               trail had no way to jump to the Timeline without losing their
+               place, so this always stays reachable mid-trail. */}
+            <Link to="/timeline" className="chip min-h-10">
+              <Icon d={icons.clock} className="h-4 w-4" />
+              Timeline
+            </Link>
           </div>
         </div>
         <div className={`perf-all on-sheet relative mt-5 px-5 py-7 sm:px-9 sm:py-9 ${eraAccent.bg[focusEraAccent]} ${eraAccent.onInk[focusEraAccent]}`}>

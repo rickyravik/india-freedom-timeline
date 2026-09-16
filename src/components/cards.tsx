@@ -18,15 +18,24 @@ export function FighterCard({
   fighter,
   compact = false,
   vault = false,
+  contextState,
 }: {
   fighter: FighterSummary;
   compact?: boolean;
   /* accepted for call-site compatibility; repeated cards no longer animate in */
   delay?: number;
   vault?: boolean;
+  /* The state whose page this card is currently listed on, e.g. the Map's
+     selected state. A card shown while browsing "Rajasthan" for a fighter
+     whose `states` are ['Madhya Pradesh', 'Rajasthan', ...] must show
+     Rajasthan here, or it reads as a data error rather than the honest fact
+     that a life crossed several states. Falls back to the first state on
+     record wherever there is no single state being browsed. */
+  contextState?: string;
 }) {
   const era = eraById.get(fighter.era);
   const { pathname, search } = useLocation();
+  const shownState = contextState && fighter.states.includes(contextState) ? contextState : fighter.states[0];
   return (
       <Link
         to={`/fighters/${fighter.slug}`}
@@ -52,7 +61,7 @@ export function FighterCard({
           <p className={`mt-1 font-body text-label ${vault ? 'text-paper-300' : 'text-ink-faint'}`}>
             <span className={`num font-medium ${vault ? 'text-paper-200' : 'text-sepia'}`}>{lifespan(fighter)}</span>
             {' · '}
-            {fighter.states[0]}
+            {shownState}
             {era && (
               <>
                 {' · '}

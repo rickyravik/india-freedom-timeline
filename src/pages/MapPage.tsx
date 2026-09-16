@@ -300,7 +300,7 @@ export default function MapPage() {
                          mid-word once split into two columns here. */}
                       <div className="grid grid-cols-1 gap-3">
                         {stateFighters.map((f, i) => (
-                          <FighterCard key={f.id} fighter={f} compact delay={(i % 6) * 50} />
+                          <FighterCard key={f.id} fighter={f} compact delay={(i % 6) * 50} contextState={selected.name} />
                         ))}
                       </div>
                     </section>

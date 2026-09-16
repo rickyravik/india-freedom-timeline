@@ -163,6 +163,28 @@ export default function HomePage() {
           </Link>
         </section>
 
+        {/* Ahead of Guided trails on purpose: reviewers said trails drew all the
+           attention on their way down the page and the chronological entry
+           point never got seen. This is the shortest path to "what happened
+           when", so it goes right after the day's one featured story. */}
+        <section aria-label="Browse by chapter">
+          <SectionHeading title="Browse by chapter" lede="Ten chapters, 1600–1947: a prelude, then nine chapters of resistance. Boundaries are aids to navigation, not hard breaks in history." action={<Link to="/timeline" className="btn-ghost">Full timeline</Link>} />
+          <ol className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-9" aria-label="Eras of the freedom struggle">
+            {eras.map((era) => (
+              <li key={era.id}>
+                <Link
+                  to={`/timeline#era-${era.id}`}
+                  className={`perf-x on-sheet block h-full px-3 py-3.5 transition-opacity duration-160 ease-cinematic hover:opacity-90 ${eraAccent.bg[era.accent]} ${eraAccent.onInk[era.accent]}`}
+                >
+                  <span className="denom block">{era.startYear}</span>
+                  <span className="mt-1.5 block font-body text-label font-semibold leading-tight">{era.name}</span>
+                  <span className={`mt-1 block font-reading text-label italic leading-snug lg:hidden ${eraAccent.onInkMuted[era.accent]}`}>{era.tagline}</span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </section>
+
         <section aria-label="Guided trails">
           <SectionHeading title="Guided trails" lede="Short journeys with a question at the start and the evidence at every stop." action={<Link to="/trails" className="btn-ghost">All trails</Link>} />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -187,24 +209,6 @@ export default function HomePage() {
               <FighterChip key={f.id} fighter={f} />
             ))}
           </div>
-        </section>
-
-        <section aria-label="Browse by chapter">
-          <SectionHeading title="Browse by chapter" lede="Ten chapters, 1600–1947: a prelude, then nine chapters of resistance. Boundaries are aids to navigation, not hard breaks in history." />
-          <ol className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-9" aria-label="Eras of the freedom struggle">
-            {eras.map((era) => (
-              <li key={era.id}>
-                <Link
-                  to={`/timeline#era-${era.id}`}
-                  className={`perf-x on-sheet block h-full px-3 py-3.5 transition-opacity duration-160 ease-cinematic hover:opacity-90 ${eraAccent.bg[era.accent]} ${eraAccent.onInk[era.accent]}`}
-                >
-                  <span className="denom block">{era.startYear}</span>
-                  <span className="mt-1.5 block font-body text-label font-semibold leading-tight">{era.name}</span>
-                  <span className={`mt-1 block font-reading text-label italic leading-snug lg:hidden ${eraAccent.onInkMuted[era.accent]}`}>{era.tagline}</span>
-                </Link>
-              </li>
-            ))}
-          </ol>
         </section>
       </div>
 
