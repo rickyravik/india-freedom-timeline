@@ -4,7 +4,7 @@ import type { Gender, RegionId, Role } from '@/types';
 import { fighters, roleLabels } from '@/lib/content';
 import { eras } from '@/data/eras';
 import { regionIds, regionNames } from '@/data/regions';
-import { useBookmarks, usePageMeta, useUrlState } from '@/lib/hooks';
+import { useBookmarks, useHorizontalWheelScroll, usePageMeta, useUrlState } from '@/lib/hooks';
 import { oneOf, oneOfDefault, text } from '@/lib/url-state';
 import { buildIndex, searchIndex } from '@/lib/search-core';
 import { useFlipList } from '@/lib/motion';
@@ -68,6 +68,8 @@ export default function FightersPage() {
 
   const listRef = useRef<HTMLDivElement>(null);
   const flip = useFlipList(listRef, '[data-flip-id]', results.map((f) => f.slug).join('|'));
+  const collectionsRailRef = useRef<HTMLDivElement>(null);
+  useHorizontalWheelScroll(collectionsRailRef);
   /* Query typing is excluded on purpose: keystrokes should not animate. */
   const change = (patch: Partial<typeof filters>) => {
     flip.capture();
@@ -125,7 +127,7 @@ export default function FightersPage() {
             Filters{activeCount > 0 && ` · ${activeCount}`}
           </button>
         </div>
-        <div className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:mx-0 sm:px-0" role="group" aria-label="Collections">
+        <div ref={collectionsRailRef} className="-mx-4 mt-4 flex gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:mx-0 sm:px-0" role="group" aria-label="Collections">
           {collections.map((c) => (
             <button key={c.value} type="button" aria-pressed={collection === c.value} onClick={() => change({ collection: c.value })} className={`chip shrink-0 whitespace-nowrap ${collection === c.value ? 'chip-active' : ''}`}>
               {c.label}

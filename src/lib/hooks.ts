@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type RefObject } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { getNeedRefresh, subscribeNeedRefresh } from '@/lib/pwa';
 import { parseParams, serializeParams, type Schema, type StateOf } from '@/lib/url-state';
@@ -68,6 +68,31 @@ function getRevealObserver(): IntersectionObserver | null {
     { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
   );
   return revealObserver;
+}
+
+/**
+ * Lets a plain vertical mouse wheel scroll a horizontal rail (a chip row, an
+ * era nav) that hides its native scrollbar with `scrollbar-none`. Without
+ * this, a desktop visitor with a mouse (no trackpad, no touch) has no way to
+ * reach content past the first screenful: dragging an invisible scrollbar
+ * isn't possible, and a plain wheel only scrolls the page. Only intervenes
+ * when the rail actually overflows and the gesture reads as vertical, so a
+ * genuine horizontal swipe/trackpad gesture and a rail that already fits are
+ * both left alone.
+ */
+export function useHorizontalWheelScroll<T extends HTMLElement>(ref: RefObject<T | null>) {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      if (el.scrollWidth <= el.clientWidth) return;
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      el.scrollLeft += e.deltaY;
+      e.preventDefault();
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, [ref]);
 }
 
 /**

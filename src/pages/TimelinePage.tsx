@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import type { EventCategory, EventSummary, RegionId } from '@/types';
+import type { EventCategory, EventSummary, FighterSummary, RegionId } from '@/types';
 import { categoryLabels, eras, events, fightersForEvent, fighters, movementById, movements } from '@/lib/content';
 import { regionIds, regionNames } from '@/data/regions';
-import { useActiveSection, usePageMeta, useUrlState } from '@/lib/hooks';
+import { useActiveSection, useHorizontalWheelScroll, usePageMeta, useUrlState } from '@/lib/hooks';
 import { oneOf, oneOfDefault } from '@/lib/url-state';
 import { track } from '@/lib/analytics';
 import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, Icon, PageIntro, Postmark, Reveal, Segmented, eraAccent, icons } from '@/components/ui';
@@ -28,6 +28,7 @@ const timelineParams = {
 /* Era rail - sticky chapter nav, on the sheet's own paper             */
 function EraRail({ activeId }: { activeId: string | null }) {
   const railRef = useRef<HTMLDivElement>(null);
+  useHorizontalWheelScroll(railRef);
   useEffect(() => {
     if (!activeId || !railRef.current) return;
     const el = railRef.current.querySelector<HTMLElement>(`[data-era="${activeId}"]`);
@@ -57,6 +58,21 @@ function EraRail({ activeId }: { activeId: string | null }) {
         })}
       </div>
     </nav>
+  );
+}
+
+/* One per chapter, so each gets its own scroll position and wheel listener. */
+function ChapterPeopleRail({ people }: { people: FighterSummary[] }) {
+  const railRef = useRef<HTMLDivElement>(null);
+  useHorizontalWheelScroll(railRef);
+  return (
+    <div ref={railRef} className="-mr-4 flex gap-2 overflow-x-auto pb-2 pr-4 scrollbar-none">
+      {people.map((f) => (
+        <span key={f.id} className="shrink-0">
+          <FighterChip fighter={f} />
+        </span>
+      ))}
+    </div>
   );
 }
 
@@ -249,13 +265,7 @@ export default function TimelinePage() {
                     {eraPeople.length > 0 && (
                       <Reveal className="ml-8 mt-5 sm:ml-12">
                         <p className="label mb-2">People of this chapter</p>
-                        <div className="-mr-4 flex gap-2 overflow-x-auto pb-2 pr-4 scrollbar-none">
-                          {eraPeople.map((f) => (
-                            <span key={f.id} className="shrink-0">
-                              <FighterChip fighter={f} />
-                            </span>
-                          ))}
-                        </div>
+                        <ChapterPeopleRail people={eraPeople} />
                       </Reveal>
                     )}
 

@@ -2,7 +2,7 @@ import { useMemo, useRef, useState } from 'react';
 import type { EventCategory } from '@/types';
 import { categoryLabels, events } from '@/lib/content';
 import { eraById } from '@/data/eras';
-import { usePageMeta, useUrlState } from '@/lib/hooks';
+import { useHorizontalWheelScroll, usePageMeta, useUrlState } from '@/lib/hooks';
 import { oneOf } from '@/lib/url-state';
 import { useFlipList } from '@/lib/motion';
 import { ActiveFilters, BottomSheet, ChipGroup, EmptyState, PageIntro, eraAccent } from '@/components/ui';
@@ -38,6 +38,8 @@ export default function EventsPage() {
 
   const listRef = useRef<HTMLOListElement>(null);
   const flip = useFlipList(listRef, '[data-flip-id]', filtered.map((e) => e.id).join('|'));
+  const decadeRailRef = useRef<HTMLDivElement>(null);
+  useHorizontalWheelScroll(decadeRailRef);
   const change = (patch: Partial<typeof filters>) => {
     flip.capture();
     setFilters(patch);
@@ -62,7 +64,7 @@ export default function EventsPage() {
           <button type="button" className={`chip min-h-12 !px-5 text-meta ${activeCount ? 'chip-active' : ''}`} onClick={() => setSheetOpen(true)} aria-haspopup="dialog">
             Filters{activeCount > 0 && ` · ${activeCount}`}
           </button>
-          <div className="-mx-4 flex gap-2 overflow-x-auto px-4 scrollbar-none sm:mx-0 sm:px-0" role="group" aria-label="Jump to decade">
+          <div ref={decadeRailRef} className="-mx-4 flex gap-2 overflow-x-auto px-4 scrollbar-none sm:mx-0 sm:px-0" role="group" aria-label="Jump to decade">
             {decades
               .filter((d) => groups.some(([dec]) => `${dec}s` === d))
               .map((d) => (
