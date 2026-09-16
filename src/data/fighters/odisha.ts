@@ -1,7 +1,7 @@
 import type { FreedomFighter } from '@/types';
 
 /**
- * Odia freedom fighters — from the Paika Rebellion of 1817, through decades
+ * Odia freedom fighters, from the Paika Rebellion of 1817, through decades
  * of resistance from the Sambalpur forests, to the Non-Cooperation and Quit
  * India years. Odisha is one of the archive's thinnest-covered states.
  */
@@ -32,11 +32,11 @@ export const odishaFighters: FreedomFighter[] = [
     shortStory: [
       {
         title: 'The Raja’s commander',
-        text: 'Jagabandhu Bidyadhar held the title of Buxi — military commander — to the Raja of Khurda, second only to the king. He came from a family that had long held land in return for military service to the throne.',
+        text: 'Jagabandhu Bidyadhar held the title of Buxi (military commander) to the Raja of Khurda, second only to the king. He came from a family that had long held land in return for military service to the throne.',
       },
       {
         title: 'Land taken away',
-        text: 'When the East India Company took over Odisha’s administration, it changed the old rules. Jagabandhu lost the rent-free lands his family had held for generations, and so did thousands of Paikas — the hereditary soldier-farmers who had defended Khurda for centuries.',
+        text: 'When the East India Company took over Odisha’s administration, it changed the old rules. Jagabandhu lost the rent-free lands his family had held for generations, and so did thousands of Paikas, the hereditary soldier-farmers who had defended Khurda for centuries.',
       },
       {
         title: 'The rebellion of 1817',
@@ -49,7 +49,7 @@ export const odishaFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Jagabandhu Bidyadhar Mohapatra Bhramarbar Ray held the hereditary title of Buxi — commander-in-chief — to the Raja of Khurda, and with it substantial rent-free jagir land granted in return for military service. After the East India Company annexed Khurda in 1803 and progressively dismantled the kingdom’s old revenue and military arrangements, Jagabandhu’s lands were confiscated and he was reduced, by the 1810s, to the status of an ordinary taxpayer — one grievance among many that fell on the Paikas, the region’s hereditary militia-landholders, as the Company’s new land-revenue settlement and salt monopoly bore down on them.',
+      'Jagabandhu Bidyadhar Mohapatra Bhramarbar Ray held the hereditary title of Buxi (commander-in-chief) to the Raja of Khurda, and with it substantial rent-free jagir land granted in return for military service. After the East India Company annexed Khurda in 1803 and progressively dismantled the kingdom’s old revenue and military arrangements, Jagabandhu’s lands were confiscated and he was reduced, by the 1810s, to the status of an ordinary taxpayer, one grievance among many that fell on the Paikas, the region’s hereditary militia-landholders, as the Company’s new land-revenue settlement and salt monopoly bore down on them.',
       'In March 1817 Jagabandhu led the Paikas, along with Kondh tribal fighters and other Khurda subjects, in a sudden uprising: rebels attacked Company offices, the treasury at Banapur and police stations across the region before British troops restored control within months. Jagabandhu himself escaped and continued a guerrilla resistance from the Odisha hill tracts for some eight years, negotiating on and off with Company officials through intermediaries including the Raja of Nayagarh.',
       'He finally surrendered to the British on 25 May 1825 and was permitted to settle at Cuttack with his family on a monthly pension of Rs 150. He died there on 24 January 1829, and his pension lapsed with him. In October 2017 the Government of India marked the rebellion’s bicentenary; the Odisha state government has argued the Paika Rebellion deserves recognition as an early large-scale armed uprising against Company rule, decades before 1857.',
     ],
@@ -61,7 +61,7 @@ export const odishaFighters: FreedomFighter[] = [
     sacrifices: ['Lost his hereditary lands and status; years as a fugitive; died in reduced circumstances at Cuttack'],
     legacy: 'Odisha’s foremost symbol of early resistance to Company rule; commemorated at the Paika Rebellion’s 2017 bicentenary.',
     facts: [
-      'Paika means "foot-soldier" in Odia — the Paikas were a hereditary militia that had served Khurda’s kings for generations.',
+      'Paika means "foot-soldier" in Odia. The Paikas were a hereditary militia that had served Khurda’s kings for generations.',
       'He was allowed to live out his final years at Cuttack on a British pension after his 1825 surrender.',
     ],
     disputed: [
@@ -136,7 +136,7 @@ export const odishaFighters: FreedomFighter[] = [
     fullBiography: [
       'Surendra Sai was born in 1809 into the ruling family of Sambalpur in western Odisha. When Raja Maharaj Sai died without a son in 1827, he had designated Surendra Sai his successor, but the East India Company, applying the same annexationist logic it later formalised as the Doctrine of Lapse, refused to recognise the claim and moved to bring Sambalpur under direct Company administration instead.',
       'Surendra Sai refused to accept the annexation and, from the 1830s, led repeated risings against Company authority from the forested hill country around Sambalpur, drawing support from Odia villagers and Kondh and Binjhal tribal fighters alike. He was imprisoned by the British on more than one occasion in these years. During the countrywide uprising of 1857 he escaped confinement at Hazaribagh and returned to armed resistance in Sambalpur, sustaining the fight through the early 1860s until his eventual recapture around 1864.',
-      'He was held for the rest of his life as a state prisoner, eventually at Asirgarh fort in the Central Provinces, where he died in 1884. His decades-long resistance — spanning from the 1827 succession dispute through the 1857–62 period — is remembered in Odisha as one of the longest sustained campaigns against Company and Crown rule anywhere in India, and Sambalpur’s airport and a university now bear his name.',
+      'He was held for the rest of his life as a state prisoner, eventually at Asirgarh fort in the Central Provinces, where he died in 1884. His decades-long resistance, spanning from the 1827 succession dispute through the 1857–62 period, is remembered in Odisha as one of the longest sustained campaigns against Company and Crown rule anywhere in India, and Sambalpur’s airport and a university now bear his name.',
     ],
     entryIntoStruggle: 'The Company’s refusal to recognise his designated succession to the Sambalpur throne, 1827.',
     achievements: [
@@ -195,7 +195,7 @@ export const odishaFighters: FreedomFighter[] = [
     roles: ['tribal-leader', 'satyagrahi'],
     contentNote: 'This life ends in a wrongful execution.',
     summary:
-      'Bhumia tribal Gandhian leader from Koraput who led a peaceful Quit India march in 1942, was convicted of a forest guard’s murder on evidence many historians consider fabricated, and was hanged in 1943 — one of the few executions carried out during the Quit India movement.',
+      'Bhumia tribal Gandhian leader from Koraput who led a peaceful Quit India march in 1942, was convicted of a forest guard’s murder on evidence many historians consider fabricated, and was hanged in 1943, one of the few executions carried out during the Quit India movement.',
     shortStory: [
       {
         title: 'Gandhi’s message reaches Koraput',
@@ -217,7 +217,7 @@ export const odishaFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Laxman Naik, born in 1899 to a Bhumia tribal family in the Koraput hill country of southern Odisha, became a Gandhian organiser among his community, promoting khadi, temperance and non-violent resistance in a region far from the Congress’s usual strongholds.',
-      'Responding to Gandhi’s Quit India call, Naik led an unarmed procession to the Mathili police station on 21 August 1942; police opened fire on the demonstrators, killing and injuring a large number. In the crackdown that followed, the colonial administration charged Naik with the murder of a forest guard. He was tried, convicted and sentenced to death on 13 November 1942 — a prosecution that many later historians and Odia accounts regard as built on fabricated or coerced evidence intended to remove an effective local leader rather than to answer a genuine crime.',
+      'Responding to Gandhi’s Quit India call, Naik led an unarmed procession to the Mathili police station on 21 August 1942; police opened fire on the demonstrators, killing and injuring a large number. In the crackdown that followed, the colonial administration charged Naik with the murder of a forest guard. He was tried, convicted and sentenced to death on 13 November 1942, in a prosecution that many later historians and Odia accounts regard as built on fabricated or coerced evidence intended to remove an effective local leader rather than to answer a genuine crime.',
       'Laxman Naik was hanged at Berhampur jail on 29 March 1943, one of only a small number of people executed anywhere in India during the Quit India movement. He is remembered in Odisha as the "Gandhi of Koraput" or "Gandhi of Malkangiri," and the Government of India issued a commemorative postage stamp in his honour.',
     ],
     entryIntoStruggle: 'Gandhian organising among the Bhumia community of Koraput through the 1930s, culminating in the August 1942 Mathili march.',
@@ -278,11 +278,11 @@ export const odishaFighters: FreedomFighter[] = [
     era: 'non-cooperation',
     roles: ['political-leader', 'educator', 'journalist'],
     summary:
-      'Known as Utkalmani — "the jewel of Odisha" — he founded the nationalist Satyabadi school in 1909 and the newspaper Samaja, led the Non-Cooperation movement in Odisha through the 1920s, and worked to unite Odia-speaking tracts scattered across neighbouring provinces.',
+      'Known as Utkalmani, "the jewel of Odisha", he founded the nationalist Satyabadi school in 1909 and the newspaper Samaja, led the Non-Cooperation movement in Odisha through the 1920s, and worked to unite Odia-speaking tracts scattered across neighbouring provinces.',
     shortStory: [
       {
         title: 'The jewel of Odisha',
-        text: 'Gopabandhu Das was a lawyer who gave up his practice to serve his people. Odisha came to call him Utkalmani — "the jewel of Odisha" — for his tireless work in education, journalism and politics.',
+        text: 'Gopabandhu Das was a lawyer who gave up his practice to serve his people. Odisha came to call him Utkalmani, "the jewel of Odisha", for his tireless work in education, journalism and politics.',
       },
       {
         title: 'A school with a difference',
@@ -298,9 +298,9 @@ export const odishaFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Gopabandhu Das, born in 1877 in Puri district, trained and briefly practised as a lawyer before turning to public life. In 1909 he founded the Satyabadi Bana Vidyalaya near Sakshigopal, a school that broke from the rote, exam-driven model of colonial education to teach in a spirit of nationalism, simplicity and closeness to nature — an experiment that shaped a generation of Odia public figures.',
+      'Gopabandhu Das, born in 1877 in Puri district, trained and briefly practised as a lawyer before turning to public life. In 1909 he founded the Satyabadi Bana Vidyalaya near Sakshigopal, a school that broke from the rote, exam-driven model of colonial education to teach in a spirit of nationalism, simplicity and closeness to nature, an experiment that shaped a generation of Odia public figures.',
       'He was drawn early into the Utkal Sammilani, the movement to unite the Odia-speaking tracts then divided between the Bengal, Bihar-Orissa, Madras and Central Provinces administrations into a single province, and worked to link that regional cause with the wider Indian National Congress. He founded the weekly Samaja in 1919 as a vehicle for nationalist and social reform ideas among Odia readers; it grew into one of the state’s most influential newspapers.',
-      'In the early 1920s Gopabandhu Das took a leading role in organising the Non-Cooperation Movement across Odisha, campaigning against British goods and institutions and for Hindu-Muslim unity, while continuing his work for a separate Odia-speaking province — a demand realised only in 1936, after his death. He died in 1928, and Odisha remembers him as Utkalmani, one of the founders of its modern public life.',
+      'In the early 1920s Gopabandhu Das took a leading role in organising the Non-Cooperation Movement across Odisha, campaigning against British goods and institutions and for Hindu-Muslim unity, while continuing his work for a separate Odia-speaking province, a demand realised only in 1936, after his death. He died in 1928, and Odisha remembers him as Utkalmani, one of the founders of its modern public life.',
     ],
     entryIntoStruggle: 'Founding the Satyabadi school in 1909 and joining the Utkal Sammilani movement.',
     ideology: 'Gandhian nationalism combined with Odia linguistic and regional self-assertion.',

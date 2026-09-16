@@ -48,7 +48,7 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boole
 }
 
 export default function App() {
-  /* Set once, before the very first render (see src/lib/routes.tsx) — only
+  /* Set once, before the very first render (see src/lib/routes.tsx) - only
      ever matches the route active on initial page load. */
   const preloaded = getPreloadedRoute();
   /* The hydration mark set by main.tsx is only meaningful for the very first

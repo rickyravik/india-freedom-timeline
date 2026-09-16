@@ -22,7 +22,7 @@ export const dandiMarch: Route = {
   ],
   outcome: [
     'Salt was made and sold illegally across the coasts; C. Rajagopalachari marched to Vedaranyam in the south. In May, volunteers marching on the Dharasana salt works stood rank after rank under police lathis without raising a hand, reported worldwide by Webb Miller.[^1]',
-    'Some 60,000 Indians or more — by some counts 90,000 — women among them in unprecedented numbers, filled the jails before the campaign paused with the Gandhi–Irwin Pact in March 1931. The march turned mass law-breaking into moral spectacle and made the movement truly popular.[^2]',
+    'Some 60,000 Indians or more (by some counts 90,000), women among them in unprecedented numbers, filled the jails before the campaign paused with the Gandhi–Irwin Pact in March 1931. The march turned mass law-breaking into moral spectacle and made the movement truly popular.[^2]',
   ],
   sources: [
     { title: 'Gandhi: The Years That Changed the World', author: 'Ramachandra Guha', publisher: 'Penguin Allen Lane', year: 2018, type: 'book', evidence: 'scholarship' },
@@ -33,6 +33,6 @@ export const dandiMarch: Route = {
     reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)',
     reviewedOn: '2026-09-09',
     notes:
-      'Stop list and dates verified 2026-09-09 against the primary record: the Collected Works of Mahatma Gandhi, Vol. 43 (Publications Division; archive.org item in.ernet.dli.2015.47021), whose contents index dates a speech at each halt — Aslali 12-3, Nadiad 15-3, Anand 17-3 (arrived the 16th, Boriavi speech that day), Borsad 18-3, Broach and Ankleshwar 26-3, Surat 1-4, Navsari and Vijalpur 4-4 (arrived the 3rd), Dandi 5-4 and 6-4. Cross-checked too against Wikipedia\'s day-by-day route. Anand and Navsari are therefore given as two-day ranges. The Surat note was corrected: the marchers did not rest there but moved on the next morning. What remains for a human reviewer: sign off (reviewedBy/reviewedOn), and either add [^n] markers to the intermediate-stop notes (they are context drawn from the same volume, not yet cited claim by claim) or cut them.',
+      'Stop list and dates verified 2026-09-09 against the primary record: the Collected Works of Mahatma Gandhi, Vol. 43 (Publications Division; archive.org item in.ernet.dli.2015.47021), whose contents index dates a speech at each halt. Those dates are Aslali 12-3, Nadiad 15-3, Anand 17-3 (arrived the 16th, Boriavi speech that day), Borsad 18-3, Broach and Ankleshwar 26-3, Surat 1-4, Navsari and Vijalpur 4-4 (arrived the 3rd), Dandi 5-4 and 6-4. Cross-checked too against Wikipedia\'s day-by-day route. Anand and Navsari are therefore given as two-day ranges. The Surat note was corrected: the marchers did not rest there but moved on the next morning. What remains for a human reviewer: sign off (reviewedBy/reviewedOn), and either add [^n] markers to the intermediate-stop notes (they are context drawn from the same volume, not yet cited claim by claim) or cut them.',
   },
 };

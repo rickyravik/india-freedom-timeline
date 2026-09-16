@@ -5,7 +5,7 @@ export const womenWhoLed: Trail = {
   slug: 'women-who-led',
   version: 1,
   title: 'Women who led resistance',
-  question: 'How did women lead resistance across two centuries — and what did it cost them?',
+  question: 'How did women lead resistance across two centuries, and what did it cost them?',
   theme: 'Leadership',
   minutes: 6,
   learningGoal: 'Name one woman who led resistance before 1857 and one during 1942, say what each resisted and what it cost her, and tell which of their stories rests on oral tradition.',
@@ -19,7 +19,7 @@ export const womenWhoLed: Trail = {
       question: 'What could a widowed queen do against the East India Company in the 1770s?',
       text: [
         'Velu Nachiyar was queen of Sivaganga in the Tamil country. In 1772 Company troops acting for the Nawab of Arcot killed her husband, and she escaped with her daughter, spending eight years in hiding while she planned her return.[^1]',
-        'With help from Hyder Ali of Mysore and the Marudhu brothers she raised an army — including a women’s unit — and took Sivaganga back around 1780. Tamil Nadu remembers her as Veeramangai, the brave woman.[^2]',
+        'With help from Hyder Ali of Mysore and the Marudhu brothers she raised an army, including a women’s unit, and took Sivaganga back around 1780. Tamil Nadu remembers her as Veeramangai, the brave woman.[^2]',
       ],
       focus: { kind: 'fighter', id: 'velu-nachiyar' },
       also: [{ kind: 'fighter', id: 'marudhu-brothers' }],
@@ -28,15 +28,15 @@ export const womenWhoLed: Trail = {
         { title: 'Sivaganga District Gazetteer', publisher: 'Government of Tamil Nadu', type: 'archive', evidence: 'scholarship' },
       ],
       uncertainty: 'The celebrated account of her commander Kuyili setting the Company’s ammunition store ablaze comes from oral tradition and later retellings; no contemporary record confirms it.',
-      bridge: 'Seventy years later another queen faced the Company — this time over who had the right to inherit a kingdom.',
+      bridge: 'Seventy years later another queen faced the Company, this time over who had the right to inherit a kingdom.',
     },
     {
       id: 'jhansi',
       title: 'Two women defend Jhansi',
-      question: 'Who is remembered — and who was nearly forgotten — when a city falls?',
+      question: 'Who is remembered, and who was nearly forgotten, when a city falls?',
       text: [
         'When Rani Lakshmibai’s husband died, the British refused to accept her adopted son as heir and took Jhansi under the Doctrine of Lapse. In 1858 a British army besieged the city; she led the defence from the walls for nearly two weeks, escaped through the enemy lines by night, joined Tatya Tope to seize Gwalior, and died in battle on 17 June 1858.[^1]',
-        'Jhalkari Bai, from a Dalit family near Jhansi, served in — and, in later tellings, led — the Durga Dal, the women’s guard. She is remembered for dressing as the Rani during the fall of the city to cover her escape. For a long time the history books left her out.',
+        'Jhalkari Bai, from a Dalit family near Jhansi, served in the Durga Dal, the women’s guard, and in later tellings led it. She is remembered for dressing as the Rani during the fall of the city to cover her escape. For a long time the history books left her out.',
       ],
       focus: { kind: 'fighter', id: 'rani-lakshmibai' },
       also: [
@@ -49,14 +49,14 @@ export const womenWhoLed: Trail = {
       ],
       uncertainty: 'Jhalkari Bai’s story rests largely on oral tradition written down much later; accounts of her fate after Jhansi differ. Accounts of exactly how and where Lakshmibai died on 17/18 June 1858 also differ.',
       contentNote: 'This stop includes deaths in battle.',
-      bridge: 'By the 1930s resistance had new forms — and new leaders who were still in their teens and twenties.',
+      bridge: 'By the 1930s resistance had new forms, and new leaders who were still in their teens and twenties.',
     },
     {
       id: 'pritilata',
       title: 'A headmistress leads a raid',
       question: 'Why would a philosophy graduate join an armed revolutionary group?',
       text: [
-        'Pritilata Waddedar was one of Chittagong’s finest students; the authorities withheld her Calcutta degree — punishment, it is generally assumed, for her politics — and she became a school headmistress at twenty-one. Secretly she had joined Surya Sen’s revolutionary group and trained with weapons.[^1]',
+        'Pritilata Waddedar was one of Chittagong’s finest students; the authorities withheld her Calcutta degree, it is generally assumed as punishment for her politics, and she became a school headmistress at twenty-one. Secretly she had joined Surya Sen’s revolutionary group and trained with weapons.[^1]',
         'On the night of 23 September 1932 she led the attack on the Pahartali European Club, said to have displayed a sign barring "dogs and Indians". Wounded in the retreat, she swallowed cyanide rather than be captured. Calcutta University finally conferred her degree in 2012.[^2]',
       ],
       focus: { kind: 'fighter', id: 'pritilata-waddedar' },
@@ -100,13 +100,13 @@ export const womenWhoLed: Trail = {
       bridge: '',
     },
   ],
-  reflection: 'Four of these five women were thirty or younger when they acted. Each gave something up — a kingdom, a degree, fourteen years, four years. Who helped each of them, and what did the people around them risk?',
+  reflection: 'Four of these five women were thirty or younger when they acted. Each gave something up: a kingdom, a degree, fourteen years, four years. Who helped each of them, and what did the people around them risk?',
   activity: {
     kind: 'choice',
     prompt: 'Which claim in this trail rests mainly on oral tradition rather than on a contemporary record?',
     options: ['Kuyili’s fire attack on the Sivaganga ammunition store', 'Pritilata Waddedar’s raid on the Pahartali European Club', 'Rani Gaidinliu’s life sentence in 1933', 'Usha Mehta’s arrest at the Congress Radio transmitter'],
     answerIndex: 0,
-    explanation: 'The Pahartali raid, the sentence and the arrest are recorded in case files and contemporary papers. Kuyili’s attack is remembered through oral tradition and later retellings — the archive marks it as uncertain, and so should you when you retell it.',
+    explanation: 'The Pahartali raid, the sentence and the arrest are recorded in case files and contemporary papers. Kuyili’s attack is remembered through oral tradition and later retellings. The archive marks it as uncertain, and so should you when you retell it.',
   },
   followOn: { label: 'Meet more women of the movement', to: '/fighters?collection=women' },
   editorial: {
@@ -117,15 +117,15 @@ export const womenWhoLed: Trail = {
       'Drafted 2026-09-08 from the five records’ own text. Fact-checked 2026-09-09 (~67 claims) against Britannica, cited Wikipedia and the cited scholarship: framing errors fixed (“five centuries” → decades; the teaching prompt’s date arithmetic; a facilitator note’s “death sentence”), small date slips corrected (Pahartali raid night of 23 Sept; Gaidinliu sentenced 1933; Usha Mehta sentenced to, not served, four years), and legendary details (Jhalkari Bai’s command, the “dogs and Indians” sign) marked as tradition.',
   },
   teaching: {
-    alignment: 'Proposed for upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. Not yet mapped to a specific board or state curriculum.',
+    alignment: 'Proposed for upper-primary and secondary history: resistance to colonial rule; evidence and interpretation. Not yet mapped to a specific board or state curriculum.',
     shortVersion: ['velu-nachiyar', 'pritilata', 'usha-mehta'],
     prompts: [
-      'Each of these five women is remembered differently by history — some in official records, some mainly in memory and oral tradition. Why might that be, and does it change how much we should trust their stories?',
+      'Each of these five women is remembered differently by history: some in official records, some mainly in memory and oral tradition. Why might that be, and does it change how much we should trust their stories?',
       'These women acted a year, a decade, seventy-odd years and more than a century and a half apart. What stayed the same about what leadership cost them, and what changed?',
       'The trail says none of these five women worked together. What would it have meant for the freedom struggle if they had?',
     ],
     facilitatorNotes: [
-      'Kuyili\'s fire attack is the trail\'s clearest example of an unverified claim — useful for a short exercise in "what counts as evidence."',
+      'Kuyili\'s fire attack is the trail\'s clearest example of an unverified claim, useful for a short exercise in "what counts as evidence."',
       'Encourage students to name the specific cost each woman paid (exile, imprisonment, a life sentence, a withheld degree, years underground) rather than a general "sacrifice."',
       'If time allows, connect Usha Mehta\'s underground radio to the availability of technology as a factor in how resistance was organised by the 1940s.',
     ],

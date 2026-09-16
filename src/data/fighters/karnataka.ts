@@ -1,7 +1,7 @@
 import type { FreedomFighter } from '@/types';
 
 /**
- * Kannadiga freedom fighters — from Kittur's war of 1824 through the
+ * Kannadiga freedom fighters, from Kittur's war of 1824 through the
  * Congress-building years of the early twentieth century.
  */
 export const karnatakaFighters: FreedomFighter[] = [
@@ -39,7 +39,7 @@ export const karnatakaFighters: FreedomFighter[] = [
       },
       {
         title: 'Captured and hanged',
-        text: 'The British eventually captured him. Rayanna was hanged from a banyan tree at Nandagad in 1831, but Karnataka never forgot him — songs and memorials keep his name alive alongside Chennamma’s.',
+        text: 'The British eventually captured him. Rayanna was hanged from a banyan tree at Nandagad in 1831, but Karnataka never forgot him: songs and memorials keep his name alive alongside Chennamma’s.',
       },
     ],
     fullBiography: [
@@ -120,7 +120,7 @@ export const karnatakaFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Karnad Sadashiva Rao was born in 1881 in Mangalore, on Karnataka’s coast, to a well-off family. He studied at Presidency College in Madras and went on to study law in Bombay, but rather than build a conventional legal career he turned to public life.',
-      'By 1919 he was fully committed to Gandhi’s Satyagraha movement, becoming one of the first from the Karnataka region to join it, and he worked through the following years to build the Indian National Congress’s organisation across coastal and southern Karnataka — a less-documented but locally significant strand of the Congress’s expansion beyond its Bombay and Madras Presidency strongholds. He also founded the Mahila Sabha, an organisation supporting widows and impoverished women, and is remembered as having given away his personal wealth in the course of this public and political work.',
+      'By 1919 he was fully committed to Gandhi’s Satyagraha movement, becoming one of the first from the Karnataka region to join it, and he worked through the following years to build the Indian National Congress’s organisation across coastal and southern Karnataka, a less-documented but locally significant strand of the Congress’s expansion beyond its Bombay and Madras Presidency strongholds. He also founded the Mahila Sabha, an organisation supporting widows and impoverished women, and is remembered as having given away his personal wealth in the course of this public and political work.',
       'In December 1936 Rao attended the Congress session at Faizpur, where he stayed in poor conditions and fell ill with cold and fever; he travelled on to Bombay without disclosing his condition and died there on 9 January 1937, reportedly leaving too little money to cover his own funeral rites. Sadashivanagar, a locality in Bangalore named for him in 1960, and a road in Mangalore, commemorate him today.',
     ],
     entryIntoStruggle: 'Joined Gandhi’s Satyagraha movement in 1919, among the first from the Karnataka coast to do so.',
@@ -134,7 +134,7 @@ export const karnatakaFighters: FreedomFighter[] = [
     disputed: [
       {
         claim: 'Specifics of his Congress organising work',
-        note: 'Published detail on Karnad Sadashiva Rao’s life is thinner than for many contemporaries — exact dates of imprisonment, specific campaigns he led, and the precise scope of his Congress-building work in Karnataka are not well documented in accessible sources. This record relies on the general accounts available and should be read with that limitation in mind.',
+        note: 'Published detail on Karnad Sadashiva Rao’s life is thinner than for many contemporaries: exact dates of imprisonment, specific campaigns he led, and the precise scope of his Congress-building work in Karnataka are not well documented in accessible sources. This record relies on the general accounts available and should be read with that limitation in mind.',
       },
     ],
     timelineEvents: [],

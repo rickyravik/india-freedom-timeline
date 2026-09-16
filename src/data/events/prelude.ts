@@ -46,7 +46,7 @@ export const preludeEvents: HistoricalEvent[] = [
       'The last of the great Mughal emperors dies after half a century on the throne, most of it spent at war in the Deccan. Within a generation the empire he leaves is an empire in name.',
     description: [
       'Aurangzeb ruled for forty-nine years and spent the last twenty-six of them campaigning in the Deccan against Bijapur, Golconda and the Marathas. The wars drained the treasury, stretched the nobility’s loyalties, and never produced a settled peace. His death near Ahmednagar in March 1707 set off a war of succession among his sons.',
-      'The emperors who followed reigned briefly and weakly. Provincial governors turned their offices into hereditary kingdoms — Murshid Quli Khan in Bengal, Saadat Khan in Awadh (1722), Nizam-ul-Mulk in Hyderabad (1724) — while the Marathas pushed north into Malwa and Gujarat and, by mid-century, to the gates of Delhi itself. India in 1750 was not one state but many, and they fought one another far more than they fought outsiders.',
+      'The emperors who followed reigned briefly and weakly. Provincial governors turned their offices into hereditary kingdoms: Murshid Quli Khan in Bengal, Saadat Khan in Awadh (1722), Nizam-ul-Mulk in Hyderabad (1724). Meanwhile the Marathas pushed north into Malwa and Gujarat and, by mid-century, to the gates of Delhi itself. India in 1750 was not one state but many, and they fought one another far more than they fought outsiders.',
     ],
     people: [],
     era: 'before-the-empire',
@@ -97,7 +97,7 @@ export const preludeEvents: HistoricalEvent[] = [
       { eventId: 'battle-of-plassey', note: 'The dispute over dastaks and the fortification of Calcutta were among Siraj-ud-Daulah’s stated grievances against the Company in 1756.' },
     ],
     sources: [
-      { title: 'Bengal: The British Bridgehead — Eastern India 1740–1828 (The New Cambridge History of India II.2)', author: 'P. J. Marshall', publisher: 'Cambridge University Press', year: 1987, type: 'book', evidence: 'scholarship' },
+      { title: 'Bengal: The British Bridgehead: Eastern India 1740–1828 (The New Cambridge History of India II.2)', author: 'P. J. Marshall', publisher: 'Cambridge University Press', year: 1987, type: 'book', evidence: 'scholarship' },
       { title: 'From Prosperity to Decline: Eighteenth Century Bengal', author: 'Sushil Chaudhury', publisher: 'Manohar', year: 1995, type: 'book', evidence: 'scholarship' },
       { title: 'The Anarchy: The Relentless Rise of the East India Company', author: 'William Dalrymple', publisher: 'Bloomsbury', year: 2019, type: 'book', evidence: 'scholarship' },
     ],
@@ -178,7 +178,7 @@ export const preludeEvents: HistoricalEvent[] = [
     summary:
       'After defeating the Nawab of Bengal, the Nawab of Awadh and the Mughal emperor together at Buxar, the Company is granted the right to collect the revenues of Bengal, Bihar and Orissa. Conquest now pays for itself.',
     description: [
-      'Plassey had made the Company kingmaker in Bengal; it had not made the province governable or profitable. When Nawab Mir Qasim tried to reassert control he was driven out, and on 22 October 1764 at Buxar the Company’s army defeated his alliance with Shuja-ud-Daula of Awadh and the emperor Shah Alam II. The following August, at Allahabad, the emperor formally granted the Company the diwani — the civil and revenue administration — of Bengal, Bihar and Orissa, in return for an annual tribute of 26 lakh rupees.',
+      'Plassey had made the Company kingmaker in Bengal; it had not made the province governable or profitable. When Nawab Mir Qasim tried to reassert control he was driven out, and on 22 October 1764 at Buxar the Company’s army defeated his alliance with Shuja-ud-Daula of Awadh and the emperor Shah Alam II. The following August, at Allahabad, the emperor formally granted the Company the diwani (the civil and revenue administration) of Bengal, Bihar and Orissa, in return for an annual tribute of 26 lakh rupees.',
       'A trading company was now the tax collector of the richest region in India. Its revenues bought its armies and the goods it shipped home; over the following century Indian taxes financed the conquest of India. The immediate result in Bengal was catastrophe: the famine of 1769–70, worsened by continued revenue demands, killed a large share of the province’s population. A century later Dadabhai Naoroji would name the mechanism the "drain of wealth".',
     ],
     people: [],
@@ -192,7 +192,7 @@ export const preludeEvents: HistoricalEvent[] = [
       },
     ],
     sources: [
-      { title: 'Bengal: The British Bridgehead — Eastern India 1740–1828 (The New Cambridge History of India II.2)', author: 'P. J. Marshall', publisher: 'Cambridge University Press', year: 1987, type: 'book', evidence: 'scholarship' },
+      { title: 'Bengal: The British Bridgehead: Eastern India 1740–1828 (The New Cambridge History of India II.2)', author: 'P. J. Marshall', publisher: 'Cambridge University Press', year: 1987, type: 'book', evidence: 'scholarship' },
       { title: 'The Anarchy: The Relentless Rise of the East India Company', author: 'William Dalrymple', publisher: 'Bloomsbury', year: 2019, type: 'book', evidence: 'scholarship' },
       { title: 'Poverty and Un-British Rule in India', author: 'Dadabhai Naoroji', publisher: 'Swan Sonnenschein, London', year: 1901, type: 'book', evidence: 'contemporary' },
     ],

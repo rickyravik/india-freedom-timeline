@@ -19,37 +19,37 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'non-cooperation',
     roles: ['political-leader', 'satyagrahi', 'social-reformer', 'writer-poet', 'lawyer'],
     summary:
-      'The Mahatma — inventor of satyagraha, leader of Non-Cooperation, the Dandi March and Quit India, who turned the Congress into a movement of millions and nonviolence into a weapon that helped end an empire.',
+      'The Mahatma: inventor of satyagraha, leader of Non-Cooperation, the Dandi March and Quit India, who turned the Congress into a movement of millions and nonviolence into a weapon that helped end an empire.',
     shortStory: [
       {
         title: 'The shy lawyer',
-        text: 'Mohandas Gandhi was so shy as a young lawyer that he once fled a courtroom, unable to speak. In South Africa, thrown off a train for the colour of his skin, he found his voice — and a new kind of fight.',
+        text: 'Mohandas Gandhi was so shy as a young lawyer that he once fled a courtroom, unable to speak. In South Africa, thrown off a train for the colour of his skin, he found his voice, and a new kind of fight.',
       },
       {
         title: 'Satyagraha',
-        text: 'He called it satyagraha — "holding firmly to truth". You refuse to obey unjust laws, but you never hurt your opponent, and you accept the punishment. It takes more courage than fighting.',
+        text: 'He called it satyagraha, "holding firmly to truth". You refuse to obey unjust laws, but you never hurt your opponent, and you accept the punishment. It takes more courage than fighting.',
       },
       {
         title: 'The salt on the beach',
-        text: 'In India he led millions: farmers in Champaran, the whole nation in Non-Cooperation. In 1930 he walked 240 miles to the sea and picked up a handful of salt — breaking a law that taxed even the poorest. The world watched, amazed.',
+        text: 'In India he led millions: farmers in Champaran, the whole nation in Non-Cooperation. In 1930 he walked 240 miles to the sea and picked up a handful of salt, breaking a law that taxed even the poorest. The world watched, amazed.',
       },
       {
-        title: '"Do or Die" — and the price',
-        text: 'In 1942 he told India "Do or Die", and went to prison again — he spent over 2,000 days of his life in jails. India won freedom in 1947; five and a half months later, Gandhi was shot dead on his way to prayer, working to the last for peace between Hindus and Muslims.',
+        title: '"Do or Die" and the price',
+        text: 'In 1942 he told India "Do or Die", and went to prison again. He spent over 2,000 days of his life in jails. India won freedom in 1947; five and a half months later, Gandhi was shot dead on his way to prayer, working to the last for peace between Hindus and Muslims.',
       },
     ],
     fullBiography: [
-      'Born in Porbandar in 1869 and trained as a barrister in London, Gandhi found his vocation in South Africa, where two decades of struggle against racial laws produced satyagraha — disciplined, nonviolent civil resistance — and the community experiments of Phoenix and Tolstoy Farm. Returning to India in 1915, he followed Gokhale’s advice to spend a year listening, then made local wrongs into national methods: indigo tenants at Champaran (1917), mill workers at Ahmedabad and tax-burdened farmers at Kheda (1918).',
-      'After the Rowlatt Act and Jallianwala Bagh, he remade the Congress into a mass organization open to peasant and woman and untouchable, and led Non-Cooperation (1920–22) joined with the Khilafat movement — suspending it, at the height of its power, over the killings at Chauri Chaura, an act of principle that bewildered allies. The 1920s he gave to the "constructive programme": khadi, Hindu-Muslim unity, village uplift and the campaign against untouchability, which he pursued while contesting Ambedkar’s road at the Poona Pact and after.',
-      'The Salt March of 1930 was his masterpiece — civil disobedience as moral theatre that filled the jails ninety-thousand strong — followed by the Gandhi–Irwin Pact and the Round Table Conference. In 1942, with the war at the door, he demanded Britain Quit India and gave the mantra "Do or Die"; the entire leadership was jailed, and he lost his secretary Mahadev Desai and his wife Kasturba in the Aga Khan Palace prison. In all he spent over six years in Indian and South African prisons.',
-      'Freedom in 1947 came fused with Partition, which he had opposed to the end; he spent independence week fasting in Calcutta against communal slaughter and his last months walking Delhi’s riot-torn lanes. On 30 January 1948 Nathuram Godse, a Hindu-nationalist assassin, shot him at his prayer meeting. "The light has gone out of our lives," Nehru told the country — and yet his experiments with truth became a world inheritance, claimed by King and Mandela alike.',
+      'Born in Porbandar in 1869 and trained as a barrister in London, Gandhi found his vocation in South Africa, where two decades of struggle against racial laws produced satyagraha (disciplined, nonviolent civil resistance) and the community experiments of Phoenix and Tolstoy Farm. Returning to India in 1915, he followed Gokhale’s advice to spend a year listening, then made local wrongs into national methods: indigo tenants at Champaran (1917), mill workers at Ahmedabad and tax-burdened farmers at Kheda (1918).',
+      'After the Rowlatt Act and Jallianwala Bagh, he remade the Congress into a mass organization open to peasant and woman and untouchable, and led Non-Cooperation (1920–22) joined with the Khilafat movement. He suspended it, at the height of its power, over the killings at Chauri Chaura, an act of principle that bewildered allies. The 1920s he gave to the "constructive programme": khadi, Hindu-Muslim unity, village uplift and the campaign against untouchability, which he pursued while contesting Ambedkar’s road at the Poona Pact and after.',
+      'The Salt March of 1930 was his masterpiece: civil disobedience as moral theatre that filled the jails ninety-thousand strong. It was followed by the Gandhi–Irwin Pact and the Round Table Conference. In 1942, with the war at the door, he demanded Britain Quit India and gave the mantra "Do or Die"; the entire leadership was jailed, and he lost his secretary Mahadev Desai and his wife Kasturba in the Aga Khan Palace prison. In all he spent over six years in Indian and South African prisons.',
+      'Freedom in 1947 came fused with Partition, which he had opposed to the end; he spent independence week fasting in Calcutta against communal slaughter and his last months walking Delhi’s riot-torn lanes. On 30 January 1948 Nathuram Godse, a Hindu-nationalist assassin, shot him at his prayer meeting. "The light has gone out of our lives," Nehru told the country. And yet his experiments with truth became a world inheritance, claimed by King and Mandela alike.',
     ],
     entryIntoStruggle: 'Satyagraha in South Africa (1906–14); Champaran, 1917, in India.',
-    ideology: 'Satyagraha — truth-force; nonviolence (ahimsa); swaraj as self-rule in every sense; sarvodaya.',
+    ideology: 'Satyagraha (truth-force); nonviolence (ahimsa); swaraj as self-rule in every sense; sarvodaya.',
     achievements: [
       'Created and proved mass nonviolent resistance',
       'Led Non-Cooperation, Civil Disobedience and Quit India',
-      'Made the freedom movement a movement of all India — villages, women, the poor',
+      'Made the freedom movement a movement of all India: villages, women, the poor',
     ],
     sacrifices: ['Over six years imprisoned; ascetic renunciation; assassinated for his stand on unity'],
     legacy:
@@ -116,24 +116,24 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['satyagrahi', 'social-reformer'],
     summary:
-      '"Ba" — satyagrahi in her own right from South Africa to Quit India, jailed repeatedly across four decades, who died a prisoner in the Aga Khan Palace in 1944.',
+      '"Ba", satyagrahi in her own right from South Africa to Quit India, jailed repeatedly across four decades, who died a prisoner in the Aga Khan Palace in 1944.',
     shortStory: [
       {
         title: 'Ba',
-        text: 'Kasturba married Mohandas Gandhi when both were thirteen. While he became the Mahatma, she became "Ba" — mother — to the whole movement, with a quiet will of iron that even Gandhi could not bend.',
+        text: 'Kasturba married Mohandas Gandhi when both were thirteen. While he became the Mahatma, she became "Ba" (mother) to the whole movement, with a quiet will of iron that even Gandhi could not bend.',
       },
       {
         title: 'The first woman satyagrahi',
-        text: 'In South Africa in 1913 she courted arrest against laws insulting Indian marriages — among the first women satyagrahis anywhere — and served three months with hard labour.',
+        text: 'In South Africa in 1913 she courted arrest against laws insulting Indian marriages, among the first women satyagrahis anywhere, and served three months with hard labour.',
       },
       {
         title: 'In Gandhi’s place',
-        text: 'In India she went to jail again and again — Borsad, Rajkot, and finally in 1942, when she stood in for the arrested Gandhi at a Quit India meeting. Imprisoned with him at the Aga Khan Palace, she died there on 22 February 1944, her head in his lap.',
+        text: 'In India she went to jail again and again: Borsad, Rajkot, and finally in 1942, when she stood in for the arrested Gandhi at a Quit India meeting. Imprisoned with him at the Aga Khan Palace, she died there on 22 February 1944, her head in his lap.',
       },
     ],
     fullBiography: [
-      'Kasturba Kapadia of Porbandar, married at thirteen, learned to read and write in adulthood amid the experiments of her husband’s ashrams — and became a satyagrahi by conviction, not merely by marriage. In the 1913 South African campaign she led one of the first women’s batches into prison, serving three months’ hard labour for defying the judgment that invalidated Indian marriages.',
-      'In India she was the ashram’s "Ba", nursing and teaching, and its representative in struggle: jail in the Borsad satyagraha era, arrest at Rajkot in 1939, tireless work among women and for khadi and sanitation. She endured, too, the private costs of a Mahatma’s vows — poverty, the renunciations, the estrangement of their eldest son.',
+      'Kasturba Kapadia of Porbandar, married at thirteen, learned to read and write in adulthood amid the experiments of her husband’s ashrams, and became a satyagrahi by conviction, not merely by marriage. In the 1913 South African campaign she led one of the first women’s batches into prison, serving three months’ hard labour for defying the judgment that invalidated Indian marriages.',
+      'In India she was the ashram’s "Ba", nursing and teaching, and its representative in struggle: jail in the Borsad satyagraha era, arrest at Rajkot in 1939, tireless work among women and for khadi and sanitation. She endured, too, the private costs of a Mahatma’s vows: poverty, the renunciations, the estrangement of their eldest son.',
       'On 9 August 1942, with Gandhi arrested, the seventy-three-year-old announced she would address the banned Shivaji Park meeting in his place, and was arrested. Imprisoned with Gandhi in the Aga Khan Palace, weakened by chronic bronchitis and heart illness, she died there on 22 February 1944 and was cremated within the prison grounds, beside the secretary Mahadev Desai who had died before her. The Kasturba Gandhi National Memorial Trust, raised by public subscription in her name, works for rural women and children to this day.',
     ],
     entryIntoStruggle: 'South African satyagraha, 1913.',
@@ -142,7 +142,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
       'Anchored the ashrams and women’s participation across four decades',
     ],
     sacrifices: ['Repeated imprisonments; died in custody'],
-    legacy: '"Ba" — the movement’s mother; the KGNMT continues her memorial work.',
+    legacy: '"Ba", the movement’s mother; the KGNMT continues her memorial work.',
     facts: ['She and Gandhi were married for sixty-two years.'],
     timelineEvents: ['dandi-march', 'quit-india-launch'],
     movements: ['civil-disobedience', 'quit-india', 'non-cooperation'],
@@ -182,11 +182,11 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'writer-poet', 'lawyer'],
     summary:
-      'Gandhi’s chosen heir and the voice of Purna Swaraj — nine years in British jails, historian of India from a prison cell, and at midnight on 15 August 1947, free India’s first Prime Minister.',
+      'Gandhi’s chosen heir and the voice of Purna Swaraj: nine years in British jails, historian of India from a prison cell, and at midnight on 15 August 1947, free India’s first Prime Minister.',
     shortStory: [
       {
         title: 'The Harrow boy comes home',
-        text: 'Jawaharlal, son of the great lawyer Motilal Nehru, was educated at Harrow and Cambridge. Meeting Gandhi changed everything: the polished young barrister gave himself to the freedom struggle — and to India’s villages, which he discovered with wonder.',
+        text: 'Jawaharlal, son of the great lawyer Motilal Nehru, was educated at Harrow and Cambridge. Meeting Gandhi changed everything: the polished young barrister gave himself to the freedom struggle, and to India’s villages, which he discovered with wonder.',
       },
       {
         title: 'The flag by the Ravi',
@@ -194,7 +194,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
       {
         title: 'Nine years in prison',
-        text: 'He was jailed nine times — nearly nine years in all. In prison he wrote great books: letters teaching world history to his daughter Indira, and "The Discovery of India".',
+        text: 'He was jailed nine times, nearly nine years in all. In prison he wrote great books: letters teaching world history to his daughter Indira, and "The Discovery of India".',
       },
       {
         title: 'Tryst with destiny',
@@ -202,9 +202,9 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Son of the Allahabad grandee Motilal Nehru, Jawaharlal returned from Harrow, Trinity College Cambridge and the Inner Temple to a comfortable practice — until Gandhi and the peasant delegations of 1920 pulled him into the national movement, and his 1920s tours of the UP countryside made the peasant’s India his cause. He rose with the Non-Cooperation movement, went first to jail in 1921, and with Subhas Bose led the party’s young left towards the goal of complete independence and socialist reconstruction.',
-      'President of the historic Lahore Congress (1929) that declared Purna Swaraj, he was the mass movement’s great campaigner through Civil Disobedience, president again in 1936 and 1937, when his electioneering carried the Congress to provincial power, and once more at the crisis of 1946. His nine imprisonments totalled almost nine years, the longest — August 1942 to June 1945 at Ahmednagar Fort, after Quit India — producing "The Discovery of India"; earlier terms had produced "Glimpses of World History" (letters to Indira) and his "Autobiography".',
-      'He led the Interim Government from September 1946, and as first Prime Minister spoke the words by which the transfer of power is remembered — the "tryst with destiny" address to the Constituent Assembly at midnight. Through the trauma of Partition, the integration of states with Patel, and the framing of the Constitution, he anchored the new republic, governing until his death in 1964 — building universities, dams, non-alignment, and the institutions of Indian democracy, with a record, like all long rule, carrying both monuments and controversies.',
+      'Son of the Allahabad grandee Motilal Nehru, Jawaharlal returned from Harrow, Trinity College Cambridge and the Inner Temple to a comfortable practice, until Gandhi and the peasant delegations of 1920 pulled him into the national movement, and his 1920s tours of the UP countryside made the peasant’s India his cause. He rose with the Non-Cooperation movement, went first to jail in 1921, and with Subhas Bose led the party’s young left towards the goal of complete independence and socialist reconstruction.',
+      'President of the historic Lahore Congress (1929) that declared Purna Swaraj, he was the mass movement’s great campaigner through Civil Disobedience, president again in 1936 and 1937, when his electioneering carried the Congress to provincial power, and once more at the crisis of 1946. His nine imprisonments totalled almost nine years, the longest (August 1942 to June 1945 at Ahmednagar Fort, after Quit India) producing "The Discovery of India"; earlier terms had produced "Glimpses of World History" (letters to Indira) and his "Autobiography".',
+      'He led the Interim Government from September 1946, and as first Prime Minister spoke the words by which the transfer of power is remembered: the "tryst with destiny" address to the Constituent Assembly at midnight. Through the trauma of Partition, the integration of states with Patel, and the framing of the Constitution, he anchored the new republic, governing until his death in 1964. He built universities, dams, non-alignment, and the institutions of Indian democracy, with a record, like all long rule, carrying both monuments and controversies.',
     ],
     entryIntoStruggle: 'Non-Cooperation movement, 1920–21.',
     ideology: 'Democratic socialism; secular nationalism; scientific temper; internationalism.',
@@ -262,25 +262,25 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'lawyer', 'organizer'],
     summary:
-      'The Sardar — organizer of the Kheda and Bardoli satyagrahas, the Congress’s iron administrator through every movement, and after 1947 the unifier of 560+ princely states into one India.',
+      'The Sardar: organizer of the Kheda and Bardoli satyagrahas, the Congress’s iron administrator through every movement, and after 1947 the unifier of 560+ princely states into one India.',
     shortStory: [
       {
         title: 'The barrister of Kheda',
-        text: 'Vallabhbhai Patel was a tough, successful lawyer who once kept cross-examining a witness even as a telegram in his pocket told him his wife had died — duty first, grief after. Gandhi turned this iron will to the nation’s service.',
+        text: 'Vallabhbhai Patel was a tough, successful lawyer who once kept cross-examining a witness even as a telegram in his pocket told him his wife had died: duty first, grief after. Gandhi turned this iron will to the nation’s service.',
       },
       {
         title: 'How he became "Sardar"',
-        text: 'In 1928 he organized the farmers of Bardoli so perfectly that the government’s unjust tax was rolled back. The grateful peasants gave him the title "Sardar" — the leader.',
+        text: 'In 1928 he organized the farmers of Bardoli so perfectly that the government’s unjust tax was rolled back. The grateful peasants gave him the title "Sardar", the leader.',
       },
       {
         title: 'One India',
-        text: 'At independence, over 560 princely states could have splintered India into pieces. As Deputy Prime Minister, Patel persuaded, pressured and stitched them into one nation — his greatest monument.',
+        text: 'At independence, over 560 princely states could have splintered India into pieces. As Deputy Prime Minister, Patel persuaded, pressured and stitched them into one nation, his greatest monument.',
       },
     ],
     fullBiography: [
-      'Patel rose from a Leva Patidar farming family through self-financed law studies to the top of the Ahmedabad bar; Gandhi’s Champaran and Kheda campaigns converted the sceptical barrister into the movement’s supreme organizer. He ran the Kheda no-tax campaign (1918), led Ahmedabad’s municipal government, and in 1928 conducted the Bardoli satyagraha with such discipline that the Raj capitulated — and "Sardar" became his name.',
-      'Congress president at Karachi in 1931, he was the party’s organizational spine through Civil Disobedience and after — jailed repeatedly, including sixteen months in solitary company with the Mahatma at Yerwada and the long Ahmednagar Fort detention after Quit India (1942–45). In the provinces after 1937 and in the transfer-of-power negotiations, his realism balanced the party’s idealists.',
-      'As Deputy Prime Minister and Home Minister of free India he directed, with V. P. Menon, the integration of the princely states — persuasion, privy purses and, where needed, force (Junagadh, Hyderabad) — and built the administrative steel frame, championing the civil services. He died in December 1950; the Statue of Unity at Kevadia, the world’s tallest, now marks the unifier’s memory. Bharat Ratna, 1991.',
+      'Patel rose from a Leva Patidar farming family through self-financed law studies to the top of the Ahmedabad bar; Gandhi’s Champaran and Kheda campaigns converted the sceptical barrister into the movement’s supreme organizer. He ran the Kheda no-tax campaign (1918), led Ahmedabad’s municipal government, and in 1928 conducted the Bardoli satyagraha with such discipline that the Raj capitulated, and "Sardar" became his name.',
+      'Congress president at Karachi in 1931, he was the party’s organizational spine through Civil Disobedience and after, jailed repeatedly, including sixteen months in solitary company with the Mahatma at Yerwada and the long Ahmednagar Fort detention after Quit India (1942–45). In the provinces after 1937 and in the transfer-of-power negotiations, his realism balanced the party’s idealists.',
+      'As Deputy Prime Minister and Home Minister of free India he directed, with V. P. Menon, the integration of the princely states, by persuasion, privy purses and, where needed, force (Junagadh, Hyderabad), and built the administrative steel frame, championing the civil services. He died in December 1950; the Statue of Unity at Kevadia, the world’s tallest, now marks the unifier’s memory. Bharat Ratna, 1991.',
     ],
     entryIntoStruggle: 'Kheda satyagraha with Gandhi, 1918.',
     ideology: 'Gandhian discipline with administrative realism.',
@@ -329,11 +329,11 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['political-leader', 'journalist', 'writer-poet'],
     summary:
-      'Islamic scholar and firebrand editor of Al-Hilal, youngest Congress president (1923) and its wartime president through Quit India — a lifelong voice of united India and free India’s first Education Minister.',
+      'Islamic scholar and firebrand editor of Al-Hilal, youngest Congress president (1923) and its wartime president through Quit India, a lifelong voice of united India and free India’s first Education Minister.',
     shortStory: [
       {
         title: 'The prodigy',
-        text: 'Abul Kalam Azad was a scholar of Arabic, Persian and Islamic learning so gifted that he was teaching students older than himself in his teens. He chose the pen-name "Azad" — free.',
+        text: 'Abul Kalam Azad was a scholar of Arabic, Persian and Islamic learning so gifted that he was teaching students older than himself in his teens. He chose the pen-name "Azad", meaning free.',
       },
       {
         title: 'Al-Hilal',
@@ -341,7 +341,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
       {
         title: 'President in the storm',
-        text: 'He led the Congress as president from 1940 to 1946 — through Quit India and nearly four years in Ahmednagar Fort prison — and opposed the Partition of India to his last breath.',
+        text: 'He led the Congress as president from 1940 to 1946, through Quit India and nearly four years in Ahmednagar Fort prison, and opposed the Partition of India to his last breath.',
       },
       {
         title: 'The teacher of the nation',
@@ -349,9 +349,9 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Born in Mecca to a Calcutta family of religious scholars and educated entirely in the traditional curriculum — which he mastered years early, then quietly supplemented with self-taught English and modern thought — Azad made his mark first in Urdu letters. Al-Hilal (1912) fused Quranic argument with anti-colonial politics so effectively that the Raj forfeited its press, banned its successor Al-Balagh, and interned him at Ranchi till 1920.',
-      'He emerged into the Khilafat and Non-Cooperation leadership beside Gandhi, presiding over Congress at thirty-five (Delhi special session, 1923) — its youngest president — and again from 1940, holding the office through the war years. He led the individual satyagraha negotiations, the Cripps talks, Quit India’s consequences (Ahmednagar Fort, 1942–45, where he wrote Ghubar-e-Khatir), and the Shimla and Cabinet Mission negotiations of 1945–46.',
-      'A theologian of composite nationalism, he answered separatism with the argument that Indian Muslims’ destiny lay in a shared, plural India; his 1940 Ramgarh address remains its classic statement. Partition he called a defeat for all; his memoir "India Wins Freedom" gave a candid insider’s account of the endgame. As Education Minister (1947–58) he built the scaffolding of independent India’s education and culture — UGC, the academies, support for the IIT foundation. Bharat Ratna, posthumously, 1992.',
+      'Born in Mecca to a Calcutta family of religious scholars and educated entirely in the traditional curriculum, which he mastered years early, then quietly supplemented with self-taught English and modern thought, Azad made his mark first in Urdu letters. Al-Hilal (1912) fused Quranic argument with anti-colonial politics so effectively that the Raj forfeited its press, banned its successor Al-Balagh, and interned him at Ranchi till 1920.',
+      'He emerged into the Khilafat and Non-Cooperation leadership beside Gandhi, presiding over Congress at thirty-five (Delhi special session, 1923) as its youngest president, and again from 1940, holding the office through the war years. He led the individual satyagraha negotiations, the Cripps talks, Quit India’s consequences (Ahmednagar Fort, 1942–45, where he wrote Ghubar-e-Khatir), and the Shimla and Cabinet Mission negotiations of 1945–46.',
+      'A theologian of composite nationalism, he answered separatism with the argument that Indian Muslims’ destiny lay in a shared, plural India; his 1940 Ramgarh address remains its classic statement. Partition he called a defeat for all; his memoir "India Wins Freedom" gave a candid insider’s account of the endgame. As Education Minister (1947–58) he built the scaffolding of independent India’s education and culture: UGC, the academies, support for the IIT foundation. Bharat Ratna, posthumously, 1992.',
     ],
     entryIntoStruggle: 'Revolutionary circles of Bengal and journalism from 1908–12.',
     ideology: 'Composite nationalism grounded in Islamic scholarship.',
@@ -400,7 +400,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'non-cooperation',
     roles: ['political-leader', 'lawyer'],
     summary:
-      'Gandhi’s lieutenant from Champaran onwards, thrice Congress president, president of the Constituent Assembly — and the first President of the Republic of India.',
+      'Gandhi’s lieutenant from Champaran onwards, thrice Congress president, president of the Constituent Assembly, and the first President of the Republic of India.',
     shortStory: [
       {
         title: 'The examiner’s note',
@@ -408,17 +408,17 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
       {
         title: 'Champaran calls',
-        text: 'In 1917 he joined Gandhi among the indigo farmers of Champaran — and the law’s rising star became the freedom movement’s devoted worker, giving up his practice.',
+        text: 'In 1917 he joined Gandhi among the indigo farmers of Champaran, and the law’s rising star became the freedom movement’s devoted worker, giving up his practice.',
       },
       {
         title: 'From prison to president',
-        text: 'Jailed through the great movements and nearly three years after Quit India, he presided over the assembly that wrote India’s Constitution — and in 1950 became the first President of India, serving twelve years.',
+        text: 'Jailed through the great movements and nearly three years after Quit India, he presided over the assembly that wrote India’s Constitution, and in 1950 became the first President of India, serving twelve years.',
       },
     ],
     fullBiography: [
-      'Rajendra Prasad, from a Bihar zamindari family of modest scale, swept every examination Calcutta could set and built a first-class practice at the Patna High Court — which Champaran (1917), where he served as Gandhi’s aide and record-keeper, began to unmake. By Non-Cooperation he had left the bar, founding national schools and the newspaper Desh, and leading Bihar’s Congress through every campaign.',
+      'Rajendra Prasad, from a Bihar zamindari family of modest scale, swept every examination Calcutta could set and built a first-class practice at the Patna High Court. Champaran (1917), where he served as Gandhi’s aide and record-keeper, began to unmake it. By Non-Cooperation he had left the bar, founding national schools and the newspaper Desh, and leading Bihar’s Congress through every campaign.',
       'His organization of the 1934 Bihar earthquake relief won national admiration and the Congress presidency at Bombay that year; he served again in 1939 (after Bose’s resignation at Tripuri) and 1947. He was jailed repeatedly, the longest spell being nearly three years (1942–45) after Quit India.',
-      'Elected president of the Constituent Assembly in December 1946, he steered three years of constitution-making with patience and fairness, and on 26 January 1950 became the Republic’s first President, the only person to hold the office for two full terms. His books — "India Divided", his "Autobiography", "Satyagraha at Champaran" — are primary chronicles of the movement. Bharat Ratna, 1962.',
+      'Elected president of the Constituent Assembly in December 1946, he steered three years of constitution-making with patience and fairness, and on 26 January 1950 became the Republic’s first President, the only person to hold the office for two full terms. His books ("India Divided", his "Autobiography", "Satyagraha at Champaran") are primary chronicles of the movement. Bharat Ratna, 1962.',
     ],
     entryIntoStruggle: 'Champaran satyagraha with Gandhi, 1917.',
     ideology: 'Gandhian constructive nationalism.',
@@ -467,7 +467,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'lawyer', 'writer-poet'],
     summary:
-      'Rajaji — Gandhi’s "conscience-keeper", leader of the Vedaranyam salt march, premier of Madras, free India’s first Indian Governor-General, and one of its sharpest minds.',
+      'Rajaji: Gandhi’s "conscience-keeper", leader of the Vedaranyam salt march, premier of Madras, free India’s first Indian Governor-General, and one of its sharpest minds.',
     shortStory: [
       {
         title: 'The lawyer of Salem',
@@ -475,7 +475,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
       {
         title: 'Salt at Vedaranyam',
-        text: 'When Gandhi marched to Dandi in 1930, Rajaji led the south’s own salt march — from Trichy to Vedaranyam — and went to prison for lifting salt from the shore.',
+        text: 'When Gandhi marched to Dandi in 1930, Rajaji led the south’s own salt march, from Trichy to Vedaranyam, and went to prison for lifting salt from the shore.',
       },
       {
         title: 'The last Governor-General',
@@ -484,8 +484,8 @@ export const gandhianEraFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Rajaji left the Salem bar for Non-Cooperation, edited Gandhi’s Young India during the Mahatma’s imprisonment, and built the Congress in the Tamil country, serving long spells in prison across the movements. In April 1930 he led the salt march from Tiruchirappalli to Vedaranyam, the south’s answer to Dandi, earning imprisonment and national stature.',
-      'Premier of Madras under provincial autonomy (1937–39), he pioneered prohibition, temple-entry legislation for Dalits, and rural debt relief — and resigned with all Congress ministries over the war declaration. He broke with the party over Quit India, arguing instead for settlement with the League (the "C.R. Formula" of 1944 anticipated the price of Pakistan) — dissent that cost him popularity and proved prophetic.',
-      'After freedom he was Governor of West Bengal, then Governor-General of India (1948–50) — the only Indian to hold the office — Home Minister after Patel’s death, and Chief Minister of Madras again (1952–54). In 1959 he founded the Swatantra Party, free-market opposition to Nehruvian planning, having already earned the first Bharat Ratna (1954). His Tamil and English retellings of the epics remain best-sellers; he died at ninety-four in 1972.',
+      'Premier of Madras under provincial autonomy (1937–39), he pioneered prohibition, temple-entry legislation for Dalits, and rural debt relief, and resigned with all Congress ministries over the war declaration. He broke with the party over Quit India, arguing instead for settlement with the League (the "C.R. Formula" of 1944 anticipated the price of Pakistan), dissent that cost him popularity and proved prophetic.',
+      'After freedom he was Governor of West Bengal, then Governor-General of India (1948–50), the only Indian to hold the office, then Home Minister after Patel’s death, and Chief Minister of Madras again (1952–54). In 1959 he founded the Swatantra Party, free-market opposition to Nehruvian planning, having already earned the first Bharat Ratna (1954). His Tamil and English retellings of the epics remain best-sellers; he died at ninety-four in 1972.',
     ],
     entryIntoStruggle: 'Non-Cooperation movement, 1919–20.',
     ideology: 'Gandhian conservatism; later classical liberalism.',
@@ -496,7 +496,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     ],
     sacrifices: ['Multiple imprisonments; political isolation for principled dissent'],
     legacy: 'The south’s greatest Congress leader and independent India’s great contrarian.',
-    facts: ['His daughter Lakshmi married Gandhi’s son Devadas — the two families joined.'],
+    facts: ['His daughter Lakshmi married Gandhi’s son Devadas, joining the two families.'],
     timelineEvents: ['non-cooperation-launch', 'dandi-march', 'vedaranyam-salt-march', 'government-of-india-act-1935'],
     movements: ['non-cooperation', 'civil-disobedience'],
     organizations: ['inc'],
@@ -534,7 +534,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'writer-poet'],
     summary:
-      'The Nightingale of India — poet, first Indian woman president of the Congress (1925), commander of the Dharasana salt raid, and first woman Governor in free India.',
+      'The Nightingale of India: poet, first Indian woman president of the Congress (1925), commander of the Dharasana salt raid, and first woman Governor in free India.',
     shortStory: [
       {
         title: 'The poet',
@@ -550,13 +550,13 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
       {
         title: 'Governor',
-        text: 'In 1947 she became Governor of the United Provinces — the first woman to govern an Indian state. Her birthday is celebrated as National Women’s Day in India.',
+        text: 'In 1947 she became Governor of the United Provinces, the first woman to govern an Indian state. Her birthday is celebrated as National Women’s Day in India.',
       },
     ],
     fullBiography: [
-      'Daughter of the scientist-educator Aghorenath Chattopadhyay of Hyderabad, Sarojini published her first collections ("The Golden Threshold", 1905) to acclaim in London before Gokhale’s challenge turned her golden voice to the nation. From 1915 she toured incessantly — for women’s suffrage and education, Hindu-Muslim unity, and the Congress cause — and led the women’s deputation for the vote to Montagu in 1917.',
-      'First Indian woman president of the Congress (Kanpur, 1925), she was Gandhi’s ambassador at large — to East Africa and North America — and his lieutenant in struggle: at Dandi beside him, then commanding the Dharasana raid of May 1930, whose unresisting ranks under the lathi, reported worldwide by Webb Miller, stripped the Raj’s claims bare. She was jailed repeatedly, including nearly two years after Quit India with Gandhi’s party in the Aga Khan Palace.',
-      'She attended all three Round Table Conferences, presided over the Asian Relations Conference’s spirit in the freedom year, and became Governor of the United Provinces in 1947, dying in office in 1949. Her wit was as famous as her verse — she teased Gandhi as "Mickey Mouse" and coined the joke that it cost a fortune "to keep Gandhi in poverty". Her sister-in-arms legacy: 13 February, her birthday, is National Women’s Day.',
+      'Daughter of the scientist-educator Aghorenath Chattopadhyay of Hyderabad, Sarojini published her first collections ("The Golden Threshold", 1905) to acclaim in London before Gokhale’s challenge turned her golden voice to the nation. From 1915 she toured incessantly for women’s suffrage and education, Hindu-Muslim unity, and the Congress cause, and led the women’s deputation for the vote to Montagu in 1917.',
+      'First Indian woman president of the Congress (Kanpur, 1925), she was Gandhi’s ambassador at large, to East Africa and North America, and his lieutenant in struggle: at Dandi beside him, then commanding the Dharasana raid of May 1930, whose unresisting ranks under the lathi, reported worldwide by Webb Miller, stripped the Raj’s claims bare. She was jailed repeatedly, including nearly two years after Quit India with Gandhi’s party in the Aga Khan Palace.',
+      'She attended all three Round Table Conferences, presided over the Asian Relations Conference’s spirit in the freedom year, and became Governor of the United Provinces in 1947, dying in office in 1949. Her wit was as famous as her verse: she teased Gandhi as "Mickey Mouse" and coined the joke that it cost a fortune "to keep Gandhi in poverty". Her sister-in-arms legacy: 13 February, her birthday, is National Women’s Day.',
     ],
     entryIntoStruggle: 'Public speaking for the national cause from 1915, under Gokhale’s influence.',
     achievements: [
@@ -612,15 +612,15 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'social-reformer', 'satyagrahi', 'educator'],
     summary:
-      'Badshah Khan — the Frontier Gandhi — who raised the Khudai Khidmatgar, a nonviolent army of a hundred thousand Pashtuns, and spent a third of his ninety-eight years in prison for it.',
+      'Badshah Khan, the Frontier Gandhi, who raised the Khudai Khidmatgar, a nonviolent army of a hundred thousand Pashtuns, and spent a third of his ninety-eight years in prison for it.',
     shortStory: [
       {
         title: 'A giant of the frontier',
-        text: 'Ghaffar Khan was a Pashtun of the North-West Frontier — a people famous for the rifle and the feud. He believed his people’s true strength lay elsewhere, and began by building schools.',
+        text: 'Ghaffar Khan was a Pashtun of the North-West Frontier, a people famous for the rifle and the feud. He believed his people’s true strength lay elsewhere, and began by building schools.',
       },
       {
         title: 'The Servants of God',
-        text: 'In 1929 he founded the Khudai Khidmatgar — "Servants of God" — whose red-shirted volunteers took an oath of nonviolence. It grew a hundred thousand strong: the world’s most unlikely nonviolent army.',
+        text: 'In 1929 he founded the Khudai Khidmatgar, the "Servants of God", whose red-shirted volunteers took an oath of nonviolence. It grew a hundred thousand strong: the world’s most unlikely nonviolent army.',
       },
       {
         title: 'Standing without striking',
@@ -628,13 +628,13 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
       {
         title: 'The longest sacrifice',
-        text: 'He spent over thirty years in prison — under the British, and afterwards in Pakistan, where he kept fighting for his people’s rights. India gave him the Bharat Ratna in 1987, its first to a non-citizen.',
+        text: 'He spent over thirty years in prison: under the British, and afterwards in Pakistan, where he kept fighting for his people’s rights. India gave him the Bharat Ratna in 1987, its first to a non-citizen.',
       },
     ],
     fullBiography: [
-      'Abdul Ghaffar Khan of Utmanzai began, against mullah and magistrate alike, by founding Azad schools across the Frontier from 1910 and organizing Pashtun reform through journals and jirgas. Imprisonments and internal exile only widened his following, and in 1929 he founded the Khudai Khidmatgar — uniformed in red, sworn to nonviolence, forgiveness and service — which became a mass movement of Pashtun society.',
-      'Allied with the Congress from 1929 (he and his movement joined after the Lahore session), the Khudai Khidmatgar bore the Civil Disobedience years’ worst repression: the Qissa Khwani Bazaar firing of 23 April 1930 killed large numbers of unresisting volunteers — Congress inquiry estimates ran to two hundred and more — and the Garhwal Rifles’ famous refusal to fire that day passed into legend. Badshah Khan himself, "the Frontier Gandhi", was the Mahatma’s closest companion in the 1930s and 1940s, walking with him through riot-torn Bihar in 1946–47.',
-      'He opposed Partition — feeling his people "thrown to the wolves" — and in Pakistan his politics of Pashtun rights brought him repeated imprisonment and exile; in all, across both flags, he spent some three decades behind bars. He died in Peshawar in January 1988; both sides of the Khyber briefly stilled their war for his funeral procession to Jalalabad. Bharat Ratna, 1987 — the first non-citizen honoured.',
+      'Abdul Ghaffar Khan of Utmanzai began, against mullah and magistrate alike, by founding Azad schools across the Frontier from 1910 and organizing Pashtun reform through journals and jirgas. Imprisonments and internal exile only widened his following, and in 1929 he founded the Khudai Khidmatgar, uniformed in red and sworn to nonviolence, forgiveness and service, which became a mass movement of Pashtun society.',
+      'Allied with the Congress from 1929 (he and his movement joined after the Lahore session), the Khudai Khidmatgar bore the Civil Disobedience years’ worst repression: the Qissa Khwani Bazaar firing of 23 April 1930 killed large numbers of unresisting volunteers (Congress inquiry estimates ran to two hundred and more), and the Garhwal Rifles’ famous refusal to fire that day passed into legend. Badshah Khan himself, "the Frontier Gandhi", was the Mahatma’s closest companion in the 1930s and 1940s, walking with him through riot-torn Bihar in 1946–47.',
+      'He opposed Partition, feeling his people "thrown to the wolves", and in Pakistan his politics of Pashtun rights brought him repeated imprisonment and exile; in all, across both flags, he spent some three decades behind bars. He died in Peshawar in January 1988; both sides of the Khyber briefly stilled their war for his funeral procession to Jalalabad. Bharat Ratna, 1987: the first non-citizen honoured.',
     ],
     entryIntoStruggle: 'Village schools and Pashtun reform from 1910; mass politics from 1929.',
     ideology: 'Nonviolence rooted in Islam; Pashtun self-respect and reform.',
@@ -685,19 +685,19 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['social-reformer', 'political-leader', 'lawyer', 'educator', 'writer-poet'],
     summary:
-      'Babasaheb — scholar, leader of the Depressed Classes, signatory of the Poona Pact, and principal architect of the Constitution — who insisted that freedom from Britain must also mean freedom from caste.',
+      'Babasaheb: scholar, leader of the Depressed Classes, signatory of the Poona Pact, and principal architect of the Constitution, who insisted that freedom from Britain must also mean freedom from caste.',
     shortStory: [
       {
         title: 'The boy outside the classroom',
-        text: 'Bhimrao Ambedkar was born into a family treated as "untouchable". At school he was made to sit apart and could not touch the water tap. He answered with books — earning doctorates from Columbia and London.',
+        text: 'Bhimrao Ambedkar was born into a family treated as "untouchable". At school he was made to sit apart and could not touch the water tap. He answered with books, earning doctorates from Columbia and London.',
       },
       {
         title: 'The right to water',
-        text: 'In 1927 he led thousands to drink from the Chavdar tank at Mahad, which Dalits were forbidden to use — a satyagraha for the most basic human right. He burned the Manusmriti, the ancient law-book of caste.',
+        text: 'In 1927 he led thousands to drink from the Chavdar tank at Mahad, which Dalits were forbidden to use: a satyagraha for the most basic human right. He burned the Manusmriti, the ancient law-book of caste.',
       },
       {
         title: 'Arguing with the Mahatma',
-        text: 'Ambedkar and Gandhi clashed over how to end untouchability — most famously at the Poona Pact of 1932. Their argument — political power versus change of heart — still shapes India’s debates.',
+        text: 'Ambedkar and Gandhi clashed over how to end untouchability, most famously at the Poona Pact of 1932. Their argument, political power versus change of heart, still shapes India’s debates.',
       },
       {
         title: 'The Constitution',
@@ -705,9 +705,9 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Born at Mhow into a Mahar military family, Ambedkar endured the daily humiliations of untouchability through school and college, then vaulted — with Baroda and Kolhapur patronage — to a Columbia PhD, a London DSc in economics, and the bar at Gray’s Inn: the most educated Indian of his generation, in the teeth of the system that had denied him a classroom bench.',
-      'His movement made civil rights a mass question: the Mahad satyagraha for water (1927) and the burning of the Manusmriti; the Kalaram temple-entry campaign at Nashik (1930–35); journals (Mooknayak, Bahishkrit Bharat), the Independent Labour Party and Scheduled Castes Federation. At the Round Table Conferences he won separate electorates for the Depressed Classes — then, facing Gandhi’s fast unto death, negotiated the Poona Pact’s reserved-seat compromise in 1932, an episode both men carried as a wound. Declaring in 1935 that he would not die a Hindu, he led half a million followers into Buddhism in October 1956, weeks before his death.',
-      'His relationship to the national movement was critical and creative at once: scathing about a freedom that might merely transfer power to caste elites ("What Congress and Gandhi Have Done to the Untouchables"), he nonetheless built free India’s foundations — Labour Member of the Viceroy’s Council (1942–46), chairman of the Constitution’s Drafting Committee, and first Law Minister, piloting the document he called a vehicle of social revolution and warning, in his final Assembly speech, that without social and economic democracy, political democracy would stand on sand. Bharat Ratna, 1990; his birthday is observed nationwide as Ambedkar Jayanti.',
+      'Born at Mhow into a Mahar military family, Ambedkar endured the daily humiliations of untouchability through school and college, then vaulted, with Baroda and Kolhapur patronage, to a Columbia PhD, a London DSc in economics, and the bar at Gray’s Inn: the most educated Indian of his generation, in the teeth of the system that had denied him a classroom bench.',
+      'His movement made civil rights a mass question: the Mahad satyagraha for water (1927) and the burning of the Manusmriti; the Kalaram temple-entry campaign at Nashik (1930–35); journals (Mooknayak, Bahishkrit Bharat), the Independent Labour Party and Scheduled Castes Federation. At the Round Table Conferences he won separate electorates for the Depressed Classes. Then, facing Gandhi’s fast unto death, he negotiated the Poona Pact’s reserved-seat compromise in 1932, an episode both men carried as a wound. Declaring in 1935 that he would not die a Hindu, he led half a million followers into Buddhism in October 1956, weeks before his death.',
+      'His relationship to the national movement was critical and creative at once: scathing about a freedom that might merely transfer power to caste elites ("What Congress and Gandhi Have Done to the Untouchables"), he nonetheless built free India’s foundations as Labour Member of the Viceroy’s Council (1942–46), chairman of the Constitution’s Drafting Committee, and first Law Minister, piloting the document he called a vehicle of social revolution and warning, in his final Assembly speech, that without social and economic democracy, political democracy would stand on sand. Bharat Ratna, 1990; his birthday is observed nationwide as Ambedkar Jayanti.',
     ],
     entryIntoStruggle: 'Bahishkrit Hitakarini Sabha (1924) and the Mahad satyagraha (1927).',
     ideology: 'Annihilation of caste; constitutional social democracy; later Navayana Buddhism.',
@@ -717,7 +717,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
       'Forced caste onto the agenda of national freedom',
     ],
     sacrifices: ['A lifetime against social ostracism; health broken in unremitting work'],
-    legacy: 'Babasaheb — with Gandhi, the most commemorated figure of modern India; the Constitution is his monument.',
+    legacy: 'Babasaheb is, with Gandhi, the most commemorated figure of modern India; the Constitution is his monument.',
     facts: ['His personal library, Rajgriha, held over 50,000 books.'],
     quotes: [
       {
@@ -765,11 +765,11 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['political-leader', 'revolutionary', 'organizer'],
     summary:
-      'JP — founder of the Congress Socialist Party, hero of the Quit India underground after his legendary escape over Hazaribagh jail’s walls, and later the Loknayak of Indian democracy.',
+      'JP: founder of the Congress Socialist Party, hero of the Quit India underground after his legendary escape over Hazaribagh jail’s walls, and later the Loknayak of Indian democracy.',
     shortStory: [
       {
         title: 'The student in America',
-        text: 'Jayaprakash worked his way through American universities — in fields, factories and slaughterhouses — and came home a socialist, joining the freedom movement.',
+        text: 'Jayaprakash worked his way through American universities, in fields, factories and slaughterhouses, and came home a socialist, joining the freedom movement.',
       },
       {
         title: 'Over the wall',
@@ -781,13 +781,13 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
       {
         title: 'Loknayak',
-        text: 'After freedom he renounced power for Gandhian service — and in the 1970s, an old man, led the "Total Revolution" movement in defence of democracy. India called him Loknayak: the people’s hero.',
+        text: 'After freedom he renounced power for Gandhian service, and in the 1970s, an old man, led the "Total Revolution" movement in defence of democracy. India called him Loknayak: the people’s hero.',
       },
     ],
     fullBiography: [
-      'Jayaprakash Narayan left Patna at twenty for seven working-student years in the United States (Berkeley, Iowa, Wisconsin, Ohio State), returning a convinced Marxist to join the Congress at Nehru’s invitation, and to found, in 1934, the Congress Socialist Party with Acharya Narendra Deva, Lohia and Minoo Masani — the left conscience of the national movement.',
-      'Quit India made him a legend: detained pre-emptively in 1942, he escaped Hazaribagh Central Jail on the night of Diwali (9 November 1942) with five comrades, and from Nepal’s terai and hidden headquarters organized the Azad Dastas — armed squads for sabotage of the war state — while his clandestine letters argued the uprising’s legitimacy to the country. Recaptured in September 1943, he endured torture in Lahore Fort’s interrogation, and was released only in April 1946, by then second in popular reverence only to the top leadership.',
-      'After independence he walked away from office — declining Nehru’s cabinet invitations — into Bhoodan and Sarvodaya with Vinoba Bhave, and returned to the centre of history in 1974–77, leading the students’ and people’s movement against Emergency-era authoritarianism that restored Indian democracy in 1977. He died in 1979; Bharat Ratna followed posthumously in 1999.',
+      'Jayaprakash Narayan left Patna at twenty for seven working-student years in the United States (Berkeley, Iowa, Wisconsin, Ohio State), returning a convinced Marxist to join the Congress at Nehru’s invitation, and to found, in 1934, the Congress Socialist Party, the left conscience of the national movement, with Acharya Narendra Deva, Lohia and Minoo Masani.',
+      'Quit India made him a legend: detained pre-emptively in 1942, he escaped Hazaribagh Central Jail on the night of Diwali (9 November 1942) with five comrades, and from Nepal’s terai and hidden headquarters organized the Azad Dastas, armed squads for sabotage of the war state, while his clandestine letters argued the uprising’s legitimacy to the country. Recaptured in September 1943, he endured torture in Lahore Fort’s interrogation, and was released only in April 1946, by then second in popular reverence only to the top leadership.',
+      'After independence he walked away from office, declining Nehru’s cabinet invitations, into Bhoodan and Sarvodaya with Vinoba Bhave, and returned to the centre of history in 1974–77, leading the students’ and people’s movement against Emergency-era authoritarianism that restored Indian democracy in 1977. He died in 1979; Bharat Ratna followed posthumously in 1999.',
     ],
     entryIntoStruggle: 'Congress work from 1929; CSP founding, 1934.',
     ideology: 'Democratic socialism; later Sarvodaya and "Total Revolution".',
@@ -797,7 +797,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
       'Restored democracy as leader of the 1974–77 movement',
     ],
     sacrifices: ['Prison and torture under the Raj; renounced office and power for a lifetime'],
-    legacy: 'Loknayak — the people’s leader; the conscience-keeper role in Indian democracy bears his stamp.',
+    legacy: 'Loknayak, the people’s leader; the conscience-keeper role in Indian democracy bears his stamp.',
     facts: ['His wife Prabhavati, a satyagrahi in her own right, lived at Gandhi’s ashram while he organized revolt.'],
     timelineEvents: ['quit-india-launch'],
     movements: ['quit-india'],
@@ -837,25 +837,25 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['satyagrahi', 'social-reformer', 'educator', 'writer-poet'],
     summary:
-      'Gandhi’s chosen first satyagrahi of 1940 — scholar-saint of the ashram who spent five years in freedom’s prisons, and after 1947 walked India for twenty years collecting land as gifts for the poor.',
+      'Gandhi’s chosen first satyagrahi of 1940, scholar-saint of the ashram who spent five years in freedom’s prisons, and after 1947 walked India for twenty years collecting land as gifts for the poor.',
     shortStory: [
       {
         title: 'The scholar who burned his certificates',
-        text: 'Vinoba was a brilliant student who burned his school certificates and went seeking truth — finding it in Gandhi’s ashram, where he became the Mahatma’s most trusted spiritual companion.',
+        text: 'Vinoba was a brilliant student who burned his school certificates and went seeking truth, finding it in Gandhi’s ashram, where he became the Mahatma’s most trusted spiritual companion.',
       },
       {
         title: 'The first satyagrahi',
-        text: 'In 1940, when Gandhi launched individual satyagraha against India being dragged into the war, he chose one man to go first — Vinoba. Few Indians had heard of him; Gandhi explained why in a famous essay: "Who is Vinoba?"',
+        text: 'In 1940, when Gandhi launched individual satyagraha against India being dragged into the war, he chose one man to go first: Vinoba. Few Indians had heard of him; Gandhi explained why in a famous essay: "Who is Vinoba?"',
       },
       {
         title: 'Walking for land',
-        text: 'After independence, Vinoba walked across India for two decades asking landlords to gift land to the landless — the Bhoodan movement. Millions of acres were given. He treated it as freedom’s unfinished work.',
+        text: 'After independence, Vinoba walked across India for two decades asking landlords to gift land to the landless: the Bhoodan movement. Millions of acres were given. He treated it as freedom’s unfinished work.',
       },
     ],
     fullBiography: [
-      'Vinayak Narahari Bhave joined Gandhi’s Kochrab ashram in 1916 after abandoning a conventional career path, and became its deepest scholar — of the Gita above all, on which his Talks (given to fellow prisoners in Dhule jail, 1932) became a modern classic read in dozens of languages. Gandhi set him to found the Wardha ashram in 1921, and trusted him as few others.',
-      'He served repeated prison terms through Non-Cooperation and Civil Disobedience, and in October 1940 Gandhi named him the first individual satyagrahi against the war effort — anointing an unknown, to make the point that the struggle’s strength lay in discipline, not fame. Arrested repeatedly in 1940–41 and again during Quit India, he spent in total about five years in colonial jails, teaching fellow prisoners the Gita and spinning.',
-      'Independence turned him to sarvodaya’s unfinished revolution: at Pochampally in Telangana in 1951, a landlord’s spontaneous gift of a hundred acres began Bhoodan, and Vinoba walked — some 70,000 kilometres over two decades — receiving over four million acres in gift, whole villages (Gramdan) among them, the gentlest land reform ever attempted. He founded the Brahma Vidya Mandir women’s ashram, mediated the surrender of Chambal dacoits, and died in 1982 by voluntarily refusing food in his final illness. Bharat Ratna, posthumously, 1983.',
+      'Vinayak Narahari Bhave joined Gandhi’s Kochrab ashram in 1916 after abandoning a conventional career path, and became its deepest scholar, of the Gita above all, on which his Talks (given to fellow prisoners in Dhule jail, 1932) became a modern classic read in dozens of languages. Gandhi set him to found the Wardha ashram in 1921, and trusted him as few others.',
+      'He served repeated prison terms through Non-Cooperation and Civil Disobedience, and in October 1940 Gandhi named him the first individual satyagrahi against the war effort, anointing an unknown, to make the point that the struggle’s strength lay in discipline, not fame. Arrested repeatedly in 1940–41 and again during Quit India, he spent in total about five years in colonial jails, teaching fellow prisoners the Gita and spinning.',
+      'Independence turned him to sarvodaya’s unfinished revolution: at Pochampally in Telangana in 1951, a landlord’s spontaneous gift of a hundred acres began Bhoodan, and Vinoba walked some 70,000 kilometres over two decades, receiving over four million acres in gift, whole villages (Gramdan) among them, the gentlest land reform ever attempted. He founded the Brahma Vidya Mandir women’s ashram, mediated the surrender of Chambal dacoits, and died in 1982 by voluntarily refusing food in his final illness. Bharat Ratna, posthumously, 1983.',
     ],
     entryIntoStruggle: 'Joined Gandhi’s ashram, 1916.',
     ideology: 'Sarvodaya; nonviolence as a total way of life.',
@@ -904,27 +904,27 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'lawyer', 'journalist'],
     summary:
-      'Andhra Kesari — the Lion of Andhra — who bared his chest to British guns during the Simon Commission protests in Madras, gave a fortune to the movement, and became the first Chief Minister of Andhra State.',
+      'Andhra Kesari, the Lion of Andhra, who bared his chest to British guns during the Simon Commission protests in Madras, gave a fortune to the movement, and became the first Chief Minister of Andhra State.',
     shortStory: [
       {
         title: 'From poverty to the Privy Council',
-        text: 'Prakasam rose from a poor childhood — his widowed mother ran a boarding house — to become one of Madras’s wealthiest lawyers, arguing cases in London itself.',
+        text: 'Prakasam rose from a poor childhood (his widowed mother ran a boarding house) to become one of Madras’s wealthiest lawyers, arguing cases in London itself.',
       },
       {
         title: '"Shoot me first"',
-        text: 'In 1928, during the protests against the Simon Commission in Madras, police threatened to fire on the crowd. Prakasam tore open his shirt and dared them to shoot him first. The soldiers lowered their guns — and Andhra had its Lion.',
+        text: 'In 1928, during the protests against the Simon Commission in Madras, police threatened to fire on the crowd. Prakasam tore open his shirt and dared them to shoot him first. The soldiers lowered their guns, and Andhra had its Lion.',
       },
       {
         title: 'Everything for the cause',
-        text: 'He poured his fortune into his newspaper Swarajya and the movement, dying poor. Free India made him Chief Minister — first of Madras, then of the new Andhra State, whose creation he had championed.',
+        text: 'He poured his fortune into his newspaper Swarajya and the movement, dying poor. Free India made him Chief Minister, first of Madras, then of the new Andhra State, whose creation he had championed.',
       },
     ],
     fullBiography: [
-      'Tanguturi Prakasam’s rise — from a fatherless childhood in Ongole country to the leadership of the Madras bar, with a period in England where he cleared the bar exams and returned qualified for Privy Council practice — was itself a legend. Non-Cooperation claimed him in 1921: he abandoned a princely practice, launched the daily Swarajya (in English, Telugu and Tamil editions) and sank his wealth into the cause.',
-      'His immortal moment came on 3 February 1928 in Madras, during the hartal against the Simon Commission’s landing: when armed police confronted the crowd near where a protester had been shot, Prakasam bared his chest and challenged them to fire. "Andhra Kesari" — the Lion of Andhra — was the people’s answer. He led the salt satyagraha on the Madras coast in 1930, serving repeated imprisonments through the decade and after Quit India.',
-      'Premier of Madras in 1946–47, he later became, in 1953, the first Chief Minister of the newly carved Andhra State — the culmination of the Andhra movement he had long served (its final trigger, Potti Sriramulu’s fast unto death, belongs to freedom’s aftermath). He died in 1957; a district of Andhra Pradesh bears his name.',
+      'Tanguturi Prakasam’s rise was itself a legend: from a fatherless childhood in Ongole country to the leadership of the Madras bar, with a period in England where he cleared the bar exams and returned qualified for Privy Council practice. Non-Cooperation claimed him in 1921: he abandoned a princely practice, launched the daily Swarajya (in English, Telugu and Tamil editions) and sank his wealth into the cause.',
+      'His immortal moment came on 3 February 1928 in Madras, during the hartal against the Simon Commission’s landing: when armed police confronted the crowd near where a protester had been shot, Prakasam bared his chest and challenged them to fire. "Andhra Kesari", the Lion of Andhra, was the people’s answer. He led the salt satyagraha on the Madras coast in 1930, serving repeated imprisonments through the decade and after Quit India.',
+      'Premier of Madras in 1946–47, he later became, in 1953, the first Chief Minister of the newly carved Andhra State, the culmination of the Andhra movement he had long served (its final trigger, Potti Sriramulu’s fast unto death, belongs to freedom’s aftermath). He died in 1957; a district of Andhra Pradesh bears his name.',
     ],
-    entryIntoStruggle: 'Non-Cooperation, 1921 — gave up his practice.',
+    entryIntoStruggle: 'Non-Cooperation, 1921, when he gave up his practice.',
     achievements: [
       'The defining act of defiance of the Madras Simon protests',
       'Financed and edited Swarajya',
@@ -968,15 +968,15 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'social-reformer', 'organizer'],
     summary:
-      'The first Indian woman to stand for legislative election and the first arrested in the salt satyagraha — socialist, feminist, and after 1947 the renaissance builder of Indian handicrafts and theatre.',
+      'The first Indian woman to stand for legislative election and the first arrested in the salt satyagraha; socialist, feminist, and after 1947 the renaissance builder of Indian handicrafts and theatre.',
     shortStory: [
       {
         title: 'The trailblazer',
-        text: 'Kamaladevi did things Indian women "did not do": widowed young, she remarried by choice; she acted on stage and screen; and in 1926 she stood for election to a legislature — the first Indian woman ever to do so, losing by a whisker.',
+        text: 'Kamaladevi did things Indian women "did not do": widowed young, she remarried by choice; she acted on stage and screen; and in 1926 she stood for election to a legislature, the first Indian woman ever to do so, losing by a whisker.',
       },
       {
         title: 'Selling salt at the Stock Exchange',
-        text: 'In 1930 she strode into the Bombay Stock Exchange selling packets of contraband salt to brokers — "the salt of freedom!" — and became one of the first women arrested in the Salt Satyagraha.',
+        text: 'In 1930 she strode into the Bombay Stock Exchange selling packets of contraband salt to brokers ("the salt of freedom!") and became one of the first women arrested in the Salt Satyagraha.',
       },
       {
         title: 'Rebuilding by hand',
@@ -984,9 +984,9 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'From a progressive Saraswat home in Mangalore, Kamaladevi broke conventions serially: education through widowhood, remarriage to the poet-actor Harindranath Chattopadhyay (Sarojini Naidu’s brother), the London School of Economics diploma, and in 1926 the first woman’s candidacy for an Indian legislature, for the Madras council — narrowly lost, historically won.',
-      'A founder-organizer of the All India Women’s Conference in 1927, she pushed it from charity towards rights; in the Civil Disobedience movement she led the Bombay salt actions — selling salt on the Stock Exchange floor, courting arrest among the first women prisoners of 1930 — and served multiple terms totalling some five years. A founding leader of the Congress Socialist Party (its president in 1936 era organizational work), she linked feminism, socialism and nationalism as few contemporaries did, and toured the world making India’s case.',
-      'After 1947 — having declined ministries and governorships — she built institutions instead: the Indian Cooperative Union and the refugee-built city of Faridabad; the All India Handicrafts Board, which revived dying craft traditions and the handloom economy; the National School of Drama, Sangeet Natak Akademi and Crafts Council. Ramon Magsaysay Award, Padma Vibhushan; she died in 1988, the freedom movement’s great institution-builder among women.',
+      'From a progressive Saraswat home in Mangalore, Kamaladevi broke conventions serially: education through widowhood, remarriage to the poet-actor Harindranath Chattopadhyay (Sarojini Naidu’s brother), the London School of Economics diploma, and in 1926 the first woman’s candidacy for an Indian legislature, for the Madras council: narrowly lost, historically won.',
+      'A founder-organizer of the All India Women’s Conference in 1927, she pushed it from charity towards rights; in the Civil Disobedience movement she led the Bombay salt actions, selling salt on the Stock Exchange floor and courting arrest among the first women prisoners of 1930, and served multiple terms totalling some five years. A founding leader of the Congress Socialist Party (its president in 1936 era organizational work), she linked feminism, socialism and nationalism as few contemporaries did, and toured the world making India’s case.',
+      'After 1947, having declined ministries and governorships, she built institutions instead: the Indian Cooperative Union and the refugee-built city of Faridabad; the All India Handicrafts Board, which revived dying craft traditions and the handloom economy; the National School of Drama, Sangeet Natak Akademi and Crafts Council. Ramon Magsaysay Award, Padma Vibhushan; she died in 1988, the freedom movement’s great institution-builder among women.',
     ],
     entryIntoStruggle: 'Non-Cooperation seva dal work in the early 1920s; AIWC from 1927.',
     ideology: 'Socialist feminism within the national movement.',
@@ -1039,7 +1039,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['political-leader', 'organizer', 'educator'],
     summary:
-      'The schoolteacher who led a march of thousands to the Travancore Maharaja’s palace in 1938 and dared the police chief: "Shoot me first" — Gandhi hailed her as the Jhansi Rani of Travancore.',
+      'The schoolteacher who led a march of thousands to the Travancore Maharaja’s palace in 1938 and dared the police chief: "Shoot me first". Gandhi hailed her as the Jhansi Rani of Travancore.',
     shortStory: [
       {
         title: 'The headmistress',
@@ -1055,8 +1055,8 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Accamma Cherian, from a Syrian Christian family of Kanjirappally, took degrees in history and teaching and rose to headmistress of St Mary’s English School, Edakkara — resigning in 1938 to join the Travancore State Congress’s struggle for responsible government against the autocracy of Dewan C. P. Ramaswami Iyer.',
-      'When the State Congress’s successive "dictators" (single leaders empowered during the ban) were arrested, Accamma was named the eleventh. On 23 October 1938 she led a mass procession — accounts speak of over twenty thousand — from Thampanoor to the Kowdiar Palace to petition the Maharaja; ordered to disperse on pain of firing, she stepped forward and told the police chief to shoot her first. The crowd stood; the order failed; the prisoners’ release followed. Gandhi’s tribute — "the Jhansi Rani of Travancore" — travelled ahead of her.',
+      'Accamma Cherian, from a Syrian Christian family of Kanjirappally, took degrees in history and teaching and rose to headmistress of St Mary’s English School, Edakkara, resigning in 1938 to join the Travancore State Congress’s struggle for responsible government against the autocracy of Dewan C. P. Ramaswami Iyer.',
+      'When the State Congress’s successive "dictators" (single leaders empowered during the ban) were arrested, Accamma was named the eleventh. On 23 October 1938 she led a mass procession (accounts speak of over twenty thousand) from Thampanoor to the Kowdiar Palace to petition the Maharaja; ordered to disperse on pain of firing, she stepped forward and told the police chief to shoot her first. The crowd stood; the order failed; the prisoners’ release followed. Gandhi’s tribute, "the Jhansi Rani of Travancore", travelled ahead of her.',
       'She organized the Desasevika Sangh women’s volunteer corps, served imprisonments in 1939 and during the Quit India years, and presided over the State Congress in 1942. After integration she sat in the Travancore-Cochin assembly; her memoir "Jeevitham: Oru Samaram" (Life: A Struggle) records the era. A statue near the Kerala secretariat honours the woman who stood before the rifles.',
     ],
     entryIntoStruggle: 'Travancore State Congress movement, 1938.',
@@ -1066,7 +1066,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     ],
     sacrifices: ['Gave up her career; repeated imprisonment'],
     legacy: 'Kerala’s foremost woman freedom fighter; the princely-state struggles’ great heroine.',
-    facts: ['The struggles in princely states like Travancore ran parallel to British India’s — her story is their emblem.'],
+    facts: ['The struggles in princely states like Travancore ran parallel to British India’s. Her story is their emblem.'],
     timelineEvents: ['quit-india-launch'],
     movements: ['quit-india', 'civil-disobedience'],
     organizations: ['inc'],
@@ -1102,7 +1102,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'organizer', 'satyagrahi'],
     summary:
-      'Princess of the Kapurthala royal family turned satyagrahi — Gandhi’s secretary for sixteen years, a founder of the All India Women’s Conference, and independent India’s first Health Minister.',
+      'Princess of the Kapurthala royal family turned satyagrahi: Gandhi’s secretary for sixteen years, a founder of the All India Women’s Conference, and independent India’s first Health Minister.',
     shortStory: [
       {
         title: 'The princess who left the palace',
@@ -1149,7 +1149,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     sources: [
       {
         title: 'Rajkumari Amrit Kaur',
-        publisher: 'Ministry of Culture, Government of India — Azadi Ka Amrit Mahotsav',
+        publisher: 'Ministry of Culture, Government of India (Azadi Ka Amrit Mahotsav)',
         url: 'https://amritmahotsav.nic.in/',
         type: 'government',
       },
@@ -1179,7 +1179,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'satyagrahi'],
     summary:
-      'Jawaharlal Nehru’s younger sister and one of the earliest women to hold cabinet rank in a provincial government in British India — jailed three times in the freedom struggle, and later independent India’s pioneering woman diplomat.',
+      'Jawaharlal Nehru’s younger sister and one of the earliest women to hold cabinet rank in a provincial government in British India, jailed three times in the freedom struggle, and later independent India’s pioneering woman diplomat.',
     shortStory: [
       {
         title: 'The Nehru household',
@@ -1187,7 +1187,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
       {
         title: 'A minister in the United Provinces',
-        text: 'In 1937, when Congress formed provincial governments, she became a minister in the United Provinces — one of the earliest women in British India to hold cabinet rank.',
+        text: 'In 1937, when Congress formed provincial governments, she became a minister in the United Provinces, one of the earliest women in British India to hold cabinet rank.',
       },
       {
         title: 'Three times in prison',
@@ -1195,13 +1195,13 @@ export const gandhianEraFighters: FreedomFighter[] = [
       },
       {
         title: 'India’s voice abroad',
-        text: 'After independence she became a pioneering diplomat — ambassador to Moscow, Washington and London — and in 1953 the first woman to preside over the United Nations General Assembly.',
+        text: 'After independence she became a pioneering diplomat, ambassador to Moscow, Washington and London, and in 1953 the first woman to preside over the United Nations General Assembly.',
       },
     ],
     fullBiography: [
       'Vijaya Lakshmi Pandit was born in Allahabad, the daughter of the Congress leader Motilal Nehru and younger sister of Jawaharlal Nehru. She grew up amid the family’s plunge into the freedom movement, joined the Congress’s civil disobedience campaigns of the early 1930s, and was imprisoned for the first time in 1932–33.',
-      'In 1937, when the Congress took office in the United Provinces under provincial autonomy, she was elected Minister for Local Self-Government and Public Health — one of the earliest women to hold cabinet rank in a provincial government anywhere in British India. She resigned along with the rest of the Congress ministry in 1939 over Britain’s unilateral declaration of war on India’s behalf, and was imprisoned twice more, in 1940 and again through 1942–43 after Quit India.',
-      'After independence she turned to diplomacy, serving as India’s ambassador to the Soviet Union, the United States and the United Kingdom, and in 1953 became the first woman elected President of the United Nations General Assembly. She later served as Governor of Maharashtra and remained politically active — including as a public critic of the 1975–77 Emergency — until her death in 1990.',
+      'In 1937, when the Congress took office in the United Provinces under provincial autonomy, she was elected Minister for Local Self-Government and Public Health, one of the earliest women to hold cabinet rank in a provincial government anywhere in British India. She resigned along with the rest of the Congress ministry in 1939 over Britain’s unilateral declaration of war on India’s behalf, and was imprisoned twice more, in 1940 and again through 1942–43 after Quit India.',
+      'After independence she turned to diplomacy, serving as India’s ambassador to the Soviet Union, the United States and the United Kingdom, and in 1953 became the first woman elected President of the United Nations General Assembly. She later served as Governor of Maharashtra and remained politically active, including as a public critic of the 1975–77 Emergency, until her death in 1990.',
     ],
     entryIntoStruggle: 'Joined the Congress’s civil disobedience campaigns in the early 1930s.',
     achievements: [
@@ -1222,7 +1222,7 @@ export const gandhianEraFighters: FreedomFighter[] = [
     sources: [
       {
         title: 'Vijaya Lakshmi Pandit',
-        publisher: 'Ministry of Culture, Government of India — Azadi Ka Amrit Mahotsav',
+        publisher: 'Ministry of Culture, Government of India (Azadi Ka Amrit Mahotsav)',
         url: 'https://amritmahotsav.nic.in/',
         type: 'government',
       },

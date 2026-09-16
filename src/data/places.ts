@@ -86,7 +86,7 @@ export const places: Place[] = [
     dates: '30 April 1930',
     summary: 'The salt coast at the end of C. Rajagopalachari’s 240-kilometre march from Tiruchirappalli, where salt was lifted in defiance of the law on 30 April 1930.',
     description: [
-      'Sardar Vedaratnam Pillai organised the coast for the marchers’ arrival. On 30 April 1930 Rajaji walked out to the Edanthevar salt swamp to lift salt and was arrested; mass arrests followed, including — in May — Rukmini Lakshmipathi, the first woman in India jailed in the Salt Satyagraha, and the young K. Kamaraj.[^1]',
+      'Sardar Vedaratnam Pillai organised the coast for the marchers’ arrival. On 30 April 1930 Rajaji walked out to the Edanthevar salt swamp to lift salt and was arrested; mass arrests followed, including Rukmini Lakshmipathi in May, the first woman in India jailed in the Salt Satyagraha, and the young K. Kamaraj.[^1]',
     ],
     people: ['c-rajagopalachari', 'rukmini-lakshmipathi', 'k-kamaraj'],
     events: ['vedaranyam-salt-march'],

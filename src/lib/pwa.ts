@@ -1,7 +1,7 @@
 /**
  * Registers the service worker (src/sw.ts) and exposes "a new version is
- * ready" as a tiny pub-sub store — the same useSyncExternalStore idiom as
- * useBookmarks/useTrail in hooks.ts — so UpdateToast can subscribe without
+ * ready" as a tiny pub-sub store - the same useSyncExternalStore idiom as
+ * useBookmarks/useTrail in hooks.ts - so UpdateToast can subscribe without
  * owning the registration itself.
  */
 import { registerSW } from 'virtual:pwa-register';
@@ -15,7 +15,7 @@ function notify() {
   listeners.forEach((l) => l());
 }
 
-/** Call once, from main.tsx — never during the prerender capture pass. */
+/** Call once, from main.tsx - never during the prerender capture pass. */
 export function initServiceWorker() {
   window.addEventListener('appinstalled', () => track('pwa_install_accepted'));
   if (!('serviceWorker' in navigator)) return;

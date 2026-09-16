@@ -1,7 +1,7 @@
 import type { FreedomFighter } from '@/types';
 
 /**
- * Freedom fighters of the Northeast beyond the Naga hills — Manipur's
+ * Freedom fighters of the Northeast beyond the Naga hills: Manipur's
  * royal resistance in the Anglo-Manipur War of 1891, and Assam's earliest
  * martyr of the freedom struggle in 1858. This archive has carried very
  * few Northeast records; these two begin to fill that gap.
@@ -19,7 +19,7 @@ export const northeastLeaders: FreedomFighter[] = [
     portrait: '/images/fighters/bir-tikendrajit.jpg',
     portraitNote: {
       kind: 'photograph',
-      caption: 'Yubaraj Tikendrajit Singh, crown prince (senapati) of the Manipur kingdom — a period photographic portrait.',
+      caption: 'Yubaraj Tikendrajit Singh, crown prince (senapati) of the Manipur kingdom. A period photographic portrait.',
       credit: 'Wikimedia Commons (uploaded by Lebosng)',
       created: 'c. late 19th century; PD-old',
     },
@@ -29,7 +29,7 @@ export const northeastLeaders: FreedomFighter[] = [
     era: 'rise-of-nationalism',
     roles: ['military-leader', 'ruler'],
     summary:
-      'Senapati (commander-in-chief) of Manipur and the central figure of the Anglo-Manipur War of 1891, whose resistance to British interference in the kingdom’s succession led to the deaths of several British officers and, after the kingdom fell, his own public execution — an event Manipur still marks each year.',
+      'Senapati (commander-in-chief) of Manipur and the central figure of the Anglo-Manipur War of 1891, whose resistance to British interference in the kingdom’s succession led to the deaths of several British officers and, after the kingdom fell, his own public execution, an event Manipur still marks each year.',
     shortStory: [
       {
         title: 'The Senapati of Manipur',
@@ -53,9 +53,9 @@ export const northeastLeaders: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Tikendrajit Singh, son of Maharaja Chandrakirti Singh, rose to be Manipur’s Senapati — commander-in-chief of its armed forces — and the kingdom’s most powerful figure behind the throne. In September 1890, during a dispute over the succession, he engineered the removal of his eldest brother, Surchandra Singh, and the installation of another brother, Kulachandra, as Maharaja, while retaining military command himself.',
-      'The British authorities refused to recognise the new arrangement unless Tikendrajit submitted to arrest. When a British mission led by Chief Commissioner James Quinton and political agent Frank Grimwood sought to seize him during negotiations at the Residency on 24 March 1891, fighting broke out and several British officers were killed. The British government answered with a full military expedition — the Anglo-Manipur War — and Manipuri forces resisted for weeks, notably at Khongjom, before the British occupied the Kangla palace on 27 April 1891.',
-      'Tikendrajit was captured, tried before a British military commission on charges of waging war against the Crown, and hanged in public with General Thangal at the Imphal polo ground on 13 August 1891. Manipur observes that date each year as Patriots’ Day, and the ground itself — now called Bir Tikendrajit Ground — carries his name.',
+      'Tikendrajit Singh, son of Maharaja Chandrakirti Singh, rose to be Manipur’s Senapati, commander-in-chief of its armed forces, and the kingdom’s most powerful figure behind the throne. In September 1890, during a dispute over the succession, he engineered the removal of his eldest brother, Surchandra Singh, and the installation of another brother, Kulachandra, as Maharaja, while retaining military command himself.',
+      'The British authorities refused to recognise the new arrangement unless Tikendrajit submitted to arrest. When a British mission led by Chief Commissioner James Quinton and political agent Frank Grimwood sought to seize him during negotiations at the Residency on 24 March 1891, fighting broke out and several British officers were killed. The British government answered with a full military expedition, the Anglo-Manipur War, and Manipuri forces resisted for weeks, notably at Khongjom, before the British occupied the Kangla palace on 27 April 1891.',
+      'Tikendrajit was captured, tried before a British military commission on charges of waging war against the Crown, and hanged in public with General Thangal at the Imphal polo ground on 13 August 1891. Manipur observes that date each year as Patriots’ Day, and the ground itself, now called Bir Tikendrajit Ground, carries his name.',
     ],
     entryIntoStruggle: 'Resistance to British demands for his arrest during the Manipur succession dispute, 1890–91.',
     achievements: [
@@ -101,7 +101,7 @@ export const northeastLeaders: FreedomFighter[] = [
     portrait: '/images/fighters/maniram-dewan.jpg',
     portraitNote: {
       kind: 'painting',
-      caption: 'Retouched portrait of Maniram Dewan (Maniram Dutta Baruah) — a reproduction of a traditional painted likeness, not a photograph.',
+      caption: 'Retouched portrait of Maniram Dewan (Maniram Dutta Baruah), a reproduction of a traditional painted likeness, not a photograph.',
       credit: 'P Phukan (Parikhit Phukan), Wikimedia Commons',
       created: 'Painted likeness of unknown date; retouched reproduction 2016, CC BY-SA 4.0 / PD-Art',
     },
@@ -119,7 +119,7 @@ export const northeastLeaders: FreedomFighter[] = [
       },
       {
         title: 'Assam’s first tea planter',
-        text: 'He left Company service to start his own tea gardens — the first Assamese to do so independently of the European-run tea companies that dominated the industry.',
+        text: 'He left Company service to start his own tea gardens, the first Assamese to do so independently of the European-run tea companies that dominated the industry.',
       },
       {
         title: 'A plot for the old kingdom',
@@ -136,7 +136,7 @@ export const northeastLeaders: FreedomFighter[] = [
     ],
     fullBiography: [
       'Maniram Dutta Baruah, known as Maniram Dewan, was born in 1806 near Jorhat into an Ahom aristocratic family. He served the old Ahom court and, after the Company annexed Assam in 1826, its colonial administration as well, rising to a senior revenue post and gaining early knowledge of tea cultivation through the Company’s own plantations.',
-      'By the 1840s he had left Company service to start his own tea gardens — the first Assamese-owned tea estates independent of the European companies that came to dominate the industry. Revenue and licensing policies that favoured European planters over Assamese ones deepened his grievances against Company rule, and he began working, through correspondence, to see the Ahom monarchy restored under the exiled prince Kandarpeswar Singha.',
+      'By the 1840s he had left Company service to start his own tea gardens, the first Assamese-owned tea estates independent of the European companies that came to dominate the industry. Revenue and licensing policies that favoured European planters over Assamese ones deepened his grievances against Company rule, and he began working, through correspondence, to see the Ahom monarchy restored under the exiled prince Kandarpeswar Singha.',
       'When the wider revolt broke out in 1857, Maniram, then in Calcutta, wrote letters encouraging an Assamese rising in the prince’s name. The letters were intercepted at Jorhat; he was brought back, tried alongside his associate Piyoli Baruah in a single-day proceeding, and both were sentenced to death and hanged at Jorhat on 26 February 1858. He is remembered today as one of Assam’s earliest martyrs of the freedom struggle and as the founder of its indigenous tea industry.',
     ],
     entryIntoStruggle: 'Correspondence in 1857 encouraging an Assamese uprising in support of the exiled Ahom prince Kandarpeswar Singha.',

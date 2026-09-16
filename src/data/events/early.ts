@@ -12,10 +12,10 @@ export const earlyEvents: HistoricalEvent[] = [
     region: 'east',
     states: ['West Bengal'],
     summary:
-      'The East India Company defeats Nawab Siraj-ud-Daulah — through Mir Jafar’s betrayal more than battle — and becomes the power behind Bengal’s throne. Colonial rule in India begins here.',
+      'The East India Company defeats Nawab Siraj-ud-Daulah, through Mir Jafar’s betrayal more than battle, and becomes the power behind Bengal’s throne. Colonial rule in India begins here.',
     description: [
       'On a mango grove by the Bhagirathi river, Robert Clive’s small Company force faced the far larger army of Siraj-ud-Daulah, the young Nawab of Bengal. The battle was decided before it began: the Nawab’s commander Mir Jafar had been bought, and most of the Bengal army never fought. Siraj was captured and killed days later.',
-      'Plassey gave a trading corporation control of India’s richest province. The revenues of Bengal financed the Company’s armies, and over the next century its rule spread across the subcontinent — as did resistance to it. Later nationalists dated the freedom struggle’s beginning from this field.',
+      'Plassey gave a trading corporation control of India’s richest province. The revenues of Bengal financed the Company’s armies, and over the next century its rule spread across the subcontinent, as did resistance to it. Later nationalists dated the freedom struggle’s beginning from this field.',
     ],
     people: [],
     era: 'early-resistance',
@@ -49,9 +49,9 @@ export const earlyEvents: HistoricalEvent[] = [
     region: 'south',
     states: ['Tamil Nadu'],
     summary:
-      'Half a century before 1857, sepoys at Vellore rose against new regulations that offended their religious practice — the first large-scale mutiny against Company rule.',
+      'Half a century before 1857, sepoys at Vellore rose against new regulations that offended their religious practice: the first large-scale mutiny against Company rule.',
     description: [
-      'New dress regulations — forbidding religious marks, requiring a new round hat associated with Christians — convinced many sepoys at Vellore that their faith was under attack. Before dawn on 10 July 1806 they rose, killed or wounded some two hundred British officers and men, and raised the flag of Tipu Sultan’s sons, who were held in the fort.',
+      'New dress regulations, forbidding religious marks and requiring a new round hat associated with Christians, convinced many sepoys at Vellore that their faith was under attack. Before dawn on 10 July 1806 they rose, killed or wounded some two hundred British officers and men, and raised the flag of Tipu Sultan’s sons, who were held in the fort.',
       'A relief force under Colonel Gillespie stormed the fort within hours and the reprisals were merciless: hundreds of sepoys were killed. The Company quietly withdrew the offending orders. Vellore anticipated, in miniature, the far greater storm of 1857.',
     ],
     people: [],
@@ -82,9 +82,9 @@ export const earlyEvents: HistoricalEvent[] = [
     region: 'south',
     states: ['Karnataka'],
     summary:
-      'Rani Chennamma of Kittur takes up arms against the Company’s refusal to recognise her adopted heir — an early armed revolt led by a woman ruler.',
+      'Rani Chennamma of Kittur takes up arms against the Company’s refusal to recognise her adopted heir: an early armed revolt led by a woman ruler.',
     description: [
-      'When the ruler of the small state of Kittur died leaving an adopted son, the Company refused to recognise the succession and moved to seize the state — a policy later formalised as the Doctrine of Lapse. Rani Chennamma chose war. In October 1824 her forces repulsed the first British assault, killing the Collector of Dharwad, John Thackeray.',
+      'When the ruler of the small state of Kittur died leaving an adopted son, the Company refused to recognise the succession and moved to seize the state, a policy later formalised as the Doctrine of Lapse. Rani Chennamma chose war. In October 1824 her forces repulsed the first British assault, killing the Collector of Dharwad, John Thackeray.',
       'A larger force took Kittur in December; Chennamma was imprisoned in Bailhongal fort, where she died in 1829. Her lieutenant Sangolli Rayanna carried on guerrilla resistance until his capture and execution in 1831. In Karnataka her memory has never dimmed.',
     ],
     people: ['rani-chennamma'],
@@ -138,8 +138,8 @@ export const earlyEvents: HistoricalEvent[] = [
     summary:
       'Tens of thousands of Santhals, led by the brothers Sidhu and Kanhu Murmu, rise against moneylenders, landlords and the Company state protecting them.',
     description: [
-      'Settled as pioneers in the forest country of Damin-i-Koh, the Santhals found their harvests and lands stripped away by usurious moneylenders and corrupt police, with Company courts deaf to complaint. On 30 June 1855, at Bhognadih, thousands gathered as Sidhu and Kanhu Murmu declared the Hul — the liberation war — and marched, bows in hand, to end the rule of the dikus (exploiters) and the Company alike.',
-      'The rebellion swept the region for months before it was crushed with overwhelming force; contemporary accounts describe Santhal squares standing their ground until shot down. Thousands died — figures are uncertain — and Sidhu and Kanhu were captured and executed. The Hul forced the creation of the separate Santhal Parganas district, and 30 June is still commemorated as Hul Diwas.',
+      'Settled as pioneers in the forest country of Damin-i-Koh, the Santhals found their harvests and lands stripped away by usurious moneylenders and corrupt police, with Company courts deaf to complaint. On 30 June 1855, at Bhognadih, thousands gathered as Sidhu and Kanhu Murmu declared the Hul, the liberation war, and marched, bows in hand, to end the rule of the dikus (exploiters) and the Company alike.',
+      'The rebellion swept the region for months before it was crushed with overwhelming force; contemporary accounts describe Santhal squares standing their ground until shot down. Thousands died (figures are uncertain), and Sidhu and Kanhu were captured and executed. The Hul forced the creation of the separate Santhal Parganas district, and 30 June is still commemorated as Hul Diwas.',
     ],
     people: ['sidhu-kanhu-murmu'],
     movement: 'tribal-resistance',
@@ -148,7 +148,7 @@ export const earlyEvents: HistoricalEvent[] = [
     disputed: [
       {
         claim: 'Casualty figures',
-        note: 'Estimates of Santhal deaths range widely — figures of 10,000 or more are cited, but no reliable contemporary count exists.',
+        note: 'Estimates of Santhal deaths range widely: figures of 10,000 or more are cited, but no reliable contemporary count exists.',
       },
     ],
     sources: [
@@ -177,10 +177,10 @@ export const earlyEvents: HistoricalEvent[] = [
     region: 'north',
     states: ['Uttar Pradesh', 'Delhi'],
     summary:
-      'Sepoys at Meerut rise, march on Delhi and proclaim Bahadur Shah Zafar emperor — igniting the great uprising across northern and central India.',
+      'Sepoys at Meerut rise, march on Delhi and proclaim Bahadur Shah Zafar emperor, igniting the great uprising across northern and central India.',
     description: [
       'On 9 May 1857, eighty-five troopers at Meerut were stripped and shackled for refusing cartridges rumoured to be greased with cow and pig fat. The next evening their comrades broke open the jail, killed their officers and rode through the night to Delhi, where they proclaimed the reluctant, eighty-two-year-old Mughal emperor Bahadur Shah Zafar the sovereign of Hindustan.',
-      'Within weeks the Bengal Army was in general mutiny and vast civilian populations had joined: taluqdars of Awadh under Begum Hazrat Mahal, Kunwar Singh in Bihar, Nana Saheb and Tatya Tope at Kanpur, and — from March 1858 — Rani Lakshmibai in besieged Jhansi. The rising was suppressed by mid-1858 with mass executions and the sack of Delhi and Lucknow. It ended Company rule and seared itself into national memory as the First War of Independence.',
+      'Within weeks the Bengal Army was in general mutiny and vast civilian populations had joined: taluqdars of Awadh under Begum Hazrat Mahal, Kunwar Singh in Bihar, Nana Saheb and Tatya Tope at Kanpur, and, from March 1858, Rani Lakshmibai in besieged Jhansi. The rising was suppressed by mid-1858 with mass executions and the sack of Delhi and Lucknow. It ended Company rule and seared itself into national memory as the First War of Independence.',
     ],
     people: ['mangal-pandey', 'bahadur-shah-zafar', 'begum-hazrat-mahal', 'nana-saheb', 'tatya-tope', 'kunwar-singh', 'rani-lakshmibai'],
     movement: 'great-revolt',
@@ -214,9 +214,9 @@ export const earlyEvents: HistoricalEvent[] = [
     region: 'central',
     states: ['Uttar Pradesh', 'Madhya Pradesh'],
     summary:
-      'Rani Lakshmibai defends Jhansi against Hugh Rose’s army, escapes the fallen city on horseback, seizes Gwalior with Tatya Tope — and dies fighting in June 1858.',
+      'Rani Lakshmibai defends Jhansi against Hugh Rose’s army, escapes the fallen city on horseback, seizes Gwalior with Tatya Tope, and dies fighting in June 1858.',
     description: [
-      'In March 1858 the Central India Field Force under Sir Hugh Rose besieged Jhansi. The Rani directed the defence from the walls; when the city fell after ferocious bombardment and street fighting, she escaped through the lines by night — by tradition with her adopted son tied to her back — and rode to join Tatya Tope. Together they achieved the rebellion’s most audacious stroke, seizing the great fortress of Gwalior.',
+      'In March 1858 the Central India Field Force under Sir Hugh Rose besieged Jhansi. The Rani directed the defence from the walls; when the city fell after ferocious bombardment and street fighting, she escaped through the lines by night, by tradition with her adopted son tied to her back, and rode to join Tatya Tope. Together they achieved the rebellion’s most audacious stroke, seizing the great fortress of Gwalior.',
       'On 17 June 1858, in the fighting at Kotah-ki-Serai near Gwalior, Lakshmibai was killed in combat, dressed as a trooper. Rose reportedly called her "the best and bravest military leader of the rebels". Jhalkari Bai, a soldier of her women’s guard from a Dalit family, is remembered for impersonating the Rani to cover her escape.',
     ],
     people: ['rani-lakshmibai', 'tatya-tope', 'jhalkari-bai'],
@@ -242,14 +242,14 @@ export const earlyEvents: HistoricalEvent[] = [
   {
     id: 'queens-proclamation',
     slug: 'queens-proclamation',
-    title: 'Queen’s Proclamation — Crown rule begins',
+    title: 'Queen’s Proclamation: Crown rule begins',
     date: { year: 1858, month: 11, day: 1 },
     dateLabel: '1 November 1858',
     location: 'Allahabad',
     region: 'north',
     states: ['Uttar Pradesh'],
     summary:
-      'After the revolt, the British Crown takes direct control of India from the East India Company, promising non-interference in religion — promises nationalists would hold it to.',
+      'After the revolt, the British Crown takes direct control of India from the East India Company, promising non-interference in religion, promises nationalists would hold it to.',
     description: [
       'Read out at Allahabad on 1 November 1858, Queen Victoria’s proclamation transferred the government of India from the Company to the Crown, disclaimed any wish to impose Christianity, promised amnesty to most rebels, and declared Indians eligible for office "freely and impartially".',
       'The Raj that followed was more cautious about religion and custom but more racially exclusive than Company rule. For fifty years, moderate nationalists would quote the proclamation’s promises back at a government that did not keep them.',
@@ -275,9 +275,9 @@ export const earlyEvents: HistoricalEvent[] = [
     region: 'west',
     states: ['Maharashtra'],
     summary:
-      'Seventy-two delegates meet in Bombay to found the Congress — the organization that would grow from an annual debating assembly into the engine of the freedom movement.',
+      'Seventy-two delegates meet in Bombay to found the Congress, the organization that would grow from an annual debating assembly into the engine of the freedom movement.',
     description: [
-      'On 28 December 1885, seventy-two lawyers, journalists, teachers and merchants from across British India gathered in Bombay under the presidency of Womesh Chunder Bonnerjee, with the retired civil servant Allan Octavian Hume as organiser. Their resolutions were modest — more Indians in government, lower military spending — but the fact of an all-India political body was itself revolutionary.',
+      'On 28 December 1885, seventy-two lawyers, journalists, teachers and merchants from across British India gathered in Bombay under the presidency of Womesh Chunder Bonnerjee, with the retired civil servant Allan Octavian Hume as organiser. Their resolutions were modest: more Indians in government, lower military spending. But the fact of an all-India political body was itself revolutionary.',
       'Dadabhai Naoroji, Surendranath Banerjee, and later Gokhale and Tilak made its annual sessions the parliament of Indian opinion. Within a generation the Congress would split between Moderates and Extremists, and within two it would become, under Gandhi, a mass movement of millions.',
     ],
     people: ['dadabhai-naoroji', 'surendranath-banerjee', 'gopal-krishna-gokhale'],
@@ -304,7 +304,7 @@ export const earlyEvents: HistoricalEvent[] = [
   {
     id: 'munda-ulgulan',
     slug: 'munda-ulgulan',
-    title: 'Munda Ulgulan — Birsa Munda’s rising',
+    title: 'Munda Ulgulan: Birsa Munda’s rising',
     date: { year: 1899, month: 12, endYear: 1900 },
     dateLabel: 'December 1899 – 1900',
     location: 'Chotanagpur, Jharkhand',
@@ -313,7 +313,7 @@ export const earlyEvents: HistoricalEvent[] = [
     summary:
       'Birsa Munda leads the "Great Tumult" of the Munda people against landlords, missionaries and the colonial state, demanding their land and their own rule.',
     description: [
-      'By the 1890s the Mundas of Chotanagpur had lost much of their ancestral khuntkatti land to outsider landlords under colonial law. Birsa Munda — prophet, healer and leader, revered as "Bhagwan" (God) by his followers — turned a religious revival into a rising: on Christmas Eve 1899 the Ulgulan began, with attacks on police stations, churches and landlords’ men.',
+      'By the 1890s the Mundas of Chotanagpur had lost much of their ancestral khuntkatti land to outsider landlords under colonial law. Birsa Munda was prophet, healer and leader, revered as "Bhagwan" (God) by his followers, and he turned a religious revival into a rising: on Christmas Eve 1899 the Ulgulan began, with attacks on police stations, churches and landlords’ men.',
       'British forces broke the movement at Dombari Hill in January 1900, where many followers were shot down. Birsa was captured in February and died in Ranchi jail on 9 June 1900, aged about twenty-five. The rising forced the Chotanagpur Tenancy Act of 1908 protecting Adivasi land, and Birsa’s birthday, 15 November, is now observed nationally as Janjatiya Gaurav Divas.',
     ],
     people: ['birsa-munda'],

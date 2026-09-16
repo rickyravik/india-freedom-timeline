@@ -1,7 +1,7 @@
 /**
  * Motion policy. One function decides whether anything may move; every
- * animated feature asks it. GSAP is used for exactly one thing — FLIP
- * rearrangement of a filtered list — and is loaded on demand so a reader who
+ * animated feature asks it. GSAP is used for exactly one thing - FLIP
+ * rearrangement of a filtered list - and is loaded on demand so a reader who
  * never filters never downloads it.
  */
 import { useCallback, useEffect, useLayoutEffect, useRef, useSyncExternalStore, type RefObject } from 'react';
@@ -55,7 +55,7 @@ function loadFlip(): Promise<FlipLib> {
 /**
  * Filter rearrangement: existing items slide to their new place over 220ms,
  * entering items fade in, leaving items are simply gone (they're already out
- * of the DOM by the time we animate — no ghost cards). Call `capture()` in the
+ * of the DOM by the time we animate - no ghost cards). Call `capture()` in the
  * same event handler that changes the filter; the hook animates from that
  * snapshot after React commits the new list. With motion not allowed, capture
  * is a no-op and the list just updates.

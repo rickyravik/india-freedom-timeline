@@ -12,11 +12,11 @@ import type { EventSummary, HistoricalEvent } from '@/types';
 
 export default function EventPage() {
   const { slug } = useParams();
-  /* The summary is already in hand synchronously — the hero paints
+  /* The summary is already in hand synchronously - the hero paints
      immediately from it. The full record (description, significance,
      sources...) loads lazily; everything below the hero waits on it. */
   const summary: EventSummary | undefined = slug ? eventBySlug.get(slug) : undefined;
-  /* A lazy initializer, not `undefined` — see FighterProfilePage.tsx's
+  /* A lazy initializer, not `undefined` - see FighterProfilePage.tsx's
      matching comment: the initial route's record is prefetched before
      hydration starts, so the first render must already reflect it. */
   const [event, setEvent] = useState<HistoricalEvent | undefined>(() => (slug ? peekEvent(slug) : undefined));
@@ -70,7 +70,7 @@ export default function EventPage() {
 
   return (
     <article>
-      {/* Hero — the day issued as a commemorative */}
+      {/* Hero - the day issued as a commemorative */}
       <header className="container-page pt-2">
         <div
           className={`perf-all on-sheet relative animate-fade-up px-5 py-7 sm:px-9 sm:py-10 ${eraAccent.bg[accent]} ${eraAccent.onInk[accent]} ${

@@ -9,7 +9,7 @@ import { EmptyState, Icon, PageIntro, Reveal, Segmented, icons } from '@/compone
 import { EventCard, FighterCard } from '@/components/cards';
 import { GeographyFrame, IndiaOutline, PlaceChip } from '@/components/places';
 
-/* One stamp ink per region — the sheet is printed in seven inks. Ochre and
+/* One stamp ink per region - the sheet is printed in seven inks. Ochre and
    gauge gold use their deep cuts: the mid cuts only reached 4.0:1 against
    ink, and a 52px tile carries a 12px label. */
 const regionHex: Record<RegionId, string> = {
@@ -33,7 +33,7 @@ const regionText: Record<RegionId, string> = {
   abroad: 'text-paper-50',
 };
 
-/* The mount the panes are gummed to — the teeth are cut from it. */
+/* The mount the panes are gummed to - the teeth are cut from it. */
 const MOUNT = '#10312b';
 
 const stateCodes: Record<string, string> = {
@@ -126,7 +126,7 @@ export default function MapPage() {
       </PageIntro>
 
       <div className="container-page grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,520px)_1fr] lg:gap-12">
-        {/* A sheet of stamps — every state is one perforated pane */}
+        {/* A sheet of stamps - every state is one perforated pane */}
         {params.view === 'map' ? (
         <Reveal className="min-w-0 lg:sticky lg:top-20 lg:self-start">
           <div className="vault px-4 py-5 sm:px-5 sm:py-6">
@@ -138,7 +138,7 @@ export default function MapPage() {
                 {/* `0px`, not `0`: a browser adds the unit itself inside minmax()
                     the instant this is set, so the literal already matches what
                     a hydrating page would otherwise mismatch against. */}
-                <div role="group" aria-label="Stylised map of India — states" className="grid min-w-[460px] gap-1.5 sm:gap-2" style={{ gridTemplateColumns: 'repeat(8, minmax(0px, 1fr))', gridTemplateRows: 'repeat(8, minmax(0px, 1fr))' }}>
+                <div role="group" aria-label="Stylised map of India: states" className="grid min-w-[460px] gap-1.5 sm:gap-2" style={{ gridTemplateColumns: 'repeat(8, minmax(0px, 1fr))', gridTemplateRows: 'repeat(8, minmax(0px, 1fr))' }}>
                   {states.map((s) => {
                     const isSel = selected?.id === s.id;
                     const dim = hoverRegion && hoverRegion !== s.region && !isSel;
@@ -236,7 +236,7 @@ export default function MapPage() {
         <div aria-live="polite" className="min-w-0">
           {!selected ? (
             <Reveal>
-              {/* An empty album mount — perforated paper waiting for its pane */}
+              {/* An empty album mount - perforated paper waiting for its pane */}
               <div className="perf-all on-sheet bg-paper-200 p-2">
                 <div className="border border-brass/45 px-6 py-12 text-center sm:px-10">
                   <div className="rule-double mx-auto mb-5 max-w-[6rem]" aria-hidden="true" />

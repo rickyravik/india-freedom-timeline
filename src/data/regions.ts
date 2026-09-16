@@ -14,7 +14,7 @@ export const regionIds = Object.keys(regionNames) as RegionId[];
 
 /**
  * States shown on the stylised tile map (col/row place each tile on a
- * schematic grid — deliberately NOT a geographic boundary map).
+ * schematic grid, deliberately NOT a geographic boundary map).
  * Names are modern states, used so visitors can explore by the places
  * they know today.
  */

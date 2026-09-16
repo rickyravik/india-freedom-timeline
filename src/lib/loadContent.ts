@@ -1,6 +1,6 @@
 /**
  * Loads a fighter's or event's FULL record (biography, quotes, sources,
- * Story Mode...) on demand — only their own summary (src/lib/content.ts)
+ * Story Mode...) on demand - only their own summary (src/lib/content.ts)
  * ships with the initial bundle. Used by FighterProfilePage/EventPage.
  */
 import type { FreedomFighter, HistoricalEvent } from '@/types';
@@ -20,7 +20,7 @@ function firstArrayExport<T>(mod: Record<string, unknown>): T[] | undefined {
   return Object.values(mod).find((v): v is T[] => Array.isArray(v));
 }
 
-/** Synchronous cache read, no fetch triggered — used as a lazy useState
+/** Synchronous cache read, no fetch triggered - used as a lazy useState
     initializer so a record prefetched before hydration (see routeTable's
     `preload` in src/lib/routes.tsx) is available on the very first render,
     instead of only after that record's own loading effect resolves. */

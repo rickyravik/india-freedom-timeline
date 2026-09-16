@@ -40,7 +40,7 @@ async function bootstrap() {
   // lazily loaded routes aren't tall enough yet when the browser would try.
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   // A route with no prerendered file of its own (a trail stop, reached only
-  // by interaction) gets served the SPA fallback's markup instead — which is
+  // by interaction) gets served the SPA fallback's markup instead - which is
   // the home page's prerendered HTML (not-found_handling: single-page-application,
   // wrangler.jsonc), not a matching snapshot of this route. hasChildNodes()
   // alone can't tell the two apart; the canonical link every page's

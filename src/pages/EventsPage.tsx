@@ -98,7 +98,7 @@ export default function EventsPage() {
           />
         ) : (
           /* One continuous ledger, oldest first. Decade heads are markers in
-             the flow, not separate grids — a decade with a single record gets
+             the flow, not separate grids - a decade with a single record gets
              a full-width row like every other. */
           <ol ref={listRef} data-flip-list className="space-y-3" aria-label="Events in date order">
             {groups.map(([dec, list]) =>

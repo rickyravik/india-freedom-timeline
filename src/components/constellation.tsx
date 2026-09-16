@@ -7,7 +7,7 @@ import { PortraitMedallion, Reveal, eraAccent } from '@/components/ui';
 import { FighterCard } from '@/components/cards';
 
 /**
- * Documented connections drawn around the subject — a line only where a
+ * Documented connections drawn around the subject - a line only where a
  * relationship is on record, each node labelled with its type, and every
  * connection explained in the list beneath (which is also the phone view).
  */
@@ -120,7 +120,7 @@ export function Constellation({ subject, connections }: { subject: FighterSummar
   );
 }
 
-/** People connected by theme, not by documented contact — never drawn as lines. */
+/** People connected by theme, not by documented contact - never drawn as lines. */
 export function SimilarStories({ people, id }: { people: FighterSummary[]; id?: string }) {
   if (people.length === 0) return null;
   return (

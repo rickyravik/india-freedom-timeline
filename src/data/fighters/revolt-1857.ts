@@ -22,7 +22,7 @@ export const revoltFighters: FreedomFighter[] = [
     shortStory: [
       {
         title: 'A soldier’s anger',
-        text: 'Mangal Pandey was a soldier in the Company’s army at Barrackpore, near Calcutta. In 1857, rumours spread that new rifle cartridges — which soldiers had to bite open — were greased with cow and pig fat, offending Hindus and Muslims alike.',
+        text: 'Mangal Pandey was a soldier in the Company’s army at Barrackpore, near Calcutta. In 1857, rumours spread that new rifle cartridges, which soldiers had to bite open, were greased with cow and pig fat, offending Hindus and Muslims alike.',
       },
       {
         title: 'The 29th of March',
@@ -30,13 +30,13 @@ export const revoltFighters: FreedomFighter[] = [
       },
       {
         title: 'The first spark',
-        text: 'He was hanged on 8 April 1857 — his regiment was disbanded in disgrace. Weeks later, Meerut rose, and the revolt he had signalled swept northern India. India remembers him as the first hero of 1857.',
+        text: 'He was hanged on 8 April 1857, and his regiment was disbanded in disgrace. Weeks later, Meerut rose, and the revolt he had signalled swept northern India. India remembers him as the first hero of 1857.',
       },
     ],
     fullBiography: [
-      'Mangal Pandey, from Nagwa in Ballia, enlisted in the Bengal Army and served in the 34th Native Infantry at Barrackpore. Through early 1857 the cantonments seethed with the cartridge rumour — that the new Enfield cartridges were greased with cow and pig fat — which crystallised deeper fears that the Company meant to break the sepoys’ religion.',
-      'On the afternoon of 29 March 1857, Pandey — armed, and calling on his comrades to join him — confronted the regiment’s British officers, wounding Lieutenant Baugh and Sergeant-Major Hewson in the melee while the guard refused orders to seize him. He attempted to take his own life before capture.',
-      'Tried by court martial, he was hanged on 8 April 1857, ten days ahead of schedule; Ishwari Prasad, the jemadar who had refused to arrest him, was hanged later, and the 34th NI was disbanded. Whether Pandey acted from conspiracy, desperation or intoxication was argued even at the trial — but to the country he became the revolt’s first martyr, and "Pandey" itself became the British nickname for every rebel sepoy.',
+      'Mangal Pandey, from Nagwa in Ballia, enlisted in the Bengal Army and served in the 34th Native Infantry at Barrackpore. Through early 1857 the cantonments seethed with the cartridge rumour that the new Enfield cartridges were greased with cow and pig fat, which crystallised deeper fears that the Company meant to break the sepoys’ religion.',
+      'On the afternoon of 29 March 1857, Pandey, armed and calling on his comrades to join him, confronted the regiment’s British officers, wounding Lieutenant Baugh and Sergeant-Major Hewson in the melee while the guard refused orders to seize him. He attempted to take his own life before capture.',
+      'Tried by court martial, he was hanged on 8 April 1857, ten days ahead of schedule; Ishwari Prasad, the jemadar who had refused to arrest him, was hanged later, and the 34th NI was disbanded. Whether Pandey acted from conspiracy, desperation or intoxication was argued even at the trial, but to the country he became the revolt’s first martyr, and "Pandey" itself became the British nickname for every rebel sepoy.',
     ],
     entryIntoStruggle: 'The cartridge controversy in the Bengal Army, 1857.',
     achievements: ['His act at Barrackpore signalled and symbolised the coming revolt'],
@@ -87,7 +87,7 @@ export const revoltFighters: FreedomFighter[] = [
     era: 'revolt-1857',
     roles: ['ruler', 'military-leader'],
     summary:
-      'The warrior queen of Jhansi who defended her city against siege in 1858, escaped through the enemy lines, seized Gwalior with Tatya Tope, and died fighting — the most celebrated heroine of 1857.',
+      'The warrior queen of Jhansi who defended her city against siege in 1858, escaped through the enemy lines, seized Gwalior with Tatya Tope, and died fighting. She is the most celebrated heroine of 1857.',
     shortStory: [
       {
         title: 'Manu of Varanasi',
@@ -95,11 +95,11 @@ export const revoltFighters: FreedomFighter[] = [
       },
       {
         title: '"I will not give up my Jhansi"',
-        text: 'When her husband died, the British refused to accept her adopted son as heir and took her kingdom under the Doctrine of Lapse. "Main apni Jhansi nahin doongi" — I will not give up my Jhansi — she is remembered to have vowed.',
+        text: 'When her husband died, the British refused to accept her adopted son as heir and took her kingdom under the Doctrine of Lapse. She is remembered to have vowed "Main apni Jhansi nahin doongi": I will not give up my Jhansi.',
       },
       {
         title: 'The siege',
-        text: 'In 1858 a British army surrounded Jhansi. The Rani led the defence from the walls for two weeks. When the city fell, she escaped on horseback through the enemy lines at night — by tradition, with her son tied to her back.',
+        text: 'In 1858 a British army surrounded Jhansi. The Rani led the defence from the walls for two weeks. When the city fell, she escaped on horseback through the enemy lines at night, by tradition with her son tied to her back.',
       },
       {
         title: 'A soldier’s death',
@@ -107,10 +107,10 @@ export const revoltFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Manikarnika Tambe was born in Varanasi in 1828 and raised in Bithur in the household of the exiled Peshwa Baji Rao II, where she received an extraordinary education for a girl of her time — horsemanship, swordsmanship, shooting. In 1842 she married Gangadhar Rao, Maharaja of Jhansi, taking the name Lakshmibai. Their infant son died; shortly before the Maharaja’s death in 1853 the couple adopted Damodar Rao.',
-      'Lord Dalhousie refused to recognise the adoption and annexed Jhansi under the Doctrine of Lapse, pensioning off the Rani. Her petitions to London, argued through counsel John Lang, were rejected. When the revolt reached Jhansi in June 1857 the garrison mutinied and British residents were massacred at Jokhan Bagh — an act the Rani denied ordering, and whose responsibility historians still debate. For months she governed Jhansi, raising troops and repelling attacks by neighbouring claimants.',
-      'In March 1858 Sir Hugh Rose besieged the city. The Rani directed a two-week defence; women worked the batteries alongside men. When the walls were breached she rode out through the lines by night with a small escort, reached Kalpi, and with Tatya Tope and Rao Sahib achieved the war’s boldest stroke — the seizure of Gwalior fortress in June 1858. On 17 June, at Kotah-ki-Serai, she was killed in combat dressed as a cavalry trooper; her followers cremated her body before it could be taken.',
-      'Hugh Rose’s tribute — the "best and bravest military leader of the rebels" — sealed a reputation her own people never doubted. Subhadra Kumari Chauhan’s Hindi ballad "Khoob ladi mardani..." made her the schoolroom heroine of modern India, and the INA named its women’s regiment after her in 1943.',
+      'Manikarnika Tambe was born in Varanasi in 1828 and raised in Bithur in the household of the exiled Peshwa Baji Rao II, where she received an extraordinary education for a girl of her time: horsemanship, swordsmanship, shooting. In 1842 she married Gangadhar Rao, Maharaja of Jhansi, taking the name Lakshmibai. Their infant son died; shortly before the Maharaja’s death in 1853 the couple adopted Damodar Rao.',
+      'Lord Dalhousie refused to recognise the adoption and annexed Jhansi under the Doctrine of Lapse, pensioning off the Rani. Her petitions to London, argued through counsel John Lang, were rejected. When the revolt reached Jhansi in June 1857 the garrison mutinied and British residents were massacred at Jokhan Bagh, an act the Rani denied ordering, and whose responsibility historians still debate. For months she governed Jhansi, raising troops and repelling attacks by neighbouring claimants.',
+      'In March 1858 Sir Hugh Rose besieged the city. The Rani directed a two-week defence; women worked the batteries alongside men. When the walls were breached she rode out through the lines by night with a small escort, reached Kalpi, and with Tatya Tope and Rao Sahib achieved the war’s boldest stroke: the seizure of Gwalior fortress in June 1858. On 17 June, at Kotah-ki-Serai, she was killed in combat dressed as a cavalry trooper; her followers cremated her body before it could be taken.',
+      'Hugh Rose’s tribute to the "best and bravest military leader of the rebels" sealed a reputation her own people never doubted. Subhadra Kumari Chauhan’s Hindi ballad "Khoob ladi mardani..." made her the schoolroom heroine of modern India, and the INA named its women’s regiment after her in 1943.',
     ],
     entryIntoStruggle: 'Annexation of Jhansi under the Doctrine of Lapse, 1854.',
     achievements: [
@@ -188,7 +188,7 @@ export const revoltFighters: FreedomFighter[] = [
     shortStory: [
       {
         title: 'The village girl who fought a tiger',
-        text: 'Jhalkari grew up poor in a village near Jhansi. Stories say she was so brave that as a young woman she fought off a leopard — or even a tiger — with a stick while herding cattle.',
+        text: 'Jhalkari grew up poor in a village near Jhansi. Stories say she was so brave that as a young woman she fought off a leopard, or even a tiger, with a stick while herding cattle.',
       },
       {
         title: 'The Rani’s double',
@@ -196,7 +196,7 @@ export const revoltFighters: FreedomFighter[] = [
       },
       {
         title: 'The bravest trick',
-        text: 'When Jhansi was falling in April 1858, Jhalkari dressed as the Rani and rode out to confront the British general — deceiving the enemy while the real Rani escaped. Her courage stunned even the British camp.',
+        text: 'When Jhansi was falling in April 1858, Jhalkari dressed as the Rani and rode out to confront the British general, deceiving the enemy while the real Rani escaped. Her courage stunned even the British camp.',
       },
       {
         title: 'A hero remembered',
@@ -205,7 +205,7 @@ export const revoltFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Jhalkari Bai was born into a Koli family near Jhansi and grew up working the land and herding cattle, gaining a local reputation for fearlessness. Married to Puran Kori, a gunner in the Jhansi army, she came to the Rani’s notice and joined the Durga Dal, the women’s wing of the army, where she trained in shooting and cannon work and rose to command.',
-      'During Hugh Rose’s siege of Jhansi in March–April 1858 she fought in the defence. As the city fell, by the account preserved in Bundelkhandi tradition and later histories, she put on the Rani’s clothes and rode to the British lines announcing herself as the queen — buying time for Lakshmibai’s escape. Rose, discovering the deception, is said to have released her in admiration; other accounts have her fighting on.',
+      'During Hugh Rose’s siege of Jhansi in March–April 1858 she fought in the defence. As the city fell, by the account preserved in Bundelkhandi tradition and later histories, she put on the Rani’s clothes and rode to the British lines announcing herself as the queen, buying time for Lakshmibai’s escape. Rose, discovering the deception, is said to have released her in admiration; other accounts have her fighting on.',
       'Her story survived chiefly in folk memory and was recovered by twentieth-century writers, becoming a source of particular pride for Dalit communities as testimony that the defence of Jhansi was the work of ordinary people as well as princes. The Government of India issued a stamp in her honour in 2001, and her statues stand in Jhansi and beyond.',
     ],
     entryIntoStruggle: 'Joined the Durga Dal, Jhansi’s women’s guard, in the 1850s.',
@@ -258,11 +258,11 @@ export const revoltFighters: FreedomFighter[] = [
     era: 'revolt-1857',
     roles: ['ruler', 'political-leader'],
     summary:
-      'Queen of Awadh who led the revolt in Lucknow after the annexation of her state, crowned her son king, directed the long defence of the city — and refused British amnesty to die free in Nepal.',
+      'Queen of Awadh who led the revolt in Lucknow after the annexation of her state, crowned her son king, directed the long defence of the city, and refused British amnesty to die free in Nepal.',
     shortStory: [
       {
         title: 'A kingdom stolen',
-        text: 'In 1856 the British removed the King of Awadh, saying they would govern better. His wife, Begum Hazrat Mahal, stayed in Lucknow — and when the great revolt came in 1857, she took charge.',
+        text: 'In 1856 the British removed the King of Awadh, saying they would govern better. His wife, Begum Hazrat Mahal, stayed in Lucknow, and when the great revolt came in 1857 she took charge.',
       },
       {
         title: 'A queen in command',
@@ -274,9 +274,9 @@ export const revoltFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Muhammadi Khanum of Faizabad entered the royal household of Awadh and became a wife of Nawab Wajid Ali Shah with the title Hazrat Mahal. When the Company annexed Awadh in 1856 — deposing a king whose "misgovernment" it had certified for the purpose — the Nawab was exiled to Calcutta, but the Begum remained in Lucknow.',
-      'When Awadh rose in 1857, Hazrat Mahal emerged as the revolt’s effective sovereign in Lucknow: her son Birjis Qadr was crowned, and she presided over a court and command that included Raja Jai Lal Singh and, among its fighters, the legendary Uda Devi of the Pasi community. Awadh’s rising was the revolt at its deepest — taluqdars, peasants and townsfolk together — and Lucknow was held against the British far longer than any other centre.',
-      'After the city finally fell in March 1858 she fought on from the countryside, rejecting the amnesty of the Queen’s Proclamation with a counter-proclamation that dissected British promises point by point — one of the sharpest political documents of the war. Refusing pension and submission, she crossed into Nepal, where Jang Bahadur granted asylum; she died in Kathmandu on 7 April 1879 and lies buried in the Jama Masjid grounds there.',
+      'Muhammadi Khanum of Faizabad entered the royal household of Awadh and became a wife of Nawab Wajid Ali Shah with the title Hazrat Mahal. When the Company annexed Awadh in 1856, deposing a king whose "misgovernment" it had certified for the purpose, the Nawab was exiled to Calcutta, but the Begum remained in Lucknow.',
+      'When Awadh rose in 1857, Hazrat Mahal emerged as the revolt’s effective sovereign in Lucknow: her son Birjis Qadr was crowned, and she presided over a court and command that included Raja Jai Lal Singh and, among its fighters, the legendary Uda Devi of the Pasi community. Awadh’s rising, with taluqdars, peasants and townsfolk together, was the revolt at its deepest, and Lucknow was held against the British far longer than any other centre.',
+      'After the city finally fell in March 1858 she fought on from the countryside, rejecting the amnesty of the Queen’s Proclamation with a counter-proclamation that dissected British promises point by point, one of the sharpest political documents of the war. Refusing pension and submission, she crossed into Nepal, where Jang Bahadur granted asylum; she died in Kathmandu on 7 April 1879 and lies buried in the Jama Masjid grounds there.',
     ],
     entryIntoStruggle: 'The annexation of Awadh in 1856 and the rising of Lucknow in 1857.',
     achievements: [
@@ -327,11 +327,11 @@ export const revoltFighters: FreedomFighter[] = [
     era: 'revolt-1857',
     roles: ['military-leader'],
     summary:
-      'The revolt’s most brilliant general: Nana Saheb’s commander who retook Kanpur, relieved Jhansi, seized Gwalior with the Rani — and then led the British a year-long chase across central India.',
+      'The revolt’s most brilliant general: Nana Saheb’s commander who retook Kanpur, relieved Jhansi, seized Gwalior with the Rani, and then led the British a year-long chase across central India.',
     shortStory: [
       {
         title: 'The Peshwa’s companion',
-        text: 'Tatya Tope grew up at Bithur in the household of the exiled Peshwa, a companion of Nana Saheb — and, tradition says, of young Manu, the future Rani of Jhansi.',
+        text: 'Tatya Tope grew up at Bithur in the household of the exiled Peshwa, a companion of Nana Saheb and, tradition says, of young Manu, the future Rani of Jhansi.',
       },
       {
         title: 'The general',
@@ -348,8 +348,8 @@ export const revoltFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Ramachandra Panduranga Yewalekar, called Tatya Tope, was a Deshastha Brahmin from Yeola who grew up in Baji Rao II’s exile court at Bithur and served Nana Saheb. When Kanpur rose in June 1857 he became the rebellion’s organising military mind there, and after Havelock retook the city, Tatya rebuilt an army around the Gwalior Contingent and defeated General Windham outside Kanpur in November 1857 before Campbell’s counterstroke.',
-      'In early 1858 he marched to relieve besieged Jhansi, was checked by Hugh Rose on the Betwa, and after Kalpi fell joined Rani Lakshmibai and Rao Sahib in the coup that took Gwalior without a battle in June 1858 — the revolt’s last great victory.',
-      'After Gwalior he waged ten more months of war as a fugitive commander, zig-zagging across Malwa, Bundelkhand and Rajputana, crossing the Narmada, drawing in the Bhil country, and attempting to raise the Deccan — pursued by multiple British columns in one of the longest chases in military history. Betrayed in April 1859 by Man Singh of Narwar while encamped in the jungles, he was tried at Shivpuri and hanged on 18 April 1859, declaring — by the trial record — that he had only served his master and his country.',
+      'In early 1858 he marched to relieve besieged Jhansi, was checked by Hugh Rose on the Betwa, and after Kalpi fell joined Rani Lakshmibai and Rao Sahib in the coup that took Gwalior without a battle in June 1858, the revolt’s last great victory.',
+      'After Gwalior he waged ten more months of war as a fugitive commander, zig-zagging across Malwa, Bundelkhand and Rajputana, crossing the Narmada, drawing in the Bhil country, and attempting to raise the Deccan, pursued by multiple British columns in one of the longest chases in military history. Betrayed in April 1859 by Man Singh of Narwar while encamped in the jungles, he was tried at Shivpuri and hanged on 18 April 1859, declaring, by the trial record, that he had only served his master and his country.',
     ],
     entryIntoStruggle: 'Joined Nana Saheb’s cause when Kanpur rose in June 1857.',
     achievements: [
@@ -406,7 +406,7 @@ export const revoltFighters: FreedomFighter[] = [
     shortStory: [
       {
         title: 'The old lion of Bihar',
-        text: 'Kunwar Singh was nearly eighty years old when the revolt of 1857 began — an age when most people rest. Instead, the zamindar of Jagdishpur in Bihar took command of the rising sepoys of Danapur.',
+        text: 'Kunwar Singh was nearly eighty years old when the revolt of 1857 began, an age when most people rest. Instead, the zamindar of Jagdishpur in Bihar took command of the rising sepoys of Danapur.',
       },
       {
         title: 'A fighting retreat',
@@ -414,7 +414,7 @@ export const revoltFighters: FreedomFighter[] = [
       },
       {
         title: 'The arm and the river',
-        text: 'Crossing the Ganga in April 1858, a bullet shattered his arm. The story goes that he cut the wounded arm off himself and offered it to the river — then went on to defeat the British at Jagdishpur, his home, on 23 April.',
+        text: 'Crossing the Ganga in April 1858, a bullet shattered his arm. The story goes that he cut the wounded arm off himself and offered it to the river, then went on to defeat the British at Jagdishpur, his home, on 23 April.',
       },
       {
         title: 'Victory before rest',
@@ -423,7 +423,7 @@ export const revoltFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Kunwar Singh, Rajput zamindar of Jagdishpur in the Bhojpur country, was around eighty and encumbered by debts to the Company’s courts when the Danapur regiments mutinied in July 1857. He took their command, seized Arrah, and fought the first British relief force to destruction at Bibiganj before superior guns forced him from his estates.',
-      'Rather than submit, he carried the war outward — through Mirzapur and Banda towards Kalpi, in touch with the revolt’s other centres, and in March 1858 took Azamgarh, defeating British detachments under Milman and Dames. It was among the most mobile campaigns of the war, conducted by a man his enemies called old and infirm.',
+      'Rather than submit, he carried the war outward, through Mirzapur and Banda towards Kalpi, in touch with the revolt’s other centres, and in March 1858 took Azamgarh, defeating British detachments under Milman and Dames. It was among the most mobile campaigns of the war, conducted by a man his enemies called old and infirm.',
       'Retreating homeward with Douglas’s column in pursuit, he crossed the Ganga at Shivpur Ghat on 21 April 1858; grapeshot (by tradition, a rifle bullet) shattered his left arm near the elbow, and the account cherished in Bhojpuri memory holds that he severed it and consigned it to the river. On 23 April his force defeated Captain Le Grand at Jagdishpur, retaking his ancestral seat. He died there on 26 April 1858. His brother Amar Singh fought on into 1859.',
     ],
     entryIntoStruggle: 'Took command of the Danapur mutineers, July 1857, aged about eighty.',
@@ -477,11 +477,11 @@ export const revoltFighters: FreedomFighter[] = [
     era: 'revolt-1857',
     roles: ['ruler', 'political-leader'],
     summary:
-      'Adopted heir of the last Peshwa, denied his pension by the Company, who became the leader of the revolt at Kanpur in 1857 — and vanished into Nepal, never captured.',
+      'Adopted heir of the last Peshwa, denied his pension by the Company, who became the leader of the revolt at Kanpur in 1857, and vanished into Nepal, never captured.',
     shortStory: [
       {
         title: 'The heir denied',
-        text: 'Nana Saheb was the adopted son of the last Peshwa, the exiled Maratha ruler at Bithur. When his father died, the Company refused to continue the family’s pension — adopted sons, they said, had no rights.',
+        text: 'Nana Saheb was the adopted son of the last Peshwa, the exiled Maratha ruler at Bithur. When his father died, the Company refused to continue the family’s pension: adopted sons, they said, had no rights.',
       },
       {
         title: 'Kanpur rises',
@@ -489,13 +489,13 @@ export const revoltFighters: FreedomFighter[] = [
       },
       {
         title: 'The disappearance',
-        text: 'After the British retook Kanpur, Nana Saheb retreated north and eventually crossed into Nepal. Despite a huge reward, he was never captured — and no one knows for certain where or when he died.',
+        text: 'After the British retook Kanpur, Nana Saheb retreated north and eventually crossed into Nepal. Despite a huge reward, he was never captured, and no one knows for certain where or when he died.',
       },
     ],
     fullBiography: [
       'Dhondu Pant, adopted in 1827 by the exiled Peshwa Baji Rao II, grew up at Bithur near Kanpur with the style of a court and the grievance of a dynasty: on Baji Rao’s death in 1851 Dalhousie refused to continue the pension to an adopted heir. His agent Azimullah Khan carried the appeal to London and returned empty-handed and unillusioned about British power.',
-      'When Kanpur’s sepoys rose on 5 June 1857 they turned to Nana Saheb, who was proclaimed Peshwa. His forces besieged General Wheeler’s entrenchment for three weeks; the garrison surrendered on promise of safe passage, and at Satichaura Ghat on 27 June the evacuation collapsed into a massacre whose ordering remains disputed. In July, before Havelock retook the city, the captive British women and children at Bibighar were killed — an atrocity that British vengeance repaid upon Kanpur and the countryside many times over. Nana Saheb’s personal responsibility for either killing has been debated ever since; he issued proclamations denying the Bibighar order.',
-      'After defeat he retreated with the war into Awadh and Nepal’s terai, refusing amnesty overtures. British agents hunted rumours of him for decades — claimants and sightings surfaced into the 1890s — but he was never taken; most accounts place his death in the Nepal hills around 1859. In nationalist memory he remained the sovereign the revolt had proclaimed, and his standard-bearers Tatya Tope and Rao Sahib carried the cause to the end.',
+      'When Kanpur’s sepoys rose on 5 June 1857 they turned to Nana Saheb, who was proclaimed Peshwa. His forces besieged General Wheeler’s entrenchment for three weeks; the garrison surrendered on promise of safe passage, and at Satichaura Ghat on 27 June the evacuation collapsed into a massacre whose ordering remains disputed. In July, before Havelock retook the city, the captive British women and children at Bibighar were killed, an atrocity that British vengeance repaid upon Kanpur and the countryside many times over. Nana Saheb’s personal responsibility for either killing has been debated ever since; he issued proclamations denying the Bibighar order.',
+      'After defeat he retreated with the war into Awadh and Nepal’s terai, refusing amnesty overtures. British agents hunted rumours of him for decades, claimants and sightings surfacing into the 1890s, but he was never taken; most accounts place his death in the Nepal hills around 1859. In nationalist memory he remained the sovereign the revolt had proclaimed, and his standard-bearers Tatya Tope and Rao Sahib carried the cause to the end.',
     ],
     entryIntoStruggle: 'Denial of the Peshwa pension and honours by the Company, 1851.',
     achievements: ['Led the revolt’s central node at Kanpur; symbol of restored Indian sovereignty'],
@@ -548,7 +548,7 @@ export const revoltFighters: FreedomFighter[] = [
     era: 'revolt-1857',
     roles: ['ruler', 'writer-poet'],
     summary:
-      'The last Mughal emperor — a poet-king in his eighties whom the rebels of 1857 proclaimed sovereign of Hindustan, and whom the British tried, exiled to Rangoon, and buried in an unmarked grave.',
+      'The last Mughal emperor, a poet-king in his eighties whom the rebels of 1857 proclaimed sovereign of Hindustan, and whom the British tried, exiled to Rangoon, and buried in an unmarked grave.',
     shortStory: [
       {
         title: 'The poet king',
@@ -556,7 +556,7 @@ export const revoltFighters: FreedomFighter[] = [
       },
       {
         title: 'An emperor against his will',
-        text: 'In May 1857, rebel soldiers rode to Delhi and asked him to lead them. Reluctantly, the old emperor agreed — and suddenly the revolt had a king that Hindus and Muslims alike could rally to.',
+        text: 'In May 1857, rebel soldiers rode to Delhi and asked him to lead them. Reluctantly, the old emperor agreed, and suddenly the revolt had a king that Hindus and Muslims alike could rally to.',
       },
       {
         title: 'The fall of Delhi',
@@ -564,13 +564,13 @@ export const revoltFighters: FreedomFighter[] = [
       },
       {
         title: '"Two yards of land"',
-        text: 'He died in 1862 and was buried in an unmarked grave. In his verses he mourned that he could not have even "do gaz zameen" — two yards of earth — in his own homeland. His grave in Yangon is now a shrine.',
+        text: 'He died in 1862 and was buried in an unmarked grave. In his verses he mourned that he could not have even "do gaz zameen", two yards of earth, in his own homeland. His grave in Yangon is now a shrine.',
       },
     ],
     fullBiography: [
-      'Mirza Abu Zafar Sirajuddin Muhammad succeeded to a throne that ruled, in effect, only the Red Fort and its ceremonies. His court nevertheless presided over a last flowering of Delhi’s composite culture — with Ghalib, Zauq and Momin at its poetic centre, and Zafar himself an accomplished poet and calligrapher.',
-      'On 11 May 1857 the Meerut sepoys entered Delhi and demanded his leadership. Old, dependent and doubtful, he consented — and his name transformed a military mutiny into a war of restoration, joined by Hindu and Muslim alike. Through the summer his authority was more symbolic than real amid feuding commanders, but proclamations in his name reached across northern India.',
-      'After the British stormed Delhi in September 1857, Zafar surrendered at Humayun’s Tomb; Major Hodson shot his sons Mirza Mughal and Mirza Khizr Sultan and grandson Abu Bakht without trial at what became Khooni Darwaza. Tried by military commission in the Red Fort’s Diwan-i-Khas — a trial of doubtful legality over which historians still argue — he was exiled to Rangoon, where he died on 7 November 1862 and was buried in secrecy. The verses of exile attributed to him, mourning burial far from his beloved land, are among Urdu’s most famous.',
+      'Mirza Abu Zafar Sirajuddin Muhammad succeeded to a throne that ruled, in effect, only the Red Fort and its ceremonies. His court nevertheless presided over a last flowering of Delhi’s composite culture, with Ghalib, Zauq and Momin at its poetic centre and Zafar himself an accomplished poet and calligrapher.',
+      'On 11 May 1857 the Meerut sepoys entered Delhi and demanded his leadership. Old, dependent and doubtful, he consented, and his name transformed a military mutiny into a war of restoration, joined by Hindu and Muslim alike. Through the summer his authority was more symbolic than real amid feuding commanders, but proclamations in his name reached across northern India.',
+      'After the British stormed Delhi in September 1857, Zafar surrendered at Humayun’s Tomb; Major Hodson shot his sons Mirza Mughal and Mirza Khizr Sultan and grandson Abu Bakht without trial at what became Khooni Darwaza. Tried by military commission in the Red Fort’s Diwan-i-Khas, a trial of doubtful legality over which historians still argue, he was exiled to Rangoon, where he died on 7 November 1862 and was buried in secrecy. The verses of exile attributed to him, mourning burial far from his beloved land, are among Urdu’s most famous.',
     ],
     entryIntoStruggle: 'Proclaimed leader by the Meerut rebels on 11 May 1857.',
     achievements: ['Gave the revolt a unifying sovereign symbol across communities'],
@@ -619,7 +619,7 @@ export const revoltFighters: FreedomFighter[] = [
     era: 'revolt-1857',
     roles: ['political-leader', 'organizer'],
     summary:
-      'Confidential secretary and adviser to Nana Saheb, who carried the Peshwa’s pension appeal to London and observed the Crimean War before 1857 — and whose exact part in the terrible events at Kanpur remains disputed among historians.',
+      'Confidential secretary and adviser to Nana Saheb, who carried the Peshwa’s pension appeal to London and observed the Crimean War before 1857, and whose exact part in the terrible events at Kanpur remains disputed among historians.',
     shortStory: [
       {
         title: 'From Kanpur to London',
@@ -627,7 +627,7 @@ export const revoltFighters: FreedomFighter[] = [
       },
       {
         title: 'A traveller’s verdict',
-        text: 'London refused him. Travelling home by way of the Crimean War, Azimullah watched British and French soldiers struggle against Russia — and returned convinced that the empire ruling India was not as invincible as it looked.',
+        text: 'London refused him. Travelling home by way of the Crimean War, Azimullah watched British and French soldiers struggle against Russia, and returned convinced that the empire ruling India was not as invincible as it looked.',
       },
       {
         title: 'The Peshwa’s adviser',
@@ -636,14 +636,14 @@ export const revoltFighters: FreedomFighter[] = [
       },
       {
         title: 'An ending in exile',
-        text: 'Like Nana Saheb, Azimullah fled north after Kanpur fell, and is generally said to have died of illness in the Nepal terai in 1859 — his name forever tied to one of the revolt’s most disputed chapters.',
+        text: 'Like Nana Saheb, Azimullah fled north after Kanpur fell, and is generally said to have died of illness in the Nepal terai in 1859, his name forever tied to one of the revolt’s most disputed chapters.',
       },
     ],
     fullBiography: [
       'Azimullah Khan, born around 1830 near Kanpur, rose from an obscure background to become munshi and then confidential secretary to Nana Saheb, the adopted heir of the exiled Peshwa Baji Rao II at Bithur. Fluent in English and skilled at drafting, he became indispensable to the household’s dealings with the Company.',
-      'In 1853 Nana Saheb sent him to London to press the case for continuing the Peshwa’s pension, a claim Dalhousie had already rejected. The petition failed, but Azimullah’s journey home by way of Constantinople and the Crimean front — where he observed the British and French armies at war with Russia — left him persuaded, by his own later account, that British power was neither as absolute nor as invincible as it appeared in India.',
+      'In 1853 Nana Saheb sent him to London to press the case for continuing the Peshwa’s pension, a claim Dalhousie had already rejected. The petition failed, but Azimullah’s journey home by way of Constantinople and the Crimean front, where he observed the British and French armies at war with Russia, left him persuaded, by his own later account, that British power was neither as absolute nor as invincible as it appeared in India.',
       'When Kanpur rose in June 1857, Azimullah Khan was at the centre of Nana Saheb’s court, drafting proclamations and, by most accounts, shaping the diplomatic and propaganda side of the rebellion. His precise role in the collapse of the evacuation at Satichaura Ghat on 27 June and the killings at Bibighar the following month is disputed: some histories cast him as the hard-line voice pressing for harsher measures, others merely as an adviser present at events he did not control. No contemporary record settles the question either way.',
-      'After the British retook Kanpur, Azimullah fled north with Nana Saheb’s retreating court, and is generally believed to have died of illness in the Nepal terai in 1859 — though, like Nana Saheb’s own end, the details were never confirmed by any British authority.',
+      'After the British retook Kanpur, Azimullah fled north with Nana Saheb’s retreating court, and is generally believed to have died of illness in the Nepal terai in 1859, though the details, like Nana Saheb’s own end, were never confirmed by any British authority.',
     ],
     entryIntoStruggle: 'Secretary and adviser to Nana Saheb at Bithur from the early 1850s.',
     achievements: [
@@ -651,7 +651,7 @@ export const revoltFighters: FreedomFighter[] = [
       'One of the few Indians of his circle with direct experience of a European battlefield before 1857',
     ],
     sacrifices: ['Died in exile in the Nepal terai, still a young man'],
-    legacy: 'Remembered as one of 1857’s most enigmatic figures — an adviser whose influence on the revolt’s darkest hours historians still cannot agree on.',
+    legacy: 'Remembered as one of 1857’s most enigmatic figures, an adviser whose influence on the revolt’s darkest hours historians still cannot agree on.',
     facts: ['His journey to Britain and the Crimean front made him one of only a handful of Indians of his generation with first-hand experience of a European war.'],
     disputed: [
       {
@@ -689,14 +689,14 @@ export const revoltFighters: FreedomFighter[] = [
     deathDateLabel: 'November 1857 (Battle of Sikandar Bagh)',
     birthPlace: 'Awadh, Uttar Pradesh',
     portrait: '/images/fighters/uda-devi.jpg',
-    portraitNote: { kind: 'statue', caption: 'No contemporary likeness of Uda Devi is known to exist; her story is carried by oral memory. This photograph shows the bronze memorial statue of her at Sikandar Bagh, Lucknow — the site of her death — union minister J.P. Nadda paying homage to it in 2016.', credit: 'Press Information Bureau, Government of India, via Wikimedia Commons (GODL-India)', created: 'Statue undated; photograph 19 August 2016' },
+    portraitNote: { kind: 'statue', caption: 'No contemporary likeness of Uda Devi is known to exist; her story is carried by oral memory. This photograph shows the bronze memorial statue of her at Sikandar Bagh, Lucknow, the site of her death, with union minister J.P. Nadda paying homage to it in 2016.', credit: 'Press Information Bureau, Government of India, via Wikimedia Commons (GODL-India)', created: 'Statue undated; photograph 19 August 2016' },
     region: 'north',
     states: ['Uttar Pradesh'],
     gender: 'female',
     era: 'revolt-1857',
     roles: ['military-leader'],
     summary:
-      'A Dalit (Pasi) sharpshooter in Begum Hazrat Mahal’s forces who fired on advancing British troops from a tree at Sikandar Bagh, Lucknow, in November 1857 — a story kept alive chiefly through Awadhi oral memory rather than any contemporary record.',
+      'A Dalit (Pasi) sharpshooter in Begum Hazrat Mahal’s forces who fired on advancing British troops from a tree at Sikandar Bagh, Lucknow, in November 1857, a story kept alive chiefly through Awadhi oral memory rather than any contemporary record.',
     shortStory: [
       {
         title: 'A Pasi woman joins the fight',
@@ -705,11 +705,11 @@ export const revoltFighters: FreedomFighter[] = [
       {
         title: 'The battle of Sikandar Bagh',
         text: 'In November 1857, as British troops stormed the walled garden of Sikandar Bagh, Uda Devi is remembered to have climbed a tall tree overlooking the fighting and fired down on the soldiers below.',
-        uncertainty: 'How many soldiers she is supposed to have killed is not something any contemporary record confirms — the numbers told today come from memory passed down long after 1857.',
+        uncertainty: 'How many soldiers she is supposed to have killed is not something any contemporary record confirms. The numbers told today come from memory passed down long after 1857.',
       },
       {
         title: 'Found in the tree',
-        text: 'A British officer, noticing that wounds were coming from directly above, ordered the trees searched. A sharpshooter was found and killed there — and only then, accounts say, was it discovered that the soldier was a woman.',
+        text: 'A British officer, noticing that wounds were coming from directly above, ordered the trees searched. A sharpshooter was found and killed there, and only then, accounts say, was it discovered that the soldier was a woman.',
       },
       {
         title: 'Remembered in Awadh',
@@ -717,15 +717,15 @@ export const revoltFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Uda Devi belonged to the Pasi community of Awadh — a community the colonial state later stigmatised as a "criminal tribe" under the Criminal Tribes Act. When the Awadh taluqdars and townsfolk rose behind Begum Hazrat Mahal in 1857, Uda Devi is remembered to have joined the rebel forces at Lucknow, and by tradition she and other women were organised into a fighting company under the Begum’s cause.',
-      'During the British assault on the walled garden of Sikandar Bagh in November 1857 — one of the bloodiest engagements of the Lucknow campaign — Uda Devi is said to have taken up a position in a large tree overlooking the compound and fired on the attacking soldiers as they broke in. A British officer, noticing that casualties were falling from an unusually steep angle, ordered the trees searched; a sharpshooter was shot down from one of them and found, to the astonishment of the British ranks, to be a woman.',
+      'Uda Devi belonged to the Pasi community of Awadh, a community the colonial state later stigmatised as a "criminal tribe" under the Criminal Tribes Act. When the Awadh taluqdars and townsfolk rose behind Begum Hazrat Mahal in 1857, Uda Devi is remembered to have joined the rebel forces at Lucknow, and by tradition she and other women were organised into a fighting company under the Begum’s cause.',
+      'During the British assault on the walled garden of Sikandar Bagh in November 1857, one of the bloodiest engagements of the Lucknow campaign, Uda Devi is said to have taken up a position in a large tree overlooking the compound and fired on the attacking soldiers as they broke in. A British officer, noticing that casualties were falling from an unusually steep angle, ordered the trees searched; a sharpshooter was shot down from one of them and found, to the astonishment of the British ranks, to be a woman.',
       'No contemporary British dispatch names her, and the story of Uda Devi survives almost entirely through oral tradition in Awadh, set down in writing only long after the event. How many soldiers she is credited with killing varies wildly between retellings, and none can be checked against a documentary source. What can be said with more confidence is that women of the Pasi and other Dalit communities fought at Sikandar Bagh alongside better-recorded leaders, and that Uda Devi’s memory has become the way Awadh honours that fact.',
     ],
     entryIntoStruggle: 'Joined Begum Hazrat Mahal’s forces at Lucknow, 1857.',
     achievements: ['Became, in Awadhi memory, the emblem of Dalit women’s part in the defence of Lucknow'],
     sacrifices: ['Killed in action at Sikandar Bagh, November 1857'],
     legacy: 'Honoured today as a Dalit heroine of 1857, alongside Begum Hazrat Mahal and Jhalkari Bai; schools, roads and a park in Lucknow bear her name.',
-    facts: ['The number of soldiers she is credited with killing before being found ranges across retellings from a handful to over thirty — no contemporary count exists.'],
+    facts: ['The number of soldiers she is credited with killing before being found ranges across retellings from a handful to over thirty. No contemporary count exists.'],
     disputed: [
       {
         claim: 'Details of her role and casualty count at Sikandar Bagh',
@@ -772,11 +772,11 @@ export const revoltFighters: FreedomFighter[] = [
     era: 'revolt-1857',
     roles: ['ruler', 'military-leader'],
     summary:
-      'Zamindar of Sonakhan who opened his grain stores to feed a famine-struck population against Company orders, then led an armed rising in 1857 — hanged at Raipur that December as one of the revolt’s earliest executions and the first martyr of the Chhattisgarh region.',
+      'Zamindar of Sonakhan who opened his grain stores to feed a famine-struck population against Company orders, then led an armed rising in 1857, hanged at Raipur that December as one of the revolt’s earliest executions and the first martyr of the Chhattisgarh region.',
     shortStory: [
       {
         title: 'A famine, and a decision',
-        text: 'Narayan Singh was the zamindar of the small state of Sonakhan in the Chhattisgarh hill country. In 1856, famine gripped the region — yet the British still expected their revenue and forbade landlords from giving away grain. Narayan Singh opened his stores to feed the starving anyway.',
+        text: 'Narayan Singh was the zamindar of the small state of Sonakhan in the Chhattisgarh hill country. In 1856, famine gripped the region, yet the British still expected their revenue and forbade landlords from giving away grain. Narayan Singh opened his stores to feed the starving anyway.',
       },
       {
         title: 'Arrest and escape',
@@ -788,13 +788,13 @@ export const revoltFighters: FreedomFighter[] = [
       },
       {
         title: 'Raipur',
-        text: 'On 10 December 1857 he was hanged publicly at what is now Jaistambh Chowk in Raipur — one of the earliest executions of the revolt, and remembered as Chhattisgarh’s first freedom fighter.',
+        text: 'On 10 December 1857 he was hanged publicly at what is now Jaistambh Chowk in Raipur, one of the earliest executions of the revolt, and remembered as Chhattisgarh’s first freedom fighter.',
       },
     ],
     fullBiography: [
       'Narayan Singh inherited the zamindari of Sonakhan, a small hill state in what is now Chhattisgarh, from his father. When famine struck the region in 1856, Company revenue demands continued regardless, and landlords were forbidden from distributing grain reserves without official sanction. Narayan Singh opened his granaries to feed the starving population of his estate in defiance of that order.',
       'The British arrested him for the act and held him at Raipur. As the revolt of 1857 spread across northern and central India, sympathetic sepoys helped him escape custody; he returned to Sonakhan and raised an armed following of several hundred men, defying Company authority through the second half of 1857.',
-      'A British force was sent against him; his rising was put down and he was captured. He was tried and hanged publicly at Raipur on 10 December 1857 — one of the earliest executions of the revolt, and an event later histories mark as the beginning of organised resistance to Company rule in the Chhattisgarh region.',
+      'A British force was sent against him; his rising was put down and he was captured. He was tried and hanged publicly at Raipur on 10 December 1857, one of the earliest executions of the revolt, and an event later histories mark as the beginning of organised resistance to Company rule in the Chhattisgarh region.',
     ],
     entryIntoStruggle: 'Defied a Company ban on grain distribution during the famine of 1856.',
     achievements: [

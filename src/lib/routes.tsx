@@ -6,7 +6,7 @@ export interface RouteEntry {
   loader: () => Promise<{ default: ComponentType }>;
   /**
    * For routes whose page loads a full record asynchronously on top of its
-   * summary (FighterProfilePage, EventPage — see loadContent.ts): prefetches
+   * summary (FighterProfilePage, EventPage - see loadContent.ts): prefetches
    * that record so it's already cache-warm before the first hydration
    * render. Without this, that first render would show the loading state
    * (the record's effect hasn't fired yet) while the prerendered snapshot
@@ -16,7 +16,7 @@ export interface RouteEntry {
 }
 
 /**
- * The single source of truth for which page component serves which path —
+ * The single source of truth for which page component serves which path -
  * used by App.tsx to build the route table and by main.tsx to preload the
  * one route active on first paint (see setPreloadedRoute below).
  */
@@ -56,7 +56,7 @@ export interface PreloadedRoute {
 /*
  * This is prerendered (not truly server-rendered) HTML: the captured markup
  * has none of React's streaming boundary markers, so hydrateRoot reconciling
- * a <Suspense> *fallback* against real content is a structural mismatch —
+ * a <Suspense> *fallback* against real content is a structural mismatch -
  * every prerendered page would flash its loading skeleton and log a
  * hydration warning. Fixed by resolving the current route's module before
  * the very first render and having App.tsx render it directly, without a

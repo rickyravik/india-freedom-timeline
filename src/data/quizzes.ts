@@ -13,7 +13,7 @@ export const quizQuestions: QuizQuestion[] = [
     options: ['The salt tax law', 'The Rowlatt Act', 'The Arms Act', 'The Press Act'],
     answerIndex: 0,
     explanation:
-      'Gandhi lifted natural salt at Dandi beach on 6 April 1930, breaking the government monopoly on salt — a tax that touched even the poorest Indian.',
+      'Gandhi lifted natural salt at Dandi beach on 6 April 1930, breaking the government monopoly on salt, a tax that touched even the poorest Indian.',
     relatedLink: { label: 'The Dandi March', to: '/events/dandi-march' },
   },
   {
@@ -42,7 +42,7 @@ export const quizQuestions: QuizQuestion[] = [
     id: 'q-ulgulan',
     topic: 'people',
     difficulty: 2,
-    question: '"Ulgulan" — the Great Tumult of 1899–1900 — was led by which leader?',
+    question: '"Ulgulan", the Great Tumult of 1899–1900, was led by which leader?',
     options: ['Birsa Munda', 'Sidhu Murmu', 'Tirot Sing', 'Alluri Sitarama Raju'],
     answerIndex: 0,
     explanation:
@@ -79,7 +79,7 @@ export const quizQuestions: QuizQuestion[] = [
     options: ['"Do or Die"', '"Swaraj is my birthright"', '"Inquilab Zindabad"', '"Jai Hind"'],
     answerIndex: 0,
     explanation:
-      '"We shall either free India or die in the attempt" — the Quit India speech at Gowalia Tank gave the movement its watchword: Do or Die.',
+      'The Quit India speech at Gowalia Tank, "We shall either free India or die in the attempt", gave the movement its watchword: Do or Die.',
     relatedLink: { label: 'Quit India', to: '/events/quit-india-launch' },
   },
   {
@@ -112,7 +112,7 @@ export const quizQuestions: QuizQuestion[] = [
     options: ['Dadabhai Naoroji', 'Gopal Krishna Gokhale', 'Surendranath Banerjee', 'Shyamji Krishna Varma'],
     answerIndex: 0,
     explanation:
-      'Dadabhai Naoroji won Central Finsbury for the Liberals in 1892 — by five votes — and used the seat to argue India’s case.',
+      'Dadabhai Naoroji won Central Finsbury for the Liberals in 1892, by five votes, and used the seat to argue India’s case.',
     relatedLink: { label: 'Dadabhai Naoroji', to: '/fighters/dadabhai-naoroji' },
   },
   {
@@ -123,7 +123,7 @@ export const quizQuestions: QuizQuestion[] = [
     options: ['C. Rajagopalachari', 'Tanguturi Prakasam', 'V. O. Chidambaram Pillai', 'Subramania Bharati'],
     answerIndex: 0,
     explanation:
-      'Rajaji marched from Tiruchirappalli to Vedaranyam — the south’s answer to Dandi — and was imprisoned for lifting salt.',
+      'Rajaji marched from Tiruchirappalli to Vedaranyam, the south’s answer to Dandi, and was imprisoned for lifting salt.',
     relatedLink: { label: 'C. Rajagopalachari', to: '/fighters/c-rajagopalachari' },
   },
   {
@@ -141,11 +141,11 @@ export const quizQuestions: QuizQuestion[] = [
     id: 'q-frontier-gandhi',
     topic: 'movements',
     difficulty: 3,
-    question: 'The Khudai Khidmatgar — "Servants of God" — were founded by whom?',
+    question: 'The Khudai Khidmatgar ("Servants of God") were founded by whom?',
     options: ['Khan Abdul Ghaffar Khan', 'Maulana Azad', 'Mohammad Ali Jouhar', 'Hakim Ajmal Khan'],
     answerIndex: 0,
     explanation:
-      'Badshah Khan’s Khudai Khidmatgar bound tens of thousands of Pashtuns to nonviolence — and bore some of the Civil Disobedience era’s harshest repression.',
+      'Badshah Khan’s Khudai Khidmatgar bound tens of thousands of Pashtuns to nonviolence, and bore some of the Civil Disobedience era’s harshest repression.',
     relatedLink: { label: 'Khan Abdul Ghaffar Khan', to: '/fighters/khan-abdul-ghaffar-khan' },
   },
   {
@@ -156,7 +156,7 @@ export const quizQuestions: QuizQuestion[] = [
     options: ['1919', '1917', '1921', '1930'],
     answerIndex: 0,
     explanation:
-      'On 13 April 1919 — Baisakhi day — General Dyer ordered fire without warning on an unarmed crowd in Amritsar.',
+      'On 13 April 1919, Baisakhi day, General Dyer ordered fire without warning on an unarmed crowd in Amritsar.',
     relatedLink: { label: 'Jallianwala Bagh', to: '/events/jallianwala-bagh-massacre' },
   },
   {
@@ -189,14 +189,14 @@ export const quizQuestions: QuizQuestion[] = [
     options: ['Rukmini Lakshmipathi', 'Sarojini Naidu', 'Kamaladevi Chattopadhyay', 'Accamma Cherian'],
     answerIndex: 0,
     explanation:
-      'Rukmini Lakshmipathi joined Rajaji’s Vedaranyam march, broke the salt law and served a year in prison — the presidency’s first woman jailed in the movement; in 1946 she became its first woman minister.',
+      'Rukmini Lakshmipathi joined Rajaji’s Vedaranyam march, broke the salt law and served a year in prison, becoming the presidency’s first woman jailed in the movement; in 1946 she became its first woman minister.',
     relatedLink: { label: 'Rukmini Lakshmipathi', to: '/fighters/rukmini-lakshmipathi' },
   },
   {
     id: 'q-kodi-kaatha',
     topic: 'places',
     difficulty: 3,
-    question: '"Kodi Kaatha Kumaran" — the one who protected the flag — died in which town in 1932?',
+    question: '"Kodi Kaatha Kumaran", the one who protected the flag, died in which town in 1932?',
     options: ['Tiruppur', 'Madurai', 'Tuticorin', 'Erode'],
     answerIndex: 0,
     explanation:
@@ -205,7 +205,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
 ];
 
-/** "Who am I?" — guess the freedom fighter from progressive clues. */
+/** "Who am I?": guess the freedom fighter from progressive clues. */
 export interface GuessWhoRound {
   id: string;
   clues: string[];
@@ -218,7 +218,7 @@ export const guessWhoRounds: GuessWhoRound[] = [
     id: 'gw-bhagat-singh',
     clues: [
       'I was born in Punjab in 1907, into a family already deep in the freedom struggle.',
-      'I helped found a youth organization and wrote essays — including one on why I did not believe in God.',
+      'I helped found a youth organization and wrote essays, including one on why I did not believe in God.',
       'I threw bombs into the Assembly that were designed to harm no one, and stayed to be arrested.',
       'I was hanged on 23 March 1931, at twenty-three. They call me Shaheed-e-Azam.',
     ],
@@ -231,7 +231,7 @@ export const guessWhoRounds: GuessWhoRound[] = [
       'I grew up in the Peshwa’s court, learning to ride and fence alongside the boys.',
       'The Company refused to recognise my adopted son and took my kingdom.',
       'I defended my city through a two-week siege, then escaped through the enemy lines at night.',
-      'I died fighting near Gwalior in June 1858 — even my enemy called me the bravest of the rebels.',
+      'I died fighting near Gwalior in June 1858. Even my enemy called me the bravest of the rebels.',
     ],
     answerId: 'rani-lakshmibai',
     answerName: 'Rani Lakshmibai of Jhansi',
@@ -240,7 +240,7 @@ export const guessWhoRounds: GuessWhoRound[] = [
     id: 'gw-birsa',
     clues: [
       'I herded sheep as a boy in the forests of Chotanagpur.',
-      'My people called me Dharti Aba — Father of the Earth.',
+      'My people called me Dharti Aba, Father of the Earth.',
       'I led the Ulgulan against those who had taken our lands.',
       'I died in Ranchi jail at about twenty-five; my birthday is now a national observance.',
     ],
@@ -251,7 +251,7 @@ export const guessWhoRounds: GuessWhoRound[] = [
     id: 'gw-usha-mehta',
     clues: [
       'I marched in my first protest at the age of eight.',
-      'In 1942, when the leaders were jailed, I helped run something the Raj could not silence — for a while.',
+      'In 1942, when the leaders were jailed, I helped run something the Raj could not silence, for a while.',
       '"This is Congress Radio, calling from somewhere in India," I announced.',
       'I was caught at the transmitter and spent four years in prison. Later I became a professor.',
     ],
@@ -261,7 +261,7 @@ export const guessWhoRounds: GuessWhoRound[] = [
   {
     id: 'gw-bose',
     clues: [
-      'I passed the ICS examination near the top — and resigned from it.',
+      'I passed the ICS examination near the top, and then resigned from it.',
       'I escaped house arrest in Calcutta disguised as a Pathan.',
       'I asked my soldiers for blood, and promised them freedom.',
       'They call me Netaji.',
@@ -274,7 +274,7 @@ export const guessWhoRounds: GuessWhoRound[] = [
     clues: [
       'I ruled a small state in Karnataka in the 1820s.',
       'The Company refused to recognise my adopted heir.',
-      'My forces defeated the first British assault — their Collector fell in the battle.',
+      'My forces defeated the first British assault. Their Collector fell in the battle.',
       'I died a prisoner in Bailhongal fort, three decades before the Rani of Jhansi took up the same cause.',
     ],
     answerId: 'rani-chennamma',

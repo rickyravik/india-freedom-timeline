@@ -30,7 +30,7 @@ type Topic = QuizTopic | 'all';
 type Difficulty = 1 | 2 | 3 | 'any';
 
 /* `daily` picks a same-day-stable order for the very first, hydration-visible
-   render — a prerendered snapshot and the browser hydrating it must compute
+   render - a prerendered snapshot and the browser hydrating it must compute
    the same set. Starting a new set (a user action, never part of a snapshot)
    uses real randomness instead. */
 function pickQuestions(topic: Topic, difficulty: Difficulty, daily: boolean): ShuffledQuestion[] {
@@ -309,11 +309,11 @@ function CompareRow({ label, a, b }: { label: string; a?: string; b?: string }) 
     <div className="grid grid-cols-2 gap-4">
       <div className="ledger-row min-w-0 flex-col items-start gap-1 text-ink-soft">
         <span className="label">{label}</span>
-        <span className="min-w-0 max-w-full break-words">{a ?? '—'}</span>
+        <span className="min-w-0 max-w-full break-words">{a ?? 'Not recorded'}</span>
       </div>
       <div className="ledger-row min-w-0 flex-col items-start gap-1 text-ink-soft">
         <span className="label sm:sr-only">{label}</span>
-        <span className="min-w-0 max-w-full break-words">{b ?? '—'}</span>
+        <span className="min-w-0 max-w-full break-words">{b ?? 'Not recorded'}</span>
       </div>
     </div>
   );
@@ -403,7 +403,7 @@ function Compare() {
         <CompareRow label="Birthplace" a={a.birthPlace} b={b.birthPlace} />
         <CompareRow label="Region" a={regionNames[a.region]} b={regionNames[b.region]} />
         <CompareRow label="Roles" a={a.roles.map((r) => roleLabels[r]).join(', ')} b={b.roles.map((r) => roleLabels[r]).join(', ')} />
-        <CompareRow label="Movements" a={a.movements.map((m) => movementById.get(m)?.name ?? m).join(', ') || '—'} b={b.movements.map((m) => movementById.get(m)?.name ?? m).join(', ') || '—'} />
+        <CompareRow label="Movements" a={a.movements.map((m) => movementById.get(m)?.name ?? m).join(', ') || 'None recorded'} b={b.movements.map((m) => movementById.get(m)?.name ?? m).join(', ') || 'None recorded'} />
         <CompareRow label="Ideology" a={a.ideology} b={b.ideology} />
         <CompareRow label="Legacy" a={a.legacy} b={b.legacy} />
       </div>

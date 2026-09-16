@@ -18,7 +18,7 @@
   }
   /* The phone thumb bar (MobileNav, md:hidden) is fixed, not part of layout,
      so a browser's own scroll-into-view (including focus-driven scrolling)
-     has no reason to leave room for it — a focused control can otherwise
+     has no reason to leave room for it - a focused control can otherwise
      land with its bottom edge under the bar. */
   @media (max-width: 767px) {
     html {
@@ -113,7 +113,7 @@
     @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 
-  /* A pane — one stamp, mounted on a sheet: era ink ground, perforated all
+  /* A pane - one stamp, mounted on a sheet: era ink ground, perforated all
      round, its teeth cut from the sheet's own paper. Every dark block in the
      app is a pane, so `.vault` carries this treatment everywhere.          */
   .vault {
@@ -121,7 +121,7 @@
   }
 
   /* ---------------------------------------------------------------- */
-  /* Perforation — the world's signature edge.                        */
+  /* Perforation - the world's signature edge.                        */
   /* The tooth colour must match whatever the pane sits ON, so it is  */
   /* a variable: --tooth, defaulting to the album page.               */
   .perf-x,
@@ -151,7 +151,7 @@
   /* PortraitMedallion's and the map tiles' per-instance ink: read from a
      custom property, not a `style.backgroundColor`/`style.color` prop. A
      real colour property gets its VALUE reinterpreted by the browser the
-     instant it's set (hex becomes rgb(), for one) — the prerender script
+     instant it's set (hex becomes rgb(), for one) - the prerender script
      normalises formatting before capture, but it can't recover a hex string
      a browser has already converted to rgb(). A custom property's value is
      never reinterpreted, only ever stored and reflected back verbatim. */
@@ -175,13 +175,13 @@
     background-position: 0 -4px, 0 calc(100% + 4px), -4px 0, calc(100% + 4px) 0;
   }
 
-  /* Mounted sheet — gummed paper laid on the album page. Every route is one
+  /* Mounted sheet - gummed paper laid on the album page. Every route is one
      sheet, so reading always happens on paper and the field stays album ink. */
   .sheet {
     @apply bg-paper-100 px-3 py-4 text-ink sm:px-5 sm:py-8;
   }
 
-  /* Document — a mounted record on gummed paper. One elevation: the frame. */
+  /* Document - a mounted record on gummed paper. One elevation: the frame. */
   .doc {
     @apply relative rounded-sm border border-paper-300 bg-paper-50 text-ink transition-colors duration-160 ease-cinematic;
   }
@@ -195,7 +195,7 @@
     @apply doc hover:border-ink;
   }
 
-  /* Rules — engraved frame lines, solid and full width */
+  /* Rules - engraved frame lines, solid and full width */
   .rule {
     @apply h-px w-full bg-brass/60;
   }
@@ -209,7 +209,7 @@
     @apply h-[5px] w-full border-y border-brass-bright/45;
   }
 
-  /* Label — 13px metadata and list headings; never a kicker above a heading */
+  /* Label - 13px metadata and list headings; never a kicker above a heading */
   .label {
     @apply font-body text-label font-medium text-sepia;
   }
@@ -217,12 +217,12 @@
     @apply font-body text-label font-medium text-paper-300;
   }
 
-  /* Denomination — a year set as a stamp's value */
+  /* Denomination - a year set as a stamp's value */
   .denom {
     @apply num font-display text-h3 font-bold leading-none;
   }
 
-  /* Postmark — the cancellation ring. Ring and lettering are currentColor, so
+  /* Postmark - the cancellation ring. Ring and lettering are currentColor, so
      it inherits the pane's own ink and stays legible on light and dark alike. */
   .postmark {
     @apply pointer-events-none grid place-items-center rounded-full border-2 border-current text-center font-body text-xs font-semibold uppercase leading-tight tracking-[0.08em] opacity-70;
@@ -234,7 +234,7 @@
     @apply postmark animate-stamp-in pointer-events-none absolute -right-3 -top-3 h-16 w-16 text-xs;
   }
 
-  /* Franking action — the ochre value the record is paid with */
+  /* Franking action - the ochre value the record is paid with */
   /* bg-oxide-deep, not bg-oxide: white text on the mid cut measured 4.0:1,
      just under the 4.5:1 AA minimum for this button's text size. */
   .btn-seal {
@@ -298,7 +298,7 @@
     @apply num flex items-baseline justify-between gap-4 border-b border-paper-400/70 py-2 font-body text-meta;
   }
 
-  /* Stamp — 12px uppercase tag in an engraved box */
+  /* Stamp - 12px uppercase tag in an engraved box */
   .stamp {
     @apply inline-block border border-current px-1.5 py-px font-body text-xs font-semibold uppercase leading-tight tracking-[0.06em];
   }
@@ -361,7 +361,7 @@
   .reveal-mask.in-view > * {
     clip-path: none;
   }
-  /* Without JS the observer never runs — make sure content still shows. */
+  /* Without JS the observer never runs - make sure content still shows. */
   .no-js .reveal,
   .no-js .reveal-mask,
   .no-js .reveal-mask > * {
@@ -373,7 +373,7 @@
   /* Hand-written, not tailwind.config.js: a keyframe reached only through a
      raw `animation:` declaration (never a scanned `animate-*` utility class)
      is invisible to Tailwind's content-scanning JIT and gets silently
-     dropped from the compiled CSS — the animation then has no effect to
+     dropped from the compiled CSS - the animation then has no effect to
      play at all (transform stays at its unanimated `none`, indistinguishable
      by eye from "fully progressed"). Confirmed missing from the built output
      before this fix. */
@@ -386,8 +386,8 @@
     }
   }
 
-  /* Scroll-driven spine, bound to the timeline container itself — not the
-     document — so the footer never counts and a filter that shortens the
+  /* Scroll-driven spine, bound to the timeline container itself - not the
+     document - so the footer never counts and a filter that shortens the
      timeline recalculates for free. Progressive: static where unsupported. */
   @supports (animation-timeline: view()) {
     [data-timeline-spine] {
@@ -439,7 +439,7 @@
     }
   }
   /* `backwards`, not `both`: the final keyframe equals the natural state, so
-     nothing is lost visually — but `both` would leave `transform: translateY(0)`
+     nothing is lost visually - but `both` would leave `transform: translateY(0)`
      applied for the life of the page, and any non-none transform makes this
      sheet the containing block (and stacking context) for every
      `position: fixed` descendant. That trapped the reading-settings sheet

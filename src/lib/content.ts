@@ -1,5 +1,5 @@
 /**
- * Content access layer — the single place UI code goes to for historical
+ * Content access layer - the single place UI code goes to for historical
  * records and the connections between them.
  */
 import type { EventSummary, FighterSummary, FreedomFighter, LocationKind, Movement, Place, RegionId } from '@/types';
@@ -17,7 +17,7 @@ import { states, stateById } from '@/data/regions';
 import { glossaryTerms, glossaryById } from '@/data/glossary';
 import { trails, trailBySlug } from '@/data/trails';
 
-/* The summary projection — everything except a record's own profile page
+/* The summary projection - everything except a record's own profile page
    should only ever need these. Full records (biography, quotes, sources,
    Story Mode...) load lazily via src/lib/loadContent.ts. */
 export const fighters: FighterSummary[] = fighterSummaries;
@@ -64,7 +64,7 @@ export function fightersForEvent(event: EventSummary): FighterSummary[] {
 
 /** Events linked to a fighter (declared on either side of the relation).
     Takes the minimal shape it needs, not FighterSummary, so it also accepts
-    a full FreedomFighter record — the only caller has one on hand and would
+    a full FreedomFighter record - the only caller has one on hand and would
     otherwise need to build a throwaway summary just to satisfy the type. */
 export function eventsForFighter(fighter: { id: string; timelineEvents: string[] }): EventSummary[] {
   const ids = new Set(fighter.timelineEvents);
@@ -149,7 +149,7 @@ export function connectionsFor(fighterId: string): ResolvedConnection[] {
     .filter((c): c is ResolvedConnection => c !== null);
 }
 
-/** People connected by theme only — `relatedPeople` minus anyone with a documented connection. */
+/** People connected by theme only - `relatedPeople` minus anyone with a documented connection. */
 export function similarFor(fighter: FreedomFighter, connections: ResolvedConnection[]): FighterSummary[] {
   const documented = new Set(connections.map((c) => c.fighter.id));
   return relatedFighters(fighter).filter((f) => !documented.has(f.id));

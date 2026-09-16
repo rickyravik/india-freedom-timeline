@@ -9,5 +9,5 @@ const env = loadEnv('production', process.cwd(), 'VITE_');
 export const SITE_URL = (env.VITE_SITE_URL ?? '').replace(/\/$/, '');
 
 if (!SITE_URL) {
-  throw new Error('VITE_SITE_URL is not set — add it to .env (see README, "Configuration").');
+  throw new Error('VITE_SITE_URL is not set - add it to .env (see README, "Configuration").');
 }

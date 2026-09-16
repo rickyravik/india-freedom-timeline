@@ -46,10 +46,10 @@ export const tamilNaduEvents: HistoricalEvent[] = [
     region: 'south',
     states: ['Tamil Nadu', 'Kerala', 'Karnataka'],
     summary:
-      'The Marudhu brothers, Oomaithurai and allied chiefs from Malabar to Dindigul rise together against the Company — and post a proclamation calling all Indians to unite against foreign rule.',
+      'The Marudhu brothers, Oomaithurai and allied chiefs from Malabar to Dindigul rise together against the Company, and post a proclamation calling all Indians to unite against foreign rule.',
     description: [
-      'Oomaithurai’s escape from Palayamkottai in February 1801 set the southern palaiyams alight. The Marudhu brothers of Sivaganga gave him shelter and command, and a loose confederacy took shape across the peninsula — Kerala Varma Pazhassi Raja in Malabar, Gopala Nayak at Dindigul, Dhoondaji Wagh in the Maratha country. In June 1801 the Marudhus’ proclamation, fixed to the walls of the Srirangam temple and Tiruchirappalli fort, denounced the Company’s treachery and greed and summoned Indians of every caste and religion to expel it — a call to national resistance a generation before the word "nation" entered Indian politics.',
-      'The Company concentrated forces under Colonel Agnew. Panchalankurichi fell again in May, Kalayar Kovil — the Marudhus’ forest stronghold — in October. The brothers were hanged at Tiruppathur on 24 October 1801; Oomaithurai and others at Panchalankurichi on 16 November; hundreds were transported to Penang. The Carnatic Treaty that followed made the Company master of the Tamil country.',
+      'Oomaithurai’s escape from Palayamkottai in February 1801 set the southern palaiyams alight. The Marudhu brothers of Sivaganga gave him shelter and command, and a loose confederacy took shape across the peninsula: Kerala Varma Pazhassi Raja in Malabar, Gopala Nayak at Dindigul, Dhoondaji Wagh in the Maratha country. In June 1801 the Marudhus’ proclamation, fixed to the walls of the Srirangam temple and Tiruchirappalli fort, denounced the Company’s treachery and greed and summoned Indians of every caste and religion to expel it, a call to national resistance a generation before the word "nation" entered Indian politics.',
+      'The Company concentrated forces under Colonel Agnew. Panchalankurichi fell again in May, Kalayar Kovil, the Marudhus’ forest stronghold, in October. The brothers were hanged at Tiruppathur on 24 October 1801; Oomaithurai and others at Panchalankurichi on 16 November; hundreds were transported to Penang. The Carnatic Treaty that followed made the Company master of the Tamil country.',
     ],
     people: ['marudhu-brothers', 'veerapandiya-kattabomman', 'dheeran-chinnamalai', 'pazhassi-raja'],
     movement: 'early-uprisings',
@@ -85,7 +85,7 @@ export const tamilNaduEvents: HistoricalEvent[] = [
       'V. O. Chidambaram Pillai and Subramania Siva lead the Coral Mills strike and Swadeshi meetings; their arrest sets Tirunelveli ablaze, and police fire on crowds at Tuticorin.',
     description: [
       'The Swadeshi movement reached its southern climax in the port of Tuticorin in early 1908. V. O. Chidambaram Pillai, already fighting a rate war with British shipping through his Swadeshi Steam Navigation Company, took up the cause of the strikers at the European-owned Coral Mills in February; with Subramania Siva he addressed swelling public meetings and planned celebrations of Bipin Chandra Pal’s release from prison for 9 March.',
-      'The authorities banned the meetings and, on 12 March, arrested Pillai, Siva and Padmanabha Iyengar. Tirunelveli erupted on 13 March — the municipal office, courts and police station were attacked and burned — and at Tuticorin police firing killed four people. Sub-Collector Robert Ashe’s role in the repression, and in the ruin of the Swadeshi shipping company, would be answered three years later at Maniyachi. Pillai and Siva received sentences of transportation, later reduced; the Tamil Swadeshi movement never recovered its open strength, but its martyrs became legend.',
+      'The authorities banned the meetings and, on 12 March, arrested Pillai, Siva and Padmanabha Iyengar. Tirunelveli erupted on 13 March: the municipal office, courts and police station were attacked and burned, and at Tuticorin police firing killed four people. Sub-Collector Robert Ashe’s role in the repression, and in the ruin of the Swadeshi shipping company, would be answered three years later at Maniyachi. Pillai and Siva received sentences of transportation, later reduced; the Tamil Swadeshi movement never recovered its open strength, but its martyrs became legend.',
     ],
     people: ['vo-chidambaram-pillai', 'subramania-siva', 'subramania-bharati'],
     movement: 'swadeshi',
@@ -114,10 +114,10 @@ export const tamilNaduEvents: HistoricalEvent[] = [
     region: 'south',
     states: ['Tamil Nadu'],
     summary:
-      'Vanchinathan shoots Robert Ashe — the official who crushed the Tamil Swadeshi movement — in a train at Maniyachi, then takes his own life. The only assassination of a British official in the Madras Presidency.',
+      'Vanchinathan shoots Robert Ashe, the official who crushed the Tamil Swadeshi movement, in a train at Maniyachi, then takes his own life. The only assassination of a British official in the Madras Presidency.',
     description: [
       'On 17 June 1911, Robert Ashe, Collector of Tinnevelly, waited with his wife in a first-class carriage at Maniyachi junction for the Ceylon boat mail. Vanchinathan, a twenty-five-year-old member of the secret Bharatha Matha Association, boarded, shot him dead, and fled to the station lavatory, where he shot himself. The letter found on his body declared that the British had trampled India’s dharma and that his comrades had sworn to kill George V during his coming visit.',
-      'The Ashe murder conspiracy case tried fourteen men — several were convicted, including Nilakanta Brahmachari; V. V. S. Aiyar in French Pondicherry, whom intelligence blamed for training the killer, was beyond reach. Ashe had personally ordered the 1908 arrests and the Tuticorin firing; to the revolutionaries, Maniyachi was the answer. The junction is now Vanchi Maniyachi.',
+      'The Ashe murder conspiracy case tried fourteen men. Several were convicted, including Nilakanta Brahmachari; V. V. S. Aiyar in French Pondicherry, whom intelligence blamed for training the killer, was beyond reach. Ashe had personally ordered the 1908 arrests and the Tuticorin firing; to the revolutionaries, Maniyachi was the answer. The junction is now Vanchi Maniyachi.',
     ],
     people: ['vanchinathan', 'vvs-aiyar', 'vo-chidambaram-pillai'],
     movement: 'revolutionary-movement',
@@ -146,10 +146,10 @@ export const tamilNaduEvents: HistoricalEvent[] = [
     region: 'south',
     states: ['Tamil Nadu'],
     summary:
-      'C. Rajagopalachari leads the south’s salt march — 150 miles from Tiruchirappalli to the Vedaranyam coast — where salt is lifted in defiance of the law and hundreds, including Rukmini Lakshmipathi and young Kamaraj, go to jail.',
+      'C. Rajagopalachari leads the south’s salt march, 150 miles from Tiruchirappalli to the Vedaranyam coast, where salt is lifted in defiance of the law and hundreds, including Rukmini Lakshmipathi and young Kamaraj, go to jail.',
     description: [
       'Days after Gandhi reached Dandi, the Tamil Nadu Congress launched its own salt satyagraha. On 13 April 1930 C. Rajagopalachari set out from Tiruchirappalli with about a hundred volunteers, marching some 240 kilometres south-east through the Kaveri delta to the salt coast at Vedaranyam, welcomed in every village despite the government’s threats to punish anyone who fed or sheltered the marchers. Sardar Vedaratnam Pillai organized the coast; on 30 April Rajaji lifted salt on the shore and was arrested.',
-      'Mass arrests followed — Rukmini Lakshmipathi became the presidency’s first woman jailed in the movement, and the young K. Kamaraj served two years. Vedaranyam made the salt satyagraha a truly all-India event, and gave the Tamil Congress its formative generation.',
+      'Mass arrests followed: Rukmini Lakshmipathi became the presidency’s first woman jailed in the movement, and the young K. Kamaraj served two years. Vedaranyam made the salt satyagraha a truly all-India event, and gave the Tamil Congress its formative generation.',
     ],
     people: ['c-rajagopalachari', 'rukmini-lakshmipathi', 'k-kamaraj'],
     movement: 'civil-disobedience',

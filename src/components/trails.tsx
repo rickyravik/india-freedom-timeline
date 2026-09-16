@@ -33,7 +33,7 @@ export function TrailCard({ trail, progress }: { trail: Trail; progress?: Progre
   );
 }
 
-/** Position in the selected story — not a claim about history understood. */
+/** Position in the selected story - not a claim about history understood. */
 export function TrailProgress({ current, total, label = 'Position in this trail' }: { current: number; total: number; label?: string }) {
   return (
     <div>

@@ -57,7 +57,7 @@ export const beforeTheEmpire: Trail = {
       ],
       focus: { kind: 'event', id: 'farrukhsiyar-farman' },
       sources: [
-        { title: 'Bengal: The British Bridgehead — Eastern India 1740–1828 (The New Cambridge History of India II.2)', author: 'P. J. Marshall', publisher: 'Cambridge University Press', year: 1987, type: 'book', evidence: 'scholarship' },
+        { title: 'Bengal: The British Bridgehead, Eastern India 1740–1828 (The New Cambridge History of India II.2)', author: 'P. J. Marshall', publisher: 'Cambridge University Press', year: 1987, type: 'book', evidence: 'scholarship' },
         { title: 'The Anarchy: The Relentless Rise of the East India Company', author: 'William Dalrymple', publisher: 'Bloomsbury', year: 2019, type: 'book', evidence: 'scholarship' },
       ],
       bridge: 'The Company had one more thing to sell besides cloth: soldiers.',
@@ -89,7 +89,7 @@ export const beforeTheEmpire: Trail = {
       focus: { kind: 'event', id: 'grant-of-diwani' },
       also: [{ kind: 'fighter', id: 'dadabhai-naoroji' }],
       sources: [
-        { title: 'Bengal: The British Bridgehead — Eastern India 1740–1828 (The New Cambridge History of India II.2)', author: 'P. J. Marshall', publisher: 'Cambridge University Press', year: 1987, type: 'book', evidence: 'scholarship' },
+        { title: 'Bengal: The British Bridgehead, Eastern India 1740–1828 (The New Cambridge History of India II.2)', author: 'P. J. Marshall', publisher: 'Cambridge University Press', year: 1987, type: 'book', evidence: 'scholarship' },
         { title: 'Poverty and Un-British Rule in India', author: 'Dadabhai Naoroji', publisher: 'Swan Sonnenschein, London', year: 1901, type: 'book', evidence: 'contemporary' },
       ],
       uncertainty: 'The famine’s toll is disputed: a contemporary estimate of ten million dead is widely quoted, while modern historians offer figures from about one to three million. Its scale, and the Company’s failure to relieve it, are not in doubt.',
@@ -138,7 +138,7 @@ export const beforeTheEmpire: Trail = {
       'Drafted 2026-09-16 as a prelude to the archive’s 1757 starting point, on the six prelude event records. Fact-checked against Richards, Alam, Marshall, Bayly, Gordon, Stern, Parthasarathi, Dalrymple and Bandyopadhyay: charter 31 Dec 1600; Surat 1613; Roe 1615–19; Aurangzeb d. 3 Mar 1707; farman 1717 (3,000 rupees); Karnal Feb 1739 and Delhi massacre 11 Mar 1739; Plassey 23 Jun 1757; Panipat 14 Jan 1761; Buxar 22 Oct 1764; Diwani 12 Aug 1765 (26 lakh). Contested figures (Maddison’s 24%, the 1739 and Panipat death tolls, the 1770 famine) are stated as ranges and carried as uncertainty notes. The final stop is labelled as interpretation.',
   },
   teaching: {
-    alignment: 'Proposed for secondary history — the establishment of Company rule; causation and historical interpretation. Not yet mapped to a specific board or state curriculum.',
+    alignment: 'Proposed for secondary history: the establishment of Company rule; causation and historical interpretation. Not yet mapped to a specific board or state curriculum.',
     shortVersion: ['a-rich-country', 'guns-for-hire', 'could-it-have-gone-differently'],
     prompts: [
       'The first stop says India was one of the richest regions in the world in 1700. If that is true, why was it possible for a foreign company to take control? List the reasons the trail gives, then rank them.',

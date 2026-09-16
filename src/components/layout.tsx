@@ -19,7 +19,7 @@ const NAV = [
 const PHONE_NAV = NAV.filter((n) => ['/', '/trails', '/learn'].includes(n.to));
 
 /* Routes with no tab of their own. On phones the footer is the only other way
-   to reach some of these, and on a long page that is ten screens away — so
+   to reach some of these, and on a long page that is ten screens away - so
    the thumb bar carries an Explore sheet. */
 const EXPLORE = [
   { to: '/timeline', label: 'Timeline', icon: icons.clock, hint: 'Ten chapters, 1600–1947' },
@@ -117,7 +117,7 @@ export function ScrollManager() {
   return null;
 }
 
-/* Header: the album page's own margin — always ink, never over a sheet. */
+/* Header: the album page's own margin - always ink, never over a sheet. */
 function Header({ onSearch }: { onSearch: () => void }) {
   return (
     <header className="sticky top-0 z-40 border-b border-brass-bright/25 bg-vault text-paper-100">
@@ -314,7 +314,7 @@ function Footer() {
 }
 
 /* A new service worker is waiting to activate (src/lib/pwa.ts). Dismissible
-   and keyboard-reachable: plain focusable buttons, no focus trap — this
+   and keyboard-reachable: plain focusable buttons, no focus trap - this
    isn't a blocking dialog. */
 function UpdateToast() {
   const needRefresh = useServiceWorkerUpdate();

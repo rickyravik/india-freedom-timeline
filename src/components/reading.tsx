@@ -9,7 +9,7 @@ import { BottomSheet, Icon, Segmented, icons } from '@/components/ui';
 import { usePreferences } from '@/lib/hooks';
 
 /* ------------------------------------------------------------------ */
-/* Popover — a small note anchored under its trigger. Closed in every  */
+/* Popover - a small note anchored under its trigger. Closed in every  */
 /* prerendered snapshot; never moves the reading position.             */
 export function Popover({ id, open, onClose, label, children }: { id: string; open: boolean; onClose: () => void; label: string; children: ReactNode }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -43,7 +43,7 @@ export function Popover({ id, open, onClose, label, children }: { id: string; op
 }
 
 /* ------------------------------------------------------------------ */
-/* Citation marker — the [^n] a reader sees                            */
+/* Citation marker - the [^n] a reader sees                            */
 function formatSource(s: SourceRef): string {
   const bits = [s.title, s.author, s.publisher, s.year ? String(s.year) : undefined, s.pages ? `pp. ${s.pages}` : undefined, s.archiveId].filter(Boolean);
   return bits.join(' · ');
@@ -108,7 +108,7 @@ function InlineNote({ note, vault }: { note: DisputedNote; vault: boolean }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Glossary term — dotted underline, explains itself on demand         */
+/* Glossary term - dotted underline, explains itself on demand         */
 export function GlossButton({ text, termId, open, onToggle, onClose }: { text: string; termId: string; open: boolean; onToggle: () => void; onClose: () => void }) {
   const id = useId();
   const btn = useRef<HTMLButtonElement>(null);
@@ -151,7 +151,7 @@ export function GlossButton({ text, termId, open, onToggle, onClose }: { text: s
 }
 
 /* ------------------------------------------------------------------ */
-/* Reading text — paragraphs with glossary terms and citations         */
+/* Reading text - paragraphs with glossary terms and citations         */
 export function ReadingText({
   paragraphs,
   sources,
@@ -206,7 +206,7 @@ export function ReadingText({
 }
 
 /* ------------------------------------------------------------------ */
-/* Draft stamp — anything not yet reviewed says so                     */
+/* Draft stamp - anything not yet reviewed says so                     */
 export function DraftStamp({ vault = false }: { vault?: boolean }) {
   return (
     <p className={`inline-flex items-center gap-2 font-body text-label ${vault ? 'text-paper-300' : 'text-ink-faint'}`}>
@@ -234,7 +234,7 @@ function ToggleRow({ label, hint, checked, onChange }: { label: string; hint: st
 }
 
 /* ------------------------------------------------------------------ */
-/* Reading toolbar — the reading-mode switch, a jump to sources, and    */
+/* Reading toolbar - the reading-mode switch, a jump to sources, and    */
 /* the reading-settings sheet (text size, reduce motion, low data).     */
 export function ReadingToolbar({ vault = false }: { vault?: boolean }) {
   const [prefs, setPrefs] = usePreferences();

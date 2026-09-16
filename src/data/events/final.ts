@@ -12,10 +12,10 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'north',
     states: ['Punjab'],
     summary:
-      '"Simon, go back" — black-flag protests meet the all-white constitutional commission. At Lahore, police batons strike Lala Lajpat Rai, who dies weeks later.',
+      '"Simon, go back": black-flag protests meet the all-white constitutional commission. At Lahore, police batons strike Lala Lajpat Rai, who dies weeks later.',
     description: [
       'The Simon Commission, appointed to review India’s constitution without a single Indian member, was met at every railway station by black flags and the cry "Simon, go back". At Lahore on 30 October 1928, police under Superintendent James Scott lathi-charged the protest; Lala Lajpat Rai, the Lion of Punjab, was struck on the chest and died on 17 November.',
-      '"Every blow aimed at me," he told the crowd that evening, "is a nail in the coffin of British imperialism." The HSRA resolved to avenge him; in December, Bhagat Singh, Rajguru, Sukhdev and Azad shot Assistant Superintendent J. P. Saunders, mistaking him for Scott — the act for which Bhagat Singh would ultimately hang.',
+      '"Every blow aimed at me," he told the crowd that evening, "is a nail in the coffin of British imperialism." The HSRA resolved to avenge him; in December, Bhagat Singh, Rajguru, Sukhdev and Azad shot Assistant Superintendent J. P. Saunders, mistaking him for Scott, the act for which Bhagat Singh would ultimately hang.',
     ],
     people: ['lala-lajpat-rai', 'bhagat-singh', 'shivaram-rajguru', 'sukhdev-thapar', 'chandrashekhar-azad', 'durgawati-devi'],
     era: 'civil-disobedience',
@@ -46,10 +46,10 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'west',
     states: ['Gujarat'],
     summary:
-      'Vallabhbhai Patel organizes the peasants of Bardoli to refuse an unjust revenue hike — and wins. The grateful taluka gives him the title "Sardar".',
+      'Vallabhbhai Patel organizes the peasants of Bardoli to refuse an unjust revenue hike, and wins. The grateful taluka gives him the title "Sardar".',
     description: [
       'When the Bombay government raised land revenue in Bardoli taluka by over a fifth despite falling prices, the peasants asked Vallabhbhai Patel to lead them. His campaign of total non-payment was a masterpiece of organization: village camps, volunteer patrols, social boycott of collaborators, and iron discipline under seizure of lands, buffaloes and household goods.',
-      'By August 1928 the government retreated — an inquiry substantially reduced the assessment and returned confiscated lands. Bardoli proved that disciplined mass refusal could defeat the Raj on a chosen field, rehearsed the methods of 1930, and gave Patel the name India knows him by: Sardar.',
+      'By August 1928 the government retreated: an inquiry substantially reduced the assessment and returned confiscated lands. Bardoli proved that disciplined mass refusal could defeat the Raj on a chosen field, rehearsed the methods of 1930, and gave Patel the name India knows him by: Sardar.',
     ],
     people: ['vallabhbhai-patel', 'mahatma-gandhi'],
     era: 'civil-disobedience',
@@ -67,16 +67,16 @@ export const finalEvents: HistoricalEvent[] = [
   {
     id: 'assembly-bomb-case',
     slug: 'assembly-bomb-case',
-    title: 'Assembly bombing — "to make the deaf hear"',
+    title: 'Assembly bombing: "to make the deaf hear"',
     date: { year: 1929, month: 4, day: 8 },
     dateLabel: '8 April 1929',
     location: 'Central Legislative Assembly, Delhi',
     region: 'north',
     states: ['Delhi'],
     summary:
-      'Bhagat Singh and Batukeshwar Dutt throw harmless bombs into the Assembly, shower leaflets, shout "Inquilab Zindabad" — and wait to be arrested, choosing the courtroom as their stage.',
+      'Bhagat Singh and Batukeshwar Dutt throw harmless bombs into the Assembly, shower leaflets, shout "Inquilab Zindabad", and wait to be arrested, choosing the courtroom as their stage.',
     description: [
-      'Protesting the repressive Public Safety and Trade Disputes Bills, Bhagat Singh and Batukeshwar Dutt threw two bombs into an empty part of the Central Legislative Assembly chamber on 8 April 1929. The bombs were deliberately weak — "it takes a loud voice to make the deaf hear," their leaflet explained, quoting the French anarchist Vaillant — and the two men stood shouting "Inquilab Zindabad!" until police arrested them.',
+      'Protesting the repressive Public Safety and Trade Disputes Bills, Bhagat Singh and Batukeshwar Dutt threw two bombs into an empty part of the Central Legislative Assembly chamber on 8 April 1929. The bombs were deliberately weak: "it takes a loud voice to make the deaf hear," their leaflet explained, quoting the French anarchist Vaillant. The two men stood shouting "Inquilab Zindabad!" until police arrested them.',
       'The trial gave the HSRA a national platform. Investigation of the Saunders killing followed as the Lahore Conspiracy Case; in jail, Bhagat Singh and his comrades waged hunger strikes for political-prisoner status during which Jatindra Nath Das fasted to death after 63 days, mourned across India.',
     ],
     people: ['bhagat-singh', 'batukeshwar-dutt', 'jatindra-nath-das', 'sukhdev-thapar', 'shivaram-rajguru'],
@@ -112,8 +112,8 @@ export const finalEvents: HistoricalEvent[] = [
     summary:
       'At the Lahore Congress the tricolour rises over the Ravi at midnight; on 26 January 1930 India observes the first Independence Day, pledging complete freedom.',
     description: [
-      'The Lahore Congress of December 1929, with Jawaharlal Nehru presiding, declared that "Swaraj" now meant Purna Swaraj — complete independence, not dominion status. At midnight on New Year’s Eve the tricolour was hoisted on the banks of the Ravi.',
-      'On 26 January 1930, meetings across India took the Independence Pledge, declaring it "a crime against man and God" to submit any longer to British rule. Independent India chose the same date in 1950 to bring its Constitution into force — Republic Day.',
+      'The Lahore Congress of December 1929, with Jawaharlal Nehru presiding, declared that "Swaraj" now meant Purna Swaraj: complete independence, not dominion status. At midnight on New Year’s Eve the tricolour was hoisted on the banks of the Ravi.',
+      'On 26 January 1930, meetings across India took the Independence Pledge, declaring it "a crime against man and God" to submit any longer to British rule. Independent India chose the same date in 1950 to bring its Constitution into force: Republic Day.',
     ],
     people: ['jawaharlal-nehru', 'mahatma-gandhi'],
     movement: 'civil-disobedience',
@@ -130,17 +130,17 @@ export const finalEvents: HistoricalEvent[] = [
   {
     id: 'dandi-march',
     slug: 'dandi-march',
-    title: 'Dandi March — the Salt Satyagraha',
+    title: 'Dandi March: the Salt Satyagraha',
     date: { year: 1930, month: 3, day: 12 },
     dateLabel: '12 March – 6 April 1930',
     location: 'Sabarmati to Dandi, Gujarat',
     region: 'west',
     states: ['Gujarat'],
     summary:
-      'Gandhi and 78 volunteers walk 240 miles to the sea and lift a fistful of illegal salt — the signal for a nation to break the law together.',
+      'Gandhi and 78 volunteers walk 240 miles to the sea and lift a fistful of illegal salt, the signal for a nation to break the law together.',
     description: [
-      'Choosing the salt tax — a small, universal injustice touching the poorest — Gandhi left Sabarmati Ashram on 12 March 1930 with seventy-eight chosen volunteers, walking village to village for twenty-four days as the world’s press followed. At Dandi beach on the morning of 6 April he picked up a lump of natural salt; Sarojini Naidu, beside him, cried "Hail, Deliverer!"',
-      'Salt was made and sold illegally across the coasts; C. Rajagopalachari marched to Vedaranyam in the south. In May, volunteers marching on the Dharasana salt works stood rank after rank under police lathis without raising a hand — reported worldwide by Webb Miller. Around 90,000 Indians, women in unprecedented numbers, filled the jails before the campaign paused with the Gandhi–Irwin Pact.',
+      'Gandhi chose the salt tax, a small and universal injustice touching the poorest, and left Sabarmati Ashram on 12 March 1930 with seventy-eight chosen volunteers, walking village to village for twenty-four days as the world’s press followed. At Dandi beach on the morning of 6 April he picked up a lump of natural salt; Sarojini Naidu, beside him, cried "Hail, Deliverer!"',
+      'Salt was made and sold illegally across the coasts; C. Rajagopalachari marched to Vedaranyam in the south. In May, volunteers marching on the Dharasana salt works stood rank after rank under police lathis without raising a hand, in scenes reported worldwide by Webb Miller. Around 90,000 Indians, women in unprecedented numbers, filled the jails before the campaign paused with the Gandhi–Irwin Pact.',
     ],
     people: ['mahatma-gandhi', 'sarojini-naidu', 'c-rajagopalachari', 'kasturba-gandhi', 'khan-abdul-ghaffar-khan', 'kamaladevi-chattopadhyay', 'tanguturi-prakasam'],
     movement: 'civil-disobedience',
@@ -173,10 +173,10 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'east',
     states: ['West Bengal'],
     summary:
-      'Surya Sen’s young revolutionaries seize Chittagong’s armouries and proclaim a provisional revolutionary government — schoolteachers and students against an empire.',
+      'Surya Sen’s young revolutionaries seize Chittagong’s armouries and proclaim a provisional revolutionary government: schoolteachers and students against an empire.',
     description: [
-      'On the night of 18 April 1930, sixty-odd members of Surya Sen’s Indian Republican Army captured the police and auxiliary force armouries at Chittagong, cut telegraph lines, and proclaimed a Provisional Revolutionary Government — though the armouries yielded arms but no ammunition. Days later, cornered on Jalalabad hill, the group of mostly teenaged fighters battled troops, losing a dozen killed.',
-      'The survivors fought on underground for years: Pritilata Waddedar led the attack on the Pahartali European Club in 1932 and took cyanide rather than be captured; Kalpana Datta was sentenced to transportation; Surya Sen — "Masterda" to his students — was betrayed, tortured and hanged on 12 January 1934. Their example electrified young Bengal.',
+      'On the night of 18 April 1930, sixty-odd members of Surya Sen’s Indian Republican Army captured the police and auxiliary force armouries at Chittagong, cut telegraph lines, and proclaimed a Provisional Revolutionary Government, though the armouries yielded arms but no ammunition. Days later, cornered on Jalalabad hill, the group of mostly teenaged fighters battled troops, losing a dozen killed.',
+      'The survivors fought on underground for years: Pritilata Waddedar led the attack on the Pahartali European Club in 1932 and took cyanide rather than be captured; Kalpana Datta was sentenced to transportation; Surya Sen, "Masterda" to his students, was betrayed, tortured and hanged on 12 January 1934. Their example electrified young Bengal.',
     ],
     people: ['surya-sen', 'pritilata-waddedar', 'kalpana-datta'],
     movement: 'revolutionary-movement',
@@ -205,8 +205,8 @@ export const finalEvents: HistoricalEvent[] = [
     summary:
       'The Viceroy negotiates with the rebel he jailed: prisoners released, salt for personal use allowed, and Gandhi bound for the Round Table Conference in London.',
     description: [
-      'Signed on 5 March 1931, the pact suspended Civil Disobedience in exchange for the release of tens of thousands of political prisoners, the right to make salt for domestic use, and Congress participation in the Second Round Table Conference. Churchill fumed at the "nauseating" sight of a "seditious fakir" negotiating "on equal terms with the representative of the King-Emperor" — which was precisely the point.',
-      'The pact could not save Bhagat Singh, Rajguru and Sukhdev, hanged eighteen days later despite nationwide appeals — a wound many in the national movement never forgave. The London conference failed, and the struggle resumed within the year.',
+      'Signed on 5 March 1931, the pact suspended Civil Disobedience in exchange for the release of tens of thousands of political prisoners, the right to make salt for domestic use, and Congress participation in the Second Round Table Conference. Churchill fumed at the "nauseating" sight of a "seditious fakir" negotiating "on equal terms with the representative of the King-Emperor". That was precisely the point.',
+      'The pact could not save Bhagat Singh, Rajguru and Sukhdev, hanged eighteen days later despite nationwide appeals, a wound many in the national movement never forgave. The London conference failed, and the struggle resumed within the year.',
     ],
     people: ['mahatma-gandhi'],
     movement: 'civil-disobedience',
@@ -232,10 +232,10 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'north',
     states: ['Punjab'],
     summary:
-      'The three young revolutionaries of the Lahore Conspiracy Case go to the gallows a day early, cremated secretly by the Sutlej — and become immortal.',
+      'The three young revolutionaries of the Lahore Conspiracy Case go to the gallows a day early, cremated secretly by the Sutlej, and become immortal.',
     description: [
-      'Convicted by a special tribunal for the killing of J. P. Saunders, Bhagat Singh, Shivaram Rajguru and Sukhdev Thapar were hanged in Lahore Central Jail on the evening of 23 March 1931 — brought forward from the scheduled morning, with the bodies taken secretly through a breach in the jail wall and cremated by night on the banks of the Sutlej at Hussainiwala.',
-      'Bhagat Singh was twenty-three. His jail writings — on atheism, socialism, and why he was an atheist — travelled far beyond his party; his last petition demanded to be shot as a prisoner of war rather than hanged. The date is observed as Martyrs’ Day (Shaheed Diwas).',
+      'Convicted by a special tribunal for the killing of J. P. Saunders, Bhagat Singh, Shivaram Rajguru and Sukhdev Thapar were hanged in Lahore Central Jail on the evening of 23 March 1931, brought forward from the scheduled morning. The bodies were taken secretly through a breach in the jail wall and cremated by night on the banks of the Sutlej at Hussainiwala.',
+      'Bhagat Singh was twenty-three. His jail writings (on atheism, socialism, and why he was an atheist) travelled far beyond his party; his last petition demanded to be shot as a prisoner of war rather than hanged. The date is observed as Martyrs’ Day (Shaheed Diwas).',
     ],
     people: ['bhagat-singh', 'shivaram-rajguru', 'sukhdev-thapar', 'batukeshwar-dutt', 'durgawati-devi', 'chandrashekhar-azad'],
     movement: 'revolutionary-movement',
@@ -267,10 +267,10 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'west',
     states: ['Maharashtra'],
     summary:
-      'Ambedkar and Gandhi reach a hard-won settlement on Depressed Classes representation — reserved seats in joint electorates in place of separate electorates.',
+      'Ambedkar and Gandhi reach a hard-won settlement on Depressed Classes representation: reserved seats in joint electorates in place of separate electorates.',
     description: [
-      'When the Communal Award of 1932 gave the Depressed Classes separate electorates, Gandhi — imprisoned in Yerwada — began a fast unto death against dividing the Hindu electorate; B. R. Ambedkar, holding out for his people’s political voice, faced an anguished choice. The pact signed on 24 September traded separate electorates for a larger number of reserved seats in joint electorates.',
-      'The two men read the episode very differently ever after: Gandhi threw himself into the campaign against untouchability; Ambedkar wrote bitterly of the fast’s coercion. Their disagreement — over how a free India would treat its most oppressed — remains one of the struggle’s most important arguments.',
+      'When the Communal Award of 1932 gave the Depressed Classes separate electorates, Gandhi, imprisoned in Yerwada, began a fast unto death against dividing the Hindu electorate; B. R. Ambedkar, holding out for his people’s political voice, faced an anguished choice. The pact signed on 24 September traded separate electorates for a larger number of reserved seats in joint electorates.',
+      'The two men read the episode very differently ever after: Gandhi threw himself into the campaign against untouchability; Ambedkar wrote bitterly of the fast’s coercion. Their disagreement over how a free India would treat its most oppressed remains one of the struggle’s most important arguments.',
     ],
     people: ['br-ambedkar', 'mahatma-gandhi', 'madan-mohan-malaviya'],
     era: 'civil-disobedience',
@@ -302,7 +302,7 @@ export const finalEvents: HistoricalEvent[] = [
       'The Raj’s longest statute grants provincial autonomy while keeping the centre firmly British. Congress sweeps the 1937 elections held under it.',
     description: [
       'The 1935 Act created autonomous elected provincial governments while reserving defence, foreign affairs and emergency powers to British governors and the Viceroy; its federal centre never came into being. Nationalists called it a "charter of slavery", yet Congress contested the 1937 elections under it and formed ministries in eight of eleven provinces.',
-      'The ministries governed for two years — an apprenticeship in power — and resigned en masse in 1939 when the Viceroy declared India at war without consulting a single Indian. Much of the Act’s machinery later passed into the Constitution of India.',
+      'The ministries governed for two years, an apprenticeship in power, and resigned en masse in 1939 when the Viceroy declared India at war without consulting a single Indian. Much of the Act’s machinery later passed into the Constitution of India.',
     ],
     people: ['jawaharlal-nehru', 'c-rajagopalachari', 'rajendra-prasad'],
     era: 'civil-disobedience',
@@ -325,10 +325,10 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'central',
     states: ['Madhya Pradesh'],
     summary:
-      'Subhas Chandra Bose wins re-election as Congress president against Gandhi’s candidate — then resigns under pressure and founds the Forward Bloc.',
+      'Subhas Chandra Bose wins re-election as Congress president against Gandhi’s candidate, then resigns under pressure and founds the Forward Bloc.',
     description: [
-      'At Tripuri in March 1939, Bose — arguing that war in Europe was imminent and Britain should be confronted with an ultimatum — defeated Pattabhi Sitaramayya, Gandhi’s preferred candidate, for the Congress presidency. Gandhi called it his own defeat; the Working Committee resigned around Bose, and, ill and isolated, he stepped down in April.',
-      'In May 1939 he founded the All India Forward Bloc to rally the left. Detained in 1940 and placed under house arrest in Calcutta, he escaped in January 1941 — the beginning of the road that led to Berlin, Singapore and the INA.',
+      'At Tripuri in March 1939, Bose defeated Pattabhi Sitaramayya, Gandhi’s preferred candidate, for the Congress presidency, arguing that war in Europe was imminent and Britain should be confronted with an ultimatum. Gandhi called it his own defeat; the Working Committee resigned around Bose, and, ill and isolated, he stepped down in April.',
+      'In May 1939 he founded the All India Forward Bloc to rally the left. Detained in 1940 and placed under house arrest in Calcutta, he escaped in January 1941, the beginning of the road that led to Berlin, Singapore and the INA.',
     ],
     people: ['subhas-chandra-bose', 'mahatma-gandhi'],
     era: 'quit-india-and-ina',
@@ -346,7 +346,7 @@ export const finalEvents: HistoricalEvent[] = [
   {
     id: 'quit-india-launch',
     slug: 'quit-india-launch',
-    title: 'Quit India — "Do or Die"',
+    title: 'Quit India: "Do or Die"',
     searchAliases: ['August Kranti', 'August Revolution'],
     date: { year: 1942, month: 8, day: 8 },
     dateLabel: '8 August 1942',
@@ -354,10 +354,10 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'west',
     states: ['Maharashtra'],
     summary:
-      'The Congress demands the British quit India; Gandhi gives the mantra "Do or Die". By morning the leadership is jailed — and the country rises leaderless.',
+      'The Congress demands the British quit India; Gandhi gives the mantra "Do or Die". By morning the leadership is jailed, and the country rises leaderless.',
     description: [
       'On 8 August 1942 the All India Congress Committee at Gowalia Tank passed the Quit India resolution. "Here is a mantra, a short one, that I give you," Gandhi told the delegates. "You may imprint it on your hearts... We shall either free India or die in the attempt." Before dawn the entire leadership was arrested; Aruna Asaf Ali hoisted the tricolour over the Maidan on 9 August as police broke up the crowd.',
-      'The uprising that followed was the fiercest since 1857: railways and telegraphs cut, police stations burned, parallel governments in Satara, Talcher and Tamluk, Usha Mehta’s underground Congress Radio, JP Narayan’s escape from Hazaribagh. Repression killed over a thousand by official count. Gandhi lost Mahadev Desai and then Kasturba during his own imprisonment; released in 1944, he had won the argument — Britain now knew India could not be held.',
+      'The uprising that followed was the fiercest since 1857: railways and telegraphs cut, police stations burned, parallel governments in Satara, Talcher and Tamluk, Usha Mehta’s underground Congress Radio, JP Narayan’s escape from Hazaribagh. Repression killed over a thousand by official count. Gandhi lost Mahadev Desai and then Kasturba during his own imprisonment; released in 1944, he had won the argument: Britain now knew India could not be held.',
     ],
     people: ['mahatma-gandhi', 'aruna-asaf-ali', 'usha-mehta', 'jayaprakash-narayan', 'matangini-hazra', 'kanaklata-barua', 'kushal-konwar', 'kasturba-gandhi', 'accamma-cherian', 'jawaharlal-nehru', 'vallabhbhai-patel', 'maulana-azad'],
     movement: 'quit-india',
@@ -393,8 +393,8 @@ export const finalEvents: HistoricalEvent[] = [
     summary:
       'Subhas Chandra Bose proclaims the Provisional Government of Free India, takes command of the INA, and raises the Rani of Jhansi Regiment under Lakshmi Sahgal.',
     description: [
-      'Arriving in Southeast Asia in 1943 after a submarine voyage from Germany, Bose — "Netaji" to his followers — took over the Indian Independence League and the Indian National Army raised from prisoners of war and the Tamil, Punjabi and other Indian communities of Malaya and Burma. On 21 October 1943 he proclaimed the Provisional Government of Azad Hind, which declared war on Britain and the USA; the Andaman and Nicobar Islands were nominally placed under it.',
-      'The Rani of Jhansi Regiment, led by Dr Lakshmi Swaminathan (Sahgal), enrolled over a thousand women — among the first regular women’s combat units of the twentieth century. "Give me blood, and I shall give you freedom!" Bose told his volunteers; his call "Chalo Dilli" pointed the army at India.',
+      'Arriving in Southeast Asia in 1943 after a submarine voyage from Germany, Bose, "Netaji" to his followers, took over the Indian Independence League and the Indian National Army raised from prisoners of war and the Tamil, Punjabi and other Indian communities of Malaya and Burma. On 21 October 1943 he proclaimed the Provisional Government of Azad Hind, which declared war on Britain and the USA; the Andaman and Nicobar Islands were nominally placed under it.',
+      'The Rani of Jhansi Regiment, led by Dr Lakshmi Swaminathan (Sahgal), enrolled over a thousand women and was among the first regular women’s combat units of the twentieth century. "Give me blood, and I shall give you freedom!" Bose told his volunteers; his call "Chalo Dilli" pointed the army at India.',
     ],
     people: ['subhas-chandra-bose', 'lakshmi-sahgal', 'rash-behari-bose'],
     movement: 'azad-hind',
@@ -427,10 +427,10 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'northeast',
     states: ['Manipur', 'Nagaland'],
     summary:
-      'The INA crosses onto Indian soil with the Japanese offensive; at Moirang the tricolour is raised — before monsoon, hunger and defeat turn the army back.',
+      'The INA crosses onto Indian soil with the Japanese offensive; at Moirang the tricolour is raised, before monsoon, hunger and defeat turn the army back.',
     description: [
-      'In the spring of 1944 INA units advanced with the Japanese Imphal-Kohima offensive into Manipur and the Naga Hills. On 14 April 1944, Colonel Shaukat Ali Malik of the Bahadur Group raised the Azad Hind flag at Moirang — commemorated today by the INA Memorial Complex there.',
-      'The offensive broke on British-Indian defences at Imphal and Kohima; the retreat through the monsoon jungles killed more soldiers than battle had. The INA’s military defeat was total — and yet within eighteen months its returning soldiers, on trial at the Red Fort, would shake the Raj harder than the campaign ever did.',
+      'In the spring of 1944 INA units advanced with the Japanese Imphal-Kohima offensive into Manipur and the Naga Hills. On 14 April 1944, Colonel Shaukat Ali Malik of the Bahadur Group raised the Azad Hind flag at Moirang, an act commemorated today by the INA Memorial Complex there.',
+      'The offensive broke on British-Indian defences at Imphal and Kohima; the retreat through the monsoon jungles killed more soldiers than battle had. The INA’s military defeat was total. And yet within eighteen months its returning soldiers, on trial at the Red Fort, would shake the Raj harder than the campaign ever did.',
     ],
     people: ['subhas-chandra-bose', 'lakshmi-sahgal'],
     movement: 'azad-hind',
@@ -461,10 +461,10 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'north',
     states: ['Delhi'],
     summary:
-      'Britain tries three INA officers — a Hindu, a Muslim and a Sikh — together for treason. India, regardless of party, takes their side.',
+      'Britain tries three INA officers together for treason: a Hindu, a Muslim and a Sikh. India, regardless of party, takes their side.',
     description: [
-      'Of the thousands of captured INA soldiers, the Raj chose to try Shah Nawaz Khan, Prem Kumar Sahgal and Gurbaksh Singh Dhillon publicly at the Red Fort in November 1945. The choice united the country as few things ever had: "Lal Qile se aayi awaaz — Sahgal, Dhillon, Shah Nawaz" ran the slogan, and the Congress raised a defence committee of India’s greatest lawyers, with the ailing Bhulabhai Desai leading and Jawaharlal Nehru returning to the bar after decades.',
-      'The three were convicted of waging war against the King and sentenced to transportation — and the Commander-in-Chief, reading the country’s mood and his own army’s, remitted the sentences. Demonstrations, some joined by servicemen, had made the point: the armed forces’ loyalty could no longer be presumed.',
+      'Of the thousands of captured INA soldiers, the Raj chose to try Shah Nawaz Khan, Prem Kumar Sahgal and Gurbaksh Singh Dhillon publicly at the Red Fort in November 1945. The choice united the country as few things ever had: "Lal Qile se aayi awaaz: Sahgal, Dhillon, Shah Nawaz" ran the slogan, and the Congress raised a defence committee of India’s greatest lawyers, with the ailing Bhulabhai Desai leading and Jawaharlal Nehru returning to the bar after decades.',
+      'The three were convicted of waging war against the King and sentenced to transportation. The Commander-in-Chief, reading the country’s mood and his own army’s, remitted the sentences. Demonstrations, some joined by servicemen, had made the point: the armed forces’ loyalty could no longer be presumed.',
     ],
     people: ['subhas-chandra-bose', 'jawaharlal-nehru', 'lakshmi-sahgal'],
     movement: 'azad-hind',
@@ -496,9 +496,9 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'west',
     states: ['Maharashtra'],
     summary:
-      'Naval ratings strike over conditions and racial abuse, hoist Congress, League and red flags together on seventy-eight ships — the Raj’s last great warning.',
+      'Naval ratings strike over conditions and racial abuse, hoist Congress, League and red flags together on seventy-eight ships: the Raj’s last great warning.',
     description: [
-      'Beginning on HMIS Talwar in Bombay on 18 February 1946 over foul food and racial insult, the strike spread within days to seventy-eight ships and twenty shore establishments and some 20,000 ratings, who elected a Naval Central Strike Committee under M. S. Khan. In a moment unique in the era, the ratings flew the Congress tricolour, the League’s crescent and the red flag together at their mastheads, and Bombay’s workers struck in sympathy — around 250 civilians died in police and army firing in the city.',
+      'Beginning on HMIS Talwar in Bombay on 18 February 1946 over foul food and racial insult, the strike spread within days to seventy-eight ships and twenty shore establishments and some 20,000 ratings, who elected a Naval Central Strike Committee under M. S. Khan. In a moment unique in the era, the ratings flew the Congress tricolour, the League’s crescent and the red flag together at their mastheads, and Bombay’s workers struck in sympathy. Around 250 civilians died in police and army firing in the city.',
       'The national leadership, negotiating the transfer of power, urged surrender; Patel and Jinnah jointly persuaded the ratings to stand down on 23 February with a promise against victimisation, imperfectly kept. The message to London, coming weeks before the Cabinet Mission sailed, was unmistakable: the instruments of the Raj were no longer reliable.',
     ],
     people: ['vallabhbhai-patel', 'aruna-asaf-ali'],
@@ -506,7 +506,7 @@ export const finalEvents: HistoricalEvent[] = [
     category: 'mutiny',
     sources: [
       {
-        title: '1946: Last War of Independence — Royal Indian Navy Mutiny',
+        title: '1946: Last War of Independence: Royal Indian Navy Mutiny',
         author: 'Pramod Kapoor',
         publisher: 'Roli Books',
         year: 2022,
@@ -525,10 +525,10 @@ export const finalEvents: HistoricalEvent[] = [
     region: 'north',
     states: ['Delhi'],
     summary:
-      'Three British ministers arrive to negotiate India’s future. Their federal plan briefly holds, then collapses — and Partition moves from possibility to plan.',
+      'Three British ministers arrive to negotiate India’s future. Their federal plan briefly holds, then collapses, and Partition moves from possibility to plan.',
     description: [
       'The Cabinet Mission of Pethick-Lawrence, Cripps and Alexander proposed a united India with a weak centre and grouped provinces. Both Congress and the League briefly accepted, then fell out over what acceptance meant; the League withdrew, called for "Direct Action", and the terrible communal killings of August 1946 in Calcutta began the slide to Partition.',
-      'An Interim Government under Nehru took office in September 1946; the Constituent Assembly first met in December, with Rajendra Prasad in the chair and Ambedkar soon to head its Drafting Committee. In February 1947 Attlee announced Britain would leave by June 1948 — a date Mountbatten moved forward to August 1947.',
+      'An Interim Government under Nehru took office in September 1946; the Constituent Assembly first met in December, with Rajendra Prasad in the chair and Ambedkar soon to head its Drafting Committee. In February 1947 Attlee announced Britain would leave by June 1948, a date Mountbatten moved forward to August 1947.',
     ],
     people: ['jawaharlal-nehru', 'vallabhbhai-patel', 'maulana-azad', 'rajendra-prasad', 'br-ambedkar'],
     era: 'freedom-at-midnight',
@@ -551,20 +551,20 @@ export const finalEvents: HistoricalEvent[] = [
   {
     id: 'independence-1947',
     slug: 'independence-1947',
-    title: 'Independence — 15 August 1947',
+    title: 'Independence: 15 August 1947',
     date: { year: 1947, month: 8, day: 15 },
     dateLabel: '15 August 1947',
     location: 'New Delhi / All India',
     summary:
-      '"At the stroke of the midnight hour" India awakes to freedom — the work of millions across two centuries — even as Partition divides the land in grief.',
+      '"At the stroke of the midnight hour" India awakes to freedom, the work of millions across two centuries, even as Partition divides the land in grief.',
     description: [
-      'At midnight on 14–15 August 1947, Jawaharlal Nehru rose in the Constituent Assembly: "Long years ago we made a tryst with destiny, and now the time comes when we shall redeem our pledge..." At dawn the tricolour rose over Delhi; power had passed, won by generations — rebels of 1857, moderates and extremists, revolutionaries and satyagrahis, soldiers of the INA, and the uncounted ordinary people who filled the jails.',
-      'Freedom came divided: the Partition of India and Pakistan uprooted some fourteen million people and killed hundreds of thousands in communal violence — the largest forced migration in history. Gandhi spent Independence Day fasting in riot-torn Calcutta, working for peace. The tryst, as Nehru said, was redeemed "not wholly or in full measure, but very substantially" — and its completion was left to the future.',
+      'At midnight on 14–15 August 1947, Jawaharlal Nehru rose in the Constituent Assembly: "Long years ago we made a tryst with destiny, and now the time comes when we shall redeem our pledge..." At dawn the tricolour rose over Delhi; power had passed, won by generations: rebels of 1857, moderates and extremists, revolutionaries and satyagrahis, soldiers of the INA, and the uncounted ordinary people who filled the jails.',
+      'Freedom came divided: the Partition of India and Pakistan, the largest forced migration in history, uprooted some fourteen million people and killed hundreds of thousands in communal violence. Gandhi spent Independence Day fasting in riot-torn Calcutta, working for peace. The tryst, as Nehru said, was redeemed "not wholly or in full measure, but very substantially". Its completion was left to the future.',
     ],
     people: ['jawaharlal-nehru', 'mahatma-gandhi', 'vallabhbhai-patel', 'maulana-azad', 'rajendra-prasad', 'sarojini-naidu', 'br-ambedkar'],
     era: 'freedom-at-midnight',
     category: 'turning-point',
-    significance: 'The culmination of the freedom struggle — and the beginning of the republic’s work.',
+    significance: 'The culmination of the freedom struggle, and the beginning of the republic’s work.',
     disputed: [
       {
         claim: 'Partition casualty figures',

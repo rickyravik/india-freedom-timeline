@@ -19,11 +19,11 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['political-leader', 'military-leader'],
     summary:
-      'Netaji — twice Congress president, escapee from house arrest across three empires, Supreme Commander of the INA and head of the Azad Hind government: "Give me blood, and I shall give you freedom!"',
+      'Netaji: twice Congress president, escapee from house arrest across three empires, Supreme Commander of the INA and head of the Azad Hind government. "Give me blood, and I shall give you freedom!"',
     shortStory: [
       {
         title: 'The rebel who topped the exam',
-        text: 'Subhas Bose passed the Indian Civil Service exam near the top — the dream job of British India — and then resigned it. He would not serve the Raj; he would fight it.',
+        text: 'Subhas Bose passed the Indian Civil Service exam near the top, the dream job of British India, and then resigned it. He would not serve the Raj; he would fight it.',
       },
       {
         title: 'The young lion of Congress',
@@ -31,18 +31,18 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
       {
         title: 'The great escape',
-        text: 'Under house arrest in Calcutta in 1941, he slipped out disguised as a Pathan, crossed Afghanistan, and reached Germany — then travelled by submarine around Africa to Asia, one of the most daring journeys of the war.',
+        text: 'Under house arrest in Calcutta in 1941, he slipped out disguised as a Pathan, crossed Afghanistan, and reached Germany, then travelled by submarine around Africa to Asia, one of the most daring journeys of the war.',
       },
       {
         title: 'Netaji and the INA',
-        text: 'In Singapore he took command of the Indian National Army — including the Rani of Jhansi Regiment of women soldiers — and proclaimed Free India’s government. "Give me blood, and I shall give you freedom!" he told his troops. He is reported to have died in a plane crash in August 1945 — a death many long refused to believe.',
+        text: 'In Singapore he took command of the Indian National Army, including the Rani of Jhansi Regiment of women soldiers, and proclaimed Free India’s government. "Give me blood, and I shall give you freedom!" he told his troops. He is reported to have died in a plane crash in August 1945, a death many long refused to believe.',
       },
     ],
     fullBiography: [
-      'Subhas Chandra Bose of Cuttack, brilliant and unbiddable — expelled from Presidency College over an incident of nationalist protest, fourth in the ICS examination and a resigner from the service in 1921 — gave himself to the Congress under C. R. Das’s mentorship. Through the 1920s and 30s he was jailed eleven times, deported to Mandalay, served as Calcutta’s Mayor, and led with Nehru the party’s radical wing, demanding complete independence and socialist planning.',
-      'Elected Congress president at Haripura (1938), he was re-elected at Tripuri (1939) against Gandhi’s candidate — then, isolated by the Working Committee’s resignations, resigned and founded the Forward Bloc. Detained by the Raj in 1940, he escaped house arrest in January 1941 in Pathan disguise, travelling via Kabul and Moscow to Berlin, where he raised the Indian Legion and broadcast to India; in 1943 a German and then Japanese submarine carried him to Southeast Asia.',
-      'In Singapore, on Rash Behari Bose’s handover, he became Netaji: Supreme Commander of the reorganised Indian National Army and head of the Provisional Government of Azad Hind (21 October 1943), which declared war on Britain and administered the Andamans in name. He raised the Rani of Jhansi Regiment under Lakshmi Sahgal, adopted the greeting "Jai Hind" — devised for him in Germany by his aide Abid Hasan — and led the INA into the Imphal-Kohima campaign of 1944, where it planted the tricolour at Moirang before defeat and terrible retreat. His call to Indians in Burma — "Give me blood, and I shall give you freedom" — became the war-cry of militant nationalism.',
-      'On 18 August 1945, after Japan’s surrender, he is reported to have died of burns following an air crash at Taihoku (Taipei); successive Indian inquiries (Shah Nawaz Committee 1956, Khosla Commission 1970–74) affirmed the crash, while the Mukherjee Commission (1999–2005) dissented and was rejected by the government, and public disbelief fed legends for decades — the ashes at Tokyo’s Renkoji temple remain a subject of contention. His true afterlife was immediate: the INA trials of 1945–46 ignited the country, and the loyalty of the armed forces — the Raj’s last pillar — began to crack in his army’s name.',
+      'Subhas Chandra Bose of Cuttack, brilliant and unbiddable, was expelled from Presidency College over an incident of nationalist protest, placed fourth in the ICS examination and resigned from the service in 1921. He gave himself to the Congress under C. R. Das’s mentorship. Through the 1920s and 30s he was jailed eleven times, deported to Mandalay, served as Calcutta’s Mayor, and led with Nehru the party’s radical wing, demanding complete independence and socialist planning.',
+      'Elected Congress president at Haripura (1938), he was re-elected at Tripuri (1939) against Gandhi’s candidate. Isolated by the Working Committee’s resignations, he then resigned and founded the Forward Bloc. Detained by the Raj in 1940, he escaped house arrest in January 1941 in Pathan disguise, travelling via Kabul and Moscow to Berlin, where he raised the Indian Legion and broadcast to India; in 1943 a German and then Japanese submarine carried him to Southeast Asia.',
+      'In Singapore, on Rash Behari Bose’s handover, he became Netaji: Supreme Commander of the reorganised Indian National Army and head of the Provisional Government of Azad Hind (21 October 1943), which declared war on Britain and administered the Andamans in name. He raised the Rani of Jhansi Regiment under Lakshmi Sahgal, adopted the greeting "Jai Hind", devised for him in Germany by his aide Abid Hasan, and led the INA into the Imphal-Kohima campaign of 1944, where it planted the tricolour at Moirang before defeat and terrible retreat. His call to Indians in Burma, "Give me blood, and I shall give you freedom", became the war-cry of militant nationalism.',
+      'On 18 August 1945, after Japan’s surrender, he is reported to have died of burns following an air crash at Taihoku (Taipei); successive Indian inquiries (Shah Nawaz Committee 1956, Khosla Commission 1970–74) affirmed the crash, while the Mukherjee Commission (1999–2005) dissented and was rejected by the government, and public disbelief fed legends for decades. The ashes at Tokyo’s Renkoji temple remain a subject of contention. His true afterlife was immediate: the INA trials of 1945–46 ignited the country, and the loyalty of the armed forces, the Raj’s last pillar, began to crack in his army’s name.',
     ],
     entryIntoStruggle: 'Resigned the ICS in 1921 to join Non-Cooperation under C. R. Das.',
     ideology: 'Militant nationalism; socialist planning; freedom by armed struggle when nonviolence stalled.',
@@ -53,9 +53,9 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     ],
     sacrifices: ['Eleven imprisonments; exile; family and comfort forsaken; death far from the free India he fought for'],
     legacy:
-      'Netaji — his birthday is observed as Parakram Diwas; the INA memorial flame burns at the Red Fort, where his army was tried.',
+      'Netaji: his birthday is observed as Parakram Diwas; the INA memorial flame burns at the Red Fort, where his army was tried.',
     facts: [
-      'He adopted "Jai Hind" — devised for him in Germany by his aide Abid Hasan — as the Azad Hind movement’s greeting; it is now used across India as a patriotic salutation.',
+      'He adopted "Jai Hind", devised for him in Germany by his aide Abid Hasan, as the Azad Hind movement’s greeting; it is now used across India as a patriotic salutation.',
       'The Andaman Islands were symbolically renamed Shaheed and Swaraj by his government in 1943.',
     ],
     quotes: [
@@ -114,7 +114,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['military-leader', 'political-leader', 'social-reformer'],
     summary:
-      'The doctor who commanded the INA’s Rani of Jhansi Regiment — "Captain Lakshmi" to history — Minister for Women in the Azad Hind government, and a people’s doctor in Kanpur for six decades after.',
+      'The doctor who commanded the INA’s Rani of Jhansi Regiment, "Captain Lakshmi" to history, Minister for Women in the Azad Hind government, and a people’s doctor in Kanpur for six decades after.',
     shortStory: [
       {
         title: 'Doctor in Singapore',
@@ -122,7 +122,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
       {
         title: 'An army of women',
-        text: 'When Netaji came to Singapore in 1943 and asked for a women’s fighting regiment, Lakshmi volunteered to build it. Over a thousand women — many of them plantation workers’ daughters — joined the Rani of Jhansi Regiment under "Captain Lakshmi".',
+        text: 'When Netaji came to Singapore in 1943 and asked for a women’s fighting regiment, Lakshmi volunteered to build it. Over a thousand women, many of them plantation workers’ daughters, joined the Rani of Jhansi Regiment under "Captain Lakshmi".',
       },
       {
         title: 'To Burma and back',
@@ -130,22 +130,22 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
       {
         title: 'The people’s doctor',
-        text: 'She settled in Kanpur and practised medicine among the poor almost until her death at ninety-seven — treating patients, marching in movements, a fighter to the last.',
+        text: 'She settled in Kanpur and practised medicine among the poor almost until her death at ninety-seven: treating patients, marching in movements, a fighter to the last.',
       },
     ],
     fullBiography: [
-      'Daughter of the lawyer S. Swaminathan and the social reformer and independence activist A.V. Ammukutty (Ammu Swaminathan), Lakshmi took her MBBS in Madras and moved to Singapore in 1940, doctoring among migrant Tamil labourers. The fall of Singapore brought the INA into being around her clinic’s world; when Subhas Chandra Bose arrived in July 1943 determined to raise a women’s regiment, she was summoned — and "Captain Lakshmi" became, in her words, the happiest title of her life.',
-      'She built and commanded the Rani of Jhansi Regiment — over a thousand volunteers trained in arms in Singapore’s camps — and served as Minister for Women’s Organisation in the Provisional Government of Azad Hind, the era’s only woman cabinet member of any Indian government. In the Burma campaign she ran medical and regimental duties through the retreat; captured in May 1945, she was repatriated in 1946 into the tumult of the INA trials, a national heroine.',
-      'Marrying Colonel Prem Kumar Sahgal, one of the Red Fort three, she settled in Kanpur and practised medicine among the poor for the next sixty years — through Partition refugee relief, the 1971 Bangladesh refugee camps (which drew her into the Communist Party of India (Marxist)), Bhopal disaster relief and communal-riot peace work. A Rajya Sabha member and, in 2002, a symbolic presidential candidate of the left, she saw patients into her nineties, and died in Kanpur in 2012. Padma Vibhushan, 1998.',
+      'Daughter of the lawyer S. Swaminathan and the social reformer and independence activist A.V. Ammukutty (Ammu Swaminathan), Lakshmi took her MBBS in Madras and moved to Singapore in 1940, doctoring among migrant Tamil labourers. The fall of Singapore brought the INA into being around her clinic’s world; when Subhas Chandra Bose arrived in July 1943 determined to raise a women’s regiment, she was summoned, and "Captain Lakshmi" became, in her words, the happiest title of her life.',
+      'She built and commanded the Rani of Jhansi Regiment, over a thousand volunteers trained in arms in Singapore’s camps, and served as Minister for Women’s Organisation in the Provisional Government of Azad Hind, the era’s only woman cabinet member of any Indian government. In the Burma campaign she ran medical and regimental duties through the retreat; captured in May 1945, she was repatriated in 1946 into the tumult of the INA trials, a national heroine.',
+      'Marrying Colonel Prem Kumar Sahgal, one of the Red Fort three, she settled in Kanpur and practised medicine among the poor for the next sixty years, through Partition refugee relief, the 1971 Bangladesh refugee camps (which drew her into the Communist Party of India (Marxist)), Bhopal disaster relief and communal-riot peace work. A Rajya Sabha member and, in 2002, a symbolic presidential candidate of the left, she saw patients into her nineties, and died in Kanpur in 2012. Padma Vibhushan, 1998.',
     ],
     entryIntoStruggle: 'INA and the Rani of Jhansi Regiment, Singapore, 1943.',
-    ideology: 'Militant nationalism; later Marxist social medicine — service as struggle.',
+    ideology: 'Militant nationalism; later Marxist social medicine, with service as struggle.',
     achievements: [
       'Raised and commanded the first women’s combat regiment in modern Asia',
       'Only woman minister of the Azad Hind government',
     ],
     sacrifices: ['War service, capture and imprisonment; a lifetime of unglamorous service after glory'],
-    legacy: 'Captain Lakshmi — the enduring emblem of women in arms for India’s freedom.',
+    legacy: 'Captain Lakshmi, the enduring emblem of women in arms for India’s freedom.',
     facts: ['Her mother Ammu Swaminathan sat in the Constituent Assembly; her daughter Subhashini Ali became an MP.'],
     timelineEvents: ['azad-hind-government', 'imphal-campaign', 'ina-trials'],
     movements: ['azad-hind'],
@@ -185,11 +185,11 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['political-leader', 'organizer'],
     summary:
-      'The heroine of 9 August 1942 — she hoisted the tricolour at Gowalia Tank as the Quit India crackdown began, then ran the underground for four years with a price on her head.',
+      'The heroine of 9 August 1942: she hoisted the tricolour at Gowalia Tank as the Quit India crackdown began, then ran the underground for four years with a price on her head.',
     shortStory: [
       {
         title: 'The teacher who chose struggle',
-        text: 'Aruna Ganguly was a schoolteacher who married the Congress leader Asaf Ali and threw herself into the freedom movement, going to prison in the Salt Satyagraha — where she also fought for better treatment of all prisoners.',
+        text: 'Aruna Ganguly was a schoolteacher who married the Congress leader Asaf Ali and threw herself into the freedom movement, going to prison in the Salt Satyagraha, where she also fought for better treatment of all prisoners.',
       },
       {
         title: 'The flag at Gowalia Tank',
@@ -197,7 +197,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
       {
         title: 'Four years underground',
-        text: 'She vanished into the underground — editing the secret bulletin Inquilab, organizing resistance, moving from safe house to safe house while the police hunted her and seized her property. She surfaced only in 1946, when the warrant was withdrawn.',
+        text: 'She vanished into the underground, editing the secret bulletin Inquilab, organizing resistance, moving from safe house to safe house while the police hunted her and seized her property. She surfaced only in 1946, when the warrant was withdrawn.',
       },
       {
         title: 'Delhi’s first citizen',
@@ -205,9 +205,9 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Aruna Ganguly, of a Bengali Brahmo family settled in Punjab, taught at Gokhale Memorial School, Calcutta, before her marriage to the much older Congress lawyer Asaf Ali in 1928 — a union across community and age that scandalised convention. She was jailed in the Salt Satyagraha (1930) and again after, holding hunger strikes in Tihar for prisoners’ conditions.',
-      'Her hour came with Quit India: present at the AICC session at Gowalia Tank, she presided over the remnant gathering on 9 August 1942 after the pre-dawn arrests and hoisted the tricolour under police charge — the act that made her the movement’s living symbol. For the next four years she ran with the underground — editing Inquilab with Ram Manohan Lohia, coordinating with JP’s networks, her property attached and sold, a reward on her head that Gandhi himself advised her to ignore until the warrant was cancelled; she emerged in 1946.',
-      'After freedom she moved left — Socialist Party, a period in the CPI, and the leadership of the National Federation of Indian Women — then returned to Congress circles; Delhi elected her its first Mayor in 1958, and she ran the Link/Patriot publishing group. Lenin Peace Prize (1964), Jawaharlal Nehru Award, Padma Vibhushan (1992), and the Bharat Ratna, posthumously, in 1997 — the Grand Old Lady of the independence movement.',
+      'Aruna Ganguly, of a Bengali Brahmo family settled in Punjab, taught at Gokhale Memorial School, Calcutta, before her marriage to the much older Congress lawyer Asaf Ali in 1928, a union across community and age that scandalised convention. She was jailed in the Salt Satyagraha (1930) and again after, holding hunger strikes in Tihar for prisoners’ conditions.',
+      'Her hour came with Quit India: present at the AICC session at Gowalia Tank, she presided over the remnant gathering on 9 August 1942 after the pre-dawn arrests and hoisted the tricolour under police charge, the act that made her the movement’s living symbol. For the next four years she ran with the underground, editing Inquilab with Ram Manohan Lohia, coordinating with JP’s networks, her property attached and sold, a reward on her head that Gandhi himself advised her to ignore until the warrant was cancelled; she emerged in 1946.',
+      'After freedom she moved left (Socialist Party, a period in the CPI, and the leadership of the National Federation of Indian Women), then returned to Congress circles; Delhi elected her its first Mayor in 1958, and she ran the Link/Patriot publishing group. Lenin Peace Prize (1964), Jawaharlal Nehru Award, Padma Vibhushan (1992), and the Bharat Ratna, posthumously, in 1997: the Grand Old Lady of the independence movement.',
     ],
     entryIntoStruggle: 'Salt Satyagraha processions, 1930.',
     ideology: 'Radical nationalism; socialist politics.',
@@ -256,15 +256,15 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['organizer', 'educator'],
     summary:
-      'The twenty-two-year-old who ran the secret Congress Radio during Quit India — "somewhere in India" — until the transmitter was traced, and who paid with four years in prison.',
+      'The twenty-two-year-old who ran the secret Congress Radio "somewhere in India" during Quit India, until the transmitter was traced, and who paid with four years in prison.',
     shortStory: [
       {
         title: 'The child satyagrahi',
-        text: 'Usha Mehta was eight when she marched in her first protest, shouting against the Simon Commission. Her father, a judge under the Raj, disapproved — she marched anyway.',
+        text: 'Usha Mehta was eight when she marched in her first protest, shouting against the Simon Commission. Her father, a judge under the Raj, disapproved. She marched anyway.',
       },
       {
         title: '"This is Congress Radio..."',
-        text: 'When Quit India began and the leaders were jailed, the British controlled all news. So Usha, twenty-two, and her friends built a secret radio station. "This is Congress Radio, calling from 42.34 metres from somewhere in India," she announced — and the truth went out.',
+        text: 'When Quit India began and the leaders were jailed, the British controlled all news. So Usha, twenty-two, and her friends built a secret radio station. "This is Congress Radio, calling from 42.34 metres from somewhere in India," she announced, and the truth went out.',
       },
       {
         title: 'Caught at the microphone',
@@ -276,8 +276,8 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Usha Mehta of Surat, daughter of a government judge, was a child of the movement — flag marches at eight, prabhat pheris and picketing through school — and a Gandhian by unshakable conviction. She was a philosophy student in Bombay when the Quit India resolution and the arrests of 9 August 1942 beheaded the open movement.',
-      'With Babubhai Khakhar, Vithaldas Jhaveri, Chandrakant Jhaveri and the technician Nanak Motwane’s help, she launched the clandestine Congress Radio on 14 August 1942 — announcing on 42.34 metres "from somewhere in India". It broadcast news the censored press could not carry, messages of underground leaders including Lohia, and recordings of the banned leadership, shifting transmitters across Bombay flats to evade the direction-finding vans. Betrayed by a technician, the station was raided mid-broadcast on 12 November 1942.',
+      'Usha Mehta of Surat, daughter of a government judge, was a child of the movement (flag marches at eight, prabhat pheris and picketing through school) and a Gandhian by unshakable conviction. She was a philosophy student in Bombay when the Quit India resolution and the arrests of 9 August 1942 beheaded the open movement.',
+      'With Babubhai Khakhar, Vithaldas Jhaveri, Chandrakant Jhaveri and the technician Nanak Motwane’s help, she launched the clandestine Congress Radio on 14 August 1942, announcing on 42.34 metres "from somewhere in India". It broadcast news the censored press could not carry, messages of underground leaders including Lohia, and recordings of the banned leadership, shifting transmitters across Bombay flats to evade the direction-finding vans. Betrayed by a technician, the station was raided mid-broadcast on 12 November 1942.',
       'Interrogated and offered inducements she refused, she served nearly four years in Yerwada jail, emerging in March 1946 with broken health and unbroken spirit. She took her doctorate on Gandhi’s political thought, taught civics and politics at Bombay University for decades, presided over the Gandhi Smarak Nidhi and Mani Bhavan, and remained the gentle, iron keeper of Gandhian memory until her death in 2000. Padma Vibhushan, 1998.',
     ],
     entryIntoStruggle: 'Simon Commission protests as a child; Quit India underground at twenty-two.',
@@ -328,15 +328,15 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['satyagrahi'],
     summary:
-      '"Gandhi Buri" — the old Gandhi — the seventy-one-year-old widow of Tamluk who led a Quit India march on the police station and died holding the tricolour aloft, Vande Mataram on her lips.',
+      '"Gandhi Buri", the old Gandhi: the seventy-one-year-old widow of Tamluk who led a Quit India march on the police station and died holding the tricolour aloft, Vande Mataram on her lips.',
     shortStory: [
       {
         title: 'The poorest of volunteers',
-        text: 'Matangini Hazra was married at twelve and widowed at eighteen, living a hard village life in Midnapore. When Gandhi’s movement came to Bengal, the ageing widow became its most devoted volunteer — people called her "Gandhi Buri", the old Gandhi.',
+        text: 'Matangini Hazra was married at twelve and widowed at eighteen, living a hard village life in Midnapore. When Gandhi’s movement came to Bengal, the ageing widow became its most devoted volunteer. People called her "Gandhi Buri", the old Gandhi.',
       },
       {
         title: 'Salt, taxes, prison',
-        text: 'She made illegal salt in 1930 and marched against unjust taxes — and went to prison in her sixties, walking to jail as to a festival.',
+        text: 'She made illegal salt in 1930 and marched against unjust taxes, and went to prison in her sixties, walking to jail as to a festival.',
       },
       {
         title: 'The last march',
@@ -344,15 +344,15 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Matangini Hazra of Tamluk, child-bride and teenage widow, lived in village poverty on the edge of subsistence — and found in the Gandhian movement a life’s meaning. She joined the Civil Disobedience campaigns of 1930 at sixty, manufacturing contraband salt and marching against the chowkidari tax, for which she was arrested and, on release, arrested again for demonstrating before the Governor; she served months in Baharampur jail.',
-      'A spinner of khadi and full-time constructive worker through the 1930s, she was seventy-one when Quit India reached Midnapore — a district that would soon raise the Tamralipta Jatiya Sarkar parallel government. On 29 September 1942 she led a procession of some six thousand, largely women volunteers, to seize the Tamluk police station.',
-      'At the police cordon she advanced appealing to the constables — Indian like herself — not to fire. They fired. Wounded in the arm and then again, she continued forward with the tricolour raised, Vande Mataram on her lips, until a third bullet killed her. Tamluk raised her statue at the spot of her fall; Calcutta’s first statue of a woman revolutionary, at the Maidan, is hers; Shahid Matangini block bears her name.',
+      'Matangini Hazra of Tamluk, child-bride and teenage widow, lived in village poverty on the edge of subsistence, and found in the Gandhian movement a life’s meaning. She joined the Civil Disobedience campaigns of 1930 at sixty, manufacturing contraband salt and marching against the chowkidari tax, for which she was arrested and, on release, arrested again for demonstrating before the Governor; she served months in Baharampur jail.',
+      'A spinner of khadi and full-time constructive worker through the 1930s, she was seventy-one when Quit India reached Midnapore, a district that would soon raise the Tamralipta Jatiya Sarkar parallel government. On 29 September 1942 she led a procession of some six thousand, largely women volunteers, to seize the Tamluk police station.',
+      'At the police cordon she advanced appealing to the constables, Indian like herself, not to fire. They fired. Wounded in the arm and then again, she continued forward with the tricolour raised, Vande Mataram on her lips, until a third bullet killed her. Tamluk raised her statue at the spot of her fall; Calcutta’s first statue of a woman revolutionary, at the Maidan, is hers; Shahid Matangini block bears her name.',
     ],
     entryIntoStruggle: 'Civil Disobedience salt and tax campaigns, 1930, at sixty.',
     achievements: ['Became the immortal image of the ordinary villager’s courage in Quit India'],
     sacrifices: ['Gave her life at seventy-one'],
-    legacy: '"Gandhi Buri" — Bengal’s beloved martyr; her statues keep the flag she carried flying.',
-    facts: ['The Tamralipta Jatiya Sarkar — Tamluk’s parallel national government — ran for nearly two years after her death.'],
+    legacy: '"Gandhi Buri", Bengal’s beloved martyr; her statues keep the flag she carried flying.',
+    facts: ['The Tamralipta Jatiya Sarkar, Tamluk’s parallel national government, ran for nearly two years after her death.'],
     timelineEvents: ['quit-india-launch'],
     movements: ['quit-india', 'civil-disobedience'],
     organizations: ['inc'],
@@ -391,25 +391,25 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['satyagrahi'],
     summary:
-      'The seventeen-year-old of Gohpur who led the Mrityu Bahini — the death squad of volunteers — to hoist the flag on the police station during Quit India, and was shot holding it high.',
+      'The seventeen-year-old of Gohpur who led the Mrityu Bahini, the death squad of volunteers, to hoist the flag on the police station during Quit India, and was shot holding it high.',
     shortStory: [
       {
         title: 'An orphan of Assam',
-        text: 'Kanaklata Barua lost both parents young and left school to raise her siblings in a village near Gohpur. When Quit India came in 1942, she was seventeen — and determined to act.',
+        text: 'Kanaklata Barua lost both parents young and left school to raise her siblings in a village near Gohpur. When Quit India came in 1942, she was seventeen, and determined to act.',
       },
       {
         title: 'The death squad',
-        text: 'She joined the Mrityu Bahini — the "death brigade" of volunteers who vowed to hoist the national flag on government buildings, whatever the cost. Being under-age, she had to argue her way in.',
+        text: 'She joined the Mrityu Bahini, the "death brigade" of volunteers who vowed to hoist the national flag on government buildings, whatever the cost. Being under-age, she had to argue her way in.',
       },
       {
         title: 'The flag at Gohpur',
-        text: 'On 20 September 1942 she led the procession to the Gohpur police station, flag in hand. Warned to stop, she walked on — "we will do or die". The police fired; Kanaklata fell, and Mukunda Kakoti behind her; the flag was carried forward and raised. She was seventeen.',
+        text: 'On 20 September 1942 she led the procession to the Gohpur police station, flag in hand. Warned to stop, she walked on: "we will do or die". The police fired; Kanaklata fell, and Mukunda Kakoti behind her; the flag was carried forward and raised. She was seventeen.',
       },
     ],
     fullBiography: [
-      'Kanaklata Barua of Borangabari, orphaned in childhood and schooled only briefly, grew up in an Assam stirred by Gandhian organizing. During Quit India, Gohpur’s volunteers resolved on 20 September 1942 to hoist the tricolour on the local thana as part of the district-wide programme; Kanaklata, seventeen, joined the Mrityu Bahini vanguard formed for the task — accepted, tradition records, only after insisting she be allowed to lead.',
+      'Kanaklata Barua of Borangabari, orphaned in childhood and schooled only briefly, grew up in an Assam stirred by Gandhian organizing. During Quit India, Gohpur’s volunteers resolved on 20 September 1942 to hoist the tricolour on the local thana as part of the district-wide programme; Kanaklata, seventeen, joined the Mrityu Bahini vanguard formed for the task. Tradition records that she was accepted only after insisting she be allowed to lead.',
       'Carrying the flag at the head of the unarmed procession, she was warned by the officer in charge to halt; the procession sang and advanced. In the firing that followed, Kanaklata was shot and fell with the flag held up; Mukunda Kakoti, taking it, was killed beside her; the flag reached the thana in other hands. Across Assam the same September days took Kushal Konwar towards the gallows and left a roll of village martyrs.',
-      'Assam remembers "Birbala" Kanaklata in statue, song, and the naming of a Coast Guard vessel; with Matangini Hazra of Bengal — seventy-one to her seventeen — she frames the Quit India martyrdom of Indian women, elder and child of the same resolve.',
+      'Assam remembers "Birbala" Kanaklata in statue, song, and the naming of a Coast Guard vessel; with Matangini Hazra of Bengal, seventy-one to her seventeen, she frames the Quit India martyrdom of Indian women, elder and child of the same resolve.',
     ],
     entryIntoStruggle: 'Quit India volunteer corps at Gohpur, 1942.',
     achievements: ['Led the flag procession of 20 September 1942 at Gohpur'],
@@ -452,25 +452,25 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['satyagrahi', 'organizer'],
     summary:
-      'The Gandhian tea-garden worker and Congress volunteer of Golaghat — hanged in 1943 for a train derailment he had no part in: the only martyr executed in the Quit India movement’s judicial reprisals in Assam.',
+      'The Gandhian tea-garden worker and Congress volunteer of Golaghat, hanged in 1943 for a train derailment he had no part in: the only martyr executed in the Quit India movement’s judicial reprisals in Assam.',
     shortStory: [
       {
         title: 'The gentle volunteer',
-        text: 'Kushal Konwar of Golaghat was a devout, gentle man — a tea garden worker and shopkeeper who joined Gandhi’s movement, spinning khadi and singing prayers. He led his local Congress volunteers when Quit India began.',
+        text: 'Kushal Konwar of Golaghat was a devout, gentle man, a tea garden worker and shopkeeper who joined Gandhi’s movement, spinning khadi and singing prayers. He led his local Congress volunteers when Quit India began.',
       },
       {
         title: 'The derailment',
-        text: 'In October 1942, saboteurs derailed a military train at Sarupathar, and soldiers died. Kushal Konwar, a strict believer in nonviolence, had opposed such actions — but the police needed someone to punish, and arrested him as the local Congress president.',
+        text: 'In October 1942, saboteurs derailed a military train at Sarupathar, and soldiers died. Kushal Konwar, a strict believer in nonviolence, had opposed such actions, but the police needed someone to punish, and arrested him as the local Congress president.',
       },
       {
         title: 'The Gita in the cell',
-        text: 'Offered freedom if he named others or admitted guilt, he refused to lie. He spent his last months in prayer, reading the Gita, and went to the gallows at Jorhat jail on 15 June 1943, forgiving all. Assam has never forgotten its Saumya Shaheed — the serene martyr.',
+        text: 'Offered freedom if he named others or admitted guilt, he refused to lie. He spent his last months in prayer, reading the Gita, and went to the gallows at Jorhat jail on 15 June 1943, forgiving all. Assam has never forgotten its Saumya Shaheed, the serene martyr.',
       },
     ],
     fullBiography: [
-      'Kushal Konwar, of a once-noble Ahom family fallen on hard times, worked in the tea gardens and kept a small shop at Sarupathar, living a life of Vaishnav piety and Gandhian discipline — khadi, prayer, and service as president of the Sarupathar Congress committee. In Quit India he organized processions and the constructive programme, holding his volunteers to strict nonviolence.',
-      'On the night of 10 October 1942, a section of rail was removed at Sarupathar and a military train derailed with loss of life. The reprisal machinery demanded exemplary punishment; Kushal Konwar — who by the evidence had opposed sabotage and was elsewhere that night — was arrested with dozens of others and, as the local leader, condemned to death by the special tribunal while actual saboteurs were never identified.',
-      'In Jorhat jail he declined all suggestion of compromised testimony, spent his months in scripture and song, and wrote serenely to his wife of duty and rebirth. He was hanged at dawn on 15 June 1943 — the only Quit India activist judicially executed in Assam — and passed into the state’s memory as Saumya Shaheed, the serene martyr; his statue stands at Sarupathar and his name on institutions across Assam.',
+      'Kushal Konwar, of a once-noble Ahom family fallen on hard times, worked in the tea gardens and kept a small shop at Sarupathar, living a life of Vaishnav piety and Gandhian discipline: khadi, prayer, and service as president of the Sarupathar Congress committee. In Quit India he organized processions and the constructive programme, holding his volunteers to strict nonviolence.',
+      'On the night of 10 October 1942, a section of rail was removed at Sarupathar and a military train derailed with loss of life. The reprisal machinery demanded exemplary punishment; Kushal Konwar, who by the evidence had opposed sabotage and was elsewhere that night, was arrested with dozens of others and, as the local leader, condemned to death by the special tribunal while actual saboteurs were never identified.',
+      'In Jorhat jail he declined all suggestion of compromised testimony, spent his months in scripture and song, and wrote serenely to his wife of duty and rebirth. He was hanged at dawn on 15 June 1943, the only Quit India activist judicially executed in Assam, and passed into the state’s memory as Saumya Shaheed, the serene martyr; his statue stands at Sarupathar and his name on institutions across Assam.',
     ],
     entryIntoStruggle: 'Non-Cooperation era Congress work; Sarupathar Congress presidency by 1942.',
     achievements: ['Held his volunteers to nonviolence amid insurrection; met injustice without hatred'],
@@ -512,7 +512,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['military-leader', 'political-leader'],
     summary:
-      'One of the three INA officers tried together at the Red Fort in November 1945 — "Sahgal, Dhillon, Shah Nawaz" — a British Indian Army officer turned INA divisional commander whose joint trial united India across communal lines.',
+      'One of the three INA officers tried together at the Red Fort in November 1945 ("Sahgal, Dhillon, Shah Nawaz"): a British Indian Army officer turned INA divisional commander whose joint trial united India across communal lines.',
     shortStory: [
       {
         title: 'An officer changes sides',
@@ -524,17 +524,17 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
       {
         title: 'The Red Fort trial',
-        text: 'Captured at war’s end, he was put on public trial at Delhi’s Red Fort in November 1945 — deliberately, alongside a Hindu officer, Prem Kumar Sahgal, and a Sikh officer, Gurbaksh Singh Dhillon, so the case would touch every community. "Lal Qile se aayi awaaz, Sahgal Dhillon Shah Nawaz" rang the slogan, as Congress’s greatest lawyers, including Jawaharlal Nehru, took up their defence.',
+        text: 'Captured at war’s end, he was put on public trial at Delhi’s Red Fort in November 1945, deliberately alongside a Hindu officer, Prem Kumar Sahgal, and a Sikh officer, Gurbaksh Singh Dhillon, so the case would touch every community. "Lal Qile se aayi awaaz, Sahgal Dhillon Shah Nawaz" rang the slogan, as Congress’s greatest lawyers, including Jawaharlal Nehru, took up their defence.',
       },
       {
         title: 'After the verdict',
-        text: 'Convicted of waging war against the King, the three were sentenced to transportation for life — then set free as protests, including from within the armed forces, swept the country. Shah Nawaz Khan later joined the Congress and served for decades in India’s Parliament.',
+        text: 'Convicted of waging war against the King, the three were sentenced to transportation for life, then set free as protests, including from within the armed forces, swept the country. Shah Nawaz Khan later joined the Congress and served for decades in India’s Parliament.',
       },
     ],
     fullBiography: [
       'Shah Nawaz Khan, born in Rawalpindi, was a commissioned officer of the British Indian Army’s Punjab Regiment when Singapore fell to Japan in February 1942. Among the many Indian prisoners of war who joined the Indian National Army that Subhas Chandra Bose reorganised the following year, he rose to senior command and led INA troops in the Burma campaign of 1944–45.',
-      'With Japan’s surrender, INA officers fell into British hands, and the Raj chose to try three of them together at Delhi’s Red Fort, beginning 5 November 1945: Shah Nawaz Khan, Colonel Prem Kumar Sahgal and Lieutenant Colonel Gurbaksh Singh Dhillon — a Muslim, a Hindu and a Sikh, deliberately chosen so the trial would speak for the whole country. Congress mounted a defence committee of its most senior lawyers, with the ailing Bhulabhai Desai leading and Jawaharlal Nehru returning to the bar after decades; the slogan "Lal Qile se aayi awaaz, Sahgal Dhillon Shah Nawaz" carried the case into every Indian home.',
-      'Convicted on 31 December 1945 of waging war against the King, the three were sentenced to transportation for life; nationwide protests, some joined by serving soldiers, persuaded the Commander-in-Chief to remit the sentences. Shah Nawaz Khan went on to join the Indian National Congress, was elected to the Lok Sabha from Meerut across several terms from 1952, and served as a Union minister — a long public career this archive, focused on the freedom struggle itself, does not trace in detail.',
+      'With Japan’s surrender, INA officers fell into British hands, and the Raj chose to try three of them together at Delhi’s Red Fort, beginning 5 November 1945: Shah Nawaz Khan, Colonel Prem Kumar Sahgal and Lieutenant Colonel Gurbaksh Singh Dhillon. They were a Muslim, a Hindu and a Sikh, deliberately chosen so the trial would speak for the whole country. Congress mounted a defence committee of its most senior lawyers, with the ailing Bhulabhai Desai leading and Jawaharlal Nehru returning to the bar after decades; the slogan "Lal Qile se aayi awaaz, Sahgal Dhillon Shah Nawaz" carried the case into every Indian home.',
+      'Convicted on 31 December 1945 of waging war against the King, the three were sentenced to transportation for life; nationwide protests, some joined by serving soldiers, persuaded the Commander-in-Chief to remit the sentences. Shah Nawaz Khan went on to join the Indian National Congress, was elected to the Lok Sabha from Meerut across several terms from 1952, and served as a Union minister, a long public career this archive, focused on the freedom struggle itself, does not trace in detail.',
     ],
     entryIntoStruggle: 'British Indian Army officer who joined the reorganised INA after the fall of Singapore, 1942.',
     achievements: [
@@ -583,7 +583,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['military-leader'],
     summary:
-      'The second of the Red Fort trial’s three officers — an INA divisional commander in the Burma campaign whose joint trial with Shah Nawaz Khan and Gurbaksh Singh Dhillon became a national cause, and who later married Captain Lakshmi Sahgal.',
+      'The second of the Red Fort trial’s three officers: an INA divisional commander in the Burma campaign whose joint trial with Shah Nawaz Khan and Gurbaksh Singh Dhillon became a national cause, and who later married Captain Lakshmi Sahgal.',
     shortStory: [
       {
         title: 'From the Baluch Regiment to the INA',
@@ -595,16 +595,16 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
       {
         title: 'The Red Fort trial',
-        text: 'Tried publicly at the Red Fort from November 1945 alongside Shah Nawaz Khan and Gurbaksh Singh Dhillon, he was convicted of waging war against the King and sentenced to transportation for life — a sentence lifted amid nationwide protest.',
+        text: 'Tried publicly at the Red Fort from November 1945 alongside Shah Nawaz Khan and Gurbaksh Singh Dhillon, he was convicted of waging war against the King and sentenced to transportation for life, a sentence lifted amid nationwide protest.',
       },
       {
         title: 'A marriage of comrades',
-        text: 'In 1947 he married Lakshmi Swaminathan — "Captain Lakshmi" of the INA’s Rani of Jhansi Regiment — and the two settled in Kanpur, where she practised medicine among the poor for decades.',
+        text: 'In 1947 he married Lakshmi Swaminathan, "Captain Lakshmi" of the INA’s Rani of Jhansi Regiment, and the two settled in Kanpur, where she practised medicine among the poor for decades.',
       },
     ],
     fullBiography: [
       'Prem Kumar Sahgal held a commission in the British Indian Army’s Baluch Regiment when he was taken prisoner at the fall of Singapore in February 1942. Joining the Indian National Army under Subhas Chandra Bose’s reorganisation, he rose to command a division and led it through the Burma campaign of 1944–45.',
-      'With the war’s end he was one of three INA officers — a Hindu, a Muslim and a Sikh, chosen deliberately — tried together at Delhi’s Red Fort from 5 November 1945: himself, Shah Nawaz Khan and Gurbaksh Singh Dhillon. Congress’s leading lawyers, Bhulabhai Desai and Jawaharlal Nehru among them, defended the three, and the trial’s slogan, "Lal Qile se aayi awaaz, Sahgal Dhillon Shah Nawaz", carried their case across the country. Convicted of waging war against the King on 31 December 1945 and sentenced to transportation for life, all three were freed as protest — including from within the armed forces — swept India.',
+      'With the war’s end he was one of three INA officers (a Hindu, a Muslim and a Sikh, chosen deliberately) tried together at Delhi’s Red Fort from 5 November 1945: himself, Shah Nawaz Khan and Gurbaksh Singh Dhillon. Congress’s leading lawyers, Bhulabhai Desai and Jawaharlal Nehru among them, defended the three, and the trial’s slogan, "Lal Qile se aayi awaaz, Sahgal Dhillon Shah Nawaz", carried their case across the country. Convicted of waging war against the King on 31 December 1945 and sentenced to transportation for life, all three were freed as protest, including from within the armed forces, swept India.',
       'In March 1947 he married Lakshmi Swaminathan, who as "Captain Lakshmi" had commanded the INA’s Rani of Jhansi Regiment; the couple settled in Kanpur, where she built a lifetime medical practice among the poor. This archive, focused on the freedom struggle itself, does not trace his life beyond independence in detail.',
     ],
     entryIntoStruggle: 'British Indian Army officer who joined the reorganised INA after the fall of Singapore, 1942.',
@@ -620,7 +620,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     organizations: ['azad-hind-fauj'],
     relatedPeople: ['subhas-chandra-bose', 'shah-nawaz-khan', 'gurbaksh-singh-dhillon', 'lakshmi-sahgal'],
     connections: [
-      { id: 'lakshmi-sahgal', type: 'family', note: 'Married Lakshmi Swaminathan — "Captain Lakshmi" of the Rani of Jhansi Regiment — in March 1947; the couple later settled in Kanpur.' },
+      { id: 'lakshmi-sahgal', type: 'family', note: 'Married Lakshmi Swaminathan, "Captain Lakshmi" of the Rani of Jhansi Regiment, in March 1947; the couple later settled in Kanpur.' },
     ],
     sources: [
       {
@@ -656,7 +656,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['military-leader'],
     summary:
-      'The third officer of the Red Fort trial, a Sikh — tried alongside a Hindu and a Muslim comrade by deliberate design, so that Britain’s case against the INA would unite every community against it.',
+      'The third officer of the Red Fort trial, a Sikh tried alongside a Hindu and a Muslim comrade by deliberate design, so that Britain’s case against the INA would unite every community against it.',
     shortStory: [
       {
         title: 'A Punjab Regiment officer',
@@ -668,7 +668,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
       {
         title: 'Chosen deliberately',
-        text: 'At the Red Fort trial of November 1945, the Raj tried him with Shah Nawaz Khan and Prem Kumar Sahgal — a Sikh, a Muslim and a Hindu together. It was meant to make an example; instead it made the three into a symbol of a country united across every line the British had tried to draw.',
+        text: 'At the Red Fort trial of November 1945, the Raj tried him with Shah Nawaz Khan and Prem Kumar Sahgal: a Sikh, a Muslim and a Hindu together. It was meant to make an example; instead it made the three into a symbol of a country united across every line the British had tried to draw.',
       },
       {
         title: 'After the trial',
@@ -677,7 +677,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Gurbaksh Singh Dhillon held a commission in the British Indian Army’s Punjab Regiment and was taken prisoner at the fall of Singapore in February 1942. He joined the Indian National Army under Subhas Chandra Bose’s reorganisation and rose to senior command, serving through the Burma campaign of 1944–45.',
-      'At war’s end he was one of the three INA officers — a Sikh among a Hindu and a Muslim, the combination chosen with deliberate care — tried together at Delhi’s Red Fort from 5 November 1945, alongside Prem Kumar Sahgal and Shah Nawaz Khan. Congress’s senior lawyers defended them, and the slogan "Lal Qile se aayi awaaz, Sahgal Dhillon Shah Nawaz" made the case a rallying cry across religious lines the Raj had long relied on to divide Indian opinion.',
+      'At war’s end he was one of the three INA officers (a Sikh among a Hindu and a Muslim, the combination chosen with deliberate care) tried together at Delhi’s Red Fort from 5 November 1945, alongside Prem Kumar Sahgal and Shah Nawaz Khan. Congress’s senior lawyers defended them, and the slogan "Lal Qile se aayi awaaz, Sahgal Dhillon Shah Nawaz" made the case a rallying cry across religious lines the Raj had long relied on to divide Indian opinion.',
       'Convicted of waging war against the King on 31 December 1945 and sentenced to transportation for life, he was freed with his co-accused as nationwide protest, including within the armed forces, forced the government’s hand. In independent India he remained associated with organisations that kept the INA’s memory alive.',
     ],
     entryIntoStruggle: 'British Indian Army officer who joined the reorganised INA after the fall of Singapore, 1942.',
@@ -686,7 +686,7 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       'One of the three officers of the Red Fort trial that united India in protest',
     ],
     sacrifices: ['Court-martialled for treason; freed only after nationwide protest'],
-    legacy: 'The Sikh officer of "Sahgal, Dhillon, Shah Nawaz" — proof, in the trial’s own design, that the INA’s cause crossed every communal line.',
+    legacy: 'The Sikh officer of "Sahgal, Dhillon, Shah Nawaz": proof, in the trial’s own design, that the INA’s cause crossed every communal line.',
     facts: ['The Red Fort trial deliberately paired one Hindu, one Muslim and one Sikh officer in the dock, a choice historians credit with much of its unifying impact.'],
     timelineEvents: ['ina-trials'],
     movements: ['azad-hind'],
@@ -727,24 +727,24 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['military-leader', 'organizer'],
     summary:
-      'A Malayan-Tamil volunteer of the INA’s Rani of Jhansi Regiment who trained under Captain Lakshmi Sahgal in Singapore, rose to become the regiment’s second-in-command, and served through the Burma campaign of 1944–45 — though popular claims that she took over full command of its Burma contingent remain unconfirmed by this record.',
+      'A Malayan-Tamil volunteer of the INA’s Rani of Jhansi Regiment who trained under Captain Lakshmi Sahgal in Singapore, rose to become the regiment’s second-in-command, and served through the Burma campaign of 1944–45, though popular claims that she took over full command of its Burma contingent remain unconfirmed by this record.',
     shortStory: [
       {
         title: 'A gift of gold',
-        text: 'Janaki grew up in a well-off Tamil family in British Malaya. When Subhas Chandra Bose came to Singapore in 1943 appealing to Indians abroad to give everything they could to the cause of freedom, she took off her own gold earrings on the spot — and resolved to join the women’s regiment he was raising.',
+        text: 'Janaki grew up in a well-off Tamil family in British Malaya. When Subhas Chandra Bose came to Singapore in 1943 appealing to Indians abroad to give everything they could to the cause of freedom, she took off her own gold earrings on the spot, and resolved to join the women’s regiment he was raising.',
       },
       {
         title: 'Into the Rani of Jhansi Regiment',
-        text: 'Her father objected strongly to a daughter of the family training as a soldier, but eventually gave his consent. Janaki joined the Rani of Jhansi Regiment — the INA’s all-women unit raised in Singapore in October 1943 — and trained hard alongside more than a thousand other volunteers.',
+        text: 'Her father objected strongly to a daughter of the family training as a soldier, but eventually gave his consent. Janaki joined the Rani of Jhansi Regiment, the INA’s all-women unit raised in Singapore in October 1943, and trained hard alongside more than a thousand other volunteers.',
       },
       {
         title: 'Second-in-command, and a disputed claim',
-        text: 'By 1944 Janaki had risen to become second-in-command of the regiment under Captain Lakshmi Sahgal. Several popular accounts go further and say she took over full command of the regiment’s Burma contingent that year — a claim this record could not fully confirm.',
+        text: 'By 1944 Janaki had risen to become second-in-command of the regiment under Captain Lakshmi Sahgal. Several popular accounts go further and say she took over full command of the regiment’s Burma contingent that year, a claim this record could not fully confirm.',
         uncertainty: 'Popular accounts describe Janaki taking command of the Burma contingent from a wounded Lakshmi Sahgal in 1944 and holding the rank of Captain; more conservative sources describe her only as second-in-command, and this archive’s own record of Lakshmi Sahgal does not corroborate a 1944 wounding or handover of command.',
       },
       {
         title: 'Through the Burma campaign',
-        text: 'The regiment served through the hard 1944–45 Burma campaign — training, nursing and organizing more than fighting in the field — and Janaki is remembered helping move wounded soldiers to safety when Rangoon’s Red Cross hospital came under bombing.',
+        text: 'The regiment served through the hard 1944–45 Burma campaign, training, nursing and organizing more than fighting in the field, and Janaki is remembered helping move wounded soldiers to safety when Rangoon’s Red Cross hospital came under bombing.',
       },
       {
         title: 'A long public life',
@@ -752,10 +752,10 @@ export const quitIndiaInaFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Janaki Thevar — later known, after her marriage, as Janaky Athi Nahappan — was born in 1925 to a well-off Tamil family in British Malaya. When Subhas Chandra Bose arrived in Singapore in 1943 appealing to Indians abroad to give everything they could to the independence struggle, she was among those who responded immediately, donating her own gold jewellery. Over her father’s initial objections, she won permission to join the Rani of Jhansi Regiment — the Indian National Army’s all-women unit, raised in Singapore in October 1943 under Captain Lakshmi Sahgal — and trained alongside more than a thousand other women volunteers.',
-      'By 1944 she had risen within the regiment to become, by most accounts, its second-in-command. Several popular retellings go further, describing her as taking over full command of the regiment’s Burma contingent — with the rank of Captain — after Sahgal was wounded that year; more cautious sources describe her only as second-in-command, and this archive’s own record of Lakshmi Sahgal does not corroborate a 1944 wounding or a handover of command. Scholarship on the regiment, notably Vera Hildebrand’s Women at War, also cautions that some individual soldiers’ wartime stories have been embellished in popular retelling, and that the regiment, despite dramatic accounts, was in the end not committed to direct combat.',
+      'Janaki Thevar (later known, after her marriage, as Janaky Athi Nahappan) was born in 1925 to a well-off Tamil family in British Malaya. When Subhas Chandra Bose arrived in Singapore in 1943 appealing to Indians abroad to give everything they could to the independence struggle, she was among those who responded immediately, donating her own gold jewellery. Over her father’s initial objections, she won permission to join the Rani of Jhansi Regiment, the Indian National Army’s all-women unit, raised in Singapore in October 1943 under Captain Lakshmi Sahgal, and trained alongside more than a thousand other women volunteers.',
+      'By 1944 she had risen within the regiment to become, by most accounts, its second-in-command. Several popular retellings go further, describing her as taking over full command of the regiment’s Burma contingent, with the rank of Captain, after Sahgal was wounded that year; more cautious sources describe her only as second-in-command, and this archive’s own record of Lakshmi Sahgal does not corroborate a 1944 wounding or a handover of command. Scholarship on the regiment, notably Vera Hildebrand’s Women at War, also cautions that some individual soldiers’ wartime stories have been embellished in popular retelling, and that the regiment, despite dramatic accounts, was in the end not committed to direct combat.',
       'What is well documented is that she served with the regiment through the difficult 1944–45 Burma campaign, including helping move wounded soldiers to safety when the Red Cross hospital in Rangoon came under bombing, before the regiment was disbanded with Japan’s surrender in August 1945.',
-      'After the war she remained in public life: she helped found the Malayan, later Malaysian, Indian Congress in 1946, married the newspaper editor Athi Nahappan in 1949, and went on to serve in Malaysia’s Senate and various women’s and civic organisations, receiving India’s Padma Shri in 2000 — the first woman of Indian origin outside India so honoured. She died in Kuala Lumpur in 2014. This archive, centred on India’s own freedom struggle, does not trace her long Malaysian public career in detail.',
+      'After the war she remained in public life: she helped found the Malayan, later Malaysian, Indian Congress in 1946, married the newspaper editor Athi Nahappan in 1949, and went on to serve in Malaysia’s Senate and various women’s and civic organisations, receiving India’s Padma Shri in 2000, the first woman of Indian origin outside India so honoured. She died in Kuala Lumpur in 2014. This archive, centred on India’s own freedom struggle, does not trace her long Malaysian public career in detail.',
     ],
     entryIntoStruggle: 'Volunteered for the Rani of Jhansi Regiment in Singapore after hearing Subhas Chandra Bose’s 1943 appeal to Indians abroad.',
     achievements: [

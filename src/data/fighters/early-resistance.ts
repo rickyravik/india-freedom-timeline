@@ -20,7 +20,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     shortStory: [
       {
         title: 'A chief who said no',
-        text: 'Long before most of India had even heard of the British, a chieftain in the Tamil country refused to pay taxes to the East India Company’s allies. His name was Puli Thevar — "Puli" means tiger.',
+        text: 'Long before most of India had even heard of the British, a chieftain in the Tamil country refused to pay taxes to the East India Company’s allies. His name was Puli Thevar, and "Puli" means tiger.',
       },
       {
         title: 'Fighting back',
@@ -32,9 +32,9 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Puli Thevar ruled Nerkattumseval in the Tirunelveli country as one of the palaiyakkarars — warrior chieftains who collected revenue and kept armed retainers. When the Nawab of Arcot, backed by the East India Company, pressed the southern palaiyams for tribute in the 1750s, Puli Thevar refused, and built a confederacy of chieftains to resist.',
+      'Puli Thevar ruled Nerkattumseval in the Tirunelveli country as one of the palaiyakkarars, the warrior chieftains who collected revenue and kept armed retainers. When the Nawab of Arcot, backed by the East India Company, pressed the southern palaiyams for tribute in the 1750s, Puli Thevar refused, and built a confederacy of chieftains to resist.',
       'Through the late 1750s he fought the Company commander Yusuf Khan (Maruthanayagam) and allied forces in a long, shifting campaign of sieges and forest warfare, at times taking and losing his forts. He sought alliances widely, including with Travancore and with Hyder Ali of Mysore.',
-      'He was captured around 1767; traditions differ on his end — some hold he escaped or died in custody, and popular legend says he vanished at a temple on the way to execution. His resistance preceded the better-known poligar wars of the Marudhu brothers and Veerapandiya Kattabomman by decades, which is why Tamil Nadu remembers him as the first to fight.',
+      'He was captured around 1767; traditions differ on his end: some hold he escaped or died in custody, and popular legend says he vanished at a temple on the way to execution. His resistance preceded the better-known poligar wars of the Marudhu brothers and Veerapandiya Kattabomman by decades, which is why Tamil Nadu remembers him as the first to fight.',
     ],
     entryIntoStruggle: 'Refused tribute demanded by the Company-backed Nawab of Arcot in the 1750s.',
     achievements: [
@@ -45,13 +45,13 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     legacy:
       'Honoured in Tamil Nadu as among the first Indian rulers to resist British-allied power; his fort at Nerkattumseval is a protected monument.',
     facts: [
-      '"Puli" means tiger in Tamil — a title carried by his family line.',
+      '"Puli" means tiger in Tamil, a title carried by his family line.',
       'His main adversary, Yusuf Khan, was himself later executed by the Company’s allies.',
     ],
     disputed: [
       {
         claim: 'Manner of death',
-        note: 'Accounts of Puli Thevar’s end differ — capture and execution, death in custody, and escape are all reported in later traditions; contemporary records are thin.',
+        note: 'Accounts of Puli Thevar’s end differ: capture and execution, death in custody, and escape are all reported in later traditions; contemporary records are thin.',
       },
     ],
     timelineEvents: [],
@@ -90,7 +90,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     era: 'early-resistance',
     roles: ['ruler', 'military-leader'],
     summary:
-      'Queen of Sivaganga who fought the East India Company decades before 1857 — among the first Indian queens to wage war against Company rule, and one of the first to win her kingdom back.',
+      'Queen of Sivaganga who fought the East India Company decades before 1857, among the first Indian queens to wage war against Company rule, and one of the first to win her kingdom back.',
     shortStory: [
       {
         title: 'A princess trained for war',
@@ -102,19 +102,19 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       },
       {
         title: 'The queen strikes back',
-        text: 'With the help of Hyder Ali of Mysore and the Marudhu brothers, she raised an army — including a women’s unit named after her commander Udaiyaal — and took Sivaganga back around 1780.',
+        text: 'With the help of Hyder Ali of Mysore and the Marudhu brothers, she raised an army, including a women’s unit named after her commander Udaiyaal, and took Sivaganga back around 1780.',
         uncertainty: 'The story of her commander Kuyili’s fire attack comes from oral tradition; no contemporary record confirms it.',
       },
       {
         title: 'Veeramangai',
-        text: 'She ruled her recovered kingdom for years and is remembered in Tamil Nadu as "Veeramangai" — the brave woman. Her story reminds us that women led India’s resistance from the very beginning.',
+        text: 'She ruled her recovered kingdom for years and is remembered in Tamil Nadu as "Veeramangai", the brave woman. Her story reminds us that women led India’s resistance from the very beginning.',
       },
     ],
     fullBiography: [
-      'Velu Nachiyar was born in 1730 to the Raja of Ramanathapuram and, as the only heir, received a prince’s education — martial arts, weaponry, horsemanship, and languages including French, English and Urdu. She married Muthuvaduganathaperiya Udaiyathevar, ruler of Sivaganga.',
+      'Velu Nachiyar was born in 1730 to the Raja of Ramanathapuram and, as the only heir, received a prince’s education: martial arts, weaponry, horsemanship, and languages including French, English and Urdu. She married Muthuvaduganathaperiya Udaiyathevar, ruler of Sivaganga.',
       'In 1772 Company forces with the Nawab of Arcot’s army killed her husband at the Kalaiyar Koil battle. Velu Nachiyar escaped with her daughter and took refuge near Dindigul under the protection of Hyder Ali of Mysore, whom she impressed enough to win military support. For roughly eight years she built alliances, gathered intelligence and organized forces, aided by the Marudhu brothers.',
-      'Around 1780 she retook Sivaganga.[^1] Tradition holds that her commander Kuyili carried out a suicide attack — dousing herself in ghee and setting the Company’s ammunition store ablaze — one of the earliest such recorded acts; the details rest on oral tradition. Velu Nachiyar ruled for about a decade, granting the Marudhu brothers administrative powers, and died in 1796.[^2]',
-      'She stands at the head of a long line of fighting queens — Chennamma of Kittur, Lakshmibai of Jhansi, Begum Hazrat Mahal — and Tamil Nadu commemorates her each year; a coastal defence ship and a postage stamp carry her name.',
+      'Around 1780 she retook Sivaganga.[^1] Tradition holds that her commander Kuyili carried out a suicide attack, dousing herself in ghee and setting the Company’s ammunition store ablaze. It is one of the earliest such recorded acts; the details rest on oral tradition. Velu Nachiyar ruled for about a decade, granting the Marudhu brothers administrative powers, and died in 1796.[^2]',
+      'She stands at the head of a long line of fighting queens (Chennamma of Kittur, Lakshmibai of Jhansi, Begum Hazrat Mahal), and Tamil Nadu commemorates her each year; a coastal defence ship and a postage stamp carry her name.',
     ],
     entryIntoStruggle: 'The killing of her husband by Company and Arcot forces in 1772.',
     achievements: [
@@ -165,7 +165,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     inAMinute: [
       'Queen of Sivaganga in the Tamil country, trained from childhood in riding, archery and languages.',
       'Widowed in 1772 when Company and Arcot forces killed her husband; spent eight years in hiding building alliances, then retook her kingdom around 1780.',
-      'One of the first Indian rulers to defeat the East India Company in battle and win a kingdom back — decades before 1857.',
+      'One of the first Indian rulers to defeat the East India Company in battle and win a kingdom back, decades before 1857.',
     ],
     portraitNote: { kind: 'stamp', caption: 'Commemorative postage stamp issued by India Post, 2008. The portrait is a modern artist’s rendering; no authenticated contemporary likeness is known.', credit: 'India Post', created: '2008' },
     editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' },
@@ -191,20 +191,20 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     shortStory: [
       {
         title: 'The lion of Kerala',
-        text: 'Pazhassi Raja was a prince in north Kerala. When the East India Company demanded crushing taxes from his people’s farms, he refused to collect them — and told the farmers not to pay.',
+        text: 'Pazhassi Raja was a prince in north Kerala. When the East India Company demanded crushing taxes from his people’s farms, he refused to collect them, and told the farmers not to pay.',
       },
       {
         title: 'War in the forests',
-        text: 'The Company sent armies against him, so he moved into the Wayanad hills and fought back with guerrilla warfare. His army included Kurichiya archers — Adivasi fighters who knew every path in the forest.',
+        text: 'The Company sent armies against him, so he moved into the Wayanad hills and fought back with guerrilla warfare. His army included Kurichiya archers, Adivasi fighters who knew every path in the forest.',
       },
       {
         title: 'Never captured',
-        text: 'For nearly ten years, across two wars, the Company could not catch him. He fell in a firefight on 30 November 1805. Even his enemies honoured his courage — a British officer carried his body respectfully to cremation.',
+        text: 'For nearly ten years, across two wars, the Company could not catch him. He fell in a firefight on 30 November 1805. Even his enemies honoured his courage: a British officer carried his body respectfully to cremation.',
       },
     ],
     fullBiography: [
-      'Kerala Varma of the Padinjare Kovilakam of Kottayam, called Pazhassi Raja, resisted the Company from the moment it claimed Malabar after the wars with Mysore. He had fought Mysorean occupation too — sheltering his people in the hills — but the Company’s revenue demands on a war-ruined peasantry, made through leaseholders he considered usurpers, drove him to rebellion in 1793–97, a war the Company ended by conceding terms.',
-      'The second war began in 1800 over Wayanad. Pazhassi Raja built a remarkable force — Nair warriors, Mappila fighters, and above all the Kurichiya and Kurumbar archers of Wayanad under leaders like Talakkal Chandu and Edachena Kunkan — and made the forests deadly to Company columns. Arthur Wellesley, the future Duke of Wellington, was among the commanders set against him.',
+      'Kerala Varma of the Padinjare Kovilakam of Kottayam, called Pazhassi Raja, resisted the Company from the moment it claimed Malabar after the wars with Mysore. He had fought Mysorean occupation too, sheltering his people in the hills, but the Company’s revenue demands on a war-ruined peasantry, made through leaseholders he considered usurpers, drove him to rebellion in 1793–97, a war the Company ended by conceding terms.',
+      'The second war began in 1800 over Wayanad. Pazhassi Raja built a remarkable force of Nair warriors, Mappila fighters, and above all the Kurichiya and Kurumbar archers of Wayanad under leaders like Talakkal Chandu and Edachena Kunkan, and made the forests deadly to Company columns. Arthur Wellesley, the future Duke of Wellington, was among the commanders set against him.',
       'Worn down by blockade and betrayal, he fell in an encounter with a Company detachment near Mavila Todu on 30 November 1805. Sub-Collector Thomas Baber, who led the operation, recorded his adversary’s courage and had the body carried with honour for cremation. The Kurichiya rising of 1812 continued his resistance after his death.',
       'The Pazhassi tomb at Mananthavady keeps his memory; Kerala reveres him as Kerala Simham, the Lion of Kerala.',
     ],
@@ -254,7 +254,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     era: 'early-resistance',
     roles: ['tribal-leader', 'military-leader'],
     summary:
-      'Adivasi leader of the Santhal Pargana hills who rose against Company famine-era exactions in the 1780s — often called the first Adivasi martyr of the freedom struggle.',
+      'Adivasi leader of the Santhal Pargana hills who rose against Company famine-era exactions in the 1780s, often called the first Adivasi martyr of the freedom struggle.',
     shortStory: [
       {
         title: 'When the rains failed',
@@ -266,13 +266,13 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       },
       {
         title: 'The first martyr',
-        text: 'Hunted through the forests, Tilka was captured and executed at Bhagalpur in 1785 — more than seventy years before 1857. A university in Bhagalpur now bears his name.',
+        text: 'Hunted through the forests, Tilka was captured and executed at Bhagalpur in 1785, more than seventy years before 1857. A university in Bhagalpur now bears his name.',
       },
     ],
     fullBiography: [
       'Tilka Manjhi (in Paharia tradition, Jabra Paharia) led the hill peoples of the Rajmahal-Santhal Pargana region in the aftermath of the catastrophic famine of 1770, when Company revenue demands continued amid mass starvation. From around 1780 he organized raids on Company treasuries, distributing grain and money among the famine-stricken.',
-      'He is widely credited with mortally wounding Augustus Cleveland, Collector of Bhagalpur, in 1784 — an account carried by regional tradition and later histories, though the Company record of Cleveland’s death is less specific. The reprisals were fierce; Tilka fought on from the Tilapore forest before being captured.',
-      'He was executed at Bhagalpur in January 1785 — by tradition, dragged behind horses and hanged from a banyan tree. His rising preceded the Kol, Santhal and Munda rebellions that followed across the same country over the next century, and Bhagalpur University was renamed Tilka Manjhi Bhagalpur University in his honour.',
+      'He is widely credited with mortally wounding Augustus Cleveland, Collector of Bhagalpur, in 1784, an account carried by regional tradition and later histories, though the Company record of Cleveland’s death is less specific. The reprisals were fierce; Tilka fought on from the Tilapore forest before being captured.',
+      'He was executed at Bhagalpur in January 1785. By tradition, he was dragged behind horses and hanged from a banyan tree. His rising preceded the Kol, Santhal and Munda rebellions that followed across the same country over the next century, and Bhagalpur University was renamed Tilka Manjhi Bhagalpur University in his honour.',
     ],
     entryIntoStruggle: 'Company taxation during the post-1770 famine years.',
     achievements: [
@@ -334,7 +334,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     shortStory: [
       {
         title: 'Standing up for farmers',
-        text: 'Titumir was a religious teacher in rural Bengal who saw how landlords and indigo planters squeezed poor farmers — Muslim and Hindu alike — with unfair taxes, including a tax on beards!',
+        text: 'Titumir was a religious teacher in rural Bengal who saw how landlords and indigo planters squeezed poor farmers, Muslim and Hindu alike, with unfair taxes, including a tax on beards!',
       },
       {
         title: 'The bamboo fort',
@@ -346,8 +346,8 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Syed Mir Nisar Ali, called Titumir, returned from pilgrimage to Mecca influenced by reformist teachings and settled among the peasants of the 24 Parganas, north of Calcutta. His organizing quickly turned economic: he championed cultivators against zamindars who levied arbitrary cesses — including a notorious tax on the beards of his followers — and against the coercion of European indigo planters.',
-      'Clashes with landlords’ retainers escalated through 1830–31. In October 1831 Titumir declared the region free of the Company and its landlords, and his followers built a fortified stockade of bamboo — the banser kella — at Narkelberia, defeating local police and small detachments sent against them.',
+      'Syed Mir Nisar Ali, called Titumir, returned from pilgrimage to Mecca influenced by reformist teachings and settled among the peasants of the 24 Parganas, north of Calcutta. His organizing quickly turned economic: he championed cultivators against zamindars who levied arbitrary cesses, including a notorious tax on the beards of his followers, and against the coercion of European indigo planters.',
+      'Clashes with landlords’ retainers escalated through 1830–31. In October 1831 Titumir declared the region free of the Company and its landlords, and his followers built a fortified stockade of bamboo, the banser kella, at Narkelberia, defeating local police and small detachments sent against them.',
       'On 19 November 1831 a Company force with artillery stormed the fort. Titumir died in the bombardment with about fifty followers; his lieutenant Golam Masum was executed, and hundreds were imprisoned. The rising was brief, but it fused agrarian grievance and defiance of the Company in a way Bengal never forgot; the bamboo fort lives on in Bengali literature and memory.',
     ],
     entryIntoStruggle: 'Defence of cultivators against zamindari cesses and planter coercion in the 1820s.',
@@ -407,11 +407,11 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       },
       {
         title: 'Four years of defiance',
-        text: 'With swords, bows and a few muskets against cannon, the Khasis fought from caves and cliffs for four years. Betrayed and captured, Tirot Sing died a prisoner in Dhaka on 17 July 1835 — a day Meghalaya still honours.',
+        text: 'With swords, bows and a few muskets against cannon, the Khasis fought from caves and cliffs for four years. Betrayed and captured, Tirot Sing died a prisoner in Dhaka on 17 July 1835, a day Meghalaya still honours.',
       },
     ],
     fullBiography: [
-      'U Tirot Sing Syiem ruled Nongkhlaw as a constitutional Khasi chief, governing with his durbar. In 1826, after the British took Assam, agent David Scott negotiated passage for a road linking Sylhet to the Brahmaputra valley through Khasi territory. When it emerged that the road came with garrisons, migration and assertions of paramountcy, the durbar revoked permission — and on 4 April 1829 Khasi forces attacked the British party at Nongkhlaw.',
+      'U Tirot Sing Syiem ruled Nongkhlaw as a constitutional Khasi chief, governing with his durbar. In 1826, after the British took Assam, agent David Scott negotiated passage for a road linking Sylhet to the Brahmaputra valley through Khasi territory. When it emerged that the road came with garrisons, migration and assertions of paramountcy, the durbar revoked permission, and on 4 April 1829 Khasi forces attacked the British party at Nongkhlaw.',
       'The war that followed lasted four years. Armed mostly with swords and bows, the Khasi confederacy under Tirot Sing waged guerrilla war from the limestone caves and gorges of the hills, through monsoons that immobilised British columns. The British answered with village burnings and blockade.',
       'Wounded early in the war, Tirot Sing fought on until January 1833, when he was betrayed and captured. Deported to Dacca (Dhaka), he died in captivity on 17 July 1835. Meghalaya observes the date as U Tirot Sing Day, and his memory anchors the Northeast’s early chapter in the freedom struggle.',
     ],
@@ -422,7 +422,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     ],
     sacrifices: ['Died in captivity far from his hills, aged about thirty-three'],
     legacy: 'Meghalaya’s foremost freedom hero; commemorated annually on 17 July.',
-    facts: ['He governed with a durbar — Khasi chiefs ruled by consent, not decree.'],
+    facts: ['He governed with a durbar: Khasi chiefs ruled by consent, not decree.'],
     timelineEvents: ['khasi-uprising'],
     movements: ['tribal-resistance'],
     organizations: [],
@@ -460,7 +460,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     era: 'early-resistance',
     roles: ['ruler', 'military-leader'],
     summary:
-      'Queen of Kittur who took up arms against the East India Company in 1824 when it refused to recognise her adopted heir — a generation before Jhansi, and for the same cause.',
+      'Queen of Kittur who took up arms against the East India Company in 1824 when it refused to recognise her adopted heir, a generation before Jhansi, and for the same cause.',
     shortStory: [
       {
         title: 'The queen of Kittur',
@@ -468,11 +468,11 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       },
       {
         title: 'An unjust rule',
-        text: 'When her son died, she adopted a boy, Shivalingappa, as heir. The British refused to accept him — they wanted Kittur for themselves. Chennamma chose to fight.',
+        text: 'When her son died, she adopted a boy, Shivalingappa, as heir. The British refused to accept him: they wanted Kittur for themselves. Chennamma chose to fight.',
       },
       {
         title: 'Victory, then loss',
-        text: 'In October 1824 her forces beat back the first British attack — the Collector himself was killed. A much larger army came; Kittur fell, and Chennamma spent her last years imprisoned in Bailhongal fort.',
+        text: 'In October 1824 her forces beat back the first British attack, and the Collector himself was killed. A much larger army came; Kittur fell, and Chennamma spent her last years imprisoned in Bailhongal fort.',
       },
       {
         title: 'Remembered forever',
@@ -481,19 +481,19 @@ export const earlyResistanceFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Chennamma of Kakati married Raja Mallasarja of Kittur, a prosperous small state between Dharwad and Belgaum. Widowed, and having lost her son, she adopted Shivalingappa in 1824 as heir. The Company, applying the logic it later codified as the Doctrine of Lapse, refused recognition and moved to take the state and its treasury.',
-      'Chennamma appealed first — writing to the Bombay government and to Company officials — and armed only when appeal failed. On 21–23 October 1824 the Company’s first assault on Kittur was routed; Collector John Thackeray was killed by her forces, and two British officers were taken hostage and later released on assurances that were not honoured.',
+      'Chennamma appealed first, writing to the Bombay government and to Company officials, and armed only when appeal failed. On 21–23 October 1824 the Company’s first assault on Kittur was routed; Collector John Thackeray was killed by her forces, and two British officers were taken hostage and later released on assurances that were not honoured.',
       'In December 1824 a far larger force stormed Kittur. Chennamma fought, was captured, and was imprisoned in Bailhongal fort, where she died on 21 February 1829. Sangolli Rayanna, her ally of humble birth, waged guerrilla war in her name until he was captured and hanged in 1831; Shivalingappa was arrested.',
       'Chennamma preceded the Rani of Jhansi by three decades, and her defiance became legend in Kannada folk song (lavani). Her samadhi at Bailhongal is a place of pilgrimage, and Kittur Utsava commemorates her victory every October.',
     ],
     entryIntoStruggle: 'The Company’s refusal to recognise her adopted heir, 1824.',
     achievements: [
       'Defeated a Company force in open battle in 1824',
-      'Among the first Indian rulers — and the first women — to resist annexation by arms',
+      'Among the first Indian rulers, and the first women, to resist annexation by arms',
     ],
     sacrifices: ['Lost her state; died after four years in prison'],
     legacy: 'A defining heroine of Karnataka; her statue was unveiled in the Parliament complex in 2007.',
     facts: [
-      'Her cause — the right of an adopted heir — was the same that drove Jhansi to war in 1857.',
+      'Her cause, the right of an adopted heir, was the same that drove Jhansi to war in 1857.',
       'Sangolli Rayanna, who continued her fight, is himself a major folk hero of Karnataka.',
     ],
     timelineEvents: ['kittur-rebellion'],
@@ -539,7 +539,7 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       },
       {
         title: 'The great gathering',
-        text: 'On 30 June 1855, some ten thousand Santhals gathered at Bhognadih. Sidhu and Kanhu declared the Hul — the liberation struggle — and the people marched to end injustice.',
+        text: 'On 30 June 1855, some ten thousand Santhals gathered at Bhognadih. Sidhu and Kanhu declared the Hul, the liberation struggle, and the people marched to end injustice.',
       },
       {
         title: 'Bows against guns',
@@ -551,9 +551,9 @@ export const earlyResistanceFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'The Murmu brothers — Sidhu, Kanhu, Chand and Bhairav, with their sisters Phulo and Jhano remembered alongside them — belonged to Bhognadih in the Damin-i-Koh, the forest tract where Santhals had been settled as pioneer cultivators. Within a generation, usurious moneylenders (mahajans), rapacious zamindars and corrupt police had reduced many Santhals to debt bondage, and the Company’s courts offered no remedy.',
-      'Claiming a divine command — the Thakur’s order that the land belonged to those who tilled it — Sidhu and Kanhu convened the great assembly at Bhognadih on 30 June 1855. The Hul swept the region within weeks: tens of thousands of Santhals, with Paharias and poor non-Adivasi neighbours among them, attacked the houses of mahajans and zamindars and fought pitched engagements with Company troops.',
-      'Martial law was proclaimed in November 1855; elephants, artillery and multiple regiments were deployed. Contemporary British accounts record the Santhals’ extraordinary discipline under fire — standing with drums beating until shot down. Sidhu was captured and executed in 1855, Kanhu in 1856; estimates of Santhal dead run into the thousands.',
+      'The Murmu brothers (Sidhu, Kanhu, Chand and Bhairav, with their sisters Phulo and Jhano remembered alongside them) belonged to Bhognadih in the Damin-i-Koh, the forest tract where Santhals had been settled as pioneer cultivators. Within a generation, usurious moneylenders (mahajans), rapacious zamindars and corrupt police had reduced many Santhals to debt bondage, and the Company’s courts offered no remedy.',
+      'Claiming a divine command, the Thakur’s order that the land belonged to those who tilled it, Sidhu and Kanhu convened the great assembly at Bhognadih on 30 June 1855. The Hul swept the region within weeks: tens of thousands of Santhals, with Paharias and poor non-Adivasi neighbours among them, attacked the houses of mahajans and zamindars and fought pitched engagements with Company troops.',
+      'Martial law was proclaimed in November 1855; elephants, artillery and multiple regiments were deployed. Contemporary British accounts record the Santhals’ extraordinary discipline under fire, standing with drums beating until shot down. Sidhu was captured and executed in 1855, Kanhu in 1856; estimates of Santhal dead run into the thousands.',
       'The Hul forced the Santhal Parganas Tenancy Act’s protections and the creation of a separate district. It stands with the Munda Ulgulan among the great Adivasi wars against colonial rule, and Hul Diwas is observed across Jharkhand.',
     ],
     entryIntoStruggle: 'Debt bondage and land alienation under Company-protected moneylenders.',

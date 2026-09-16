@@ -3,7 +3,7 @@
  * Hand-written navigation caching, not generateSW's default navigateFallback:
  * that option registers its NavigationRoute ahead of any runtimeCaching rule
  * and wins unconditionally, silently defeating a cache-first-with-revalidate
- * strategy for navigations. Using injectManifest instead gives full control —
+ * strategy for navigations. Using injectManifest instead gives full control -
  * precache the app shell, then register exactly the one navigation route we
  * want, with the offline page as its final fallback.
  */
@@ -16,7 +16,7 @@ import { ExpirationPlugin } from 'workbox-expiration';
 declare const self: ServiceWorkerGlobalScope & { __WB_MANIFEST: (PrecacheEntry | string)[] };
 
 // The update toast's Refresh sends SKIP_WAITING (handled below), which
-// activates the new worker — but an activated worker does not take over pages
+// activates the new worker - but an activated worker does not take over pages
 // that are already open unless it claims them. Without this, the "controlling"
 // event that vite-plugin-pwa reloads on never fires and Refresh does nothing.
 // generateSW would add this for us; an injectManifest worker must say it.
@@ -24,7 +24,7 @@ clientsClaim();
 
 // Injected at build time by vite-plugin-pwa (injectManifest strategy) with
 // the JS/CSS/font assets and the app-shell HTML matched by
-// injectManifest.globPatterns in vite.config.ts — OG images and per-record
+// injectManifest.globPatterns in vite.config.ts - OG images and per-record
 // prerendered pages are deliberately excluded; this is the shell only.
 precacheAndRoute(self.__WB_MANIFEST);
 cleanupOutdatedCaches();

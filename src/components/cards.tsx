@@ -42,7 +42,7 @@ export function FighterCard({
           {/* The denomination slot is always struck: an undated life reads as
              an unknown value, not as a card that failed to render. */}
           <span className={`num font-display text-sm font-bold leading-none ${vault ? 'text-paper-200' : era ? eraAccent.text[era.accent] : 'text-sepia'}`}>
-            {fighter.birthYear ?? '—'}
+            {fighter.birthYear ?? '?'}
           </span>
         </div>
         <div className="min-w-0 flex-1 break-words">
@@ -124,7 +124,7 @@ export function FighterChip({ fighter, vault = false }: { fighter: FighterSummar
 }
 
 /* ------------------------------------------------------------------ */
-/* Event card — ledger date column + story                             */
+/* Event card - ledger date column + story                             */
 export function EventCard({ event }: { event: EventSummary; delay?: number }) {
   const era = eraById.get(event.era);
   const { pathname, search } = useLocation();
@@ -144,7 +144,7 @@ export function EventCard({ event }: { event: EventSummary; delay?: number }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Event row — the directory's full-width ledger line                  */
+/* Event row - the directory's full-width ledger line                  */
 function dateSubLine(event: EventSummary): string {
   if (event.dateLabel.includes('–')) return event.dateLabel;
   return event.dateLabel.replace(String(event.date.year), '').trim();
@@ -196,7 +196,7 @@ export function MovementCard({ movement, vault = false }: { movement: Movement; 
           {movement.name}
         </p>
         {/* The period is the movement's own dating, so it carries the value
-           on its own — a separate startYear denomination duplicated it, and
+           on its own - a separate startYear denomination duplicated it, and
            read as a false precision against ranges like "1780s–1940s". */}
         <p className={`num mt-1.5 ${vault ? 'label-vault' : 'label'}`}>{movement.period}</p>
         <p className={`mt-3 line-clamp-3 font-body text-meta ${vault ? 'text-paper-200' : 'text-ink-soft'}`}>{clip(movement.summary, 150)}</p>

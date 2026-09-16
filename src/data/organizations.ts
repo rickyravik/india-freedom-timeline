@@ -98,7 +98,7 @@ export const organizations: Organization[] = [
     foundedYear: 1929,
     foundedLabel: 'North-West Frontier Province, 1929',
     summary:
-      '"Servants of God" — Khan Abdul Ghaffar Khan’s remarkable movement of Pashtun nonviolent resisters, tens of thousands strong, who faced brutal repression without retaliation.',
+      '"Servants of God": Khan Abdul Ghaffar Khan’s remarkable movement of Pashtun nonviolent resisters, tens of thousands strong, who faced brutal repression without retaliation.',
     type: 'social',
   },
   {
@@ -198,7 +198,7 @@ export const organizations: Organization[] = [
     foundedYear: 1927,
     foundedLabel: '1927',
     summary:
-      'A pioneering women’s organization whose members — including Sarojini Naidu and Kamaladevi Chattopadhyay — linked women’s rights to the national movement.',
+      'A pioneering women’s organization whose members, including Sarojini Naidu and Kamaladevi Chattopadhyay, linked women’s rights to the national movement.',
     type: 'social',
   },
 ];

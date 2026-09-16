@@ -16,7 +16,7 @@ import { Constellation, SimilarStories } from '@/components/constellation';
 import type { DisputedNote, FighterSummary, FreedomFighter, SourceRef, StoryChapter } from '@/types';
 
 /* ------------------------------------------------------------------ */
-/* Story Mode — stepper on phones, full chapter list on desktop         */
+/* Story Mode - stepper on phones, full chapter list on desktop         */
 function StoryMode({ chapters, accent, sources }: { chapters: StoryChapter[]; accent: keyof typeof eraAccent.bg; sources: SourceRef[] }) {
   const desktop = useIsDesktop();
   const [index, setIndex] = useState(0);
@@ -165,14 +165,14 @@ function Ledger({ fighter }: { fighter: FreedomFighter }) {
 export default function FighterProfilePage() {
   const { slug } = useParams();
   /* The summary is already in hand synchronously (it's in the initial
-     bundle) — the hero paints immediately from it. The full record
+     bundle) - the hero paints immediately from it. The full record
      (biography, quotes, sources, Story Mode...) loads lazily; everything
      below the hero waits on it. */
   const summary: FighterSummary | undefined = slug ? fighterBySlug.get(slug) : undefined;
   /* A lazy initializer, not `undefined`: the initial route's record is
      prefetched before hydration even starts (src/lib/routes.tsx), so the
-     very first render — the one hydration checks against the prerendered
-     snapshot — must already reflect it instead of waiting on the effect
+     very first render - the one hydration checks against the prerendered
+     snapshot - must already reflect it instead of waiting on the effect
      below, or that first render would mismatch the full body React captured
      into the static HTML. */
   const [fighter, setFighter] = useState<FreedomFighter | undefined>(() => (slug ? peekFighter(slug) : undefined));
@@ -247,7 +247,7 @@ export default function FighterProfilePage() {
 
   return (
     <article>
-      {/* Hero — a life issued as a commemorative */}
+      {/* Hero - a life issued as a commemorative */}
       <header className="container-page pt-2">
         <div
           className={`perf-all on-sheet relative animate-fade-up px-5 py-7 sm:px-9 sm:py-10 ${eraAccent.bg[accent]} ${eraAccent.onInk[accent]} ${
@@ -339,7 +339,7 @@ export default function FighterProfilePage() {
         </div>
       </header>
 
-      {/* Body — waits on the full record (Story Mode, quotes, sources...) */}
+      {/* Body - waits on the full record (Story Mode, quotes, sources...) */}
       {!fighter ? (
         <RouteFallback />
       ) : (
@@ -560,7 +560,7 @@ export default function FighterProfilePage() {
             </aside>
           </div>
 
-          {/* Constellation — dark band */}
+          {/* Constellation - dark band */}
           {connections.length > 0 && (
             <section id="connections" className="vault mt-14 scroll-mt-28 px-5 py-12 sm:mt-20 sm:px-8 sm:py-16" aria-label="Documented connections">
               <div className="container-page">

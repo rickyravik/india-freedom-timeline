@@ -7,11 +7,11 @@
  * Four tiers, checked in order for each query term against an index entry:
  *   1. Exact substring on the primary field (name/title + aliases), or a
  *      weaker hit on the secondary field (place, summary, role, year...).
- *   2. Transliteration-normalized substring on the primary field — tolerant
+ *   2. Transliteration-normalized substring on the primary field - tolerant
  *      of doubled consonants, aspirated clusters (th/bh/dh/ph/sh/kh/gh/ch),
  *      long/short vowels, and the colloquial x/ksh spelling.
  *   3. Bigram Dice similarity (>= 0.6) against any single word of the
- *      primary field — skipped for purely numeric terms, so a year never
+ *      primary field - skipped for purely numeric terms, so a year never
  *      fuzzy-matches a nearby year.
  */
 
@@ -32,7 +32,7 @@ export interface SearchResult {
   subtitle: string;
   to: string;
   score: number;
-  /** False when every matched term only hit via the fuzzy tier (2 or 3) —
+  /** False when every matched term only hit via the fuzzy tier (2 or 3) -
       lets the UI show a "did you mean" hint instead of presenting it as a
       confident, exact result. */
   exact: boolean;
@@ -40,7 +40,7 @@ export interface SearchResult {
 
 /** Collapses spelling variance that isn't a genuinely different word:
     doubled letters, aspirated consonant clusters, and the colloquial
-    x -> ksh spelling (e.g. "Laxmi" / "Lakshmi"). Not phonetic in general —
+    x -> ksh spelling (e.g. "Laxmi" / "Lakshmi"). Not phonetic in general -
     just enough to make the this app's own named cases (Katabomman /
     Kattabomman, laxmibai / Lakshmibai) resolve to the same string. */
 export function normalizeTranslit(s: string): string {
@@ -100,7 +100,7 @@ function scoreTerm(term: string, entry: IndexEntry): { score: number; exact: boo
 }
 
 /* ------------------------------------------------------------------ */
-/* Index construction — structurally typed against the minimal fields
+/* Index construction - structurally typed against the minimal fields
    needed, not against @/types, to keep this module import-free. */
 
 interface FighterLike {

@@ -1,7 +1,7 @@
 import type { FreedomFighter } from '@/types';
 
 /**
- * Tamil freedom fighters — from the poligar wars of the 18th century through
+ * Tamil freedom fighters, from the poligar wars of the 18th century through
  * the Swadeshi and Gandhian eras. The Tamil country resisted the Company
  * earlier and longer than almost any other region.
  */
@@ -36,7 +36,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Ondiveeran served as a commander (pagadai) in the forces of Puli Thevar of Nerkattumseval during the palaiyakkarar resistance to the Nawab of Arcot and the East India Company in the 1750s–1760s. His rise from the Arunthathiyar community — among the most oppressed in the Tamil caste order — to military command is itself the heart of his story, and the reason his memory matters.',
+      'Ondiveeran served as a commander (pagadai) in the forces of Puli Thevar of Nerkattumseval during the palaiyakkarar resistance to the Nawab of Arcot and the East India Company in the 1750s–1760s. His rise from the Arunthathiyar community, among the most oppressed in the Tamil caste order, to military command is itself the heart of his story, and the reason his memory matters.',
       'Tamil oral tradition credits him with leading engagements around Nerkattumseval and with a death in battle or execution in 1771, during the campaigns that finally broke Puli Thevar’s confederacy. Contemporary Company records name few Indian subordinates, so his career is known largely through regional memory and later retellings.',
       'The Government of Tamil Nadu has commemorated him with a memorial at Nerkattumseval and an annual remembrance day, and Dalit movements celebrate him as proof that the first resistance to colonial power drew on every section of Tamil society.',
     ],
@@ -92,11 +92,11 @@ export const tamilNaduFighters: FreedomFighter[] = [
     era: 'early-resistance',
     roles: ['ruler', 'military-leader'],
     summary:
-      'The palaiyakkarar of Panchalankurichi who refused to pay tribute to the East India Company, fought its army in 1799, and was hanged at Kayathar — Tamil Nadu’s most celebrated early martyr.',
+      'The palaiyakkarar of Panchalankurichi who refused to pay tribute to the East India Company, fought its army in 1799, and was hanged at Kayathar: Tamil Nadu’s most celebrated early martyr.',
     shortStory: [
       {
         title: 'The chief who would not bow',
-        text: 'Kattabomman ruled Panchalankurichi, a small palaiyam in the far south. The East India Company demanded tribute, as if it were his master. Kattabomman asked by what right — the rains fell and the land grew crops without any Englishman’s help.',
+        text: 'Kattabomman ruled Panchalankurichi, a small palaiyam in the far south. The East India Company demanded tribute, as if it were his master. Kattabomman asked by what right: the rains fell and the land grew crops without any Englishman’s help.',
       },
       {
         title: 'Escape from Ramalinganapuram',
@@ -175,7 +175,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
     era: 'early-resistance',
     roles: ['ruler', 'military-leader'],
     summary:
-      'Rulers of Sivaganga who issued the Tiruchirappalli Proclamation of 1801 — one of the first calls for all Indians to rise together against the Company — and were hanged at Tiruppathur after the South Indian Rebellion.',
+      'Rulers of Sivaganga who issued the Tiruchirappalli Proclamation of 1801, one of the first calls for all Indians to rise together against the Company, and were hanged at Tiruppathur after the South Indian Rebellion.',
     shortStory: [
       {
         title: 'From servants to rulers',
@@ -183,7 +183,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'A call to all of India',
-        text: 'In June 1801 they pasted a proclamation on the walls of the Srirangam temple and Tiruchirappalli fort. It called on every Indian — whatever their caste or religion — to unite and drive out the Company. It was one of the first such calls in history.',
+        text: 'In June 1801 they pasted a proclamation on the walls of the Srirangam temple and Tiruchirappalli fort. It called on every Indian, whatever their caste or religion, to unite and drive out the Company. It was one of the first such calls in history.',
       },
       {
         title: 'Rebellion across the south',
@@ -195,8 +195,8 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Periya Marudhu (born 1748) and Chinna Marudhu (born 1753) rose from modest origins in Ramanathapuram to command the forces of Sivaganga. They stood with Velu Nachiyar in her years of exile and her recovery of the kingdom around 1780, and from the 1790s governed Sivaganga in the name of her successors — able administrators remembered for tanks, temples and fortifications as much as for war.',
-      'When Kattabomman was executed in 1799 and his brother Oomaithurai escaped Palayamkottai jail in 1801, the Marudhus sheltered the fugitive and made common cause with rebel chiefs across the peninsula — Kerala Varma of Kottayam, Gopala Nayak of Dindigul, Dhoondaji Wagh in the Deccan. Their Tiruchirappalli Proclamation of June 1801, affixed to Srirangam and the Tiruchirappalli fort, denounced Company rule and summoned Indians of every caste and faith to expel it — a document historians read as an early articulation of pan-Indian resistance.',
+      'Periya Marudhu (born 1748) and Chinna Marudhu (born 1753) rose from modest origins in Ramanathapuram to command the forces of Sivaganga. They stood with Velu Nachiyar in her years of exile and her recovery of the kingdom around 1780, and from the 1790s governed Sivaganga in the name of her successors, able administrators remembered for tanks, temples and fortifications as much as for war.',
+      'When Kattabomman was executed in 1799 and his brother Oomaithurai escaped Palayamkottai jail in 1801, the Marudhus sheltered the fugitive and made common cause with rebel chiefs across the peninsula: Kerala Varma of Kottayam, Gopala Nayak of Dindigul, Dhoondaji Wagh in the Deccan. Their Tiruchirappalli Proclamation of June 1801, affixed to Srirangam and the Tiruchirappalli fort, denounced Company rule and summoned Indians of every caste and faith to expel it, a document historians read as an early articulation of pan-Indian resistance.',
       'The Company answered with Colonel Agnew’s campaign. After the fall of Kalayar Kovil in October 1801 the brothers were captured; they were hanged at Tiruppathur on 24 October 1801, and Oomaithurai and dozens of others followed at Panchalankurichi in November. Many followers were transported to Penang. Tamil Nadu observes 24 October as their memorial day at Kalayar Kovil.',
     ],
     entryIntoStruggle: 'Service to Velu Nachiyar against Arcot–Company forces in the 1770s.',
@@ -262,13 +262,13 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'Sankagiri',
-        text: 'The three brothers were hanged at Sankagiri fort on 31 July 1805, refusing to beg for mercy. Tamil Nadu remembers Dheeran — "the brave" — Chinnamalai every year.',
+        text: 'The three brothers were hanged at Sankagiri fort on 31 July 1805, refusing to beg for mercy. Tamil Nadu remembers Dheeran ("the brave") Chinnamalai every year.',
       },
     ],
     fullBiography: [
-      'Theerthagiri Sarkarai Mandradiyar, born at Melapalayam in 1756, became a leading chieftain of Kongu Nadu — the country of Erode, Coimbatore and Salem — and took the name Chinnamalai. His resistance began with the refusal of revenue demands made through the Nawab of Arcot’s agents, and grew into alliance with Tipu Sultan of Mysore against the Company’s southern expansion.',
+      'Theerthagiri Sarkarai Mandradiyar, born at Melapalayam in 1756, became a leading chieftain of Kongu Nadu, the country of Erode, Coimbatore and Salem, and took the name Chinnamalai. His resistance began with the refusal of revenue demands made through the Nawab of Arcot’s agents, and grew into alliance with Tipu Sultan of Mysore against the Company’s southern expansion.',
       'After Tipu’s death at Seringapatam in 1799, Chinnamalai continued the war from Kongu with his brothers Kilothar and Kuttiyar and a corps of fighters trained in Mysorean methods. Tradition records victories over Company detachments at the Kaveri (1801), Odanilai (1802) and Arachalur (1804), with his base at Odanilai fort. His campaigns overlapped with the South Indian Rebellion of the Marudhus and with Pazhassi Raja’s war in Malabar.',
-      'Betrayed — tradition names his cook, Nallappan — he was seized with his brothers and hanged at Sankagiri fort. The Government of Tamil Nadu observes 31 July as his memorial day; some accounts give 2 August 1805. A memorial stands at Odanilai and his statue at Chennai, and he is a central figure of Kongu regional memory.',
+      'Betrayed (tradition names his cook, Nallappan), he was seized with his brothers and hanged at Sankagiri fort. The Government of Tamil Nadu observes 31 July as his memorial day; some accounts give 2 August 1805. A memorial stands at Odanilai and his statue at Chennai, and he is a central figure of Kongu regional memory.',
     ],
     entryIntoStruggle: 'Refusal of revenue demands and alliance with Tipu Sultan in the 1790s.',
     achievements: [
@@ -319,7 +319,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
     era: 'swadeshi-era',
     roles: ['political-leader', 'journalist', 'writer-poet'],
     summary:
-      'Fiery orator of the Swadeshi movement in the Tamil country, arrested with V. O. Chidambaram Pillai in 1908 — the first political prisoner of the Madras Presidency — who contracted leprosy in prison and went on lecturing across the villages until his death.',
+      'Fiery orator of the Swadeshi movement in the Tamil country, arrested with V. O. Chidambaram Pillai in 1908, the first political prisoner of the Madras Presidency, who contracted leprosy in prison and went on lecturing across the villages until his death.',
     shortStory: [
       {
         title: 'The voice of Tuticorin',
@@ -331,7 +331,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'Walking, always walking',
-        text: 'In prison he caught leprosy. After release the British forbade him to travel by train, so he walked — from village to village, still preaching freedom, editing his journal, planning a memorial to Bharata Mata.',
+        text: 'In prison he caught leprosy. After release the British forbade him to travel by train, so he walked from village to village, still preaching freedom, editing his journal, planning a memorial to Bharata Mata.',
       },
       {
         title: 'Papparapatti',
@@ -340,7 +340,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Subramania Siva of Vathalagundu, schooled in Madurai and briefly employed in Travancore, threw himself into the Swadeshi upheaval of 1907–08. Joining V. O. Chidambaram Pillai at Tuticorin in early 1908, he was the movement’s orator: his public meetings on Bipin Chandra Pal’s release and the Swadeshi cause, and his support for the Coral Mills strikers, alarmed the authorities as much as Pillai’s shipping line.',
-      'Arrested on 12 March 1908 with Pillai — an arrest that triggered the Tirunelveli and Tuticorin disturbances — he was tried for sedition and sentenced to ten years’ transportation, later reduced. In the jails of Tirunelveli, Coimbatore and Salem he was set to hard labour, and contracted leprosy. Released in 1912, he resumed his work through the journal Gnanabanu and relentless touring, though colonial rules barred lepers from rail travel and forced him to walk between towns.',
+      'Arrested on 12 March 1908 with Pillai, an arrest that triggered the Tirunelveli and Tuticorin disturbances, he was tried for sedition and sentenced to ten years’ transportation, later reduced. In the jails of Tirunelveli, Coimbatore and Salem he was set to hard labour, and contracted leprosy. Released in 1912, he resumed his work through the journal Gnanabanu and relentless touring, though colonial rules barred lepers from rail travel and forced him to walk between towns.',
       'He was jailed again in 1921–22 during Non-Cooperation. In his final years he settled at Papparapatti in Dharmapuri district to build a Bharata Mata temple, and died there on 23 July 1925. The Tamil Nadu government maintains a memorial at the site; with Pillai and Bharati he forms the trinity of the Tamil Swadeshi movement.',
     ],
     entryIntoStruggle: 'Swadeshi agitation at Tuticorin with V. O. Chidambaram Pillai, 1908.',
@@ -392,7 +392,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
     shortStory: [
       {
         title: 'The lawyer who chose revolution',
-        text: 'V. V. S. Aiyar went to London to become a barrister — and at India House met Savarkar and the revolutionaries. He gave up his career for India’s freedom.',
+        text: 'V. V. S. Aiyar went to London to become a barrister, and at India House met Savarkar and the revolutionaries. He gave up his career for India’s freedom.',
       },
       {
         title: 'Escape to Pondicherry',
@@ -400,7 +400,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'The writer',
-        text: 'In exile and after, he became a great man of Tamil letters — pioneering the short story, translating the Tirukkural into English, and studying the poet Kambar.',
+        text: 'In exile and after, he became a great man of Tamil letters, pioneering the short story, translating the Tirukkural into English, and studying the poet Kambar.',
       },
       {
         title: 'Papanasam',
@@ -409,8 +409,8 @@ export const tamilNaduFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Varahaneri Venkatesa Subramania Aiyar practised law in Rangoon before going to London in 1907 to qualify as a barrister. At India House he became a close associate of V. D. Savarkar and the revolutionary circle, refusing the oath the Inns of Court demanded of him and abandoning the bar for the cause. With India House under surveillance after Dhingra’s act, he left England in 1910 and reached French Pondicherry in disguise.',
-      'For a decade Pondicherry was his base: he lived beside Subramania Bharati and Aurobindo, and British intelligence held him responsible for training Vanchinathan and the Bharatha Matha Association’s young men in marksmanship before the killing of Collector Ashe at Maniyachi in 1911 — a charge on which he was never tried. Meanwhile he wrote: his Tamil short stories, gathered as Mangaiyarkkarasiyin Kadhal, established the modern form in the language, and his studies of Kambar and English rendering of the Tirukkural followed.',
-      'Returning to British India in 1920, he edited the Tamil daily Desabhaktan and was imprisoned in Bellary in 1921–22 for an editorial. In 1922 he founded a gurukulam at Cheranmahadevi on the Tamiraparani, a national school whose caste-based dining arrangements drew Periyar E. V. Ramasamy’s attack in 1925 — a controversy that fed the Self-Respect movement. On 3 June 1925 he drowned at the Papanasam falls trying to rescue his daughter Subhadra.',
+      'For a decade Pondicherry was his base: he lived beside Subramania Bharati and Aurobindo, and British intelligence held him responsible for training Vanchinathan and the Bharatha Matha Association’s young men in marksmanship before the killing of Collector Ashe at Maniyachi in 1911, a charge on which he was never tried. Meanwhile he wrote: his Tamil short stories, gathered as Mangaiyarkkarasiyin Kadhal, established the modern form in the language, and his studies of Kambar and English rendering of the Tirukkural followed.',
+      'Returning to British India in 1920, he edited the Tamil daily Desabhaktan and was imprisoned in Bellary in 1921–22 for an editorial. In 1922 he founded a gurukulam at Cheranmahadevi on the Tamiraparani, a national school whose caste-based dining arrangements drew Periyar E. V. Ramasamy’s attack in 1925, a controversy that fed the Self-Respect movement. On 3 June 1925 he drowned at the Papanasam falls trying to rescue his daughter Subhadra.',
     ],
     entryIntoStruggle: 'India House, London, 1907–10.',
     ideology: 'Revolutionary nationalism; Tamil cultural revival.',
@@ -464,7 +464,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
     era: 'swadeshi-era',
     roles: ['revolutionary'],
     summary:
-      'The twenty-five-year-old who shot Collector Robert Ashe at Maniyachi railway station in 1911 — the man held responsible for crushing the Tamil Swadeshi movement — and then took his own life.',
+      'The twenty-five-year-old who shot Collector Robert Ashe at Maniyachi railway station in 1911, the man held responsible for crushing the Tamil Swadeshi movement, and then took his own life.',
     shortStory: [
       {
         title: 'A quiet clerk',
@@ -472,7 +472,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'The Collector',
-        text: 'Robert Ashe had been the Collector who broke the 1908 Swadeshi movement in Tirunelveli — jailing V.O.C., ruining the Swadeshi shipping company, ordering the firing at Tuticorin. To the young revolutionaries, he was the enemy.',
+        text: 'Robert Ashe had been the Collector who broke the 1908 Swadeshi movement in Tirunelveli: jailing V.O.C., ruining the Swadeshi shipping company, ordering the firing at Tuticorin. To the young revolutionaries, he was the enemy.',
       },
       {
         title: 'Maniyachi station',
@@ -484,9 +484,9 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Vanchinathan, born in Shenkottai in 1886 and educated at Moolam Thirunal College, Thiruvananthapuram, worked as a forest guard in Travancore service. He was drawn into the Bharatha Matha Association — the secret society of Nilakanta Brahmachari and his associates, linked to the Pondicherry exiles — which resolved on armed action after the Swadeshi movement’s suppression.',
+      'Vanchinathan, born in Shenkottai in 1886 and educated at Moolam Thirunal College, Thiruvananthapuram, worked as a forest guard in Travancore service. He was drawn into the Bharatha Matha Association, the secret society of Nilakanta Brahmachari and his associates, linked to the Pondicherry exiles, which resolved on armed action after the Swadeshi movement’s suppression.',
       'Robert William d’Escourt Ashe, as Sub-Collector and then Collector of Tinnevelly, had ordered the arrests of V. O. Chidambaram Pillai and Subramania Siva in 1908, directed the police firing at Tuticorin, and pursued the liquidation of the Swadeshi Steam Navigation Company. On 17 June 1911, at Maniyachi junction where Ashe and his wife waited on the Ceylon boat mail, Vanchinathan boarded the carriage and shot him dead, then killed himself in the station lavatory.',
-      'The letter found on him declared that the British had destroyed India’s dharma and that he and his comrades had sworn to kill the King-Emperor George V on his forthcoming visit — the Raj’s worst fear made explicit. The Ashe murder conspiracy trial that followed convicted several associates, including Nilakanta Brahmachari, though V. V. S. Aiyar in Pondicherry was beyond reach. Maniyachi was renamed Vanchi Maniyachi Junction, and his house in Shenkottai is a memorial.',
+      'The letter found on him declared that the British had destroyed India’s dharma and that he and his comrades had sworn to kill the King-Emperor George V on his forthcoming visit: the Raj’s worst fear made explicit. The Ashe murder conspiracy trial that followed convicted several associates, including Nilakanta Brahmachari, though V. V. S. Aiyar in Pondicherry was beyond reach. Maniyachi was renamed Vanchi Maniyachi Junction, and his house in Shenkottai is a memorial.',
     ],
     entryIntoStruggle: 'Bharatha Matha Association, c. 1910.',
     achievements: ['Carried out the only assassination of a British official in the Madras Presidency’s freedom struggle'],
@@ -529,7 +529,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['satyagrahi', 'organizer'],
     summary:
-      '"Kodi Kaatha Kumaran" — the one who saved the flag: a young weaver-organizer of Tiruppur who died of police blows in 1932 still holding the banned national flag aloft.',
+      '"Kodi Kaatha Kumaran", the one who saved the flag: a young weaver-organizer of Tiruppur who died of police blows in 1932 still holding the banned national flag aloft.',
     shortStory: [
       {
         title: 'A weaver’s son',
@@ -541,7 +541,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'He did not let it fall',
-        text: 'Police attacked the marchers on the banks of the Noyyal river. Kumaran was beaten to the ground — but witnesses saw the flag still raised in his hands when he died. He was twenty-seven.',
+        text: 'Police attacked the marchers on the banks of the Noyyal river. Kumaran was beaten to the ground, but witnesses saw the flag still raised in his hands when he died. He was twenty-seven.',
       },
       {
         title: 'Kodi Kaatha Kumaran',
@@ -550,13 +550,13 @@ export const tamilNaduFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Kumaraswamy, known as Kumaran, was born at Chennimalai in 1904 to a family of weavers and moved to Tiruppur, the hosiery town on the Noyyal, where he worked in a textile mill and founded the Desa Bandhu Youth Association to draw young workers into the national movement.',
-      'When the Civil Disobedience movement resumed in January 1932 after the collapse of the Round Table Conference and Gandhi’s arrest, the Madras government banned processions and the display of the Congress flag. On 11 January 1932 Kumaran led a march through Tiruppur carrying the flag; police lathi-charged the procession on the Noyyal riverbank, and Kumaran, severely beaten, collapsed and died — by the account of witnesses, with the flag held above his head.',
+      'When the Civil Disobedience movement resumed in January 1932 after the collapse of the Round Table Conference and Gandhi’s arrest, the Madras government banned processions and the display of the Congress flag. On 11 January 1932 Kumaran led a march through Tiruppur carrying the flag; police lathi-charged the procession on the Noyyal riverbank, and Kumaran, severely beaten, collapsed and died, by the account of witnesses, with the flag held above his head.',
       'The Tamil press named him Kodi Kaatha Kumaran, the protector of the flag. A memorial stands at the site, his statue in Tiruppur, and the Government of India issued a stamp in his honour in 2004.',
     ],
     entryIntoStruggle: 'Desa Bandhu Youth Association and Civil Disobedience in Tiruppur, c. 1930.',
     achievements: ['Became the enduring symbol of the flag satyagraha in the south'],
     sacrifices: ['Died of police assault at twenty-seven'],
-    legacy: 'Kodi Kaatha Kumaran — one of Tamil Nadu’s most beloved martyrs.',
+    legacy: 'Kodi Kaatha Kumaran, one of Tamil Nadu’s most beloved martyrs.',
     facts: ['India Post issued a commemorative stamp for his centenary in 2004.'],
     timelineEvents: [],
     movements: ['civil-disobedience'],
@@ -595,11 +595,11 @@ export const tamilNaduFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'lawyer'],
     summary:
-      'The Madras Congress’s great orator and parliamentarian — Swarajist, Mayor of Madras who gave the city its Poondi reservoir, mentor of Kamaraj — who died in 1943 with health broken by his last imprisonment.',
+      'The Madras Congress’s great orator and parliamentarian: Swarajist, Mayor of Madras who gave the city its Poondi reservoir, mentor of Kamaraj. He died in 1943 with health broken by his last imprisonment.',
     shortStory: [
       {
         title: 'The orator',
-        text: 'Satyamurti was a lawyer from Pudukkottai whose speeches — in English and Tamil — could hold a crowd or a council spellbound. He believed in fighting the British inside their own legislatures as well as in the streets.',
+        text: 'Satyamurti was a lawyer from Pudukkottai whose speeches, in English and Tamil, could hold a crowd or a council spellbound. He believed in fighting the British inside their own legislatures as well as in the streets.',
       },
       {
         title: 'Water for Madras',
@@ -612,11 +612,11 @@ export const tamilNaduFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Sundara Sastri Satyamurti, from Tirumayam in Pudukkottai, built a Madras law practice and a reputation as the presidency’s most gifted political speaker. He entered the Congress in the Home Rule years, gave evidence before the Joint Parliamentary Committee in London in 1919, and after Non-Cooperation stood with the Swarajists who chose to contest and confront the Raj from within the councils.',
-      'A member of the Madras Legislative Council from 1923 and of the Central Legislative Assembly from 1935, he was the presidency’s Congress organizer-in-chief — president of the Tamil Nadu Congress Committee, architect of the party’s electoral machine, and the political mentor of K. Kamaraj. As Mayor of Madras (1939–40) he initiated the Poondi reservoir, the city’s first major water source, later named Satyamurti Sagar.',
+      'A member of the Madras Legislative Council from 1923 and of the Central Legislative Assembly from 1935, he was the presidency’s Congress organizer-in-chief: president of the Tamil Nadu Congress Committee, architect of the party’s electoral machine, and the political mentor of K. Kamaraj. As Mayor of Madras (1939–40) he initiated the Poondi reservoir, the city’s first major water source, later named Satyamurti Sagar.',
       'He was imprisoned in the individual satyagraha of 1940–41 and again after Quit India in 1942; the second term, at Amaravathi and elsewhere, destroyed his health, and he died on 28 March 1943 shortly after release. The Tamil Nadu Congress headquarters in Chennai, Satyamurti Bhavan, bears his name.',
     ],
     entryIntoStruggle: 'Home Rule and Congress work in Madras, 1917–19.',
-    ideology: 'Constitutional confrontation — the Swarajist path within nationalism.',
+    ideology: 'Constitutional confrontation: the Swarajist path within nationalism.',
     achievements: [
       'Built the Congress organization in the Tamil country',
       'Initiated the Poondi reservoir as Mayor of Madras',
@@ -660,11 +660,11 @@ export const tamilNaduFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'satyagrahi', 'social-reformer'],
     summary:
-      'The first woman in the Madras Presidency jailed in the Salt Satyagraha — a Vedaranyam marcher of 1930 — and later the presidency’s first woman minister.',
+      'The first woman in the Madras Presidency jailed in the Salt Satyagraha, a Vedaranyam marcher of 1930, and later the presidency’s first woman minister.',
     shortStory: [
       {
         title: 'A modern education',
-        text: 'Rukmini grew up in Madurai in a family that believed girls should study. She graduated from Women’s Christian College in Madras — rare for a woman of her time — and married a doctor who shared her ideals.',
+        text: 'Rukmini grew up in Madurai in a family that believed girls should study. She graduated from Women’s Christian College in Madras, rare for a woman of her time, and married a doctor who shared her ideals.',
       },
       {
         title: 'To Vedaranyam',
@@ -672,17 +672,17 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'The first woman jailed',
-        text: 'She was sentenced to a year in prison — the first woman in the Madras Presidency to be jailed for the Salt Satyagraha. Many followed her.',
+        text: 'She was sentenced to a year in prison, the first woman in the Madras Presidency to be jailed for the Salt Satyagraha. Many followed her.',
       },
       {
         title: 'Minister',
-        text: 'In 1946 she became Minister of Public Health in Madras — the presidency’s first woman minister. A road in Chennai bears her name.',
+        text: 'In 1946 she became Minister of Public Health in Madras, the presidency’s first woman minister. A road in Chennai bears her name.',
       },
     ],
     fullBiography: [
       'Rukmini Ammal, born in Madurai in 1892, graduated from Women’s Christian College, Madras, and married Dr Achanta Lakshmipathi, a physician and Ayurveda reformer. Drawn to the Congress in the 1920s, she worked in women’s organizations and the constructive programme, and served on the Madras Congress committees.',
-      'In April 1930 she joined C. Rajagopalachari’s salt march from Tiruchirappalli to Vedaranyam and broke the salt law on the coast. Tried and sentenced to a year’s imprisonment, she became the first woman in the Madras Presidency jailed in the Civil Disobedience movement — a precedent that drew hundreds of Tamil women into the campaign. She was jailed again in later phases of the struggle.',
-      'Elected to the Madras Legislative Assembly in 1937 and its Deputy Speaker, she became Minister for Public Health in T. Prakasam’s 1946 cabinet — the presidency’s first woman minister — and served on the All India Congress Committee. She died in 1951; Rukmini Lakshmipathi Road in Egmore, Chennai, is named for her.',
+      'In April 1930 she joined C. Rajagopalachari’s salt march from Tiruchirappalli to Vedaranyam and broke the salt law on the coast. Tried and sentenced to a year’s imprisonment, she became the first woman in the Madras Presidency jailed in the Civil Disobedience movement, a precedent that drew hundreds of Tamil women into the campaign. She was jailed again in later phases of the struggle.',
+      'Elected to the Madras Legislative Assembly in 1937 and its Deputy Speaker, she became Minister for Public Health in T. Prakasam’s 1946 cabinet, the presidency’s first woman minister, and served on the All India Congress Committee. She died in 1951; Rukmini Lakshmipathi Road in Egmore, Chennai, is named for her.',
     ],
     entryIntoStruggle: 'Congress women’s work in the 1920s; Vedaranyam salt satyagraha, 1930.',
     achievements: [
@@ -730,7 +730,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['political-leader', 'organizer', 'satyagrahi'],
     summary:
-      'The school dropout from Virudhunagar who spent some eight years in British jails across six imprisonments, built the Congress in the Tamil villages — and later, as Chief Minister, put a school and a midday meal within reach of every Tamil child.',
+      'The school dropout from Virudhunagar who spent some eight years in British jails across six imprisonments, built the Congress in the Tamil villages, and later, as Chief Minister, put a school and a midday meal within reach of every Tamil child.',
     shortStory: [
       {
         title: 'The boy who left school',
@@ -738,7 +738,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'Six times to prison',
-        text: 'He marched to Vedaranyam for salt in 1930 and was jailed for two years. In all he went to prison six times — about eight years of his life — including three years after Quit India.',
+        text: 'He marched to Vedaranyam for salt in 1930 and was jailed for two years. In all he went to prison six times, about eight years of his life, including three years after Quit India.',
       },
       {
         title: 'The organizer',
@@ -746,13 +746,13 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'Schools and meals',
-        text: 'As Chief Minister of Madras, the man who had never finished school opened thousands of schools and started free midday meals so poor children could learn. India called him Perunthalaivar — the great leader.',
+        text: 'As Chief Minister of Madras, the man who had never finished school opened thousands of schools and started free midday meals so poor children could learn. India called him Perunthalaivar, the great leader.',
       },
     ],
     fullBiography: [
-      'Kumaraswami Kamaraj was born in Virudhunagar in 1903 to a Nadar trading family; his father’s death forced him out of school at eleven and into a relative’s cloth shop. The Jallianwala Bagh massacre and the Non-Cooperation call drew him into the Congress in 1920, and he made himself its tireless village worker — in the Vaikom satyagraha (1924), the Neill statue satyagraha in Madras (1927), and the Vedaranyam salt march of 1930, for which he served two years in Alipuram jail.',
-      'He was imprisoned again in 1932, tried and acquitted in the Virudhunagar bomb case (1933) — S. Satyamurti, his political mentor, brought the false charge down — and jailed in 1940 (individual satyagraha) and from 1942 to 1945 after Quit India, at Amaravathi. His six terms totalled roughly eight years behind bars. Satyamurti built him into the organizational chief of the Tamil Nadu Congress, which he led as president from 1940.',
-      'Elected to the Central Legislative Assembly in 1946 and the Constituent Assembly, he became Chief Minister of Madras in 1954 and governed for nine years, reopening the schools his predecessor had closed, building one in every village, introducing free midday meals and uniforms, and driving irrigation and industry — years remembered as a golden age of Tamil administration. His "Kamaraj Plan" of 1963 and role as Congress president made him the "Kingmaker" who chose two Prime Ministers. He died on Gandhi Jayanti, 2 October 1975; Bharat Ratna followed in 1976.',
+      'Kumaraswami Kamaraj was born in Virudhunagar in 1903 to a Nadar trading family; his father’s death forced him out of school at eleven and into a relative’s cloth shop. The Jallianwala Bagh massacre and the Non-Cooperation call drew him into the Congress in 1920, and he made himself its tireless village worker: in the Vaikom satyagraha (1924), the Neill statue satyagraha in Madras (1927), and the Vedaranyam salt march of 1930, for which he served two years in Alipuram jail.',
+      'He was imprisoned again in 1932, tried and acquitted in the Virudhunagar bomb case (1933), in which S. Satyamurti, his political mentor, brought the false charge down, and jailed in 1940 (individual satyagraha) and from 1942 to 1945 after Quit India, at Amaravathi. His six terms totalled roughly eight years behind bars. Satyamurti built him into the organizational chief of the Tamil Nadu Congress, which he led as president from 1940.',
+      'Elected to the Central Legislative Assembly in 1946 and the Constituent Assembly, he became Chief Minister of Madras in 1954 and governed for nine years, reopening the schools his predecessor had closed, building one in every village, introducing free midday meals and uniforms, and driving irrigation and industry, years remembered as a golden age of Tamil administration. His "Kamaraj Plan" of 1963 and role as Congress president made him the "Kingmaker" who chose two Prime Ministers. He died on Gandhi Jayanti, 2 October 1975; Bharat Ratna followed in 1976.',
     ],
     entryIntoStruggle: 'Joined the Congress in 1920 at sixteen, after Jallianwala Bagh.',
     ideology: 'Gandhian constructive politics; education and welfare as the substance of freedom.',
@@ -762,8 +762,8 @@ export const tamilNaduFighters: FreedomFighter[] = [
       'As Chief Minister, the midday meal scheme and universal schooling',
     ],
     sacrifices: ['Eight years in prison; never married, giving his life entirely to public work'],
-    legacy: 'Perunthalaivar — Tamil Nadu’s "Black Gandhi"; his birthday is Education Development Day in the state. Bharat Ratna, 1976.',
-    facts: ['He died on 2 October 1975 — Gandhi’s birth anniversary — with, famously, almost no personal possessions.'],
+    legacy: 'Perunthalaivar, Tamil Nadu’s "Black Gandhi"; his birthday is Education Development Day in the state. Bharat Ratna, 1976.',
+    facts: ['He died on 2 October 1975, Gandhi’s birth anniversary, famously with almost no personal possessions.'],
     timelineEvents: ['vedaranyam-salt-march', 'quit-india-launch'],
     movements: ['non-cooperation', 'civil-disobedience', 'quit-india'],
     organizations: ['inc'],
@@ -801,7 +801,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['political-leader', 'organizer'],
     summary:
-      'Subhas Chandra Bose’s lieutenant in the Tamil country — Forward Bloc leader, interned through the war years — who fought the colonial Criminal Tribes Act that branded whole communities as criminals.',
+      'Subhas Chandra Bose’s lieutenant in the Tamil country, a Forward Bloc leader interned through the war years, who fought the colonial Criminal Tribes Act that branded whole communities as criminals.',
     shortStory: [
       {
         title: 'The zamindar who chose struggle',
@@ -817,12 +817,12 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'The law falls',
-        text: 'After freedom, the hated Act was lifted in Madras in 1949. Thevar served in Parliament and is revered in southern Tamil Nadu, where his birth and death day — the same date — is a great annual gathering.',
+        text: 'After freedom, the hated Act was lifted in Madras in 1949. Thevar served in Parliament and is revered in southern Tamil Nadu, where his birth and death day (the same date) is a great annual gathering.',
       },
     ],
     fullBiography: [
       'Ukkirapandi Muthuramalingam, born at Pasumpon in 1908 into a Maravar zamindari family, entered public life through the Congress in the 1920s and 30s, contesting and winning the Ramanathapuram seat in the 1937 Madras elections. His first great cause was the Criminal Tribes Act, which since 1911 had subjected the Piramalai Kallars and later other communities of the south to registration, curfews and collective punishment; he made its repeal the centre of his politics.',
-      'A committed follower of Subhas Chandra Bose, he organized Bose’s reception at Madurai in September 1939 and became the Forward Bloc’s leader in the Tamil country. Detained under the Defence of India rules, he spent most of the war years — 1940 to 1945 — in prison or internment, one of the longest continuous political detentions of the period in the presidency.',
+      'A committed follower of Subhas Chandra Bose, he organized Bose’s reception at Madurai in September 1939 and became the Forward Bloc’s leader in the Tamil country. Detained under the Defence of India rules, he spent most of the war years, 1940 to 1945, in prison or internment, one of the longest continuous political detentions of the period in the presidency.',
       'After independence the Madras government lifted Criminal Tribes Act restrictions in 1949, and the Act was repealed nationally in 1952. Thevar sat in the Lok Sabha and the Madras assembly, led the Forward Bloc in Tamil Nadu, and remained a champion of Bose’s memory and of the southern communities the colonial state had criminalised. He died on his fifty-fifth birthday, 30 October 1963; the Guru Puja at Pasumpon each 30 October draws vast crowds.',
     ],
     entryIntoStruggle: 'Congress politics and the anti-Criminal Tribes Act campaign in the 1930s.',
@@ -876,7 +876,7 @@ export const tamilNaduFighters: FreedomFighter[] = [
       },
       {
         title: 'Preparing for the marchers',
-        text: 'In 1930, when C. Rajagopalachari announced a salt march from Tiruchirappalli to Vedaranyam — the south’s answer to Gandhi’s Dandi march — Vedaratnam organised the villages along its 150-mile route and arranged the camp and welcome for the marchers when they reached the coast.',
+        text: 'In 1930, when C. Rajagopalachari announced a salt march from Tiruchirappalli to Vedaranyam, the south’s answer to Gandhi’s Dandi march, Vedaratnam organised the villages along its 150-mile route and arranged the camp and welcome for the marchers when they reached the coast.',
       },
       {
         title: 'Breaking the law by the sea',
@@ -889,8 +889,8 @@ export const tamilNaduFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Vedaratnam Pillai was a landowner of Vedaranyam, the small salt-producing town on the Tanjore coast, and an established Congress worker in the district by the time C. Rajagopalachari planned the south’s answer to Gandhi’s Dandi march.',
-      'When Rajagopalachari set out from Tiruchirappalli on 13 April 1930 with some 150 volunteers on the roughly 150-mile march to Vedaranyam, Vedaratnam organised the coastal end of the campaign — mobilising the villages of the delta the marchers passed through and arranging their reception and camp at Vedaranyam itself, drawing in the salt-pan workers of the coast. On 30 April, Rajagopalachari and a group of satyagrahis walked to the shore and broke the salt law; Vedaratnam Pillai was among those who took part.',
-      'For his part in the march he was given the honorific "Sardar" by a Tamil Nadu gathering in 1931. He served three terms — some fourteen years — in the Madras legislature, donated his earnings as a legislator to the Ramakrishna Mission, led the Tanjore District Congress Committee for a decade, and in 1946 founded the Kasturba Gandhi Kanya Gurukulam at Vedaranyam, a home and school for orphaned girls that continues its work.',
+      'When Rajagopalachari set out from Tiruchirappalli on 13 April 1930 with some 150 volunteers on the roughly 150-mile march to Vedaranyam, Vedaratnam organised the coastal end of the campaign, mobilising the villages of the delta the marchers passed through and arranging their reception and camp at Vedaranyam itself, drawing in the salt-pan workers of the coast. On 30 April, Rajagopalachari and a group of satyagrahis walked to the shore and broke the salt law; Vedaratnam Pillai was among those who took part.',
+      'For his part in the march he was given the honorific "Sardar" by a Tamil Nadu gathering in 1931. He served three terms, some fourteen years, in the Madras legislature, donated his earnings as a legislator to the Ramakrishna Mission, led the Tanjore District Congress Committee for a decade, and in 1946 founded the Kasturba Gandhi Kanya Gurukulam at Vedaranyam, a home and school for orphaned girls that continues its work.',
     ],
     entryIntoStruggle: 'Congress work in the Tanjore delta through the 1920s; the Vedaranyam salt march, 1930.',
     achievements: [

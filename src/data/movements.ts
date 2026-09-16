@@ -9,9 +9,9 @@ export const movements: Movement[] = [
     startYear: 1757,
     endYear: 1856,
     summary:
-      'A century of armed resistance to East India Company expansion — by rulers such as Velu Nachiyar, Pazhassi Raja and Rani Chennamma, by sepoys at Vellore, and by peasant and religious rebels across the subcontinent.',
+      'A century of armed resistance to East India Company expansion: by rulers such as Velu Nachiyar, Pazhassi Raja and Rani Chennamma, by sepoys at Vellore, and by peasant and religious rebels across the subcontinent.',
     description: [
-      'The East India Company’s victories at Plassey (1757) and Buxar (1764) made a trading corporation the effective ruler of Bengal, and over the following century its armies, treaties and annexations spread Company control across India. Resistance followed everywhere the Company went: dispossessed rulers fought back in the south and west, sepoys mutinied at Vellore in 1806 over interference with religious practice, and rural movements — from the Sannyasi-Fakir uprisings of Bengal to Titumir’s bamboo fort — challenged the new order of revenue collectors and indigo planters.',
+      'The East India Company’s victories at Plassey (1757) and Buxar (1764) made a trading corporation the effective ruler of Bengal, and over the following century its armies, treaties and annexations spread Company control across India. Resistance followed everywhere the Company went: dispossessed rulers fought back in the south and west, sepoys mutinied at Vellore in 1806 over interference with religious practice, and rural movements, from the Sannyasi-Fakir uprisings of Bengal to Titumir’s bamboo fort, challenged the new order of revenue collectors and indigo planters.',
       'These risings were local and were crushed one by one, but they built a long memory of defiance. Leaders like Puli Thevar and Velu Nachiyar in the Tamil country, Pazhassi Raja in Malabar and Kittur Chennamma in Karnataka were remembered in folk song long before nationalist historians recovered their stories.',
     ],
     regions: ['south', 'west', 'east', 'north'],
@@ -41,10 +41,10 @@ export const movements: Movement[] = [
     startYear: 1784,
     endYear: 1945,
     summary:
-      'From Tilka Manjhi and the Santhal Hul to Birsa Munda’s Ulgulan, the Rampa rebellion and Komaram Bheem — India’s Adivasi communities fought sustained wars against colonial land grabs, forest laws and exploitation.',
+      'From Tilka Manjhi and the Santhal Hul to Birsa Munda’s Ulgulan, the Rampa rebellion and Komaram Bheem, India’s Adivasi communities fought sustained wars against colonial land grabs, forest laws and exploitation.',
     description: [
-      'Colonial rule hit India’s Adivasi (indigenous) communities with particular force: new land settlements handed their forests and fields to outsiders, moneylenders and contractors followed, and forest laws criminalised customary ways of living. The result was over a century of uprisings — Tilka Manjhi’s resistance in the 1780s, the Kol and Bhil risings, Tirot Sing’s war in the Khasi Hills, the great Santhal Hul of 1855, Birsa Munda’s Ulgulan of 1899–1900, the Rampa rebellion of Alluri Sitarama Raju in 1922–24, and Komaram Bheem’s struggle in the Gond country in the 1930s.',
-      'These movements were fought for land, forest and self-rule — "Jal, Jangal, Zameen" — and were met with overwhelming military force. Historians now treat them as central chapters of the freedom struggle rather than side stories, and leaders like Birsa Munda are commemorated nationally.',
+      'Colonial rule hit India’s Adivasi (indigenous) communities with particular force: new land settlements handed their forests and fields to outsiders, moneylenders and contractors followed, and forest laws criminalised customary ways of living. The result was over a century of uprisings: Tilka Manjhi’s resistance in the 1780s, the Kol and Bhil risings, Tirot Sing’s war in the Khasi Hills, the great Santhal Hul of 1855, Birsa Munda’s Ulgulan of 1899–1900, the Rampa rebellion of Alluri Sitarama Raju in 1922–24, and Komaram Bheem’s struggle in the Gond country in the 1930s.',
+      'These movements were fought for land, forest and self-rule ("Jal, Jangal, Zameen") and were met with overwhelming military force. Historians now treat them as central chapters of the freedom struggle rather than side stories, and leaders like Birsa Munda are commemorated nationally.',
     ],
     regions: ['east', 'central', 'south', 'northeast'],
     keyPeople: ['tilka-manjhi', 'tirot-sing', 'sidhu-kanhu-murmu', 'birsa-munda', 'alluri-sitarama-raju', 'komaram-bheem', 'rani-gaidinliu'],
@@ -74,10 +74,10 @@ export const movements: Movement[] = [
     startYear: 1857,
     endYear: 1858,
     summary:
-      'The sepoy mutiny that became a general uprising across northern and central India — led by Rani Lakshmibai, Tatya Tope, Begum Hazrat Mahal, Kunwar Singh and fought in the name of Bahadur Shah Zafar.',
+      'The sepoy mutiny that became a general uprising across northern and central India, led by Rani Lakshmibai, Tatya Tope, Begum Hazrat Mahal, Kunwar Singh and fought in the name of Bahadur Shah Zafar.',
     description: [
       'What began on 10 May 1857 as a mutiny of sepoys at Meerut became, within weeks, the greatest armed challenge the British Empire faced in the nineteenth century. Delhi fell to the rebels, who proclaimed the aged Mughal emperor Bahadur Shah Zafar their sovereign; Awadh, Rohilkhand, Bundelkhand and much of the Gangetic plain rose with them. Grievances ran far deeper than the greased cartridges that sparked the outbreak: annexations under the Doctrine of Lapse, ruined artisans and taluqdars, and fear that British rule threatened religion and custom.',
-      'The rebellion was suppressed with great violence by mid-1858. It ended the East India Company, brought India under the Crown, and left leaders — Lakshmibai of Jhansi above all — whose courage became legend for every later generation of nationalists, who called it the First War of Independence.',
+      'The rebellion was suppressed with great violence by mid-1858. It ended the East India Company, brought India under the Crown, and left leaders, Lakshmibai of Jhansi above all, whose courage became legend for every later generation of nationalists, who called it the First War of Independence.',
     ],
     regions: ['north', 'central', 'east'],
     keyPeople: ['mangal-pandey', 'rani-lakshmibai', 'tatya-tope', 'begum-hazrat-mahal', 'kunwar-singh', 'nana-saheb', 'bahadur-shah-zafar', 'jhalkari-bai'],
@@ -107,10 +107,10 @@ export const movements: Movement[] = [
     startYear: 1885,
     endYear: 1905,
     summary:
-      'The founding generation of the Indian National Congress — Naoroji, Gokhale, Banerjee — who built all-India politics through petitions, the press and the devastating economic critique of the "drain of wealth".',
+      'The founding generation of the Indian National Congress (Naoroji, Gokhale, Banerjee), who built all-India politics through petitions, the press and the devastating economic critique of the "drain of wealth".',
     description: [
-      'The Indian National Congress, founded in Bombay in December 1885, gathered lawyers, journalists, teachers and merchants into the first genuinely all-India political organization. Its early leaders — dubbed "Moderates" — believed in constitutional methods: petitions, resolutions, testimony before commissions, and patient work to build a public. Their greatest weapon was analysis; Dadabhai Naoroji’s "drain theory" showed how India’s wealth flowed to Britain, arming every later generation with an economic case against empire.',
-      'By 1905 a younger generation — Tilak, Lajpat Rai, Bipin Chandra Pal — had grown impatient with prayer and petition, and the Swadeshi upheaval split the Congress at Surat in 1907. But the institutions, newspapers and habits of political organization the Moderates built became the scaffolding of everything that followed.',
+      'The Indian National Congress, founded in Bombay in December 1885, gathered lawyers, journalists, teachers and merchants into the first genuinely all-India political organization. Its early leaders, dubbed "Moderates", believed in constitutional methods: petitions, resolutions, testimony before commissions, and patient work to build a public. Their greatest weapon was analysis; Dadabhai Naoroji’s "drain theory" showed how India’s wealth flowed to Britain, arming every later generation with an economic case against empire.',
+      'By 1905 a younger generation, Tilak, Lajpat Rai and Bipin Chandra Pal among them, had grown impatient with prayer and petition, and the Swadeshi upheaval split the Congress at Surat in 1907. But the institutions, newspapers and habits of political organization the Moderates built became the scaffolding of everything that followed.',
     ],
     regions: ['west', 'east', 'north', 'south'],
     keyPeople: ['dadabhai-naoroji', 'gopal-krishna-gokhale', 'surendranath-banerjee'],
@@ -139,10 +139,10 @@ export const movements: Movement[] = [
     startYear: 1905,
     endYear: 1911,
     summary:
-      'The boycott of British goods and embrace of Indian enterprise, education and culture that erupted after the Partition of Bengal in 1905 — India’s first mass political movement.',
+      'The boycott of British goods and embrace of Indian enterprise, education and culture that erupted after the Partition of Bengal in 1905: India’s first mass political movement.',
     description: [
-      'When Viceroy Curzon partitioned Bengal in 1905, protest leapt beyond meeting halls: British cloth was burned in bonfires, students left government schools for new "national" institutions, Indian mills, banks and match factories were founded, and Rabindranath Tagore’s songs carried the movement into every home. "Swadeshi" — of one’s own country — became both an economic weapon and a cultural awakening, and the movement spread from Bengal to Maharashtra, Punjab and the Madras Presidency, where V. O. Chidambaram Pillai launched an Indian-owned shipping line.',
-      'Repression, deportations and internal divisions wore the open movement down, and part of its youth turned to underground revolutionary societies. But its methods — boycott, national education, constructive enterprise — became the standard repertoire of every later campaign, and the partition itself was annulled in 1911.',
+      'When Viceroy Curzon partitioned Bengal in 1905, protest leapt beyond meeting halls: British cloth was burned in bonfires, students left government schools for new "national" institutions, Indian mills, banks and match factories were founded, and Rabindranath Tagore’s songs carried the movement into every home. "Swadeshi" (of one’s own country) became both an economic weapon and a cultural awakening, and the movement spread from Bengal to Maharashtra, Punjab and the Madras Presidency, where V. O. Chidambaram Pillai launched an Indian-owned shipping line.',
+      'Repression, deportations and internal divisions wore the open movement down, and part of its youth turned to underground revolutionary societies. But its methods of boycott, national education and constructive enterprise became the standard repertoire of every later campaign, and the partition itself was annulled in 1911.',
     ],
     regions: ['east', 'west', 'south', 'north'],
     keyPeople: ['bal-gangadhar-tilak', 'bipin-chandra-pal', 'lala-lajpat-rai', 'aurobindo-ghose', 'vo-chidambaram-pillai', 'subramania-bharati', 'subramania-siva'],
@@ -172,10 +172,10 @@ export const movements: Movement[] = [
     startYear: 1905,
     endYear: 1934,
     summary:
-      'The secret societies — Anushilan, Jugantar, HRA, HSRA, the Chittagong group — whose members chose armed struggle, and whose trials, hunger strikes and executions stirred the whole country.',
+      'The secret societies whose members chose armed struggle, and whose trials, hunger strikes and executions stirred the whole country: Anushilan, Jugantar, HRA, HSRA, the Chittagong group.',
     description: [
       'Alongside open mass politics ran a hidden stream: young men and women organized in secret societies who believed the British would never leave except by force. In Bengal the Anushilan Samiti and Jugantar carried out assassinations and armed robberies to fund revolt; in London, Madan Lal Dhingra struck at India House’s enemies; during the First World War Bagha Jatin died in a gun battle awaiting German arms and Rash Behari Bose plotted mutiny across northern India.',
-      'A second generation — Ram Prasad Bismil and Ashfaqulla Khan of the Kakori action, then Bhagat Singh, Chandrashekhar Azad, Sukhdev and Rajguru of the Hindustan Socialist Republican Association — fused revolutionary daring with socialist ideas and used their trials as national platforms. Surya Sen’s Chittagong armoury raid of 1930, in which Pritilata Waddedar and Kalpana Datta fought, showed the movement’s reach; the executions of its leaders made them immortal in popular memory.',
+      'A second generation fused revolutionary daring with socialist ideas and used their trials as national platforms: Ram Prasad Bismil and Ashfaqulla Khan of the Kakori action, then Bhagat Singh, Chandrashekhar Azad, Sukhdev and Rajguru of the Hindustan Socialist Republican Association. Surya Sen’s Chittagong armoury raid of 1930, in which Pritilata Waddedar and Kalpana Datta fought, showed the movement’s reach; the executions of its leaders made them immortal in popular memory.',
     ],
     regions: ['east', 'north', 'west', 'abroad'],
     keyPeople: ['khudiram-bose', 'bagha-jatin', 'ram-prasad-bismil', 'ashfaqulla-khan', 'bhagat-singh', 'chandrashekhar-azad', 'surya-sen', 'pritilata-waddedar', 'durgawati-devi'],
@@ -205,10 +205,10 @@ export const movements: Movement[] = [
     startYear: 1913,
     endYear: 1918,
     summary:
-      'Indian emigrants in North America — farmers, labourers, students — who sailed home during the First World War to raise rebellion, and paid for it at the gallows.',
+      'The farmers, labourers and students among Indian emigrants in North America who sailed home during the First World War to raise rebellion, and paid for it at the gallows.',
     description: [
       'On the Pacific coast of North America, Punjabi farm workers and students facing racial exclusion built the Ghadar ("Revolt") Party in 1913 under Sohan Singh Bhakna and Lala Har Dayal. Their newspaper declared open war on the British Empire, and when the World War began thousands of emigrants sailed for India to raise mutiny among the troops.',
-      'The plan was betrayed and broken: the February 1915 rising was pre-empted, and the Lahore conspiracy trials sent dozens to the gallows or the Cellular Jail — among them nineteen-year-old Kartar Singh Sarabha, whom Bhagat Singh would call his guru. The Komagata Maru’s turning away in 1914, and the shooting of its passengers at Budge Budge, remain emblems of the era.',
+      'The plan was betrayed and broken: the February 1915 rising was pre-empted, and the Lahore conspiracy trials sent dozens to the gallows or the Cellular Jail, among them nineteen-year-old Kartar Singh Sarabha, whom Bhagat Singh would call his guru. The Komagata Maru’s turning away in 1914, and the shooting of its passengers at Budge Budge, remain emblems of the era.',
     ],
     regions: ['abroad', 'north'],
     keyPeople: ['lala-har-dayal', 'kartar-singh-sarabha', 'rash-behari-bose'],
@@ -273,7 +273,7 @@ export const movements: Movement[] = [
     summary:
       'The campaign to defend the Ottoman Caliphate that allied with Gandhi’s Non-Cooperation and brought Hindus and Muslims together in an unprecedented joint struggle.',
     description: [
-      'After the First World War, Indian Muslims mobilised to defend the defeated Ottoman Sultan-Caliph against dismemberment of his empire. Led by the Ali brothers — Mohammad Ali and Shaukat Ali — and supported wholeheartedly by Gandhi, the Khilafat committees fused with the Non-Cooperation movement in 1920, producing the greatest display of Hindu-Muslim unity of the colonial era.',
+      'After the First World War, Indian Muslims mobilised to defend the defeated Ottoman Sultan-Caliph against dismemberment of his empire. Led by the Ali brothers, Mohammad Ali and Shaukat Ali, and supported wholeheartedly by Gandhi, the Khilafat committees fused with the Non-Cooperation movement in 1920, producing the greatest display of Hindu-Muslim unity of the colonial era.',
       'The movement collapsed after Turkey itself abolished the Caliphate in 1924, and the unity it embodied proved fragile. But it had drawn millions of Muslims into mass politics and made leaders like Mohammad Ali Jouhar central figures of the national movement.',
     ],
     regions: ['north', 'west', 'south'],
@@ -299,8 +299,8 @@ export const movements: Movement[] = [
     summary:
       'Gandhi’s first all-India satyagraha: courts, schools, titles and foreign cloth boycotted by millions, until the violence at Chauri Chaura led him to halt the campaign.',
     description: [
-      'In the shadow of the Jallianwala Bagh massacre, the Congress under Gandhi adopted a programme without precedent: Indians would withdraw cooperation from the Raj itself. Lawyers left the courts, students left government schools, titles were returned, foreign cloth burned, and charkha-spun khadi became the uniform of the movement. Alongside the Khilafat campaign, it drew millions — peasants, workers, women — into political life for the first time.',
-      'In February 1922, after a crowd burned twenty-two policemen to death at Chauri Chaura, Gandhi suspended the movement, insisting that means mattered as much as ends. The decision dismayed many colleagues — and pushed some of the young towards revolutionary alternatives — but the Raj’s prestige never recovered from the sight of a subcontinent saying no.',
+      'In the shadow of the Jallianwala Bagh massacre, the Congress under Gandhi adopted a programme without precedent: Indians would withdraw cooperation from the Raj itself. Lawyers left the courts, students left government schools, titles were returned, foreign cloth burned, and charkha-spun khadi became the uniform of the movement. Alongside the Khilafat campaign, it drew millions of peasants, workers and women into political life for the first time.',
+      'In February 1922, after a crowd burned twenty-two policemen to death at Chauri Chaura, Gandhi suspended the movement, insisting that means mattered as much as ends. The decision dismayed many colleagues and pushed some of the young towards revolutionary alternatives, but the Raj’s prestige never recovered from the sight of a subcontinent saying no.',
     ],
     regions: ['north', 'east', 'west', 'south', 'central'],
     keyPeople: ['mahatma-gandhi', 'mohammad-ali-jouhar', 'c-rajagopalachari', 'vallabhbhai-patel', 'jawaharlal-nehru', 'maulana-azad'],
@@ -330,10 +330,10 @@ export const movements: Movement[] = [
     startYear: 1930,
     endYear: 1934,
     summary:
-      'Launched by the Dandi March, the deliberate mass breaking of colonial law — salt, forest and tax laws — that brought tens of thousands, notably women, into the struggle and into prison.',
+      'Launched by the Dandi March, the deliberate mass breaking of colonial salt, forest and tax laws that brought tens of thousands, notably women, into the struggle and into prison.',
     description: [
-      'After the Purna Swaraj declaration of complete independence, Gandhi chose an improbable weapon: salt. The 240-mile march from Sabarmati to Dandi in March–April 1930 ended with a handful of illegal salt lifted from the shore — and the country understood. Salt was made and sold illegally everywhere; Sarojini Naidu led the raid on the Dharasana salt works, where volunteers stood unresisting under police lathis; Khan Abdul Ghaffar Khan’s Khudai Khidmatgars faced gunfire at Peshawar; forest laws were broken in the south and land revenue withheld in Gujarat.',
-      'Women joined in unprecedented numbers — picketing liquor and cloth shops, marching, going to jail by the thousand. Some ninety thousand were imprisoned before the movement was suspended in 1934. It did not win freedom by itself, but it transformed who "the nation" was.',
+      'After the Purna Swaraj declaration of complete independence, Gandhi chose an improbable weapon: salt. The 240-mile march from Sabarmati to Dandi in March–April 1930 ended with a handful of illegal salt lifted from the shore, and the country understood. Salt was made and sold illegally everywhere; Sarojini Naidu led the raid on the Dharasana salt works, where volunteers stood unresisting under police lathis; Khan Abdul Ghaffar Khan’s Khudai Khidmatgars faced gunfire at Peshawar; forest laws were broken in the south and land revenue withheld in Gujarat.',
+      'Women joined in unprecedented numbers, picketing liquor and cloth shops, marching, going to jail by the thousand. Some ninety thousand were imprisoned before the movement was suspended in 1934. It did not win freedom by itself, but it transformed who "the nation" was.',
     ],
     regions: ['west', 'north', 'south', 'east'],
     keyPeople: ['mahatma-gandhi', 'sarojini-naidu', 'khan-abdul-ghaffar-khan', 'kasturba-gandhi', 'kamaladevi-chattopadhyay', 'c-rajagopalachari', 'rukmini-lakshmipathi', 'k-kamaraj', 'tiruppur-kumaran', 'tanguturi-prakasam'],
@@ -352,10 +352,10 @@ export const movements: Movement[] = [
         type: 'museum',
       },
     ],
-    aims: ['Purna Swaraj — complete independence, declared by the Congress in December 1929', 'Repeal of the salt tax as the first, universal grievance to break'],
+    aims: ['Purna Swaraj (complete independence), declared by the Congress in December 1929', 'Repeal of the salt tax as the first, universal grievance to break'],
     methods: ['Openly breaking the salt law and accepting arrest', 'Boycott of foreign cloth and liquor', 'Non-payment of taxes in selected districts', 'Marches and mass meetings'],
     reach: 'From Gujarat’s coast at Dandi to Vedaranyam in the Tamil country, the North-West Frontier and Bengal; estimates of those imprisoned in 1930–31 range from 60,000 to over 90,000.',
-    participants: 'Congress volunteers, peasants and traders, and women in unprecedented numbers — Sarojini Naidu at Dharasana, Rukmini Lakshmipathi at Vedaranyam, Kamaladevi Chattopadhyay in Bombay.',
+    participants: 'Congress volunteers, peasants and traders, and women in unprecedented numbers: Sarojini Naidu at Dharasana, Rukmini Lakshmipathi at Vedaranyam, Kamaladevi Chattopadhyay in Bombay.',
     disagreements: ['Revolutionaries such as Bhagat Singh’s generation rejected non-violence as insufficient', 'The Gandhi–Irwin Pact of 1931 that paused the campaign was criticised within the Congress'],
     outcomes: ['The Gandhi–Irwin Pact (March 1931) and Congress’s participation in the Second Round Table Conference later that year', 'A movement that was, for the first time, truly popular across regions and classes'],
     editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' },
@@ -368,7 +368,7 @@ export const movements: Movement[] = [
     startYear: 1942,
     endYear: 1944,
     summary:
-      '"Do or Die" — the August 1942 uprising that saw the entire Congress leadership jailed, an underground of radio broadcasts and sabotage, and fierce repression across India.',
+      '"Do or Die": the August 1942 uprising that saw the entire Congress leadership jailed, an underground of radio broadcasts and sabotage, and fierce repression across India.',
     description: [
       'On 8 August 1942, with the war at India’s doorstep and the Cripps Mission failed, the Congress passed the Quit India resolution at Gowalia Tank in Bombay, and Gandhi gave the mantra "Do or Die". By dawn the entire leadership was in prison. Leaderless, the country rose anyway: crowds attacked symbols of the Raj, railway lines and telegraph wires were cut, parallel governments appeared in Satara, Talcher and Tamluk, and Usha Mehta’s secret Congress Radio broadcast until traced. Aruna Asaf Ali, who hoisted the flag at Gowalia Tank, and Jayaprakash Narayan, who escaped Hazaribagh jail, became legends of the underground.',
       'Repression was severe: over a thousand killed by official count, tens of thousands jailed, whole villages punished. Elderly Matangini Hazra fell to bullets at Tamluk holding the flag; teenaged Kanaklata Barua at Gohpur in Assam. Quit India convinced Britain that India could not be held after the war.',
@@ -400,10 +400,10 @@ export const movements: Movement[] = [
     startYear: 1942,
     endYear: 1946,
     summary:
-      'Subhas Chandra Bose’s Indian National Army and Provisional Government of Free India, which fought at Imphal and Kohima — and whose post-war trials at the Red Fort set India alight.',
+      'Subhas Chandra Bose’s Indian National Army and Provisional Government of Free India, which fought at Imphal and Kohima, and whose post-war trials at the Red Fort set India alight.',
     description: [
-      'Escaping house arrest in Calcutta in 1941, Subhas Chandra Bose reached Southeast Asia in 1943 to take command of the Indian National Army — raised from prisoners of war and the Indian communities of Malaya and Burma. His Provisional Government of Azad Hind declared war on Britain; the Rani of Jhansi Regiment under Lakshmi Sahgal made it one of the first armies of its era with a full women’s combat unit. The INA fought alongside Japanese forces at Imphal and Kohima in 1944, planting the tricolour at Moirang before the campaign collapsed in retreat.',
-      'Defeat became a strange victory: when Britain tried INA officers Shah Nawaz Khan, Prem Sahgal and Gurbaksh Singh Dhillon jointly at the Red Fort in 1945, the country — and parts of the British Indian armed forces — erupted in their support, feeding the naval mutiny of 1946 and hastening the end of the Raj.',
+      'Escaping house arrest in Calcutta in 1941, Subhas Chandra Bose reached Southeast Asia in 1943 to take command of the Indian National Army, raised from prisoners of war and the Indian communities of Malaya and Burma. His Provisional Government of Azad Hind declared war on Britain; the Rani of Jhansi Regiment under Lakshmi Sahgal made it one of the first armies of its era with a full women’s combat unit. The INA fought alongside Japanese forces at Imphal and Kohima in 1944, planting the tricolour at Moirang before the campaign collapsed in retreat.',
+      'Defeat became a strange victory: when Britain tried INA officers Shah Nawaz Khan, Prem Sahgal and Gurbaksh Singh Dhillon jointly at the Red Fort in 1945, the country, and parts of the British Indian armed forces, erupted in their support, feeding the naval mutiny of 1946 and hastening the end of the Raj.',
     ],
     regions: ['abroad', 'northeast', 'east'],
     keyPeople: ['subhas-chandra-bose', 'lakshmi-sahgal', 'rash-behari-bose'],

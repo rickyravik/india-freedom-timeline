@@ -1,7 +1,7 @@
 import type { FreedomFighter } from '@/types';
 
 /**
- * Freedom fighters of Andhra Pradesh and Telangana — from the earliest
+ * Freedom fighters of Andhra Pradesh and Telangana, from the earliest
  * armed resistance to Company revenue demands in Rayalaseema, through the
  * Hyderabad rising of 1857, to the Swadeshi-era campaign for a national
  * flag. This archive has carried almost no records from this region;
@@ -20,7 +20,7 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
     portrait: '/images/fighters/uyyalawada-narasimha-reddy.jpg',
     portraitNote: {
       kind: 'statue',
-      caption: 'Equestrian statue of Uyyalawada Narasimha Reddy in Anantapur, Andhra Pradesh — no contemporary portrait survives from before the era of photography.',
+      caption: 'Equestrian statue of Uyyalawada Narasimha Reddy in Anantapur, Andhra Pradesh. No contemporary portrait survives from before the era of photography.',
       credit: 'Chinnareddy435, Wikimedia Commons',
       created: '2024 (statue photographed); CC BY 4.0',
     },
@@ -30,11 +30,11 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
     era: 'early-resistance',
     roles: ['ruler', 'military-leader'],
     summary:
-      'A palegar (poligar) chief of Rayalaseema who led an armed rebellion against East India Company revenue demands in 1846–47 — one of the earliest organized armed uprisings in the Andhra country, roughly a decade before the Revolt of 1857 — and was captured and hanged in 1847.',
+      'A palegar (poligar) chief of Rayalaseema who led an armed rebellion against East India Company revenue demands in 1846–47, one of the earliest organized armed uprisings in the Andhra country, roughly a decade before the Revolt of 1857, and was captured and hanged in 1847.',
     shortStory: [
       {
         title: 'A chief pushed to the edge',
-        text: 'Narasimha Reddy’s family had long held palegar rights — local chieftainship — around Kurnool. As the East India Company tightened its revenue settlements through the 1830s and 40s, those rights and incomes were cut away, one demand at a time.',
+        text: 'Narasimha Reddy’s family had long held palegar rights (local chieftainship) around Kurnool. As the East India Company tightened its revenue settlements through the 1830s and 40s, those rights and incomes were cut away, one demand at a time.',
       },
       {
         title: 'Rebellion in Rayalaseema',
@@ -47,12 +47,12 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
       },
       {
         title: 'Remembered as an early rebel',
-        text: 'Andhra Pradesh recalls him today as one of the first to take up arms against colonial rule — most visibly through Chiranjeevi’s 2019 film Sye Raa Narasimha Reddy, which carried his name to a national audience.',
+        text: 'Andhra Pradesh recalls him today as one of the first to take up arms against colonial rule, most visibly through Chiranjeevi’s 2019 film Sye Raa Narasimha Reddy, which carried his name to a national audience.',
       },
     ],
     fullBiography: [
-      'Narasimha Reddy held hereditary palegar (chieftain) rights around Kurnool, in the Ceded Districts the Company had taken over from the Nizam of Hyderabad in 1800. Through the 1830s and 40s, Company revenue settlements steadily dismantled the palegars’ traditional incomes and authority, reducing men like Narasimha Reddy from petty rulers to ordinary revenue-payers — a humiliation he refused to accept quietly.',
-      'In 1846 he raised a large following and began attacking Company treasuries and posts across the Kurnool region, evading capture for months in a campaign historians treat as one of the earliest organized armed uprisings against Company authority in the Telugu country — predating the far larger Revolt of 1857 by about a decade.',
+      'Narasimha Reddy held hereditary palegar (chieftain) rights around Kurnool, in the Ceded Districts the Company had taken over from the Nizam of Hyderabad in 1800. Through the 1830s and 40s, Company revenue settlements steadily dismantled the palegars’ traditional incomes and authority, reducing men like Narasimha Reddy from petty rulers to ordinary revenue-payers, a humiliation he refused to accept quietly.',
+      'In 1846 he raised a large following and began attacking Company treasuries and posts across the Kurnool region, evading capture for months in a campaign historians treat as one of the earliest organized armed uprisings against Company authority in the Telugu country, predating the far larger Revolt of 1857 by about a decade.',
       'He was eventually captured in 1847, tried, and hanged; his body was left on public display for a long period afterward as a deterrent to further unrest, though accounts differ on the precise place and duration. He is remembered in Andhra Pradesh’s public memory and, more recently, in popular cinema, as an early martyr of armed resistance to Company rule.',
     ],
     entryIntoStruggle: 'Loss of hereditary palegar rights and mounting Company revenue demands in Kurnool district through the 1830s–40s.',
@@ -119,11 +119,11 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
     era: 'non-cooperation',
     roles: ['organizer', 'educator'],
     summary:
-      'Agriculturist, geologist and educator who spent decades campaigning for a national flag, and whose 1921 design — presented to Gandhi at the Vijayawada AICC session — became the Congress flag and the direct ancestor of independent India’s Tricolour.',
+      'Agriculturist, geologist and educator who spent decades campaigning for a national flag, and whose 1921 design, presented to Gandhi at the Vijayawada AICC session, became the Congress flag and the direct ancestor of independent India’s Tricolour.',
     shortStory: [
       {
         title: 'A man of many trades',
-        text: 'Venkayya trained as a geologist, worked as an agriculturist and educator, and spoke several languages. As a young man he served in the British Indian Army during the Second Anglo-Boer War in South Africa — where he first met Mohandas Gandhi.',
+        text: 'Venkayya trained as a geologist, worked as an agriculturist and educator, and spoke several languages. As a young man he served in the British Indian Army during the Second Anglo-Boer War in South Africa, where he first met Mohandas Gandhi.',
       },
       {
         title: 'Decades chasing one idea',
@@ -131,7 +131,7 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
       },
       {
         title: 'Bezwada, 1921',
-        text: 'At the All India Congress Committee session in Vijayawada (then Bezwada) in 1921, he presented a two-colour saffron-and-green flag to Gandhi. Gandhi suggested adding a white band and a spinning wheel — and the flag that resulted flew over the freedom movement for the next quarter-century.',
+        text: 'At the All India Congress Committee session in Vijayawada (then Bezwada) in 1921, he presented a two-colour saffron-and-green flag to Gandhi. Gandhi suggested adding a white band and a spinning wheel, and the flag that resulted flew over the freedom movement for the next quarter-century.',
       },
       {
         title: 'A legacy folded into the Tricolour',
@@ -139,9 +139,9 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Pingali Venkayya was born in 1876 in Krishna district and became, over his life, a geologist, agriculturist, educator and linguist. As a young man he served in the British Indian Army during the Second Anglo-Boer War in South Africa, where he first met Mohandas Gandhi — a meeting that would shape both their lives.',
+      'Pingali Venkayya was born in 1876 in Krishna district and became, over his life, a geologist, agriculturist, educator and linguist. As a young man he served in the British Indian Army during the Second Anglo-Boer War in South Africa, where he first met Mohandas Gandhi, a meeting that would shape both their lives.',
       'From around 1916 he campaigned for the Congress to adopt a national flag, presenting design after design at party sessions and eventually self-publishing a booklet illustrating some thirty proposals. At the AICC session in Vijayawada in 1921, his two-colour saffron-and-green flag caught Gandhi’s attention; Gandhi proposed adding a white band to represent other communities and a spinning wheel (charkha) as a symbol of self-reliance. The resulting tricolour became the flag of the Congress and the wider movement through the 1920s, 30s and 40s.',
-      'When independence came, the Constituent Assembly adopted a modified version of Venkayya’s flag — with the Ashoka Chakra replacing the charkha — as India’s national flag on 22 July 1947. Venkayya himself received little recognition in his own lifetime and died in 1963 in modest circumstances; India Post issued a commemorative stamp in his honour only in 2009, and he is now widely credited as the designer of India’s national flag.',
+      'When independence came, the Constituent Assembly adopted a modified version of Venkayya’s flag, with the Ashoka Chakra replacing the charkha, as India’s national flag on 22 July 1947. Venkayya himself received little recognition in his own lifetime and died in 1963 in modest circumstances; India Post issued a commemorative stamp in his honour only in 2009, and he is now widely credited as the designer of India’s national flag.',
     ],
     entryIntoStruggle: 'Advocacy for a national flag at Congress sessions from around 1916, culminating in his 1921 design presented to Gandhi.',
     achievements: [
@@ -200,12 +200,12 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
       },
       {
         title: 'Captured, then escaped',
-        text: 'The Nizam’s government — a British ally — arrested Turrebaz Khan and sentenced him to transportation for life. He did not go quietly: before he could be sent away, he escaped from custody.',
+        text: 'The Nizam’s government, a British ally, arrested Turrebaz Khan and sentenced him to transportation for life. He did not go quietly: before he could be sent away, he escaped from custody.',
       },
       {
         title: 'The end of the chase',
         text: 'Hunted with a price on his head, he was eventually cornered by British and Nizam’s forces. Accounts differ on whether he was killed in that encounter or captured and put to death; his body was afterward displayed publicly in the city as a warning.',
-        uncertainty: 'Sources disagree on both the exact date and the manner of his death — some place it in 1857, others describe a later escape and a fatal encounter in January 1859.',
+        uncertainty: 'Sources disagree on both the exact date and the manner of his death: some place it in 1857, others describe a later escape and a fatal encounter in January 1859.',
       },
       {
         title: 'Remembered in Hyderabad',
@@ -214,7 +214,7 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
     ],
     fullBiography: [
       'Hyderabad State in 1857 was ruled by a Nizam allied to the British, with a British Residency at the heart of the city. Turrebaz Khan, a Rohilla leader, was among those in Hyderabad who took up the cause of the revolt spreading across northern India that year.',
-      'On 17 July 1857 he and Maulvi Allauddin led a large crowd from the Mecca Masjid toward the Residency; the protest turned into an attack on the Residency guard, who opened fire on the crowd. Turrebaz Khan was captured by the Nizam’s forces and sentenced to transportation for life, his property confiscated — but he escaped custody before the sentence could be carried out.',
+      'On 17 July 1857 he and Maulvi Allauddin led a large crowd from the Mecca Masjid toward the Residency; the protest turned into an attack on the Residency guard, who opened fire on the crowd. Turrebaz Khan was captured by the Nizam’s forces and sentenced to transportation for life, his property confiscated. But he escaped custody before the sentence could be carried out.',
       'What followed is less certain. Detailed secondary accounts describe him being hunted for over a year, with a reward offered for his capture, and say he was killed in a clash with British and Nizam’s forces on 24 January 1859, after which his body was displayed publicly in Hyderabad as a warning to others. Other, briefer references simply record his death in 1857, without this escape and later pursuit. This record follows the more detailed account while flagging the disagreement, pending a documentary source that can settle it. He is remembered today through Hyderabad’s Turrebaz Khan Stadium and other landmarks bearing his name.',
     ],
     entryIntoStruggle: 'Led the attack on the British Residency at Hyderabad on 17 July 1857, in sympathy with the wider Revolt of 1857.',
@@ -284,7 +284,7 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
       },
       {
         title: 'Walking away',
-        text: 'At fifteen, with her own family standing by her, Durgabai ended the marriage that had been arranged for her as a child — an unusual and quietly difficult step for a young woman in 1920s Andhra.',
+        text: 'At fifteen, with her own family standing by her, Durgabai ended the marriage that had been arranged for her as a child, an unusual and quietly difficult step for a young woman in 1920s Andhra.',
       },
       {
         title: 'Salt and prison',
@@ -301,12 +301,12 @@ export const andhraTelanganaFighters: FreedomFighter[] = [
       },
       {
         title: 'After freedom',
-        text: 'Independence brought her a seat in the Constituent Assembly of India and, later, membership of the country’s first Planning Commission — a long public career this archive, focused on the freedom struggle itself, does not trace in detail.',
+        text: 'Independence brought her a seat in the Constituent Assembly of India and, later, membership of the country’s first Planning Commission: a long public career this archive, focused on the freedom struggle itself, does not trace in detail.',
       },
     ],
     fullBiography: [
       'Durgabai was born in 1909 in Rajahmundry and, by the custom of her family, married as a small child. At twelve, during the Non-Cooperation movement of 1921, she gave up her English-medium schooling in protest and helped start a Hindi school for girls in Rajahmundry; a few years later, at fifteen and with her own family’s support, she ended the child marriage altogether.',
-      'In 1930 she threw herself into organizing women for Gandhi’s Salt Satyagraha in Madras and across Andhra, and took over leadership of the Madras satyagraha when the veteran Andhra Congress leader Tanguturi Prakasam was arrested. She was arrested herself and spent close to three years in prison between 1930 and 1933, including about a year in solitary confinement — an experience that turned her toward the law, so she might one day defend women who had no one else to speak for them.',
+      'In 1930 she threw herself into organizing women for Gandhi’s Salt Satyagraha in Madras and across Andhra, and took over leadership of the Madras satyagraha when the veteran Andhra Congress leader Tanguturi Prakasam was arrested. She was arrested herself and spent close to three years in prison between 1930 and 1933, including about a year in solitary confinement, an experience that turned her toward the law, so she might one day defend women who had no one else to speak for them.',
       'Soon after her release she founded the Andhra Mahila Sabha, built initially around adult literacy classes for widowed and destitute women; it grew within a decade into one of South India’s major institutions for women’s education, health and welfare, and remains active today. She was enrolled at the Madras Bar in 1942 and practised law, with a particular commitment to women’s legal aid.',
       'After independence Durgabai was elected to the Constituent Assembly of India, one of a small number of women members, and later served on the Planning Commission and married the economist C. D. Deshmukh in 1953. This archive, centred on the freedom struggle itself, does not trace her long later career in public life and social work in detail.',
     ],

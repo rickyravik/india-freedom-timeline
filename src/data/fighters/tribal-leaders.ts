@@ -19,32 +19,32 @@ export const tribalLeaders: FreedomFighter[] = [
     era: 'rise-of-nationalism',
     roles: ['tribal-leader', 'organizer'],
     summary:
-      'Dharti Aba — "Father of the Earth" — the young Munda prophet who led the Ulgulan of 1899–1900 for land and self-rule, died in Ranchi jail at about twenty-five, and is honoured today across India.',
+      'Dharti Aba, "Father of the Earth": the young Munda prophet who led the Ulgulan of 1899–1900 for land and self-rule, died in Ranchi jail at about twenty-five, and is honoured today across India.',
     shortStory: [
       {
         title: 'The shepherd boy',
-        text: 'Birsa was born into a poor Munda family in the forests of Chotanagpur. He grew up herding sheep, playing the flute — and watching outsiders take his people’s ancestral lands under British law.',
+        text: 'Birsa was born into a poor Munda family in the forests of Chotanagpur. He grew up herding sheep, playing the flute, and watching outsiders take his people’s ancestral lands under British law.',
       },
       {
         title: 'Dharti Aba',
-        text: 'As a young man, Birsa became a healer and teacher. Thousands of Mundas came to hear him, calling him "Dharti Aba" — Father of the Earth. He told them the land was theirs and they need not fear.',
+        text: 'As a young man, Birsa became a healer and teacher. Thousands of Mundas came to hear him, calling him "Dharti Aba", Father of the Earth. He told them the land was theirs and they need not fear.',
       },
       {
         title: 'The Ulgulan',
-        text: 'In 1899 Birsa declared the Ulgulan — the Great Tumult. With bows, arrows and immense courage, the Mundas rose against landlords and the Raj. The British answered with guns at Dombari Hill.',
+        text: 'In 1899 Birsa declared the Ulgulan, the Great Tumult. With bows, arrows and immense courage, the Mundas rose against landlords and the Raj. The British answered with guns at Dombari Hill.',
       },
       {
         title: 'The legacy',
-        text: 'Captured, Birsa died in Ranchi jail on 9 June 1900 — only about twenty-five. But the law was changed to protect Munda lands, and today his birthday, 15 November, is celebrated as Janjatiya Gaurav Divas across India. His portrait hangs in Parliament.',
+        text: 'Captured, Birsa died in Ranchi jail on 9 June 1900, aged only about twenty-five. But the law was changed to protect Munda lands, and today his birthday, 15 November, is celebrated as Janjatiya Gaurav Divas across India. His portrait hangs in Parliament.',
       },
     ],
     fullBiography: [
-      'Birsa Munda was born at Ulihatu in 1875 into a sharecropping family displaced by the destruction of the khuntkatti system, under which Munda clans had held their cleared lands collectively. Schooled briefly at a German mission (and expelled), exposed to Vaishnav preachers, he forged from these materials a new faith — one God, purity, and the promise that the Mundas would recover their kingdom. Followers called him Bhagwan (God) and Dharti Aba.',
+      'Birsa Munda was born at Ulihatu in 1875 into a sharecropping family displaced by the destruction of the khuntkatti system, under which Munda clans had held their cleared lands collectively. Schooled briefly at a German mission (and expelled), exposed to Vaishnav preachers, he forged from these materials a new faith: one God, purity, and the promise that the Mundas would recover their kingdom. Followers called him Bhagwan (God) and Dharti Aba.',
       'The movement turned political as it grew: against the dikus (outsider landlords), the beth begari forced labour, and the colonial courts that sanctified dispossession. Arrested in 1895 and jailed two years, he returned to organize in secret. On Christmas Eve 1899 the Ulgulan opened with flaming arrows; through January 1900 the Mundas attacked police stations and estates until troops broke them at Sail Rakab and Dombari Hill, where many followers were killed.',
-      'Betrayed for reward and captured in February 1900, Birsa died in Ranchi jail on 9 June 1900, officially of cholera — a verdict many have questioned. The rising forced the Chotanagpur Tenancy Act (1908), which restricted the transfer of Adivasi land — protection that endures. Birsa’s afterlife has grown ever larger: his statue in the Parliament complex, the state of Jharkhand created on his birth anniversary in 2000, and since 2021 the national observance of 15 November as Janjatiya Gaurav Divas.',
+      'Betrayed for reward and captured in February 1900, Birsa died in Ranchi jail on 9 June 1900, officially of cholera, a verdict many have questioned. The rising forced the Chotanagpur Tenancy Act (1908), which restricted the transfer of Adivasi land, protection that endures. Birsa’s afterlife has grown ever larger: his statue in the Parliament complex, the state of Jharkhand created on his birth anniversary in 2000, and since 2021 the national observance of 15 November as Janjatiya Gaurav Divas.',
     ],
     entryIntoStruggle: 'The Sardari agitation and mission-era ferment of the 1880s–90s.',
-    ideology: 'Religious revival fused with Adivasi self-rule — "Abua raj" (our kingdom).',
+    ideology: 'Religious revival fused with Adivasi self-rule: "Abua raj" (our kingdom).',
     achievements: [
       'Led the Munda Ulgulan of 1899–1900',
       'His movement won the Chotanagpur Tenancy Act’s land protections',
@@ -99,11 +99,11 @@ export const tribalLeaders: FreedomFighter[] = [
     era: 'non-cooperation',
     roles: ['tribal-leader', 'military-leader', 'revolutionary'],
     summary:
-      'Manyam Veerudu — hero of the jungles — the ascetic who led the Koya and hill peoples of the Godavari agency in the Rampa rebellion of 1922–24, and was executed by firing squad without trial.',
+      'Manyam Veerudu, hero of the jungles: the ascetic who led the Koya and hill peoples of the Godavari agency in the Rampa rebellion of 1922–24, and was executed by firing squad without trial.',
     shortStory: [
       {
         title: 'The young sanyasi',
-        text: 'Sitarama Raju gave up ordinary life as a teenager and wandered the hills of the Eastern Ghats as an ascetic. The hill people came to trust and revere him — and he took their sufferings as his own.',
+        text: 'Sitarama Raju gave up ordinary life as a teenager and wandered the hills of the Eastern Ghats as an ascetic. The hill people came to trust and revere him, and he took their sufferings as his own.',
       },
       {
         title: 'Unjust laws',
@@ -111,7 +111,7 @@ export const tribalLeaders: FreedomFighter[] = [
       },
       {
         title: 'The raids',
-        text: 'In August 1922 they raided police stations at Chintapalli, Krishnadevipeta and Rajavommangi, seizing rifles — and leaving a note listing exactly what was taken. For two years his guerrillas defeated every force sent against them.',
+        text: 'In August 1922 they raided police stations at Chintapalli, Krishnadevipeta and Rajavommangi, seizing rifles, and leaving a note listing exactly what was taken. For two years his guerrillas defeated every force sent against them.',
       },
       {
         title: 'The hero of the jungles',
@@ -119,8 +119,8 @@ export const tribalLeaders: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Alluri Sitarama Raju, born on the plains near Visakhapatnam, renounced conventional life young and moved through the agency tracts of the Godavari hills as a sanyasi with a reputation for austerity and healing. The condition of the hill communities under the Madras Forest Act — podu cultivation banned, forest produce seized, gudem villagers pressed into unpaid road-gang labour by corrupt contractors — became his cause; the failure of Gandhian petitions in the tracts convinced him that this fight would be armed.',
-      'The Rampa rebellion opened on 22 August 1922 with the raid on Chintapalli police station, followed within days by Krishnadevipeta and Rajavommangi — arms taken, records signed for in Raju’s own hand. His force ambushed police columns at Damanapalli (killing two officers), and for two years, supplied and shielded by the villages, outfought the Malabar Special Police across the forests, with lieutenants like Gam Mallu Dora and Gantam Dora.',
+      'Alluri Sitarama Raju, born on the plains near Visakhapatnam, renounced conventional life young and moved through the agency tracts of the Godavari hills as a sanyasi with a reputation for austerity and healing. The condition of the hill communities under the Madras Forest Act (podu cultivation banned, forest produce seized, gudem villagers pressed into unpaid road-gang labour by corrupt contractors) became his cause; the failure of Gandhian petitions in the tracts convinced him that this fight would be armed.',
+      'The Rampa rebellion opened on 22 August 1922 with the raid on Chintapalli police station, followed within days by Krishnadevipeta and Rajavommangi: arms taken, records signed for in Raju’s own hand. His force ambushed police columns at Damanapalli (killing two officers), and for two years, supplied and shielded by the villages, outfought the Malabar Special Police across the forests, with lieutenants like Gam Mallu Dora and Gantam Dora.',
       'The Raj poured in forces under Rutherford’s special commission, with collective punishments on the villages. Betrayed and captured at Mampa in May 1924, Raju was taken to Koyyuru, tied to a tree, and executed by firing squad on 7 May 1924 without trial. "Manyam Veerudu" passed into ballad and film (the 2022 blockbuster RRR reimagined him for a new generation); his statue was unveiled in Parliament’s precincts, and his 125th birth year was marked nationally in 2022.',
     ],
     entryIntoStruggle: 'Championing agency-tract grievances against forest law from around 1920.',
@@ -130,7 +130,7 @@ export const tribalLeaders: FreedomFighter[] = [
       'Made agency-area injustices a national question',
     ],
     sacrifices: ['Executed without trial at twenty-six'],
-    legacy: 'Manyam Veerudu — Andhra’s great martyr; commemorated in statues, cinema and stamps.',
+    legacy: 'Manyam Veerudu, Andhra’s great martyr; commemorated in statues, cinema and stamps.',
     facts: ['His raiding parties left signed inventories of the weapons they took.'],
     timelineEvents: ['rampa-rebellion'],
     movements: ['tribal-resistance', 'revolutionary-movement'],
@@ -169,19 +169,19 @@ export const tribalLeaders: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['tribal-leader', 'military-leader'],
     summary:
-      'The Gond leader of Adilabad who raised the cry "Jal, Jangal, Zameen" — water, forest, land — and fought the Nizam’s state until he fell at Jodeghat in 1940.',
+      'The Gond leader of Adilabad who raised the cry "Jal, Jangal, Zameen" (water, forest, land) and fought the Nizam’s state until he fell at Jodeghat in 1940.',
     shortStory: [
       {
         title: 'A Gond boyhood',
-        text: 'Komaram Bheem grew up in the Gond villages of Adilabad’s forests, in the Nizam’s state of Hyderabad. He never went to school — but he learned early how officials and landlords crushed his people.',
+        text: 'Komaram Bheem grew up in the Gond villages of Adilabad’s forests, in the Nizam’s state of Hyderabad. He never went to school, but he learned early how officials and landlords crushed his people.',
       },
       {
         title: 'Flight and return',
-        text: 'After a clash with an oppressive official’s men, young Bheem fled — working in tea gardens in Assam, where he saw workers organize. He came home with a plan and a printing of new ideas in his head.',
+        text: 'After a clash with an oppressive official’s men, young Bheem fled, working in tea gardens in Assam, where he saw workers organize. He came home with a plan and a printing of new ideas in his head.',
       },
       {
         title: 'Jal, Jangal, Zameen',
-        text: 'Bheem united twelve villages and demanded the Gonds’ rights to their water, forests and land — "Jal, Jangal, Zameen". When talks failed, they fought the Nizam’s police from the hills of Jodeghat.',
+        text: 'Bheem united twelve villages and demanded the Gonds’ rights to their water, forests and land: "Jal, Jangal, Zameen". When talks failed, they fought the Nizam’s police from the hills of Jodeghat.',
       },
       {
         title: 'The last battle',
@@ -189,19 +189,19 @@ export const tribalLeaders: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Komaram Bheem was born into a Gond family in the forests of Adilabad, in Hyderabad State — outside British India, under the Nizam, whose revenue farmers, forest officials and settler landlords pressed the Gonds from their shifting cultivation. After an altercation in which an oppressor was killed, Bheem fled the region, working years in the tea gardens of Assam, where strikes and labour organization left their mark on him.',
-      'Returning to Adilabad in the 1930s, he settled at Bhabejhari and organized the Gonds of twelve villages (the "twelve mauzas") around the demand summarised in the slogan attributed to him — Jal, Jangal, Zameen — petitioning the Nizam’s government for land rights and an end to exactions, and preparing to resist when petitions failed. From Jodeghat’s hills he led a guerrilla defence of Gond country through 1938–40.',
+      'Komaram Bheem was born into a Gond family in the forests of Adilabad, in Hyderabad State, outside British India, under the Nizam, whose revenue farmers, forest officials and settler landlords pressed the Gonds from their shifting cultivation. After an altercation in which an oppressor was killed, Bheem fled the region, working years in the tea gardens of Assam, where strikes and labour organization left their mark on him.',
+      'Returning to Adilabad in the 1930s, he settled at Bhabejhari and organized the Gonds of twelve villages (the "twelve mauzas") around the demand summarised in the slogan attributed to him (Jal, Jangal, Zameen), petitioning the Nizam’s government for land rights and an end to exactions, and preparing to resist when petitions failed. From Jodeghat’s hills he led a guerrilla defence of Gond country through 1938–40.',
       'On the full-moon night of Aswayuja in October 1940, police guided by an informer surrounded Bheem’s camp at Jodeghat; he died fighting with about a dozen companions. The Nizam’s government, shaken, commissioned the anthropologist Haimendorf’s inquiries that led to tribal protections in the state. The Gonds deified Bheem, commemorating him each Aswayuja Pournami; Telangana has raised a memorial complex at Jodeghat, a district bears his name, and the film RRR carried his legend worldwide.',
     ],
     entryIntoStruggle: 'Organizing Adilabad’s Gond villages against the Nizam’s forest and revenue exactions, 1930s.',
-    ideology: '"Jal, Jangal, Zameen" — Adivasi sovereignty over water, forest and land.',
+    ideology: '"Jal, Jangal, Zameen": Adivasi sovereignty over water, forest and land.',
     achievements: [
       'United the Gond villages in organized resistance',
       'His revolt forced protective reforms in Hyderabad State',
     ],
     sacrifices: ['Killed in battle at Jodeghat, about thirty-nine'],
     legacy: 'Deified by the Gonds; the watchword he raised guides Adivasi movements to this day.',
-    facts: ['His struggle was against the princely state of Hyderabad — a reminder that colonial-era oppression wore more than one crown.'],
+    facts: ['His struggle was against the princely state of Hyderabad, a reminder that colonial-era oppression wore more than one crown.'],
     disputed: [
       {
         claim: 'Details of early life and dates',
@@ -248,15 +248,15 @@ export const tribalLeaders: FreedomFighter[] = [
     shortStory: [
       {
         title: 'The girl of the hills',
-        text: 'Gaidinliu was born among the Rongmei Nagas of Manipur. At thirteen she joined her cousin Haipou Jadonang’s Heraka movement, which sought to revive Naga religion — and to end British rule in the hills.',
+        text: 'Gaidinliu was born among the Rongmei Nagas of Manipur. At thirteen she joined her cousin Haipou Jadonang’s Heraka movement, which sought to revive Naga religion, and to end British rule in the hills.',
       },
       {
         title: 'Sixteen and leading a rebellion',
-        text: 'When the British hanged Jadonang in 1931, Gaidinliu — just sixteen — took his place. She told her people to pay no taxes, and her followers fought the Assam Rifles from village strongholds.',
+        text: 'When the British hanged Jadonang in 1931, Gaidinliu, just sixteen, took his place. She told her people to pay no taxes, and her followers fought the Assam Rifles from village strongholds.',
       },
       {
         title: 'Fourteen years in prison',
-        text: 'Captured in 1932, she was sentenced to life imprisonment. Nehru met her in Shillong jail in 1937, called her the "daughter of the hills", and gave her the title Rani — Queen. But only free India could release her, in 1947.',
+        text: 'Captured in 1932, she was sentenced to life imprisonment. Nehru met her in Shillong jail in 1937, called her the "daughter of the hills", and gave her the title Rani (Queen). But only free India could release her, in 1947.',
       },
       {
         title: 'Honoured at last',
@@ -264,9 +264,9 @@ export const tribalLeaders: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Gaidinliu of Nungkao joined the Heraka religious reform movement of her cousin Haipou Jadonang, which grew among the Zeliangrong Nagas into a challenge to British authority — prophesying the end of white rule and organizing against house-tax and forced porterage. After the British executed Jadonang in August 1931 on contested charges, the sixteen-year-old Gaidinliu assumed the movement’s spiritual and political leadership.',
-      'She moved between villages of the Naga hills raising no-tax resistance and, as the Assam Rifles hunted her, guerrilla defence; the village of Pulomi, where her followers were building a wooden fortress, fell to a surprise assault in October 1932, and she was captured. Tried, she was sentenced to life imprisonment; her followers faced executions and collective fines. Jawaharlal Nehru, visiting Shillong jail in 1937, publicised her case — naming her Rani Gaidinliu — but British authorities refused release; she spent fourteen years in the jails of Assam and beyond.',
-      'Released at independence in 1947, she continued to lead the Heraka community, working from Kohima and Manipur for Zeliangrong welfare and cultural revival — a stance that later drew friction with sections of the Naga national movement and with missionary Christianity alike; she spent 1960s years underground again in defence of Heraka tradition before a settlement. Padma Bhushan (1982), Vivekananda Sevā awards and posthumous commemorations — including a coin and her portrait in Parliament — mark independent India’s regard. She died in 1993 at Longkao.',
+      'Gaidinliu of Nungkao joined the Heraka religious reform movement of her cousin Haipou Jadonang, which grew among the Zeliangrong Nagas into a challenge to British authority, prophesying the end of white rule and organizing against house-tax and forced porterage. After the British executed Jadonang in August 1931 on contested charges, the sixteen-year-old Gaidinliu assumed the movement’s spiritual and political leadership.',
+      'She moved between villages of the Naga hills raising no-tax resistance and, as the Assam Rifles hunted her, guerrilla defence; the village of Pulomi, where her followers were building a wooden fortress, fell to a surprise assault in October 1932, and she was captured. Tried, she was sentenced to life imprisonment; her followers faced executions and collective fines. Jawaharlal Nehru, visiting Shillong jail in 1937, publicised her case, naming her Rani Gaidinliu, but British authorities refused release; she spent fourteen years in the jails of Assam and beyond.',
+      'Released at independence in 1947, she continued to lead the Heraka community, working from Kohima and Manipur for Zeliangrong welfare and cultural revival, a stance that later drew friction with sections of the Naga national movement and with missionary Christianity alike; she spent 1960s years underground again in defence of Heraka tradition before a settlement. Padma Bhushan (1982), Vivekananda Sevā awards and posthumous commemorations, including a coin and her portrait in Parliament, mark independent India’s regard. She died in 1993 at Longkao.',
     ],
     entryIntoStruggle: 'Heraka movement under Jadonang from age thirteen; leadership at sixteen.',
     ideology: 'Naga religious revival (Heraka) and freedom from British rule.',
@@ -322,7 +322,7 @@ export const tribalLeaders: FreedomFighter[] = [
       },
       {
         title: 'The Bhagat movement',
-        text: 'Thousands of Bhils became his followers, called Bhagats. He taught self-respect, unity and simple living, and slowly the movement grew political — demanding an end to forced labour and unfair taxes imposed by local states and the British.',
+        text: 'Thousands of Bhils became his followers, called Bhagats. He taught self-respect, unity and simple living, and slowly the movement grew political, demanding an end to forced labour and unfair taxes imposed by local states and the British.',
       },
       {
         title: 'Gathering at Mangarh',
@@ -330,14 +330,14 @@ export const tribalLeaders: FreedomFighter[] = [
       },
       {
         title: 'The firing at Mangarh',
-        text: 'On 17 November 1913, soldiers opened fire on the gathering. How many died is still argued about — estimates vary enormously, and no official count is trusted by historians. Govind Guru was arrested and sentenced to death, then to life imprisonment; he was freed in 1919 and kept teaching until his death in 1931.',
+        text: 'On 17 November 1913, soldiers opened fire on the gathering. How many died is still argued about: estimates vary enormously, and no official count is trusted by historians. Govind Guru was arrested and sentenced to death, then to life imprisonment; he was freed in 1919 and kept teaching until his death in 1931.',
         uncertainty: 'Estimates of how many died at Mangarh range from a few dozen to well over a thousand; no official count is trusted by historians.',
       },
     ],
     fullBiography: [
-      'Govind Guru was born in 1858 to a Banjara family in Bansiya, in the princely state of Dungarpur, and endured a childhood of farm labour and famine. As a young man he began preaching among the Bhils of the Rajasthan–Gujarat–Madhya Pradesh borderlands, founding the Sampa Sabha in 1883 to unite scattered Bhil communities, and from around 1908 built this into the Bhagat movement — urging Bhils to give up liquor, theft and blood feuds and to live by a simple, self-respecting code.',
+      'Govind Guru was born in 1858 to a Banjara family in Bansiya, in the princely state of Dungarpur, and endured a childhood of farm labour and famine. As a young man he began preaching among the Bhils of the Rajasthan–Gujarat–Madhya Pradesh borderlands, founding the Sampa Sabha in 1883 to unite scattered Bhil communities, and from around 1908 built this into the Bhagat movement, urging Bhils to give up liquor, theft and blood feuds and to live by a simple, self-respecting code.',
       'What began as social and religious reform grew into open political resistance: the Bhagats organised against beth begari (forced labour), high revenue demands and the abuses of jagirdars and forest officials in the region’s princely states. By 1913 the movement had drawn a mass following, some of whom spoke of establishing a Bhil raj of their own, and tens of thousands gathered at Govind Guru’s call on the hill of Mangarh, on the Banswara–Santrampur border.',
-      'On 17 November 1913, British and state troops surrounded the gathering and opened fire. The killing is sometimes compared to the Jallianwala Bagh massacre six years later, though it happened earlier and is far less documented: no reliable contemporary count of the dead survives, and estimates in later accounts range from several dozen to well over a thousand — a gap historians have never closed. Govind Guru was arrested, sentenced to death, and then, amid fears that executing him would inflame the Bhils further, had the sentence commuted to life imprisonment.',
+      'On 17 November 1913, British and state troops surrounded the gathering and opened fire. The killing is sometimes compared to the Jallianwala Bagh massacre six years later, though it happened earlier and is far less documented: no reliable contemporary count of the dead survives, and estimates in later accounts range from several dozen to well over a thousand, a gap historians have never closed. Govind Guru was arrested, sentenced to death, and then, amid fears that executing him would inflame the Bhils further, had the sentence commuted to life imprisonment.',
       'Released in 1919 but barred from his old areas of influence, he continued to preach reform among the Bhils until his death at Kamboi, near Limbdi in Gujarat, on 30 October 1931. The Bhagat movement’s demand for dignity and self-rule left a lasting mark on Bhil political identity across three states, and Govind Guru is honoured today as one of the great Adivasi leaders of the freedom era.',
     ],
     entryIntoStruggle: 'Founded the Sampa Sabha to unite Bhil communities, 1883; built the Bhagat movement from around 1908.',
@@ -389,36 +389,36 @@ export const tribalLeaders: FreedomFighter[] = [
     era: 'early-resistance',
     roles: ['tribal-leader'],
     summary:
-      'Santhal sisters of Sidhu and Kanhu Murmu, remembered in Hul tradition as taking up arms in the 1855 Santhal rebellion alongside their brothers — their story carried almost entirely by Santhal oral memory rather than colonial record.',
+      'Santhal sisters of Sidhu and Kanhu Murmu, remembered in Hul tradition as taking up arms in the 1855 Santhal rebellion alongside their brothers, their story carried almost entirely by Santhal oral memory rather than colonial record.',
     shortStory: [
       {
         title: 'Sisters of the Hul',
-        text: 'Phulo and Jhano were the sisters — some accounts say sisters-in-law — of Sidhu and Kanhu Murmu, the brothers who called the Santhals to rebellion at Bhognadih in June 1855. Santhal memory holds that the sisters stood with their brothers from the very first gathering.',
+        text: 'Phulo and Jhano were the sisters (some accounts say sisters-in-law) of Sidhu and Kanhu Murmu, the brothers who called the Santhals to rebellion at Bhognadih in June 1855. Santhal memory holds that the sisters stood with their brothers from the very first gathering.',
       },
       {
         title: 'Taking up arms',
-        text: 'As the Hul spread, Santhal oral tradition remembers Phulo and Jhano fighting alongside the men — in some retellings, slipping into an enemy camp and killing soldiers there before being killed themselves.',
+        text: 'As the Hul spread, Santhal oral tradition remembers Phulo and Jhano fighting alongside the men, in some retellings slipping into an enemy camp and killing soldiers there before being killed themselves.',
         uncertainty: 'This account comes down almost entirely through Santhal oral tradition and later retellings; no British record of the time names Phulo or Jhano Murmu, so the specific acts attributed to them cannot be checked against a contemporary source.',
       },
       {
         title: 'Falling with the Hul',
-        text: 'Like their brothers, the sisters are remembered as having died in the fighting that followed — swept up in the same British counter-offensive of late 1855 and early 1856 that killed Sidhu and, later, Kanhu.',
+        text: 'Like their brothers, the sisters are remembered as having died in the fighting that followed, swept up in the same British counter-offensive of late 1855 and early 1856 that killed Sidhu and, later, Kanhu.',
       },
       {
         title: 'Kept alive in memory',
-        text: 'Jharkhand’s Hul Diwas each 30 June now honours Phulo and Jhano alongside their brothers — a reminder that the women of the Hul were fighters too, even where the colonial record never wrote their names down.',
+        text: 'Jharkhand’s Hul Diwas each 30 June now honours Phulo and Jhano alongside their brothers, a reminder that the women of the Hul were fighters too, even where the colonial record never wrote their names down.',
       },
     ],
     fullBiography: [
-      'Phulo Murmu and Jhano Murmu are remembered in Santhal tradition as sisters — other accounts say sisters-in-law — of Sidhu, Kanhu, Chand and Bhairav Murmu, the brothers of Bhognadih who called some ten thousand Santhals to rebellion on 30 June 1855. Santhal memory places the sisters at the founding gathering and, through the months of fighting that followed, in the thick of the Hul itself.',
-      'Oral tradition, carried down through generations of Santhal storytelling and only committed to writing much later, credits Phulo and Jhano with taking up arms alongside the men — in some versions leading a raid into an enemy camp and killing several men there before they themselves were killed. No contemporary British account of the Hul names either sister, and the specific acts attributed to them belong to memory rather than documentary record; what is not in doubt is that Santhal women fought in the rebellion, and that Phulo and Jhano are the names by which that fact is remembered.',
-      'Like their brothers — Sidhu executed in 1855 and Kanhu in 1856, after martial law and colonial artillery finally broke the rising — Phulo and Jhano are remembered as having died in the same crushing of the Hul. Their story today is inseparable from Sidhu and Kanhu’s own, told as part of the same family’s sacrifice, and honoured together with them each 30 June on Hul Diwas across Jharkhand.',
+      'Phulo Murmu and Jhano Murmu are remembered in Santhal tradition as sisters (other accounts say sisters-in-law) of Sidhu, Kanhu, Chand and Bhairav Murmu, the brothers of Bhognadih who called some ten thousand Santhals to rebellion on 30 June 1855. Santhal memory places the sisters at the founding gathering and, through the months of fighting that followed, in the thick of the Hul itself.',
+      'Oral tradition, carried down through generations of Santhal storytelling and only committed to writing much later, credits Phulo and Jhano with taking up arms alongside the men, in some versions leading a raid into an enemy camp and killing several men there before they themselves were killed. No contemporary British account of the Hul names either sister, and the specific acts attributed to them belong to memory rather than documentary record; what is not in doubt is that Santhal women fought in the rebellion, and that Phulo and Jhano are the names by which that fact is remembered.',
+      'Like their brothers (Sidhu executed in 1855 and Kanhu in 1856, after martial law and colonial artillery finally broke the rising), Phulo and Jhano are remembered as having died in the same crushing of the Hul. Their story today is inseparable from Sidhu and Kanhu’s own, told as part of the same family’s sacrifice, and honoured together with them each 30 June on Hul Diwas across Jharkhand.',
     ],
     entryIntoStruggle: 'Joined the Santhal Hul at Bhognadih alongside their brothers, 1855.',
     achievements: ['Became, in Santhal memory, the names by which women’s part in the Hul is remembered'],
     sacrifices: ['Killed, by tradition, in the fighting that crushed the Hul'],
     legacy: 'Honoured alongside Sidhu and Kanhu on Hul Diwas; Santhal cultural and political commemorations increasingly raise their names beside their brothers’.',
-    facts: ['Some traditions call them sisters of the Murmu brothers, others sisters-in-law — the family relationship itself is remembered differently across tellings.'],
+    facts: ['Some traditions call them sisters of the Murmu brothers, others sisters-in-law: the family relationship itself is remembered differently across tellings.'],
     disputed: [
       {
         claim: 'The specific acts attributed to Phulo and Jhano Murmu',

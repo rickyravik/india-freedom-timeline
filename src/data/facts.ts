@@ -4,22 +4,22 @@ import type { DidYouKnowFact } from '@/types';
 export const didYouKnowFacts: DidYouKnowFact[] = [
   {
     id: 'fact-velu-nachiyar',
-    text: 'Decades before 1857, Rani Velu Nachiyar of Sivaganga defeated East India Company forces and won her kingdom back — with a women’s unit in her army.',
+    text: 'Decades before 1857, Rani Velu Nachiyar of Sivaganga defeated East India Company forces and won her kingdom back, with a women’s unit in her army.',
     relatedLink: { label: 'Rani Velu Nachiyar', to: '/fighters/velu-nachiyar' },
   },
   {
     id: 'fact-kunwar-singh-age',
-    text: 'Babu Kunwar Singh led Bihar’s revolt in 1857 at around eighty years of age — and won his last battle three days before his death.',
+    text: 'Babu Kunwar Singh led Bihar’s revolt in 1857 at around eighty years of age, and won his last battle three days before his death.',
     relatedLink: { label: 'Babu Kunwar Singh', to: '/fighters/kunwar-singh' },
   },
   {
     id: 'fact-flag-1907',
-    text: 'An Indian national flag was unfurled on foreign soil as early as 1907 — by Bhikaji Cama, at the International Socialist Congress in Stuttgart.',
+    text: 'An Indian national flag was unfurled on foreign soil as early as 1907, by Bhikaji Cama, at the International Socialist Congress in Stuttgart.',
     relatedLink: { label: 'Bhikaji Cama', to: '/fighters/bhikaji-cama' },
   },
   {
     id: 'fact-oldest-youngest',
-    text: 'Quit India’s martyrs included Matangini Hazra, aged 71, and Kanaklata Barua, aged 17 — both shot while holding the flag aloft, two weeks apart in 1942.',
+    text: 'Quit India’s martyrs included Matangini Hazra, aged 71, and Kanaklata Barua, aged 17, both shot while holding the flag aloft, two weeks apart in 1942.',
     relatedLink: { label: 'Matangini Hazra', to: '/fighters/matangini-hazra' },
   },
   {
@@ -44,7 +44,7 @@ export const didYouKnowFacts: DidYouKnowFact[] = [
   },
   {
     id: 'fact-jharkhand-birsa',
-    text: 'The state of Jharkhand was inaugurated on 15 November 2000 — the birth anniversary of Birsa Munda, now observed nationally as Janjatiya Gaurav Divas.',
+    text: 'The state of Jharkhand was inaugurated on 15 November 2000, the birth anniversary of Birsa Munda, now observed nationally as Janjatiya Gaurav Divas.',
     relatedLink: { label: 'Birsa Munda', to: '/fighters/birsa-munda' },
   },
   {
@@ -54,12 +54,12 @@ export const didYouKnowFacts: DidYouKnowFact[] = [
   },
   {
     id: 'fact-first-mp',
-    text: 'Dadabhai Naoroji became the first Indian member of the British Parliament in 1892 — winning his London seat by just five votes.',
+    text: 'Dadabhai Naoroji became the first Indian member of the British Parliament in 1892, winning his London seat by just five votes.',
     relatedLink: { label: 'Dadabhai Naoroji', to: '/fighters/dadabhai-naoroji' },
   },
   {
     id: 'fact-rin-flags',
-    text: 'During the 1946 naval uprising, ratings hoisted the Congress, Muslim League and red flags together on their ships — a unity rare for that bitter year.',
+    text: 'During the 1946 naval uprising, ratings hoisted the Congress, Muslim League and red flags together on their ships, a unity rare for that bitter year.',
     relatedLink: { label: 'RIN uprising', to: '/events/royal-indian-navy-mutiny' },
   },
   {
@@ -74,17 +74,17 @@ export const didYouKnowFacts: DidYouKnowFact[] = [
   },
   {
     id: 'fact-degree-2012',
-    text: 'Pritilata Waddedar’s university degree, withheld by the British for her politics, was finally conferred by Calcutta University in 2012 — eighty years after her death.',
+    text: 'Pritilata Waddedar’s university degree, withheld by the British for her politics, was finally conferred by Calcutta University in 2012, eighty years after her death.',
     relatedLink: { label: 'Pritilata Waddedar', to: '/fighters/pritilata-waddedar' },
   },
   {
     id: 'fact-gandhi-prison-days',
-    text: 'Mahatma Gandhi spent over six years of his life in prisons in South Africa and India — and wrote some of his most famous works behind bars.',
+    text: 'Mahatma Gandhi spent over six years of his life in prisons in South Africa and India, and wrote some of his most famous works behind bars.',
     relatedLink: { label: 'Mahatma Gandhi', to: '/fighters/mahatma-gandhi' },
   },
   {
     id: 'fact-bharat-ratna-foreigner',
-    text: 'Khan Abdul Ghaffar Khan — the "Frontier Gandhi" — was the first non-citizen to receive the Bharat Ratna, in 1987.',
+    text: 'Khan Abdul Ghaffar Khan, the "Frontier Gandhi", was the first non-citizen to receive the Bharat Ratna, in 1987.',
     relatedLink: { label: 'Khan Abdul Ghaffar Khan', to: '/fighters/khan-abdul-ghaffar-khan' },
   },
   {
@@ -94,7 +94,7 @@ export const didYouKnowFacts: DidYouKnowFact[] = [
   },
   {
     id: 'fact-marudhu-proclamation',
-    text: 'In June 1801 the Marudhu brothers of Sivaganga posted a proclamation on Srirangam temple’s walls calling on Indians of every caste and religion to unite against the Company — half a century before 1857.',
+    text: 'In June 1801 the Marudhu brothers of Sivaganga posted a proclamation on Srirangam temple’s walls calling on Indians of every caste and religion to unite against the Company, half a century before 1857.',
     relatedLink: { label: 'Marudhu Pandiyar Brothers', to: '/fighters/marudhu-brothers' },
   },
   {
@@ -104,12 +104,12 @@ export const didYouKnowFacts: DidYouKnowFact[] = [
   },
   {
     id: 'fact-vanchi-maniyachi',
-    text: 'Maniyachi railway junction in Tamil Nadu is named Vanchi Maniyachi after Vanchinathan, who shot Collector Ashe there in 1911 — the only assassination of a British official in the Madras Presidency.',
+    text: 'Maniyachi railway junction in Tamil Nadu is named Vanchi Maniyachi after Vanchinathan, who shot Collector Ashe there in 1911, the only assassination of a British official in the Madras Presidency.',
     relatedLink: { label: 'Vanchinathan', to: '/fighters/vanchinathan' },
   },
   {
     id: 'fact-kamaraj-jail',
-    text: 'K. Kamaraj, who left school at eleven, spent about eight years in British jails across six imprisonments — and as Chief Minister put a school in every Tamil village and a free midday meal in it.',
+    text: 'K. Kamaraj, who left school at eleven, spent about eight years in British jails across six imprisonments, and as Chief Minister put a school in every Tamil village and a free midday meal in it.',
     relatedLink: { label: 'K. Kamaraj', to: '/fighters/k-kamaraj' },
   },
 ];

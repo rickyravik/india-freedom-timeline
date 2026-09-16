@@ -20,7 +20,7 @@ export const inverseType: Record<ConnectionType, ConnectionType> = {
   opponent: 'opponent',
   family: 'family',
   mentor: 'successor', // B was A's student / heir
-  inspired: 'inspired', // A inspired B; from B's side: "inspired by" — same label, note carries direction
+  inspired: 'inspired', // A inspired B; from B's side: "inspired by" - same label, note carries direction
   successor: 'mentor',
 };
 

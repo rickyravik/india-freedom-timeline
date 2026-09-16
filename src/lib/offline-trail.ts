@@ -8,7 +8,7 @@ export interface TrailUrlResolver {
 
 /** Every page and portrait a trail needs to read offline: the overview,
     every stop, finish, then each stop's focus/also fighter and event
-    pages (and portraits, where one exists) — each URL once. */
+    pages (and portraits, where one exists) - each URL once. */
 export function trailUrls(trail: Trail, resolve: TrailUrlResolver): string[] {
   const urls: string[] = [`/trails/${trail.slug}`];
   for (let i = 0; i < trail.stops.length; i++) urls.push(`/trails/${trail.slug}/stop/${i + 1}`);
@@ -45,7 +45,7 @@ export function trailUrls(trail: Trail, resolve: TrailUrlResolver): string[] {
 const PAGE_BYTES = 60 * 1024;
 const PORTRAIT_BYTES = 45 * 1024;
 
-/** A rough, deliberately labelled estimate — never a promise of exact size. */
+/** A rough, deliberately labelled estimate - never a promise of exact size. */
 export function estimateBytes(urls: string[]): number {
   return urls.reduce((sum, url) => sum + (url.startsWith('/images/') ? PORTRAIT_BYTES : PAGE_BYTES), 0);
 }

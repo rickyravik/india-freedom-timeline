@@ -6,7 +6,7 @@
  *
  * Straight to JPEG (quality 85), not PNG-with-fallback: the vault
  * background's grain texture rasterises to full-frame per-pixel noise the
- * instant a real screenshot captures it, which PNG cannot compress —
+ * instant a real screenshot captures it, which PNG cannot compress,
  * every card landed north of 1MB as a PNG in testing, so JPEG is the only
  * realistic path, not a fallback.
  */
@@ -31,7 +31,7 @@ const eraHex: Record<string, string> = {
 };
 
 /* Fonts embedded once as base64 data URIs so rendering never depends on
-   the network — reused verbatim across every page load in this run. */
+   the network - reused verbatim across every page load in this run. */
 function fontFace(family: string, weightRange: string, path: string): string {
   const base64 = readFileSync(path).toString('base64');
   return `@font-face { font-family: '${family}'; font-weight: ${weightRange}; font-style: normal; src: url(data:font/woff2;base64,${base64}) format('woff2'); }`;
@@ -75,7 +75,7 @@ interface CardSpec {
   monogram: string;
 }
 
-/* A long name/title wraps to more lines at a fixed size — shrink it first
+/* A long name/title wraps to more lines at a fixed size - shrink it first
    rather than let it collide with the summary or the footer below. */
 function titleFontSize(title: string): number {
   if (title.length > 34) return 50;
@@ -252,10 +252,10 @@ jobs.push({
   outPath: 'dist/og/default.jpg',
   numeral: '1947',
   accent: '#c4611f',
-  eyebrow: 'An interactive historical archive · 1757 — 1947',
+  eyebrow: 'An interactive historical archive · 1757–1947',
   title: "India's Freedom Timeline",
   subtitle: 'Millions resisted. Thousands sacrificed.',
-  summary: "Explore the people who fought for India's freedom — from the first risings against the East India Company to the midnight of 15 August 1947.",
+  summary: "Explore the people who fought for India's freedom, from the first risings against the East India Company to the midnight of 15 August 1947.",
   monogram: 'IFT',
 });
 

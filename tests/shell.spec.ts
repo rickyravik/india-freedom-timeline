@@ -7,7 +7,12 @@ test('the home page leads with Start exploring, one featured story and the trail
   await expect(page.getByRole('link', { name: 'Explore by place' })).toHaveAttribute('href', '/map');
   const featured = page.getByRole('region', { name: 'Featured story' });
   await expect(featured.getByText(/\d+ min read/)).toBeVisible();
-  await expect(page.getByRole('region', { name: 'Guided trails' }).getByRole('article')).toHaveCount(7);
+  // Every trail is shown on the home page: the count must match the trails index, whatever it is today.
+  const homeTrails = await page.getByRole('region', { name: 'Guided trails' }).getByRole('article').count();
+  expect(homeTrails).toBeGreaterThan(0);
+  await page.goto('/trails');
+  await expect(page.getByRole('article')).toHaveCount(homeTrails);
+  await page.goto('/');
   await expect(page.getByRole('region', { name: 'Stories beyond the familiar names' })).toBeVisible();
   await expect(page.getByRole('region', { name: 'Sources and corrections' })).toBeVisible();
 });

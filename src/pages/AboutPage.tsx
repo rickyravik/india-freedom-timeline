@@ -16,13 +16,13 @@ export default function AboutPage() {
           <p className="prose-reading dropcap">
             India’s Freedom Timeline is an interactive archive of the people, movements and events of India’s struggle against British colonial rule, from the earliest organized
             resistance in the eighteenth century to independence in 1947. It currently holds {fighters.length} biographical records, {events.length} events and {movements.length}{' '}
-            movements — and its architecture is designed to grow to thousands of records, because the struggle was the work of millions, most of whose names deserve to be better
+            movements, and its architecture is designed to grow to thousands of records, because the struggle was the work of millions, most of whose names deserve to be better
             known.
           </p>
           <p className="prose-reading">
             The project deliberately reaches beyond the most famous national leaders: Adivasi and tribal leaders, women of every region, princely-state satyagrahis, poets and
-            shipowners, teenaged martyrs and eighty-year-old generals. The freedom struggle contained many ideologies, strategies and disagreements — nonviolence and armed revolt,
-            petition and boycott, reform and revolution — and this archive presents that plurality without preaching any single line.
+            shipowners, teenaged martyrs and eighty-year-old generals. The freedom struggle contained many ideologies, strategies and disagreements: nonviolence and armed revolt,
+            petition and boycott, reform and revolution. This archive presents that plurality without preaching any single line.
           </p>
         </Reveal>
 
@@ -34,16 +34,16 @@ export default function AboutPage() {
           <div className="max-w-prose space-y-4">
             <p className="prose-reading-vault">
               Every biography and event entry carries a visible Sources section citing published historical research, government and archival collections. Where historians dispute
-              a claim — a death toll, an attribution, the circumstances of a death — the entry says so in a clearly labelled note rather than presenting legend as fact. Famous
+              a claim (a death toll, an attribution, the circumstances of a death), the entry says so in a clearly labelled note rather than presenting legend as fact. Famous
               quotations whose wording or attribution is uncertain are marked "attribution uncertain".
             </p>
             <p className="prose-reading-vault">
-              Much beloved popular history rests on oral tradition — songs, ballads and family memory. Oral tradition is itself a historical source, especially for communities the
+              Much beloved popular history rests on oral tradition: songs, ballads and family memory. Oral tradition is itself a historical source, especially for communities the
               colonial record ignored; we include such accounts with their nature stated, so readers can tell documented fact from cherished memory.
             </p>
             <p className="prose-reading-vault">
               Every record is checked against the published sources it cites before it loses its draft marking. That check is made by the archive’s maintainers with AI assistance, not by a
-              professional historian — which is why the sources are always shown: so that you can check them too, and tell us when we are wrong.
+              professional historian, which is why the sources are always shown: so that you can check them too, and tell us when we are wrong.
             </p>
             <p className="prose-reading-vault">The site can be installed on a phone; pages you have opened stay readable offline, and only those.</p>
           </div>
@@ -56,13 +56,13 @@ export default function AboutPage() {
           <div className="rule mb-4" />
           <ol className="space-y-3">
             {[
-              'National Archives of India — Abhilekh Patal digitised records (abhilekh-patal.in)',
+              'National Archives of India: Abhilekh Patal digitised records (abhilekh-patal.in)',
               'Prime Ministers’ Museum & Library (formerly Nehru Memorial Museum & Library), New Delhi',
-              'Ministry of Culture, Government of India — Azadi Ka Amrit Mahotsav biographical records',
+              'Ministry of Culture, Government of India: Azadi Ka Amrit Mahotsav biographical records',
               'State archives of West Bengal, Punjab, Uttar Pradesh, Bihar, Tamil Nadu, Kerala, Maharashtra, Assam and others',
               'National Gandhi Museum and the Collected Works of Mahatma Gandhi (Gandhi Heritage Portal)',
               'Netaji Research Bureau, Kolkata; INA trial records',
-              'Published scholarship — Bipan Chandra et al., India’s Struggle for Independence; Sekhar Bandyopadhyay, From Plassey to Partition; Sumit Sarkar, The Swadeshi Movement in Bengal; Ramachandra Guha, Gandhi: The Years That Changed the World; Sugata Bose, His Majesty’s Opponent; K. Rajayyan, The South Indian Rebellion — and the works cited on each page',
+              'Published scholarship: Bipan Chandra et al., India’s Struggle for Independence; Sekhar Bandyopadhyay, From Plassey to Partition; Sumit Sarkar, The Swadeshi Movement in Bengal; Ramachandra Guha, Gandhi: The Years That Changed the World; Sugata Bose, His Majesty’s Opponent; K. Rajayyan, The South Indian Rebellion, and the works cited on each page',
             ].map((s, i) => (
               <li key={s} className="flex gap-3 font-body text-meta text-ink-soft">
                 <span className="num mt-px shrink-0 font-display text-sm font-bold text-brass-deep">{String(i + 1).padStart(2, '0')}</span>

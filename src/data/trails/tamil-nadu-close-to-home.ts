@@ -10,7 +10,7 @@ export const tamilNaduCloseToHome: Trail = {
   minutes: 6,
   learningGoal: 'Put four Tamil events in order across 1799–1932 and explain how the method of resistance changed from armed defence of a fort to breaking a law in public.',
   intro:
-    'Tamil Nadu is a present-day state. In 1799 this was the country of the palaiyakkarars — chiefs with their own forts and soldiers — and then, for a century and a half, part of the Madras Presidency. The names of places have changed too: Tuticorin is Thoothukudi, Trichy is Tiruchirappalli. This trail follows one region from the first refusals to pay the Company to the last years before independence.',
+    'Tamil Nadu is a present-day state. In 1799 this was the country of the palaiyakkarars, chiefs with their own forts and soldiers, and then, for a century and a half, part of the Madras Presidency. The names of places have changed too: Tuticorin is Thoothukudi, Trichy is Tiruchirappalli. This trail follows one region from the first refusals to pay the Company to the last years before independence.',
   accent: 'forest',
   stops: [
     {
@@ -37,7 +37,7 @@ export const tamilNaduCloseToHome: Trail = {
       question: 'What is unusual about a call to unite issued in 1801?',
       text: [
         'In February 1801 Kattabomman’s brother Oomaithurai escaped from prison and the southern palaiyams rose again. The Marudhu brothers of Sivaganga sheltered him and gave him command, and a loose confederacy took shape from Malabar to Dindigul.[^1]',
-        'In June 1801 the Marudhus’ proclamation was fixed to the walls of the Srirangam temple and Tiruchirappalli fort. It denounced the Company and summoned Indians of every caste and religion to expel it — a generation before the word "nation" entered Indian politics. The rising was crushed by November; the brothers were hanged at Tiruppathur on 24 October 1801.[^2]',
+        'In June 1801 the Marudhus’ proclamation was fixed to the walls of the Srirangam temple and Tiruchirappalli fort. It denounced the Company and summoned Indians of every caste and religion to expel it, a generation before the word "nation" entered Indian politics. The rising was crushed by November; the brothers were hanged at Tiruppathur on 24 October 1801.[^2]',
       ],
       focus: { kind: 'event', id: 'south-indian-rebellion-1801' },
       also: [
@@ -55,7 +55,7 @@ export const tamilNaduCloseToHome: Trail = {
       title: 'Swadeshi on the high seas',
       question: 'How did buying and selling become a form of resistance?',
       text: [
-        'V. O. Chidambaram Pillai was a lawyer in the port of Tuticorin. In 1906 he founded the Swadeshi Steam Navigation Company to compete with the British shipping line — Swadeshi, the movement to buy Indian, taken to sea. The British company slashed fares to ruin him.[^1]',
+        'V. O. Chidambaram Pillai was a lawyer in the port of Tuticorin. In 1906 he founded the Swadeshi Steam Navigation Company to compete with the British shipping line: Swadeshi, the movement to buy Indian, taken to sea. The British company slashed fares to ruin him.[^1]',
         'In February 1908 he took up the cause of strikers at the European-owned Coral Mills and, with Subramania Siva, addressed swelling public meetings. On 12 March both were arrested; Tirunelveli erupted the next day and police firing there killed four people; Tuticorin answered with a general strike. Pillai was sentenced to two life terms and set to a prison oil-press. Tamil Nadu calls him Kappalottiya Tamizhan, the Tamil who sailed the ship.[^2]',
       ],
       focus: { kind: 'fighter', id: 'vo-chidambaram-pillai' },
@@ -102,7 +102,7 @@ export const tamilNaduCloseToHome: Trail = {
       bridge: '',
     },
   ],
-  reflection: 'A fort, a proclamation, a shipping company, a handful of salt, a flag. Each is a different way of saying no. Which of them needed the most people to work — and which needed the fewest?',
+  reflection: 'A fort, a proclamation, a shipping company, a handful of salt, a flag. Each is a different way of saying no. Which of them needed the most people to work, and which needed the fewest?',
   activity: {
     kind: 'order',
     prompt: 'Put these four moments from the Tamil country in the order they happened.',
@@ -112,7 +112,7 @@ export const tamilNaduCloseToHome: Trail = {
       { label: 'The Coral Mills strike and the Tirunelveli rising', year: 1908, ref: { kind: 'event', id: 'tirunelveli-uprising-1908' } },
       { label: 'A proclamation is fixed to the walls of Srirangam temple', year: 1801, ref: { kind: 'event', id: 'south-indian-rebellion-1801' } },
     ],
-    explanation: 'Panchalankurichi fell in 1799 and the proclamation followed in 1801 — armed resistance by chiefs and their forces. A century later, in 1908, the fight was over shipping, strikes and public meetings; by 1930 it was mass, open law-breaking. The order is also the story of how resistance changed.',
+    explanation: 'Panchalankurichi fell in 1799 and the proclamation followed in 1801: armed resistance by chiefs and their forces. A century later, in 1908, the fight was over shipping, strikes and public meetings; by 1930 it was mass, open law-breaking. The order is also the story of how resistance changed.',
   },
   followOn: { label: 'Explore Tamil Nadu on the map', to: '/map?state=tamil-nadu' },
   editorial: {
@@ -123,16 +123,16 @@ export const tamilNaduCloseToHome: Trail = {
       'Drafted 2026-09-08 from the records’ own text. Fact-checked 2026-09-09 (~69 claims) against Britannica, cited Wikipedia, Rajayyan-derived journalism and archival papers: one error corrected (the four 1908 police-firing deaths were in Tirunelveli, not Tuticorin), contested details softened (Rajaji arrested at the Edanthevar salt swamp; Panchalankurichi abandoned rather than breached; Kumaran’s flag as tradition), and the 1916 Tinnevelly gazetteer citation corrected. Place-name equivalences (Tuticorin/Thoothukudi etc.) confirmed.',
   },
   teaching: {
-    alignment: 'Proposed for upper-primary and secondary history — resistance to colonial rule; evidence and interpretation. Not yet mapped to a specific board or state curriculum.',
+    alignment: 'Proposed for upper-primary and secondary history: resistance to colonial rule; evidence and interpretation. Not yet mapped to a specific board or state curriculum.',
     shortVersion: ['panchalankurichi', 'vedaranyam', 'tiruppur-1932'],
     prompts: [
       'This trail moves from an armed fort to a shipping company to a fistful of salt to a flag. What had to change in society for each later method to become possible?',
       'More than a century separates the fall of Panchalankurichi from the Vedaranyam salt march. What stayed the same about what the Company or the government was defending?',
-      'Which of these five moments do you think local students in Tamil Nadu are most likely to have heard about already — and which the least? Why might that be?',
+      'Which of these five moments do you think local students in Tamil Nadu are most likely to have heard about already, and which the least? Why might that be?',
     ],
     facilitatorNotes: [
       'The order activity works well as a warm-up before discussion, since students often assume armed resistance came later than mass civil disobedience.',
-      'V.O. Chidambaram Pillai\'s shipping venture is a useful bridge between economic and political resistance — draw that connection out explicitly.',
+      'V.O. Chidambaram Pillai\'s shipping venture is a useful bridge between economic and political resistance. Draw that connection out explicitly.',
       'If a student asks why the Tirunelveli rising is less well known nationally than the Salt March, that is worth sitting with rather than answering quickly.',
     ],
     editorial: { status: 'reviewed', reviewedBy: 'AI-assisted fact-check against the cited sources (Claude)', reviewedOn: '2026-09-09' },

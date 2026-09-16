@@ -1,8 +1,8 @@
 /**
  * Core content types for India's Freedom Timeline.
  *
- * All historical content lives in `src/data` as typed records — never
- * hard-coded inside UI components — so the collection can grow to
+ * All historical content lives in `src/data` as typed records - never
+ * hard-coded inside UI components - so the collection can grow to
  * thousands of records without touching the interface.
  */
 
@@ -56,7 +56,7 @@ export type SourceType =
   | 'museum'
   | 'website';
 
-/** What kind of evidence a source is — shown beside a citation so a reader
+/** What kind of evidence a source is - shown beside a citation so a reader
     can tell a contemporary record from later scholarship or oral tradition. */
 export type EvidenceKind = 'contemporary' | 'scholarship' | 'oral-tradition' | 'reference';
 
@@ -155,7 +155,7 @@ export interface FreedomFighter {
   shortName?: string;
   /** Plain-English pronunciation, e.g. "veh-loo NAH-chi-yar". */
   pronunciation?: string;
-  /** "In a minute": three brief facts — the person, their struggle, why it matters. */
+  /** "In a minute": three brief facts - the person, their struggle, why it matters. */
   inAMinute?: [string, string, string];
   /** Path to a portrait image when one is added; the UI falls back to a generated archival monogram. */
   portrait?: string;
@@ -173,9 +173,9 @@ export interface FreedomFighter {
   gender: Gender;
   /** One–two sentence introduction. */
   summary: string;
-  /** Story Mode — short chapters for children and casual readers. */
+  /** Story Mode - short chapters for children and casual readers. */
   shortStory: StoryChapter[];
-  /** Read More mode — full biography paragraphs for older students and adults. */
+  /** Read More mode - full biography paragraphs for older students and adults. */
   fullBiography: string[];
   /** How they entered the freedom struggle. */
   entryIntoStruggle?: string;
@@ -206,7 +206,7 @@ export interface FreedomFighter {
   images?: string[];
   tags?: string[];
   /** Names a search might reasonably be typed as but that don't already
-      appear in `name`/`alternateNames` — a name in another script, or a
+      appear in `name`/`alternateNames` - a name in another script, or a
       widely used historical alternate. Not for spelling variants: search's
       transliteration-normalization tier already tolerates those (doubled
       consonants, th/bh/dh/ph/sh, x/ksh, long/short vowels) without help. */
@@ -278,10 +278,10 @@ export interface HistoricalEvent {
 
 /**
  * The lightweight projection of a FreedomFighter shipped to every page
- * except a fighter's own profile — everything the home page, browse/list
+ * except a fighter's own profile - everything the home page, browse/list
  * pages, search, the map, Learn & Play and the "related people"
  * constellation actually read. The full record (biography, quotes,
- * sources, Story Mode...) loads lazily only when that profile opens — see
+ * sources, Story Mode...) loads lazily only when that profile opens - see
  * src/lib/loadContent.ts. Generated from the full records by
  * scripts/generate-summaries.ts; do not hand-edit src/data/generated/*.
  */
@@ -317,12 +317,12 @@ export interface FighterSummary {
   era: string;
   featured?: boolean;
   forgotten?: boolean;
-  /** See FreedomFighter.searchAliases — needed by src/lib/search.ts, which
+  /** See FreedomFighter.searchAliases - needed by src/lib/search.ts, which
       indexes the summary projection, not the full record. */
   searchAliases?: string[];
 }
 
-/** The lightweight projection of a HistoricalEvent — see FighterSummary. */
+/** The lightweight projection of a HistoricalEvent - see FighterSummary. */
 export interface EventSummary {
   id: string;
   slug: string;
@@ -435,7 +435,7 @@ export interface DidYouKnowFact {
   relatedLink?: { label: string; to: string };
 }
 
-/** A guided trail — a short editorial journey built on existing records. */
+/** A guided trail - a short editorial journey built on existing records. */
 export type TrailRef = { kind: 'fighter' | 'event' | 'movement'; id: string };
 export interface TrailStop {
   id: string; // kebab, unique within the trail
@@ -525,7 +525,7 @@ export interface RouteStop {
   dateLabel: string;
   /** One or two sentences; [^n] into the route's own `sources`. */
   note: string;
-  /** Schematic position 0–100 on the route map's own canvas — NOT geographic coordinates. */
+  /** Schematic position 0–100 on the route map's own canvas - NOT geographic coordinates. */
   x: number;
   y: number;
   /** True unless the location is documented to the site. */

@@ -60,7 +60,7 @@ export function SearchPalette({ open, onClose }: { open: boolean; onClose: () =>
     // requestAnimationFrame above means focus hasn't necessarily moved
     // inside the dialog yet on the very next keypress, and a keydown
     // handler on the dialog element only ever sees a key press once focus
-    // (or its target) is somewhere inside that subtree — Escape pressed in
+    // (or its target) is somewhere inside that subtree - Escape pressed in
     // that brief window would otherwise silently do nothing.
     const onKey = (e: KeyboardEvent) => {
       const { flat, cursor, go } = liveRef.current;

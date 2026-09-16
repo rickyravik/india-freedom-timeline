@@ -214,7 +214,7 @@ export function TrailStopPage() {
   const [{ text: textOnly, lang }, setParams] = useUrlState(stopParams);
   const text = trail ? resolveTrailText(trail, lang) : undefined;
   const translatedStop = text?.stops[index];
-  usePageMeta(translatedStop && trail ? `${translatedStop.title} — ${trail.title}` : 'Trail', translatedStop?.question ?? trail?.question);
+  usePageMeta(translatedStop && trail ? `${translatedStop.title} · ${trail.title}` : 'Trail', translatedStop?.question ?? trail?.question);
   const narration = trail?.narration?.find((n) => n.lang === text?.lang);
   const [listening, setListening] = useState(false);
   const [highlightParagraph, setHighlightParagraph] = useState<number | null>(null);
@@ -325,7 +325,7 @@ export function TrailStopPage() {
 export function TrailFinishPage() {
   const { slug } = useParams();
   const trail = slug ? trailBySlug.get(slug) : undefined;
-  usePageMeta(trail ? `Finish — ${trail.title}` : 'Trail');
+  usePageMeta(trail ? `Finish: ${trail.title}` : 'Trail');
   const progress = useTrailProgress();
   if (!trail) return <Navigate to="/trails" replace />;
   const done = progress[trail.slug]?.completed ?? false;

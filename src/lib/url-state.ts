@@ -5,7 +5,7 @@
  * so it can be unit-tested directly.
  *
  * A codec's `serialize` returns null for the default state, which removes the
- * key from the URL — a clean URL always means "defaults".
+ * key from the URL - a clean URL always means "defaults".
  */
 export interface ParamCodec<T> {
   parse(raw: string | null): T;

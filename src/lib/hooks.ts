@@ -50,7 +50,7 @@ export function useIsDesktop(): boolean {
 }
 
 /* ------------------------------------------------------------------ */
-/* Scroll reveal — a single shared IntersectionObserver.               */
+/* Scroll reveal - a single shared IntersectionObserver.               */
 
 let revealObserver: IntersectionObserver | null = null;
 function getRevealObserver(): IntersectionObserver | null {
@@ -140,7 +140,7 @@ function readBookmarks(): string[] {
    return value with Object.is, so a fresh `[]` literal on every call reads as
    "always different" and breaks hydration (confirmed: it produced React's
    "getServerSnapshot should be cached" warning and real hydration mismatches
-   once real hydration — not just createRoot — started happening in Phase 2). */
+   once real hydration - not just createRoot - started happening in Phase 2). */
 const EMPTY_STRINGS: string[] = [];
 
 function writeBookmarks(next: string[]) {
@@ -167,7 +167,7 @@ export function useBookmarks() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Trail — recently viewed lives (sessionStorage)                      */
+/* Trail - recently viewed lives (sessionStorage)                      */
 
 const TRAIL_KEY = 'ift-trail-v1';
 const trailListeners = new Set<() => void>();
@@ -204,7 +204,7 @@ export function useTrail(): string[] {
 }
 
 /* ------------------------------------------------------------------ */
-/* Guided-trail progress (localStorage, per device — src/lib/trails-progress.ts) */
+/* Guided-trail progress (localStorage, per device - src/lib/trails-progress.ts) */
 export function useTrailProgress(): ProgressMap {
   return useSyncExternalStore(subscribeProgress, readProgress, () => EMPTY_PROGRESS);
 }
@@ -289,7 +289,7 @@ function upsertCanonical(href: string) {
 /**
  * Sets the document title, description and (new) canonical/Open Graph/
  * Twitter tags for the current route, then marks the page ready for the
- * build-time prerender script to capture (`data-prerender-ready`) — see
+ * build-time prerender script to capture (`data-prerender-ready`) - see
  * scripts/prerender.mjs, which waits on that flag before snapshotting.
  *
  * `deferReady` is for pages that load their real content asynchronously
@@ -304,7 +304,7 @@ export function usePageMeta(
 ) {
   const { pathname } = useLocation();
   useEffect(() => {
-    const fullTitle = title ? `${title} — India's Freedom Timeline` : "India's Freedom Timeline";
+    const fullTitle = title ? `${title} · India's Freedom Timeline` : "India's Freedom Timeline";
     document.title = fullTitle;
     const url = `${SITE_URL}${pathname}`;
     upsertCanonical(url);
@@ -358,7 +358,7 @@ export function useShare() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Service worker update — see src/lib/pwa.ts                          */
+/* Service worker update - see src/lib/pwa.ts                          */
 
 export function useServiceWorkerUpdate(): boolean {
   return useSyncExternalStore(subscribeNeedRefresh, getNeedRefresh, () => false);

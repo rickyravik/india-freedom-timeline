@@ -8,7 +8,7 @@ import { track } from '@/lib/analytics';
 import { fallbackLink } from '@/lib/corrections';
 
 /* ------------------------------------------------------------------ */
-/* Era accent maps — one source of truth for colour-coding             */
+/* Era accent maps - one source of truth for colour-coding             */
 export const eraAccent = {
   text: {
     indigo: 'text-indigo-mid',
@@ -28,7 +28,7 @@ export const eraAccent = {
   },
   /* Same light cuts as textVault, as a fill: for a small swatch (e.g. the
      lifespan bar's era bands) that must stay legible even when it lands on
-     a vault pane inked with its own era — a deep-on-deep fill would vanish. */
+     a vault pane inked with its own era - a deep-on-deep fill would vanish. */
   bgVault: {
     indigo: 'bg-indigo-soft',
     oxide: 'bg-oxide-bright',
@@ -38,7 +38,7 @@ export const eraAccent = {
     brass: 'bg-brass-bright',
   },
   /* Pane grounds. All six are dark enough to carry paper text at 13px, so
-     ochre and gauge gold use their deep cuts — the mid cuts only reached
+     ochre and gauge gold use their deep cuts - the mid cuts only reached
      4.0:1 against ink and failed the label and reading roles they carry. */
   bg: {
     indigo: 'bg-indigo-mid',
@@ -64,7 +64,7 @@ export const eraAccent = {
     sepia: 'ring-sepia',
     brass: 'ring-brass',
   },
-  /* Text that sits ON an era ink pane — every ground above is a deep cut, so
+  /* Text that sits ON an era ink pane - every ground above is a deep cut, so
      lettering is always the paper */
   onInk: {
     indigo: 'text-paper-50',
@@ -102,7 +102,7 @@ export const eraAccent = {
 } as const;
 
 /* ------------------------------------------------------------------ */
-/* Reveal — wraps children in a scroll-revealed element                */
+/* Reveal - wraps children in a scroll-revealed element                */
 export function Reveal({
   as: Tag = 'div',
   className = '',
@@ -133,7 +133,7 @@ export function Reveal({
 }
 
 /* ------------------------------------------------------------------ */
-/* Icons — one stroke, one weight                                      */
+/* Icons - one stroke, one weight                                      */
 export function Icon({ d, className = 'h-5 w-5' }: { d: string; className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
@@ -160,7 +160,7 @@ export const icons = {
 } as const;
 
 /* ------------------------------------------------------------------ */
-/* Section heading — ruled, like a gazette section head                */
+/* Section heading - ruled, like a gazette section head                */
 export function SectionHeading({
   title,
   lede,
@@ -187,7 +187,7 @@ export function SectionHeading({
 }
 
 /* ------------------------------------------------------------------ */
-/* Portrait plate — typographic monogram, era-ruled                    */
+/* Portrait plate - typographic monogram, era-ruled                    */
 /* Plate inks for a life with no era on record */
 const MEDALLION_PALETTES = ['#14453d', '#1a3154', '#6f2420', '#452038', '#2b2151', '#a34e12'];
 
@@ -287,7 +287,7 @@ export function PortraitMedallion({
 }
 
 /* ------------------------------------------------------------------ */
-/* Lifespan bar — where a life falls against 1757–1947                 */
+/* Lifespan bar - where a life falls against 1757–1947                 */
 const SPAN_START = 1740;
 const SPAN_END = 1950;
 const round2 = (n: number) => Math.round(n * 100) / 100;
@@ -315,7 +315,7 @@ export function LifespanBar({ birth, death, vault = true }: { birth?: number; de
             />
           ))}
         </div>
-        {/* Life — the franked span, always the accent ink */}
+        {/* Life - the franked span, always the accent ink */}
         <div
           className="absolute top-1 h-5 bg-oxide ring-1 ring-ink/30"
           style={{ left: `${pct(b)}%`, width: `${round2(Math.max(pct(d) - pct(b), 1.2))}%` }}
@@ -411,7 +411,7 @@ export function SourceList({ sources }: { sources: SourceRef[] }) {
             <span className="num mt-px shrink-0 font-display text-sm font-bold text-brass-deep">{String(i + 1).padStart(2, '0')}</span>
             <span>
               <span className="font-semibold text-ink">{s.title}</span>
-              {s.author && <> — {s.author}</>}
+              {s.author && <> by {s.author}</>}
               {s.publisher && <>. {s.publisher}</>}
               {s.year && <>, {s.year}</>}
               {s.edition && <>, {s.edition}</>}
@@ -442,10 +442,10 @@ export function SourceList({ sources }: { sources: SourceRef[] }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* Suggest a correction — posts to worker/correction.ts, which opens a
+/* Suggest a correction - posts to worker/correction.ts, which opens a
    GitHub issue. Falls back to a blank mailto: on any non-OK response
    (which is exactly what plain `vite dev` returns, no code changes needed
-   there — there's no Worker running under the dev server). */
+   there - there's no Worker running under the dev server). */
 export function SuggestCorrection({ path, recordTitle }: { path: string; recordTitle: string }) {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -453,7 +453,7 @@ export function SuggestCorrection({ path, recordTitle }: { path: string; recordT
   const [correction, setCorrection] = useState('');
   const [sourceUrl, setSourceUrl] = useState('');
   const [email, setEmail] = useState('');
-  const [website, setWebsite] = useState(''); // honeypot — hidden from real visitors below
+  const [website, setWebsite] = useState(''); // honeypot - hidden from real visitors below
 
   const fallback = fallbackLink({ path, recordTitle, claim, correction, sourceUrl: sourceUrl || undefined });
 
@@ -481,7 +481,7 @@ export function SuggestCorrection({ path, recordTitle }: { path: string; recordT
         <Icon d={icons.file} className="h-4 w-4" />
         Suggest a correction
       </button>
-      <BottomSheet open={open} onClose={() => setOpen(false)} title={`Suggest a correction — ${recordTitle}`}>
+      <BottomSheet open={open} onClose={() => setOpen(false)} title={`Suggest a correction: ${recordTitle}`}>
         {status === 'sent' ? (
           <div className="py-8 text-center">
             <p className="font-display text-h3 text-ink">Thank you</p>
@@ -511,7 +511,7 @@ export function SuggestCorrection({ path, recordTitle }: { path: string; recordT
           </div>
         ) : (
           <form className="space-y-4 py-4" onSubmit={submit}>
-            {/* Real visitors never see or fill this — a filled honeypot marks the submission as spam. */}
+            {/* Real visitors never see or fill this - a filled honeypot marks the submission as spam. */}
             <input
               type="text"
               value={website}
@@ -621,7 +621,7 @@ export function EmptyState({ title, hint, action }: { title: string; hint?: stri
 }
 
 /* ------------------------------------------------------------------ */
-/* Bottom sheet — accessible, with swipe-to-dismiss                    */
+/* Bottom sheet - accessible, with swipe-to-dismiss                    */
 export function BottomSheet({
   open,
   onClose,
@@ -743,7 +743,7 @@ export function ChipGroup<T extends string>({
 }
 
 /* ------------------------------------------------------------------ */
-/* Active filters — what's narrowing the list, each removable          */
+/* Active filters - what's narrowing the list, each removable          */
 export function ActiveFilters({
   chips,
   onClear,
@@ -811,7 +811,7 @@ export function Segmented<T extends string>({
 }
 
 /* ------------------------------------------------------------------ */
-/* Breadcrumbs — where this record sits in the archive                 */
+/* Breadcrumbs - where this record sits in the archive                 */
 export function Breadcrumbs({ items, vault = false }: { items: { label: string; to?: string }[]; vault?: boolean }) {
   return (
     <nav aria-label="Breadcrumb" className={`font-body text-label ${vault ? 'text-paper-300' : 'text-ink-faint'}`}>
@@ -836,7 +836,7 @@ export function Breadcrumbs({ items, vault = false }: { items: { label: string; 
 }
 
 /* ------------------------------------------------------------------ */
-/* Postmark — the cancellation ring over a pane's corner               */
+/* Postmark - the cancellation ring over a pane's corner               */
 export function Postmark({ lines, className = '' }: { lines: string[]; className?: string }) {
   return (
     <span aria-hidden="true" className={`postmark h-24 w-24 ${className}`}>
@@ -852,7 +852,7 @@ export function Postmark({ lines, className = '' }: { lines: string[]; className
 }
 
 /* ------------------------------------------------------------------ */
-/* Page intro — the sheet's own head                                   */
+/* Page intro - the sheet's own head                                   */
 export function PageIntro({
   title,
   lede,

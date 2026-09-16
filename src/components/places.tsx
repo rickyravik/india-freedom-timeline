@@ -4,7 +4,7 @@ import { placeKindLabels } from '@/lib/content';
 import { Icon, icons } from '@/components/ui';
 
 /* ------------------------------------------------------------------ */
-/* Place chip — a compact link, used wherever a place is one of several */
+/* Place chip - a compact link, used wherever a place is one of several */
 export function PlaceChip({ place }: { place: Place }) {
   return (
     <Link to={`/places/${place.slug}`} className="chip">
@@ -14,7 +14,7 @@ export function PlaceChip({ place }: { place: Place }) {
 }
 
 /* ------------------------------------------------------------------ */
-/* The Frame Rule — every map, route or boundary states whether it shows
+/* The Frame Rule - every map, route or boundary states whether it shows
    present-day or dated historical geography. Modern borders are never
    presented as the political geography of 1857 or 1947. */
 export function GeographyFrame({ frame, note, vault = false }: { frame: 'present-day' | 'historical'; note?: string; vault?: boolean }) {
@@ -43,7 +43,7 @@ export function IndiaOutline({ className = 'h-20 w-20' }: { className?: string }
 }
 
 /* ------------------------------------------------------------------ */
-/* Place card — the index's own record                                 */
+/* Place card - the index's own record                                 */
 export function PlaceCard({ place }: { place: Place }) {
   return (
     <Link to={`/places/${place.slug}`} className="doc-interactive group flex h-full flex-col rounded-sm border p-5 transition-colors duration-160 ease-cinematic">

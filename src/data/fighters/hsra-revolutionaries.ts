@@ -19,7 +19,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary', 'writer-poet'],
     summary:
-      'Shaheed-e-Azam — the thinker-revolutionary of the HSRA who bombed the Assembly "to make the deaf hear", turned his trial into a tribune, read to his last hour, and was hanged at twenty-three.',
+      'Shaheed-e-Azam: the thinker-revolutionary of the HSRA who bombed the Assembly "to make the deaf hear", turned his trial into a tribune, read to his last hour, and was hanged at twenty-three.',
     shortStory: [
       {
         title: 'A child of the struggle',
@@ -27,21 +27,21 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'Books and courage',
-        text: 'He read everything — history, politics, revolution — and helped found the Naujawan Bharat Sabha to awaken Punjab’s youth. After Lala Lajpat Rai died from police blows, Bhagat Singh and his comrades struck back at the officer they held responsible.',
+        text: 'He read everything: history, politics, revolution. He helped found the Naujawan Bharat Sabha to awaken Punjab’s youth. After Lala Lajpat Rai died from police blows, Bhagat Singh and his comrades struck back at the officer they held responsible.',
       },
       {
         title: '"To make the deaf hear"',
-        text: 'In April 1929 he and Batukeshwar Dutt threw two harmless bombs into the Central Assembly in Delhi, shouting "Inquilab Zindabad!" — Long live revolution! They stayed to be arrested, so the trial could carry their message.',
+        text: 'In April 1929 he and Batukeshwar Dutt threw two harmless bombs into the Central Assembly in Delhi, shouting "Inquilab Zindabad!" (Long live revolution!). They stayed to be arrested, so the trial could carry their message.',
       },
       {
         title: 'The last chapter',
-        text: 'In jail he fasted 116 days for prisoners’ rights and wrote brilliant essays. On 23 March 1931 he was hanged with Rajguru and Sukhdev — legend says with a book in his hand. He was twenty-three. India has never forgotten.',
+        text: 'In jail he fasted 116 days for prisoners’ rights and wrote brilliant essays. On 23 March 1931 he was hanged with Rajguru and Sukhdev. Legend says he had a book in his hand. He was twenty-three. India has never forgotten.',
       },
     ],
     fullBiography: [
-      'Born into a Jat Sikh family of Ghadar sympathies — his uncle Ajit Singh was a famous agitator in exile — Bhagat Singh grew up in the shadow of Jallianwala Bagh and the collapse of Non-Cooperation. At the National College, Lahore, under Lala Lajpat Rai’s patronage and Bhagwati Charan Vohra and Sukhdev’s comradeship, he turned to systematic study: Marx, Lenin, Bakunin, Irish and Russian revolutionary history. He co-founded the Naujawan Bharat Sabha (1926) and joined the Hindustan Republican Association, reorganised in 1928 as the Hindustan Socialist Republican Association with socialism written into its goal.',
-      'After the lathi charge that killed Lala Lajpat Rai, the HSRA’s retaliation at Lahore on 17 December 1928 killed Assistant Superintendent J. P. Saunders — Bhagat Singh escaped the city in disguise, aided by Durgawati Devi. On 8 April 1929, with Batukeshwar Dutt, he bombed the Central Legislative Assembly with deliberately non-lethal charges and courted arrest; the leaflet declared "it takes a loud voice to make the deaf hear".',
-      'The trials became his platform. Statements drafted with counsel put revolution’s case — "the sword of revolution is sharpened on the whetting-stone of ideas" — while inside jail he led hunger strikes for political-prisoner status through which Jatindra Nath Das died after 63 days. Convicted in the Lahore Conspiracy Case by a special ordinance tribunal, he was hanged with Rajguru and Sukhdev on 23 March 1931, the bodies cremated furtively at Hussainiwala. His last-year essays — "Why I Am an Atheist" above all — and the breadth of his jail notebook revealed a political mind of the first order, and his image, ideas and slogans remain a living presence across the subcontinent’s political spectrum.',
+      'Born into a Jat Sikh family of Ghadar sympathies (his uncle Ajit Singh was a famous agitator in exile), Bhagat Singh grew up in the shadow of Jallianwala Bagh and the collapse of Non-Cooperation. At the National College, Lahore, under Lala Lajpat Rai’s patronage and Bhagwati Charan Vohra and Sukhdev’s comradeship, he turned to systematic study: Marx, Lenin, Bakunin, Irish and Russian revolutionary history. He co-founded the Naujawan Bharat Sabha (1926) and joined the Hindustan Republican Association, reorganised in 1928 as the Hindustan Socialist Republican Association with socialism written into its goal.',
+      'After the lathi charge that killed Lala Lajpat Rai, the HSRA’s retaliation at Lahore on 17 December 1928 killed Assistant Superintendent J. P. Saunders. Bhagat Singh escaped the city in disguise, aided by Durgawati Devi. On 8 April 1929, with Batukeshwar Dutt, he bombed the Central Legislative Assembly with deliberately non-lethal charges and courted arrest; the leaflet declared "it takes a loud voice to make the deaf hear".',
+      'The trials became his platform. Statements drafted with counsel put revolution’s case ("the sword of revolution is sharpened on the whetting-stone of ideas"), while inside jail he led hunger strikes for political-prisoner status through which Jatindra Nath Das died after 63 days. Convicted in the Lahore Conspiracy Case by a special ordinance tribunal, he was hanged with Rajguru and Sukhdev on 23 March 1931, the bodies cremated furtively at Hussainiwala. His last-year essays, "Why I Am an Atheist" above all, and the breadth of his jail notebook revealed a political mind of the first order, and his image, ideas and slogans remain a living presence across the subcontinent’s political spectrum.',
     ],
     entryIntoStruggle: 'Student politics at National College, Lahore; NBS and HRA from the mid-1920s.',
     ideology: 'Revolutionary socialism; rationalism and atheism; complete independence.',
@@ -52,7 +52,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     ],
     sacrifices: ['Left family and safety at twenty; executed at twenty-three'],
     legacy:
-      'Shaheed-e-Azam — the great martyr; his writings are studied, his portrait carried in movements of every stripe, his memorial at Hussainiwala a site of national homage on 23 March.',
+      'Shaheed-e-Azam, the great martyr: his writings are studied, his portrait carried in movements of every stripe, his memorial at Hussainiwala a site of national homage on 23 March.',
     facts: [
       'He was carrying Kartar Singh Sarabha’s photograph when arrested.',
       'The popular image of him in a hat comes from a 1929 photograph taken to evade police identification.',
@@ -60,7 +60,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     quotes: [
       {
         text: 'Inquilab Zindabad! (Long live revolution!)',
-        context: 'Slogan raised in the Assembly, 8 April 1929 — popularised by him though coined by Maulana Hasrat Mohani',
+        context: 'Slogan raised in the Assembly, 8 April 1929. Popularised by him though coined by Maulana Hasrat Mohani',
         source: 'Trial records and contemporary press',
       },
       {
@@ -116,7 +116,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary', 'military-leader'],
     summary:
-      '"Azad" — free — the name he gave a magistrate at fifteen and kept to his last bullet: chief of the HSRA who was never taken alive, dying in a gun battle at Alfred Park, Allahabad.',
+      '"Azad" (free) was the name he gave a magistrate at fifteen and kept to his last bullet: the chief of the HSRA who was never taken alive, dying in a gun battle at Alfred Park, Allahabad.',
     shortStory: [
       {
         title: 'The boy who named himself Free',
@@ -124,21 +124,21 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'The chief',
-        text: 'When Non-Cooperation was called off, Azad joined the revolutionaries. He survived the Kakori crackdown that hanged his leader Bismil, rebuilt the organization as the HSRA, and became its commander — training comrades like Bhagat Singh in arms.',
+        text: 'When Non-Cooperation was called off, Azad joined the revolutionaries. He survived the Kakori crackdown that hanged his leader Bismil, rebuilt the organization as the HSRA, and became its commander, training comrades like Bhagat Singh in arms.',
       },
       {
         title: 'Never caught',
-        text: 'For years the police hunted him across north India. He was a master of disguise — once living as a priest, once as a mechanic. He vowed he would never be captured alive.',
+        text: 'For years the police hunted him across north India. He was a master of disguise, once living as a priest, once as a mechanic. He vowed he would never be captured alive.',
       },
       {
         title: 'The last bullet',
-        text: 'On 27 February 1931, betrayed at Alfred Park in Allahabad, he fought alone against surrounding police, covering a comrade’s escape — and kept his vow with his last bullet. The park is now called Azad Park.',
+        text: 'On 27 February 1931, betrayed at Alfred Park in Allahabad, he fought alone against surrounding police, covering a comrade’s escape, and kept his vow with his last bullet. The park is now called Azad Park.',
       },
     ],
     fullBiography: [
       'Chandrashekhar Tiwari, raised in the Bhil country of Alirajpur and schooled in Sanskrit at Banaras, was flogged at fifteen for Non-Cooperation picketing, taking the name Azad from that courtroom. Gandhi’s suspension of the movement after Chauri Chaura sent him, like many of his generation, to the revolutionaries: he joined Ram Prasad Bismil’s Hindustan Republican Association and took part in the Kakori action of 1925.',
       'Alone among the principal Kakori accused he escaped the dragnet, and over three hunted years he rebuilt the shattered organization, merging with the Punjab and Bihar groups at Ferozeshah Kotla in September 1928 to form the HSRA, with himself as commander-in-chief and Bhagat Singh as its leading mind. He directed the Saunders action, the Assembly bomb plan, and the attempt on the Viceroy’s train (1929), moving between Jhansi, Kanpur and Allahabad in disguises that became legend.',
-      'On 27 February 1931, an informer brought the police to Alfred Park, Allahabad, where Azad was meeting Sukhdev Raj. In the gun battle he held off the police, wounded officers, secured his comrade’s escape and, cornered against a tree with one round left, shot himself — keeping the vow that no British hand would take him alive. Crowds gathered at the tree within hours; the colonial government removed it, and independent India renamed the park for him.',
+      'On 27 February 1931, an informer brought the police to Alfred Park, Allahabad, where Azad was meeting Sukhdev Raj. In the gun battle he held off the police, wounded officers, secured his comrade’s escape and, cornered against a tree with one round left, shot himself, keeping the vow that no British hand would take him alive. Crowds gathered at the tree within hours; the colonial government removed it, and independent India renamed the park for him.',
     ],
     entryIntoStruggle: 'Non-Cooperation at fifteen; HRA from 1923–24.',
     ideology: 'Armed revolution for complete independence; socialist republic (HSRA goal).',
@@ -195,7 +195,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary', 'organizer'],
     summary:
-      'The HSRA’s Punjab organizer — recruiter, planner and Bhagat Singh’s closest comrade from the National College days — hanged with him and Rajguru on 23 March 1931.',
+      'Recruiter, planner and Bhagat Singh’s closest comrade from the National College days, the HSRA’s Punjab organizer was hanged with him and Rajguru on 23 March 1931.',
     shortStory: [
       {
         title: 'The organizer',
@@ -203,7 +203,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'The Lahore chief',
-        text: 'In the HSRA, Sukhdev ran the Punjab organization — safe houses, the bomb factory, recruitment. He helped plan the action against the officer responsible for Lala Lajpat Rai’s death.',
+        text: 'In the HSRA, Sukhdev ran the Punjab organization: safe houses, the bomb factory, recruitment. He helped plan the action against the officer responsible for Lala Lajpat Rai’s death.',
       },
       {
         title: 'Together to the end',
@@ -211,9 +211,9 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Sukhdev Thapar, orphaned of his father young and raised by his uncle Lala Achintram — himself a Congress worker — came to the National College, Lahore, where the study circle around Bhagwati Charan Vohra, Bhagat Singh and himself grew into the nucleus of Punjab’s revolutionary politics; he co-founded the Naujawan Bharat Sabha in 1926.',
-      'At the Ferozeshah Kotla meeting of 1928 he became the HSRA’s chief for Punjab. He organized the Lahore bomb factory, managed recruitment — including of young women like Durgawati Devi’s circle — and was central to planning the Saunders action of December 1928; the prosecution treated him as the conspiracy’s brain in Punjab.',
-      'Arrested in the 1929 sweep, he stood trial in the Lahore Conspiracy Case, joined the great hunger strikes, and was condemned with Bhagat Singh and Rajguru. A letter over his name addressed to Gandhi, published after his death, challenged the Mahatma to state his position on the revolutionaries’ sacrifice — part of the era’s great argument between the two roads to freedom. He was hanged on 23 March 1931 and cremated with his comrades at Hussainiwala.',
+      'Sukhdev Thapar, orphaned of his father young and raised by his uncle Lala Achintram, himself a Congress worker, came to the National College, Lahore, where the study circle around Bhagwati Charan Vohra, Bhagat Singh and himself grew into the nucleus of Punjab’s revolutionary politics; he co-founded the Naujawan Bharat Sabha in 1926.',
+      'At the Ferozeshah Kotla meeting of 1928 he became the HSRA’s chief for Punjab. He organized the Lahore bomb factory, managed recruitment, including of young women like Durgawati Devi’s circle, and was central to planning the Saunders action of December 1928; the prosecution treated him as the conspiracy’s brain in Punjab.',
+      'Arrested in the 1929 sweep, he stood trial in the Lahore Conspiracy Case, joined the great hunger strikes, and was condemned with Bhagat Singh and Rajguru. A letter over his name addressed to Gandhi, published after his death, challenged the Mahatma to state his position on the revolutionaries’ sacrifice, part of the era’s great argument between the two roads to freedom. He was hanged on 23 March 1931 and cremated with his comrades at Hussainiwala.',
     ],
     entryIntoStruggle: 'National College study circle and NBS, Lahore, mid-1920s.',
     ideology: 'Revolutionary socialism.',
@@ -257,11 +257,11 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary'],
     summary:
-      'The HSRA’s marksman from Maharashtra — a Sanskrit scholar of Varanasi turned crack shot — who fired the first bullet at Saunders and was hanged with Bhagat Singh and Sukhdev.',
+      'The HSRA’s marksman from Maharashtra, a Sanskrit scholar of Varanasi turned crack shot, who fired the first bullet at Saunders and was hanged with Bhagat Singh and Sukhdev.',
     shortStory: [
       {
         title: 'From scriptures to struggle',
-        text: 'Rajguru left home young to study Sanskrit in the holy city of Varanasi. There, instead of a priest’s life, he found the revolutionaries — and a new calling.',
+        text: 'Rajguru left home young to study Sanskrit in the holy city of Varanasi. There, instead of a priest’s life, he found the revolutionaries, and a new calling.',
       },
       {
         title: 'The marksman',
@@ -274,7 +274,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     ],
     fullBiography: [
       'Shivaram Hari Rajguru of Khed, near Pune, went to Varanasi as a boy for Sanskrit study and was drawn there into the revolutionary underground, joining the HSRA network; comrades knew him as "Raghunath". Athletic, direct and eager for the boldest work, he served as the party’s marksman.',
-      'On 17 December 1928, at Lahore, it was Rajguru who fired first at J. P. Saunders, with Bhagat Singh completing the action and Azad covering the retreat — the HSRA’s answer for Lala Lajpat Rai. He escaped through Lahore with the others, and continued underground work in Maharashtra and the United Provinces.',
+      'On 17 December 1928, at Lahore, it was Rajguru who fired first at J. P. Saunders, with Bhagat Singh completing the action and Azad covering the retreat: the HSRA’s answer for Lala Lajpat Rai. He escaped through Lahore with the others, and continued underground work in Maharashtra and the United Provinces.',
       'Arrested at Pune in September 1929, he was condemned in the Lahore Conspiracy Case. On 23 March 1931 the three were hanged together in Lahore Central Jail and cremated at Hussainiwala. Independent India renamed Khed as Rajgurunagar, and his ancestral wada is preserved as a monument.',
     ],
     entryIntoStruggle: 'HSRA network at Varanasi, mid-1920s.',
@@ -317,19 +317,19 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'non-cooperation',
     roles: ['revolutionary', 'writer-poet'],
     summary:
-      'Poet-founder of the Hindustan Republican Association and leader of the Kakori action — the author of "Sarfaroshi ki Tamanna", hanged at Gorakhpur in 1927 with the Gita in his thoughts and verses on his lips.',
+      'Poet-founder of the Hindustan Republican Association, leader of the Kakori action and author of "Sarfaroshi ki Tamanna", hanged at Gorakhpur in 1927 with the Gita in his thoughts and verses on his lips.',
     shortStory: [
       {
         title: 'The poet "Bismil"',
-        text: 'Ram Prasad wrote burning patriotic poetry under the pen-name "Bismil" — the wounded one. His poem "Sarfaroshi ki Tamanna" — "the desire for sacrifice is now in our hearts" — became the anthem of young revolutionaries.',
+        text: 'Ram Prasad wrote burning patriotic poetry under the pen-name "Bismil", the wounded one. His poem "Sarfaroshi ki Tamanna" ("the desire for sacrifice is now in our hearts") became the anthem of young revolutionaries.',
       },
       {
         title: 'Founding the HRA',
-        text: 'When Gandhi called off Non-Cooperation, Bismil and friends founded the Hindustan Republican Association in 1924, dreaming of a free, republican India — and needing funds to fight for it.',
+        text: 'When Gandhi called off Non-Cooperation, Bismil and friends founded the Hindustan Republican Association in 1924, dreaming of a free, republican India, and needing funds to fight for it.',
       },
       {
         title: 'Kakori',
-        text: 'In August 1925 he led the hold-up of a train at Kakori, seizing government money. Arrested with most of his comrades, he defended himself brilliantly at trial — but the sentence was death.',
+        text: 'In August 1925 he led the hold-up of a train at Kakori, seizing government money. Arrested with most of his comrades, he defended himself brilliantly at trial, but the sentence was death.',
       },
       {
         title: 'The last morning',
@@ -338,8 +338,8 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     ],
     fullBiography: [
       'Ram Prasad of Shahjahanpur, self-schooled through hardship and shaped by the Arya Samaj, entered the revolutionary path as a teenager in the Mainpuri conspiracy (1918) around Genda Lal Dixit, living as a fugitive before amnesty. A gifted Urdu and Hindi poet as "Bismil", he made verse a weapon; "Sarfaroshi ki Tamanna" (a ghazal of Bismil Azimabadi that Ram Prasad made immortal) and "Mera Rang De Basanti Chola" are inseparable from his memory.',
-      'After Non-Cooperation’s suspension he co-founded the Hindustan Republican Association (1924) with Sachindra Nath Sanyal and others, its manifesto "The Revolutionary" declaring for a federal republic of the United States of India. To arm and fund it he planned the Kakori action of 9 August 1925 — ten men, government treasure, one accidental death — deliberately sparing Indian property.',
-      'In the long Kakori trial he conducted much of his own defence with skill the judges acknowledged, and wrote in the condemned cell his autobiography — a classic of the literature — completed days before execution. He was hanged at Gorakhpur on 19 December 1927, telling the jail officials he wished the British Empire’s destruction and reciting his verse; Ashfaqulla Khan, his beloved comrade, was hanged the same day at Faizabad. Their joint memory — Pandit and Muslim brothers-in-sacrifice — remains a cherished emblem of united struggle.',
+      'After Non-Cooperation’s suspension he co-founded the Hindustan Republican Association (1924) with Sachindra Nath Sanyal and others, its manifesto "The Revolutionary" declaring for a federal republic of the United States of India. To arm and fund it he planned the Kakori action of 9 August 1925 (ten men, government treasure, one accidental death), deliberately sparing Indian property.',
+      'In the long Kakori trial he conducted much of his own defence with skill the judges acknowledged, and wrote in the condemned cell his autobiography, a classic of the literature, completed days before execution. He was hanged at Gorakhpur on 19 December 1927, telling the jail officials he wished the British Empire’s destruction and reciting his verse; Ashfaqulla Khan, his beloved comrade, was hanged the same day at Faizabad. Their joint memory as Pandit and Muslim brothers-in-sacrifice remains a cherished emblem of united struggle.',
     ],
     entryIntoStruggle: 'Mainpuri conspiracy, 1918, at twenty.',
     ideology: 'Republican revolution; Hindu-Muslim revolutionary unity.',
@@ -393,11 +393,11 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'non-cooperation',
     roles: ['revolutionary', 'writer-poet'],
     summary:
-      'Poet ("Hasrat") and Kakori revolutionary — Ram Prasad Bismil’s dearest comrade — the first Muslim to be hanged in a revolutionary conspiracy case, at Faizabad on 19 December 1927.',
+      'Poet ("Hasrat"), Kakori revolutionary and Ram Prasad Bismil’s dearest comrade, the first Muslim to be hanged in a revolutionary conspiracy case, at Faizabad on 19 December 1927.',
     shortStory: [
       {
         title: 'Two friends of Shahjahanpur',
-        text: 'Ashfaqulla Khan and Ram Prasad Bismil came from different faiths in the same town, and became the closest of friends — both poets, both dreamers of a free India.',
+        text: 'Ashfaqulla Khan and Ram Prasad Bismil came from different faiths in the same town, and became the closest of friends: both poets, both dreamers of a free India.',
       },
       {
         title: 'Kakori and after',
@@ -405,12 +405,12 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'Faith and freedom together',
-        text: 'In prison, officials urged him to turn against his Hindu comrades. He refused with scorn: he would rather die for India. He was hanged at Faizabad on 19 December 1927 — the same day as Bismil — kissing the rope and reciting the kalma.',
+        text: 'In prison, officials urged him to turn against his Hindu comrades. He refused with scorn: he would rather die for India. He was hanged at Faizabad on 19 December 1927, the same day as Bismil, kissing the rope and reciting the kalma.',
       },
     ],
     fullBiography: [
       'Ashfaqulla Khan, of a Pathan family of Shahjahanpur, sought out the already-famous local revolutionary Ram Prasad Bismil after Non-Cooperation ended; their friendship, celebrated in both men’s writing, became the emotional heart of the HRA. A poet in Urdu as "Hasrat", he shared Bismil’s vision of a free federal republic.',
-      'He initially argued against the Kakori plan — fearing it premature — then took full part on 9 August 1925 as one of the ten. Alone of the principal accused he escaped the first sweep, moving through Bihar and Banaras to Delhi, seeking a way abroad to continue the work; betrayal by an old schoolfellow delivered him to the police in 1926.',
+      'He initially argued against the Kakori plan, fearing it premature, then took full part on 9 August 1925 as one of the ten. Alone of the principal accused he escaped the first sweep, moving through Bihar and Banaras to Delhi, seeking a way abroad to continue the work; betrayal by an old schoolfellow delivered him to the police in 1926.',
       'In the condemned cell he wrote memoirs and letters answering attempts to communalise his case: the divide-and-rule that set Hindu against Muslim, he wrote, was the Empire’s weapon, and he was proud to be the first Muslim hanged for the revolution. On 19 December 1927 at Faizabad jail he went to the gallows with the Quran’s words on his lips; his mazar at Shahjahanpur and Bismil’s samadhi are twinned in national memory.',
     ],
     entryIntoStruggle: 'Joined Bismil’s HRA circle after 1922.',
@@ -456,15 +456,15 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary'],
     summary:
-      'Bhagat Singh’s partner in the Assembly bombing, sentenced to transportation for life — survivor of the Cellular Jail and hunger strikes who lived on, half-forgotten, to be cremated beside his comrades at Hussainiwala.',
+      'Bhagat Singh’s partner in the Assembly bombing, sentenced to transportation for life: a survivor of the Cellular Jail and hunger strikes who lived on, half-forgotten, to be cremated beside his comrades at Hussainiwala.',
     shortStory: [
       {
         title: 'The second man',
-        text: 'When Bhagat Singh threw the bombs in the Assembly in April 1929, Batukeshwar Dutt stood beside him, throwing leaflets and shouting "Inquilab Zindabad!" — and stayed, like his comrade, to be arrested.',
+        text: 'When Bhagat Singh threw the bombs in the Assembly in April 1929, Batukeshwar Dutt stood beside him, throwing leaflets and shouting "Inquilab Zindabad!" He stayed, like his comrade, to be arrested.',
       },
       {
         title: 'The long sentence',
-        text: 'Bhagat Singh was hanged; Dutt was sent to the dreaded Cellular Jail in the Andamans for life. He joined hunger strikes there for prisoners’ rights and suffered years of brutal treatment — and tuberculosis.',
+        text: 'Bhagat Singh was hanged; Dutt was sent to the dreaded Cellular Jail in the Andamans for life. He joined hunger strikes there for prisoners’ rights and suffered years of brutal treatment, and tuberculosis.',
       },
       {
         title: 'The forgotten years',
@@ -473,13 +473,13 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     ],
     fullBiography: [
       'Batukeshwar Dutt, Bengali by birth and Kanpur-raised, joined the HSRA circle around Bhagat Singh and learned bomb-making for the organization. Chosen for the Assembly action of 8 April 1929 precisely because the two intended arrest and trial, he shared the courtroom statements that made the case a national event, and the sentence of transportation for life.',
-      'In Lahore jail and then the Cellular Jail he was a stalwart of the hunger strikes for political-prisoner status — the strikes in which Jatindra Nath Das died — enduring forced feeding and solitary confinement; tuberculosis contracted in prison marked his remaining life. Repatriated in 1937–38 and released in 1945, he joined Quit India-era work briefly between imprisonments.',
+      'In Lahore jail and then the Cellular Jail he was a stalwart of the hunger strikes for political-prisoner status, the strikes in which Jatindra Nath Das died, enduring forced feeding and solitary confinement; tuberculosis contracted in prison marked his remaining life. Repatriated in 1937–38 and released in 1945, he joined Quit India-era work briefly between imprisonments.',
       'Independence found him in Patna in poverty and obscurity; a man who once had to produce his jail certificate to get a bus permit. Hospitalised in Delhi in 1965, he was visited by old comrades and by Punjab’s government, which took charge of his last wish: cremation at Hussainiwala. He died on 20 July 1965; his samadhi stands beside the three martyrs’, and his daughter later received the state’s belated honours.',
     ],
     entryIntoStruggle: 'HSRA, Kanpur-Agra circle, late 1920s.',
     achievements: ['Co-actor of the Assembly protest; veteran of the great prison strikes'],
     sacrifices: ['Sixteen years in prisons including the Cellular Jail; lifelong illness and poverty'],
-    legacy: 'The survivor of 8 April 1929 — a reminder that sacrifice included the long, unglamorous years after.',
+    legacy: 'The survivor of 8 April 1929, a reminder that sacrifice included the long, unglamorous years after.',
     facts: ['His jail number and Bhagat Singh’s appear together on the Assembly case records.'],
     timelineEvents: ['assembly-bomb-case', 'execution-bhagat-singh'],
     movements: ['revolutionary-movement'],
@@ -519,7 +519,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary'],
     summary:
-      'The HSRA’s bomb-maker who died in Lahore jail after a 63-day hunger strike for political prisoners’ rights — his funeral procession through India drew mourning millions.',
+      'The HSRA’s bomb-maker who died in Lahore jail after a 63-day hunger strike for political prisoners’ rights. His funeral procession through India drew mourning millions.',
     shortStory: [
       {
         title: 'The quiet expert',
@@ -527,7 +527,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'The hunger strike',
-        text: 'Arrested in 1929, he joined Bhagat Singh’s hunger strike demanding that Indian political prisoners be treated as human beings — decent food, books, newspapers. Jail officials force-fed the strikers brutally; Jatin resisted to the end.',
+        text: 'Arrested in 1929, he joined Bhagat Singh’s hunger strike demanding that Indian political prisoners be treated as human beings: decent food, books, newspapers. Jail officials force-fed the strikers brutally; Jatin resisted to the end.',
       },
       {
         title: 'Sixty-three days',
@@ -536,7 +536,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     ],
     fullBiography: [
       'Jatindra Nath Das joined Non-Cooperation at sixteen and served jail time, where he first hunger-struck against mistreatment. Drawn into Bengal’s revolutionary circles (Anushilan), he became a skilled maker of explosives, and in 1928–29 worked with the HSRA, preparing the devices for the Assembly action at the Agra factory.',
-      'Swept up in the Lahore Conspiracy Case arrests, he joined the hunger strike begun by Bhagat Singh and Dutt on 15 June 1929, demanding political-prisoner status: parity with European convicts, books, papers, decent food. He refused both food and the torture of forced feeding — which in one session injured his lungs — and declined bail arrangements that would have interrupted the strike.',
+      'Swept up in the Lahore Conspiracy Case arrests, he joined the hunger strike begun by Bhagat Singh and Dutt on 15 June 1929, demanding political-prisoner status: parity with European convicts, books, papers, decent food. He refused both food and the torture of forced feeding, which in one session injured his lungs, and declined bail arrangements that would have interrupted the strike.',
       'He died on the sixty-third day, 13 September 1929. Subhas Chandra Bose arranged the funeral train; the two-thousand-kilometre journey to Calcutta became a national procession of mourning, and six hundred thousand walked in the final cortège. "Another Terence MacSwiney", said comparisons with the Irish martyr; the government soon conceded parts of the demands. He remains the symbol of the prisoners’ struggle within the struggle.',
     ],
     entryIntoStruggle: 'Non-Cooperation as a teenager; revolutionary work from the mid-1920s.',
@@ -582,28 +582,28 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary'],
     summary:
-      '"Durga Bhabhi" — the HSRA’s fearless sister-in-arms who escorted a disguised Bhagat Singh out of Lahore posing as his wife, and later exchanged gunfire with police at Lamington Road, Bombay.',
+      '"Durga Bhabhi": the HSRA’s fearless sister-in-arms who escorted a disguised Bhagat Singh out of Lahore posing as his wife, and later exchanged gunfire with police at Lamington Road, Bombay.',
     shortStory: [
       {
         title: 'Bhabhi to the revolutionaries',
-        text: 'Durgawati Devi was married to Bhagwati Charan Vohra of the HSRA. Their home was the revolutionaries’ refuge, and the young men called her "Durga Bhabhi" — sister-in-law Durga.',
+        text: 'Durgawati Devi was married to Bhagwati Charan Vohra of the HSRA. Their home was the revolutionaries’ refuge, and the young men called her "Durga Bhabhi", sister-in-law Durga.',
       },
       {
         title: 'The train to Calcutta',
-        text: 'After the Saunders action in 1928, police sealed Lahore hunting Bhagat Singh. Durga Bhabhi boarded a first-class train carriage with her baby son, posing as the wife of a clean-shaven, hat-wearing "gentleman" — Bhagat Singh in disguise. The bluff worked.',
+        text: 'After the Saunders action in 1928, police sealed Lahore hunting Bhagat Singh. Durga Bhabhi boarded a first-class train carriage with her baby son, posing as the wife of a clean-shaven, hat-wearing "gentleman": Bhagat Singh in disguise. The bluff worked.',
       },
       {
         title: 'Taking up the pistol',
-        text: 'Her husband died testing a bomb in 1930. Grieving, she carried on — in October 1930 she fired on a police party at Lamington Road in Bombay. She was jailed for three years.',
+        text: 'Her husband died testing a bomb in 1930. Grieving, she carried on. In October 1930 she fired on a police party at Lamington Road in Bombay. She was jailed for three years.',
       },
       {
         title: 'The teacher',
-        text: 'She lived to ninety-two, spending her later decades quietly running a school for poor children in Lucknow — a revolutionary to the end, in a gentler key.',
+        text: 'She lived to ninety-two, spending her later decades quietly running a school for poor children in Lucknow: a revolutionary to the end, in a gentler key.',
       },
     ],
     fullBiography: [
-      'Married at eleven to Bhagwati Charan Vohra — the HSRA’s philosopher and pamphleteer — Durgawati Devi grew into the movement at its Lahore heart, working in the Naujawan Bharat Sabha, sheltering comrades, carrying messages and funds.',
-      'Her legend was made in December 1928: with the police net closing after Saunders’ death, she travelled with Bhagat Singh — shaved, hatted, "Anglo-Indian" — as his wife, her infant son Sachindra on her lap, with Rajguru as their servant, on the Calcutta Mail out of Lahore. She later led Jatin Das’s funeral procession in Lahore, and after her husband died in May 1930 testing a bomb for a Bhagat Singh rescue plan, she pressed for direct action: on 8 October 1930 she and comrades fired on a police vehicle outside Lamington Road police station, Bombay, wounding a sergeant and his wife.',
+      'Married at eleven to Bhagwati Charan Vohra, the HSRA’s philosopher and pamphleteer, Durgawati Devi grew into the movement at its Lahore heart, working in the Naujawan Bharat Sabha, sheltering comrades, carrying messages and funds.',
+      'Her legend was made in December 1928: with the police net closing after Saunders’ death, she travelled with Bhagat Singh (shaved, hatted, "Anglo-Indian") as his wife, her infant son Sachindra on her lap, with Rajguru as their servant, on the Calcutta Mail out of Lahore. She later led Jatin Das’s funeral procession in Lahore, and after her husband died in May 1930 testing a bomb for a Bhagat Singh rescue plan, she pressed for direct action: on 8 October 1930 she and comrades fired on a police vehicle outside Lamington Road police station, Bombay, wounding a sergeant and his wife.',
       'Arrested in 1932 and imprisoned three years, she found herself, after release and the movement’s ebb, watched and unemployable; Congress leaders helped her settle in Lucknow, where in 1940 she founded a school for underprivileged children that she ran for decades. She died in Ghaziabad in 1999, the last of the HSRA’s inner circle, having outlived her comrades by nearly seventy years.',
     ],
     entryIntoStruggle: 'HSRA/Naujawan Bharat Sabha circle, Lahore, 1920s.',
@@ -653,15 +653,15 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary', 'educator', 'organizer'],
     summary:
-      '"Masterda" — the schoolteacher who led the Chittagong armoury raid of 1930 with an army of students, held out underground for three years, and was tortured and hanged in 1934.',
+      '"Masterda": the schoolteacher who led the Chittagong armoury raid of 1930 with an army of students, held out underground for three years, and was tortured and hanged in 1934.',
     shortStory: [
       {
         title: 'The schoolmaster',
-        text: 'Surya Sen taught mathematics in Chittagong. His students loved him — and many followed him into a secret plan more daring than anything Bengal had seen.',
+        text: 'Surya Sen taught mathematics in Chittagong. His students loved him, and many followed him into a secret plan more daring than anything Bengal had seen.',
       },
       {
         title: 'One night in April',
-        text: 'On 18 April 1930, Masterda’s young force — most of them teenagers — captured Chittagong’s police and military armouries, cut the telegraph lines, and raised the national flag, proclaiming a revolutionary government.',
+        text: 'On 18 April 1930, Masterda’s young force, most of them teenagers, captured Chittagong’s police and military armouries, cut the telegraph lines, and raised the national flag, proclaiming a revolutionary government.',
       },
       {
         title: 'The hills and the years',
@@ -673,9 +673,9 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Surya Sen, a teacher at the National school in Chittagong — "Masterda" to all — combined open Congress work (he led the district Congress) with command of the local revolutionary group he rebuilt through the 1920s, surviving imprisonment in 1926–28. Inspired by the Irish Easter Rising, he planned not assassination but insurrection.',
-      'On the night of 18 April 1930 his Indian Republican Army, Chattogram branch — sixty-odd fighters, largely students, including Ganesh Ghosh, Lokenath Bal, Ananta Singh and Nirmal Sen — seized the police and Auxiliary Force armouries, destroyed the telegraph office and railway links, and proclaimed a provisional revolutionary government in his name. Ammunition eluded them; the group withdrew, and on 22 April fought a pitched battle on Jalalabad hill in which twelve died. Survivors dispersed into an underground sustained by the villages of Chittagong for three years — through the Pahartali club attack led by Pritilata Waddedar (1932) and repeated encounters.',
-      'Betrayed at Gairala village in February 1933 and captured, then wounded in a last skirmish that took his lieutenant Nirmal Sen, he was tried and, with Tarakeswar Dastidar, hanged in Chittagong jail on 12 January 1934 after brutal treatment recorded by fellow prisoners; the bodies were sunk at sea. His raid, in the same month as the Dandi March, showed the struggle’s many roads — and his students, women and men, carried its memory into public life in free India.',
+      'Surya Sen, a teacher at the National school in Chittagong, "Masterda" to all, combined open Congress work (he led the district Congress) with command of the local revolutionary group he rebuilt through the 1920s, surviving imprisonment in 1926–28. Inspired by the Irish Easter Rising, he planned not assassination but insurrection.',
+      'On the night of 18 April 1930 his Indian Republican Army, Chattogram branch (sixty-odd fighters, largely students, including Ganesh Ghosh, Lokenath Bal, Ananta Singh and Nirmal Sen) seized the police and Auxiliary Force armouries, destroyed the telegraph office and railway links, and proclaimed a provisional revolutionary government in his name. Ammunition eluded them; the group withdrew, and on 22 April fought a pitched battle on Jalalabad hill in which twelve died. Survivors dispersed into an underground sustained by the villages of Chittagong for three years, through the Pahartali club attack led by Pritilata Waddedar (1932) and repeated encounters.',
+      'Betrayed at Gairala village in February 1933 and captured, then wounded in a last skirmish that took his lieutenant Nirmal Sen, he was tried and, with Tarakeswar Dastidar, hanged in Chittagong jail on 12 January 1934 after brutal treatment recorded by fellow prisoners; the bodies were sunk at sea. His raid, in the same month as the Dandi March, showed the struggle’s many roads, and his students, women and men, carried its memory into public life in free India.',
     ],
     entryIntoStruggle: 'Chittagong revolutionary group from 1918; Congress district leadership through the 1920s.',
     ideology: 'Armed insurrection; inspired by the Irish republican model.',
@@ -724,11 +724,11 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary', 'educator'],
     summary:
-      'Philosophy graduate and school headmistress who led the armed attack on the Pahartali European Club in 1932 and took cyanide rather than be captured — Bengal’s "Birkannya", the heroic daughter.',
+      'Philosophy graduate and school headmistress who led the armed attack on the Pahartali European Club in 1932 and took cyanide rather than be captured: Bengal’s "Birkannya", the heroic daughter.',
     shortStory: [
       {
         title: 'The brilliant student',
-        text: 'Pritilata was one of Chittagong’s finest students, graduating in philosophy from Calcutta — though the British authorities withheld her degree for her politics. She became a school headmistress at twenty-one.',
+        text: 'Pritilata was one of Chittagong’s finest students, graduating in philosophy from Calcutta, though the British authorities withheld her degree for her politics. She became a school headmistress at twenty-one.',
       },
       {
         title: 'Joining Masterda',
@@ -736,13 +736,13 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'The Pahartali raid',
-        text: 'On 24 September 1932 she led the attack on the Pahartali European Club — infamous for a sign barring "dogs and Indians". Wounded in the retreat, she swallowed cyanide rather than fall into British hands. She was twenty-one.',
+        text: 'On 24 September 1932 she led the attack on the Pahartali European Club, infamous for a sign barring "dogs and Indians". Wounded in the retreat, she swallowed cyanide rather than fall into British hands. She was twenty-one.',
       },
     ],
     fullBiography: [
-      'Pritilata Waddedar, a meritorious student of Chittagong and Bethune College, Calcutta, sought out the revolutionary underground while a student and was inducted into Surya Sen’s group — among its first women, with her friend Kalpana Datta. Calcutta University withheld her earned philosophy degree over her politics; it was conferred posthumously in 2012.',
+      'Pritilata Waddedar, a meritorious student of Chittagong and Bethune College, Calcutta, sought out the revolutionary underground while a student and was inducted into Surya Sen’s group as one of its first women, with her friend Kalpana Datta. Calcutta University withheld her earned philosophy degree over her politics; it was conferred posthumously in 2012.',
       'As headmistress of Nandankanan school she doubled as an underground courier and combatant: she met the imprisoned Ramkrishna Biswas before his execution, and after the armoury raid’s dispersal she survived the Dhalghat encounter of June 1932 in which Nirmal Sen died and Captain Cameron was killed.',
-      'Chosen by Surya Sen to command the attack on the Pahartali European Railway Institute club on 24 September 1932 — a target symbolising racial exclusion — she led a squad in male dress; the raid killed one and wounded others inside. Struck in the retreat, she swallowed the cyanide the fighters carried, and was found dead with pamphlets explaining why women had taken up arms. Her death made "Birkannya Pritilata" a name to conjure with; schools, a university hall in Chattogram, and films keep it alive.',
+      'Chosen by Surya Sen to command the attack on the Pahartali European Railway Institute club on 24 September 1932, a target symbolising racial exclusion, she led a squad in male dress; the raid killed one and wounded others inside. Struck in the retreat, she swallowed the cyanide the fighters carried, and was found dead with pamphlets explaining why women had taken up arms. Her death made "Birkannya Pritilata" a name to conjure with; schools, a university hall in Chattogram, and films keep it alive.',
     ],
     entryIntoStruggle: 'Recruited to Surya Sen’s group as a college student.',
     achievements: [
@@ -795,15 +795,15 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary'],
     summary:
-      'Science student turned Chittagong revolutionary — arrested in male disguise, defended by C. R. Das’s successors and Rabindranath’s appeals, sentenced to transportation — who lived to write the movement’s memoir.',
+      'Science student turned Chittagong revolutionary who was arrested in male disguise, defended by C. R. Das’s successors and Rabindranath’s appeals, sentenced to transportation, and lived to write the movement’s memoir.',
     shortStory: [
       {
         title: 'The science student',
-        text: 'Kalpana Datta loved chemistry — a useful subject, it turned out, for a revolutionary. As a Calcutta college student she joined Surya Sen’s Chittagong group and made explosives for the underground.',
+        text: 'Kalpana Datta loved chemistry, a useful subject, it turned out, for a revolutionary. As a Calcutta college student she joined Surya Sen’s Chittagong group and made explosives for the underground.',
       },
       {
         title: 'Caught in disguise',
-        text: 'Scouting the Pahartali club dressed as a man a week before the 1932 raid, she was arrested — and released for lack of proof. She went underground with Masterda instead of returning to safety.',
+        text: 'Scouting the Pahartali club dressed as a man a week before the 1932 raid, she was arrested, then released for lack of proof. She went underground with Masterda instead of returning to safety.',
       },
       {
         title: 'The trial',
@@ -811,9 +811,9 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Kalpana Datta of Sripur, Chittagong, went to Bethune College, Calcutta, for science, and through the Chhatri Sangha (women students’ association) into revolutionary work, joining Surya Sen’s organization with Pritilata Waddedar. Her tasks ran from smuggling materials to preparing gun-cotton — and reconnaissance of the Pahartali club, in male dress, which led to her brief arrest days before the attack in which Pritilata died.',
+      'Kalpana Datta of Sripur, Chittagong, went to Bethune College, Calcutta, for science, and through the Chhatri Sangha (women students’ association) into revolutionary work, joining Surya Sen’s organization with Pritilata Waddedar. Her tasks ran from smuggling materials to preparing gun-cotton, and to reconnaissance of the Pahartali club, in male dress, which led to her brief arrest days before the attack in which Pritilata died.',
       'Underground with Surya Sen through the last phase, she survived the Gairala encounter of February 1933 in which he was taken, and was herself captured in May 1933 after the gunfight at Gohira. In the second armoury raid case, with Rabindranath Tagore among those appealing for clemency for the twenty-year-old, she received transportation for life rather than the gallows.',
-      'Released in the 1939 amnesty, she graduated, joined the Communist Party of India — marrying its general secretary P. C. Joshi — did famine-relief work in 1943 Bengal, and wrote "Chittagong Armoury Raiders: Reminiscences" (1945), a primary chronicle of the movement. She died in Calcutta in 1995, the raid’s last famous survivor.',
+      'Released in the 1939 amnesty, she graduated, joined the Communist Party of India (marrying its general secretary P. C. Joshi), did famine-relief work in 1943 Bengal, and wrote "Chittagong Armoury Raiders: Reminiscences" (1945), a primary chronicle of the movement. She died in Calcutta in 1995, the raid’s last famous survivor.',
     ],
     entryIntoStruggle: 'Chhatri Sangha and Surya Sen’s group as a student, 1931.',
     achievements: [
@@ -863,7 +863,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'quit-india-and-ina',
     roles: ['revolutionary'],
     summary:
-      'The orphan of Sunam who carried the memory of Jallianwala Bagh for twenty-one years, and in 1940 shot dead Sir Michael O’Dwyer — Punjab’s wartime governor of 1919 — in a London hall.',
+      'The orphan of Sunam who carried the memory of Jallianwala Bagh for twenty-one years, and in 1940 shot dead Sir Michael O’Dwyer, Punjab’s wartime governor of 1919, in a London hall.',
     shortStory: [
       {
         title: 'The orphan of Sunam',
@@ -871,11 +871,11 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'A vow across decades',
-        text: 'He never forgot. He joined the Ghadar networks, worked across Africa, America and Europe, was jailed for arms offences — and always kept one name in mind: Michael O’Dwyer, the governor who had approved the massacre.',
+        text: 'He never forgot. He joined the Ghadar networks, worked across Africa, America and Europe, was jailed for arms offences, and always kept one name in mind: Michael O’Dwyer, the governor who had approved the massacre.',
       },
       {
         title: 'Caxton Hall',
-        text: 'On 13 March 1940, at a meeting in London’s Caxton Hall, Udham Singh shot O’Dwyer dead. He gave his name in court as "Ram Mohammad Singh Azad" — a name joining Hindu, Muslim and Sikh in one free man.',
+        text: 'On 13 March 1940, at a meeting in London’s Caxton Hall, Udham Singh shot O’Dwyer dead. He gave his name in court as "Ram Mohammad Singh Azad", a name joining Hindu, Muslim and Sikh in one free man.',
       },
       {
         title: 'The return',
@@ -883,9 +883,9 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Sher Singh, orphaned young in Sunam and raised with his brother in the Central Khalsa Orphanage at Amritsar as Udham Singh, was in the city during the terrible days of April 1919 — popular tradition places him in the Bagh itself, serving water, though historians treat that detail as unverified. The massacre, and the honours heaped afterwards on its perpetrators, fixed the course of his life.',
-      'His two decades of wandering — East Africa, the United States (where he moved in Ghadar circles), and back to Punjab, where a 1927 arms case under the name Ram Mohammad Singh Azad brought him four years in jail — were spent at the margins of the revolutionary diaspora, with Bhagat Singh as his acknowledged hero. From 1934 he lived in England, working as a pedlar and engineer, waiting.',
-      'On 13 March 1940, as a joint meeting of the East India Association and Royal Central Asian Society closed at Caxton Hall, he shot Sir Michael O’Dwyer — Lieutenant-Governor of Punjab in 1919, unrepentant defender of the Amritsar shootings — dead with two rounds, wounding others on the platform, and waited for arrest. At trial he gave the name Ram Mohammad Singh Azad; his statement from the dock, suppressed at the time, declared he had done it because O’Dwyer "deserved it" for crushing his people. He was hanged at Pentonville on 31 July 1940. His remains were repatriated in 1974 and honoured across Punjab; the Bagh’s martyrs’ gallery holds his portrait.',
+      'Sher Singh, orphaned young in Sunam and raised with his brother in the Central Khalsa Orphanage at Amritsar as Udham Singh, was in the city during the terrible days of April 1919. Popular tradition places him in the Bagh itself, serving water, though historians treat that detail as unverified. The massacre, and the honours heaped afterwards on its perpetrators, fixed the course of his life.',
+      'His two decades of wandering took him to East Africa, to the United States (where he moved in Ghadar circles), and back to Punjab, where a 1927 arms case under the name Ram Mohammad Singh Azad brought him four years in jail. Those years were spent at the margins of the revolutionary diaspora, with Bhagat Singh as his acknowledged hero. From 1934 he lived in England, working as a pedlar and engineer, waiting.',
+      'On 13 March 1940, as a joint meeting of the East India Association and Royal Central Asian Society closed at Caxton Hall, he shot Sir Michael O’Dwyer, Lieutenant-Governor of Punjab in 1919 and unrepentant defender of the Amritsar shootings, dead with two rounds, wounding others on the platform, and waited for arrest. At trial he gave the name Ram Mohammad Singh Azad; his statement from the dock, suppressed at the time, declared he had done it because O’Dwyer "deserved it" for crushing his people. He was hanged at Pentonville on 31 July 1940. His remains were repatriated in 1974 and honoured across Punjab; the Bagh’s martyrs’ gallery holds his portrait.',
     ],
     entryIntoStruggle: 'Amritsar 1919 and the Ghadar diaspora networks of the 1920s.',
     achievements: ['His act carried the Jallianwala Bagh reckoning to the Empire’s capital'],
@@ -935,7 +935,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'non-cooperation',
     roles: ['revolutionary'],
     summary:
-      'An MA history student of Banaras Hindu University who joined the Kakori action of 1925 — hanged two days ahead of schedule at Gonda jail, the first of the four Kakori martyrs to die.',
+      'An MA history student of Banaras Hindu University who joined the Kakori action of 1925 and was hanged two days ahead of schedule at Gonda jail, the first of the four Kakori martyrs to die.',
     shortStory: [
       {
         title: 'From Bengal to Banaras',
@@ -947,13 +947,13 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'Hanged ahead of time',
-        text: 'Sentenced to death alongside Bismil, Ashfaqulla Khan and Roshan Singh, Lahiri was hanged at Gonda jail on 17 December 1927 — two days before the date fixed for all four, reportedly moved up so that no crowd could gather. He was twenty-six.',
+        text: 'Sentenced to death alongside Bismil, Ashfaqulla Khan and Roshan Singh, Lahiri was hanged at Gonda jail on 17 December 1927, two days before the date fixed for all four, reportedly moved up so that no crowd could gather. He was twenty-six.',
       },
     ],
     fullBiography: [
       'Rajendra Nath Lahiri, born into a Bengali Brahmin family of Lahiri Mohanpur in Pabna district, was studying for an MA in history at Banaras Hindu University when he was drawn into the revolutionary underground already active among Bengali students there, and from it into Ram Prasad Bismil’s Hindustan Republican Association in the United Provinces.',
       'He took part in the ten-man Kakori action of 9 August 1925, helping stop the 8-Down train and carry off its guard’s cash chest of government money. Arrested in the sweep that followed, he stood trial with Bismil, Ashfaqulla Khan, Roshan Singh and the rest, and was among those condemned to death.',
-      'He was hanged at Gonda district jail on 17 December 1927 — two days before the 19 December date set for the others, the authorities reportedly bringing his execution forward to forestall any gathering of sympathisers before all four could die together. Bismil, Ashfaqulla Khan and Roshan Singh went to the gallows two days later, at Gorakhpur, Faizabad and Allahabad respectively.',
+      'He was hanged at Gonda district jail on 17 December 1927, two days before the 19 December date set for the others, the authorities reportedly bringing his execution forward to forestall any gathering of sympathisers before all four could die together. Bismil, Ashfaqulla Khan and Roshan Singh went to the gallows two days later, at Gorakhpur, Faizabad and Allahabad respectively.',
     ],
     entryIntoStruggle: 'Revolutionary underground among Bengali students at Banaras Hindu University; joined the HRA soon after.',
     ideology: 'Republican revolution (HRA).',
@@ -1000,7 +1000,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'non-cooperation',
     roles: ['revolutionary'],
     summary:
-      'The fourth man hanged in the Kakori case — convicted not for the train action itself but for a related dacoity, and sentenced to death alongside Bismil, Ashfaqulla Khan and Lahiri at Allahabad’s Naini jail.',
+      'The fourth man hanged in the Kakori case, convicted not for the train action itself but for a related dacoity, and sentenced to death alongside Bismil, Ashfaqulla Khan and Lahiri at Allahabad’s Naini jail.',
     shortStory: [
       {
         title: 'A revolutionary of Shahjahanpur',
@@ -1013,13 +1013,13 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'Hanged at Naini',
-        text: 'Sentenced to death, he was hanged at Naini Central Prison, Allahabad, on 19 December 1927 — the same day as Bismil at Gorakhpur and Ashfaqulla Khan at Faizabad. He was thirty-five.',
+        text: 'Sentenced to death, he was hanged at Naini Central Prison, Allahabad, on 19 December 1927, the same day as Bismil at Gorakhpur and Ashfaqulla Khan at Faizabad. He was thirty-five.',
       },
     ],
     fullBiography: [
       'Thakur Roshan Singh of Nabada village, Shahjahanpur, was imprisoned during the Non-Cooperation years for a shooting case at Bareilly. On his release he joined the Hindustan Republican Association in 1924, drawn to Ram Prasad Bismil’s circle of revolutionaries in the United Provinces.',
-      'He took no part in the Kakori train action of 9 August 1925. He was arrested in January 1926, however, and tried for a killing carried out during a dacoity at Bamrauli in December 1924 — a case the government prosecuted alongside the Kakori conspiracy, bringing him to trial with Bismil, Ashfaqulla Khan and Rajendra Lahiri and to the same sentence of death.',
-      'He was hanged at Naini Central Prison, Allahabad, on 19 December 1927, the same day Bismil died at Gorakhpur and Ashfaqulla Khan at Faizabad — Lahiri having already been hanged two days earlier at Gonda. He is remembered, with the other three, as one of the Kakori martyrs, though his own conviction rested on the separate Bamrauli case.',
+      'He took no part in the Kakori train action of 9 August 1925. He was arrested in January 1926, however, and tried for a killing carried out during a dacoity at Bamrauli in December 1924, a case the government prosecuted alongside the Kakori conspiracy, bringing him to trial with Bismil, Ashfaqulla Khan and Rajendra Lahiri and to the same sentence of death.',
+      'He was hanged at Naini Central Prison, Allahabad, on 19 December 1927, the same day Bismil died at Gorakhpur and Ashfaqulla Khan at Faizabad. Lahiri had already been hanged two days earlier at Gonda. He is remembered, with the other three, as one of the Kakori martyrs, though his own conviction rested on the separate Bamrauli case.',
     ],
     entryIntoStruggle: 'Non-Cooperation-era imprisonment; joined the HRA on release in 1924.',
     ideology: 'Republican revolution (HRA).',
@@ -1071,7 +1071,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'non-cooperation',
     roles: ['revolutionary', 'writer-poet', 'organizer'],
     summary:
-      'Co-founder of the Hindustan Republican Association and mentor to the generation that followed — transported to the Andaman Cellular Jail twice, first for the 1915 Benares Conspiracy Case and again after Kakori, and author of the underground memoir Bandi Jivan.',
+      'Co-founder of the Hindustan Republican Association and mentor to the generation that followed, who was transported to the Andaman Cellular Jail twice, first for the 1915 Benares Conspiracy Case and again after Kakori, and wrote the underground memoir Bandi Jivan.',
     shortStory: [
       {
         title: 'Twice to the Andamans',
@@ -1083,8 +1083,8 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'A Life of Captivity',
-        text: 'Back on the mainland, he wrote Bandi Jivan — "A Life of Captivity" — an account of the underground and the Cellular Jail that shaped a generation of young revolutionaries, Bhagat Singh among them.',
-        uncertainty: 'Some accounts place the writing of Bandi Jivan during Sanyal’s second imprisonment after Kakori, but it was published in 1922 — between his two Andaman terms, not during either.',
+        text: 'Back on the mainland, he wrote Bandi Jivan ("A Life of Captivity"), an account of the underground and the Cellular Jail that shaped a generation of young revolutionaries, Bhagat Singh among them.',
+        uncertainty: 'Some accounts place the writing of Bandi Jivan during Sanyal’s second imprisonment after Kakori, but it was published in 1922, between his two Andaman terms, not during either.',
       },
       {
         title: 'Founding the HRA',
@@ -1092,12 +1092,12 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'Kakori and the last years',
-        text: 'Swept up after the Kakori action of 1925, he was sent back to the Cellular Jail for life — not among those hanged. Freed again in 1937 as his health failed, he was arrested once more in 1940 under wartime detention rules, and died of tuberculosis in Gorakhpur jail on 7 February 1942.',
+        text: 'Swept up after the Kakori action of 1925, he was sent back to the Cellular Jail for life, not among those hanged. Freed again in 1937 as his health failed, he was arrested once more in 1940 under wartime detention rules, and died of tuberculosis in Gorakhpur jail on 7 February 1942.',
       },
     ],
     fullBiography: [
       'Sachindra Nath Sanyal of Varanasi was arrested in 1915 in the Benares Conspiracy Case, linked to the wider Ghadar-era plots against the Raj, and transported for life to the Cellular Jail in the Andamans. A general amnesty following the Montagu–Chelmsford reforms released him in 1920, and in 1922 he published Bandi Jivan ("A Life of Captivity"), a memoir of the underground and of prison that became required reading for the next generation of revolutionaries.',
-      'In 1924, with Ram Prasad Bismil and others, he co-founded the Hindustan Republican Association, contributing much of the thinking behind its manifesto’s vision of a federal republic. Though not among the ten who stopped the train at Kakori on 9 August 1925, he was convicted in the wider Kakori Conspiracy Case as a leading organiser of the HRA, and was transported for life to the Cellular Jail a second time — the only Kakori-era revolutionary sent there twice, and unlike Bismil, Ashfaqulla Khan, Roshan Singh and Lahiri, not among those hanged.',
+      'In 1924, with Ram Prasad Bismil and others, he co-founded the Hindustan Republican Association, contributing much of the thinking behind its manifesto’s vision of a federal republic. Though not among the ten who stopped the train at Kakori on 9 August 1925, he was convicted in the wider Kakori Conspiracy Case as a leading organiser of the HRA, and was transported for life to the Cellular Jail a second time: the only Kakori-era revolutionary sent there twice, and unlike Bismil, Ashfaqulla Khan, Roshan Singh and Lahiri, not among those hanged.',
       'Released again in 1937 as tuberculosis took hold, he was rearrested in 1940 under wartime detention rules and interned at Gorakhpur, where he died on 7 February 1942. His memoir and his mentorship of the HSRA generation that came after him remain his lasting legacy.',
     ],
     entryIntoStruggle: 'Revolutionary underground from his student years in Varanasi; convicted in the Benares Conspiracy Case, 1915.',
@@ -1113,7 +1113,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     disputed: [
       {
         claim: 'When Bandi Jivan was written',
-        note: 'Some later accounts describe Bandi Jivan as a product of Sanyal’s second imprisonment after Kakori, but the book was published in 1922 — after his first release from the Andamans in 1920 and before the Kakori case began in 1925.',
+        note: 'Some later accounts describe Bandi Jivan as a product of Sanyal’s second imprisonment after Kakori, but the book was published in 1922, after his first release from the Andamans in 1920 and before the Kakori case began in 1925.',
         paragraph: 0,
       },
     ],
@@ -1154,7 +1154,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary', 'writer-poet', 'organizer'],
     summary:
-      'The HSRA’s philosopher — co-founder of the Naujawan Bharat Sabha and, with Yashpal, author of "The Philosophy of the Bomb" answering Gandhi’s critique of revolutionary violence — killed testing a bomb on the banks of the Ravi in 1930.',
+      'The HSRA’s philosopher, who co-founded the Naujawan Bharat Sabha and, with Yashpal, wrote "The Philosophy of the Bomb" answering Gandhi’s critique of revolutionary violence, and who was killed testing a bomb on the banks of the Ravi in 1930.',
     shortStory: [
       {
         title: 'The thinker of the group',
@@ -1166,7 +1166,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'The last experiment',
-        text: 'On 28 May 1930, testing a bomb on the banks of the river Ravi near Lahore — part of a plan to free Bhagat Singh from custody — it exploded in his hands, killing him. He was twenty-six.',
+        text: 'On 28 May 1930, testing a bomb on the banks of the river Ravi near Lahore (part of a plan to free Bhagat Singh from custody), it exploded in his hands, killing him. He was twenty-six.',
       },
     ],
     fullBiography: [
@@ -1188,7 +1188,7 @@ export const hsraRevolutionaries: FreedomFighter[] = [
     organizations: ['hsra', 'naujawan-bharat-sabha'],
     relatedPeople: ['bhagat-singh', 'chandrashekhar-azad', 'sukhdev-thapar', 'durgawati-devi'],
     connections: [
-      { id: 'durgawati-devi', type: 'family', note: 'Her husband — the HSRA’s chief pamphleteer; she carried on the movement’s work after his death testing a bomb in May 1930.' },
+      { id: 'durgawati-devi', type: 'family', note: 'Her husband, the HSRA’s chief pamphleteer. She carried on the movement’s work after his death testing a bomb in May 1930.' },
     ],
     sources: [
       {

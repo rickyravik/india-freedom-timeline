@@ -1,7 +1,7 @@
 /**
  * Marks the first occurrence of each glossary term across a sequence of
  * paragraphs, so a page explains "satyagraha" once, where it first appears,
- * and not on every line. Pure and deterministic — the same input produces
+ * and not on every line. Pure and deterministic - the same input produces
  * the same segments at build time and at hydration.
  */
 export interface GlossaryLike {

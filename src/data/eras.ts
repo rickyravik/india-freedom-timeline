@@ -23,7 +23,7 @@ export const eras: Era[] = [
     endYear: 1856,
     tagline: 'The first sparks',
     description:
-      'From the Battle of Plassey onwards, the East India Company expanded across the subcontinent — and met armed resistance from rulers, peasants, and Adivasi communities from Kerala to the Khasi Hills.',
+      'From the Battle of Plassey onwards, the East India Company expanded across the subcontinent, and met armed resistance from rulers, peasants, and Adivasi communities from Kerala to the Khasi Hills.',
     accent: 'sepia',
   },
   {
@@ -43,7 +43,7 @@ export const eras: Era[] = [
     endYear: 1904,
     tagline: 'Petitions, presses and new politics',
     description:
-      'A generation of lawyers, journalists and reformers built the first all-India political institutions — above all the Indian National Congress in 1885 — while Adivasi uprisings such as Birsa Munda’s Ulgulan continued armed resistance.',
+      'A generation of lawyers, journalists and reformers built the first all-India political institutions, above all the Indian National Congress in 1885, while Adivasi uprisings such as Birsa Munda’s Ulgulan continued armed resistance.',
     accent: 'brass',
   },
   {
@@ -53,7 +53,7 @@ export const eras: Era[] = [
     endYear: 1913,
     tagline: 'Boycott, boldness and bombs',
     description:
-      'The Partition of Bengal in 1905 ignited the Swadeshi movement — boycotts of British goods, national schools and Indian enterprise — and pushed a young generation towards secret revolutionary societies at home and abroad.',
+      'The Partition of Bengal in 1905 ignited the Swadeshi movement, with its boycotts of British goods, national schools and Indian enterprise, and pushed a young generation towards secret revolutionary societies at home and abroad.',
     accent: 'saffron',
   },
   {
@@ -83,7 +83,7 @@ export const eras: Era[] = [
     endYear: 1938,
     tagline: 'Salt, satyagraha and sacrifice',
     description:
-      'From the Simon Commission boycott to the Dandi March and the Chittagong armoury raid, Indians defied colonial law en masse — in salt pans, forests, courts and prisons — while Bhagat Singh’s generation faced the gallows.',
+      'From the Simon Commission boycott to the Dandi March and the Chittagong armoury raid, Indians defied colonial law en masse in salt pans, forests, courts and prisons, while Bhagat Singh’s generation faced the gallows.',
     accent: 'saffron',
   },
   {
@@ -101,9 +101,9 @@ export const eras: Era[] = [
     name: 'Freedom at Midnight',
     startYear: 1946,
     endYear: 1947,
-    tagline: 'Independence — and Partition',
+    tagline: 'Independence, and Partition',
     description:
-      'Naval ratings mutinied in Bombay, the INA trials electrified the country, and negotiations raced towards transfer of power. On 15 August 1947 India became free — amid the trauma of Partition.',
+      'Naval ratings mutinied in Bombay, the INA trials electrified the country, and negotiations raced towards transfer of power. On 15 August 1947 India became free, amid the trauma of Partition.',
     accent: 'indigo',
   },
 ];

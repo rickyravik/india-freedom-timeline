@@ -25,7 +25,7 @@ const timelineParams = {
 };
 
 /* ------------------------------------------------------------------ */
-/* Era rail — sticky chapter nav, on the sheet's own paper             */
+/* Era rail - sticky chapter nav, on the sheet's own paper             */
 function EraRail({ activeId }: { activeId: string | null }) {
   const railRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -165,7 +165,7 @@ export default function TimelinePage() {
 
       <div className="container-page">
         {zoom === 'chapters' ? (
-          /* A sheet of nine commemoratives — one ink per chapter */
+          /* A sheet of nine commemoratives - one ink per chapter */
           <section aria-label="Chapters of the freedom struggle" className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {eras.map((era, i) => {
               const count = filtered.filter((e) => e.era === era.id).length;
@@ -215,7 +215,7 @@ export default function TimelinePage() {
               <div className="space-y-14 sm:space-y-20">
                 {chapters.map(({ era, index, eraEvents, eraPeople }, position) => (
                   <section key={era.id} id={`era-${era.id}`} aria-label={era.name} className="scroll-mt-36">
-                    {/* Chapter pane — a commemorative in this chapter's own ink */}
+                    {/* Chapter pane - a commemorative in this chapter's own ink */}
                     <div className="relative ml-8 sm:ml-12">
                       <span
                         aria-hidden="true"
@@ -223,7 +223,7 @@ export default function TimelinePage() {
                         style={{ transform: 'translateX(4px)' }}
                       />
                       <header className={`perf-all on-sheet relative px-5 py-7 sm:px-8 sm:py-9 ${eraAccent.bg[era.accent]} ${eraAccent.onInk[era.accent]}`}>
-                        {position === 0 && <Postmark lines={['India', 'Post', '1757 — 1947']} className="absolute right-4 top-5 hidden sm:grid" />}
+                        {position === 0 && <Postmark lines={['India', 'Post', '1757–1947']} className="absolute right-4 top-5 hidden sm:grid" />}
                         {/* The introduction: denomination, title and chapter line reveal together, once, in 450ms. */}
                         <Reveal mask duration={450}>
                           <div>

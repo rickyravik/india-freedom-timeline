@@ -18,7 +18,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'swadeshi-era',
     roles: ['revolutionary'],
     summary:
-      'The eighteen-year-old revolutionary of the Muzaffarpur action, among the youngest to be executed in the freedom struggle — mourned in Bengali folk song ever since.',
+      'The eighteen-year-old revolutionary of the Muzaffarpur action, among the youngest to be executed in the freedom struggle, mourned in Bengali folk song ever since.',
     shortStory: [
       {
         title: 'A boy in the movement',
@@ -26,21 +26,21 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'The mission',
-        text: 'In April 1908 he and Prafulla Chaki were sent to Muzaffarpur to strike at Kingsford, a magistrate hated for his cruelty to nationalists. They bombed the carriage they believed was his — but two English ladies were inside. Both revolutionaries fled.',
+        text: 'In April 1908 he and Prafulla Chaki were sent to Muzaffarpur to strike at Kingsford, a magistrate hated for his cruelty to nationalists. They bombed the carriage they believed was his, but two English ladies were inside. Both revolutionaries fled.',
       },
       {
         title: 'Facing the end with a smile',
-        text: 'Prafulla shot himself rather than be captured. Khudiram was caught, tried, and hanged on 11 August 1908, aged eighteen. Witnesses said he went to the gallows fearless — some accounts say smiling.',
+        text: 'Prafulla shot himself rather than be captured. Khudiram was caught, tried, and hanged on 11 August 1908, aged eighteen. Witnesses said he went to the gallows fearless, and some accounts say smiling.',
       },
       {
         title: 'The song of Khudiram',
-        text: 'Bengal mourned him in the folk song "Ekbar biday de Ma" — "Bid me farewell, Mother, once". Students wore dhotis with his name woven into the border.',
+        text: 'Bengal mourned him in the folk song "Ekbar biday de Ma", meaning "Bid me farewell, Mother, once". Students wore dhotis with his name woven into the border.',
       },
     ],
     fullBiography: [
       'Khudiram Bose, orphaned young, was drawn into the Swadeshi upheaval as a schoolboy in Midnapore, where he was arrested at fifteen for distributing seditious pamphlets. He joined the revolutionary circle around Jugantar.',
-      'The group marked Douglas Kingsford, Chief Presidency Magistrate notorious for sentencing young nationalists to whipping, who had been transferred to Muzaffarpur. On the night of 30 April 1908 Khudiram and Prafulla Chaki bombed the carriage leaving Kingsford’s club — killing Mrs Kennedy and her daughter, wife and child of a barrister, who had taken the identical carriage. Chaki shot himself at Mokama station when cornered; Khudiram was arrested next morning after a night’s flight on foot.',
-      'His trial was swift; he was hanged at Muzaffarpur jail on 11 August 1908, eighteen years and eight months old. The Empire meant it as deterrence; Bengal received it as martyrdom — his name entered folk song, and the anniversary is still observed. The tragedy of the Kennedys, victims of mistaken identity, remains part of the story’s sombre weight.',
+      'The group marked Douglas Kingsford, Chief Presidency Magistrate notorious for sentencing young nationalists to whipping, who had been transferred to Muzaffarpur. On the night of 30 April 1908 Khudiram and Prafulla Chaki bombed the carriage leaving Kingsford’s club, killing Mrs Kennedy and her daughter, wife and child of a barrister, who had taken the identical carriage. Chaki shot himself at Mokama station when cornered; Khudiram was arrested next morning after a night’s flight on foot.',
+      'His trial was swift; he was hanged at Muzaffarpur jail on 11 August 1908, eighteen years and eight months old. The Empire meant it as deterrence; Bengal received it as martyrdom: his name entered folk song, and the anniversary is still observed. The tragedy of the Kennedys, victims of mistaken identity, remains part of the story’s sombre weight.',
     ],
     entryIntoStruggle: 'Swadeshi agitation in Midnapore as a schoolboy.',
     achievements: ['His composure at trial and execution made him the first popular martyr of the revolutionary movement'],
@@ -85,11 +85,11 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'war-and-home-rule',
     roles: ['revolutionary', 'organizer'],
     summary:
-      '"Tiger" Jatin — the Jugantar commander who once killed a leopard with a dagger, planned a German-armed rising in 1915, and died after a last stand on the banks of the Burha Balang.',
+      '"Tiger" Jatin, the Jugantar commander who once killed a leopard with a dagger, planned a German-armed rising in 1915, and died after a last stand on the banks of the Burha Balang.',
     shortStory: [
       {
         title: 'How Jatin got his name',
-        text: 'As a young man, Jatindranath Mukherjee fought and killed a leopard (in popular telling, a Royal Bengal tiger) with only a dagger. From then on, everyone called him "Bagha" Jatin — Tiger Jatin.',
+        text: 'As a young man, Jatindranath Mukherjee fought and killed a leopard (in popular telling, a Royal Bengal tiger) with only a dagger. From then on, everyone called him "Bagha" Jatin, Tiger Jatin.',
       },
       {
         title: 'The secret commander',
@@ -105,8 +105,8 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Jatindranath Mukherjee earned his sobriquet fighting a leopard hand-to-hand in his village — the episode grew to a tiger in legend. A man of exceptional physical presence who worked as a stenographer in the Bengal Secretariat, he became the organizing genius of the Jugantar network, knitting scattered groups into a disciplined underground while evading conviction in the Howrah-Sibpur conspiracy case (1910–11).',
-      'His strategic vision went beyond assassinations: contact with the Ghadar diaspora and the Berlin Indian Committee produced the "German plot" of 1915 — shipments of arms from the German consulate network to equip coordinated risings, with Jatin as commander-in-chief in Bengal. He moved to the Odisha coast to receive the expected cargo of the Maverick.',
+      'Jatindranath Mukherjee earned his sobriquet fighting a leopard hand-to-hand in his village. The episode grew to a tiger in legend. A man of exceptional physical presence who worked as a stenographer in the Bengal Secretariat, he became the organizing genius of the Jugantar network, knitting scattered groups into a disciplined underground while evading conviction in the Howrah-Sibpur conspiracy case (1910–11).',
+      'His strategic vision went beyond assassinations: contact with the Ghadar diaspora and the Berlin Indian Committee produced the "German plot" of 1915: shipments of arms from the German consulate network to equip coordinated risings, with Jatin as commander-in-chief in Bengal. He moved to the Odisha coast to receive the expected cargo of the Maverick.',
       'Betrayal and interception unravelled the plan. Traced to Kaptipada, Jatin and four companions made a fighting retreat and, on 9 September 1915, entrenched on the Burha Balang river at Chashakhand near Balasore, fought a prolonged battle against police and military reinforcements. Chittapriya Ray Chaudhuri died in the trench; Jatin, gravely wounded, died in Balasore hospital on 10 September. Charles Tegart, the intelligence officer who pursued him, is recorded by colleagues as saying that had Jatin been an Englishman, his statue would stand beside Nelson’s in Trafalgar Square.',
     ],
     entryIntoStruggle: 'Anushilan/Jugantar organizing from the early 1900s.',
@@ -164,11 +164,11 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'swadeshi-era',
     roles: ['writer-poet', 'journalist', 'social-reformer'],
     summary:
-      'The Mahakavi — Tamil’s national poet, editor of India and Swadesamitran, who sang freedom, women’s equality and the end of caste, and spent a decade in exile in Pondicherry for it.',
+      'The Mahakavi, Tamil’s national poet, editor of India and Swadesamitran, who sang freedom, women’s equality and the end of caste, and spent a decade in exile in Pondicherry for it.',
     shortStory: [
       {
         title: 'The boy poet',
-        text: 'Subramania was such a gifted poet that at eleven he was given the title "Bharati" — blessed by Saraswati, goddess of learning. He grew up to become Tamil’s greatest modern poet.',
+        text: 'Subramania was such a gifted poet that at eleven he was given the title "Bharati", meaning blessed by Saraswati, goddess of learning. He grew up to become Tamil’s greatest modern poet.',
       },
       {
         title: 'Songs of freedom',
@@ -176,17 +176,17 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'Exile',
-        text: 'To escape arrest, he fled to French Pondicherry in 1908 and lived there ten hard years, poor but writing his greatest works — near his fellow exile Aurobindo.',
+        text: 'To escape arrest, he fled to French Pondicherry in 1908 and lived there ten hard years, poor but writing his greatest works, near his fellow exile Aurobindo.',
       },
       {
         title: 'Ahead of his time',
-        text: 'Bharati sang of a free India where women were equal and caste was gone. He died in 1921, only thirty-eight — but every Tamil child still sings his songs.',
+        text: 'Bharati sang of a free India where women were equal and caste was gone. He died in 1921, only thirty-eight, but every Tamil child still sings his songs.',
       },
     ],
     fullBiography: [
-      'Bharati’s genius announced itself early in the court of Ettayapuram, and matured in Banaras and Madras, where he joined the Swadesamitran and then edited the nationalist weekly India — famous for the first political cartoons in Tamil — and the English Bala Bharata. The Surat Congress of 1907, where he stood with the Extremists, and his association with V. O. Chidambaram Pillai and the Tuticorin strike, put him squarely in the Raj’s sights.',
-      'From 1908 he lived in exile in French Pondicherry, in poverty deepened by surveillance that scared off publishers. The decade produced his masterworks — Kuyil Pattu, Panchali Sabatham, the Kannan songs — and daily fellowship with fellow exiles including Aurobindo and V.V.S. Aiyar. His vision fused fierce nationalism with social revolution: his poems demand women’s emancipation ("Pudhumai Penn", the new woman), attack caste frontally, and celebrate labour.',
-      'Returning to British India in 1918, he was briefly jailed, and died in Madras in September 1921, weakened by years of hardship — an elephant he was accustomed to feed at the Parthasarathy temple had injured him months earlier. Barely a handful attended his funeral; today his birth anniversary is marked across Tamil Nadu, his songs open public gatherings, and "Bharathiyar" is simply the Mahakavi — the great poet.',
+      'Bharati’s genius announced itself early in the court of Ettayapuram, and matured in Banaras and Madras, where he joined the Swadesamitran and then edited the nationalist weekly India, famous for the first political cartoons in Tamil, and the English Bala Bharata. The Surat Congress of 1907, where he stood with the Extremists, and his association with V. O. Chidambaram Pillai and the Tuticorin strike, put him squarely in the Raj’s sights.',
+      'From 1908 he lived in exile in French Pondicherry, in poverty deepened by surveillance that scared off publishers. The decade produced his masterworks (Kuyil Pattu, Panchali Sabatham, the Kannan songs) and daily fellowship with fellow exiles including Aurobindo and V.V.S. Aiyar. His vision fused fierce nationalism with social revolution: his poems demand women’s emancipation ("Pudhumai Penn", the new woman), attack caste frontally, and celebrate labour.',
+      'Returning to British India in 1918, he was briefly jailed, and died in Madras in September 1921, weakened by years of hardship. An elephant he was accustomed to feed at the Parthasarathy temple had injured him months earlier. Barely a handful attended his funeral; today his birth anniversary is marked across Tamil Nadu, his songs open public gatherings, and "Bharathiyar" is simply the Mahakavi, the great poet.',
     ],
     entryIntoStruggle: 'Swadeshi journalism in Madras from 1904; Surat Congress, 1907.',
     ideology: 'Revolutionary nationalism; radical social equality.',
@@ -236,11 +236,11 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'swadeshi-era',
     roles: ['political-leader', 'lawyer', 'organizer'],
     summary:
-      'The "Tamil who sailed the ship" — lawyer who founded the Swadeshi Steam Navigation Company to break the British shipping monopoly, and was sentenced to two life terms and set to a prison oil-press.',
+      'The "Tamil who sailed the ship", the lawyer who founded the Swadeshi Steam Navigation Company to break the British shipping monopoly, and was sentenced to two life terms and set to a prison oil-press.',
     shortStory: [
       {
         title: 'The ship-owner',
-        text: 'V. O. Chidambaram Pillai was a lawyer in the port town of Tuticorin. In 1906 he did something astonishing: he started an Indian shipping company to compete with the British ships — Swadeshi on the high seas!',
+        text: 'V. O. Chidambaram Pillai was a lawyer in the port town of Tuticorin. In 1906 he did something astonishing: he started an Indian shipping company to compete with the British ships: Swadeshi on the high seas!',
       },
       {
         title: 'The Empire strikes',
@@ -248,17 +248,17 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'The oil press',
-        text: 'In Coimbatore prison, the barrister was yoked to the oil press like a bullock, to break his spirit. It did not break. Tamil Nadu called him "Kappalottiya Tamizhan" — the Tamil who sailed the ship.',
+        text: 'In Coimbatore prison, the barrister was yoked to the oil press like a bullock, to break his spirit. It did not break. Tamil Nadu called him "Kappalottiya Tamizhan", the Tamil who sailed the ship.',
       },
       {
         title: 'Poor, proud, unbeaten',
-        text: 'Released, disbarred and impoverished, he lived out his days writing Tamil classics and running a small shop — a hero to the end.',
+        text: 'Released, disbarred and impoverished, he lived out his days writing Tamil classics and running a small shop, a hero to the end.',
       },
     ],
     fullBiography: [
       'Chidambaram Pillai, a pleader of Ottapidaram inspired by Tilak, brought Swadeshi to the Tamil coast in its boldest form: the Swadeshi Steam Navigation Company (1906), whose ships Gallia and Lawoe ran the Tuticorin–Colombo route in open competition with the British India Steam Navigation Company. Rate wars, harassment and pressure on shippers followed.',
-      'In early 1908 V.O.C. led the strike at the European-owned Coral Mills and organized celebrations of Bipin Chandra Pal’s release; with the poet Subramania Siva he addressed swelling public meetings. Arrested in March 1908 — the news set off riots in Tirunelveli and Tuticorin — he was convicted of sedition and sentenced to two transportations for life, reduced on appeal to imprisonment. In Coimbatore Central Jail he was harnessed to the oil press, an indignity Tamil memory has never forgotten.',
-      'Released in 1912, disbarred and ruined — his company had been liquidated, its ships sold — he rebuilt life modestly, restored his bar licence years later, wrote commentaries on the Tirukkural and an autobiography, and remained in public life on the Congress’s Swarajist side. He died at Tuticorin in 1936. The port of Thoothukudi today bears his name: V. O. Chidambaranar Port.',
+      'In early 1908 V.O.C. led the strike at the European-owned Coral Mills and organized celebrations of Bipin Chandra Pal’s release; with the poet Subramania Siva he addressed swelling public meetings. Arrested in March 1908, news that set off riots in Tirunelveli and Tuticorin, he was convicted of sedition and sentenced to two transportations for life, reduced on appeal to imprisonment. In Coimbatore Central Jail he was harnessed to the oil press, an indignity Tamil memory has never forgotten.',
+      'Released in 1912, disbarred and ruined, his company liquidated and its ships sold, he rebuilt life modestly, restored his bar licence years later, wrote commentaries on the Tirukkural and an autobiography, and remained in public life on the Congress’s Swarajist side. He died at Tuticorin in 1936. The port of Thoothukudi today bears his name: V. O. Chidambaranar Port.',
     ],
     entryIntoStruggle: 'Swadeshi movement, 1905–06, under Tilak’s inspiration.',
     ideology: 'Economic swadeshi; labour rights within nationalism.',
@@ -308,7 +308,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     shortStory: [
       {
         title: 'A student in London',
-        text: 'Madan Lal Dhingra came from a wealthy, loyalist Amritsar family and went to London to study engineering. There he met Indian revolutionaries at India House — and everything changed.',
+        text: 'Madan Lal Dhingra came from a wealthy, loyalist Amritsar family and went to London to study engineering. There he met Indian revolutionaries at India House, and everything changed.',
       },
       {
         title: 'The deed',
@@ -316,13 +316,13 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'The statement',
-        text: 'At his trial he said he had acted for his country’s honour and asked no mercy. His final statement — that a patriot conquered people can only pray to die and be reborn to fight again — moved even his enemies. He was hanged on 17 August 1909, aged twenty-five.',
+        text: 'At his trial he said he had acted for his country’s honour and asked no mercy. His final statement, that a patriot conquered people can only pray to die and be reborn to fight again, moved even his enemies. He was hanged on 17 August 1909, aged twenty-five.',
       },
     ],
     fullBiography: [
-      'Son of a prosperous civil-surgeon family of Amritsar, Dhingra reached University College London in 1906 and fell in with the India House circle of Shyamji Krishna Varma and V. D. Savarkar, then mourning executions in India — Khudiram’s among them — and preaching answering violence. His own family publicly disowned his politics.',
+      'Son of a prosperous civil-surgeon family of Amritsar, Dhingra reached University College London in 1906 and fell in with the India House circle of Shyamji Krishna Varma and V. D. Savarkar, then mourning executions in India, Khudiram’s among them, and preaching answering violence. His own family publicly disowned his politics.',
       'On the evening of 1 July 1909, at the Imperial Institute’s National Indian Association gathering, Dhingra shot dead Sir William Hutt Curzon Wyllie, political aide-de-camp to the Secretary of State for India; Dr Cawas Lalcaca, who intervened, was also killed, a death Dhingra said he regretted. He was seized on the spot.',
-      'Refusing counsel and recognising no jurisdiction, he was condemned after brief proceedings. The statement attributed to him — suppressed then, circulated by revolutionaries after — declared: "the only lesson required in India at present is to learn how to die, and the only way to teach it is by dying ourselves... I pray that I may be reborn of the same mother and I may redie in the same sacred cause till the cause is successful." He was hanged at Pentonville on 17 August 1909; his remains were returned to India only in 1976.',
+      'Refusing counsel and recognising no jurisdiction, he was condemned after brief proceedings. The statement attributed to him, suppressed then and circulated by revolutionaries after, declared: "the only lesson required in India at present is to learn how to die, and the only way to teach it is by dying ourselves... I pray that I may be reborn of the same mother and I may redie in the same sacred cause till the cause is successful." He was hanged at Pentonville on 17 August 1909; his remains were returned to India only in 1976.',
     ],
     entryIntoStruggle: 'India House circle in London, 1906–09.',
     achievements: ['His trial statement became a foundational text of revolutionary patriotism'],
@@ -366,15 +366,15 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'swadeshi-era',
     roles: ['organizer', 'journalist', 'educator'],
     summary:
-      'Sanskrit scholar turned revolutionary patron — founder of India House and The Indian Sociologist in London, whose fellowships brought Savarkar and a generation of radicals to Europe.',
+      'Sanskrit scholar turned revolutionary patron, founder of India House and The Indian Sociologist in London, whose fellowships brought Savarkar and a generation of radicals to Europe.',
     shortStory: [
       {
         title: 'The scholar of Kutch',
-        text: 'Shyamji Krishna Varma was such a fine Sanskrit scholar that Oxford invited him to teach — the first Indian to be called to the English bar from Balliol’s circle of Indian students of his day.',
+        text: 'Shyamji Krishna Varma was such a fine Sanskrit scholar that Oxford invited him to teach. He was the first Indian to be called to the English bar from Balliol’s circle of Indian students of his day.',
       },
       {
         title: 'India House',
-        text: 'Convinced that British rule could never be reformed, he opened India House in London in 1905 — a hostel where Indian students could live, study and learn to fight for freedom. His fellowships paid their way.',
+        text: 'Convinced that British rule could never be reformed, he opened India House in London in 1905, a hostel where Indian students could live, study and learn to fight for freedom. His fellowships paid their way.',
       },
       {
         title: 'The long exile',
@@ -382,8 +382,8 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'From Mandvi in Kutch, Krishna Varma rose by scholarship — Pandit at Banaras, assistant to Monier-Williams at Oxford, barrister of the Inner Temple, and diwan in Indian states. Herbert Spencer’s sociology gave him a creed of resistance to aggression; the plague-era excesses and famines of the 1890s gave him his enemy.',
-      'In London from 1897, he founded in 1905 the Indian Home Rule Society, the monthly The Indian Sociologist, and India House in Highgate — a hostel-cum-headquarters for Indian students, funded by his fortune, with travelling fellowships named for Spencer and others that brought V. D. Savarkar and fellow radicals to England. India House became, in Valentine Chirol’s phrase, the most dangerous organization outside India.',
+      'From Mandvi in Kutch, Krishna Varma rose by scholarship: Pandit at Banaras, assistant to Monier-Williams at Oxford, barrister of the Inner Temple, and diwan in Indian states. Herbert Spencer’s sociology gave him a creed of resistance to aggression; the plague-era excesses and famines of the 1890s gave him his enemy.',
+      'In London from 1897, he founded in 1905 the Indian Home Rule Society, the monthly The Indian Sociologist, and India House in Highgate, a hostel-cum-headquarters for Indian students, funded by his fortune, with travelling fellowships named for Spencer and others that brought V. D. Savarkar and fellow radicals to England. India House became, in Valentine Chirol’s phrase, the most dangerous organization outside India.',
       'Under pressure after 1907 he shifted to Paris, and to Geneva during the war, publishing intermittently to the end. He died in Geneva in 1930; the Raj ensured obscurity, but his will endowed a memorial fund, and in 2003 his and his wife Bhanumati’s ashes, preserved by the city of Geneva, were returned to India. Kranti Teerth at Mandvi, with a replica of India House, honours him.',
     ],
     entryIntoStruggle: 'Founded the Indian Home Rule Society and India House, London, 1905.',
@@ -434,15 +434,15 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'swadeshi-era',
     roles: ['revolutionary', 'organizer'],
     summary:
-      'The "Mother of Indian Revolution" who unfurled an Indian national flag at the Stuttgart socialist congress in 1907 — and spent three decades of exile publishing sedition and sheltering revolutionaries.',
+      'The "Mother of Indian Revolution" who unfurled an Indian national flag at the Stuttgart socialist congress in 1907, and spent three decades of exile publishing sedition and sheltering revolutionaries.',
     shortStory: [
       {
         title: 'The plague nurse',
-        text: 'Bhikaji Cama, from a wealthy Parsi family of Bombay, worked tirelessly nursing plague victims in 1896–97 — until she caught the disease herself and was sent to Europe to recover. She never stopped working for India.',
+        text: 'Bhikaji Cama, from a wealthy Parsi family of Bombay, worked tirelessly nursing plague victims in 1896–97, until she caught the disease herself and was sent to Europe to recover. She never stopped working for India.',
       },
       {
         title: 'The flag at Stuttgart',
-        text: 'In 1907, before a thousand delegates of the International Socialist Congress in Germany, she unfurled a flag of free India — green, saffron and red, with "Vande Mataram" across it — and demanded the world hear India’s case.',
+        text: 'In 1907, before a thousand delegates of the International Socialist Congress in Germany, she unfurled a flag of free India, green, saffron and red with "Vande Mataram" across it, and demanded the world hear India’s case.',
       },
       {
         title: 'Mother of revolutionaries',
@@ -450,8 +450,8 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Born into the prosperous Sorabji Patel family and married into the loyalist Cama family, Bhikaji broke with comfort twice over — first in the plague of 1896–97, nursing the afflicted until infected herself, then in Europe, where convalescence became a revolutionary career. In London she worked with Dadabhai Naoroji and the India House circle; threatened with prosecution, she moved to Paris.',
-      'At the Second International’s Stuttgart Congress on 22 August 1907 she rose with a flag — designed with Hemchandra and the Talvar circle: green, golden and red bands, lotuses and sun and crescent, "Vande Mataram" at the centre — and asked the socialist world to recognise enslaved India. The flag, an ancestor of the tricolour, is preserved today in Pune.',
+      'Born into the prosperous Sorabji Patel family and married into the loyalist Cama family, Bhikaji broke with comfort twice over: first in the plague of 1896–97, nursing the afflicted until infected herself, then in Europe, where convalescence became a revolutionary career. In London she worked with Dadabhai Naoroji and the India House circle; threatened with prosecution, she moved to Paris.',
+      'At the Second International’s Stuttgart Congress on 22 August 1907 she rose with a flag and asked the socialist world to recognise enslaved India. Designed with Hemchandra and the Talvar circle, it had green, golden and red bands, lotuses and sun and crescent, and "Vande Mataram" at the centre. The flag, an ancestor of the tricolour, is preserved today in Pune.',
       'From Paris she ran the journal Bande Mataram (and Madan’s Talvar, named for Dhingra), financed and sheltered revolutionaries from Savarkar to Har Dayal, and worked with Irish, Egyptian and socialist anti-colonialists. Interned in France during the First World War at Britain’s request, she was allowed home only in 1935, paralysed by stroke, and died in Bombay in August 1936. Streets and institutions across India bear Madame Cama’s name.',
     ],
     entryIntoStruggle: 'Plague relief work, then the London-Paris revolutionary circle from 1902.',
@@ -502,19 +502,19 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'swadeshi-era',
     roles: ['revolutionary', 'writer-poet', 'political-leader'],
     summary:
-      'Founder of Abhinav Bharat and author of the banned 1857 history, sentenced to two life terms in the Cellular Jail — later the ideologue of Hindutva, and among the struggle’s most contested figures.',
+      'Founder of Abhinav Bharat and author of the banned 1857 history, sentenced to two life terms in the Cellular Jail, later the ideologue of Hindutva, and among the struggle’s most contested figures.',
     shortStory: [
       {
         title: 'The student rebel',
-        text: 'Savarkar founded a secret society, Abhinav Bharat, while still a student, and in London joined India House. He wrote a famous book calling the 1857 revolt India’s first war of independence — the British banned it before it was even printed.',
+        text: 'Savarkar founded a secret society, Abhinav Bharat, while still a student, and in London joined India House. He wrote a famous book calling the 1857 revolt India’s first war of independence. The British banned it before it was even printed.',
       },
       {
         title: 'The leap at Marseilles',
-        text: 'Arrested in 1910, he made a daring escape attempt — squeezing through a ship’s porthole at Marseilles and swimming ashore — but was recaptured. He was sentenced to two life terms: fifty years.',
+        text: 'Arrested in 1910, he made a daring escape attempt, squeezing through a ship’s porthole at Marseilles and swimming ashore, but was recaptured. He was sentenced to two life terms: fifty years.',
       },
       {
         title: 'Kala Pani',
-        text: 'He spent a decade in the dreaded Cellular Jail in the Andamans, at hard labour. From prison he sent petitions asking for release — a fact historians still debate the meaning of.',
+        text: 'He spent a decade in the dreaded Cellular Jail in the Andamans, at hard labour. From prison he sent petitions asking for release, a fact historians still debate the meaning of.',
       },
       {
         title: 'A disputed legacy',
@@ -522,12 +522,12 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Savarkar organized Nashik’s young radicals into the Mitra Mela, then Abhinav Bharat (1904), and reached London in 1906 on Shyamji Krishna Varma’s fellowship. At India House he wrote "The Indian War of Independence 1857" — proscribed pre-publication, smuggled worldwide — and his circle’s arms and manuals reached Maharashtra, where his brother was convicted, and where Collector Jackson’s assassination at Nashik (1909) was traced to a pistol from London.',
-      'Arrested in 1910, he attempted escape at Marseilles through a porthole — the episode became an international arbitration case — and received two consecutive transportations for life. In the Cellular Jail from 1911 to 1921 he endured the settlement’s brutal regime; from 1911 onward he also submitted a series of clemency petitions offering political cooperation, documents whose interpretation — pragmatic tactic or capitulation — remains the sharpest controversy about him. Moved to Indian jails, he was released in 1924, confined to Ratnagiri district and barred from politics until 1937.',
+      'Savarkar organized Nashik’s young radicals into the Mitra Mela, then Abhinav Bharat (1904), and reached London in 1906 on Shyamji Krishna Varma’s fellowship. At India House he wrote "The Indian War of Independence 1857", proscribed pre-publication and smuggled worldwide, and his circle’s arms and manuals reached Maharashtra, where his brother was convicted, and where Collector Jackson’s assassination at Nashik (1909) was traced to a pistol from London.',
+      'Arrested in 1910, he attempted escape at Marseilles through a porthole, an episode that became an international arbitration case, and received two consecutive transportations for life. In the Cellular Jail from 1911 to 1921 he endured the settlement’s brutal regime; from 1911 onward he also submitted a series of clemency petitions offering political cooperation, documents whose interpretation, pragmatic tactic or capitulation, remains the sharpest controversy about him. Moved to Indian jails, he was released in 1924, confined to Ratnagiri district and barred from politics until 1937.',
       'In confinement he wrote "Essentials of Hindutva" (1923), defining the nation by Hindu identity, and led social campaigns against untouchability in Ratnagiri, including the Patit Pavan temple open to all castes. Free from 1937, he presided over the Hindu Mahasabha for seven years, opposed the Quit India movement, and demanded militarisation; his politics stood against Congress secular nationalism and against Pakistan alike. Arrested in the Gandhi assassination case in 1948 as an alleged conspirator, he was acquitted for want of corroboration; the Kapur Commission (1969) later recorded adverse findings about his associates’ role, keeping the controversy alive. He died in 1966 after ritually fasting to death (prayopavesha).',
     ],
     entryIntoStruggle: 'Founded Abhinav Bharat as a student, 1904.',
-    ideology: 'Revolutionary nationalism; later Hindutva — Hindu nationhood.',
+    ideology: 'Revolutionary nationalism; later Hindutva, Hindu nationhood.',
     achievements: [
       'Wrote the movement’s foundational history of 1857',
       'Survived a decade of the Cellular Jail’s harshest regime',
@@ -535,7 +535,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     ],
     sacrifices: ['Two life sentences; ten years in the Andamans; long internal exile'],
     legacy:
-      'A founding figure of both revolutionary politics and Hindu nationalism; commemorated by admirers as Veer, contested by critics — his petitions, ideology and 1948 trial still debated.',
+      'A founding figure of both revolutionary politics and Hindu nationalism; commemorated by admirers as Veer, contested by critics, with his petitions, ideology and 1948 trial still debated.',
     facts: ['The Marseilles escape went to the Permanent Court of Arbitration at The Hague.'],
     disputed: [
       {
@@ -544,7 +544,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
       {
         claim: 'Role in Gandhi’s assassination',
-        note: 'He was acquitted in 1949 for lack of corroboration; the later Kapur Commission recorded that facts taken together were "destructive of any theory other than the conspiracy to murder by Savarkar and his group" — a finding admirers dispute. No court convicted him.',
+        note: 'He was acquitted in 1949 for lack of corroboration; the later Kapur Commission recorded that facts taken together were "destructive of any theory other than the conspiracy to murder by Savarkar and his group", a finding admirers dispute. No court convicted him.',
       },
     ],
     timelineEvents: [],
@@ -593,7 +593,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'To America',
-        text: 'He reached California, lectured at Stanford, and organized the Indian farmers and workers of the Pacific coast. In 1913 they founded the Ghadar Party — and its newspaper spread the call for revolt around the world.',
+        text: 'He reached California, lectured at Stanford, and organized the Indian farmers and workers of the Pacific coast. In 1913 they founded the Ghadar Party, and its newspaper spread the call for revolt around the world.',
       },
       {
         title: 'The wanderer',
@@ -601,9 +601,9 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'A prodigy of St Stephen’s College and Government College Lahore, Har Dayal took a double first path to Oxford on a state scholarship — and resigned it in 1907 with the declaration that no Indian should serve or take the benefits of the occupying state, returning briefly to India to live in ascetic simplicity and preach total non-cooperation years before Gandhi’s.',
+      'A prodigy of St Stephen’s College and Government College Lahore, Har Dayal took a double first path to Oxford on a state scholarship, and resigned it in 1907 with the declaration that no Indian should serve or take the benefits of the occupying state, returning briefly to India to live in ascetic simplicity and preach total non-cooperation years before Gandhi’s.',
       'Via Paris (editing Bande Mataram with Madame Cama’s circle), Algiers and Martinique, he reached California in 1911, lectured in Indian philosophy at Stanford, and threw himself into organizing the Punjabi diaspora. When the Pacific Coast Hindi Association founded the Ghadar movement in 1913, Har Dayal’s pen made its weekly the most incendiary Indian publication in the world, openly announcing that the coming war was India’s opportunity.',
-      'Arrested by US authorities in 1914 as an anarchist alien, he jumped bail to Switzerland and joined the Berlin India Committee’s wartime schemes, but broke with German patronage; his later years turned to scholarship and popular philosophy ("Hints for Self-Culture", "Bolshevism and the World Movement"), teaching in Sweden and London while the Raj barred his return. He died suddenly in Philadelphia in 1939 on a lecture tour. The Ghadar generation he fired — Sarabha above all — carried his spark home at the cost of their lives.',
+      'Arrested by US authorities in 1914 as an anarchist alien, he jumped bail to Switzerland and joined the Berlin India Committee’s wartime schemes, but broke with German patronage; his later years turned to scholarship and popular philosophy ("Hints for Self-Culture", "Bolshevism and the World Movement"), teaching in Sweden and London while the Raj barred his return. He died suddenly in Philadelphia in 1939 on a lecture tour. The Ghadar generation he fired, Sarabha above all, carried his spark home at the cost of their lives.',
     ],
     entryIntoStruggle: 'Resigned his Oxford scholarship in protest, 1907.',
     ideology: 'Revolutionary internationalism; anarchist-inflected anti-imperialism.',
@@ -653,7 +653,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'war-and-home-rule',
     roles: ['revolutionary'],
     summary:
-      'The teenaged Ghadar organizer who sailed home from California to raise rebellion in 1915 and went to the gallows at nineteen — the hero Bhagat Singh kept as his model.',
+      'The teenaged Ghadar organizer who sailed home from California to raise rebellion in 1915 and went to the gallows at nineteen, the hero Bhagat Singh kept as his model.',
     shortStory: [
       {
         title: 'The youngest Ghadarite',
@@ -674,7 +674,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     ],
     fullBiography: [
       'Kartar Singh of Sarabha village reached San Francisco in 1912 and enrolled at Berkeley; the humiliations of the Punjabi diaspora and the founding of the Ghadar Party in 1913 gave his life its direction. He worked the Yugantar Ashram press, brought out the Gurmukhi Ghadar, and by some accounts took flying lessons with revolution in mind.',
-      'On the outbreak of war he sailed with the first wave of returning Ghadarites, evading the Ingress Ordinance’s dragnet, and became the conspiracy’s tireless field organizer — touring regiments and villages, arranging arms and funds (including through actions the movement itself debated), and working with Rash Behari Bose as the rising was set for 21 February 1915. The informer Kirpal Singh gave the plan away; the regiments were disarmed and the leaders seized.',
+      'On the outbreak of war he sailed with the first wave of returning Ghadarites, evading the Ingress Ordinance’s dragnet, and became the conspiracy’s tireless field organizer, touring regiments and villages, arranging arms and funds (including through actions the movement itself debated), and working with Rash Behari Bose as the rising was set for 21 February 1915. The informer Kirpal Singh gave the plan away; the regiments were disarmed and the leaders seized.',
       'In the first Lahore Conspiracy Case, Kartar Singh claimed his role with such defiance that the tribunal singled him out; his grandfather’s plea that he seek mercy he is recorded to have refused, saying he would be reborn to fight again. He was hanged in Lahore Central Jail on 16 November 1915 with six comrades, nineteen years old. Bhagat Singh called him "my guru, my companion, my brother" and was carrying his photograph when arrested.',
     ],
     entryIntoStruggle: 'Ghadar Party founding circle, San Francisco, 1913.',
@@ -684,7 +684,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     ],
     sacrifices: ['Executed at nineteen'],
     legacy: 'Punjab’s beloved boy-martyr; inspiration to Bhagat Singh’s generation.',
-    facts: ['He is said to have sung "Seva desh di jindariye badi aukhi" — service of the country is hard indeed — as his anthem.'],
+    facts: ['He is said to have sung "Seva desh di jindariye badi aukhi" as his anthem: service of the country is hard indeed.'],
     timelineEvents: ['founding-of-ghadar'],
     movements: ['ghadar', 'revolutionary-movement'],
     organizations: ['ghadar-party'],
@@ -723,11 +723,11 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'war-and-home-rule',
     roles: ['revolutionary', 'organizer'],
     summary:
-      'Mastermind of the 1912 bombing of Viceroy Hardinge’s procession and the 1915 Ghadar rising, who escaped to Japan, founded the Indian Independence League — and handed the INA to Subhas Bose.',
+      'Mastermind of the 1912 bombing of Viceroy Hardinge’s procession and the 1915 Ghadar rising, who escaped to Japan, founded the Indian Independence League, and handed the INA to Subhas Bose.',
     shortStory: [
       {
         title: 'The man they never caught',
-        text: 'Rash Behari Bose planned the boldest strikes of his time — the bomb thrown at the Viceroy’s grand procession in Delhi in 1912, and the great soldiers’ rising of 1915 — and escaped the police every single time.',
+        text: 'Rash Behari Bose planned the boldest strikes of his time, the bomb thrown at the Viceroy’s grand procession in Delhi in 1912 and the great soldiers’ rising of 1915, and escaped the police every single time.',
       },
       {
         title: 'Escape to Japan',
@@ -735,12 +735,12 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
       {
         title: 'Passing the torch',
-        text: 'In 1942 he organized Indians across East Asia into the Indian Independence League and helped create the Indian National Army. A year later, he handed its command to Subhas Chandra Bose — the torch passed from one Bose to another.',
+        text: 'In 1942 he organized Indians across East Asia into the Indian Independence League and helped create the Indian National Army. A year later, he handed its command to Subhas Chandra Bose: the torch passed from one Bose to another.',
       },
     ],
     fullBiography: [
       'Rash Behari Bose worked by day at the Forest Research Institute, Dehradun, and by night at the head of a revolutionary network spanning northern India. On 23 December 1912 his group’s bomb, thrown by Basanta Kumar Biswas, wounded Viceroy Hardinge in his state entry into Delhi; Bose evaded the crackdown that hanged his comrades of the Delhi conspiracy case.',
-      'In 1915, working with the returned Ghadarites and Kartar Singh Sarabha, he directed the plan for coordinated mutinies of the February rising from Lahore. When betrayal wrecked it, he escaped to Japan under the name P. N. Tagore. There he survived deportation orders under the protection of pan-Asianist patrons; the Soma family of Nakamuraya sheltered him, and he married Toshiko Soma. He became a Japanese citizen, publicist for India’s cause — and, incidentally, famous for introducing "Indian curry" at the Nakamuraya restaurant.',
+      'In 1915, working with the returned Ghadarites and Kartar Singh Sarabha, he directed the plan for coordinated mutinies of the February rising from Lahore. When betrayal wrecked it, he escaped to Japan under the name P. N. Tagore. There he survived deportation orders under the protection of pan-Asianist patrons; the Soma family of Nakamuraya sheltered him, and he married Toshiko Soma. He became a Japanese citizen, publicist for India’s cause and, incidentally, famous for introducing "Indian curry" at the Nakamuraya restaurant.',
       'When Japan’s war reached Southeast Asia, Bose convened the conferences of 1942 that created the Indian Independence League and endorsed the Indian National Army raised from prisoners of war. Aging and ill, he presided until Subhas Chandra Bose arrived in 1943, then handed over the movement he had kept alive. He died in Tokyo on 21 January 1945, honoured by Japan, months before the war’s end.',
     ],
     entryIntoStruggle: 'Bengal revolutionary networks in the 1900s.',
@@ -788,7 +788,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'swadeshi-era',
     roles: ['revolutionary'],
     summary:
-      'Alongside Khudiram Bose, threw the bomb meant for magistrate Kingsford at Muzaffarpur in 1908 — killing two British women by mistake — and when cornered by police at Mokama, shot himself rather than be taken alive.',
+      'Alongside Khudiram Bose, threw the bomb meant for magistrate Kingsford at Muzaffarpur in 1908, killing two British women by mistake, and when cornered by police at Mokama, shot himself rather than be taken alive.',
     shortStory: [
       {
         title: 'A boy revolutionary',
@@ -809,14 +809,14 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     ],
     fullBiography: [
       'Prafulla Chandra Chaki was born in 1888 in Bogra district of Bengal (in present-day Bangladesh), and was drawn as a schoolboy into the revolutionary ferment of the Swadeshi years, joining the Jugantar circle around Calcutta.',
-      'In April 1908 the group marked Douglas Kingsford, the Chief Presidency Magistrate notorious for sentencing young nationalists to whipping, who had since been transferred to Muzaffarpur. Chaki and the eighteen-year-old Khudiram Bose were sent to kill him. On the night of 30 April they bombed a carriage leaving Kingsford’s club — but it carried Mrs Kennedy and her daughter, wife and child of a local barrister who had taken the same carriage that night, and both women died.',
-      'The two fled separately on foot. Khudiram was caught the next morning near Waini station; Chaki reached Mokama Ghat railway station, roughly 150 kilometres away, where a police sub-inspector who recognised him moved to arrest him. Rather than be taken alive, Chaki shot himself on 1 May 1908. Khudiram was tried and hanged at Muzaffarpur jail that August — the two names have been remembered together in Bengal ever since.',
+      'In April 1908 the group marked Douglas Kingsford, the Chief Presidency Magistrate notorious for sentencing young nationalists to whipping, who had since been transferred to Muzaffarpur. Chaki and the eighteen-year-old Khudiram Bose were sent to kill him. On the night of 30 April they bombed a carriage leaving Kingsford’s club, but it carried Mrs Kennedy and her daughter, wife and child of a local barrister who had taken the same carriage that night, and both women died.',
+      'The two fled separately on foot. Khudiram was caught the next morning near Waini station; Chaki reached Mokama Ghat railway station, roughly 150 kilometres away, where a police sub-inspector who recognised him moved to arrest him. Rather than be taken alive, Chaki shot himself on 1 May 1908. Khudiram was tried and hanged at Muzaffarpur jail that August. The two names have been remembered together in Bengal ever since.',
     ],
     entryIntoStruggle: 'Swadeshi-era agitation in Bengal; joined the Jugantar circle as a teenager.',
     achievements: ['Carried out the Muzaffarpur action of 1908 alongside Khudiram Bose'],
     sacrifices: ['Took his own life rather than be captured, aged nineteen'],
     legacy: 'Remembered alongside Khudiram Bose as one of the Swadeshi era’s first martyr-revolutionaries; a Bihar railway station and institutions in Bengal bear his name.',
-    facts: ['A police sub-inspector recognised him from a circulated photograph — the same surveillance the revolutionaries were only beginning to reckon with.'],
+    facts: ['A police sub-inspector recognised him from a circulated photograph, the same surveillance the revolutionaries were only beginning to reckon with.'],
     timelineEvents: ['muzaffarpur-action'],
     movements: ['revolutionary-movement', 'swadeshi'],
     organizations: ['jugantar'],
@@ -859,7 +859,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     shortStory: [
       {
         title: 'A student of Bethune College',
-        text: 'Bina Das grew up in a family of freedom fighters in Bengal — her father was a nationalist and her elder sister Kalyani was already a revolutionary. At Bethune College in Calcutta, Bina joined the Chhatri Sangha, an organization that trained women students for the underground struggle.',
+        text: 'Bina Das grew up in a family of freedom fighters in Bengal: her father was a nationalist and her elder sister Kalyani was already a revolutionary. At Bethune College in Calcutta, Bina joined the Chhatri Sangha, an organization that trained women students for the underground struggle.',
       },
       {
         title: 'Five shots at a convocation',
@@ -934,7 +934,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary'],
     summary:
-      'Schoolgirl of the Comilla revolutionary underground who, with Suniti Choudhury, shot dead the district’s British magistrate in 1931 — among the youngest women ever convicted of a political killing in British India.',
+      'Schoolgirl of the Comilla revolutionary underground who, with Suniti Choudhury, shot dead the district’s British magistrate in 1931, among the youngest women ever convicted of a political killing in British India.',
     shortStory: [
       {
         title: 'A professor’s daughter',
@@ -943,11 +943,11 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       {
         title: 'A visit to the magistrate',
         text: 'On 14 December 1931, Shanti and her friend Suniti Choudhury, both still schoolgirls, went to see Charles Stevens, the British district magistrate of Comilla known for his harsh treatment of nationalists. Carrying hidden pistols, the two girls shot him.',
-        uncertainty: 'Accounts differ on the exact reason the girls gave for asking to see him — some say a school request, others a gift of sweets.',
+        uncertainty: 'Accounts differ on the exact reason the girls gave for asking to see him: some say a school request, others a gift of sweets.',
       },
       {
         title: 'Arrest and a long sentence',
-        text: 'The two were arrested at once. Because they were minors, the court’s exact sentence is recorded differently in different accounts — but both girls spent years in prison and were finally released together in 1939.',
+        text: 'The two were arrested at once. Because they were minors, the court’s exact sentence is recorded differently in different accounts, but both girls spent years in prison and were finally released together in 1939.',
         uncertainty: 'Some sources record their sentence as transportation for life; others say a fixed ten-year term because of their age. Both are repeated in reliable accounts and this record cannot say which is correct.',
       },
       {
@@ -957,7 +957,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     ],
     fullBiography: [
       'Shanti Ghosh was born in Comilla, in Bengal’s Tippera district, the daughter of Debendranath Ghosh, a nationalist and professor of philosophy at Comilla’s Victoria College. As a schoolgirl she helped found the Chhatri Sangha, a students’ association for young women, and became its secretary; through revolutionary contacts in the town she joined the Jugantar network active across Bengal, training in the use of firearms alongside her close friend Suniti Choudhury.',
-      'On 14 December 1931 the two schoolgirls, Shanti sixteen and Suniti fourteen, gained access to the office of Charles Geoffrey Buckland Stevens, the district magistrate of Comilla — a name feared for his severity toward suspected nationalists — under the pretext of a student request, reportedly bringing sweets. Once inside, they drew pistols hidden beneath their shawls and shot Stevens dead, then made no attempt to flee. Both were arrested immediately.',
+      'On 14 December 1931 the two schoolgirls, Shanti sixteen and Suniti fourteen, gained access to the office of Charles Geoffrey Buckland Stevens, the district magistrate of Comilla, a name feared for his severity toward suspected nationalists, under the pretext of a student request, reportedly bringing sweets. Once inside, they drew pistols hidden beneath their shawls and shot Stevens dead, then made no attempt to flee. Both were arrested immediately.',
       'Tried in Calcutta in 1932, the two were convicted; accounts of Bengal’s revolutionary women record their punishment variously as transportation for life and as a ten-year term imposed because of their age, and this record cannot resolve which figure is accurate. Whatever its exact form, the sentence kept both women in prison for roughly seven years, until their release in 1939 following clemency negotiations between the Congress and the colonial government. Shanti went on to further study, joined the Indian National Congress, married, and was elected to West Bengal’s legislative assembly across the 1950s and 1960s; she wrote of her revolutionary youth and died in 1989.',
     ],
     entryIntoStruggle: 'Co-founded the Chhatri Sangha in Comilla and joined the Jugantar underground as a schoolgirl, 1931.',
@@ -1012,7 +1012,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
     era: 'civil-disobedience',
     roles: ['revolutionary'],
     summary:
-      'At fourteen, the youngest of Comilla’s revolutionary schoolgirls to shoot dead the district’s British magistrate alongside Shanti Ghosh — who later trained as a doctor and practised medicine in independent India.',
+      'At fourteen, the youngest of Comilla’s revolutionary schoolgirls to shoot dead the district’s British magistrate alongside Shanti Ghosh; she later trained as a doctor and practised medicine in independent India.',
     shortStory: [
       {
         title: 'A recruit at fourteen',
@@ -1021,7 +1021,7 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       {
         title: 'The magistrate’s office',
         text: 'On 14 December 1931, fourteen-year-old Suniti and her friend Shanti Ghosh went to see Charles Stevens, the British district magistrate of Comilla, feared for his harshness toward nationalists. Hiding pistols beneath their shawls, the two girls shot him.',
-        uncertainty: 'Accounts differ on the exact reason the girls gave for the visit — some say a school request, others a gift of sweets.',
+        uncertainty: 'Accounts differ on the exact reason the girls gave for the visit: some say a school request, others a gift of sweets.',
       },
       {
         title: 'A teenager on trial',
@@ -1034,9 +1034,9 @@ export const swadeshiRevolutionaries: FreedomFighter[] = [
       },
     ],
     fullBiography: [
-      'Suniti Choudhury was born in Comilla, in Bengal’s Tippera district, to Umacharan and Surasundari Choudhury, a Bengali Kayastha family. Drawn into the revolutionary underground as a schoolgirl — inspired, by her own later account, by the imprisoned Chittagong revolutionary Ullaskar Dutta — she joined the Jugantar network through local organizers and was active in the Chhatri Sangha, training in firearms and reportedly serving as custodian of the local women volunteers’ weapons.',
-      'On 14 December 1931, Suniti — then fourteen — and her close friend Shanti Ghosh gained access to the office of Charles Geoffrey Buckland Stevens, the district magistrate of Comilla, under the pretext of a student request, reportedly bringing sweets. The two girls drew pistols hidden beneath their shawls and shot Stevens dead, making no attempt to escape. Both were arrested on the spot; Suniti’s family suffered for it afterward, her father losing his pension and her brothers detained.',
-      'Convicted in Calcutta in 1932, Suniti served roughly seven years — accounts of the exact sentence differ, some recording transportation for life and others a fixed term imposed because she was a minor — before her release in 1939 under a general amnesty for political prisoners. She then pursued medical studies, qualified MBBS, and practised as a physician; in 1947 she married the trade union leader Pradyot Kumar Ghosh. She lived the rest of her life largely away from public politics, and died in January 1988.',
+      'Suniti Choudhury was born in Comilla, in Bengal’s Tippera district, to Umacharan and Surasundari Choudhury, a Bengali Kayastha family. Drawn into the revolutionary underground as a schoolgirl (inspired, by her own later account, by the imprisoned Chittagong revolutionary Ullaskar Dutta), she joined the Jugantar network through local organizers and was active in the Chhatri Sangha, training in firearms and reportedly serving as custodian of the local women volunteers’ weapons.',
+      'On 14 December 1931, Suniti, then fourteen, and her close friend Shanti Ghosh gained access to the office of Charles Geoffrey Buckland Stevens, the district magistrate of Comilla, under the pretext of a student request, reportedly bringing sweets. The two girls drew pistols hidden beneath their shawls and shot Stevens dead, making no attempt to escape. Both were arrested on the spot; Suniti’s family suffered for it afterward, her father losing his pension and her brothers detained.',
+      'Convicted in Calcutta in 1932, Suniti served roughly seven years before her release in 1939 under a general amnesty for political prisoners; accounts of the exact sentence differ, some recording transportation for life and others a fixed term imposed because she was a minor. She then pursued medical studies, qualified MBBS, and practised as a physician; in 1947 she married the trade union leader Pradyot Kumar Ghosh. She lived the rest of her life largely away from public politics, and died in January 1988.',
     ],
     entryIntoStruggle: 'Recruited into Comilla’s Jugantar underground and the Chhatri Sangha as a schoolgirl, 1929–31.',
     achievements: ['Carried out the Comilla action of December 1931 with Shanti Ghosh', 'Trained and practised as a physician after her release'],

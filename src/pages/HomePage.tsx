@@ -20,7 +20,7 @@ function Hero() {
 
         <div className="num border-b border-paper-100/35 pb-2.5 pr-0 font-body text-label text-paper-200 sm:pr-32">
           First day of issue · an archive of India’s freedom struggle ·{' '}
-          <span className="font-display text-base font-bold text-brass-bright">1757 — 1947</span>
+          <span className="font-display text-base font-bold text-brass-bright">1757–1947</span>
         </div>
 
         <h1 className="mt-5 max-w-3xl break-words text-hero-sm font-medium text-paper-50 sm:mt-10 sm:text-hero">
